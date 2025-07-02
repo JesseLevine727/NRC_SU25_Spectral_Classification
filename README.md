@@ -92,12 +92,3 @@ A deep learning model that learns a mapping from spectra into a **low-dimensiona
 This notebook provides tools for exploratory analysis:
 - **PCA visualization:** Plot processed spectra in PCA space to assess class separability
 - **Centroid Correlation:** Compute a heatmap of pairwise correlations between class centroids
-
----
-
-## How to Use
-
-### 1. Setup
-Install required libraries:
-```bash
-pip install -r requirements.txt
