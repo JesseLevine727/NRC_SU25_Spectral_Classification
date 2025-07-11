@@ -1,0 +1,28 @@
+**Meta Prompt: Expanding CaPE → CaPSim for Mixture Classification**
+
+I am working on a Raman spectroscopy-based identification system, specifically for SERS spectra. So far, I have developed a method to classify a *single unknown query spectrum* using a known Raman reference library. This method is based on the 2023 paper by Halas et al., and follows the CaPE (Characteristic Peak Extraction) → CaPSim (Characteristic Peak Similarity) pipeline. It involves:
+
+* Preprocessing (baseline correction, smoothing, L2 normalization),
+* Extracting top N peaks (CaPE) with windows (w\_max = 36),
+* Representing spectra via max-pooled feature vectors,
+* Computing similarity using a dot product (CaPSim),
+* Identifying the best match based on the highest similarity score.
+
+I now want to explore how to extend this method to classify *mixtures* of two or more analytes within a single SERS spectrum.
+
+### My constraints:
+
+* I want to retain interpretability and simplicity if possible (prefer traditional ML).
+* I do not have large datasets per chemical (few reference spectra per class).
+* Ideally, I want to reuse the existing CaPE → CaPSim foundation.
+
+### In this chat, help me:
+
+1. Identify methods that can adapt or extend the CaPE → CaPSim workflow for mixture deconvolution.
+2. Explore unsupervised and semi-supervised strategies (e.g., NMF, ICA, sparse coding).
+3. Suggest explainable machine learning techniques for resolving mixture components.
+4. Recommend relevant papers that fully describe their algorithms (not black boxes).
+5. Propose a roadmap for implementing a working system on real SERS mixture data.
+
+Please ground all suggestions in Raman-specific literature or domain-relevant practices.
+

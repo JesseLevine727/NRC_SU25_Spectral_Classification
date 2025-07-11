@@ -30,7 +30,7 @@ def smooth(spec, K_smooth=3):
     return np.convolve(spec, kernel, mode='same')
 
 def identify_with_knn(query_df, ref_df,
-    crop_max=1500, lam=1e4, p=0.01, niter=10,
+    crop_max=1700, lam=1e4, p=0.01, niter=10,
     K_smooth=3, N_peak=12, w_max=15,
     height=0.01, prominence=0.01,
     n_neighbors=3):

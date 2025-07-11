@@ -61,7 +61,7 @@ def CaPSim(query_vector, reference_matrix):
     return np.dot(reference_matrix, query_vector).mean()
 
 def identify_spectrum_pipeline(query_df, ref_df,
-    crop_max=1500, lam=1e4, p=0.01, niter=10,
+    crop_max=1700, lam=1e4, p=0.01, niter=10,
     K_smooth=3, N_peak=12, w_max=15,
     height=0.01, prominence=None):
 
