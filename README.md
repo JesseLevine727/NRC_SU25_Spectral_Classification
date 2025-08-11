@@ -11,84 +11,50 @@ The project explores and compares **four distinct approaches**, inspired by the 
 
 The fundamental problem is to take a **high-dimensional spectrum** from an unknown sample and accurately identify it by comparing it against a **library of known spectra**. Each method in this repository tackles this problem through a different **feature extraction** and **similarity matching** strategy.
 
----
+# Spectral Classification Project
 
-## Included Implementations
+This repository tracks the evolution of one-shot spectral classification for Raman and SERS data.  
+The work progresses from implementing the 2023 Halas “CaPSim” method to Siamese-network
+approaches for mixtures and SERS spectra, with extensive clustering analyses.
 
-This repository includes four primary methods for spectral classification:
+## Project Evolution
 
-- `CaPSim` (Characteristic Peak Similarity)
-- `CaPSim` with `k-NN` Classifier
-- `PCA` (Principal Component Analysis) Classifier
-- `Siamese Network` for One-Shot Learning
+1. **CaPSim (Halas et al., ACS Nano 2023)**  
+   - Implementation of Characteristic Peak Similarity for single Raman spectra  
+   - Code: `Scripts/CaPSim.py`  
+   - Notebook: `Notebooks/CaPE_CaPSIM_Notebook.ipynb`
 
-All methods assume the data is provided in **CSV format**, with one file for the **reference library** and one for the **query spectra**. The **last column** in each file should be named **`Label`** and contain the chemical identifier.
+2. **CaPSim + k-NN**  
+   - Adds a k-nearest-neighbor classifier on CaPSim features  
+   - Code: `Scripts/CaPSim_kNN.py`  
+   - Notebook: `Notebooks/CaPSim_with_kNN.ipynb`
 
----
+3. **Siamese Network for Raman One‑Shot Learning**  
+   - 1D convolutional Siamese model replacing hand‑engineered features  
+   - Code: `Scripts/SiameseNetwork.py`  
+   - Notebook: `Notebooks/Siamese_Network_OneShot.ipynb`
 
-### 1. CaPSim (Characteristic Peak Similarity)
-**Script:** `CaPSim.py`  
-**Approach:** Local peak-based dot-product similarity
+4. **SERS Single‑Spectrum Classification**  
+   - Adapts the Siamese approach to SERS signals  
+   - Data & notebook: `SERS_to_ Raman/Siamese_Network_OneShot.ipynb`
 
-**Concept:**  
-This method directly implements the approach described in the Halas et al. paper. It assumes that key information in a spectrum is concentrated in a few discrete **characteristic peaks (CPs)**.
+5. **Raman Mixture Classification (Siamese + MLP)**  
+   - Embeddings from a Siamese network fed to an MLP classifier  
+   - Notebook: `Mixture_Classification/Notebooks/Siamese_MLP_3.ipynb`
 
-**Workflow:**
-- **Preprocessing:** Baseline correction and L2 normalization
-- **Feature Definition:** Identify most frequent or intense peaks per class → class-specific CPs
-- **Feature Extraction:** Extract maximum intensity around CPs for each query
-- **Similarity Matching:** Compute mean dot-product (CaPSim score); assign query to class with highest score
+## Clustering & Exploratory Analyses
+- `Notebooks/PCA_Centroid_Correlation_Notebook.ipynb` – PCA visualization and centroid correlations  
+- `Mixture_Classification/Notebooks/PCA_tSNE_UMAP_HDBSCAN.ipynb` – PCA, t‑SNE, UMAP, and HDBSCAN clustering for standard Raman single spectra and Mixtures
+- `SERS_to_Raman` - PCA, t‑SNE, UMAP, and HDBSCAN clustering for SERS data  
 
----
+## Repository Structure
+- `Scripts/` – Core Python implementations (CaPSim, CaPSim_kNN, PCA, Siamese)
+- `Notebooks/` – Development notebooks for single-spectrum models
+- `SERS_to_ Raman/` – SERS datasets and notebooks
+- `Mixture_Classification/` – Mixture datasets, Siamese + MLP workflow, and clustering studies
+- `Papers/` – Related literature and presentations
 
-### 2. CaPSim with k-NN Classifier
-**Script:** `CaPSim_kNN.py`  
-**Approach:** Local peak-based features with supervised classification
+## Reference
+- N. J. Halas et al., “Identifying Surface-Enhanced Raman Spectra with a Raman Library Using Machine Learning,” ACS Nano, 2023.
 
-**Concept:**  
-An extension of CaPSim that uses the same CP-based features but replaces dot-product similarity with a learned `k-Nearest Neighbors` classifier.
 
-**Workflow:**
-- **Preprocessing:** Same as baseline CaPSim
-- **Feature Definition:** Global CP set = union of all class CPs
-- **Feature Extraction:** Fixed-length feature vectors for all reference spectra
-- **Training:** Train a `k-NN` model using cosine distance
-- **Classification:** Predict query identity using trained model
-
----
-
-### 3. PCA (Principal Component Analysis) Classifier
-**Script:** `PCA_Classification.py`  
-**Approach:** Global shape-based classification in PCA space
-
-**Concept:**  
-A benchmark method that uses global spectral shape via PCA. It reduces the dimensionality of the spectra and uses **class centroids** in PCA space for classification.
-
-**Workflow:**
-- **Preprocessing:** Baseline correction and normalization
-- **Feature Extraction:** Fit PCA on reference spectra → project all spectra
-- **Centroid Calculation:** Compute class average in PCA space
-- **Classification:** Classify query by nearest centroid (Euclidean distance)
-
----
-
-### 4. Siamese Network for One-Shot Learning
-**Script:** `SiameseNetwork.py`  
-**Approach:** Deep learning with contrastive similarity learning
-
-**Concept:**  
-A deep learning model that learns a mapping from spectra into a **low-dimensional embedding space**, where similar spectra are close together.
-
-**Workflow:**
-- **Training:** Train a 1D convolutional Siamese network using spectrum pairs and contrastive loss
-- **Embedding:** Use network to embed all reference/query spectra
-- **Classification:** Query is classified via nearest-neighbor search in embedding space
-
----
-
-## Exploratory Data Analysis
-**Notebook:** `PCA_Centroid_Correlation_Notebook.ipynb`
-
-This notebook provides tools for exploratory analysis:
-- **PCA visualization:** Plot processed spectra in PCA space to assess class separability
-- **Centroid Correlation:** Compute a heatmap of pairwise correlations between class centroids
