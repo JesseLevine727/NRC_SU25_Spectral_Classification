@@ -2,3 +2,18 @@ TODO:
 - Oversample meoh & mercapto.
 
 - Remove chained thiols and redo Siamese-MLP and then try quantification
+
+
+
+4np__AgNP       0.90      0.90      0.90        20
+                  4np__PICO       1.00      1.00      1.00        20
+                 4np__pSERS       1.00      1.00      1.00        20
+           benzenethiol__Ag       0.91      1.00      0.95        20
+           benzenethiol__Au       1.00      1.00      1.00        20
+                   bt__PICO       1.00      1.00      1.00        20
+                  bt__pSERS       1.00      1.00      1.00        20
+n,n-dimethylformamide__AuNP       1.00      0.99      1.00       183
+             pyridine__AgNP       1.00      0.90      0.95        20
+             pyridine__AuNP       0.95      1.00      0.98        20
+             pyridine__PICO       1.00      1.00      1.00        20
+            pyridine__pSERS       1.00      1.00      1.00        20
