@@ -1,0 +1,239 @@
+Synthetic Set Stats
+================================================================================
+Label: 1,9-nonanedithiol  (index 0)
+Positives: 196 | False Negatives @ thr=0.5: 7 (3.6%)
+ROC-AUC: 0.9923
+Score stats:
+  positives: mean=0.9325  median=0.9999
+  negatives: mean=0.071499  median=0.000032
+
+Most common TOP-2 predicted label pairs for FNs:
+   2  ('n,n-dimethylformamide', '6-mercapto-1-hexanol')
+   2  ('benzene', '6-mercapto-1-hexanol')
+   2  ('dmmp', '1-dodecanethiol')
+   1  ('dmmp', '6-mercapto-1-hexanol')
+
+Most common individual labels appearing in TOP-2 for FNs:
+   5  6-mercapto-1-hexanol
+   3  dmmp
+   2  n,n-dimethylformamide
+   2  benzene
+   2  1-dodecanethiol
+
+Examples (index | true labels | P(this label) | top2 preds):
+41 | ('1,9-nonanedithiol', 'n,n-dimethylformamide') | 0.057 | ('n,n-dimethylformamide', '6-mercapto-1-hexanol')
+107 | ('1,9-nonanedithiol', 'dmmp') | 0.076 | ('dmmp', '6-mercapto-1-hexanol')
+461 | ('1,9-nonanedithiol', 'benzene') | 0.267 | ('benzene', '6-mercapto-1-hexanol')
+468 | ('1,9-nonanedithiol', 'dmmp') | 0.123 | ('dmmp', '1-dodecanethiol')
+510 | ('1,9-nonanedithiol', 'dmmp') | 0.251 | ('dmmp', '1-dodecanethiol')
+991 | ('1,9-nonanedithiol', 'benzene') | 0.438 | ('benzene', '6-mercapto-1-hexanol')
+1152 | ('1,9-nonanedithiol', 'n,n-dimethylformamide') | 0.055 | ('n,n-dimethylformamide', '6-mercapto-1-hexanol')
+
+================================================================================
+Label: 1-dodecanethiol  (index 1)
+Positives: 225 | False Negatives @ thr=0.5: 8 (3.6%)
+ROC-AUC: 0.9642
+Score stats:
+  positives: mean=0.8710  median=0.9252
+  negatives: mean=0.161163  median=0.000003
+
+Most common TOP-2 predicted label pairs for FNs:
+   3  ('n,n-dimethylformamide', '6-mercapto-1-hexanol')
+   2  ('benzene', '6-mercapto-1-hexanol')
+   2  ('dmmp', '6-mercapto-1-hexanol')
+   1  ('dmmp', '1-undecanethiol')
+
+Most common individual labels appearing in TOP-2 for FNs:
+   7  6-mercapto-1-hexanol
+   3  n,n-dimethylformamide
+   3  dmmp
+   2  benzene
+   1  1-undecanethiol
+
+Examples (index | true labels | P(this label) | top2 preds):
+81 | ('1-dodecanethiol', 'n,n-dimethylformamide') | 0.416 | ('n,n-dimethylformamide', '6-mercapto-1-hexanol')
+171 | ('1-dodecanethiol', 'benzene') | 0.470 | ('benzene', '6-mercapto-1-hexanol')
+174 | ('1-dodecanethiol', 'dmmp') | 0.341 | ('dmmp', '6-mercapto-1-hexanol')
+280 | ('1-dodecanethiol', 'n,n-dimethylformamide') | 0.487 | ('n,n-dimethylformamide', '6-mercapto-1-hexanol')
+807 | ('1-dodecanethiol', 'n,n-dimethylformamide') | 0.480 | ('n,n-dimethylformamide', '6-mercapto-1-hexanol')
+845 | ('1-dodecanethiol', 'dmmp') | 0.472 | ('dmmp', '1-undecanethiol')
+928 | ('1-dodecanethiol', 'dmmp') | 0.333 | ('dmmp', '6-mercapto-1-hexanol')
+1126 | ('1-dodecanethiol', 'benzene') | 0.464 | ('benzene', '6-mercapto-1-hexanol')
+
+================================================================================
+Label: 1-undecanethiol  (index 2)
+Positives: 208 | False Negatives @ thr=0.5: 1 (0.5%)
+ROC-AUC: 0.9207
+Score stats:
+  positives: mean=0.8314  median=0.8520
+  negatives: mean=0.221147  median=0.004280
+
+Most common TOP-2 predicted label pairs for FNs:
+   1  ('dmmp', '1-dodecanethiol')
+
+Most common individual labels appearing in TOP-2 for FNs:
+   1  dmmp
+   1  1-dodecanethiol
+
+Examples (index | true labels | P(this label) | top2 preds):
+828 | ('1-undecanethiol', 'dmmp') | 0.459 | ('dmmp', '1-dodecanethiol')
+
+================================================================================
+Label: 6-mercapto-1-hexanol  (index 3)
+Positives: 204 | False Negatives @ thr=0.5: 17 (8.3%)
+ROC-AUC: 0.9857
+Score stats:
+  positives: mean=0.8860  median=0.9840
+  negatives: mean=0.096995  median=0.000018
+
+Most common TOP-2 predicted label pairs for FNs:
+   7  ('dmmp', '1,9-nonanedithiol')
+   4  ('1-dodecanethiol', '1-undecanethiol')
+   2  ('benzene', '1,9-nonanedithiol')
+   2  ('benzene', '1-undecanethiol')
+   1  ('1,9-nonanedithiol', '1-undecanethiol')
+   1  ('dmmp', '6-mercapto-1-hexanol')
+
+Most common individual labels appearing in TOP-2 for FNs:
+  10  1,9-nonanedithiol
+   8  dmmp
+   7  1-undecanethiol
+   4  benzene
+   4  1-dodecanethiol
+   1  6-mercapto-1-hexanol
+
+Examples (index | true labels | P(this label) | top2 preds):
+29 | ('6-mercapto-1-hexanol', 'benzene') | 0.385 | ('benzene', '1,9-nonanedithiol')
+201 | ('6-mercapto-1-hexanol', 'dmmp') | 0.473 | ('dmmp', '1,9-nonanedithiol')
+263 | ('6-mercapto-1-hexanol', 'dmmp') | 0.495 | ('dmmp', '1,9-nonanedithiol')
+308 | ('1-dodecanethiol', '6-mercapto-1-hexanol') | 0.121 | ('1-dodecanethiol', '1-undecanethiol')
+433 | ('1-dodecanethiol', '6-mercapto-1-hexanol') | 0.253 | ('1-dodecanethiol', '1-undecanethiol')
+434 | ('6-mercapto-1-hexanol', 'dmmp') | 0.462 | ('dmmp', '1,9-nonanedithiol')
+570 | ('1-dodecanethiol', '6-mercapto-1-hexanol') | 0.258 | ('1-dodecanethiol', '1-undecanethiol')
+684 | ('6-mercapto-1-hexanol', 'benzene') | 0.400 | ('benzene', '1-undecanethiol')
+710 | ('6-mercapto-1-hexanol', 'benzene') | 0.385 | ('benzene', '1,9-nonanedithiol')
+770 | ('6-mercapto-1-hexanol', 'dmmp') | 0.467 | ('dmmp', '1,9-nonanedithiol')
+
+================================================================================
+Label: benzene  (index 4)
+Positives: 235 | False Negatives @ thr=0.5: 0 (0.0%)
+ROC-AUC: 1.0000
+Score stats:
+  positives: mean=1.0000  median=1.0000
+  negatives: mean=0.000000  median=0.000000
+
+================================================================================
+Label: benzenethiol  (index 5)
+Positives: 195 | False Negatives @ thr=0.5: 1 (0.5%)
+ROC-AUC: 1.0000
+Score stats:
+  positives: mean=0.9914  median=1.0000
+  negatives: mean=0.007530  median=0.000000
+
+Most common TOP-2 predicted label pairs for FNs:
+   1  ('benzene', 'etoh')
+
+Most common individual labels appearing in TOP-2 for FNs:
+   1  benzene
+   1  etoh
+
+Examples (index | true labels | P(this label) | top2 preds):
+456 | ('benzene', 'benzenethiol') | 0.471 | ('benzene', 'etoh')
+
+================================================================================
+Label: dmmp  (index 6)
+Positives: 220 | False Negatives @ thr=0.5: 0 (0.0%)
+ROC-AUC: 1.0000
+Score stats:
+  positives: mean=0.9998  median=1.0000
+  negatives: mean=0.002459  median=0.000000
+
+================================================================================
+Label: etoh  (index 7)
+Positives: 217 | False Negatives @ thr=0.5: 1 (0.5%)
+ROC-AUC: 0.9998
+Score stats:
+  positives: mean=0.9727  median=1.0000
+  negatives: mean=0.017235  median=0.000000
+
+Most common TOP-2 predicted label pairs for FNs:
+   1  ('benzene', '6-mercapto-1-hexanol')
+
+Most common individual labels appearing in TOP-2 for FNs:
+   1  benzene
+   1  6-mercapto-1-hexanol
+
+Examples (index | true labels | P(this label) | top2 preds):
+586 | ('benzene', 'etoh') | 0.405 | ('benzene', '6-mercapto-1-hexanol')
+
+================================================================================
+Label: meoh  (index 8)
+Positives: 184 | False Negatives @ thr=0.5: 12 (6.5%)
+ROC-AUC: 0.9978
+Score stats:
+  positives: mean=0.9442  median=1.0000
+  negatives: mean=0.012341  median=0.000000
+
+Most common TOP-2 predicted label pairs for FNs:
+   9  ('benzene', '6-mercapto-1-hexanol')
+   1  ('etoh', 'tris(2-ethylhexyl) phosphate')
+   1  ('benzene', 'meoh')
+   1  ('dmmp', 'tris(2-ethylhexyl) phosphate')
+
+Most common individual labels appearing in TOP-2 for FNs:
+  10  benzene
+   9  6-mercapto-1-hexanol
+   2  tris(2-ethylhexyl) phosphate
+   1  etoh
+   1  meoh
+   1  dmmp
+
+Examples (index | true labels | P(this label) | top2 preds):
+128 | ('benzene', 'meoh') | 0.350 | ('benzene', '6-mercapto-1-hexanol')
+162 | ('benzene', 'meoh') | 0.306 | ('benzene', '6-mercapto-1-hexanol')
+249 | ('etoh', 'meoh') | 0.000 | ('etoh', 'tris(2-ethylhexyl) phosphate')
+325 | ('benzene', 'meoh') | 0.227 | ('benzene', '6-mercapto-1-hexanol')
+535 | ('benzene', 'meoh') | 0.465 | ('benzene', 'meoh')
+562 | ('benzene', 'meoh') | 0.186 | ('benzene', '6-mercapto-1-hexanol')
+693 | ('benzene', 'meoh') | 0.240 | ('benzene', '6-mercapto-1-hexanol')
+895 | ('dmmp', 'meoh') | 0.472 | ('dmmp', 'tris(2-ethylhexyl) phosphate')
+913 | ('benzene', 'meoh') | 0.326 | ('benzene', '6-mercapto-1-hexanol')
+1036 | ('benzene', 'meoh') | 0.461 | ('benzene', '6-mercapto-1-hexanol')
+
+================================================================================
+Label: n,n-dimethylformamide  (index 9)
+Positives: 212 | False Negatives @ thr=0.5: 0 (0.0%)
+ROC-AUC: 1.0000
+Score stats:
+  positives: mean=0.9925  median=1.0000
+  negatives: mean=0.010897  median=0.000000
+
+================================================================================
+Label: pyridine  (index 10)
+Positives: 223 | False Negatives @ thr=0.5: 2 (0.9%)
+ROC-AUC: 1.0000
+Score stats:
+  positives: mean=0.9871  median=1.0000
+  negatives: mean=0.003064  median=0.000000
+
+Most common TOP-2 predicted label pairs for FNs:
+   1  ('benzene', '6-mercapto-1-hexanol')
+   1  ('benzene', 'meoh')
+
+Most common individual labels appearing in TOP-2 for FNs:
+   2  benzene
+   1  6-mercapto-1-hexanol
+   1  meoh
+
+Examples (index | true labels | P(this label) | top2 preds):
+419 | ('benzene', 'pyridine') | 0.249 | ('benzene', '6-mercapto-1-hexanol')
+1227 | ('benzene', 'pyridine') | 0.186 | ('benzene', 'meoh')
+
+================================================================================
+Label: tris(2-ethylhexyl) phosphate  (index 11)
+Positives: 189 | False Negatives @ thr=0.5: 0 (0.0%)
+ROC-AUC: 0.9998
+Score stats:
+  positives: mean=0.9832  median=1.0000
+  negatives: mean=0.016350  median=0.000000
+

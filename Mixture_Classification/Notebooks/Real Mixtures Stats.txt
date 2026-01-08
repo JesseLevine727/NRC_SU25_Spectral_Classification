@@ -1,0 +1,147 @@
+Real Mixtures Stats
+================================================================================
+Label: 1-dodecanethiol  (index 1)
+Support: 243 | False Negatives @ thr=0.5: 28 (11.5%)
+ROC-AUC: 0.9421
+Score stats:
+  positives: mean=0.7737  median=0.7854
+  negatives: mean=0.088630  median=0.000000
+
+Most common TOP-2 predicted label pairs for FNs:
+  24  ('meoh', '1-undecanethiol')
+   1  ('meoh', '1,9-nonanedithiol')
+   1  ('1,9-nonanedithiol', '1-undecanethiol')
+   1  ('1,9-nonanedithiol', '6-mercapto-1-hexanol')
+   1  ('1-undecanethiol', 'meoh')
+
+Most common individual labels appearing in TOP-2 for FNs:
+  26  meoh
+  26  1-undecanethiol
+   3  1,9-nonanedithiol
+   1  6-mercapto-1-hexanol
+
+Examples (index | true labels | P(this label) | top2 preds):
+267 | ('1-dodecanethiol', 'meoh') | 0.061 | ('meoh', '1-undecanethiol')
+268 | ('1-dodecanethiol', 'meoh') | 0.493 | ('meoh', '1-undecanethiol')
+269 | ('1-dodecanethiol', 'meoh') | 0.326 | ('meoh', '1-undecanethiol')
+272 | ('1-dodecanethiol', 'meoh') | 0.495 | ('meoh', '1-undecanethiol')
+273 | ('1-dodecanethiol', 'meoh') | 0.340 | ('meoh', '1-undecanethiol')
+274 | ('1-dodecanethiol', 'meoh') | 0.288 | ('meoh', '1-undecanethiol')
+275 | ('1-dodecanethiol', 'meoh') | 0.336 | ('meoh', '1-undecanethiol')
+276 | ('1-dodecanethiol', 'meoh') | 0.357 | ('meoh', '1-undecanethiol')
+278 | ('1-dodecanethiol', 'meoh') | 0.377 | ('meoh', '1-undecanethiol')
+279 | ('1-dodecanethiol', 'meoh') | 0.332 | ('meoh', '1-undecanethiol')
+
+================================================================================
+Label: 6-mercapto-1-hexanol  (index 3)
+Support: 108 | False Negatives @ thr=0.5: 72 (66.7%)
+ROC-AUC: 0.9893
+Score stats:
+  positives: mean=0.5024  median=0.3246
+  negatives: mean=0.014973  median=0.000001
+
+Most common TOP-2 predicted label pairs for FNs:
+  36  ('n,n-dimethylformamide', '1,9-nonanedithiol')
+  30  ('benzene', '1-dodecanethiol')
+   6  ('benzene', '1-undecanethiol')
+
+Most common individual labels appearing in TOP-2 for FNs:
+  36  benzene
+  36  n,n-dimethylformamide
+  36  1,9-nonanedithiol
+  30  1-dodecanethiol
+   6  1-undecanethiol
+
+Examples (index | true labels | P(this label) | top2 preds):
+0 | ('6-mercapto-1-hexanol', 'benzene') | 0.269 | ('benzene', '1-dodecanethiol')
+1 | ('6-mercapto-1-hexanol', 'benzene') | 0.291 | ('benzene', '1-dodecanethiol')
+2 | ('6-mercapto-1-hexanol', 'benzene') | 0.291 | ('benzene', '1-dodecanethiol')
+3 | ('6-mercapto-1-hexanol', 'benzene') | 0.232 | ('benzene', '1-dodecanethiol')
+4 | ('6-mercapto-1-hexanol', 'benzene') | 0.291 | ('benzene', '1-dodecanethiol')
+5 | ('6-mercapto-1-hexanol', 'benzene') | 0.256 | ('benzene', '1-dodecanethiol')
+6 | ('6-mercapto-1-hexanol', 'benzene') | 0.311 | ('benzene', '1-undecanethiol')
+7 | ('6-mercapto-1-hexanol', 'benzene') | 0.266 | ('benzene', '1-dodecanethiol')
+8 | ('6-mercapto-1-hexanol', 'benzene') | 0.305 | ('benzene', '1-undecanethiol')
+9 | ('6-mercapto-1-hexanol', 'benzene') | 0.298 | ('benzene', '1-dodecanethiol')
+
+================================================================================
+Label: benzene  (index 4)
+Support: 193 | False Negatives @ thr=0.5: 0 (0.0%)
+ROC-AUC: 1.0000
+Score stats:
+  positives: mean=1.0000  median=1.0000
+  negatives: mean=0.000000  median=0.000000
+
+================================================================================
+Label: benzenethiol  (index 5)
+Support: 72 | False Negatives @ thr=0.5: 0 (0.0%)
+ROC-AUC: 1.0000
+Score stats:
+  positives: mean=0.9969  median=0.9985
+  negatives: mean=0.040312  median=0.000000
+
+================================================================================
+Label: etoh  (index 7)
+Support: 121 | False Negatives @ thr=0.5: 0 (0.0%)
+ROC-AUC: 1.0000
+Score stats:
+  positives: mean=0.9831  median=1.0000
+  negatives: mean=0.000026  median=0.000000
+
+================================================================================
+Label: meoh  (index 8)
+Support: 243 | False Negatives @ thr=0.5: 28 (11.5%)
+ROC-AUC: 0.9963
+Score stats:
+  positives: mean=0.8746  median=0.9987
+  negatives: mean=0.000000  median=0.000000
+
+Most common TOP-2 predicted label pairs for FNs:
+  10  ('1-dodecanethiol', '1-undecanethiol')
+   8  ('1,9-nonanedithiol', '1-dodecanethiol')
+   2  ('1,9-nonanedithiol', 'tris(2-ethylhexyl) phosphate')
+   2  ('tris(2-ethylhexyl) phosphate', '1,9-nonanedithiol')
+   1  ('1,9-nonanedithiol', '1-undecanethiol')
+   1  ('1,9-nonanedithiol', '6-mercapto-1-hexanol')
+   1  ('n,n-dimethylformamide', '1,9-nonanedithiol')
+   1  ('1,9-nonanedithiol', 'n,n-dimethylformamide')
+   1  ('1-undecanethiol', '1-dodecanethiol')
+   1  ('1-undecanethiol', 'meoh')
+
+Most common individual labels appearing in TOP-2 for FNs:
+  19  1-dodecanethiol
+  16  1,9-nonanedithiol
+  13  1-undecanethiol
+   4  tris(2-ethylhexyl) phosphate
+   2  n,n-dimethylformamide
+   1  6-mercapto-1-hexanol
+   1  meoh
+
+Examples (index | true labels | P(this label) | top2 preds):
+297 | ('1-dodecanethiol', 'meoh') | 0.000 | ('1-dodecanethiol', '1-undecanethiol')
+320 | ('1-dodecanethiol', 'meoh') | 0.001 | ('1-dodecanethiol', '1-undecanethiol')
+323 | ('1-dodecanethiol', 'meoh') | 0.124 | ('1-dodecanethiol', '1-undecanethiol')
+325 | ('1-dodecanethiol', 'meoh') | 0.000 | ('1-dodecanethiol', '1-undecanethiol')
+326 | ('1-dodecanethiol', 'meoh') | 0.000 | ('1,9-nonanedithiol', '1-dodecanethiol')
+327 | ('1-dodecanethiol', 'meoh') | 0.000 | ('1,9-nonanedithiol', '1-undecanethiol')
+328 | ('1-dodecanethiol', 'meoh') | 0.000 | ('1,9-nonanedithiol', '1-dodecanethiol')
+329 | ('1-dodecanethiol', 'meoh') | 0.002 | ('1,9-nonanedithiol', '6-mercapto-1-hexanol')
+330 | ('1-dodecanethiol', 'meoh') | 0.017 | ('1,9-nonanedithiol', '1-dodecanethiol')
+384 | ('1-dodecanethiol', 'meoh') | 0.170 | ('1-dodecanethiol', '1-undecanethiol')
+
+================================================================================
+Label: n,n-dimethylformamide  (index 9)
+Support: 72 | False Negatives @ thr=0.5: 0 (0.0%)
+ROC-AUC: 0.9985
+Score stats:
+  positives: mean=1.0000  median=1.0000
+  negatives: mean=0.022309  median=0.000000
+
+================================================================================
+Label: pyridine  (index 10)
+Support: 108 | False Negatives @ thr=0.5: 0 (0.0%)
+ROC-AUC: 1.0000
+Score stats:
+  positives: mean=1.0000  median=1.0000
+  negatives: mean=0.000191  median=0.000000
+
