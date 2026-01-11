@@ -1,0 +1,26 @@
+Essentially what is occurring is a classic calibration shift.
+The plot on the left proves that the model can separate and "recognize" Mercapto when its present vs when its absent.
+Essentially when Mercapto is present, it ranks higher than if it were absent, nearly every single time.
+Meaning, in the case for mercapto, its signal is being detected.
+
+Ok so why the lower recall??
+
+The plot on the right, the histogram, explains this "paradox". Here the bluebars are the samples where mercapto is truly present and the orange bars are where it is absent. The dashed line is my current decision threshold, at 0.5.
+
+Looking at the orange bars, there are all pretty much smashed against zero. Meaning the model is excellent at rejecting negatives, it knows when mercapto isnt present.
+
+Looking at the far right, these are the easy samples. The model is 99% confident and we detect mercapto easily. 
+However, there is a cluster of blue bars that represent the 16 missed samples. their probability threshold is just below 0.5. 
+
+Currently, because the threshold is 0.5, these edge cases are counted as not present. 
+But they are clearly separated from the orange noise. The model "knows" something is there it just isnt confident enough. 
+
+In every single case where there was a false negative for mercapto, dodecanethiol was predicted.
+Those cases were Benzene + Mercpato and it predicted Benzene + dodecanethiol. It can catch the easy Benzene and then confuses mercapto for another thiol.
+
+
+current solution to investigate:
+No retraining just calibrate decision thresholds per class. 
+ill take 20% of the real mixtures dataset as a calibration set. And then test on the remaining 80%. 
+
+Ill also ask Hal to provide more mixtures data to see if itll work on independent real measurements. 
