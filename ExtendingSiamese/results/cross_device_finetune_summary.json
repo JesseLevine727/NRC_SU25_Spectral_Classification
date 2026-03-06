@@ -1,0 +1,38 @@
+{
+  "seed": 2026,
+  "epochs": 40,
+  "learning_rate": 0.0001,
+  "n_feb26_train_per_class": 10,
+  "train_counts": {
+    "1,9-nonanedithiol": 5,
+    "1-dodecanethiol ": 5,
+    "1-undecanethiol": 5,
+    "6-mercapto-1-hexanol": 5,
+    "benzene": 15,
+    "benzenethiol": 5,
+    "dmmp": 5,
+    "etoh": 5,
+    "meoh": 5,
+    "n,n-dimethylformamide": 5,
+    "pyridine": 15,
+    "tris(2-ethylhexyl) phosphate": 5
+  },
+  "control_holdout_counts": {
+    "benzene": 71,
+    "pyridine": 15
+  },
+  "unknown_holdout_counts": {
+    "aniline": 25,
+    "dcm": 25,
+    "diethylamine": 25,
+    "n-hexane": 25
+  },
+  "final_loss": 0.007478181505575776,
+  "min_loss": 0.00349286375567317,
+  "artifacts": {
+    "train_mix_csv": "cross_device_train_mix.csv",
+    "control_holdout_csv": "feb26_known_controls_holdout.csv",
+    "unknown_holdout_csv": "feb26_unknown_holdout.csv",
+    "model_path": "siamese_raman_cross_device_finetuned.pth"
+  }
+}

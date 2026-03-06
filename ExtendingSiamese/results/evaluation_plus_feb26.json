@@ -1,0 +1,98 @@
+{
+  "expanded_query": {
+    "n_query": 765,
+    "top1_acc": 1.0,
+    "top2_acc": 1.0
+  },
+  "expanded_original_label_subset": {
+    "n_query": 669,
+    "top1_acc": 1.0,
+    "top2_acc": 1.0
+  },
+  "feb26_query_subset": {
+    "n_query": 200,
+    "top1_acc": 1.0,
+    "top2_acc": 1.0,
+    "per_label": [
+      {
+        "label": "aniline",
+        "n": 24,
+        "top1_acc": 1.0,
+        "top2_acc": 1.0
+      },
+      {
+        "label": "benzene",
+        "n": 80,
+        "top1_acc": 1.0,
+        "top2_acc": 1.0
+      },
+      {
+        "label": "dcm",
+        "n": 24,
+        "top1_acc": 1.0,
+        "top2_acc": 1.0
+      },
+      {
+        "label": "diethylamine",
+        "n": 24,
+        "top1_acc": 1.0,
+        "top2_acc": 1.0
+      },
+      {
+        "label": "n-hexane",
+        "n": 24,
+        "top1_acc": 1.0,
+        "top2_acc": 1.0
+      },
+      {
+        "label": "pyridine",
+        "n": 24,
+        "top1_acc": 1.0,
+        "top2_acc": 1.0
+      }
+    ]
+  },
+  "true_new_labels_only": {
+    "labels": [
+      "aniline",
+      "dcm",
+      "diethylamine",
+      "n-hexane"
+    ],
+    "n_query": 96,
+    "top1_acc": 1.0,
+    "top2_acc": 1.0,
+    "per_label": [
+      {
+        "label": "aniline",
+        "n": 24,
+        "top1_acc": 1.0,
+        "top2_acc": 1.0
+      },
+      {
+        "label": "dcm",
+        "n": 24,
+        "top1_acc": 1.0,
+        "top2_acc": 1.0
+      },
+      {
+        "label": "diethylamine",
+        "n": 24,
+        "top1_acc": 1.0,
+        "top2_acc": 1.0
+      },
+      {
+        "label": "n-hexane",
+        "n": 24,
+        "top1_acc": 1.0,
+        "top2_acc": 1.0
+      }
+    ]
+  },
+  "artifacts": {
+    "aligned_feb26_csv": "feb26_aligned_resampled.csv",
+    "expanded_reference_csv": "reference_siamese_resampled_plus_feb26.csv",
+    "expanded_query_csv": "reference_v2_plus_feb26.csv",
+    "predictions_csv": "predictions_plus_feb26.csv"
+  }
+}

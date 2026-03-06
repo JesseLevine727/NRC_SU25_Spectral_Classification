@@ -1,0 +1,101 @@
+{
+  "query_counts": {
+    "known": 565,
+    "known_control": 86,
+    "unknown": 100
+  },
+  "distance_summary": {
+    "known_mean": 0.005265315826025761,
+    "known_max": 0.04185378551483154,
+    "known_control_mean": 0.07314832439256269,
+    "known_control_max": 0.10402800887823105,
+    "unknown_mean": 0.4010601475834846,
+    "unknown_min": 0.13153807818889618
+  },
+  "operating_points": {
+    "best_balanced_accuracy": {
+      "threshold": 0.12122180219739676,
+      "known_correct_and_accept_rate": 1.0,
+      "known_accept_rate": 1.0,
+      "unknown_reject_rate": 1.0,
+      "unknown_false_accept_rate": 0.0,
+      "open_set_accuracy": 1.0,
+      "balanced_accuracy": 1.0
+    },
+    "known_distance_p95": {
+      "threshold": 0.07029924541711807,
+      "known_correct_and_accept_rate": 0.9493087557603687,
+      "known_accept_rate": 0.9493087557603687,
+      "unknown_reject_rate": 1.0,
+      "unknown_false_accept_rate": 0.0,
+      "open_set_accuracy": 0.9560585885486018,
+      "balanced_accuracy": 0.9746543778801844
+    },
+    "known_distance_p99": {
+      "threshold": 0.0825965479016304,
+      "known_correct_and_accept_rate": 0.989247311827957,
+      "known_accept_rate": 0.989247311827957,
+      "unknown_reject_rate": 1.0,
+      "unknown_false_accept_rate": 0.0,
+      "open_set_accuracy": 0.9906790945406125,
+      "balanced_accuracy": 0.9946236559139785
+    }
+  },
+  "known_control_reject_rates_at_best_threshold": [
+    {
+      "label": "benzene",
+      "n": 71,
+      "reject_rate": 0.0,
+      "mean_distance": 0.07002792381484743,
+      "min_distance": 0.06932756304740906,
+      "max_distance": 0.07094728946685791
+    },
+    {
+      "label": "pyridine",
+      "n": 15,
+      "reject_rate": 0.0,
+      "mean_distance": 0.08791822046041489,
+      "min_distance": 0.07923223823308945,
+      "max_distance": 0.10402800887823105
+    }
+  ],
+  "unknown_reject_rates_at_best_threshold": [
+    {
+      "label": "aniline",
+      "n": 25,
+      "reject_rate": 1.0,
+      "mean_distance": 0.4503274118900299,
+      "min_distance": 0.44423040747642517,
+      "max_distance": 0.4555725157260895
+    },
+    {
+      "label": "dcm",
+      "n": 25,
+      "reject_rate": 1.0,
+      "mean_distance": 0.5424423456192017,
+      "min_distance": 0.5380000472068787,
+      "max_distance": 0.5478047728538513
+    },
+    {
+      "label": "diethylamine",
+      "n": 25,
+      "reject_rate": 1.0,
+      "mean_distance": 0.47400970101356504,
+      "min_distance": 0.38134127855300903,
+      "max_distance": 0.5909039974212646
+    },
+    {
+      "label": "n-hexane",
+      "n": 25,
+      "reject_rate": 1.0,
+      "mean_distance": 0.13746113181114197,
+      "min_distance": 0.13153807818889618,
+      "max_distance": 0.14175032079219818
+    }
+  ],
+  "artifacts": {
+    "histograms_png": "open_set_distance_histograms_retrained.png",
+    "threshold_sweep_csv": "open_set_threshold_sweep_retrained.csv",
+    "query_distances_csv": "open_set_query_distances_retrained.csv"
+  }
+}

@@ -1,0 +1,974 @@
+{
+  "n_total_spectra": 771,
+  "label_counts": {
+    "1,9-nonanedithiol": 27,
+    "1-dodecanethiol": 30,
+    "1-undecanethiol": 26,
+    "6-mercapto-1-hexanol": 27,
+    "aniline": 25,
+    "benzene": 108,
+    "benzenethiol": 27,
+    "dcm": 25,
+    "diethylamine": 25,
+    "dmmp": 27,
+    "etoh": 135,
+    "meoh": 157,
+    "n,n-dimethylformamide": 28,
+    "n-hexane": 25,
+    "pyridine": 52,
+    "tris(2-ethylhexyl) phosphate": 27
+  },
+  "group_counts": {
+    "feb26:aniline": 25,
+    "feb26:benzene": 81,
+    "feb26:dcm": 25,
+    "feb26:diethylamine": 25,
+    "feb26:n-hexane": 25,
+    "feb26:pyridine": 25,
+    "old:1,9-nonanedithiol": 27,
+    "old:1-dodecanethiol": 30,
+    "old:1-undecanethiol": 26,
+    "old:6-mercapto-1-hexanol": 27,
+    "old:benzene": 27,
+    "old:benzenethiol": 27,
+    "old:dmmp": 27,
+    "old:etoh": 135,
+    "old:meoh": 157,
+    "old:n,n-dimethylformamide": 28,
+    "old:pyridine": 27,
+    "old:tris(2-ethylhexyl) phosphate": 27
+  },
+  "raw_nearest_centroids": [
+    {
+      "group": "old:1,9-nonanedithiol",
+      "neighbors": [
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.9762251275868453
+        },
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.9691365108263421
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.9677885635238469
+        }
+      ]
+    },
+    {
+      "group": "old:1-dodecanethiol",
+      "neighbors": [
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.9992910909079493
+        },
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.9706375489438552
+        },
+        {
+          "group": "old:1,9-nonanedithiol",
+          "similarity": 0.9677885635238469
+        }
+      ]
+    },
+    {
+      "group": "old:1-undecanethiol",
+      "neighbors": [
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.9992910909079493
+        },
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.9729872636028798
+        },
+        {
+          "group": "old:1,9-nonanedithiol",
+          "similarity": 0.9691365108263421
+        }
+      ]
+    },
+    {
+      "group": "old:6-mercapto-1-hexanol",
+      "neighbors": [
+        {
+          "group": "old:1,9-nonanedithiol",
+          "similarity": 0.9762251275868453
+        },
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.9729872636028798
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.9706375489438552
+        }
+      ]
+    },
+    {
+      "group": "feb26:aniline",
+      "neighbors": [
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.9195916830470947
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.8974602729353927
+        },
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.8801630178258442
+        }
+      ]
+    },
+    {
+      "group": "old:benzene",
+      "neighbors": [
+        {
+          "group": "old:pyridine",
+          "similarity": 0.7143799994863184
+        },
+        {
+          "group": "feb26:benzene",
+          "similarity": 0.3902973629755585
+        },
+        {
+          "group": "feb26:pyridine",
+          "similarity": 0.34274119694368865
+        }
+      ]
+    },
+    {
+      "group": "feb26:benzene",
+      "neighbors": [
+        {
+          "group": "feb26:pyridine",
+          "similarity": 0.798713701746553
+        },
+        {
+          "group": "old:benzene",
+          "similarity": 0.3902973629755585
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.36922984696614675
+        }
+      ]
+    },
+    {
+      "group": "old:benzenethiol",
+      "neighbors": [
+        {
+          "group": "old:etoh",
+          "similarity": 0.7661372084770297
+        },
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.7605139926674205
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.7436437834789789
+        }
+      ]
+    },
+    {
+      "group": "feb26:dcm",
+      "neighbors": [
+        {
+          "group": "old:dmmp",
+          "similarity": 0.38573853923154056
+        },
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.3700419570047651
+        },
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.3250322548677343
+        }
+      ]
+    },
+    {
+      "group": "feb26:diethylamine",
+      "neighbors": [
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.9195916830470947
+        },
+        {
+          "group": "feb26:n-hexane",
+          "similarity": 0.8397956754679657
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.837693115396997
+        }
+      ]
+    },
+    {
+      "group": "old:dmmp",
+      "neighbors": [
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.8572540792861782
+        },
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.8303286166918652
+        },
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.829680105831414
+        }
+      ]
+    },
+    {
+      "group": "old:etoh",
+      "neighbors": [
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.8948824272490323
+        },
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.8862619290243396
+        },
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.872661941497856
+        }
+      ]
+    },
+    {
+      "group": "old:meoh",
+      "neighbors": [
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.8304035078627614
+        },
+        {
+          "group": "old:etoh",
+          "similarity": 0.8193437835172422
+        },
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.8003814257455659
+        }
+      ]
+    },
+    {
+      "group": "old:n,n-dimethylformamide",
+      "neighbors": [
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.7522878041602417
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.7502649389935921
+        },
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.7491307508790837
+        }
+      ]
+    },
+    {
+      "group": "feb26:n-hexane",
+      "neighbors": [
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.8832712293932391
+        },
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.8397956754679657
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.8388560478449141
+        }
+      ]
+    },
+    {
+      "group": "old:pyridine",
+      "neighbors": [
+        {
+          "group": "old:benzene",
+          "similarity": 0.7143799994863184
+        },
+        {
+          "group": "old:meoh",
+          "similarity": 0.6931378126947326
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.6769824164642652
+        }
+      ]
+    },
+    {
+      "group": "feb26:pyridine",
+      "neighbors": [
+        {
+          "group": "feb26:benzene",
+          "similarity": 0.798713701746553
+        },
+        {
+          "group": "old:pyridine",
+          "similarity": 0.4543421109634366
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.4338639638551237
+        }
+      ]
+    },
+    {
+      "group": "old:tris(2-ethylhexyl) phosphate",
+      "neighbors": [
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.9342245033460529
+        },
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.9308309035059301
+        },
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.9191193016613746
+        }
+      ]
+    }
+  ],
+  "baseline_embedding_nearest_centroids": [
+    {
+      "group": "old:1,9-nonanedithiol",
+      "neighbors": [
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.9766100348325114
+        },
+        {
+          "group": "old:n,n-dimethylformamide",
+          "similarity": 0.8205688758400385
+        },
+        {
+          "group": "feb26:dcm",
+          "similarity": 0.7803843311230388
+        }
+      ]
+    },
+    {
+      "group": "old:1-dodecanethiol",
+      "neighbors": [
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.9985576530074141
+        },
+        {
+          "group": "feb26:n-hexane",
+          "similarity": 0.9157678168319958
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.8434480786575143
+        }
+      ]
+    },
+    {
+      "group": "old:1-undecanethiol",
+      "neighbors": [
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.9985576530074141
+        },
+        {
+          "group": "feb26:n-hexane",
+          "similarity": 0.9062951501717411
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.8145476163872323
+        }
+      ]
+    },
+    {
+      "group": "old:6-mercapto-1-hexanol",
+      "neighbors": [
+        {
+          "group": "old:1,9-nonanedithiol",
+          "similarity": 0.9766100348325114
+        },
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.7916877178263345
+        },
+        {
+          "group": "old:n,n-dimethylformamide",
+          "similarity": 0.7749399152005303
+        }
+      ]
+    },
+    {
+      "group": "feb26:aniline",
+      "neighbors": [
+        {
+          "group": "feb26:benzene",
+          "similarity": 0.896572394096439
+        },
+        {
+          "group": "old:benzene",
+          "similarity": 0.8492869662077754
+        },
+        {
+          "group": "feb26:pyridine",
+          "similarity": 0.8249979894244702
+        }
+      ]
+    },
+    {
+      "group": "old:benzene",
+      "neighbors": [
+        {
+          "group": "feb26:benzene",
+          "similarity": 0.9877195714959764
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.8492869662077754
+        },
+        {
+          "group": "old:benzenethiol",
+          "similarity": 0.7630545830129167
+        }
+      ]
+    },
+    {
+      "group": "feb26:benzene",
+      "neighbors": [
+        {
+          "group": "old:benzene",
+          "similarity": 0.9877195714959764
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.896572394096439
+        },
+        {
+          "group": "old:benzenethiol",
+          "similarity": 0.6792854243818711
+        }
+      ]
+    },
+    {
+      "group": "old:benzenethiol",
+      "neighbors": [
+        {
+          "group": "old:benzene",
+          "similarity": 0.7630545830129167
+        },
+        {
+          "group": "feb26:benzene",
+          "similarity": 0.6792854243818711
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.5916815587336741
+        }
+      ]
+    },
+    {
+      "group": "feb26:dcm",
+      "neighbors": [
+        {
+          "group": "old:n,n-dimethylformamide",
+          "similarity": 0.9560502158391776
+        },
+        {
+          "group": "old:dmmp",
+          "similarity": 0.9281141660981913
+        },
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.859191188379285
+        }
+      ]
+    },
+    {
+      "group": "feb26:diethylamine",
+      "neighbors": [
+        {
+          "group": "old:n,n-dimethylformamide",
+          "similarity": 0.894277991691241
+        },
+        {
+          "group": "feb26:dcm",
+          "similarity": 0.859191188379285
+        },
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.7916877178263345
+        }
+      ]
+    },
+    {
+      "group": "old:dmmp",
+      "neighbors": [
+        {
+          "group": "feb26:dcm",
+          "similarity": 0.9281141660981913
+        },
+        {
+          "group": "old:n,n-dimethylformamide",
+          "similarity": 0.7813270104147655
+        },
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.7021694796667677
+        }
+      ]
+    },
+    {
+      "group": "old:etoh",
+      "neighbors": [
+        {
+          "group": "feb26:n-hexane",
+          "similarity": 0.7559569492366052
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.7178576767922032
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.6800404842666523
+        }
+      ]
+    },
+    {
+      "group": "old:meoh",
+      "neighbors": [
+        {
+          "group": "old:pyridine",
+          "similarity": 0.7543144612504497
+        },
+        {
+          "group": "feb26:pyridine",
+          "similarity": 0.7211827094440663
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.6346065052909599
+        }
+      ]
+    },
+    {
+      "group": "old:n,n-dimethylformamide",
+      "neighbors": [
+        {
+          "group": "feb26:dcm",
+          "similarity": 0.9560502158391776
+        },
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.894277991691241
+        },
+        {
+          "group": "old:1,9-nonanedithiol",
+          "similarity": 0.8205688758400385
+        }
+      ]
+    },
+    {
+      "group": "feb26:n-hexane",
+      "neighbors": [
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.9157678168319958
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.9065722431121692
+        },
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.9062951501717411
+        }
+      ]
+    },
+    {
+      "group": "old:pyridine",
+      "neighbors": [
+        {
+          "group": "feb26:pyridine",
+          "similarity": 0.978797650354861
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.7892967790214495
+        },
+        {
+          "group": "old:meoh",
+          "similarity": 0.7543144612504497
+        }
+      ]
+    },
+    {
+      "group": "feb26:pyridine",
+      "neighbors": [
+        {
+          "group": "old:pyridine",
+          "similarity": 0.978797650354861
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.8249979894244702
+        },
+        {
+          "group": "old:meoh",
+          "similarity": 0.7211827094440663
+        }
+      ]
+    },
+    {
+      "group": "old:tris(2-ethylhexyl) phosphate",
+      "neighbors": [
+        {
+          "group": "feb26:n-hexane",
+          "similarity": 0.9065722431121692
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.8434480786575143
+        },
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.8145476163872323
+        }
+      ]
+    }
+  ],
+  "retrained_embedding_nearest_centroids": [
+    {
+      "group": "old:1,9-nonanedithiol",
+      "neighbors": [
+        {
+          "group": "old:6-mercapto-1-hexanol",
+          "similarity": 0.9340862976945353
+        },
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.603925487033752
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.5601951370057588
+        }
+      ]
+    },
+    {
+      "group": "old:1-dodecanethiol",
+      "neighbors": [
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.9981686081950515
+        },
+        {
+          "group": "feb26:n-hexane",
+          "similarity": 0.8200094246409501
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.7969439528676481
+        }
+      ]
+    },
+    {
+      "group": "old:1-undecanethiol",
+      "neighbors": [
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.9981686081950515
+        },
+        {
+          "group": "feb26:n-hexane",
+          "similarity": 0.7845868300115167
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.7589532921096347
+        }
+      ]
+    },
+    {
+      "group": "old:6-mercapto-1-hexanol",
+      "neighbors": [
+        {
+          "group": "old:1,9-nonanedithiol",
+          "similarity": 0.9340862976945353
+        },
+        {
+          "group": "old:1-undecanethiol",
+          "similarity": 0.646650312795288
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.6000233845815278
+        }
+      ]
+    },
+    {
+      "group": "feb26:aniline",
+      "neighbors": [
+        {
+          "group": "feb26:benzene",
+          "similarity": 0.9092730838846091
+        },
+        {
+          "group": "old:benzene",
+          "similarity": 0.898375442977406
+        },
+        {
+          "group": "feb26:pyridine",
+          "similarity": 0.8348470182885278
+        }
+      ]
+    },
+    {
+      "group": "old:benzene",
+      "neighbors": [
+        {
+          "group": "feb26:benzene",
+          "similarity": 0.9976823637679516
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.898375442977406
+        },
+        {
+          "group": "old:benzenethiol",
+          "similarity": 0.7805281953090384
+        }
+      ]
+    },
+    {
+      "group": "feb26:benzene",
+      "neighbors": [
+        {
+          "group": "old:benzene",
+          "similarity": 0.9976823637679516
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.9092730838846091
+        },
+        {
+          "group": "old:benzenethiol",
+          "similarity": 0.742665832560769
+        }
+      ]
+    },
+    {
+      "group": "old:benzenethiol",
+      "neighbors": [
+        {
+          "group": "old:benzene",
+          "similarity": 0.7805281953090384
+        },
+        {
+          "group": "feb26:benzene",
+          "similarity": 0.742665832560769
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.7313681566489633
+        }
+      ]
+    },
+    {
+      "group": "feb26:dcm",
+      "neighbors": [
+        {
+          "group": "old:dmmp",
+          "similarity": 0.8526469729403622
+        },
+        {
+          "group": "old:n,n-dimethylformamide",
+          "similarity": 0.786903309444991
+        },
+        {
+          "group": "old:etoh",
+          "similarity": 0.42757934239274886
+        }
+      ]
+    },
+    {
+      "group": "feb26:diethylamine",
+      "neighbors": [
+        {
+          "group": "feb26:n-hexane",
+          "similarity": 0.9112506310985986
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.8877802192943938
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.7622132497864538
+        }
+      ]
+    },
+    {
+      "group": "old:dmmp",
+      "neighbors": [
+        {
+          "group": "feb26:dcm",
+          "similarity": 0.8526469729403622
+        },
+        {
+          "group": "old:etoh",
+          "similarity": 0.6438107291293007
+        },
+        {
+          "group": "feb26:benzene",
+          "similarity": 0.5455176385168811
+        }
+      ]
+    },
+    {
+      "group": "old:etoh",
+      "neighbors": [
+        {
+          "group": "feb26:n-hexane",
+          "similarity": 0.6543321786817393
+        },
+        {
+          "group": "old:dmmp",
+          "similarity": 0.6438107291293007
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.6362579237634589
+        }
+      ]
+    },
+    {
+      "group": "old:meoh",
+      "neighbors": [
+        {
+          "group": "old:pyridine",
+          "similarity": 0.6980893222443306
+        },
+        {
+          "group": "feb26:pyridine",
+          "similarity": 0.6936191549756592
+        },
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.6372173625033873
+        }
+      ]
+    },
+    {
+      "group": "old:n,n-dimethylformamide",
+      "neighbors": [
+        {
+          "group": "feb26:dcm",
+          "similarity": 0.786903309444991
+        },
+        {
+          "group": "old:dmmp",
+          "similarity": 0.5375161985292667
+        },
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.43635656266801964
+        }
+      ]
+    },
+    {
+      "group": "feb26:n-hexane",
+      "neighbors": [
+        {
+          "group": "old:tris(2-ethylhexyl) phosphate",
+          "similarity": 0.9905661625906834
+        },
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.9112506310985986
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.8200094246409501
+        }
+      ]
+    },
+    {
+      "group": "old:pyridine",
+      "neighbors": [
+        {
+          "group": "feb26:pyridine",
+          "similarity": 0.9962446783107718
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.8278793630292456
+        },
+        {
+          "group": "old:meoh",
+          "similarity": 0.6980893222443306
+        }
+      ]
+    },
+    {
+      "group": "feb26:pyridine",
+      "neighbors": [
+        {
+          "group": "old:pyridine",
+          "similarity": 0.9962446783107718
+        },
+        {
+          "group": "feb26:aniline",
+          "similarity": 0.8348470182885278
+        },
+        {
+          "group": "old:meoh",
+          "similarity": 0.6936191549756592
+        }
+      ]
+    },
+    {
+      "group": "old:tris(2-ethylhexyl) phosphate",
+      "neighbors": [
+        {
+          "group": "feb26:n-hexane",
+          "similarity": 0.9905661625906834
+        },
+        {
+          "group": "feb26:diethylamine",
+          "similarity": 0.8877802192943938
+        },
+        {
+          "group": "old:1-dodecanethiol",
+          "similarity": 0.7969439528676481
+        }
+      ]
+    }
+  ],
+  "artifacts": {
+    "spectra_gallery_png": "chemical_spectra_gallery.png",
+    "device_shift_stack_png": "device_shift_stacked_spectra.png",
+    "centroid_heatmaps_png": "centroid_similarity_panels.png",
+    "centroid_umap_png": "centroid_umap_panels.png",
+    "raw_similarity_csv": "centroid_similarity_raw.csv",
+    "baseline_similarity_csv": "centroid_similarity_embedding_baseline.csv",
+    "retrained_similarity_csv": "centroid_similarity_embedding_retrained.csv"
+  }
+}
