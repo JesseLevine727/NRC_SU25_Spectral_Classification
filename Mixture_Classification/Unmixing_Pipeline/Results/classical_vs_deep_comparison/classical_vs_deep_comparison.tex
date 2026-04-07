@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{graphicx}
+
+\begin{document}
+
+\begin{table}[ht]
+\centering
+\caption{Direct comparison of classical and deep mixture-classification results on the original and PT2 real-mixture datasets}
+\begin{threeparttable}
+\small
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.8cm} >{\raggedright\arraybackslash}p{1.3cm} >{\raggedright\arraybackslash}p{4.4cm} c c c c c}
+\toprule
+Setup & Family & Evaluation protocol & Existing exact & Existing Micro-F1 & Existing avg. pred. chemicals & PT2 exact & PT2 Micro-F1 \\
+\midrule
+Pair NNLS + family near-tie fallback & Classical & Global baseline fallback + family margin 0.002 & 0.984 & 0.992 & 2.00 & 1.000 & 1.000 \\
+Pair NNLS + selective low-baseline fallback & Classical & Global rerank on baseline-heavy pair (thr 0.025, alt 0.005, margin 0.05) & 0.969 & 0.984 & 2.00 & 1.000 & 1.000 \\
+Replicate-aware pair NNLS, baseline\_corrected & Classical & Constant baseline atom, extra reps 9 & 0.907 & 0.953 & 2.00 & 1.000 & 1.000 \\
+Cardinality-adaptive NNLS & Classical & Support size 1/2/3 with calibrated penalty & 0.900 & 0.969 & 2.05 & 0.889 & 0.973 \\
+Pair NNLS + nuisance baseline atom, baseline\_corrected & Classical & Bernstein baseline atoms, degree 0 & 0.888 & 0.944 & 2.00 & 1.000 & 1.000 \\
+Exhaustive pair NNLS, baseline\_corrected & Classical & All binary pairs, class-mean dictionary & 0.864 & 0.932 & 2.00 & 1.000 & 1.000 \\
+Non-negative elastic net, baseline\_corrected & Classical & Full-library positive ElasticNet & 0.669 & 0.868 & 2.13 & 0.889 & 0.971 \\
+Non-negative elastic net, raw & Classical & Full-library positive ElasticNet & 0.567 & 0.766 & 1.93 & 0.981 & 0.995 \\
+Exhaustive pair NNLS, raw & Classical & All binary pairs, class-mean dictionary & 0.560 & 0.675 & 2.00 & 1.000 & 1.000 \\
+Deep + pair-NNLS hybrid rerank & Deep & Global residual/prior fusion, alpha 0.15 & 0.953 & 0.977 & 2.00 & 1.000 & 1.000 \\
+Similarity-supervised deep regressor, baseline\_corrected & Deep & Top-2 margin + similarity-weighted false-compound loss & 0.952 & 0.974 & 2.00 & 1.000 & 1.000 \\
+Deep coefficient regressor, baseline\_corrected & Deep & Synthetic binary mixtures, top-2 support inference & 0.950 & 0.973 & 2.00 & 1.000 & 1.000 \\
+CNN encoder, baseline\_corrected & Deep & class mean decoder & 0.879 & 0.937 & 2.00 & 1.000 & 1.000 \\
+Replicate-aware decoder, baseline\_corrected & Deep & replicate atom decoder & 0.852 & 0.923 & 2.00 & 1.000 & 1.000 \\
+Deep coefficient regressor, raw & Deep & Synthetic binary mixtures, top-2 support inference & 0.726 & 0.808 & 2.00 & 1.000 & 1.000 \\
+Similarity-supervised deep regressor, raw & Deep & Top-2 margin + similarity-weighted false-compound loss & 0.662 & 0.743 & 2.00 & 1.000 & 1.000 \\
+CNN encoder, raw & Deep & class mean decoder & 0.638 & 0.802 & 2.00 & 1.000 & 1.000 \\
+Replicate-aware decoder, raw & Deep & replicate atom decoder & 0.609 & 0.766 & 2.00 & 1.000 & 1.000 \\
+\bottomrule
+\end{tabular}
+}
+
+\begin{tablenotes}\footnotesize
+\item The table includes the main comparable classical and deep runs saved under \texttt{Unmixing\_Pipeline/Results}.
+\item ``Existing'' refers to the original real-mixture dataset from \texttt{mixtures\_dataset.csv}.
+\item ``PT2'' refers to the later real-mixture dataset defined by \texttt{Data/pt2/Mixtures.txt} and the corresponding spectra folders.
+\item The clean classical benchmark is the replicate-aware pair-NNLS row. The diagnostic classical ceiling is the family-fallback row.
+\item The strongest clean deep family is the baseline-corrected MLP coefficient-regressor line and its similarity-supervised follow-up.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Per-chemical precision, recall, and F1 on the eight original supported chemicals for the main classical and deep contenders}
+\begin{threeparttable}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.2cm} c c c c c c c c c c c c c c c}
+\toprule
+& \multicolumn{3}{c}{Clean classical} & \multicolumn{3}{c}{Classical ceiling} & \multicolumn{3}{c}{Deep baseline} & \multicolumn{3}{c}{Deep supervision} & \multicolumn{3}{c}{Hybrid} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13} \cmidrule(lr){14-16}
+Chemical & P & R & F1 & P & R & F1 & P & R & F1 & P & R & F1 & P & R & F1 \\
+\midrule
+1-dodecanethiol & 1.000 & 0.967 & 0.983 & 1.000 & 1.000 & 1.000 & 1.000 & 0.951 & 0.975 & 1.000 & 0.942 & 0.970 & 1.000 & 0.947 & 0.973 \\
+6-mercapto-1-hexanol & 1.000 & 0.667 & 0.800 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+benzene & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+benzenethiol & 0.667 & 1.000 & 0.800 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+etoh & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+meoh & 1.000 & 0.959 & 0.979 & 1.000 & 0.963 & 0.981 & 1.000 & 0.922 & 0.959 & 1.000 & 0.934 & 0.966 & 1.000 & 0.942 & 0.970 \\
+n,n-dimethylformamide & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+pyridine & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+\bottomrule
+\end{tabular}
+
+}
+
+\begin{tablenotes}\footnotesize
+\item ``Clean classical'' is the frozen replicate-aware pair-NNLS benchmark.
+\item ``Classical ceiling'' is the localized family-fallback variant and is included as an engineering upper bound rather than the main scientific benchmark.
+\item ``Deep baseline'' is the baseline-corrected deep coefficient regressor.
+\item ``Deep supervision'' is the baseline-corrected similarity-supervised follow-up.
+\item ``Hybrid'' is the baseline-corrected global deep-plus-pair-NNLS reranker.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\end{document}

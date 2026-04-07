@@ -1,0 +1,41 @@
+method,chemical,precision,recall,f1
+Clean classical,1-dodecanethiol,1.0,0.9670781893004116,0.9832635983263598
+Clean classical,6-mercapto-1-hexanol,1.0,0.6666666666666666,0.8
+Clean classical,benzene,1.0,1.0,1.0
+Clean classical,benzenethiol,0.6666666666666666,1.0,0.8
+Clean classical,etoh,1.0,1.0,1.0
+Clean classical,meoh,1.0,0.9588477366255144,0.9789915966386554
+Clean classical,"n,n-dimethylformamide",1.0,1.0,1.0
+Clean classical,pyridine,1.0,1.0,1.0
+Classical ceiling,1-dodecanethiol,1.0,1.0,1.0
+Classical ceiling,6-mercapto-1-hexanol,1.0,1.0,1.0
+Classical ceiling,benzene,1.0,1.0,1.0
+Classical ceiling,benzenethiol,1.0,1.0,1.0
+Classical ceiling,etoh,1.0,1.0,1.0
+Classical ceiling,meoh,1.0,0.9629629629629629,0.9811320754716981
+Classical ceiling,"n,n-dimethylformamide",1.0,1.0,1.0
+Classical ceiling,pyridine,1.0,1.0,1.0
+Deep baseline,1-dodecanethiol,1.0,0.9506172839506173,0.9746835443037974
+Deep baseline,6-mercapto-1-hexanol,1.0,1.0,1.0
+Deep baseline,benzene,1.0,1.0,1.0
+Deep baseline,benzenethiol,1.0,1.0,1.0
+Deep baseline,etoh,1.0,1.0,1.0
+Deep baseline,meoh,1.0,0.9218106995884774,0.9593147751605996
+Deep baseline,"n,n-dimethylformamide",1.0,1.0,1.0
+Deep baseline,pyridine,1.0,1.0,1.0
+Deep supervision,1-dodecanethiol,1.0,0.9423868312757202,0.9703389830508474
+Deep supervision,6-mercapto-1-hexanol,1.0,1.0,1.0
+Deep supervision,benzene,1.0,1.0,1.0
+Deep supervision,benzenethiol,1.0,1.0,1.0
+Deep supervision,etoh,1.0,1.0,1.0
+Deep supervision,meoh,1.0,0.934156378600823,0.9659574468085106
+Deep supervision,"n,n-dimethylformamide",1.0,1.0,1.0
+Deep supervision,pyridine,1.0,1.0,1.0
+Hybrid,1-dodecanethiol,1.0,0.9465020576131687,0.9725158562367865
+Hybrid,6-mercapto-1-hexanol,1.0,1.0,1.0
+Hybrid,benzene,1.0,1.0,1.0
+Hybrid,benzenethiol,1.0,1.0,1.0
+Hybrid,etoh,1.0,1.0,1.0
+Hybrid,meoh,1.0,0.9423868312757202,0.9703389830508474
+Hybrid,"n,n-dimethylformamide",1.0,1.0,1.0
+Hybrid,pyridine,1.0,1.0,1.0
