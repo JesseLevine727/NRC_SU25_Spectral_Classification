@@ -1,0 +1,119 @@
+PT2-expanded model re-evaluation on original real mixtures
+
+Expanded classes (17): ['1,9-nonanedithiol', '1-dodecanethiol', '1-undecanethiol', '6-mercapto-1-hexanol', 'acetonitrile', 'benzene', 'benzenethiol', 'dichloromethane', 'diethylamine', 'dmmp', 'etoh', 'meoh', 'n,n-dimethylformamide', 'n-hexane', 'pyridine', 'toluene', 'tris(2-ethylhexyl) phosphate']
+Existing real samples: 580
+Notebook-style valid classes: ['1-dodecanethiol', '6-mercapto-1-hexanol', 'benzene', 'benzenethiol', 'etoh', 'meoh', 'n,n-dimethylformamide', 'pyridine']
+
+==================================================
+FULL ORIGINAL REAL SET, NOTEBOOK-STYLE FILTER, DEFAULT 0.5
+==================================================
+                       precision    recall  f1-score   support
+
+      1-dodecanethiol       0.86      0.89      0.88       243
+ 6-mercapto-1-hexanol       0.33      0.33      0.33       108
+              benzene       1.00      1.00      1.00       193
+         benzenethiol       1.00      1.00      1.00        72
+                 etoh       0.74      0.99      0.85       121
+                 meoh       1.00      0.87      0.93       243
+n,n-dimethylformamide       1.00      1.00      1.00        72
+             pyridine       1.00      1.00      1.00       108
+
+            micro avg       0.87      0.89      0.88      1160
+            macro avg       0.87      0.89      0.87      1160
+         weighted avg       0.88      0.89      0.88      1160
+          samples avg       0.89      0.89      0.88      1160
+
+
+All-class default metrics: {
+  "exact_match": 0.2482758620689655,
+  "micro_precision": 0.5974477958236659,
+  "micro_recall": 0.8879310344827587,
+  "micro_f1": 0.7142857142857143,
+  "mean_true_labels": 2.0,
+  "mean_predicted_labels": 2.972413793103448,
+  "zero_prediction_rate": 0.0
+}
+
+==================================================
+CALIBRATION SPLIT: 145 tune / 435 test
+==================================================
+                       Class  Best_Thr  Calib_F1  Support_Calib
+                benzenethiol  0.650921  1.000000             19
+                     benzene  1.000000  1.000000             43
+       n,n-dimethylformamide  1.000000  1.000000             19
+                    pyridine  1.000000  1.000000             31
+                        meoh  0.475354  0.983333             61
+                        etoh  0.892615  0.925926             29
+             1-dodecanethiol  0.307376  0.916031             61
+        6-mercapto-1-hexanol  0.016209  0.490909             27
+           1,9-nonanedithiol  0.500000       NaN              0
+             1-undecanethiol  0.500000       NaN              0
+                acetonitrile  0.500000       NaN              0
+             dichloromethane  0.500000       NaN              0
+                diethylamine  0.500000       NaN              0
+                        dmmp  0.500000       NaN              0
+                    n-hexane  0.500000       NaN              0
+                     toluene  0.500000       NaN              0
+tris(2-ethylhexyl) phosphate  0.500000       NaN              0
+
+==================================================
+TEST SPLIT, NOTEBOOK-STYLE FILTER, DEFAULT 0.5
+==================================================
+                       precision    recall  f1-score   support
+
+      1-dodecanethiol       0.86      0.90      0.88       182
+ 6-mercapto-1-hexanol       0.32      0.32      0.32        81
+              benzene       1.00      1.00      1.00       150
+         benzenethiol       1.00      1.00      1.00        53
+                 etoh       0.74      0.99      0.85        92
+                 meoh       1.00      0.86      0.92       182
+n,n-dimethylformamide       1.00      1.00      1.00        53
+             pyridine       1.00      1.00      1.00        77
+
+            micro avg       0.87      0.88      0.88       870
+            macro avg       0.87      0.88      0.87       870
+         weighted avg       0.88      0.88      0.88       870
+          samples avg       0.89      0.88      0.87       870
+
+
+==================================================
+TEST SPLIT, NOTEBOOK-STYLE FILTER, CALIBRATED 17-CLASS THRESHOLDS
+==================================================
+                       precision    recall  f1-score   support
+
+      1-dodecanethiol       0.86      0.98      0.92       182
+ 6-mercapto-1-hexanol       0.27      0.95      0.42        81
+              benzene       1.00      0.97      0.98       150
+         benzenethiol       1.00      0.94      0.97        53
+                 etoh       0.97      0.80      0.88        92
+                 meoh       1.00      0.88      0.94       182
+n,n-dimethylformamide       1.00      1.00      1.00        53
+             pyridine       1.00      1.00      1.00        77
+
+            micro avg       0.77      0.94      0.85       870
+            macro avg       0.89      0.94      0.89       870
+         weighted avg       0.90      0.94      0.90       870
+          samples avg       0.81      0.94      0.85       870
+
+
+Weighted F1 on test split: default=0.8791, calibrated=0.8977, delta=+0.0186
+
+All-class default test metrics: {
+  "exact_match": 0.23908045977011494,
+  "micro_precision": 0.5961240310077519,
+  "micro_recall": 0.8839080459770114,
+  "micro_f1": 0.712037037037037,
+  "mean_true_labels": 2.0,
+  "mean_predicted_labels": 2.9655172413793105,
+  "zero_prediction_rate": 0.0
+}
+
+All-class calibrated test metrics: {
+  "exact_match": 0.271264367816092,
+  "micro_precision": 0.5575342465753425,
+  "micro_recall": 0.9356321839080459,
+  "micro_f1": 0.6987124463519313,
+  "mean_true_labels": 2.0,
+  "mean_predicted_labels": 3.3563218390804597,
+  "zero_prediction_rate": 0.0
+}

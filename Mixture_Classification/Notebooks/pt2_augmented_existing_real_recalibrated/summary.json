@@ -1,0 +1,419 @@
+{
+  "augmented_model_dir": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Notebooks/pt2_augmented_reference_experiment",
+  "output_dir": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Notebooks/pt2_augmented_existing_real_recalibrated",
+  "expanded_classes": [
+    "1,9-nonanedithiol",
+    "1-dodecanethiol",
+    "1-undecanethiol",
+    "6-mercapto-1-hexanol",
+    "acetonitrile",
+    "benzene",
+    "benzenethiol",
+    "dichloromethane",
+    "diethylamine",
+    "dmmp",
+    "etoh",
+    "meoh",
+    "n,n-dimethylformamide",
+    "n-hexane",
+    "pyridine",
+    "toluene",
+    "tris(2-ethylhexyl) phosphate"
+  ],
+  "existing_real_samples": 580,
+  "notebook_style_valid_classes": [
+    "1-dodecanethiol",
+    "6-mercapto-1-hexanol",
+    "benzene",
+    "benzenethiol",
+    "etoh",
+    "meoh",
+    "n,n-dimethylformamide",
+    "pyridine"
+  ],
+  "full_existing_real_default_0_5": {
+    "all_classes_metrics": {
+      "exact_match": 0.2482758620689655,
+      "micro_precision": 0.5974477958236659,
+      "micro_recall": 0.8879310344827587,
+      "micro_f1": 0.7142857142857143,
+      "mean_true_labels": 2.0,
+      "mean_predicted_labels": 2.972413793103448,
+      "zero_prediction_rate": 0.0
+    },
+    "filtered_report": {
+      "1-dodecanethiol": {
+        "precision": 0.857707509881423,
+        "recall": 0.8930041152263375,
+        "f1-score": 0.875,
+        "support": 243.0
+      },
+      "6-mercapto-1-hexanol": {
+        "precision": 0.3302752293577982,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.3317972350230415,
+        "support": 108.0
+      },
+      "benzene": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 193.0
+      },
+      "benzenethiol": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 72.0
+      },
+      "etoh": {
+        "precision": 0.7407407407407407,
+        "recall": 0.9917355371900827,
+        "f1-score": 0.8480565371024735,
+        "support": 121.0
+      },
+      "meoh": {
+        "precision": 1.0,
+        "recall": 0.8724279835390947,
+        "f1-score": 0.9318681318681319,
+        "support": 243.0
+      },
+      "n,n-dimethylformamide": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 72.0
+      },
+      "pyridine": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 108.0
+      },
+      "micro avg": {
+        "precision": 0.8721422523285352,
+        "recall": 0.8879310344827587,
+        "f1-score": 0.8799658265698419,
+        "support": 1160.0
+      },
+      "macro avg": {
+        "precision": 0.8660904349974952,
+        "recall": 0.8863126211611061,
+        "f1-score": 0.8733402379992059,
+        "support": 1160.0
+      },
+      "weighted avg": {
+        "precision": 0.8807950683633254,
+        "recall": 0.8879310344827587,
+        "f1-score": 0.8814809469102102,
+        "support": 1160.0
+      },
+      "samples avg": {
+        "precision": 0.8910919540229886,
+        "recall": 0.8879310344827587,
+        "f1-score": 0.8767241379310344,
+        "support": 1160.0
+      }
+    }
+  },
+  "calibration_split": {
+    "random_state": 42,
+    "calibration_samples": 145,
+    "test_samples": 435,
+    "thresholds": {
+      "1,9-nonanedithiol": 0.5,
+      "1-dodecanethiol": 0.30737632513046265,
+      "1-undecanethiol": 0.5,
+      "6-mercapto-1-hexanol": 0.01620936393737793,
+      "acetonitrile": 0.5,
+      "benzene": 1.0,
+      "benzenethiol": 0.6509212255477905,
+      "dichloromethane": 0.5,
+      "diethylamine": 0.5,
+      "dmmp": 0.5,
+      "etoh": 0.8926151394844055,
+      "meoh": 0.4753538966178894,
+      "n,n-dimethylformamide": 1.0,
+      "n-hexane": 0.5,
+      "pyridine": 1.0,
+      "toluene": 0.5,
+      "tris(2-ethylhexyl) phosphate": 0.5
+    },
+    "calibration_table": [
+      {
+        "Class": "1,9-nonanedithiol",
+        "Best_Thr": 0.5,
+        "Calib_F1": null,
+        "Support_Calib": 0
+      },
+      {
+        "Class": "1-dodecanethiol",
+        "Best_Thr": 0.30737632513046265,
+        "Calib_F1": 0.9160305343506474,
+        "Support_Calib": 61
+      },
+      {
+        "Class": "1-undecanethiol",
+        "Best_Thr": 0.5,
+        "Calib_F1": null,
+        "Support_Calib": 0
+      },
+      {
+        "Class": "6-mercapto-1-hexanol",
+        "Best_Thr": 0.01620936393737793,
+        "Calib_F1": 0.4909090909087204,
+        "Support_Calib": 27
+      },
+      {
+        "Class": "acetonitrile",
+        "Best_Thr": 0.5,
+        "Calib_F1": null,
+        "Support_Calib": 0
+      },
+      {
+        "Class": "benzene",
+        "Best_Thr": 1.0,
+        "Calib_F1": 0.9999999999995,
+        "Support_Calib": 43
+      },
+      {
+        "Class": "benzenethiol",
+        "Best_Thr": 0.6509212255477905,
+        "Calib_F1": 0.9999999999995,
+        "Support_Calib": 19
+      },
+      {
+        "Class": "dichloromethane",
+        "Best_Thr": 0.5,
+        "Calib_F1": null,
+        "Support_Calib": 0
+      },
+      {
+        "Class": "diethylamine",
+        "Best_Thr": 0.5,
+        "Calib_F1": null,
+        "Support_Calib": 0
+      },
+      {
+        "Class": "dmmp",
+        "Best_Thr": 0.5,
+        "Calib_F1": null,
+        "Support_Calib": 0
+      },
+      {
+        "Class": "etoh",
+        "Best_Thr": 0.8926151394844055,
+        "Calib_F1": 0.9259259259254286,
+        "Support_Calib": 29
+      },
+      {
+        "Class": "meoh",
+        "Best_Thr": 0.4753538966178894,
+        "Calib_F1": 0.9833333333328335,
+        "Support_Calib": 61
+      },
+      {
+        "Class": "n,n-dimethylformamide",
+        "Best_Thr": 1.0,
+        "Calib_F1": 0.9999999999995,
+        "Support_Calib": 19
+      },
+      {
+        "Class": "n-hexane",
+        "Best_Thr": 0.5,
+        "Calib_F1": null,
+        "Support_Calib": 0
+      },
+      {
+        "Class": "pyridine",
+        "Best_Thr": 1.0,
+        "Calib_F1": 0.9999999999995,
+        "Support_Calib": 31
+      },
+      {
+        "Class": "toluene",
+        "Best_Thr": 0.5,
+        "Calib_F1": null,
+        "Support_Calib": 0
+      },
+      {
+        "Class": "tris(2-ethylhexyl) phosphate",
+        "Best_Thr": 0.5,
+        "Calib_F1": null,
+        "Support_Calib": 0
+      }
+    ],
+    "test_default_0_5": {
+      "all_classes_metrics": {
+        "exact_match": 0.23908045977011494,
+        "micro_precision": 0.5961240310077519,
+        "micro_recall": 0.8839080459770114,
+        "micro_f1": 0.712037037037037,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.9655172413793105,
+        "zero_prediction_rate": 0.0
+      },
+      "filtered_report": {
+        "1-dodecanethiol": {
+          "precision": 0.8624338624338624,
+          "recall": 0.8956043956043956,
+          "f1-score": 0.8787061994609164,
+          "support": 182.0
+        },
+        "6-mercapto-1-hexanol": {
+          "precision": 0.32098765432098764,
+          "recall": 0.32098765432098764,
+          "f1-score": 0.32098765432098764,
+          "support": 81.0
+        },
+        "benzene": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 150.0
+        },
+        "benzenethiol": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 53.0
+        },
+        "etoh": {
+          "precision": 0.7398373983739838,
+          "recall": 0.9891304347826086,
+          "f1-score": 0.8465116279069768,
+          "support": 92.0
+        },
+        "meoh": {
+          "precision": 1.0,
+          "recall": 0.8571428571428571,
+          "f1-score": 0.9230769230769231,
+          "support": 182.0
+        },
+        "n,n-dimethylformamide": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 53.0
+        },
+        "pyridine": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 77.0
+        },
+        "micro avg": {
+          "precision": 0.8718820861678005,
+          "recall": 0.8839080459770114,
+          "f1-score": 0.8778538812785388,
+          "support": 870.0
+        },
+        "macro avg": {
+          "precision": 0.8654073643911042,
+          "recall": 0.8828581677313561,
+          "f1-score": 0.8711603005957256,
+          "support": 870.0
+        },
+        "weighted avg": {
+          "precision": 0.8804919581762868,
+          "recall": 0.8839080459770114,
+          "f1-score": 0.879084595481987,
+          "support": 870.0
+        },
+        "samples avg": {
+          "precision": 0.8915708812260535,
+          "recall": 0.8839080459770114,
+          "f1-score": 0.8744061302681992,
+          "support": 870.0
+        }
+      },
+      "weighted_f1_all_classes": 0.879084595481987
+    },
+    "test_calibrated_17class": {
+      "all_classes_metrics": {
+        "exact_match": 0.271264367816092,
+        "micro_precision": 0.5575342465753425,
+        "micro_recall": 0.9356321839080459,
+        "micro_f1": 0.6987124463519313,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 3.3563218390804597,
+        "zero_prediction_rate": 0.0
+      },
+      "filtered_report": {
+        "1-dodecanethiol": {
+          "precision": 0.8599033816425121,
+          "recall": 0.978021978021978,
+          "f1-score": 0.9151670951156813,
+          "support": 182.0
+        },
+        "6-mercapto-1-hexanol": {
+          "precision": 0.2711267605633803,
+          "recall": 0.9506172839506173,
+          "f1-score": 0.42191780821917807,
+          "support": 81.0
+        },
+        "benzene": {
+          "precision": 1.0,
+          "recall": 0.9666666666666667,
+          "f1-score": 0.9830508474576272,
+          "support": 150.0
+        },
+        "benzenethiol": {
+          "precision": 1.0,
+          "recall": 0.9433962264150944,
+          "f1-score": 0.970873786407767,
+          "support": 53.0
+        },
+        "etoh": {
+          "precision": 0.9736842105263158,
+          "recall": 0.8043478260869565,
+          "f1-score": 0.8809523809523809,
+          "support": 92.0
+        },
+        "meoh": {
+          "precision": 1.0,
+          "recall": 0.8791208791208791,
+          "f1-score": 0.935672514619883,
+          "support": 182.0
+        },
+        "n,n-dimethylformamide": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 53.0
+        },
+        "pyridine": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 77.0
+        },
+        "micro avg": {
+          "precision": 0.7737642585551331,
+          "recall": 0.9356321839080459,
+          "f1-score": 0.8470343392299687,
+          "support": 870.0
+        },
+        "macro avg": {
+          "precision": 0.888089294091526,
+          "recall": 0.9402713575327739,
+          "f1-score": 0.8884543040965647,
+          "support": 870.0
+        },
+        "weighted avg": {
+          "precision": 0.900049000497692,
+          "recall": 0.9356321839080459,
+          "f1-score": 0.897689319866093,
+          "support": 870.0
+        },
+        "samples avg": {
+          "precision": 0.8068965517241379,
+          "recall": 0.9356321839080459,
+          "f1-score": 0.8504214559386973,
+          "support": 870.0
+        }
+      },
+      "weighted_f1_all_classes": 0.897689319866093
+    }
+  }
+}
