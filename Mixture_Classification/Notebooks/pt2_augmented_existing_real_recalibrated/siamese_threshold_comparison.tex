@@ -35,4 +35,37 @@ PT2-expanded retrain, recalibrated & 17-class head & 25\% calibration / 75\% hel
 \end{threeparttable}
 \end{table}
 
+\begin{table}[ht]
+\centering
+\caption{Per-chemical precision, recall, and F1 on the eight original supported chemicals}
+\begin{threeparttable}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.2cm} c c c c c c c c c}
+\toprule
+& \multicolumn{3}{c}{Original calibrated} & \multicolumn{3}{c}{PT2-expanded filtered 0.5} & \multicolumn{3}{c}{PT2-expanded recalibrated} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10}
+Chemical & P & R & F1 & P & R & F1 & P & R & F1 \\
+\midrule
+1-dodecanethiol & 0.87 & 0.99 & 0.93 & 0.858 & 0.893 & 0.875 & 0.860 & 0.978 & 0.915 \\
+6-mercapto-1-hexanol & 0.94 & 0.93 & 0.93 & 0.330 & 0.333 & 0.332 & 0.271 & 0.951 & 0.422 \\
+benzene & 1.00 & 1.00 & 1.00 & 1.000 & 1.000 & 1.000 & 1.000 & 0.967 & 0.983 \\
+benzenethiol & 1.00 & 0.98 & 0.99 & 1.000 & 1.000 & 1.000 & 1.000 & 0.943 & 0.971 \\
+etoh & 1.00 & 0.98 & 0.99 & 0.741 & 0.992 & 0.848 & 0.974 & 0.804 & 0.881 \\
+meoh & 1.00 & 0.98 & 0.99 & 1.000 & 0.872 & 0.932 & 1.000 & 0.879 & 0.936 \\
+n,n-dimethylformamide & 1.00 & 1.00 & 1.00 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+pyridine & 1.00 & 1.00 & 1.00 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 & 1.000 \\
+\bottomrule
+\end{tabular}
+}
+
+\begin{tablenotes}\footnotesize
+\item The original calibrated per-chemical metrics are from the held-out 75\% test report in \texttt{Siamese\_MLP\_6\_FFT\_Threshold.ipynb}.
+\item The PT2-expanded filtered 0.5 row uses the full original real set but only reports the eight classes with nonzero support in the original dataset, matching the notebook's reporting convention.
+\item The PT2-expanded recalibrated row uses the new 17-class thresholds fit on the 25\% calibration split; the main gain is recall, but it comes with a large precision collapse for \texttt{6-mercapto-1-hexanol}.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
 \end{document}
