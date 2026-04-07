@@ -1,0 +1,505 @@
+sample_id,group,source,true_raw_labels,true_known_labels,predicted_labels_default,top1_label,top1_prob,top2_label,top2_prob,top3_label,top3_prob
+Mix 13/mix 13_Y0_X0.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999979734420776,1-dodecanethiol,0.8598455190658569
+Mix 13/mix 13_Y0_X1.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999983310699463,1-dodecanethiol,0.46597278118133545
+Mix 13/mix 13_Y0_X2.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999971389770508,1-dodecanethiol,0.46136313676834106
+Mix 13/mix 13_Y0_X3.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999982118606567,1-dodecanethiol,0.45476457476615906
+Mix 13/mix 13_Y0_X4.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999983310699463,1-dodecanethiol,0.7676056027412415
+Mix 13/mix 13_Y0_X5.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999986886978149,1-dodecanethiol,0.9632834792137146
+Mix 13/mix 13_Y1_X0.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999982118606567,1-dodecanethiol,0.889613687992096
+Mix 13/mix 13_Y1_X1.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999988079071045,1-dodecanethiol,0.8842326402664185
+Mix 13/mix 13_Y1_X2.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999978542327881,1-dodecanethiol,0.10175003856420517
+Mix 13/mix 13_Y1_X3.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999969005584717,1-dodecanethiol,0.15006892383098602
+Mix 13/mix 13_Y1_X4.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999985694885254,1-dodecanethiol,0.8572859168052673
+Mix 13/mix 13_Y1_X5.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999982118606567,1-dodecanethiol,0.9723262786865234
+Mix 13/mix 13_Y2_X0.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999978542327881,1-dodecanethiol,0.28309178352355957
+Mix 13/mix 13_Y2_X1.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999973773956299,1-dodecanethiol,0.11406563967466354
+Mix 13/mix 13_Y2_X2.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999980926513672,1-dodecanethiol,0.8951883912086487
+Mix 13/mix 13_Y2_X3.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999985694885254,1-dodecanethiol,0.7742217779159546
+Mix 13/mix 13_Y2_X4.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999979734420776,1-dodecanethiol,0.2506912350654602
+Mix 13/mix 13_Y2_X5.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999984502792358,1-dodecanethiol,0.7722026705741882
+Mix 13/mix 13_Y3_X0.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.999996542930603,1-dodecanethiol,0.02304239012300968
+Mix 13/mix 13_Y3_X1.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999969005584717,1-dodecanethiol,0.06017842888832092
+Mix 13/mix 13_Y3_X2.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999974966049194,1-dodecanethiol,0.4223947525024414
+Mix 13/mix 13_Y3_X3.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999979734420776,1-dodecanethiol,0.0062986197881400585
+Mix 13/mix 13_Y3_X4.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999985694885254,1-dodecanethiol,0.8194231986999512
+Mix 13/mix 13_Y3_X5.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999946355819702,1-dodecanethiol,0.0020467941649258137
+Mix 13/mix 13_Y4_X0.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999983310699463,1-dodecanethiol,0.9291462898254395
+Mix 13/mix 13_Y4_X1.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999971389770508,1-dodecanethiol,0.21716152131557465
+Mix 13/mix 13_Y4_X2.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999988079071045,1-dodecanethiol,0.9527447819709778
+Mix 13/mix 13_Y4_X3.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999982118606567,1-dodecanethiol,0.8673203587532043
+Mix 13/mix 13_Y4_X4.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.999996542930603,1-dodecanethiol,0.04305969551205635
+Mix 13/mix 13_Y4_X5.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999985694885254,1-dodecanethiol,0.40222668647766113
+Mix 13/mix 13_Y5_X0.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999982118606567,1-dodecanethiol,0.19548393785953522
+Mix 13/mix 13_Y5_X1.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999980926513672,1-dodecanethiol,0.5502922534942627
+Mix 13/mix 13_Y5_X2.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,1-dodecanethiol + pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999986886978149,1-dodecanethiol,0.7976114749908447
+Mix 13/mix 13_Y5_X3.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999974966049194,1-dodecanethiol,0.1593533754348755
+Mix 13/mix 13_Y5_X4.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999977350234985,1-dodecanethiol,0.26777687668800354
+Mix 13/mix 13_Y5_X5.txt,mixture,Mix 13,pyridine + n-hexane,pyridine,pyridine + tris(2-ethylhexyl) phosphate,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.9999977350234985,1-dodecanethiol,0.47843021154403687
+Mix 15/mix 15_Y0_X0.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999984502792358,1-undecanethiol,0.2459377497434616
+Mix 15/mix 15_Y0_X1.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999990463256836,1-undecanethiol,0.22488293051719666
+Mix 15/mix 15_Y0_X2.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999986886978149,1-undecanethiol,0.23475635051727295
+Mix 15/mix 15_Y0_X3.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999990463256836,1-undecanethiol,0.22252842783927917
+Mix 15/mix 15_Y0_X4.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999991655349731,1-undecanethiol,0.22200123965740204
+Mix 15/mix 15_Y0_X5.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999977350234985,1-undecanethiol,0.24413947761058807
+Mix 15/mix 15_Y1_X0.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.999998927116394,1-undecanethiol,0.23039069771766663
+Mix 15/mix 15_Y1_X1.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999991655349731,1-undecanethiol,0.23202788829803467
+Mix 15/mix 15_Y1_X2.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999994039535522,1-undecanethiol,0.2130448818206787
+Mix 15/mix 15_Y1_X3.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999985694885254,1-undecanethiol,0.23075157403945923
+Mix 15/mix 15_Y1_X4.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.999998927116394,1-undecanethiol,0.23249980807304382
+Mix 15/mix 15_Y1_X5.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999992847442627,1-undecanethiol,0.21880826354026794
+Mix 15/mix 15_Y2_X0.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999988079071045,1-undecanethiol,0.23303407430648804
+Mix 15/mix 15_Y2_X1.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999984502792358,1-undecanethiol,0.2336166650056839
+Mix 15/mix 15_Y2_X2.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999986886978149,1-undecanethiol,0.23443587124347687
+Mix 15/mix 15_Y2_X3.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999984502792358,1-undecanethiol,0.2274855524301529
+Mix 15/mix 15_Y2_X4.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999986886978149,1-undecanethiol,0.23524576425552368
+Mix 15/mix 15_Y2_X5.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999984502792358,1-undecanethiol,0.23950152099132538
+Mix 15/mix 15_Y3_X0.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999994039535522,1-undecanethiol,0.22334891557693481
+Mix 15/mix 15_Y3_X1.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999994039535522,1-undecanethiol,0.21132156252861023
+Mix 15/mix 15_Y3_X2.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999990463256836,1-undecanethiol,0.2311474233865738
+Mix 15/mix 15_Y3_X3.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.999998927116394,1-undecanethiol,0.21346166729927063
+Mix 15/mix 15_Y3_X4.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999990463256836,1-undecanethiol,0.22642935812473297
+Mix 15/mix 15_Y3_X5.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999994039535522,1-undecanethiol,0.22866907715797424
+Mix 15/mix 15_Y4_X0.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999986886978149,1-undecanethiol,0.23096494376659393
+Mix 15/mix 15_Y4_X1.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999986886978149,1-undecanethiol,0.23095044493675232
+Mix 15/mix 15_Y4_X2.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999988079071045,1-undecanethiol,0.23697993159294128
+Mix 15/mix 15_Y4_X3.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999983310699463,1-undecanethiol,0.24372746050357819
+Mix 15/mix 15_Y4_X4.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999991655349731,1-undecanethiol,0.21256285905838013
+Mix 15/mix 15_Y4_X5.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.999998927116394,1-undecanethiol,0.22293171286582947
+Mix 15/mix 15_Y5_X0.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999995231628418,1-undecanethiol,0.21998751163482666
+Mix 15/mix 15_Y5_X1.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999985694885254,1-undecanethiol,0.23428133130073547
+Mix 15/mix 15_Y5_X2.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,1.0,tris(2-ethylhexyl) phosphate,0.9999990463256836,1-undecanethiol,0.24440453946590424
+Mix 15/mix 15_Y5_X3.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999988079071045,1-undecanethiol,0.2219809740781784
+Mix 15/mix 15_Y5_X4.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999994039535522,1-undecanethiol,0.22267359495162964
+Mix 15/mix 15_Y5_X5.txt,mixture,Mix 15,n-hexane + benzene,benzene,benzene + tris(2-ethylhexyl) phosphate,benzene,0.9999998807907104,tris(2-ethylhexyl) phosphate,0.9999992847442627,1-undecanethiol,0.2232058197259903
+Mix 16/mix 16_Y0_X0.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.18970896303653717,6-mercapto-1-hexanol,0.037982482463121414
+Mix 16/mix 16_Y0_X1.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.3011854588985443,6-mercapto-1-hexanol,0.07123013585805893
+Mix 16/mix 16_Y0_X2.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.29847452044487,6-mercapto-1-hexanol,0.043031636625528336
+Mix 16/mix 16_Y0_X3.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.32265496253967285,6-mercapto-1-hexanol,0.05628639832139015
+Mix 16/mix 16_Y0_X4.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.2893788814544678,6-mercapto-1-hexanol,0.06724093109369278
+Mix 16/mix 16_Y0_X5.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.4879233241081238,6-mercapto-1-hexanol,0.022680051624774933
+Mix 16/mix 16_Y1_X0.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp + tris(2-ethylhexyl) phosphate,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.512737512588501,6-mercapto-1-hexanol,0.03916734457015991
+Mix 16/mix 16_Y1_X1.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.22572407126426697,6-mercapto-1-hexanol,0.061597127467393875
+Mix 16/mix 16_Y1_X2.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.4104871153831482,6-mercapto-1-hexanol,0.03523899242281914
+Mix 16/mix 16_Y1_X3.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.21581286191940308,6-mercapto-1-hexanol,0.04971598461270332
+Mix 16/mix 16_Y1_X4.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.304229736328125,6-mercapto-1-hexanol,0.06361132860183716
+Mix 16/mix 16_Y1_X5.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.2297612428665161,6-mercapto-1-hexanol,0.046615783125162125
+Mix 16/mix 16_Y2_X0.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp + tris(2-ethylhexyl) phosphate,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.6259390115737915,1-undecanethiol,0.026463937014341354
+Mix 16/mix 16_Y2_X1.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.4095030725002289,6-mercapto-1-hexanol,0.03734118863940239
+Mix 16/mix 16_Y2_X2.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.3089209496974945,6-mercapto-1-hexanol,0.03468870371580124
+Mix 16/mix 16_Y2_X3.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp + tris(2-ethylhexyl) phosphate,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.5171216726303101,6-mercapto-1-hexanol,0.029295766726136208
+Mix 16/mix 16_Y2_X4.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.2450316697359085,1-undecanethiol,0.033511266112327576
+Mix 16/mix 16_Y2_X5.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.23204036056995392,6-mercapto-1-hexanol,0.0571260042488575
+Mix 16/mix 16_Y3_X0.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.22201330959796906,"1,9-nonanedithiol",0.03571123629808426
+Mix 16/mix 16_Y3_X1.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.34885063767433167,6-mercapto-1-hexanol,0.02328277751803398
+Mix 16/mix 16_Y3_X2.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.13103584945201874,"1,9-nonanedithiol",0.05006446689367294
+Mix 16/mix 16_Y3_X3.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.23127497732639313,6-mercapto-1-hexanol,0.07092601805925369
+Mix 16/mix 16_Y3_X4.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.260959655046463,6-mercapto-1-hexanol,0.050237588584423065
+Mix 16/mix 16_Y3_X5.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.3326507806777954,6-mercapto-1-hexanol,0.016942497342824936
+Mix 16/mix 16_Y4_X0.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.3073197305202484,6-mercapto-1-hexanol,0.045642487704753876
+Mix 16/mix 16_Y4_X1.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.22847971320152283,6-mercapto-1-hexanol,0.052696701139211655
+Mix 16/mix 16_Y4_X2.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.23135383427143097,6-mercapto-1-hexanol,0.062320444732904434
+Mix 16/mix 16_Y4_X3.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.34918567538261414,6-mercapto-1-hexanol,0.04468383267521858
+Mix 16/mix 16_Y4_X4.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.32943984866142273,1-undecanethiol,0.04544113948941231
+Mix 16/mix 16_Y4_X5.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.15151137113571167,"1,9-nonanedithiol",0.05881034582853317
+Mix 16/mix 16_Y5_X0.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.3400138020515442,6-mercapto-1-hexanol,0.05370021238923073
+Mix 16/mix 16_Y5_X1.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.1934458464384079,"1,9-nonanedithiol",0.062198180705308914
+Mix 16/mix 16_Y5_X2.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.17789281904697418,6-mercapto-1-hexanol,0.054801784455776215
+Mix 16/mix 16_Y5_X3.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.1845756620168686,6-mercapto-1-hexanol,0.10127562284469604
+Mix 16/mix 16_Y5_X4.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp + tris(2-ethylhexyl) phosphate,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.5187915563583374,6-mercapto-1-hexanol,0.03958311304450035
+Mix 16/mix 16_Y5_X5.txt,mixture,Mix 16,dichloromethane + n-hexane,,dmmp,dmmp,1.0,tris(2-ethylhexyl) phosphate,0.36364230513572693,6-mercapto-1-hexanol,0.03602738678455353
+Mix 17/mix 17_Y0_X0.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.05676453188061714,tris(2-ethylhexyl) phosphate,0.0041416725143790245
+Mix 17/mix 17_Y0_X1.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.06412959098815918,tris(2-ethylhexyl) phosphate,0.002859454369172454
+Mix 17/mix 17_Y0_X2.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.10795743763446808,tris(2-ethylhexyl) phosphate,0.00268493196927011
+Mix 17/mix 17_Y0_X3.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,meoh + pyridine,pyridine,1.0,meoh,0.6135087609291077,etoh,3.2584460996076814e-07
+Mix 17/mix 17_Y0_X4.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.2152736335992813,tris(2-ethylhexyl) phosphate,0.00017074248171411455
+Mix 17/mix 17_Y0_X5.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.3629223108291626,tris(2-ethylhexyl) phosphate,0.00028684560675174
+Mix 17/mix 17_Y1_X0.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.03420806676149368,tris(2-ethylhexyl) phosphate,0.011240961030125618
+Mix 17/mix 17_Y1_X1.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.06819730252027512,tris(2-ethylhexyl) phosphate,0.00561140151694417
+Mix 17/mix 17_Y1_X2.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.30385512113571167,tris(2-ethylhexyl) phosphate,0.00021867490431759506
+Mix 17/mix 17_Y1_X3.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.24612636864185333,tris(2-ethylhexyl) phosphate,7.47336889617145e-05
+Mix 17/mix 17_Y1_X4.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,meoh + pyridine,pyridine,1.0,meoh,0.7590425610542297,tris(2-ethylhexyl) phosphate,0.00046375198871828616
+Mix 17/mix 17_Y1_X5.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.039591070264577866,tris(2-ethylhexyl) phosphate,0.006270431913435459
+Mix 17/mix 17_Y2_X0.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,meoh + pyridine,pyridine,1.0,meoh,0.8295191526412964,tris(2-ethylhexyl) phosphate,0.000231853686273098
+Mix 17/mix 17_Y2_X1.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,meoh + pyridine,pyridine,1.0,meoh,0.559290885925293,tris(2-ethylhexyl) phosphate,2.600564585009124e-06
+Mix 17/mix 17_Y2_X2.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.36958375573158264,tris(2-ethylhexyl) phosphate,0.000275455298833549
+Mix 17/mix 17_Y2_X3.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.04385998100042343,tris(2-ethylhexyl) phosphate,0.0007879632175900042
+Mix 17/mix 17_Y2_X4.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.2788941264152527,tris(2-ethylhexyl) phosphate,1.0617648058541818e-06
+Mix 17/mix 17_Y2_X5.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,meoh + pyridine,pyridine,1.0,meoh,0.603900671005249,tris(2-ethylhexyl) phosphate,5.86138412472792e-05
+Mix 17/mix 17_Y3_X0.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,meoh + pyridine,pyridine,1.0,meoh,0.8729104399681091,tris(2-ethylhexyl) phosphate,3.5288337585370755e-06
+Mix 17/mix 17_Y3_X1.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.04037559777498245,tris(2-ethylhexyl) phosphate,0.0026588179171085358
+Mix 17/mix 17_Y3_X2.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.034211404621601105,benzenethiol,2.718463065320975e-06
+Mix 17/mix 17_Y3_X3.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.029130904003977776,tris(2-ethylhexyl) phosphate,0.00010923158697551116
+Mix 17/mix 17_Y3_X4.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.43078410625457764,tris(2-ethylhexyl) phosphate,0.0002644021587911993
+Mix 17/mix 17_Y3_X5.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.13810579478740692,benzene,0.005004584789276123
+Mix 17/mix 17_Y4_X0.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.0632796511054039,tris(2-ethylhexyl) phosphate,0.00445513566955924
+Mix 17/mix 17_Y4_X1.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.145161435008049,tris(2-ethylhexyl) phosphate,0.0027013251092284918
+Mix 17/mix 17_Y4_X2.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.48351871967315674,tris(2-ethylhexyl) phosphate,2.91503056359943e-05
+Mix 17/mix 17_Y4_X3.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.22130292654037476,tris(2-ethylhexyl) phosphate,0.0004254053928889334
+Mix 17/mix 17_Y4_X4.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.4657551646232605,tris(2-ethylhexyl) phosphate,3.2438842026749626e-05
+Mix 17/mix 17_Y4_X5.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.3429628610610962,tris(2-ethylhexyl) phosphate,1.4492817172140349e-05
+Mix 17/mix 17_Y5_X0.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.08969222754240036,tris(2-ethylhexyl) phosphate,0.00011755175364669412
+Mix 17/mix 17_Y5_X1.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,meoh + pyridine,pyridine,1.0,meoh,0.5160627961158752,tris(2-ethylhexyl) phosphate,2.20794026972726e-05
+Mix 17/mix 17_Y5_X2.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.019217239692807198,tris(2-ethylhexyl) phosphate,0.003484743647277355
+Mix 17/mix 17_Y5_X3.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,meoh + pyridine,pyridine,1.0,meoh,0.6212993860244751,tris(2-ethylhexyl) phosphate,0.0007173310732468963
+Mix 17/mix 17_Y5_X4.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,meoh,0.39777928590774536,tris(2-ethylhexyl) phosphate,0.00045301837963052094
+Mix 17/mix 17_Y5_X5.txt,mixture,Mix 17,pyridine + diethylamine,pyridine,pyridine,pyridine,1.0,tris(2-ethylhexyl) phosphate,0.009844156913459301,meoh,0.0032335722353309393
+Mix 18/mix 18_Y0_X0.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9959794282913208,6-mercapto-1-hexanol,0.13684211671352386,1-undecanethiol,0.0034656934440135956
+Mix 18/mix 18_Y0_X1.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9967455863952637,6-mercapto-1-hexanol,0.23829154670238495,1-undecanethiol,0.0024329510051757097
+Mix 18/mix 18_Y0_X2.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9948868155479431,6-mercapto-1-hexanol,0.18607287108898163,1-undecanethiol,0.004926529247313738
+Mix 18/mix 18_Y0_X3.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.994986891746521,6-mercapto-1-hexanol,0.324181467294693,1-undecanethiol,0.003443341003730893
+Mix 18/mix 18_Y0_X4.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9968356490135193,6-mercapto-1-hexanol,0.1083880066871643,1-undecanethiol,0.004258204251527786
+Mix 18/mix 18_Y0_X5.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9966536164283752,6-mercapto-1-hexanol,0.32543784379959106,1-undecanethiol,0.003945067524909973
+Mix 18/mix 18_Y1_X0.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9959232807159424,6-mercapto-1-hexanol,0.1400192230939865,1-undecanethiol,0.003229657420888543
+Mix 18/mix 18_Y1_X1.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9948241710662842,6-mercapto-1-hexanol,0.16229882836341858,1-undecanethiol,0.004725183825939894
+Mix 18/mix 18_Y1_X2.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9941224455833435,6-mercapto-1-hexanol,0.17989352345466614,1-undecanethiol,0.005008598789572716
+Mix 18/mix 18_Y1_X3.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9956876635551453,6-mercapto-1-hexanol,0.2764888107776642,1-undecanethiol,0.0031597940251231194
+Mix 18/mix 18_Y1_X4.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9947525262832642,6-mercapto-1-hexanol,0.11525384336709976,1-undecanethiol,0.003998509608209133
+Mix 18/mix 18_Y1_X5.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9948285222053528,6-mercapto-1-hexanol,0.24740129709243774,1-undecanethiol,0.0035268471110612154
+Mix 18/mix 18_Y2_X0.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9968217611312866,6-mercapto-1-hexanol,0.1671483963727951,1-undecanethiol,0.003040074370801449
+Mix 18/mix 18_Y2_X1.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9945570230484009,6-mercapto-1-hexanol,0.16643591225147247,1-undecanethiol,0.004490123596042395
+Mix 18/mix 18_Y2_X2.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9953666925430298,6-mercapto-1-hexanol,0.0895625576376915,1-undecanethiol,0.004971910268068314
+Mix 18/mix 18_Y2_X3.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.993798553943634,6-mercapto-1-hexanol,0.1905694156885147,1-undecanethiol,0.004051306284964085
+Mix 18/mix 18_Y2_X4.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.99522864818573,6-mercapto-1-hexanol,0.31667178869247437,1-undecanethiol,0.0028417217545211315
+Mix 18/mix 18_Y2_X5.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.993796706199646,6-mercapto-1-hexanol,0.16981707513332367,1-undecanethiol,0.004184415098279715
+Mix 18/mix 18_Y3_X0.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9944773316383362,6-mercapto-1-hexanol,0.1278523951768875,1-undecanethiol,0.0042474172078073025
+Mix 18/mix 18_Y3_X1.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9939035773277283,6-mercapto-1-hexanol,0.12924271821975708,1-undecanethiol,0.004642769228667021
+Mix 18/mix 18_Y3_X2.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9948477745056152,6-mercapto-1-hexanol,0.19941186904907227,1-undecanethiol,0.00431193970143795
+Mix 18/mix 18_Y3_X3.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9967108964920044,6-mercapto-1-hexanol,0.11581947654485703,1-undecanethiol,0.0035324569325894117
+Mix 18/mix 18_Y3_X4.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9949980974197388,6-mercapto-1-hexanol,0.18227612972259521,1-undecanethiol,0.003656273242086172
+Mix 18/mix 18_Y3_X5.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9968883395195007,6-mercapto-1-hexanol,0.19080586731433868,1-undecanethiol,0.003184229601174593
+Mix 18/mix 18_Y4_X0.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9948451519012451,6-mercapto-1-hexanol,0.2588356137275696,1-undecanethiol,0.003394167637452483
+Mix 18/mix 18_Y4_X1.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9936058521270752,6-mercapto-1-hexanol,0.18828818202018738,1-undecanethiol,0.004126207437366247
+Mix 18/mix 18_Y4_X2.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9935053586959839,6-mercapto-1-hexanol,0.09745991230010986,1-undecanethiol,0.005077244248241186
+Mix 18/mix 18_Y4_X3.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9949571490287781,6-mercapto-1-hexanol,0.3069232702255249,1-undecanethiol,0.00430656922981143
+Mix 18/mix 18_Y4_X4.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9956193566322327,6-mercapto-1-hexanol,0.2741595506668091,1-undecanethiol,0.004248714540153742
+Mix 18/mix 18_Y4_X5.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.994665265083313,6-mercapto-1-hexanol,0.14830128848552704,1-undecanethiol,0.0036521656438708305
+Mix 18/mix 18_Y5_X0.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9965789914131165,6-mercapto-1-hexanol,0.2718172073364258,1-undecanethiol,0.003432075260207057
+Mix 18/mix 18_Y5_X1.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9958556294441223,6-mercapto-1-hexanol,0.09738385677337646,1-undecanethiol,0.005963895004242659
+Mix 18/mix 18_Y5_X2.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.994658887386322,6-mercapto-1-hexanol,0.13562175631523132,1-undecanethiol,0.004627132788300514
+Mix 18/mix 18_Y5_X3.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.996411144733429,6-mercapto-1-hexanol,0.15197685360908508,1-undecanethiol,0.004666597582399845
+Mix 18/mix 18_Y5_X4.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9949561953544617,6-mercapto-1-hexanol,0.15940552949905396,1-undecanethiol,0.004512278363108635
+Mix 18/mix 18_Y5_X5.txt,mixture,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol,"1,9-nonanedithiol","1,9-nonanedithiol",0.9949570298194885,6-mercapto-1-hexanol,0.15626154839992523,1-undecanethiol,0.0036461360286921263
+Mix 19/mix 19_Y0_X0.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,5.662608145939885e-06
+Mix 19/mix 19_Y0_X1.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,7.164644557633437e-06
+Mix 19/mix 19_Y0_X2.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,7.486315098503837e-06
+Mix 19/mix 19_Y0_X3.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,5.860041710548103e-06
+Mix 19/mix 19_Y0_X4.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,4.659143542085076e-06
+Mix 19/mix 19_Y0_X5.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,4.008124506071908e-06
+Mix 19/mix 19_Y1_X0.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,5.528671863430645e-06
+Mix 19/mix 19_Y1_X1.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,6.101327016949654e-06
+Mix 19/mix 19_Y1_X2.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,6.216463134478545e-06
+Mix 19/mix 19_Y1_X3.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,5.922352556808619e-06
+Mix 19/mix 19_Y1_X4.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,6.6277584664931055e-06
+Mix 19/mix 19_Y1_X5.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,7.3245319072157145e-06
+Mix 19/mix 19_Y2_X0.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,6.624813522648765e-06
+Mix 19/mix 19_Y2_X1.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,7.131657639547484e-06
+Mix 19/mix 19_Y2_X2.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,7.297270258277422e-06
+Mix 19/mix 19_Y2_X3.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999995231628418,meoh,1.0099220162373967e-05
+Mix 19/mix 19_Y2_X4.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,5.630761279462604e-06
+Mix 19/mix 19_Y2_X5.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,7.370870207523694e-06
+Mix 19/mix 19_Y3_X0.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999994039535522,meoh,1.1283190360700246e-05
+Mix 19/mix 19_Y3_X1.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,6.827601737313671e-06
+Mix 19/mix 19_Y3_X2.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,5.795107426820323e-06
+Mix 19/mix 19_Y3_X3.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,7.962831659824587e-06
+Mix 19/mix 19_Y3_X4.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,5.9066892390546855e-06
+Mix 19/mix 19_Y3_X5.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,6.4025553001556545e-06
+Mix 19/mix 19_Y4_X0.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999994039535522,meoh,1.1124991942779161e-05
+Mix 19/mix 19_Y4_X1.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,5.956076165603008e-06
+Mix 19/mix 19_Y4_X2.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,5.128277280164184e-06
+Mix 19/mix 19_Y4_X3.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,6.860876510472735e-06
+Mix 19/mix 19_Y4_X4.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,7.775897756800987e-06
+Mix 19/mix 19_Y4_X5.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,4.941525276080938e-06
+Mix 19/mix 19_Y5_X0.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,6.456168648583116e-06
+Mix 19/mix 19_Y5_X1.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,7.458402706106426e-06
+Mix 19/mix 19_Y5_X2.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,1.0578801266092341e-05
+Mix 19/mix 19_Y5_X3.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,8.895380233298056e-06
+Mix 19/mix 19_Y5_X4.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,5.680896265403135e-06
+Mix 19/mix 19_Y5_X5.txt,mixture,Mix 19,benzene + pyridine,benzene + pyridine,benzene + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,8.836970664560795e-06
+Mix 20/mix 20_Y0_X0.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.9584766626358032,dmmp,0.5052506923675537
+Mix 20/mix 20_Y0_X1.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9460078477859497,dmmp,0.48549485206604004
+Mix 20/mix 20_Y0_X2.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.9477763175964355,dmmp,0.6263464689254761
+Mix 20/mix 20_Y0_X3.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.9541589021682739,dmmp,0.6022242307662964
+Mix 20/mix 20_Y0_X4.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.9577219486236572,dmmp,0.5429500937461853
+Mix 20/mix 20_Y0_X5.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.970385730266571,dmmp,0.4911465346813202
+Mix 20/mix 20_Y1_X0.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.9528476595878601,dmmp,0.6170480251312256
+Mix 20/mix 20_Y1_X1.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.9334236979484558,dmmp,0.7389331459999084
+Mix 20/mix 20_Y1_X2.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.9151031970977783,dmmp,0.7899124622344971
+Mix 20/mix 20_Y1_X3.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.9538352489471436,dmmp,0.6078451871871948
+Mix 20/mix 20_Y1_X4.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.9600569605827332,dmmp,0.5275156497955322
+Mix 20/mix 20_Y1_X5.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.970920979976654,dmmp,0.5678671002388
+Mix 20/mix 20_Y2_X0.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9815236926078796,dmmp,0.38399335741996765
+Mix 20/mix 20_Y2_X1.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9671788215637207,dmmp,0.48859935998916626
+Mix 20/mix 20_Y2_X2.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9775506854057312,dmmp,0.45616012811660767
+Mix 20/mix 20_Y2_X3.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.9726343154907227,dmmp,0.5288375616073608
+Mix 20/mix 20_Y2_X4.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.971258819103241,dmmp,0.5511807203292847
+Mix 20/mix 20_Y2_X5.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol + dmmp,benzene,1.0,benzenethiol,0.968794584274292,dmmp,0.5528185963630676
+Mix 20/mix 20_Y3_X0.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9731560349464417,dmmp,0.47348645329475403
+Mix 20/mix 20_Y3_X1.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9719868302345276,dmmp,0.48956161737442017
+Mix 20/mix 20_Y3_X2.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9794012308120728,dmmp,0.35376036167144775
+Mix 20/mix 20_Y3_X3.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9787841439247131,dmmp,0.37693238258361816
+Mix 20/mix 20_Y3_X4.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9713841080665588,dmmp,0.4269556701183319
+Mix 20/mix 20_Y3_X5.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9751803874969482,dmmp,0.4339924454689026
+Mix 20/mix 20_Y4_X0.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9831727743148804,dmmp,0.2056228071451187
+Mix 20/mix 20_Y4_X1.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9705913066864014,dmmp,0.37375369668006897
+Mix 20/mix 20_Y4_X2.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9825182557106018,dmmp,0.22483398020267487
+Mix 20/mix 20_Y4_X3.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9751670360565186,dmmp,0.37518250942230225
+Mix 20/mix 20_Y4_X4.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9782875180244446,dmmp,0.3399401605129242
+Mix 20/mix 20_Y4_X5.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9730362892150879,dmmp,0.3927745819091797
+Mix 20/mix 20_Y5_X0.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9733245372772217,dmmp,0.38805463910102844
+Mix 20/mix 20_Y5_X1.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9763109087944031,dmmp,0.272321879863739
+Mix 20/mix 20_Y5_X2.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9798858761787415,dmmp,0.2945428192615509
+Mix 20/mix 20_Y5_X3.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9767720103263855,dmmp,0.25102606415748596
+Mix 20/mix 20_Y5_X4.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9794179797172546,dmmp,0.2741023302078247
+Mix 20/mix 20_Y5_X5.txt,mixture,Mix 20,benzene + toluene,benzene,benzene + benzenethiol,benzene,1.0,benzenethiol,0.9750639796257019,dmmp,0.3370153307914734
+Mix 21/mix 21_Y0_X0.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.998276948928833,6-mercapto-1-hexanol,0.0006134856375865638
+Mix 21/mix 21_Y0_X1.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9969843029975891,tris(2-ethylhexyl) phosphate,0.00018173303396906704
+Mix 21/mix 21_Y0_X2.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9929138422012329,6-mercapto-1-hexanol,0.0014909926103428006
+Mix 21/mix 21_Y0_X3.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9623807072639465,6-mercapto-1-hexanol,0.0007199204992502928
+Mix 21/mix 21_Y0_X4.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9901521801948547,6-mercapto-1-hexanol,0.00037309975596144795
+Mix 21/mix 21_Y0_X5.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9900174736976624,6-mercapto-1-hexanol,0.00017293047858402133
+Mix 21/mix 21_Y1_X0.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9911012053489685,6-mercapto-1-hexanol,0.00031025445787236094
+Mix 21/mix 21_Y1_X1.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9532364010810852,6-mercapto-1-hexanol,0.0015674446476623416
+Mix 21/mix 21_Y1_X2.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9864990711212158,6-mercapto-1-hexanol,3.703922629938461e-05
+Mix 21/mix 21_Y1_X3.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9955689311027527,6-mercapto-1-hexanol,0.00018742622341960669
+Mix 21/mix 21_Y1_X4.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9907552599906921,6-mercapto-1-hexanol,0.001309128012508154
+Mix 21/mix 21_Y1_X5.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9974029660224915,6-mercapto-1-hexanol,4.2556217522360384e-05
+Mix 21/mix 21_Y2_X0.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9946212768554688,6-mercapto-1-hexanol,0.0001356119173578918
+Mix 21/mix 21_Y2_X1.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9898848533630371,6-mercapto-1-hexanol,0.0035499155055731535
+Mix 21/mix 21_Y2_X2.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9946698546409607,6-mercapto-1-hexanol,0.00022582551173400134
+Mix 21/mix 21_Y2_X3.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9892755150794983,6-mercapto-1-hexanol,0.002671436406672001
+Mix 21/mix 21_Y2_X4.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9850487112998962,6-mercapto-1-hexanol,3.7542205973295495e-05
+Mix 21/mix 21_Y2_X5.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9786385893821716,6-mercapto-1-hexanol,0.000469186226837337
+Mix 21/mix 21_Y3_X0.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9892215728759766,6-mercapto-1-hexanol,0.0007965253898873925
+Mix 21/mix 21_Y3_X1.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9855626821517944,6-mercapto-1-hexanol,6.571607809746638e-05
+Mix 21/mix 21_Y3_X2.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9570021629333496,6-mercapto-1-hexanol,0.0005350548308342695
+Mix 21/mix 21_Y3_X3.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.995290994644165,6-mercapto-1-hexanol,0.000981373363174498
+Mix 21/mix 21_Y3_X4.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9619961380958557,6-mercapto-1-hexanol,0.0019595210906118155
+Mix 21/mix 21_Y3_X5.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9966927766799927,6-mercapto-1-hexanol,0.001081415917724371
+Mix 21/mix 21_Y4_X0.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.994044840335846,6-mercapto-1-hexanol,3.534421557560563e-05
+Mix 21/mix 21_Y4_X1.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9931265115737915,6-mercapto-1-hexanol,0.00034132576547563076
+Mix 21/mix 21_Y4_X2.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9944890737533569,6-mercapto-1-hexanol,0.00027093160315416753
+Mix 21/mix 21_Y4_X3.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9924799203872681,6-mercapto-1-hexanol,0.0007757380371913314
+Mix 21/mix 21_Y4_X4.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.994734525680542,6-mercapto-1-hexanol,0.0004426180094014853
+Mix 21/mix 21_Y4_X5.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9781529903411865,6-mercapto-1-hexanol,0.00033282695221714675
+Mix 21/mix 21_Y5_X0.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9972137808799744,6-mercapto-1-hexanol,0.002485415665432811
+Mix 21/mix 21_Y5_X1.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9915081262588501,tris(2-ethylhexyl) phosphate,1.778933801688254e-05
+Mix 21/mix 21_Y5_X2.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9781925082206726,6-mercapto-1-hexanol,0.00166607229039073
+Mix 21/mix 21_Y5_X3.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9972822666168213,6-mercapto-1-hexanol,0.002259198110550642
+Mix 21/mix 21_Y5_X4.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9704360365867615,6-mercapto-1-hexanol,0.017861230298876762
+Mix 21/mix 21_Y5_X5.txt,mixture,Mix 21,acetonitrile + dichloromethane,,dmmp + meoh,dmmp,1.0,meoh,0.9506536722183228,6-mercapto-1-hexanol,0.0004645372973755002
+Mix 22/mix 22_Y0_X0.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9988918900489807,benzene,0.0060787927359342575
+Mix 22/mix 22_Y0_X1.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9977502226829529,benzene,0.0133565878495574
+Mix 22/mix 22_Y0_X2.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9981290698051453,benzene,0.009447470307350159
+Mix 22/mix 22_Y0_X3.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9985607266426086,benzene,0.04336563125252724
+Mix 22/mix 22_Y0_X4.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.997958779335022,benzene,0.005822429433465004
+Mix 22/mix 22_Y0_X5.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9981932044029236,benzene,0.010491016320884228
+Mix 22/mix 22_Y1_X0.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9970095157623291,benzene,0.019722571596503258
+Mix 22/mix 22_Y1_X1.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9984222650527954,benzene,0.009026449173688889
+Mix 22/mix 22_Y1_X2.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9986068606376648,benzene,0.021790027618408203
+Mix 22/mix 22_Y1_X3.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9967532753944397,benzene,0.0030242139473557472
+Mix 22/mix 22_Y1_X4.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9986658096313477,benzene,0.00823636632412672
+Mix 22/mix 22_Y1_X5.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9979599714279175,benzene,0.014889533631503582
+Mix 22/mix 22_Y2_X0.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9983540773391724,benzene,0.01278685312718153
+Mix 22/mix 22_Y2_X1.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9980376362800598,benzene,0.013899581506848335
+Mix 22/mix 22_Y2_X2.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9977129697799683,benzene,0.013674207963049412
+Mix 22/mix 22_Y2_X3.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9985383749008179,benzene,0.006170249078422785
+Mix 22/mix 22_Y2_X4.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9969358444213867,benzene,0.03774108737707138
+Mix 22/mix 22_Y2_X5.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9990559220314026,benzene,0.004615038633346558
+Mix 22/mix 22_Y3_X0.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9978050589561462,benzene,0.015256033279001713
+Mix 22/mix 22_Y3_X1.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9981775283813477,benzene,0.00601178826764226
+Mix 22/mix 22_Y3_X2.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9970882534980774,benzene,0.006646603811532259
+Mix 22/mix 22_Y3_X3.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9986997842788696,benzene,0.012420750223100185
+Mix 22/mix 22_Y3_X4.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9988107681274414,benzene,0.0030572935938835144
+Mix 22/mix 22_Y3_X5.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.998384952545166,benzene,0.022715667262673378
+Mix 22/mix 22_Y4_X0.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9984116554260254,benzene,0.013613399118185043
+Mix 22/mix 22_Y4_X1.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9967759251594543,benzene,0.016000766307115555
+Mix 22/mix 22_Y4_X2.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9976457953453064,benzene,0.010537996888160706
+Mix 22/mix 22_Y4_X3.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9975799322128296,benzene,0.015330284833908081
+Mix 22/mix 22_Y4_X4.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9988870024681091,benzene,0.01749977469444275
+Mix 22/mix 22_Y4_X5.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9979552030563354,benzene,0.014618176966905594
+Mix 22/mix 22_Y5_X0.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9980297684669495,benzene,0.009348229505121708
+Mix 22/mix 22_Y5_X1.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9966489672660828,benzene,0.0221234317868948
+Mix 22/mix 22_Y5_X2.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9980117082595825,benzene,0.008679541759192944
+Mix 22/mix 22_Y5_X3.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9982043504714966,benzene,0.007296260911971331
+Mix 22/mix 22_Y5_X4.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9975695013999939,benzene,0.007467232178896666
+Mix 22/mix 22_Y5_X5.txt,mixture,Mix 22,acetonitrile + pyridine,pyridine,"1,9-nonanedithiol + pyridine",pyridine,1.0,"1,9-nonanedithiol",0.9973589777946472,benzene,0.03395456075668335
+Acetonitrile/acetonitrile_Y0_X0.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9998608827590942,1-dodecanethiol,0.9719321131706238,"n,n-dimethylformamide",0.4914505183696747
+Acetonitrile/acetonitrile_Y0_X1.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9998561143875122,1-dodecanethiol,0.9661612510681152,1-undecanethiol,0.02035895176231861
+Acetonitrile/acetonitrile_Y0_X2.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9968762397766113,1-dodecanethiol,0.9962558746337891,1-undecanethiol,0.057972073554992676
+Acetonitrile/acetonitrile_Y0_X3.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9992751479148865,1-dodecanethiol,0.9883900880813599,1-undecanethiol,0.03428095951676369
+Acetonitrile/acetonitrile_Y0_X4.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9974018335342407,1-dodecanethiol,0.9884937405586243,1-undecanethiol,0.06372008472681046
+Acetonitrile/acetonitrile_Y0_X5.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.99980229139328,1-dodecanethiol,0.9560640454292297,1-undecanethiol,0.014177516102790833
+Acetonitrile/acetonitrile_Y1_X0.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999139308929443,1-dodecanethiol,0.9348452091217041,1-undecanethiol,0.023243635892868042
+Acetonitrile/acetonitrile_Y1_X1.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9994589686393738,1-dodecanethiol,0.9887431859970093,1-undecanethiol,0.0323733352124691
+Acetonitrile/acetonitrile_Y1_X2.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9998645782470703,1-dodecanethiol,0.9678346514701843,1-undecanethiol,0.028523899614810944
+Acetonitrile/acetonitrile_Y1_X3.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9993357062339783,1-dodecanethiol,0.9904711246490479,1-undecanethiol,0.06120574101805687
+Acetonitrile/acetonitrile_Y1_X4.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol",1-dodecanethiol,0.9975742697715759,"1,9-nonanedithiol",0.9972557425498962,1-undecanethiol,0.072712741792202
+Acetonitrile/acetonitrile_Y1_X5.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999241828918457,1-dodecanethiol,0.9184574484825134,1-undecanethiol,0.0212518572807312
+Acetonitrile/acetonitrile_Y2_X0.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9998925924301147,1-dodecanethiol,0.9562799334526062,1-undecanethiol,0.033348772674798965
+Acetonitrile/acetonitrile_Y2_X1.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9997616410255432,1-dodecanethiol,0.9703341722488403,1-undecanethiol,0.03639129176735878
+Acetonitrile/acetonitrile_Y2_X2.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999463558197021,1-dodecanethiol,0.9683840274810791,1-undecanethiol,0.028607303276658058
+Acetonitrile/acetonitrile_Y2_X3.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9998733997344971,1-dodecanethiol,0.9771296381950378,1-undecanethiol,0.03861508145928383
+Acetonitrile/acetonitrile_Y2_X4.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9993245601654053,1-dodecanethiol,0.9660382866859436,1-undecanethiol,0.06795772165060043
+Acetonitrile/acetonitrile_Y2_X5.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999226331710815,1-dodecanethiol,0.929656445980072,1-undecanethiol,0.016131402924656868
+Acetonitrile/acetonitrile_Y3_X0.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999512434005737,1-dodecanethiol,0.9516797661781311,1-undecanethiol,0.01982531137764454
+Acetonitrile/acetonitrile_Y3_X1.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.99980229139328,1-dodecanethiol,0.985093355178833,1-undecanethiol,0.04104578122496605
+Acetonitrile/acetonitrile_Y3_X2.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9998772144317627,1-dodecanethiol,0.9840812683105469,1-undecanethiol,0.0370815210044384
+Acetonitrile/acetonitrile_Y3_X3.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9998181462287903,1-dodecanethiol,0.9805388450622559,"n,n-dimethylformamide",0.07200390100479126
+Acetonitrile/acetonitrile_Y3_X4.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999395608901978,1-dodecanethiol,0.9256724119186401,1-undecanethiol,0.019566476345062256
+Acetonitrile/acetonitrile_Y3_X5.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9994088411331177,1-dodecanethiol,0.9805437922477722,1-undecanethiol,0.05344567447900772
+Acetonitrile/acetonitrile_Y4_X0.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999926090240479,1-dodecanethiol,0.9206714034080505,"n,n-dimethylformamide",0.35000675916671753
+Acetonitrile/acetonitrile_Y4_X1.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999887943267822,1-dodecanethiol,0.9358710646629333,1-undecanethiol,0.02065533772110939
+Acetonitrile/acetonitrile_Y4_X2.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999277591705322,1-dodecanethiol,0.945384681224823,1-undecanethiol,0.0365140475332737
+Acetonitrile/acetonitrile_Y4_X3.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.999895453453064,1-dodecanethiol,0.9790939688682556,1-undecanethiol,0.029818961396813393
+Acetonitrile/acetonitrile_Y4_X4.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999698400497437,1-dodecanethiol,0.9649257659912109,1-undecanethiol,0.0253230482339859
+Acetonitrile/acetonitrile_Y4_X5.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999842643737793,1-dodecanethiol,0.9064355492591858,1-undecanethiol,0.04078305885195732
+Acetonitrile/acetonitrile_Y5_X0.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999325275421143,1-dodecanethiol,0.9609474539756775,1-undecanethiol,0.02950054220855236
+Acetonitrile/acetonitrile_Y5_X1.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999929666519165,1-dodecanethiol,0.9413327574729919,1-undecanethiol,0.01850626803934574
+Acetonitrile/acetonitrile_Y5_X2.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.999970555305481,1-dodecanethiol,0.9175387620925903,1-undecanethiol,0.015411289408802986
+Acetonitrile/acetonitrile_Y5_X3.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999958276748657,1-dodecanethiol,0.8897030353546143,"n,n-dimethylformamide",0.0233793742954731
+Acetonitrile/acetonitrile_Y5_X4.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999579191207886,1-dodecanethiol,0.9607279896736145,1-undecanethiol,0.04784214124083519
+Acetonitrile/acetonitrile_Y5_X5.txt,pure,Acetonitrile,acetonitrile,,"1,9-nonanedithiol + 1-dodecanethiol","1,9-nonanedithiol",0.9999910593032837,1-dodecanethiol,0.8448737859725952,1-undecanethiol,0.016908444464206696
+DCM/dcm_Y0_X0.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9998015761375427,dmmp,0.9977832436561584,pyridine,2.4530841983505525e-05
+DCM/dcm_Y0_X1.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9997816681861877,dmmp,0.9971826076507568,pyridine,2.753466833382845e-05
+DCM/dcm_Y0_X2.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995232820510864,dmmp,0.9975685477256775,pyridine,6.69168439344503e-05
+DCM/dcm_Y0_X3.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9998145699501038,dmmp,0.9975209832191467,pyridine,2.4037879484239966e-05
+DCM/dcm_Y0_X4.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9997796416282654,dmmp,0.999010443687439,pyridine,8.892281039152294e-05
+DCM/dcm_Y0_X5.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9991625547409058,dmmp,0.9987402558326721,pyridine,9.277654316974804e-05
+DCM/dcm_Y1_X0.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9993441700935364,dmmp,0.9990278482437134,pyridine,6.731552275596187e-05
+DCM/dcm_Y1_X1.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9996987581253052,dmmp,0.9976045489311218,pyridine,3.195376120856963e-05
+DCM/dcm_Y1_X2.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995250701904297,dmmp,0.9981951117515564,pyridine,4.366586290416308e-05
+DCM/dcm_Y1_X3.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9996564388275146,dmmp,0.9974331259727478,pyridine,5.184966721571982e-05
+DCM/dcm_Y1_X4.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9997509121894836,dmmp,0.9981765747070312,pyridine,2.729531843215227e-05
+DCM/dcm_Y1_X5.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.999617338180542,dmmp,0.9971019625663757,pyridine,3.853025918942876e-05
+DCM/dcm_Y2_X0.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9993115663528442,dmmp,0.999042809009552,pyridine,5.867266736458987e-05
+DCM/dcm_Y2_X1.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995504021644592,dmmp,0.9983452558517456,pyridine,3.6276393075240776e-05
+DCM/dcm_Y2_X2.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9994516968727112,dmmp,0.9981166124343872,pyridine,4.114430703339167e-05
+DCM/dcm_Y2_X3.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9993444085121155,dmmp,0.9980284571647644,pyridine,5.895911453990266e-05
+DCM/dcm_Y2_X4.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995348453521729,dmmp,0.9990611672401428,pyridine,5.293808862916194e-05
+DCM/dcm_Y2_X5.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995625615119934,dmmp,0.9990004897117615,pyridine,6.280367961153388e-05
+DCM/dcm_Y3_X0.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995414018630981,dmmp,0.9984381794929504,pyridine,3.685804404085502e-05
+DCM/dcm_Y3_X1.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995139837265015,dmmp,0.9988933205604553,pyridine,6.552165723405778e-05
+DCM/dcm_Y3_X2.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9994899034500122,dmmp,0.9974551796913147,pyridine,2.957950891868677e-05
+DCM/dcm_Y3_X3.txt,pure,DCM,dcm,,dmmp + meoh,dmmp,0.9991668462753296,meoh,0.9989816546440125,pyridine,5.317259638104588e-05
+DCM/dcm_Y3_X4.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9989668130874634,dmmp,0.9987109899520874,pyridine,6.0769507399527356e-05
+DCM/dcm_Y3_X5.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995974898338318,dmmp,0.9983698725700378,pyridine,2.6348190658609383e-05
+DCM/dcm_Y4_X0.txt,pure,DCM,dcm,,dmmp + meoh,dmmp,0.9993693232536316,meoh,0.9987185001373291,pyridine,9.45025312830694e-05
+DCM/dcm_Y4_X1.txt,pure,DCM,dcm,,dmmp + meoh,dmmp,0.9993497729301453,meoh,0.9986575841903687,pyridine,7.30302490410395e-05
+DCM/dcm_Y4_X2.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995648264884949,dmmp,0.9979652166366577,pyridine,2.0405641407705843e-05
+DCM/dcm_Y4_X3.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9996870756149292,dmmp,0.9971181154251099,pyridine,1.806056752684526e-05
+DCM/dcm_Y4_X4.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9996421337127686,dmmp,0.9974521994590759,pyridine,2.3632646843907423e-05
+DCM/dcm_Y4_X5.txt,pure,DCM,dcm,,dmmp + meoh,dmmp,0.9989206790924072,meoh,0.9986779093742371,pyridine,6.26894470769912e-05
+DCM/dcm_Y5_X0.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995381832122803,dmmp,0.998407781124115,pyridine,3.760286563192494e-05
+DCM/dcm_Y5_X1.txt,pure,DCM,dcm,,dmmp + meoh,dmmp,0.9993718266487122,meoh,0.9988691210746765,pyridine,0.0001120836241170764
+DCM/dcm_Y5_X2.txt,pure,DCM,dcm,,dmmp + meoh,dmmp,0.9991445541381836,meoh,0.9984083771705627,pyridine,5.062540003564209e-05
+DCM/dcm_Y5_X3.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9995478987693787,dmmp,0.99866783618927,pyridine,2.9503838959499262e-05
+DCM/dcm_Y5_X4.txt,pure,DCM,dcm,,dmmp + meoh,meoh,0.9990677237510681,dmmp,0.9987896084785461,pyridine,4.831600745092146e-05
+DCM/dcm_Y5_X5.txt,pure,DCM,dcm,,dmmp + meoh,dmmp,0.9991951584815979,meoh,0.9987926483154297,pyridine,6.303305417532101e-05
+Toluene/toluene_Y0_X0.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.1550813913345337
+Toluene/toluene_Y0_X1.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.2601032853126526
+Toluene/toluene_Y0_X2.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.2470778375864029
+Toluene/toluene_Y0_X3.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.188693568110466
+Toluene/toluene_Y0_X4.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.2877383530139923
+Toluene/toluene_Y0_X5.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.4661666452884674
+Toluene/toluene_Y1_X0.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,pyridine,1.0,benzene,1.0,meoh,0.5015348196029663
+Toluene/toluene_Y1_X1.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.19847489893436432
+Toluene/toluene_Y1_X2.txt,pure,Toluene,toluene,,benzene + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,0.18893399834632874
+Toluene/toluene_Y1_X3.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.4249356687068939
+Toluene/toluene_Y1_X4.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.310824990272522
+Toluene/toluene_Y1_X5.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.40160101652145386
+Toluene/toluene_Y2_X0.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.23326487839221954
+Toluene/toluene_Y2_X1.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.18440425395965576
+Toluene/toluene_Y2_X2.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.26067817211151123
+Toluene/toluene_Y2_X3.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.41178229451179504
+Toluene/toluene_Y2_X4.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.36991891264915466
+Toluene/toluene_Y2_X5.txt,pure,Toluene,toluene,,benzene + pyridine,pyridine,1.0,benzene,1.0,meoh,0.4248349666595459
+Toluene/toluene_Y3_X0.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,pyridine,1.0,benzene,1.0,meoh,0.6306185722351074
+Toluene/toluene_Y3_X1.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,0.6484653353691101
+Toluene/toluene_Y3_X2.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,0.806688666343689
+Toluene/toluene_Y3_X3.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,pyridine,1.0,benzene,1.0,meoh,0.5530309081077576
+Toluene/toluene_Y3_X4.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,0.8440600633621216
+Toluene/toluene_Y3_X5.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,pyridine,1.0,benzene,1.0,meoh,0.7559590339660645
+Toluene/toluene_Y4_X0.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,pyridine,1.0,benzene,1.0,meoh,0.7832399606704712
+Toluene/toluene_Y4_X1.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,0.8884596824645996
+Toluene/toluene_Y4_X2.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999996423721313,meoh,0.8965135216712952
+Toluene/toluene_Y4_X3.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,0.7697271704673767
+Toluene/toluene_Y4_X4.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,0.8622831702232361
+Toluene/toluene_Y4_X5.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,pyridine,1.0,benzene,1.0,meoh,0.907230794429779
+Toluene/toluene_Y5_X0.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,pyridine,1.0,benzene,1.0,meoh,0.9327764511108398
+Toluene/toluene_Y5_X1.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,0.8274297118186951
+Toluene/toluene_Y5_X2.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,0.8244043588638306
+Toluene/toluene_Y5_X3.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999995231628418,meoh,0.8362587690353394
+Toluene/toluene_Y5_X4.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999997615814209,meoh,0.7378747463226318
+Toluene/toluene_Y5_X5.txt,pure,Toluene,toluene,,benzene + meoh + pyridine,benzene,1.0,pyridine,0.9999998807907104,meoh,0.8429676294326782
+diethylamine/diethylamine_Y0_X0.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + dmmp + meoh + n,n-dimethylformamide + pyridine",pyridine,1.0,"n,n-dimethylformamide",1.0,dmmp,1.0
+diethylamine/diethylamine_Y0_X1.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + dmmp + pyridine",dmmp,1.0,"1,9-nonanedithiol",0.9999963045120239,pyridine,0.9999798536300659
+diethylamine/diethylamine_Y0_X2.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + n,n-dimethylformamide + pyridine",pyridine,1.0,dmmp,1.0,"n,n-dimethylformamide",0.9900795221328735
+diethylamine/diethylamine_Y0_X3.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + pyridine",dmmp,1.0,benzenethiol,0.9999998807907104,pyridine,0.9999995231628418
+diethylamine/diethylamine_Y0_X4.txt,pure,diethylamine,diethylamine,,dmmp + pyridine,pyridine,1.0,dmmp,1.0,benzenethiol,0.06327351927757263
+diethylamine/diethylamine_Y0_X5.txt,pure,diethylamine,diethylamine,,"dmmp + n,n-dimethylformamide + pyridine",pyridine,1.0,"n,n-dimethylformamide",1.0,dmmp,1.0
+diethylamine/diethylamine_Y1_X0.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + n,n-dimethylformamide + pyridine",dmmp,1.0,pyridine,0.9999984502792358,"n,n-dimethylformamide",0.9998927116394043
+diethylamine/diethylamine_Y1_X1.txt,pure,diethylamine,diethylamine,,"benzenethiol + dmmp + n,n-dimethylformamide + pyridine","n,n-dimethylformamide",1.0,dmmp,1.0,benzenethiol,0.9978151321411133
+diethylamine/diethylamine_Y1_X2.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + pyridine",pyridine,1.0,dmmp,1.0,"1,9-nonanedithiol",0.999076247215271
+diethylamine/diethylamine_Y1_X3.txt,pure,diethylamine,diethylamine,,"dmmp + meoh + n,n-dimethylformamide + pyridine",pyridine,1.0,"n,n-dimethylformamide",1.0,dmmp,1.0
+diethylamine/diethylamine_Y1_X4.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + n,n-dimethylformamide + pyridine",dmmp,1.0,pyridine,0.999996542930603,benzenethiol,0.999832272529602
+diethylamine/diethylamine_Y1_X5.txt,pure,diethylamine,diethylamine,,"benzenethiol + dmmp + n,n-dimethylformamide + pyridine",pyridine,1.0,dmmp,1.0,"n,n-dimethylformamide",0.9999206066131592
+diethylamine/diethylamine_Y2_X0.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + pyridine",pyridine,1.0,dmmp,1.0,"1,9-nonanedithiol",0.9989863038063049
+diethylamine/diethylamine_Y2_X1.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + 6-mercapto-1-hexanol + dmmp + etoh + meoh",meoh,1.0,dmmp,1.0,6-mercapto-1-hexanol,0.9999934434890747
+diethylamine/diethylamine_Y2_X2.txt,pure,diethylamine,diethylamine,,"dmmp + n,n-dimethylformamide + pyridine",pyridine,1.0,"n,n-dimethylformamide",1.0,dmmp,1.0
+diethylamine/diethylamine_Y2_X3.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + pyridine",pyridine,1.0,dmmp,1.0,benzenethiol,1.0
+diethylamine/diethylamine_Y2_X4.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + pyridine",pyridine,1.0,dmmp,1.0,benzenethiol,0.9999749660491943
+diethylamine/diethylamine_Y2_X5.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + dmmp","1,9-nonanedithiol",1.0,dmmp,1.0,6-mercapto-1-hexanol,0.015712976455688477
+diethylamine/diethylamine_Y3_X0.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + n,n-dimethylformamide + pyridine",pyridine,1.0,dmmp,1.0,benzenethiol,0.9998394250869751
+diethylamine/diethylamine_Y3_X1.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + pyridine",benzenethiol,1.0,dmmp,1.0,pyridine,0.9999998807907104
+diethylamine/diethylamine_Y3_X2.txt,pure,diethylamine,diethylamine,,"dmmp + n,n-dimethylformamide + pyridine","n,n-dimethylformamide",1.0,dmmp,1.0,pyridine,0.9956408739089966
+diethylamine/diethylamine_Y3_X3.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + pyridine",pyridine,1.0,dmmp,1.0,benzenethiol,0.9999974966049194
+diethylamine/diethylamine_Y3_X4.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + dmmp + meoh + pyridine",pyridine,1.0,dmmp,1.0,meoh,0.8684254884719849
+diethylamine/diethylamine_Y3_X5.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + n,n-dimethylformamide + pyridine",dmmp,1.0,"n,n-dimethylformamide",0.9999840259552002,pyridine,0.9999828338623047
+diethylamine/diethylamine_Y4_X0.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + pyridine",dmmp,1.0,"1,9-nonanedithiol",0.9999992847442627,pyridine,0.9999830722808838
+diethylamine/diethylamine_Y4_X1.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + n,n-dimethylformamide","n,n-dimethylformamide",1.0,dmmp,1.0,"1,9-nonanedithiol",0.9999876022338867
+diethylamine/diethylamine_Y4_X2.txt,pure,diethylamine,diethylamine,,"benzenethiol + dmmp + n,n-dimethylformamide + pyridine",dmmp,1.0,"n,n-dimethylformamide",0.9999997615814209,pyridine,0.9999489784240723
+diethylamine/diethylamine_Y4_X3.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + dmmp + pyridine",pyridine,1.0,dmmp,1.0,"1,9-nonanedithiol",0.9999827146530151
+diethylamine/diethylamine_Y4_X4.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + n,n-dimethylformamide + pyridine",dmmp,1.0,pyridine,0.9999978542327881,benzenethiol,0.9998914003372192
+diethylamine/diethylamine_Y4_X5.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + pyridine",pyridine,1.0,dmmp,1.0,benzenethiol,1.0
+diethylamine/diethylamine_Y5_X0.txt,pure,diethylamine,diethylamine,,benzenethiol + dmmp + pyridine,pyridine,1.0,dmmp,1.0,benzenethiol,0.9876435995101929
+diethylamine/diethylamine_Y5_X1.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + meoh + n,n-dimethylformamide + tris(2-ethylhexyl) phosphate","n,n-dimethylformamide",1.0,tris(2-ethylhexyl) phosphate,0.9999901056289673,"1,9-nonanedithiol",0.9996705055236816
+diethylamine/diethylamine_Y5_X2.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + n,n-dimethylformamide","n,n-dimethylformamide",1.0,dmmp,1.0,"1,9-nonanedithiol",0.9999889135360718
+diethylamine/diethylamine_Y5_X3.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + dmmp + meoh + n,n-dimethylformamide + pyridine",pyridine,1.0,meoh,1.0,dmmp,1.0
+diethylamine/diethylamine_Y5_X4.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + dmmp","1,9-nonanedithiol",1.0,dmmp,1.0,6-mercapto-1-hexanol,0.12509116530418396
+diethylamine/diethylamine_Y5_X5.txt,pure,diethylamine,diethylamine,,"1,9-nonanedithiol + benzenethiol + dmmp + n,n-dimethylformamide + pyridine",dmmp,1.0,benzenethiol,0.9999988079071045,pyridine,0.9999885559082031
+n-hexane/n-hexane_Y0_X0.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999995231628418,meoh,0.9997546076774597,etoh,1.8327558791497722e-05
+n-hexane/n-hexane_Y0_X1.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999994039535522,meoh,0.9998165965080261,etoh,1.105918545363238e-05
+n-hexane/n-hexane_Y0_X2.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9994897842407227,etoh,2.459668166920892e-06
+n-hexane/n-hexane_Y0_X3.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999996423721313,meoh,0.999839186668396,etoh,4.005395021522418e-05
+n-hexane/n-hexane_Y0_X4.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999997615814209,meoh,0.999637246131897,etoh,7.766522685415111e-06
+n-hexane/n-hexane_Y0_X5.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9991851449012756,etoh,1.574858742969809e-06
+n-hexane/n-hexane_Y1_X0.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999997615814209,meoh,0.9995920062065125,etoh,1.6379515727749094e-05
+n-hexane/n-hexane_Y1_X1.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999997615814209,meoh,0.999708354473114,etoh,3.550901237758808e-05
+n-hexane/n-hexane_Y1_X2.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9988008737564087,etoh,2.4845473944878904e-07
+n-hexane/n-hexane_Y1_X3.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9994631409645081,etoh,5.422521667242108e-07
+n-hexane/n-hexane_Y1_X4.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9994844198226929,etoh,7.5356042543717194e-06
+n-hexane/n-hexane_Y1_X5.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999995231628418,meoh,0.9997971653938293,etoh,9.878166019916534e-05
+n-hexane/n-hexane_Y2_X0.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999997615814209,meoh,0.9997020363807678,etoh,1.9777460693148896e-05
+n-hexane/n-hexane_Y2_X1.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999997615814209,meoh,0.9995143413543701,etoh,1.042865824274486e-05
+n-hexane/n-hexane_Y2_X2.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9991559982299805,etoh,4.0057971091300715e-06
+n-hexane/n-hexane_Y2_X3.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9994100332260132,etoh,1.0233537068415899e-05
+n-hexane/n-hexane_Y2_X4.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9995567202568054,etoh,4.854211874771863e-05
+n-hexane/n-hexane_Y2_X5.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9994239807128906,etoh,3.2305572403856786e-06
+n-hexane/n-hexane_Y3_X0.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9995211362838745,etoh,8.922516826714855e-06
+n-hexane/n-hexane_Y3_X1.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9993711113929749,etoh,2.858861307686311e-06
+n-hexane/n-hexane_Y3_X2.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9995121955871582,etoh,1.598450580786448e-05
+n-hexane/n-hexane_Y3_X3.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999997615814209,meoh,0.9996789693832397,etoh,1.5729205188108608e-05
+n-hexane/n-hexane_Y3_X4.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9994024038314819,etoh,4.758972409035778e-06
+n-hexane/n-hexane_Y3_X5.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9993257522583008,etoh,6.5391209318477195e-06
+n-hexane/n-hexane_Y4_X0.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9996121525764465,etoh,5.328374754753895e-06
+n-hexane/n-hexane_Y4_X1.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9996140599250793,etoh,5.490305284183705e-06
+n-hexane/n-hexane_Y4_X2.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9985927939414978,etoh,3.900016736224643e-07
+n-hexane/n-hexane_Y4_X3.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9997237324714661,etoh,7.639000614290126e-06
+n-hexane/n-hexane_Y4_X4.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9990596175193787,etoh,2.5378917598573025e-06
+n-hexane/n-hexane_Y4_X5.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9990596175193787,etoh,2.265352577524027e-06
+n-hexane/n-hexane_Y5_X0.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9991264939308167,etoh,1.0436700677018962e-06
+n-hexane/n-hexane_Y5_X1.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9993541836738586,etoh,8.061912922130432e-06
+n-hexane/n-hexane_Y5_X2.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999988079071045,meoh,0.9999247789382935,etoh,4.1434810555074364e-05
+n-hexane/n-hexane_Y5_X3.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999997615814209,meoh,0.9995844960212708,etoh,9.180977031064685e-06
+n-hexane/n-hexane_Y5_X4.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,0.9999998807907104,meoh,0.9995818734169006,etoh,7.959711183502804e-06
+n-hexane/n-hexane_Y5_X5.txt,pure,n-hexane,n-hexane,,meoh + tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1.0,meoh,0.9989914298057556,etoh,4.2667858224376687e-07
