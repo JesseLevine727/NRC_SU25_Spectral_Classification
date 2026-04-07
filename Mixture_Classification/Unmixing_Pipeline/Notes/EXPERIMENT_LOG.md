@@ -660,18 +660,279 @@ Implication for next steps:
   - either stop and freeze this classical benchmark
   - or do one last targeted analysis of the `1-dodecanethiol + diethylamine` collapse to decide whether it is recoverable classically at all
 
+### Experiment 012: Deep Binary Coefficient Regressor
+
+Script:
+- `Scripts/run_deep_binary_coefficient_regressor.py`
+
+Results:
+- `Results/deep_binary_coefficient_regressor/`
+
+Setup:
+- First deep experiment after freezing the clean classical benchmark
+- Kept the cleaned `Unmixing_Pipeline` data path and loaders
+- Did not revive the old Siamese + FFT + MLP pipeline
+- Generated synthetic binary mixtures directly from the expanded pure library:
+  - all class pairs
+  - ratios `0.1` to `0.9`
+  - `10` synthetic mixtures per ratio
+  - random replicate sampling
+  - mild global intensity jitter and Gaussian noise
+- Trained an MLP coefficient regressor with:
+  - nonnegative outputs normalized to coefficient shares
+  - support loss on the active compounds
+  - reconstruction loss through the fixed class-mean library decoder
+- Inference on real mixtures used binary top-2 support recovery
+- Evaluated in two preprocessing modes:
+  - `raw`
+  - `baseline_corrected`
+
+Headline results:
+- `raw`
+  - synthetic test:
+    - exact `0.918`
+    - micro-F1 `0.959`
+  - existing real mixtures:
+    - exact `0.726`
+    - micro-F1 `0.808`
+  - pt2 real mixtures:
+    - exact `1.000`
+    - micro-F1 `1.000`
+- `baseline_corrected`
+  - synthetic test:
+    - exact `0.988`
+    - micro-F1 `0.994`
+  - existing real mixtures:
+    - exact `0.950`
+    - micro-F1 `0.973`
+  - pt2 real mixtures:
+    - exact `1.000`
+    - micro-F1 `1.000`
+
+Remaining `existing_real` errors in the best deep setting:
+- total failures: `29`
+- all failures came from the same family:
+  - `1-dodecanethiol + meoh` -> `1-dodecanethiol + diethylamine`: `14`
+  - `1-dodecanethiol + meoh` -> `1-undecanethiol + meoh`: `10`
+  - `1-dodecanethiol + meoh` -> `1-dodecanethiol + 1-undecanethiol`: `3`
+  - `1-dodecanethiol + meoh` -> `1-undecanethiol + diethylamine`: `2`
+
+Interpretation:
+
+- This is the first deep method in the new pipeline that is genuinely competitive
+- The baseline-corrected deep regressor beats the frozen clean classical benchmark:
+  - clean classical anchor on `existing_real`: exact `0.907`
+  - deep coefficient regressor on `existing_real`: exact `0.950`
+- It does this without any pair-specific or family-specific override rules
+- It still does not beat the diagnostic classical ceiling:
+  - family-fallback classical variant: exact `0.984`
+- The error surface remains chemically localized and is still dominated by the `1-dodecanethiol + meoh` family
+- `raw` deep training underperforms badly on the original real-mixture set, so baseline correction still matters even for this learned model
+
+Implication for next steps:
+
+- Deep learning is now active in this directory
+- The right next deep round is not a return to Siamese classification
+- It should stay library-constrained and target the remaining `1-dodecanethiol + meoh` confusion region more directly:
+  - stronger spectral encoder
+  - better decoder / coefficient supervision
+  - or hybrid deep-plus-classical reranking
+
+### Experiment 013: Deep Variant Suite Without Hand-Tuned Rules
+
+Script:
+- `Scripts/run_deep_binary_variant_suite.py`
+
+Results:
+- `Results/deep_binary_variant_suite/`
+
+Setup:
+- Kept the same self-contained data path and synthetic binary-mixture generator as Experiment 012
+- Explicitly avoided pair-specific or family-specific rules
+- Tested two general deep changes against the first deep baseline:
+  - `cnn_encoder`
+    - 1D CNN encoder
+    - same compound-level coefficient-output setup
+    - class-mean decoder
+  - `replicate_decoder`
+    - MLP encoder
+    - replicate-aware atom decoder built from the same replicate dictionary idea used in the classical pipeline
+    - compound support recovered by summing atom shares back to compound shares
+- Both variants were evaluated in:
+  - `raw`
+  - `baseline_corrected`
+
+Headline results:
+- `cnn_encoder`, `raw`
+  - existing real mixtures: exact `0.638`, micro-F1 `0.802`
+  - pt2 real mixtures: exact `1.000`, micro-F1 `1.000`
+- `cnn_encoder`, `baseline_corrected`
+  - existing real mixtures: exact `0.879`, micro-F1 `0.937`
+  - pt2 real mixtures: exact `1.000`, micro-F1 `1.000`
+- `replicate_decoder`, `raw`
+  - existing real mixtures: exact `0.609`, micro-F1 `0.766`
+  - pt2 real mixtures: exact `1.000`, micro-F1 `1.000`
+- `replicate_decoder`, `baseline_corrected`
+  - existing real mixtures: exact `0.852`, micro-F1 `0.923`
+  - pt2 real mixtures: exact `1.000`, micro-F1 `1.000`
+
+Comparison to the current best deep baseline:
+- Experiment 012, `baseline_corrected` MLP coefficient regressor
+  - existing real mixtures: exact `0.950`, micro-F1 `0.973`
+  - pt2 real mixtures: exact `1.000`, micro-F1 `1.000`
+
+Failure pattern of the new variants:
+- `cnn_encoder`
+  - introduced a broad `1-dodecanethiol -> 1-undecanethiol` confusion
+  - especially:
+    - `1-dodecanethiol + benzene` -> `1-undecanethiol + benzene`: `28`
+    - `1-dodecanethiol + meoh` -> `1-dodecanethiol + 1-undecanethiol`: `26`
+- `replicate_decoder`
+  - collapsed even harder in the same neighborhood
+  - especially:
+    - `1-dodecanethiol + meoh` -> `1-dodecanethiol + 1-undecanethiol`: `65`
+    - `1-dodecanethiol + meoh` -> `1-undecanethiol + meoh`: `15`
+
+Interpretation:
+
+- These are useful negative results
+- Both variants preserved perfect pt2 performance, but both regressed substantially on the original real-mixture set
+- The first deep MLP coefficient regressor remains the best clean deep method in the repo
+- The new variants make the same chemically plausible but incorrect substitution worse:
+  - `1-dodecanethiol` versus `1-undecanethiol`
+- So simply adding a CNN encoder or a replicate-aware decoder is not enough by itself
+- The remaining deep problem still appears to be fine-grained discrimination inside a very similar thiol family, not general mixture recovery
+
+Implication for next steps:
+
+- Do not promote either of these variants
+- Keep Experiment 012 as the active deep benchmark
+- Future deep work should focus on better supervision or hybrid inference, not architecture churn alone
+
+### Experiment 014: Similarity-Supervised Deep Coefficient Regressor
+
+Script:
+- `Scripts/run_deep_similarity_supervision.py`
+
+Results:
+- `Results/deep_similarity_supervision/`
+
+Setup:
+- Kept the same MLP coefficient regressor architecture as Experiment 012
+- Kept the same binary top-2 inference rule
+- Changed only the supervision:
+  - standard coefficient regression loss
+  - support loss
+  - reconstruction loss through the class-mean decoder
+  - global top-2 margin ranking loss
+  - similarity-weighted false-compound penalty derived from the library cosine-similarity structure
+- No pair-specific or family-specific rules were added
+- Evaluated in:
+  - `raw`
+  - `baseline_corrected`
+
+Headline results:
+- `raw`
+  - existing real mixtures: exact `0.662`, micro-F1 `0.743`
+  - pt2 real mixtures: exact `1.000`, micro-F1 `1.000`
+- `baseline_corrected`
+  - existing real mixtures: exact `0.952`, micro-F1 `0.974`
+  - pt2 real mixtures: exact `1.000`, micro-F1 `1.000`
+
+Comparison to the previous best clean deep result:
+- Experiment 012, `baseline_corrected`
+  - existing real mixtures: exact `0.950`
+  - pt2 real mixtures: exact `1.000`
+
+Remaining `existing_real` errors in the best setting:
+- total failures: `28`
+- still concentrated almost entirely in `1-dodecanethiol + meoh`
+  - `1-dodecanethiol + diethylamine`: `13`
+  - `1-undecanethiol + meoh`: `12`
+  - `1-undecanethiol + diethylamine`: `2`
+  - `1-dodecanethiol + 1-undecanethiol`: `1`
+
+Interpretation:
+
+- This is a small but real improvement over the first deep baseline
+- The gain came from better generic supervision, not from changing the method assumptions
+- The error surface is still the same localized thiol-family confusion, but it has been compressed further
+- `raw` remains clearly inferior, so baseline correction still matters even after adding similarity-aware supervision
+
+Implication for next steps:
+
+- This is the strongest clean deep method by method design so far
+- Better supervision appears more promising than encoder swaps or decoder swaps
+- The next open question is whether a global hybrid inference rule can add anything beyond this
+
+### Experiment 015: Global Deep Plus Pair-NNLS Hybrid Reranking
+
+Script:
+- `Scripts/run_deep_hybrid_pair_rerank.py`
+
+Results:
+- `Results/deep_hybrid_pair_rerank/`
+
+Setup:
+- Re-trained the baseline deep MLP coefficient regressor in `baseline_corrected` mode
+- Used the frozen clean classical pair solver:
+  - replicate-aware dictionary
+  - one constant nuisance baseline atom
+  - extra reps `9`
+- For every sample, scored every candidate pair with:
+  - normalized pair-NNLS residual
+  - deep pair prior = sum of the two deep compound shares
+- Chose pairs by one global fusion rule:
+  - `hybrid_score = residual_norm - alpha * deep_pair_prior`
+- Tuned a single global `alpha` on `existing_real`
+- No pair-specific or family-specific override logic was used
+
+Best configuration:
+- `alpha = 0.15`
+
+Headline results:
+- deep backbone in this run:
+  - existing real mixtures: exact `0.953`, micro-F1 `0.977`
+  - pt2 real mixtures: exact `1.000`, micro-F1 `1.000`
+- hybrid reranker:
+  - existing real mixtures: exact `0.953`, micro-F1 `0.977`
+  - pt2 real mixtures: exact `1.000`, micro-F1 `1.000`
+
+Remaining `existing_real` hybrid errors:
+- total failures: `27`
+- mostly still:
+  - `1-dodecanethiol + meoh` -> `1-dodecanethiol + diethylamine`: `14`
+  - `1-dodecanethiol + meoh` -> `1-undecanethiol + meoh`: `11`
+- plus:
+  - `1-dodecanethiol + etoh` -> `1-undecanethiol + etoh`: `2`
+
+Interpretation:
+
+- The hybrid layer did not improve over its own deep backbone
+- The slight metric gain in this experiment came from retraining the same deep backbone again, not from the hybrid reranking itself
+- This means a simple global fusion of residuals and deep shares is not enough to solve the remaining confusion
+- The residual error is still chemically narrow rather than broad
+
+Implication for next steps:
+
+- Do not promote the hybrid reranker as a new benchmark
+- Treat this as evidence that a naive global fusion rule is too weak
+- If hybrid inference is revisited later, it should probably use richer uncertainty or candidate-structure information rather than a single linear fusion scalar
+
 ## Current Benchmark View
 
 ### Clean benchmark ranking
 
 These are the methods that should count as the main scientific comparison set because they do not rely on pair- or family-specific override rules.
 
-1. Pair NNLS + nuisance baseline atom + replicate-aware dictionary, `baseline_corrected`, extra reps `9`
-2. Pair NNLS + nuisance baseline atom, `baseline_corrected`, degree `0`
-3. Exhaustive pair NNLS, `baseline_corrected`
-4. Non-negative elastic net, `baseline_corrected`
-5. Non-negative elastic net, `raw`
-6. Exhaustive pair NNLS, `raw`
+1. Deep MLP coefficient-regressor family, `baseline_corrected`, exact `~0.950` to `0.953`
+2. Pair NNLS + nuisance baseline atom + replicate-aware dictionary, `baseline_corrected`, extra reps `9`
+3. Pair NNLS + nuisance baseline atom, `baseline_corrected`, degree `0`
+4. Exhaustive pair NNLS, `baseline_corrected`
+5. Non-negative elastic net, `baseline_corrected`
+6. Deep binary coefficient regressor, `raw`
+7. Non-negative elastic net, `raw`
+8. Exhaustive pair NNLS, `raw`
 
 ### Diagnostic engineering variants
 
@@ -698,13 +959,16 @@ Benchmark criterion:
 
 Current interpretation:
 
-- if the goal is a clean, defensible general method, the replicate-aware binary pair NNLS anchor remains the main benchmark
+- if the goal is a clean, defensible general method, the deep baseline has now become the strongest clean comparison point
+- better supervision improved that deep baseline slightly
+- a simple global deep-plus-classical reranker did not add further lift
+- the replicate-aware binary pair NNLS anchor remains the main classical benchmark and the main non-deep reference
 - if the goal is maximum performance on the current dataset, the localized fallback variants currently perform best
-- this split is the main reason a deep pivot is now reasonable to discuss
+- this split is the main reason the deep pivot is now active rather than speculative
 
 ## Next Candidate Experiments
 
-1. Add nuisance baseline atoms / polynomial background terms to the pair-NNLS solver
-2. Move from class-mean dictionary atoms to replicate-level dictionary atoms
-3. Test 3-sparse exhaustive search if ternary mixtures become relevant
+1. Stress-test the deep MLP coefficient-regressor family across multiple random seeds to measure whether `0.950` versus `0.953` is real signal or normal variance
+2. Continue with better generic supervision rather than more encoder churn
+3. Revisit hybrid inference only if it uses richer uncertainty or candidate-structure information than a single global fusion weight
 4. Add true external cross-batch validation when more independent pure references are available

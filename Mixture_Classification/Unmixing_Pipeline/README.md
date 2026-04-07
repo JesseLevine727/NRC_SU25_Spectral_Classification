@@ -264,7 +264,14 @@ This is the scientifically correct framing for the current experiments.
 3. Library-constrained autoencoder
 4. Denoiser + classical unmixing
 
-These are optional and only worth pursuing if they outperform the best non-deep baseline on real mixtures.
+These are only worth pursuing if they outperform the best non-deep baseline on real mixtures.
+
+Deep work has now started in this directory, but the framing remains constrained:
+
+- keep the classical binary anchor frozen as the main non-deep benchmark
+- do not revive the old Siamese pair-identity pipeline as the primary path
+- prefer library-constrained deep models that predict compound coefficients or support directly
+- evaluate with binary top-2 support recovery as the main operational metric because the current labeled mixtures are binary
 
 ## Classical Exit Criteria
 
@@ -292,7 +299,39 @@ Current decision:
 
 - the clean classical benchmark is already very strong
 - the remaining improvements after that benchmark came mostly from localized fallback logic
-- so this is close to the point where a deep pivot becomes reasonable, if and only if we want a more general method than those localized engineering fixes
+- so this is the point where a deep pivot becomes reasonable if we want a more general method than those localized engineering fixes
+
+Current deep status:
+
+- first deep baseline implemented:
+  - `Scripts/run_deep_binary_coefficient_regressor.py`
+- best result so far:
+  - deep MLP coefficient-regressor family, `baseline_corrected`
+  - existing real mixtures: exact `~0.950` to `0.953`
+  - pt2 real mixtures: exact `1.000`
+- interpretation:
+  - this already beats the frozen clean classical benchmark
+  - it does not beat the localized diagnostic classical ceiling
+  - the remaining deep errors are still concentrated in the `1-dodecanethiol + meoh` family
+- follow-up general variants tried:
+  - `Scripts/run_deep_binary_variant_suite.py`
+  - tested:
+    - `cnn_encoder`
+    - `replicate_decoder`
+  - neither beat the first deep baseline on `existing_real`
+  - both stayed perfect on `pt2_real`
+  - both worsened the `1-dodecanethiol` versus `1-undecanethiol` confusion
+- follow-up generic supervision experiment:
+  - `Scripts/run_deep_similarity_supervision.py`
+  - slightly improved the clean deep result:
+    - existing real mixtures: exact `0.952`
+    - pt2 real mixtures: exact `1.000`
+  - did so without changing the inference assumptions
+- follow-up global hybrid experiment:
+  - `Scripts/run_deep_hybrid_pair_rerank.py`
+  - combined deep compound shares with the frozen clean pair-NNLS residual using one global fusion weight
+  - did not improve beyond its own deep backbone
+  - so a simple global fusion rule is not enough by itself
 
 ## Evaluation Rules
 
@@ -313,26 +352,41 @@ Recommended dataset views:
 - mixtures containing newly added compounds
 - samples expected to fail library matching cleanly
 
-## Immediate Next Experiment
+## Current Benchmark State
 
-The first implementation target is:
+The benchmark hierarchy should now be read as:
 
-`binary exhaustive NNLS on the expanded reference library`
+- strongest clean deep method so far:
+  - baseline-corrected deep MLP coefficient-regressor family
+- strongest clean classical method:
+  - baseline-corrected replicate-aware binary pair NNLS with one constant nuisance baseline atom
+- strongest engineering ceiling:
+  - the localized fallback classical variants
 
-Why this goes first:
+This separation matters:
 
-- it matches the current problem framing directly
-- it does not require knowing the pair a priori
-- with the current library size, exhaustive pair search is computationally cheap
-- it gives a natural residual for reject / OOD logic
-- it provides a serious baseline that any deep model must beat
+- if the goal is a clean learned method, the deep coefficient regressor is now the model to iterate on
+- if the goal is a clean non-deep method, the replicate-aware binary NNLS anchor remains the classical reference
+- if the goal is maximum accuracy on the current datasets regardless of hand-tuned local logic, the diagnostic fallback variants still win
+
+## Immediate Next Deep Experiments
+
+The next deep experiments should stay library-constrained:
+
+1. Stress-test the deep MLP coefficient-regressor family across multiple random seeds to separate real gain from ordinary run-to-run variance
+2. Continue improving generic supervision around chemically similar compounds rather than changing encoder type alone
+3. Revisit hybrid inference only if it uses richer uncertainty or candidate-structure information than one global fusion scalar
 
 ## Current Status
 
 - pt2 pure compounds have already been pulled into the repo
-- an expanded-reference retraining experiment was completed under the old synthetic Siamese + MLP framework
-- that result improved pt2 performance but still produced too many extra labels on several real mixtures
-- we are now pivoting away from embedding-first classification toward sparse unmixing
+- the clean classical benchmark has been frozen and pushed
+- several new deep experiments have now been run inside `Unmixing_Pipeline`
+- the old synthetic Siamese + MLP framework is no longer the primary direction
+- the active comparison is now:
+  - clean deep coefficient-regressor family
+  - clean classical binary NNLS anchor
+  - diagnostic classical ceiling
 
 ## Working Rule For This Directory
 

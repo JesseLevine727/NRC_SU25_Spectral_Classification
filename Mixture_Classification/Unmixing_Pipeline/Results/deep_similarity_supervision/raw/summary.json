@@ -1,0 +1,186 @@
+{
+  "mode": "raw",
+  "model_type": "mlp_similarity_supervision_regressor",
+  "baseline_results_dir": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Results/deep_binary_coefficient_regressor",
+  "device": "cuda",
+  "synthetic_generation": {
+    "ratios": [
+      0.1,
+      0.2,
+      0.30000000000000004,
+      0.4,
+      0.5,
+      0.6,
+      0.7000000000000001,
+      0.8,
+      0.9
+    ],
+    "n_per_ratio": 10,
+    "noise_scale": 0.01,
+    "global_scale_range": [
+      0.85,
+      1.15
+    ]
+  },
+  "training": {
+    "epochs_max": 80,
+    "patience": 12,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "support_loss_weight": 0.35,
+    "recon_loss_weight": 0.15,
+    "margin": 0.08,
+    "margin_loss_weight": 0.25,
+    "similarity_false_loss_weight": 0.2
+  },
+  "synthetic": {
+    "samples_total": 12240,
+    "train_samples": 9792,
+    "val_samples": 1224,
+    "test_samples": 1224,
+    "train_top2_binary": {
+      "exact_match": 0.9187091503267973,
+      "micro_precision": 0.9593545751633987,
+      "micro_recall": 0.9593545751633987,
+      "micro_f1": 0.9593545751633987,
+      "mean_true_labels": 2.0,
+      "mean_predicted_labels": 2.0
+    },
+    "val_top2_binary": {
+      "exact_match": 0.9313725490196079,
+      "micro_precision": 0.9656862745098039,
+      "micro_recall": 0.9656862745098039,
+      "micro_f1": 0.9656862745098039,
+      "mean_true_labels": 2.0,
+      "mean_predicted_labels": 2.0
+    },
+    "test_top2_binary": {
+      "exact_match": 0.9076797385620915,
+      "micro_precision": 0.9538398692810458,
+      "micro_recall": 0.9538398692810458,
+      "micro_f1": 0.9538398692810458,
+      "mean_true_labels": 2.0,
+      "mean_predicted_labels": 2.0
+    }
+  },
+  "existing_real_top2_binary": {
+    "exact_match": 0.6620689655172414,
+    "micro_precision": 0.743103448275862,
+    "micro_recall": 0.743103448275862,
+    "micro_f1": 0.743103448275862,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.0
+  },
+  "pt2_real_top2_binary": {
+    "overall": {
+      "exact_match": 1.0,
+      "micro_precision": 1.0,
+      "micro_recall": 1.0,
+      "micro_f1": 1.0,
+      "mean_true_labels": 2.0,
+      "mean_predicted_labels": 2.0
+    },
+    "per_mixture": [
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "source": "Mix 13",
+        "samples": 36,
+        "true_labels": "n-hexane + pyridine"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "source": "Mix 15",
+        "samples": 36,
+        "true_labels": "benzene + n-hexane"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "source": "Mix 16",
+        "samples": 36,
+        "true_labels": "dichloromethane + n-hexane"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "source": "Mix 17",
+        "samples": 36,
+        "true_labels": "diethylamine + pyridine"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "source": "Mix 18",
+        "samples": 36,
+        "true_labels": "6-mercapto-1-hexanol + dichloromethane"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "source": "Mix 19",
+        "samples": 36,
+        "true_labels": "benzene + pyridine"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "source": "Mix 20",
+        "samples": 36,
+        "true_labels": "benzene + toluene"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "source": "Mix 21",
+        "samples": 36,
+        "true_labels": "acetonitrile + dichloromethane"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "source": "Mix 22",
+        "samples": 36,
+        "true_labels": "acetonitrile + pyridine"
+      }
+    ]
+  }
+}
