@@ -52,6 +52,14 @@ We will treat mixture classification as sparse library matching / unmixing:
 
 This is a better match to the scientific task than pair classification in embedding space.
 
+Cardinality should be framed carefully:
+
+- in principle, we do not assume we know the number of components in advance
+- in practice, the current dataset consists of binary mixtures
+- so the main inference rule can still be binary-constrained if that gives the best real-data performance
+
+That means the scientific framing is "unknown support over a known library," while the current operational framing is "use a strong binary-support solver because the observed mixtures are binary."
+
 ## Data Layout
 
 The active classical pipeline is intended to be self-contained inside `Unmixing_Pipeline/`.
@@ -80,7 +88,7 @@ Important assumptions:
 - the exact mixture composition is not known in advance
 - the true compounds are assumed to come from the library
 - the broader intended problem does not assume we know the number of mixture components at inference time
-- however, the best current baseline experiments do assume binary mixtures unless stated otherwise
+- however, for the current dataset, binary-constrained inference is a deliberate and reasonable modeling choice because all labeled mixtures are binary
 - coefficients must be nonnegative
 
 So the current baseline framing is:
@@ -95,7 +103,7 @@ where:
 
 The exhaustive pair NNLS solver tries every pair in the library and chooses the pair with the best reconstruction.
 
-### Important limitation of the current best model
+### Binary Assumption At Inference
 
 The current best-performing model in this directory is a binary-mixture solver.
 
@@ -105,21 +113,44 @@ That means:
 - it does not know which pair is correct ahead of time
 - but it does assume there are exactly `2` compounds in the mixture
 
-So the current line of work should be interpreted as:
+This should be interpreted carefully:
 
-- a strong binary-mixture baseline
-- not yet the final solution to the more general "unknown number of known-library compounds" problem
+- scientifically, it is not the most general formulation because the number of components is not assumed known a priori
+- operationally, it is well matched to the current data because all available real mixtures are binary
+- methodologically, it is the benchmark to beat before adding more flexible cardinality handling
 
 This distinction matters:
 
-- if the real deployment problem is mostly binary mixtures, the current model is already well aligned
-- if the real deployment problem may include ternary or more complex mixtures, the binary solver is only an anchor, not the end state
+- if the deployment problem remains binary mixtures of known compounds, the current solver may already be the right inference rule
+- if future data includes ternary or more complex mixtures, the binary solver becomes an anchor rather than the final model
 
 The current plan is therefore:
 
-- keep strengthening the binary solver until improvements plateau
-- use it as the benchmark to beat
-- then relax the cardinality assumption in later experiments
+- keep the binary solver as the main benchmark and likely deployment baseline for the current dataset
+- continue testing whether relaxing the cardinality assumption actually improves real-data performance
+- only promote an open-cardinality solver if it beats the binary-constrained model on the mixtures that matter
+
+### Benchmark Policy
+
+This directory needs a clean distinction between:
+
+- benchmark methods:
+  - general methods intended to stand on their own without pair- or family-specific overrides
+- diagnostic variants:
+  - localized engineering rules used to probe whether the remaining errors are structural or just decision-boundary artifacts
+
+For scientific comparison, the primary benchmark should remain a general method.
+
+In the current repo state, that means:
+
+- primary clean benchmark:
+  - replicate-aware binary pair NNLS with one constant nuisance baseline atom
+- diagnostic engineering variants:
+  - selective low-baseline fallback
+  - family-specific near-tie fallback for `1-dodecanethiol + meoh`
+
+Those diagnostic variants are useful because they show the remaining error surface is highly localized.
+They should not be treated as the main scientific method unless we explicitly decide that deployment-specific engineering is more important than methodological cleanliness.
 
 ### What is in the reference set
 
@@ -234,6 +265,34 @@ This is the scientifically correct framing for the current experiments.
 4. Denoiser + classical unmixing
 
 These are optional and only worth pursuing if they outperform the best non-deep baseline on real mixtures.
+
+## Classical Exit Criteria
+
+Deep methods should not be explored just because they are available. They become justified only after the classical track has been pushed to a credible ceiling.
+
+For this directory, the classical track should be considered mature enough to justify a deep pivot only when most of the following are true:
+
+- the binary replicate-aware NNLS anchor has been finalized and calibrated as the main operational model
+- binary-first inference with reject / abstain logic has been evaluated on both real-mixture sets and both pure-spectrum sets
+- additional classical changes stop improving real-mixture exact support recovery in a meaningful way
+- remaining errors look structural rather than threshold- or dictionary-quality-related
+- there is a concrete reason to expect a learned model to help:
+  - stronger domain shift
+  - nonlinear background or interference
+  - larger and more variable training data
+  - future non-binary mixtures that make the binary solver insufficient
+
+Operational decision rule:
+
+- if the binary-constrained classical model remains the best real-data method, keep it as the benchmark and likely deployment baseline
+- if a more flexible classical model beats it cleanly, promote that classical model first
+- only move to deep methods once the best classical model has clearly plateaued and the expected gain is no longer from better calibration, better support selection, or better dictionary construction
+
+Current decision:
+
+- the clean classical benchmark is already very strong
+- the remaining improvements after that benchmark came mostly from localized fallback logic
+- so this is close to the point where a deep pivot becomes reasonable, if and only if we want a more general method than those localized engineering fixes
 
 ## Evaluation Rules
 

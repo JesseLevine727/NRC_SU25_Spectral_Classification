@@ -1,0 +1,146 @@
+{
+  "dataset": "existing_real",
+  "samples": 580,
+  "anchor_exact_match": 0.906896551724138,
+  "anchor_error_count": 54,
+  "accepted_count": 562,
+  "rejected_count": 18,
+  "accepted_exact_match": 0.9092526690391459,
+  "accepted_error_count": 51,
+  "rejected_correct_count": 15,
+  "rejected_incorrect_count": 3,
+  "top_failure_modes": [
+    {
+      "true_labels": "6-mercapto-1-hexanol + pyridine",
+      "predicted_labels": "benzenethiol + pyridine",
+      "samples": 36
+    },
+    {
+      "true_labels": "1-dodecanethiol + meoh",
+      "predicted_labels": "1-dodecanethiol + diethylamine",
+      "samples": 9
+    },
+    {
+      "true_labels": "1-dodecanethiol + meoh",
+      "predicted_labels": "1-undecanethiol + meoh",
+      "samples": 8
+    },
+    {
+      "true_labels": "1-dodecanethiol + meoh",
+      "predicted_labels": "1-dodecanethiol + tris(2-ethylhexyl) phosphate",
+      "samples": 1
+    }
+  ],
+  "worst_true_pairs": [
+    {
+      "true_labels": "6-mercapto-1-hexanol + pyridine",
+      "samples": 36,
+      "anchor_exact_rate": 0.0,
+      "reject_rate": 0.0,
+      "accepted_exact_rate": 0.0,
+      "accepted_error_rate": 1.0,
+      "mean_residual_rel": 0.2292100366772891,
+      "mean_minor_share": 0.2855868945655732,
+      "mean_gap_ratio": 0.15833091607063265
+    },
+    {
+      "true_labels": "1-dodecanethiol + meoh",
+      "samples": 158,
+      "anchor_exact_rate": 0.8860759493670886,
+      "reject_rate": 0.11392405063291139,
+      "accepted_exact_rate": 0.8928571428571429,
+      "accepted_error_rate": 0.10714285714285714,
+      "mean_residual_rel": 0.10598048384871324,
+      "mean_minor_share": 0.19776304206496398,
+      "mean_gap_ratio": 0.07893148963017918
+    },
+    {
+      "true_labels": "1-dodecanethiol + benzene",
+      "samples": 49,
+      "anchor_exact_rate": 1.0,
+      "reject_rate": 0.0,
+      "accepted_exact_rate": 1.0,
+      "accepted_error_rate": 0.0,
+      "mean_residual_rel": 0.1454476167466992,
+      "mean_minor_share": 0.4884167080827487,
+      "mean_gap_ratio": 0.0024149861597044754
+    },
+    {
+      "true_labels": "benzene + benzenethiol",
+      "samples": 36,
+      "anchor_exact_rate": 1.0,
+      "reject_rate": 0.0,
+      "accepted_exact_rate": 1.0,
+      "accepted_error_rate": 0.0,
+      "mean_residual_rel": 0.1250779224695954,
+      "mean_minor_share": 0.15449106224332937,
+      "mean_gap_ratio": 2.0089806736872586
+    },
+    {
+      "true_labels": "benzenethiol + pyridine",
+      "samples": 36,
+      "anchor_exact_rate": 1.0,
+      "reject_rate": 0.0,
+      "accepted_exact_rate": 1.0,
+      "accepted_error_rate": 0.0,
+      "mean_residual_rel": 0.10481172590412632,
+      "mean_minor_share": 0.4157821948502988,
+      "mean_gap_ratio": 2.9476075863391378
+    },
+    {
+      "true_labels": "6-mercapto-1-hexanol + n,n-dimethylformamide",
+      "samples": 36,
+      "anchor_exact_rate": 1.0,
+      "reject_rate": 0.0,
+      "accepted_exact_rate": 1.0,
+      "accepted_error_rate": 0.0,
+      "mean_residual_rel": 0.09887167689881564,
+      "mean_minor_share": 0.44100291342792475,
+      "mean_gap_ratio": 0.44230051853662194
+    },
+    {
+      "true_labels": "6-mercapto-1-hexanol + benzene",
+      "samples": 36,
+      "anchor_exact_rate": 1.0,
+      "reject_rate": 0.0,
+      "accepted_exact_rate": 1.0,
+      "accepted_error_rate": 0.0,
+      "mean_residual_rel": 0.0976394313253041,
+      "mean_minor_share": 0.29898203791394157,
+      "mean_gap_ratio": 0.06794340734934635
+    },
+    {
+      "true_labels": "benzene + etoh",
+      "samples": 36,
+      "anchor_exact_rate": 1.0,
+      "reject_rate": 0.0,
+      "accepted_exact_rate": 1.0,
+      "accepted_error_rate": 0.0,
+      "mean_residual_rel": 0.09630474840336449,
+      "mean_minor_share": 0.47730360922633747,
+      "mean_gap_ratio": 0.3263699499211045
+    },
+    {
+      "true_labels": "etoh + meoh",
+      "samples": 49,
+      "anchor_exact_rate": 1.0,
+      "reject_rate": 0.0,
+      "accepted_exact_rate": 1.0,
+      "accepted_error_rate": 0.0,
+      "mean_residual_rel": 0.09201316676282008,
+      "mean_minor_share": 0.4196370102904728,
+      "mean_gap_ratio": 4.160210857785918
+    },
+    {
+      "true_labels": "n,n-dimethylformamide + pyridine",
+      "samples": 36,
+      "anchor_exact_rate": 1.0,
+      "reject_rate": 0.0,
+      "accepted_exact_rate": 1.0,
+      "accepted_error_rate": 0.0,
+      "mean_residual_rel": 0.08302581850962087,
+      "mean_minor_share": 0.3552497567413339,
+      "mean_gap_ratio": 2.5337451846566355
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "mode": "baseline_corrected",
+  "n_extra_reps": 9,
+  "baseline_fallback": {
+    "baseline_rel_threshold": 0.025,
+    "alt_baseline_rel_max": 0.005,
+    "residual_margin": 0.05
+  },
+  "family_fallback": {
+    "target_pair": "1-dodecanethiol + meoh",
+    "override_pairs": [
+      "1-dodecanethiol + tris(2-ethylhexyl) phosphate",
+      "1-undecanethiol + meoh"
+    ],
+    "family_margin": 0.003
+  },
+  "existing_real": {
+    "exact_match": 0.9844827586206897,
+    "micro_precision": 0.9922413793103448,
+    "micro_recall": 0.9922413793103448,
+    "micro_f1": 0.9922413793103448,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.0
+  },
+  "pt2_real": {
+    "exact_match": 1.0,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.0
+  },
+  "target_pair_accuracy": {
+    "6-mercapto-1-hexanol + pyridine": 1.0,
+    "1-dodecanethiol + meoh": 0.9430379746835443
+  },
+  "fallback_rates": {
+    "existing_baseline": 0.06206896551724138,
+    "existing_family": 0.015517241379310345,
+    "pt2_baseline": 0.0,
+    "pt2_family": 0.0
+  }
+}

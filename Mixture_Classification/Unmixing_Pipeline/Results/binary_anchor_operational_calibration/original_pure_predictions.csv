@@ -1,0 +1,566 @@
+sample_id,dataset,source,true_labels,predicted_labels,correct,residual_norm,residual_rel,minor_share,gap_ratio,baseline_coef_sum,binary_accept
+orig_pure/0,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + tris(2-ethylhexyl) phosphate",False,0.0,0.0,0.0,7.919159918457851e-05,0.0,False
+orig_pure/1,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + 1-undecanethiol",False,50.35116519254002,0.01689106400399405,0.010741468471187801,0.0034553017547487943,0.0,False
+orig_pure/2,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + meoh",False,61.47364611818492,0.02064161917626115,0.00527688682373688,0.004163433413286975,2.304039168572734,False
+orig_pure/3,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + pyridine",False,59.93983679776925,0.020053710484690696,0.0008285313405407182,0.00043513913186847374,0.0,False
+orig_pure/4,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + 6-mercapto-1-hexanol",False,59.312525359900654,0.019801047884401415,0.029007682383343385,0.009083119315017976,2.427483545902156,False
+orig_pure/5,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + tris(2-ethylhexyl) phosphate",False,57.221338653114636,0.019131554297695565,0.003883619958134325,0.002509249099595932,0.0,False
+orig_pure/6,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + dichloromethane",False,59.0252215086752,0.019861876136568316,0.0004005560409683907,0.0009915143824017034,1.7505581919590265,False
+orig_pure/7,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + dmmp",False,57.755957953559225,0.019484475906466077,0.0011408314945862087,0.0036802519325116667,6.655603067037525,False
+orig_pure/8,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + 1-undecanethiol",False,0.0,0.0,0.0,0.0,0.0,False
+orig_pure/9,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + benzene",False,0.0,0.0,0.0,0.0,0.0,False
+orig_pure/10,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + n-hexane",False,1.177819397619995e-14,3.896897767200564e-18,1.5901161240082441e-19,1.833283775571867e-07,5.574554931320192e-16,False
+orig_pure/11,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + dichloromethane",False,58.07456099325893,0.019257249510613975,0.0002892138999404748,0.0003689759412786864,0.0,False
+orig_pure/12,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + 1-dodecanethiol",False,0.0,0.0,0.0,4.090417630494973e-05,0.0,False
+orig_pure/13,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + pyridine",False,57.07667878995264,0.01881103979927043,0.0007159768699744021,0.0009201039759359646,0.3747962198878379,False
+orig_pure/14,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + 1-dodecanethiol",False,57.197473207424586,0.018889747546994788,0.0052378597133831304,0.0009792163868017102,0.0,False
+orig_pure/15,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + benzene",False,58.12970734783808,0.019261973430513453,0.00012113535454113076,0.00023852462382367148,0.5956157794708775,False
+orig_pure/16,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + 6-mercapto-1-hexanol",False,59.208551145879674,0.019611855563383965,0.01363244354483485,0.0017847205122097447,0.0,False
+orig_pure/17,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + n-hexane",False,0.0,0.0,0.0,0.1033355391099523,0.0,False
+orig_pure/18,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + n,n-dimethylformamide",False,2.765731526959704e-16,1.0751311924970527e-19,0.0,0.13995709428117772,9.860792771407324e-16,False
+orig_pure/19,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + diethylamine",False,0.0,0.0,0.0,1.0842021724855044e-07,0.0,False
+orig_pure/20,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + acetonitrile",False,58.79593078019002,0.019356949193924573,0.0008232575507619326,0.00011762034798336523,0.0,False
+orig_pure/21,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + 1-dodecanethiol",False,61.004511016187394,0.02017374122710876,0.006245360924934034,0.0006380156622812376,0.0,False
+orig_pure/22,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + dichloromethane",False,61.65480915402848,0.020448619882600504,0.0004201918197834433,0.0008861342351786069,0.0,False
+orig_pure/23,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + 1-dodecanethiol",False,59.12047617846818,0.019602264802290624,0.004959652399150162,0.0019705180069358595,0.359076497475662,False
+orig_pure/24,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + dichloromethane",False,61.87090918353377,0.020551677050732374,0.00010364202569622303,0.00013991761884592414,0.22787592882292027,False
+orig_pure/25,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + n,n-dimethylformamide",False,2.860007253711968e-13,9.409516637720473e-17,1.2987024047980379e-18,6.313330548509312e-05,1.4993430272444485e-14,False
+orig_pure/26,original_pure,"1,9-nonanedithiol","1,9-nonanedithiol","1,9-nonanedithiol + pyridine",False,61.071999427215786,0.020152245534622387,0.0009316646452675483,0.0002714599868615411,5.457483168978985,False
+orig_pure/27,original_pure,1-dodecanethiol,1-dodecanethiol,"1,9-nonanedithiol + 1-dodecanethiol",False,0.0,0.0,0.0,0.12708351015762673,0.0,False
+orig_pure/28,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + benzenethiol,False,3.3993498887762956e-17,1.4346355935569492e-20,2.598751500994399e-19,2.4060634784676822e-05,2.9358056235502904e-16,False
+orig_pure/29,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + dichloromethane,False,0.0,0.0,0.0,1.8843920332467885e-05,0.0,False
+orig_pure/30,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + pyridine,False,43.14717158280918,0.0183366230203341,0.00039681888054428664,0.0005386322164316772,0.0,False
+orig_pure/31,original_pure,1-dodecanethiol,1-dodecanethiol,"1,9-nonanedithiol + 1-dodecanethiol",False,42.68912574979884,0.01816299449484665,0.004162661946959475,0.006825481836361843,0.0,False
+orig_pure/32,original_pure,1-dodecanethiol,1-dodecanethiol,"1,9-nonanedithiol + 1-dodecanethiol",False,57.79764055664389,0.02481956321292422,0.006020273593371002,0.0016571583606070715,3.9156093692876612,False
+orig_pure/33,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + acetonitrile,False,57.97436521515056,0.02471854612377655,0.00012709122635744553,1.9267823712342754e-05,0.0,False
+orig_pure/34,original_pure,1-dodecanethiol,1-dodecanethiol,"1,9-nonanedithiol + 1-dodecanethiol",False,56.7366724760794,0.024013376767254842,0.003627672366985984,0.0021962287747159756,0.0,False
+orig_pure/35,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + pyridine,False,54.794520607107735,0.023222352020718113,0.0010806273193059543,0.0006082393477818469,0.0,False
+orig_pure/36,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + benzene,False,1.2642055373276522e-13,5.3224425054425767e-17,1.4242303114088787e-20,0.06965738324792736,8.7807844407659e-16,False
+orig_pure/37,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + 1-undecanethiol,False,52.88970983009717,0.02256675833683527,0.012397497728860946,0.0004742964365884955,0.0,False
+orig_pure/38,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + tris(2-ethylhexyl) phosphate,False,52.91512410917621,0.022504808363602375,0.003773863547926211,0.0013727246315498513,0.0,False
+orig_pure/39,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + dichloromethane,False,52.666055155495236,0.02231402401158457,0.00042593582063233065,0.0005910370863788798,0.0,False
+orig_pure/40,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + 1-undecanethiol,False,51.90626718224754,0.021908679644831962,0.05177764106380212,0.005923735609436783,0.0,False
+orig_pure/41,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + n-hexane,False,1.7243858775997663e-13,7.26909131403363e-17,2.3587272602503114e-19,1.0654921121940802e-07,0.0,False
+orig_pure/42,original_pure,1-dodecanethiol,1-dodecanethiol,"1,9-nonanedithiol + 1-dodecanethiol",False,50.53184509161057,0.021643436259752624,0.002115328443545509,0.000707420831377471,0.0,False
+orig_pure/43,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + meoh,False,50.94039043545224,0.021655403647703245,0.004031021522166695,0.0007677401848855039,1.3614721846676985,False
+orig_pure/44,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + tris(2-ethylhexyl) phosphate,False,50.82654056370983,0.02155167357690924,0.005957046931884784,0.004060458240131469,6.587681605515946,False
+orig_pure/45,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + etoh,False,50.88110687735307,0.021551035012772134,0.010634886633114701,0.00740606566549036,1.4859683062499427,False
+orig_pure/46,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + 1-undecanethiol,False,52.00220784896217,0.02193386904683254,0.05488666911129794,0.010055823883323189,0.0,False
+orig_pure/47,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + 1-undecanethiol,False,54.33602306869242,0.023160970935527946,0.05339480800967669,0.007548416799617632,0.0,False
+orig_pure/48,original_pure,1-dodecanethiol,1-dodecanethiol,"1-dodecanethiol + n,n-dimethylformamide",False,51.60694391250941,0.021901511164163917,0.0019114409482015161,0.0006054437696493769,3.981554723043544,False
+orig_pure/49,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + 1-undecanethiol,False,49.02011343877737,0.020840979465069492,0.05026306799051879,0.005992223930144511,0.0,False
+orig_pure/50,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + pyridine,False,1.273323983985881e-13,5.3680772747330845e-17,0.0,0.33661684799031816,0.0,False
+orig_pure/51,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + toluene,False,0.0,0.0,2.0068758065630351e-22,3.267606201394073e-05,0.0,False
+orig_pure/52,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + tris(2-ethylhexyl) phosphate,False,52.30781469597119,0.022210940132014422,0.005076337726300936,0.0013951281940406586,0.0,False
+orig_pure/53,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + toluene,False,3.714188105593406e-14,1.572534679932777e-17,1.3377824261361126e-19,0.34193682083861754,1.4482703507637015e-15,False
+orig_pure/54,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + tris(2-ethylhexyl) phosphate,False,53.311603668734364,0.022461507249382402,0.004600972538151865,0.0007343067117121987,0.0,False
+orig_pure/55,original_pure,1-dodecanethiol,1-dodecanethiol,1-dodecanethiol + tris(2-ethylhexyl) phosphate,False,54.53581413866332,0.02302890273883247,0.007176909234469532,0.0008022650604209773,0.0,False
+orig_pure/56,original_pure,1-dodecanethiol,1-dodecanethiol,"1,9-nonanedithiol + 1-dodecanethiol",False,0.0,0.0,0.0,0.9676526895726824,0.0,False
+orig_pure/57,original_pure,1-undecanethiol,1-undecanethiol,1-dodecanethiol + 1-undecanethiol,False,4.74644977303191e-13,2.201202886960882e-16,7.138229559833743e-19,0.0908639912909816,0.0,False
+orig_pure/58,original_pure,1-undecanethiol,1-undecanethiol,1-dodecanethiol + 1-undecanethiol,False,47.89467018841793,0.02239906229654802,0.028326214516278116,0.0020567791583205215,0.0,False
+orig_pure/59,original_pure,1-undecanethiol,1-undecanethiol,"1-undecanethiol + n,n-dimethylformamide",False,53.32268753747892,0.025105064459593998,0.0012486935308042534,0.0007612871810633022,0.0,False
+orig_pure/60,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + benzene,False,1.060477309651615e-14,4.986992969768557e-18,4.263120819171351e-21,0.000161152092027141,0.0,False
+orig_pure/61,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + dmmp,False,1.0223100906202021e-16,4.853368921047523e-20,0.0,0.00027392008336221853,4.93462629597511e-16,False
+orig_pure/62,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + 6-mercapto-1-hexanol,False,6.039062019779345e-14,2.879948490211157e-17,0.0,0.0,0.0,False
+orig_pure/63,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + tris(2-ethylhexyl) phosphate,False,47.00253284815984,0.022500066481511892,0.0024039327390852315,0.0003292124678948608,0.0,False
+orig_pure/64,original_pure,1-undecanethiol,1-undecanethiol,"1-undecanethiol + n,n-dimethylformamide",False,47.49378295000401,0.02282724614095739,0.0004874535546864637,0.0001103906172055259,1.886905788876826,False
+orig_pure/65,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + 6-mercapto-1-hexanol,False,47.527377017661756,0.02292222682622128,0.011818629100650142,0.0007633054189330231,0.0,False
+orig_pure/66,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + 6-mercapto-1-hexanol,False,49.354856607327484,0.024036986861883304,0.00453399297762799,0.0008309553378185535,0.0,False
+orig_pure/67,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + toluene,False,49.55028799454089,0.024090133663918222,0.0002477705539577754,0.0004148333489131414,4.315855872332861,False
+orig_pure/68,original_pure,1-undecanethiol,1-undecanethiol,"1,9-nonanedithiol + 1-undecanethiol",False,1.74001799496067e-14,8.499074796187445e-18,6.816280205244377e-19,0.044781161240800435,1.349110721538916e-16,False
+orig_pure/69,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + pyridine,False,49.723037199113634,0.02450252635635224,0.0003433904384092566,2.8498559089794318e-05,2.138098971914792,False
+orig_pure/70,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + 6-mercapto-1-hexanol,False,3.3477466516396756e-16,1.6436866801497513e-19,0.0,0.0,1.0730649159972886e-15,False
+orig_pure/71,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + acetonitrile,False,48.10870223798633,0.02380171952494642,0.0012533602199247872,0.000821392915650928,1.3670575394209903,False
+orig_pure/72,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + meoh,False,46.90396649786302,0.02321396246807393,0.0035358426353510656,0.0005569177289266002,0.0,False
+orig_pure/73,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + 6-mercapto-1-hexanol,False,48.046084853534964,0.023954824932323704,0.009041465179595863,0.001583816415631762,1.541122628643195,False
+orig_pure/74,original_pure,1-undecanethiol,1-undecanethiol,1-dodecanethiol + 1-undecanethiol,False,46.992907197757376,0.02331770435823982,0.023872671709016986,0.002603514974010341,3.233447497598337,False
+orig_pure/75,original_pure,1-undecanethiol,1-undecanethiol,1-dodecanethiol + 1-undecanethiol,False,48.30335864301234,0.024146455274416865,0.05449155350326558,0.01331236061816717,0.0,False
+orig_pure/76,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + toluene,False,0.0,0.0,0.0,0.00036663504807888595,0.0,False
+orig_pure/77,original_pure,1-undecanethiol,1-undecanethiol,"1,9-nonanedithiol + 1-undecanethiol",False,47.18862757897839,0.023646146775383254,0.008780834437568445,0.010167106417653613,3.604759353872367,False
+orig_pure/78,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + dmmp,False,1.0604994353027074e-13,5.2998088208262627e-17,4.373309164577261e-19,0.09237798637700236,4.664137495062386e-16,False
+orig_pure/79,original_pure,1-undecanethiol,1-undecanethiol,1-dodecanethiol + 1-undecanethiol,False,48.38993188940517,0.02436585028016189,0.025064222468623908,0.002044273448782016,1.7103009614945675,False
+orig_pure/80,original_pure,1-undecanethiol,1-undecanethiol,1-dodecanethiol + 1-undecanethiol,False,50.303833573394684,0.025259839602815057,0.043149493207245544,0.0063956557048081755,2.7602290751265777,False
+orig_pure/81,original_pure,1-undecanethiol,1-undecanethiol,1-undecanethiol + dichloromethane,False,47.227581962479455,0.02376676049518345,0.0003488862769587582,0.00011024544073030522,0.0,False
+orig_pure/82,original_pure,1-undecanethiol,1-undecanethiol,1-dodecanethiol + 1-undecanethiol,False,1.1268088253200926e-13,5.710288014950516e-17,1.9650309517804465e-16,0.031173828609177598,1.4991086815734514e-15,False
+orig_pure/83,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,"1,9-nonanedithiol + 6-mercapto-1-hexanol",False,5.223810326176162e-13,2.2349007550756424e-16,0.0,0.03921550956706275,5.994761849356909e-15,False
+orig_pure/84,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + etoh,False,31.097197932443258,0.02967443651245159,0.0028459778496606743,0.0007991763592663778,0.0,False
+orig_pure/85,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,"6-mercapto-1-hexanol + n,n-dimethylformamide",False,3.57102339519357e-15,3.3625250984714693e-18,0.0,0.014731101138003591,5.154358865398407e-15,False
+orig_pure/86,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + tris(2-ethylhexyl) phosphate,False,1.683687431958027e-16,1.5956921800765647e-19,0.0,8.163034850543058e-06,3.815807750415278e-16,False
+orig_pure/87,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,"6-mercapto-1-hexanol + n,n-dimethylformamide",False,41.17649224663415,0.03926298020968363,0.0009524460739066031,0.0016256497314254235,4.574259704533893,False
+orig_pure/88,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + acetonitrile,False,1.1347796742389756e-15,1.0863279104264908e-18,0.0,0.037143756968076834,2.444579279971367e-15,False
+orig_pure/89,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + etoh,False,39.74005944313671,0.03788941194634546,0.0007366954660105385,2.1917485147644728e-05,0.0,False
+orig_pure/90,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + toluene,False,39.977202075357,0.037951190552450526,0.0006067071460722352,0.0008844724023732732,0.0,False
+orig_pure/91,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,1-dodecanethiol + 6-mercapto-1-hexanol,False,0.0,0.0,0.0,0.0,0.0,False
+orig_pure/92,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,"6-mercapto-1-hexanol + n,n-dimethylformamide",False,39.9430858407819,0.038274078598642826,0.0006068210192288374,0.00047307386424510746,4.2621062442507895,False
+orig_pure/93,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + meoh,False,39.16486691875786,0.03744069139724917,0.0017221274218958145,0.0004850861297827887,2.619659112767289,False
+orig_pure/94,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + tris(2-ethylhexyl) phosphate,False,40.61053626499482,0.03871706953267711,0.0023748344034932867,4.7139811240754664e-05,0.6638108235969135,False
+orig_pure/95,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,"1,9-nonanedithiol + 6-mercapto-1-hexanol",False,39.11455695914827,0.03728362240456244,0.004570034262042641,0.003554273222608414,0.0,False
+orig_pure/96,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + etoh,False,39.009816016505134,0.0373352699030181,0.004432722804187635,0.0008994439743451785,3.2212644209416053,False
+orig_pure/97,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,"1,9-nonanedithiol + 6-mercapto-1-hexanol",False,39.75269375343224,0.03811227209818229,0.0038741559969957965,0.003341742207831988,5.3752149218944245,False
+orig_pure/98,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + benzene,False,38.22380199562637,0.03656759378630987,8.343833896005011e-05,0.0008679537487158988,5.85591641648901,False
+orig_pure/99,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + dmmp,False,40.26988914610316,0.038671342590129956,0.0008839742292122196,0.0007161066900173683,0.8362405803393895,False
+orig_pure/100,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + benzenethiol,False,1.734723475976807e-17,1.6597647181613856e-20,0.0,0.0012531031116324598,7.561747378211016e-17,False
+orig_pure/101,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + diethylamine,False,38.17317606561889,0.036655870107799325,0.0026449818330570958,0.002076321440380585,0.0,False
+orig_pure/102,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + dmmp,False,41.21850260778935,0.039459137846525945,0.0008660550805359332,0.0006373538953794133,0.0,False
+orig_pure/103,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,"1,9-nonanedithiol + 6-mercapto-1-hexanol",False,43.098356201248606,0.04135075135812879,0.002811585171132116,0.0008108576242723627,2.6489675123921415,False
+orig_pure/104,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + diethylamine,False,6.62865003177377e-14,6.367285383113635e-17,3.210592759752706e-17,0.0005667605361227042,7.313056987177001e-15,False
+orig_pure/105,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + toluene,False,8.664222233359945e-15,8.260231575435141e-18,0.0,0.06092834741942001,8.506851100753571e-15,False
+orig_pure/106,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,"1,9-nonanedithiol + 6-mercapto-1-hexanol",False,43.728775374082915,0.04202687172567605,0.0022981397404338837,0.0004408354415107986,0.0,False
+orig_pure/107,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + benzenethiol,False,41.03630940662905,0.039287473394130135,0.0006810903117386312,0.0006287583784491247,4.547127087213451,False
+orig_pure/108,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,6-mercapto-1-hexanol + benzenethiol,False,42.096461828106314,0.040577165329850305,0.0007207874171747983,0.0003137083599074255,0.0,False
+orig_pure/109,original_pure,6-mercapto-1-hexanol,6-mercapto-1-hexanol,1-undecanethiol + 6-mercapto-1-hexanol,False,4.922014102393681e-14,4.747716654891412e-17,1.1447782385925841e-18,0.03729631854690301,5.0124446818489976e-17,False
+orig_pure/110,original_pure,benzene,benzene,benzene + toluene,False,2.08402474614145e-12,8.211287513772022e-17,6.263992316562022e-19,0.2284104607952146,2.6805979896628876e-15,False
+orig_pure/111,original_pure,benzene,benzene,acetonitrile + benzene,False,1.8943538510405053e-12,7.273419672748561e-17,2.5733797445203264e-18,1.2532611507742046e-05,1.8323403405663984e-14,False
+orig_pure/112,original_pure,benzene,benzene,benzene + benzenethiol,False,2.640848355066292e-12,9.976762197567051e-17,0.0,0.0,0.0,False
+orig_pure/113,original_pure,benzene,benzene,benzene + pyridine,False,52.29549811654591,0.0019855790240985837,0.00063184024377501,0.00021102716771575307,0.0,False
+orig_pure/114,original_pure,benzene,benzene,6-mercapto-1-hexanol + benzene,False,50.820883242724776,0.001933575165591501,0.0008368445990074045,0.00015927430983104832,0.0,False
+orig_pure/115,original_pure,benzene,benzene,benzene + toluene,False,53.95396432230415,0.0020585833236104324,0.0005815754360817196,4.959988024784261e-05,0.0,False
+orig_pure/116,original_pure,benzene,benzene,benzene + meoh,False,2.6682066965037153e-12,1.0286123344049396e-16,3.007510940549567e-19,7.412990788440958e-09,8.362870702247967e-16,False
+orig_pure/117,original_pure,benzene,benzene,benzene + diethylamine,False,56.80323588020369,0.002189660381565783,0.0011851208593010502,0.0003103310015531485,0.0917261678158945,False
+orig_pure/118,original_pure,benzene,benzene,benzene + meoh,False,61.00583466336232,0.0023585638446805574,0.0011934631206526442,0.00018639194974107303,0.0,False
+orig_pure/119,original_pure,benzene,benzene,benzene + pyridine,False,59.77541594217129,0.002341593267707329,0.0010463404856127275,0.0008813670804782782,2.9717219676354,False
+orig_pure/120,original_pure,benzene,benzene,benzene + pyridine,False,5.6055974389416e-13,2.2149946060644824e-17,0.0,0.012595760003447197,0.0,False
+orig_pure/121,original_pure,benzene,benzene,benzene + etoh,False,64.99541200210416,0.0025879443887779547,0.003545345640155688,0.0001813549776027453,2.892242764952717,False
+orig_pure/122,original_pure,benzene,benzene,benzene + pyridine,False,9.100157973410772e-13,3.677903667702334e-17,9.865112086052315e-20,1.1090729533894532,0.0,False
+orig_pure/123,original_pure,benzene,benzene,benzene + diethylamine,False,72.0651595044857,0.002887895610428777,0.0025187547491011164,0.0011056289579109936,0.0,False
+orig_pure/124,original_pure,benzene,benzene,benzene + etoh,False,2.0763030557933223e-12,8.202578525646763e-17,1.2059556241375983e-19,2.0834241848863134e-10,8.135246925072957e-16,False
+orig_pure/125,original_pure,benzene,benzene,benzene + meoh,False,70.19233741049017,0.0027431260845915,0.00033201676575870344,1.874530796661002e-05,0.9219488867469005,False
+orig_pure/126,original_pure,benzene,benzene,acetonitrile + benzene,False,0.0,0.0,0.0,0.0,0.0,False
+orig_pure/127,original_pure,benzene,benzene,benzene + diethylamine,False,72.45111690712014,0.00280694609693456,0.0028846428028515515,0.0010763818558275778,3.369202037978605,False
+orig_pure/128,original_pure,benzene,benzene,benzene + dichloromethane,False,80.72461248810092,0.003121256395129786,0.0001188056897653569,3.030824713788132e-05,2.256678402430498,False
+orig_pure/129,original_pure,benzene,benzene,benzene + dichloromethane,False,62.43115227842146,0.0024162380685726318,0.00017266256893827423,0.0003004661830667809,0.0,False
+orig_pure/130,original_pure,benzene,benzene,benzene + toluene,False,69.57323006555922,0.0026929827997435873,0.0004587665160901699,0.0005107600368278517,0.0,False
+orig_pure/131,original_pure,benzene,benzene,benzene + dichloromethane,False,73.33941044659629,0.002830396831049176,0.0001336531011282885,4.374290993061642e-05,0.0,False
+orig_pure/132,original_pure,benzene,benzene,benzene + meoh,False,1.8919048792026616e-12,7.26508126365497e-17,1.563979874491926e-19,2.3100806759054414e-11,4.6697193279731785e-16,False
+orig_pure/133,original_pure,benzene,benzene,benzene + benzenethiol,False,76.48280230564603,0.002933054632759611,0.002864194893198719,0.0032222679140585784,2.226314319374283,False
+orig_pure/134,original_pure,benzene,benzene,benzene + toluene,False,73.600399922194,0.0028224903530117296,0.0006250037998109583,0.0019068363967515835,1.2284567192850688,False
+orig_pure/135,original_pure,benzene,benzene,benzene + benzenethiol,False,69.7164315656958,0.0026709057982657854,0.0030896924355544356,0.007892306248519101,3.343222193830172,False
+orig_pure/136,original_pure,benzene,benzene,"benzene + n,n-dimethylformamide",False,87.24677775123439,0.003342923543851255,0.000533885702334631,0.00012907808059330734,0.0,False
+orig_pure/137,original_pure,benzenethiol,benzenethiol,benzene + benzenethiol,False,65.65931949803151,0.020258575732419928,0.00025133777839164603,0.003947566430614498,0.0,False
+orig_pure/138,original_pure,benzenethiol,benzenethiol,benzene + benzenethiol,False,58.996262886894364,0.018166412398174115,0.00011190956997610616,0.00042099073896303,0.0,False
+orig_pure/139,original_pure,benzenethiol,benzenethiol,benzenethiol + toluene,False,1.8375897204652836e-15,5.681770682357703e-19,3.997923330526087e-19,0.01105842561577601,0.0,False
+orig_pure/140,original_pure,benzenethiol,benzenethiol,"benzenethiol + n,n-dimethylformamide",False,65.21069876253364,0.02014960353244593,0.0012409200520019509,0.0019731204832532175,0.0,False
+orig_pure/141,original_pure,benzenethiol,benzenethiol,benzene + benzenethiol,False,62.48078497061395,0.01928183538208581,0.00014285606016220949,0.0008519173074078728,5.121735955613441,False
+orig_pure/142,original_pure,benzenethiol,benzenethiol,benzenethiol + toluene,False,1.244459363561351e-14,3.841266878072799e-18,2.7122720612840942e-18,0.06324386648949411,0.0,False
+orig_pure/143,original_pure,benzenethiol,benzenethiol,benzenethiol + diethylamine,False,61.31327096863665,0.018914085783579043,0.002580181711334776,0.0002653152902554606,3.170055856519541,False
+orig_pure/144,original_pure,benzenethiol,benzenethiol,benzene + benzenethiol,False,1.2882949588732395e-14,3.950388711070975e-18,0.0,0.763046741561107,0.0,False
+orig_pure/145,original_pure,benzenethiol,benzenethiol,"benzenethiol + n,n-dimethylformamide",False,57.8068164916262,0.017773466424558723,0.0006865232003126861,0.00035266637905697815,3.1251557660276714,False
+orig_pure/146,original_pure,benzenethiol,benzenethiol,acetonitrile + benzenethiol,False,54.62394571220581,0.016880402799127604,0.001089837772260098,0.0005264576192582505,0.0,False
+orig_pure/147,original_pure,benzenethiol,benzenethiol,1-undecanethiol + benzenethiol,False,55.282606207608026,0.01697562977005548,0.0025311029213764985,6.328978149647377e-05,1.5722024985515395,False
+orig_pure/148,original_pure,benzenethiol,benzenethiol,benzenethiol + meoh,False,1.0467513300009665e-13,3.213560918636346e-17,7.979522039743232e-17,0.022431918270690087,0.0,False
+orig_pure/149,original_pure,benzenethiol,benzenethiol,benzenethiol + dmmp,False,55.60706770058295,0.01704733861905422,0.000771291049317002,0.0006271048269495027,0.23646920203672583,False
+orig_pure/150,original_pure,benzenethiol,benzenethiol,benzenethiol + toluene,False,56.805507735022005,0.01740489564002774,0.0006650896330030292,0.0009372722864965675,0.0,False
+orig_pure/151,original_pure,benzenethiol,benzenethiol,benzenethiol + toluene,False,55.82956736310336,0.017210855422479358,0.001323147593683845,0.005880294757334703,5.831074196036752,False
+orig_pure/152,original_pure,benzenethiol,benzenethiol,benzenethiol + pyridine,False,54.533087203480164,0.01671130466902398,0.00034509821652631745,4.0170032092811003e-05,0.0,False
+orig_pure/153,original_pure,benzenethiol,benzenethiol,benzenethiol + dmmp,False,1.6334980112132837e-16,5.0083177701668673e-20,0.0,0.002676706515161969,8.278833688896195e-16,False
+orig_pure/154,original_pure,benzenethiol,benzenethiol,benzenethiol + toluene,False,0.0,0.0,0.0,1.3687668344281647,0.0,False
+orig_pure/155,original_pure,benzenethiol,benzenethiol,benzenethiol + toluene,False,59.097348897962746,0.018190273113299512,0.0014988784472992217,0.009457066203787534,4.3918344221708105,False
+orig_pure/156,original_pure,benzenethiol,benzenethiol,"1,9-nonanedithiol + benzenethiol",False,1.3740105039801335e-15,4.247755834682175e-19,0.0,0.013483127501533463,3.2468042906390277e-15,False
+orig_pure/157,original_pure,benzenethiol,benzenethiol,benzenethiol + dichloromethane,False,56.21558883616699,0.017235270276517164,0.00034784014950777766,0.00026219742978295487,4.94551734982147,False
+orig_pure/158,original_pure,benzenethiol,benzenethiol,"benzenethiol + n,n-dimethylformamide",False,3.469446951953614e-18,1.0693399831750853e-21,0.0,1.5730369003644427e-05,5.5287242661807116e-17,False
+orig_pure/159,original_pure,benzenethiol,benzenethiol,benzenethiol + etoh,False,2.6817199750250297e-14,8.22538673952316e-18,1.1316079184383554e-17,0.01256176172959017,3.410748958399847e-16,False
+orig_pure/160,original_pure,benzenethiol,benzenethiol,benzenethiol + toluene,False,61.09020930850158,0.018765786620614087,0.0017939675240052238,0.012796916330348272,0.0,False
+orig_pure/161,original_pure,benzenethiol,benzenethiol,benzenethiol + toluene,False,56.89304301427608,0.01756715041037614,0.0016002377360344793,0.01163538443205037,0.0,False
+orig_pure/162,original_pure,benzenethiol,benzenethiol,benzenethiol + toluene,False,59.450996466962735,0.018274913729039423,0.001123908294897217,0.00500680860512015,0.0,False
+orig_pure/163,original_pure,benzenethiol,benzenethiol,benzenethiol + toluene,False,57.108709484336195,0.017658987499416138,0.0010525899943142137,0.004385158579037328,0.6605306712042347,False
+orig_pure/164,original_pure,dmmp,dmmp,diethylamine + dmmp,False,72.75392953569975,0.01179682329943167,0.00042676132479242093,1.960060978849859e-05,0.0,False
+orig_pure/165,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,92.65973925488372,0.015210985533861797,0.003995129997101698,0.08118688524253358,0.0,False
+orig_pure/166,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,102.90791558093676,0.01696069539413367,0.0012089430133241982,0.005096837348579222,0.0,False
+orig_pure/167,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,91.33306486830132,0.015010345266530452,0.003005764788127061,0.049851124439080435,0.0,False
+orig_pure/168,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,91.65792788806904,0.015160675538476996,0.0022223928387245257,0.02446795760865539,0.0,False
+orig_pure/169,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,87.98865193973937,0.014502299132649936,0.0018791009430672318,0.01738318732163402,0.0,False
+orig_pure/170,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,81.15691271879547,0.013401565365774068,0.0015684694814694139,0.015978984627019525,0.0,False
+orig_pure/171,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,81.45015129872904,0.0134506365292103,0.0010522191599823389,0.005638653974129733,3.7961268659890446,False
+orig_pure/172,original_pure,dmmp,dmmp,dmmp + etoh,False,80.8708922950899,0.01349314949573004,0.0030676934340198732,0.0015079160044112322,0.0,False
+orig_pure/173,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,5.967626198533796e-13,9.86368824882005e-17,1.1210133199525866e-18,0.285365204458049,1.2132179422309456e-15,False
+orig_pure/174,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,76.80548837264959,0.012811153919145167,0.0006313234419610985,0.0009054146109132778,2.6160813181601372,False
+orig_pure/175,original_pure,dmmp,dmmp,acetonitrile + dmmp,False,0.0,0.0,0.0,0.0,0.0,False
+orig_pure/176,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,78.7859521081272,0.013191850822725348,0.0,0.0,0.0,False
+orig_pure/177,original_pure,dmmp,dmmp,acetonitrile + dmmp,False,80.15205062155253,0.013317651973572124,1.6645514372570648e-06,1.7236779676034853e-09,0.0,False
+orig_pure/178,original_pure,dmmp,dmmp,dmmp + pyridine,False,83.74638542665978,0.013903112954323971,3.022940625737965e-05,1.8391877974981246e-06,0.0,False
+orig_pure/179,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,79.2988814082906,0.013149481344618881,0.0002784024918561229,0.0005361016311388821,0.0,False
+orig_pure/180,original_pure,dmmp,dmmp,dmmp + toluene,False,85.0340056856417,0.014090029255962136,0.00045947352428126403,0.0008672190973727192,0.0,False
+orig_pure/181,original_pure,dmmp,dmmp,benzene + dmmp,False,83.00000590442744,0.013707708642438254,0.00013230217524911187,3.9299693366114094e-05,0.0,False
+orig_pure/182,original_pure,dmmp,dmmp,1-undecanethiol + dmmp,False,86.66667114033235,0.014291987746000963,0.0035853131384965464,4.1001556334573356e-05,0.7728009825238342,False
+orig_pure/183,original_pure,dmmp,dmmp,acetonitrile + dmmp,False,85.22763831235,0.014024187533024628,0.000864494132291057,8.739859929491975e-05,0.0,False
+orig_pure/184,original_pure,dmmp,dmmp,benzene + dmmp,False,0.0,0.0,0.0,0.09590711950456789,0.0,False
+orig_pure/185,original_pure,dmmp,dmmp,dmmp + pyridine,False,0.0,0.0,0.0,0.0004484050470211362,0.0,False
+orig_pure/186,original_pure,dmmp,dmmp,dichloromethane + dmmp,False,2.2154966494377665e-12,3.574057346767687e-16,0.0,1.234158896692191,0.0,False
+orig_pure/187,original_pure,dmmp,dmmp,dmmp + meoh,False,9.62461747744525e-14,1.563332367437857e-17,6.191602025798567e-19,9.516009295364306e-05,2.9242182282481264e-15,False
+orig_pure/188,original_pure,dmmp,dmmp,dmmp + tris(2-ethylhexyl) phosphate,False,4.706186817419514e-17,7.669442905683193e-21,1.478061075315483e-19,2.003426874661362e-06,0.0,False
+orig_pure/189,original_pure,dmmp,dmmp,dmmp + meoh,False,7.757919228897728e-18,1.2716534967087542e-21,1.8022192384451435e-21,0.49642016275242673,0.0,False
+orig_pure/190,original_pure,dmmp,dmmp,dmmp + pyridine,False,1.27993912314e-16,2.102377728614273e-20,0.0,0.510348666213353,5.76233019821335e-16,False
+orig_pure/191,original_pure,etoh,etoh,acetonitrile + etoh,False,4.48919761238462e-15,5.413641485899732e-18,0.0,0.005122733157094194,5.978175395454093e-15,False
+orig_pure/192,original_pure,etoh,etoh,6-mercapto-1-hexanol + etoh,False,2.95631808754109e-13,1.1775993975142022e-16,0.0,0.0,0.0,False
+orig_pure/193,original_pure,etoh,etoh,1-undecanethiol + etoh,False,0.0,0.0,3.818570239899569e-21,0.0,0.0,False
+orig_pure/194,original_pure,etoh,etoh,6-mercapto-1-hexanol + etoh,False,3.029365640691988e-16,3.3649783950284135e-19,0.0,0.00972339669844082,4.994016043735483e-16,False
+orig_pure/195,original_pure,etoh,etoh,etoh + tris(2-ethylhexyl) phosphate,False,73.47901214016069,0.08336502712885599,0.0028667999423989806,2.0956375789802485e-05,0.0,False
+orig_pure/196,original_pure,etoh,etoh,benzenethiol + etoh,False,71.11905684501826,0.08041905155475165,0.0021273524250653665,0.0028007582906736535,0.0,False
+orig_pure/197,original_pure,etoh,etoh,etoh + n-hexane,False,0.0,0.0,0.0,0.0034018083276353933,0.0,False
+orig_pure/198,original_pure,etoh,etoh,etoh + n-hexane,False,68.90092310577622,0.0785617205193988,0.0021919560226007647,0.0004902098718823105,0.0,False
+orig_pure/199,original_pure,etoh,etoh,benzene + etoh,False,3.260501723188584e-15,3.751670692514123e-18,0.0,0.004339262743315777,5.939799213049104e-15,False
+orig_pure/200,original_pure,etoh,etoh,"1,9-nonanedithiol + etoh",False,67.17103451293319,0.07665301820504794,0.0019213513214404539,0.0012285920121421323,0.0,False
+orig_pure/201,original_pure,etoh,etoh,dmmp + etoh,False,72.29040763962406,0.08189948223580085,0.0003291916846755819,0.0003882988849240346,0.0,False
+orig_pure/202,original_pure,etoh,etoh,etoh + tris(2-ethylhexyl) phosphate,False,69.73926006304221,0.08052857981136254,0.0005514746710208015,3.887240328468768e-05,0.0,False
+orig_pure/203,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,71.28878422222726,0.08197039756385094,0.0009827916080471745,0.0003986765223407588,3.4255552985737467,False
+orig_pure/204,original_pure,etoh,etoh,etoh + n-hexane,False,71.06785595830206,0.08183371082648538,0.0022690349519992013,0.00044440412481188736,0.0,False
+orig_pure/205,original_pure,etoh,etoh,dmmp + etoh,False,74.22771890659214,0.08338309924746587,0.0010899325614051392,0.0011808669042487991,2.3248036747918164,False
+orig_pure/206,original_pure,etoh,etoh,1-dodecanethiol + etoh,False,69.05163729271922,0.07980057541160822,0.003001685409969113,0.0002776157084123609,0.0,False
+orig_pure/207,original_pure,etoh,etoh,etoh + meoh,False,70.69247591621067,0.08133045529166721,0.004357705521320079,1.3782943979740934e-05,0.0,False
+orig_pure/208,original_pure,etoh,etoh,"1,9-nonanedithiol + etoh",False,73.93565913461678,0.08561754267209767,0.0012298684491968328,0.0005577770857600226,3.467117822208892,False
+orig_pure/209,original_pure,etoh,etoh,dmmp + etoh,False,4.333337854099949e-17,4.932784266365074e-20,7.808571159341666e-21,0.007635228300131611,0.0,False
+orig_pure/210,original_pure,etoh,etoh,etoh + meoh,False,73.79921374120755,0.08526945622979619,0.0015325029034837026,0.0003415586917130161,3.2704463325578614,False
+orig_pure/211,original_pure,etoh,etoh,"1,9-nonanedithiol + etoh",False,69.62676939993244,0.08066211105754448,0.00201538580687939,0.00022614048035164393,0.0,False
+orig_pure/212,original_pure,etoh,etoh,diethylamine + etoh,False,73.81950926266903,0.08551174790276178,0.0016162561763803074,0.000257291118315665,2.603103166448578,False
+orig_pure/213,original_pure,etoh,etoh,diethylamine + etoh,False,73.78541103546605,0.08596021731230272,0.0039456681198472504,0.001101712298454325,5.174242036664297,False
+orig_pure/214,original_pure,etoh,etoh,benzene + etoh,False,1.8975831739398523e-14,2.1717439983348656e-17,0.0,0.0008186812817453467,5.702557879973798e-16,False
+orig_pure/215,original_pure,etoh,etoh,etoh + toluene,False,71.35637004438148,0.08138415869437508,0.0002374605784366886,0.00031858037573904887,0.0,False
+orig_pure/216,original_pure,etoh,etoh,1-dodecanethiol + etoh,False,1.830035564186602e-14,2.1317991641846565e-17,0.0,0.0015041703484420042,1.4733309666931968e-14,False
+orig_pure/217,original_pure,etoh,etoh,benzene + etoh,False,70.42444050291344,0.08115549221388295,7.029843241030623e-05,0.0003194190712444675,0.0,False
+orig_pure/218,original_pure,etoh,etoh,benzene + etoh,False,70.11889229068967,0.0802061357115578,7.107654801097213e-05,0.00016996961460647478,0.0,False
+orig_pure/219,original_pure,etoh,etoh,dichloromethane + etoh,False,68.42822195176733,0.07915587252332006,0.0001659499027853451,0.0002542699545931374,0.0,False
+orig_pure/220,original_pure,etoh,etoh,benzene + etoh,False,68.59652296665998,0.07945899949796437,0.00013084764094577385,0.0005591697128841245,0.0,False
+orig_pure/221,original_pure,etoh,etoh,dichloromethane + etoh,False,71.11018068564682,0.08244599718100803,0.00027691513218362784,0.0003084924778082189,0.0,False
+orig_pure/222,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,70.76678731648946,0.08190059946593947,0.0003745194881544691,0.00013483553402709558,0.0,False
+orig_pure/223,original_pure,etoh,etoh,etoh + n-hexane,False,71.77717615613062,0.08314932060903288,0.0018242426857858292,0.00017763716300575618,5.737185438162674,False
+orig_pure/224,original_pure,etoh,etoh,benzenethiol + etoh,False,73.3622351649972,0.08642948899515847,0.0012532071616176087,0.0006064911685489909,1.8005450947259998,False
+orig_pure/225,original_pure,etoh,etoh,dmmp + etoh,False,72.07203052000183,0.08286416781611361,0.0004978118795236568,0.00024709358199342783,8.16588219276517,False
+orig_pure/226,original_pure,etoh,etoh,acetonitrile + etoh,False,69.14831976464832,0.08058389285703012,0.0007651166698325986,0.00028795203240671014,0.0,False
+orig_pure/227,original_pure,etoh,etoh,"1,9-nonanedithiol + etoh",False,70.16148587097781,0.08101507266505896,0.0,0.0,0.0,False
+orig_pure/228,original_pure,etoh,etoh,diethylamine + etoh,False,69.74566347796525,0.08201287636677114,0.0003536555710288601,2.2107711111465786e-06,6.748698219915324,False
+orig_pure/229,original_pure,etoh,etoh,etoh + toluene,False,69.19923055952022,0.08103998294650869,0.0003392699465605276,0.000252861156996423,1.1517494042889675,False
+orig_pure/230,original_pure,etoh,etoh,diethylamine + etoh,False,74.70236856973995,0.08667554745439034,0.00440715566183685,0.0009288894033043936,1.4385861867960492,False
+orig_pure/231,original_pure,etoh,etoh,etoh + meoh,False,68.5219400532603,0.0802986455640616,0.0027203746851646904,0.0004497476461087084,0.0,False
+orig_pure/232,original_pure,etoh,etoh,etoh + pyridine,False,71.2803066916998,0.08267152285279931,0.0004004835613864764,9.010371291251345e-05,0.6358282395072782,False
+orig_pure/233,original_pure,etoh,etoh,acetonitrile + etoh,False,72.31905122881972,0.08436173730564067,0.0009412887482705318,0.0005859049516094337,0.0,False
+orig_pure/234,original_pure,etoh,etoh,"1,9-nonanedithiol + etoh",False,70.80028892397699,0.08377192423598905,0.002106325118425532,0.0003746124997144436,6.261752012910202,False
+orig_pure/235,original_pure,etoh,etoh,1-undecanethiol + etoh,False,73.6109504056678,0.08563879481811468,0.00226534706093539,1.8439321061291076e-05,4.748462764191096,False
+orig_pure/236,original_pure,etoh,etoh,benzenethiol + etoh,False,66.8781621877329,0.07903750348676596,0.0016184404992219256,0.0002735828364868705,10.165321173591103,False
+orig_pure/237,original_pure,etoh,etoh,etoh + pyridine,False,66.72318752074821,0.07919669446640021,0.0006367500263360504,0.0004406948333026707,5.182873321999981,False
+orig_pure/238,original_pure,etoh,etoh,etoh + n-hexane,False,75.093620552085,0.08864905527718897,0.0015111599108911368,4.573634913437338e-05,0.0,False
+orig_pure/239,original_pure,etoh,etoh,diethylamine + etoh,False,70.13133822770664,0.0824896280887902,0.003966442146974817,0.0006227288968195202,0.0,False
+orig_pure/240,original_pure,etoh,etoh,acetonitrile + etoh,False,65.95722750680702,0.07826519723517758,0.0007196560382491144,9.52739768314733e-05,3.412664663446361,False
+orig_pure/241,original_pure,etoh,etoh,acetonitrile + etoh,False,69.18427409199082,0.08146312552672265,0.0008685616807790452,0.00045317880219880894,0.0,False
+orig_pure/242,original_pure,etoh,etoh,diethylamine + etoh,False,69.95870405250714,0.08221543389928183,0.0030102013481389214,0.00045103311666509137,3.833998266787986,False
+orig_pure/243,original_pure,etoh,etoh,benzenethiol + etoh,False,72.43818705230117,0.08507186346005219,0.0012502596306299644,0.0007112153216993728,2.352231397962115,False
+orig_pure/244,original_pure,etoh,etoh,diethylamine + etoh,False,70.85949109590638,0.08431189212043746,0.005595493728428054,0.002344823596250351,3.1793248687556073,False
+orig_pure/245,original_pure,etoh,etoh,6-mercapto-1-hexanol + etoh,False,70.84423597993994,0.08325416951249347,0.00932777661580419,0.00013545333512140925,0.0,False
+orig_pure/246,original_pure,etoh,etoh,benzenethiol + etoh,False,69.95134698847426,0.08264995801633993,0.0013801875614178377,0.00048814169323088024,8.481216109112092,False
+orig_pure/247,original_pure,etoh,etoh,benzenethiol + etoh,False,72.46171450539352,0.08643607808123727,0.000907710889210269,0.0006581547036397412,0.0,False
+orig_pure/248,original_pure,etoh,etoh,etoh + n-hexane,False,69.11012031282853,0.08278530549850584,0.004456585308363621,0.004395825487018701,0.0,False
+orig_pure/249,original_pure,etoh,etoh,acetonitrile + etoh,False,73.86135820640466,0.08791848975841467,0.0014318216364053575,0.0008226065652784605,4.965685114414537,False
+orig_pure/250,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,73.16041278607308,0.08701730147733783,0.0014336073757915421,0.001594818739091793,17.711015158301716,False
+orig_pure/251,original_pure,etoh,etoh,etoh + meoh,False,68.52848081226033,0.08189662358101484,0.004028213429792156,0.0009578565459134476,5.136685964421157,False
+orig_pure/252,original_pure,etoh,etoh,etoh + toluene,False,68.38400530306129,0.0806729411732754,0.0006060935365563513,0.00019503777093958966,0.0,False
+orig_pure/253,original_pure,etoh,etoh,diethylamine + etoh,False,74.77811143821599,0.08896988466724605,0.0010812857821622664,8.802594679489272e-05,0.7902205518099071,False
+orig_pure/254,original_pure,etoh,etoh,"1,9-nonanedithiol + etoh",False,68.20541296538322,0.08127846689462098,0.001878214875680016,0.00022732403357557908,7.788113734115551,False
+orig_pure/255,original_pure,etoh,etoh,diethylamine + etoh,False,69.30748454087542,0.08263384560869357,0.00916112871884919,0.004059871721614303,4.515212006007956,False
+orig_pure/256,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,70.29264031161688,0.0840384028822409,0.00023642060200655004,5.0621889977594654e-05,7.941946846606848,False
+orig_pure/257,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,69.13949282992802,0.08338289234773973,0.0012077617127858127,0.0001379161639731072,10.907162004300728,False
+orig_pure/258,original_pure,etoh,etoh,etoh + pyridine,False,69.0354504948622,0.0823513746225072,0.0004960085055233526,0.0005603406308596631,0.0,False
+orig_pure/259,original_pure,etoh,etoh,diethylamine + etoh,False,69.72538863594315,0.08365556918120906,0.0026352301607116646,0.00019958447574428112,7.644360638908288,False
+orig_pure/260,original_pure,etoh,etoh,acetonitrile + etoh,False,70.64357126169104,0.08510257732399926,0.0012534105641747134,0.00106531533688748,9.096224970675607,False
+orig_pure/261,original_pure,etoh,etoh,etoh + meoh,False,67.05841939977614,0.0816348666989946,0.004004612039984079,0.00016962364493713602,14.581774278341408,False
+orig_pure/262,original_pure,etoh,etoh,diethylamine + etoh,False,68.93294038118601,0.08210262263701205,0.0021857554944133867,4.81748267706296e-05,0.0,False
+orig_pure/263,original_pure,etoh,etoh,dichloromethane + etoh,False,69.66716615301885,0.08336091543250727,0.00027111292623074976,0.00030631839092359767,2.1364719162097225,False
+orig_pure/264,original_pure,etoh,etoh,etoh + toluene,False,64.23694892687472,0.07735148136450763,0.00040766140271419226,0.0003684086494786167,0.0,False
+orig_pure/265,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,68.35938507940645,0.08200440351890197,0.003072784743130307,0.004654604562426064,0.6841604540869171,False
+orig_pure/266,original_pure,etoh,etoh,etoh + pyridine,False,71.08118114995203,0.08533223500609022,0.0015505215937310047,0.00041498872028497953,6.009571395988751,False
+orig_pure/267,original_pure,etoh,etoh,acetonitrile + etoh,False,66.3721894893993,0.07888305156500368,0.0014933125445537254,0.0005283082909686972,0.0,False
+orig_pure/268,original_pure,etoh,etoh,dmmp + etoh,False,70.74787658411827,0.0846556201300136,0.0009009559330982103,0.0018990661345853121,0.0,False
+orig_pure/269,original_pure,etoh,etoh,1-dodecanethiol + etoh,False,69.94857233248447,0.0844586285032135,0.004520384527765916,0.00029098414654409396,16.764259086524955,False
+orig_pure/270,original_pure,etoh,etoh,diethylamine + etoh,False,68.40281930694889,0.0837250668109312,0.004004671483501035,0.00034334213417334616,0.0,False
+orig_pure/271,original_pure,etoh,etoh,etoh + meoh,False,69.43221954823616,0.08396708181482716,0.004483015906787867,0.0016255265898403755,4.075382188338246,False
+orig_pure/272,original_pure,etoh,etoh,etoh + meoh,False,72.18492120870187,0.08829522982411223,0.006907917810416775,0.001568175438526197,27.560521750348748,False
+orig_pure/273,original_pure,etoh,etoh,"1,9-nonanedithiol + etoh",False,67.19691400776803,0.08122439452179199,0.0014652123670694252,0.0010862120411319065,4.419316866571229,False
+orig_pure/274,original_pure,etoh,etoh,etoh + meoh,False,70.77466909058118,0.08631760385500357,0.0025374262669353954,3.9549958795619786e-05,14.066327357767786,False
+orig_pure/275,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,68.41844467134239,0.08146875427553299,0.0015426627531925558,0.00019149108949841962,4.478588671486596,False
+orig_pure/276,original_pure,etoh,etoh,diethylamine + etoh,False,72.71526907950188,0.08714530787584272,0.003889056534795728,0.0016907546493619963,0.0,False
+orig_pure/277,original_pure,etoh,etoh,etoh + tris(2-ethylhexyl) phosphate,False,71.29390060328141,0.0868308711523906,0.0030606772297598153,0.0011073620425948224,5.323284848498461,False
+orig_pure/278,original_pure,etoh,etoh,dichloromethane + etoh,False,67.39247965943501,0.08162021972647006,0.00014662006254015242,7.351609901166554e-05,5.0078728310139216,False
+orig_pure/279,original_pure,etoh,etoh,"1,9-nonanedithiol + etoh",False,68.31348276624647,0.08323422102142024,0.0017791416632100027,0.00015751293753463522,2.3836912626194873,False
+orig_pure/280,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,69.18007557509532,0.08388015926502221,0.0009515945449360398,8.871402008779236e-05,3.331959104691624,False
+orig_pure/281,original_pure,etoh,etoh,etoh + tris(2-ethylhexyl) phosphate,False,68.68122249422379,0.0831599446981878,0.0036052555935320437,0.0006910345107714136,0.012831664520725906,False
+orig_pure/282,original_pure,etoh,etoh,"1,9-nonanedithiol + etoh",False,69.6060881330032,0.08382674565431003,0.0018249412702493928,0.00018111355284737533,2.2446212522070668,False
+orig_pure/283,original_pure,etoh,etoh,acetonitrile + etoh,False,70.11959709196938,0.08547868799552788,0.0014921602467003266,0.00020829408515639402,12.653362232818484,False
+orig_pure/284,original_pure,etoh,etoh,acetonitrile + etoh,False,75.35430767986362,0.09196193437194693,0.002219018166291313,0.0025143871975198346,11.296806909969078,False
+orig_pure/285,original_pure,etoh,etoh,dichloromethane + etoh,False,72.16002699978598,0.08755074002498218,0.00016361718339922939,0.0001755061514296348,1.9362708023986561,False
+orig_pure/286,original_pure,etoh,etoh,diethylamine + etoh,False,73.16266306940112,0.08900008919404621,0.004100004068411794,0.000861958628990083,2.0342337032497206,False
+orig_pure/287,original_pure,etoh,etoh,acetonitrile + etoh,False,67.69651104025421,0.08201308080809983,0.0015768412348349861,0.0016460912920699333,2.680641594385793,False
+orig_pure/288,original_pure,etoh,etoh,diethylamine + etoh,False,66.32481791833725,0.08073857026289781,0.0012610807064926356,0.0001910620933951764,2.1293242855093277,False
+orig_pure/289,original_pure,etoh,etoh,acetonitrile + etoh,False,69.25534611772238,0.08351633239249959,0.0016542696293000028,0.0016381863182535724,1.1890814767877556,False
+orig_pure/290,original_pure,etoh,etoh,dmmp + etoh,False,74.77937666251455,0.09060709535952872,0.0006502335294835872,0.0006886402055952343,3.1846046005180675,False
+orig_pure/291,original_pure,etoh,etoh,etoh + n-hexane,False,72.7310528014237,0.08931919232983725,0.0011641497027050126,5.516225796616878e-06,13.236854664585584,False
+orig_pure/292,original_pure,etoh,etoh,dmmp + etoh,False,71.00436696111501,0.08711061743009128,0.0007715572885572131,0.000485810406176526,7.962044247389682,False
+orig_pure/293,original_pure,etoh,etoh,diethylamine + etoh,False,69.77823532591283,0.08383481998113856,0.005037166569400085,0.00022494585790367073,0.0,False
+orig_pure/294,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,67.01461127289485,0.08114684719197131,0.00030396078539337624,8.653151411258924e-05,0.0,False
+orig_pure/295,original_pure,etoh,etoh,dichloromethane + etoh,False,70.32813263523607,0.08569752864150264,0.00022474294874891577,0.0003952723743622201,8.309327360009915,False
+orig_pure/296,original_pure,etoh,etoh,etoh + meoh,False,71.57960396282665,0.0874224621184752,0.007556776947721498,0.005244875512875651,13.042821612238615,False
+orig_pure/297,original_pure,etoh,etoh,etoh + pyridine,False,69.75313824788121,0.08524648124393207,0.00025546239541957607,0.00010868710340919044,1.4238019036451994,False
+orig_pure/298,original_pure,etoh,etoh,etoh + tris(2-ethylhexyl) phosphate,False,68.73359743384044,0.08414748742676839,0.0056020152999313256,0.0007346628529101402,8.610551032428202,False
+orig_pure/299,original_pure,etoh,etoh,etoh + meoh,False,69.07042338972215,0.08472589625431111,0.005060842283342287,0.0018656524725032405,5.355993261595968,False
+orig_pure/300,original_pure,etoh,etoh,diethylamine + etoh,False,68.06809378887216,0.08325459669609551,0.0045699955458867675,0.0018248982181754698,0.0,False
+orig_pure/301,original_pure,etoh,etoh,acetonitrile + etoh,False,73.45013141985052,0.08954930848395648,0.0010766458928404728,5.388665265668673e-05,21.460022022685294,False
+orig_pure/302,original_pure,etoh,etoh,acetonitrile + etoh,False,68.26960670408057,0.0828643319862896,0.0017204320161800122,0.002213474522960225,0.0,False
+orig_pure/303,original_pure,etoh,etoh,etoh + tris(2-ethylhexyl) phosphate,False,68.28239033992583,0.08496833427183348,0.003281872670816378,0.000299299971026825,5.700473779105848,False
+orig_pure/304,original_pure,etoh,etoh,diethylamine + etoh,False,68.58181324598593,0.08424233233852199,0.005102903248848738,0.000840558544508432,5.355011350250695,False
+orig_pure/305,original_pure,etoh,etoh,acetonitrile + etoh,False,72.73872916895978,0.08692868978665655,0.0014662122556321148,0.0003539350633816686,0.0,False
+orig_pure/306,original_pure,etoh,etoh,etoh + meoh,False,74.85138403919314,0.09149743895945144,0.0027519159049074595,0.0005289220438911895,15.663896232440642,False
+orig_pure/307,original_pure,etoh,etoh,benzenethiol + etoh,False,69.34976032699403,0.08463107987913118,0.0018961789039901248,0.0006700418941270914,14.837746479914223,False
+orig_pure/308,original_pure,etoh,etoh,dmmp + etoh,False,68.51654325384915,0.08363321971092164,0.0008915388111779951,0.0012964859915947236,4.896280394387945,False
+orig_pure/309,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,70.07571754707818,0.08612213521898379,0.0009989181440610705,0.00017254177372105715,0.0,False
+orig_pure/310,original_pure,etoh,etoh,etoh + pyridine,False,69.62977402336924,0.08547664908978328,0.0007998383992305076,0.0009169776067090129,0.0,False
+orig_pure/311,original_pure,etoh,etoh,etoh + pyridine,False,69.25368704790188,0.08421104933541544,0.0010150375290495484,9.90487088040982e-05,0.0,False
+orig_pure/312,original_pure,etoh,etoh,etoh + pyridine,False,67.61849006103334,0.08439817944472279,0.0009456515916915931,0.0001705083653753605,1.320972885930267,False
+orig_pure/313,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,72.75177116993518,0.08802986327323564,0.0005699620912245989,4.850888729014956e-06,3.342560318149531,False
+orig_pure/314,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,70.75839338575602,0.08542015864465737,0.0011274767388263897,0.0007501240680371813,0.0,False
+orig_pure/315,original_pure,etoh,etoh,dichloromethane + etoh,False,72.88633831637696,0.08879929116388313,0.0005868956384134149,0.0005082155580764225,12.794999180635406,False
+orig_pure/316,original_pure,etoh,etoh,etoh + n-hexane,False,71.6142420573246,0.08757102836579589,0.0057166928682946426,0.0032920601725132913,0.0,False
+orig_pure/317,original_pure,etoh,etoh,diethylamine + etoh,False,70.62840886844387,0.0866098145307775,0.0034101052923517267,0.0007610342368121728,14.996331657079644,False
+orig_pure/318,original_pure,etoh,etoh,"1,9-nonanedithiol + etoh",False,70.40749100771666,0.08709477568529195,0.003990621295407686,0.003186239572330643,6.398141894722158,False
+orig_pure/319,original_pure,etoh,etoh,"etoh + n,n-dimethylformamide",False,73.7278173961579,0.09011608192346023,0.000898675777718141,0.0005427411161749425,5.542142162648725,False
+orig_pure/320,original_pure,etoh,etoh,dmmp + etoh,False,70.21066410103862,0.08677205801045444,0.0007088912116903566,0.0012102672696842445,8.637578088416296,False
+orig_pure/321,original_pure,etoh,etoh,etoh + toluene,False,72.51191422244504,0.09020349876117337,0.00035338608092760215,0.00017149127797344343,15.20120419647574,False
+orig_pure/322,original_pure,etoh,etoh,dichloromethane + etoh,False,74.73673366026786,0.09142413541458605,0.00016342136500182856,2.377827101603979e-05,11.02075193266192,False
+orig_pure/323,original_pure,etoh,etoh,diethylamine + etoh,False,71.29901569427096,0.0883630452632947,0.005045081619619959,0.00017081143406425835,2.7320567640672864,False
+orig_pure/324,original_pure,etoh,etoh,diethylamine + etoh,False,69.63868715909742,0.08567369658715304,0.004584676085175796,0.00039984456442057284,2.373083996269181,False
+orig_pure/325,original_pure,etoh,etoh,acetonitrile + etoh,False,68.83931378343203,0.08469468761099824,0.000826746989011573,0.0005295663925404876,0.0,False
+orig_pure/326,original_pure,meoh,meoh,meoh + toluene,False,81.4331219053552,0.058723734270934795,0.0007508808432205675,0.0015926924263681482,0.0,False
+orig_pure/327,original_pure,meoh,meoh,acetonitrile + meoh,False,80.2376558947712,0.058149392528810746,0.001146254965201921,0.00028832496682174117,1.5185492114337649,False
+orig_pure/328,original_pure,meoh,meoh,meoh + tris(2-ethylhexyl) phosphate,False,88.52928886286686,0.06388464398176107,0.004924788880828896,0.0011657561897639183,17.59561253193736,False
+orig_pure/329,original_pure,meoh,meoh,acetonitrile + meoh,False,84.84788423409947,0.060317428600821385,0.0011783949691345414,0.0007419980943690446,15.404307247148802,False
+orig_pure/330,original_pure,meoh,meoh,diethylamine + meoh,False,82.15951937855726,0.0592867072728438,0.006122424008730349,0.0009764327106813641,0.8138540714832472,False
+orig_pure/331,original_pure,meoh,meoh,diethylamine + meoh,False,85.02282062382042,0.06254080115871682,0.009408970510585932,0.00627849392140835,7.994604617661925,False
+orig_pure/332,original_pure,meoh,meoh,meoh + tris(2-ethylhexyl) phosphate,False,9.892582882651919e-16,7.297464685078235e-19,0.0,0.001411926319807447,2.7486483702728963e-15,False
+orig_pure/333,original_pure,meoh,meoh,benzene + meoh,False,78.0555448428685,0.05767720482074239,5.320237652047426e-05,0.00014365834498113793,3.2496214696216073,False
+orig_pure/334,original_pure,meoh,meoh,meoh + tris(2-ethylhexyl) phosphate,False,84.057918047606,0.06179468958601176,0.0038587536253586155,0.00016517486244447746,0.8557861509953252,False
+orig_pure/335,original_pure,meoh,meoh,acetonitrile + meoh,False,78.95557934324185,0.05747780687894246,0.001042453760695787,0.0004490654363590003,3.27938197349732,False
+orig_pure/336,original_pure,meoh,meoh,benzene + meoh,False,86.63952354914903,0.06369667232827045,0.00010116729660041982,0.00037864601876867423,16.715758229741873,False
+orig_pure/337,original_pure,meoh,meoh,meoh + tris(2-ethylhexyl) phosphate,False,82.02921028773687,0.06130377166493339,0.003831551759900402,0.00100266394774165,10.98658386446437,False
+orig_pure/338,original_pure,meoh,meoh,meoh + tris(2-ethylhexyl) phosphate,False,80.22534742959236,0.05948257662222984,0.002953240283963518,0.0005536367956591468,11.89136102464376,False
+orig_pure/339,original_pure,meoh,meoh,acetonitrile + meoh,False,79.74648495154291,0.05950674891818098,0.0018214591282971712,0.0018687509867661327,10.615281554650755,False
+orig_pure/340,original_pure,meoh,meoh,acetonitrile + meoh,False,81.25542865197741,0.06054550153615808,0.002248841970281329,0.0016560752738812065,26.050207296539412,False
+orig_pure/341,original_pure,meoh,meoh,acetonitrile + meoh,False,80.36193760129478,0.060347953604233014,0.0007708713115158124,5.5713403670137213e-05,19.162216462464844,False
+orig_pure/342,original_pure,meoh,meoh,dmmp + meoh,False,84.0855482915049,0.06269791246678255,0.0011409689402485477,0.0002471616394628412,25.462529055966833,False
+orig_pure/343,original_pure,meoh,meoh,meoh + n-hexane,False,0.0,0.0,0.0,0.034782295740147844,0.0,False
+orig_pure/344,original_pure,meoh,meoh,etoh + meoh,False,81.0572831213282,0.060264274816927935,0.004686730994352843,0.0007132903414752239,0.9651706635552884,False
+orig_pure/345,original_pure,meoh,meoh,diethylamine + meoh,False,79.61707270384929,0.0597311544656156,0.006416032061187918,0.002466629654959568,17.123224062861375,False
+orig_pure/346,original_pure,meoh,meoh,meoh + pyridine,False,82.70760097580636,0.06093768140812664,0.0010773981823332989,0.0009822761412712874,8.03126885675159,False
+orig_pure/347,original_pure,meoh,meoh,acetonitrile + meoh,False,86.35743395747623,0.0629577938690581,0.001503346950410129,0.0002906931233118912,9.5570510309019,False
+orig_pure/348,original_pure,meoh,meoh,1-undecanethiol + meoh,False,81.72384579929516,0.05958014054387575,0.002758495123214587,5.0421496886497216e-05,10.501356952174735,False
+orig_pure/349,original_pure,meoh,meoh,diethylamine + meoh,False,83.34089590786802,0.06136997857164953,0.0065631918783222365,0.0029037877023322706,9.694651098724025,False
+orig_pure/350,original_pure,meoh,meoh,acetonitrile + meoh,False,87.46688882531417,0.06284414388724935,0.0010603005081756087,0.0005259193879431224,15.07559713011529,False
+orig_pure/351,original_pure,meoh,meoh,meoh + n-hexane,False,84.39983703266303,0.0614799721789883,0.004081214894305158,0.001202517392744358,6.28100905156074,False
+orig_pure/352,original_pure,meoh,meoh,diethylamine + meoh,False,85.37556272098739,0.0626522829986661,0.008536637262246549,0.002713805640521908,5.452563411049147,False
+orig_pure/353,original_pure,meoh,meoh,benzenethiol + meoh,False,83.22164898803483,0.059852956762744935,0.000817691433222003,0.00026482214391889943,15.027782354010583,False
+orig_pure/354,original_pure,meoh,meoh,meoh + tris(2-ethylhexyl) phosphate,False,83.16920591646848,0.06004678878428582,0.005325789255697913,0.0019110226391927075,6.399758032913389,False
+orig_pure/355,original_pure,meoh,meoh,diethylamine + meoh,False,86.83973629880794,0.0628710245037349,0.005055254074853576,0.0005865958153293222,8.864304537221185,False
+orig_pure/356,original_pure,meoh,meoh,"meoh + n,n-dimethylformamide",False,83.1984939778121,0.05978533972687927,0.002051907465101258,0.00047241070667891535,9.5352182918542,False
+orig_pure/357,original_pure,meoh,meoh,acetonitrile + meoh,False,85.5742017330438,0.06177896730351322,0.00139438678818534,0.0010532927748032113,15.661588624411959,False
+orig_pure/358,original_pure,meoh,meoh,"meoh + n,n-dimethylformamide",False,84.24137659885417,0.061184508948805956,0.0021642568892497865,0.001033410384272261,5.454006302568221,False
+orig_pure/359,original_pure,meoh,meoh,etoh + meoh,False,81.3406715862772,0.05848323312282839,0.008735468792315959,0.002669858614130056,6.391655333678765,False
+orig_pure/360,original_pure,meoh,meoh,diethylamine + meoh,False,86.67807962531742,0.06233555864510055,0.005818220557037892,7.756249820483318e-05,0.0,False
+orig_pure/361,original_pure,meoh,meoh,meoh + n-hexane,False,79.82726657795774,0.05752284323525826,0.006752428788739659,0.001466460448907442,1.3451101441632691,False
+orig_pure/362,original_pure,meoh,meoh,6-mercapto-1-hexanol + meoh,False,86.79137748489795,0.062007087358597286,0.007855258156638619,0.0006086487287603998,15.41121282394193,False
+orig_pure/363,original_pure,meoh,meoh,diethylamine + meoh,False,84.74910466595331,0.06078015313397553,0.004958638291402132,0.0007590990754124512,1.7828096011673389,False
+orig_pure/364,original_pure,meoh,meoh,diethylamine + meoh,False,87.80064895167999,0.06290466883155185,0.01111843222254445,0.0014041152404470811,12.124151352027432,False
+orig_pure/365,original_pure,meoh,meoh,benzenethiol + meoh,False,81.65066817322754,0.0584850751948044,0.0012017056637035931,0.0006146328997167904,14.10344248493227,False
+orig_pure/366,original_pure,meoh,meoh,diethylamine + meoh,False,88.70032278386196,0.0643947205783731,0.0034589351405045748,0.0006001793884321864,8.103246568313539,False
+orig_pure/367,original_pure,meoh,meoh,benzenethiol + meoh,False,84.85112816110885,0.061501802317280654,0.0012573025122664479,0.00044423781545761766,3.9726243349801176,False
+orig_pure/368,original_pure,meoh,meoh,diethylamine + meoh,False,80.78160930932827,0.058514777108073054,0.00012545601991655156,1.6114756358194262e-06,10.05950038379164,False
+orig_pure/369,original_pure,meoh,meoh,etoh + meoh,False,84.89071881305671,0.061141694770743285,0.011353595180667763,0.0032213208845892423,7.330423811024661,False
+orig_pure/370,original_pure,meoh,meoh,meoh + tris(2-ethylhexyl) phosphate,False,84.7014566840701,0.06105244921193531,0.007052176310582179,0.0017345032665960205,1.6685649686059967,False
+orig_pure/371,original_pure,meoh,meoh,etoh + meoh,False,86.53790124997,0.062332744931568,0.002708810750049759,0.0003039508087128933,9.276037188890033,False
+orig_pure/372,original_pure,meoh,meoh,diethylamine + meoh,False,81.62003910423141,0.05859442845942927,0.007329814964193183,0.004511266727441893,5.211176919737046,False
+orig_pure/373,original_pure,meoh,meoh,dmmp + meoh,False,78.0637139110324,0.0560680619258177,0.00091665026153544,0.0003840840745836903,8.262962115226761,False
+orig_pure/374,original_pure,meoh,meoh,etoh + meoh,False,83.08484143414805,0.05949920536820801,0.006697447650073989,0.0016150534422000994,7.634713403129954,False
+orig_pure/375,original_pure,meoh,meoh,benzenethiol + meoh,False,81.89293514973207,0.059018613195842826,0.0017543553177568972,0.0011488444121711674,10.832839241448843,False
+orig_pure/376,original_pure,meoh,meoh,diethylamine + meoh,False,79.73634389017394,0.05691480717915557,0.00411599385052934,0.0007524281842327468,4.1829673472921645,False
+orig_pure/377,original_pure,meoh,meoh,meoh + pyridine,False,83.55251259490039,0.05967930289257799,0.0010831494697778623,0.0003758841333802959,4.469652849479839,False
+orig_pure/378,original_pure,meoh,meoh,diethylamine + meoh,False,81.9114140707236,0.05881959351465246,0.004834547958580984,8.829794177214021e-05,3.0589218896083805,False
+orig_pure/379,original_pure,meoh,meoh,acetonitrile + meoh,False,87.61167155891917,0.061624887257283135,0.0023035089834466567,0.0030280729943537163,2.5270209427683215,False
+orig_pure/380,original_pure,meoh,meoh,meoh + n-hexane,False,83.0828627857217,0.05943996425012787,0.0028636298692161755,0.001568842808858548,0.0,False
+orig_pure/381,original_pure,meoh,meoh,meoh + pyridine,False,81.74320891737004,0.05763831994889236,0.0011233026947919068,0.0015597394034724435,3.269610305053335,False
+orig_pure/382,original_pure,meoh,meoh,benzenethiol + meoh,False,83.6755633392382,0.05915930058271375,0.001200178263419866,0.0008183570854312837,18.458223656533395,False
+orig_pure/383,original_pure,meoh,meoh,meoh + pyridine,False,85.29853874712677,0.06020424433698003,0.001327854945381247,0.00010129316822066252,9.886872002420134,False
+orig_pure/384,original_pure,meoh,meoh,meoh + pyridine,False,89.07233539127628,0.06295623490073368,0.00198827918155523,0.004470242550580108,10.524629359103459,False
+orig_pure/385,original_pure,meoh,meoh,"meoh + n,n-dimethylformamide",False,82.67452617214434,0.05874947131562114,0.002775428989928675,0.0017900288349116673,6.297697062812398,False
+orig_pure/386,original_pure,meoh,meoh,meoh + n-hexane,False,83.33971925992405,0.05962388358273253,0.004374760578878623,0.002134541689174389,0.0,False
+orig_pure/387,original_pure,meoh,meoh,meoh + n-hexane,False,80.02799370728962,0.05640690622150686,0.0041880068920954585,0.004393173737517013,4.377131401625253,False
+orig_pure/388,original_pure,meoh,meoh,acetonitrile + meoh,False,83.84532105234297,0.05971333710927388,0.0011821079299234344,9.285374441882679e-05,9.279449211777257,False
+orig_pure/389,original_pure,meoh,meoh,acetonitrile + meoh,False,84.12927678407415,0.06004126623279903,0.0024642185395126765,0.0005658053502671697,3.509157149425973,False
+orig_pure/390,original_pure,meoh,meoh,meoh + tris(2-ethylhexyl) phosphate,False,87.26742164870792,0.06128501995084984,0.00990312659490001,0.006561757440066908,14.052174931045638,False
+orig_pure/391,original_pure,meoh,meoh,diethylamine + meoh,False,83.77227044222242,0.059504078941550166,0.004523730887793377,0.0011266442012262297,5.49655419012155,False
+orig_pure/392,original_pure,meoh,meoh,diethylamine + meoh,False,84.35344164963789,0.05995415326214591,0.004335127986288225,0.00035239031886848625,7.863795851377571,False
+orig_pure/393,original_pure,meoh,meoh,"meoh + n,n-dimethylformamide",False,80.88453722659759,0.056814255382947126,0.0012448405880233987,0.0007303802245454483,8.6156340047651,False
+orig_pure/394,original_pure,meoh,meoh,acetonitrile + meoh,False,81.50376529912222,0.057441024500481136,0.0013960757989801237,0.0011388630956192865,8.634547147777338,False
+orig_pure/395,original_pure,meoh,meoh,acetonitrile + meoh,False,86.42045345210919,0.060674490102413346,0.001461350541229539,9.781280549672014e-05,7.809314138988234,False
+orig_pure/396,original_pure,meoh,meoh,acetonitrile + meoh,False,86.53224009343946,0.060695144875141153,0.001064826922059095,0.0003955165781097814,6.536343448056419,False
+orig_pure/397,original_pure,meoh,meoh,acetonitrile + meoh,False,82.60375389635746,0.058120967340861474,0.0007922536243417268,2.844926241015157e-05,9.680150192639578,False
+orig_pure/398,original_pure,meoh,meoh,benzenethiol + meoh,False,85.51913504707295,0.06100155105120457,0.0015187475303739667,0.0012112949356566688,19.142571788343822,False
+orig_pure/399,original_pure,meoh,meoh,diethylamine + meoh,False,85.37161577827754,0.06023112143652886,0.004340777851589757,0.0004022587249129102,1.4730559549325215,False
+orig_pure/400,original_pure,meoh,meoh,diethylamine + meoh,False,82.75192710867657,0.05853054796506354,0.00741130802821708,0.0014466701409227534,0.2773602669851844,False
+orig_pure/401,original_pure,meoh,meoh,dichloromethane + meoh,False,78.46682291097933,0.055583992266064385,0.0003323108948768749,0.0005194875772561957,7.276816521387369,False
+orig_pure/402,original_pure,meoh,meoh,diethylamine + meoh,False,83.53534413621217,0.05853497301264373,0.005119449162668592,0.0015344180274106875,0.0,False
+orig_pure/403,original_pure,meoh,meoh,acetonitrile + meoh,False,85.8457856063841,0.060471266614604044,0.0016819395581228226,0.00027435307149914457,6.452402667263076,False
+orig_pure/404,original_pure,meoh,meoh,etoh + meoh,False,78.19833676938488,0.05490337638156033,0.00451146677420794,0.000555075381070736,7.0584054396002704,False
+orig_pure/405,original_pure,meoh,meoh,benzene + meoh,False,82.23302093369158,0.05877748737253994,0.00015856109779729794,0.000633329977087492,2.826388941092902,False
+orig_pure/406,original_pure,meoh,meoh,dichloromethane + meoh,False,79.99558851400198,0.056180837369025696,0.00025061911396888657,0.00021762952763123132,0.48035277581374913,False
+orig_pure/407,original_pure,meoh,meoh,diethylamine + meoh,False,84.7933938056288,0.060048255966801946,0.0072467963204088034,0.002334387279156312,0.5571133848622921,False
+orig_pure/408,original_pure,meoh,meoh,acetonitrile + meoh,False,84.12872264354104,0.059671190490470906,0.0020787951115160586,0.0006423280077219595,19.906126844859163,False
+orig_pure/409,original_pure,meoh,meoh,diethylamine + meoh,False,82.66956166993029,0.059028596429395785,0.010330030350101386,0.0028415814376239546,0.0,False
+orig_pure/410,original_pure,meoh,meoh,meoh + pyridine,False,83.85905275839569,0.05989397491421754,0.001536272136504513,0.002750887655234934,0.0,False
+orig_pure/411,original_pure,meoh,meoh,acetonitrile + meoh,False,84.68027650238297,0.06014945055162766,0.002841102362856331,0.0009630588756822939,16.146846019207313,False
+orig_pure/412,original_pure,meoh,meoh,diethylamine + meoh,False,87.92671087994133,0.062397435203720625,0.009953422508920352,0.0031424173498432544,3.709585675401431,False
+orig_pure/413,original_pure,meoh,meoh,meoh + toluene,False,81.0796925688284,0.05743554714102038,0.0004298439136427555,0.00011101574279071393,0.0,False
+orig_pure/414,original_pure,meoh,meoh,benzenethiol + meoh,False,85.28003380999164,0.05959007628920033,0.0028023710784696493,0.002323786600487424,7.928311012523527,False
+orig_pure/415,original_pure,meoh,meoh,meoh + pyridine,False,84.22208834418268,0.05900289840666674,0.0015782267984824712,0.0017916697812238743,14.112614859709275,False
+orig_pure/416,original_pure,meoh,meoh,1-dodecanethiol + meoh,False,80.05050577154267,0.05689003340712183,0.0029845858024389158,6.687938049534504e-05,0.0,False
+orig_pure/417,original_pure,meoh,meoh,benzenethiol + meoh,False,80.48224039514463,0.05676169055044313,0.0021681799429596545,0.0027042117277179434,1.7294823510316002,False
+orig_pure/418,original_pure,meoh,meoh,meoh + n-hexane,False,83.58995438042942,0.059076699675731745,0.0037337296305280337,0.0019162589055248527,9.67574301522548,False
+orig_pure/419,original_pure,meoh,meoh,etoh + meoh,False,1.1119374719825058e-16,7.858711491671858e-20,2.5298019446792885e-19,2.0482446048749836e-07,0.0,False
+orig_pure/420,original_pure,meoh,meoh,benzenethiol + meoh,False,85.24625281346223,0.05963920882004942,0.0018598832127341832,0.0013669804521839507,6.7698532754563585,False
+orig_pure/421,original_pure,meoh,meoh,benzenethiol + meoh,False,83.92109779527853,0.05878760639997227,0.0009552763035220218,3.5471116106412916e-05,11.54335153762317,False
+orig_pure/422,original_pure,meoh,meoh,meoh + toluene,False,80.17163148782356,0.056321953231970354,0.0011209186071152164,0.0014495476186069237,0.0,False
+orig_pure/423,original_pure,meoh,meoh,dichloromethane + meoh,False,83.40012068627807,0.058379160696988064,0.0003329052995604888,0.0004952999569481876,11.699356121197244,False
+orig_pure/424,original_pure,meoh,meoh,acetonitrile + meoh,False,84.75689891067228,0.05942278709471124,0.00198208773924016,0.0009269494939175168,0.0,False
+orig_pure/425,original_pure,meoh,meoh,diethylamine + meoh,False,78.3352322445062,0.05458748149293707,0.005631809528438915,0.001999967685716388,0.0,False
+orig_pure/426,original_pure,meoh,meoh,diethylamine + meoh,False,82.49121160080156,0.057583975976739775,0.005813924565851934,0.0005966059257236277,2.064821361846431,False
+orig_pure/427,original_pure,meoh,meoh,benzenethiol + meoh,False,84.88764545427658,0.05956810080578893,0.002274465498722166,0.0015934944407898272,0.0,False
+orig_pure/428,original_pure,meoh,meoh,benzenethiol + meoh,False,86.31564319607538,0.06004948836734435,0.0004058350104632712,0.00010556700367479544,8.563320171531045,False
+orig_pure/429,original_pure,meoh,meoh,benzenethiol + meoh,False,82.59020366035918,0.057782138576174924,0.003776205718684358,0.00703026147640532,6.591848733776847,False
+orig_pure/430,original_pure,meoh,meoh,"1,9-nonanedithiol + meoh",False,78.54606789754435,0.05492112466819438,0.0012195165441284234,0.0004222094098611125,5.459591609292623,False
+orig_pure/431,original_pure,meoh,meoh,1-dodecanethiol + meoh,False,85.59120319601091,0.05964640174756736,0.0049977270137953975,0.0005825645170404239,5.484553189039812,False
+orig_pure/432,original_pure,meoh,meoh,1-dodecanethiol + meoh,False,84.63822070179455,0.059301584301880844,0.004080149436864593,0.0008435568739652662,2.1883427023294706,False
+orig_pure/433,original_pure,meoh,meoh,1-dodecanethiol + meoh,False,86.99798493773005,0.060440523419324065,0.0020236222832257346,0.00018224240390911806,0.0,False
+orig_pure/434,original_pure,meoh,meoh,etoh + meoh,False,84.84116024836133,0.05920664386883471,0.002991015025342829,0.0003495709678116174,16.50128702697683,False
+orig_pure/435,original_pure,meoh,meoh,meoh + toluene,False,82.95968479520576,0.058177156132230325,0.0007915034786303534,0.0003772887249269926,15.0179699301957,False
+orig_pure/436,original_pure,meoh,meoh,dichloromethane + meoh,False,82.64466086591732,0.05761844138005466,0.00042782982327536304,8.823437711623658e-05,0.0,False
+orig_pure/437,original_pure,meoh,meoh,"meoh + n,n-dimethylformamide",False,86.59016892612286,0.06044525158812546,0.0018178776378394248,0.0006597753814471478,0.0,False
+orig_pure/438,original_pure,meoh,meoh,benzenethiol + meoh,False,83.65732162727942,0.058303127169072475,0.0017681192283251575,0.0012085550851155813,3.819121368462097,False
+orig_pure/439,original_pure,meoh,meoh,meoh + pyridine,False,87.0785236826012,0.060711518237960116,0.0019670720028429024,0.004827472048130662,8.674730411027383,False
+orig_pure/440,original_pure,meoh,meoh,dichloromethane + meoh,False,84.29518054290003,0.05864431259200374,0.0004138850827167777,0.0011733532883442031,2.5921230598307896,False
+orig_pure/441,original_pure,meoh,meoh,acetonitrile + meoh,False,78.06048137547867,0.054491943041854056,0.0013953520516228931,0.00011292224032561835,0.0,False
+orig_pure/442,original_pure,meoh,meoh,benzenethiol + meoh,False,79.60034654418659,0.05569998785288407,0.0019069378610968935,0.0015363006764003728,0.0,False
+orig_pure/443,original_pure,meoh,meoh,dichloromethane + meoh,False,80.92195773636021,0.05649264217657788,0.00027582138267684116,0.00036569442534753834,2.0751380798550336,False
+orig_pure/444,original_pure,meoh,meoh,benzenethiol + meoh,False,84.58780179350627,0.05879749131280949,0.0012437734627359287,0.00043083553423811557,4.707913259368051,False
+orig_pure/445,original_pure,meoh,meoh,"meoh + n,n-dimethylformamide",False,84.12753032766625,0.0585216526583899,0.0006997136906246884,0.00035406005475309296,0.0,False
+orig_pure/446,original_pure,meoh,meoh,meoh + toluene,False,83.44989363089574,0.058137280088709886,0.000489187734578957,0.0003604341869999826,5.6947443878523,False
+orig_pure/447,original_pure,meoh,meoh,meoh + n-hexane,False,87.70845980894016,0.060866431735251594,0.003952053694109598,0.00033989244552957884,3.2728627912323205,False
+orig_pure/448,original_pure,meoh,meoh,"1,9-nonanedithiol + meoh",False,0.0,0.0,0.0,0.013763739051850897,0.0,False
+orig_pure/449,original_pure,meoh,meoh,benzenethiol + meoh,False,86.76555042115388,0.060805825043932095,0.002047908258985286,0.00013117961734210613,0.0,False
+orig_pure/450,original_pure,meoh,meoh,meoh + toluene,False,2.7134931670723604e-13,1.879446558497723e-16,6.6709098173598866e-18,0.055954895772955794,4.5699080747622536e-15,False
+orig_pure/451,original_pure,meoh,meoh,benzenethiol + meoh,False,88.00815456371025,0.06073967924725843,0.0014422162861256489,9.438063472822666e-05,2.9068142388248095,False
+orig_pure/452,original_pure,meoh,meoh,meoh + toluene,False,5.500484646680527e-14,3.811128136323616e-17,0.0,0.14991043530482498,0.0,False
+orig_pure/453,original_pure,meoh,meoh,1-dodecanethiol + meoh,False,85.18207682124174,0.0594290518030628,0.003262738179790878,0.0004247479239811663,10.709793479141998,False
+orig_pure/454,original_pure,meoh,meoh,meoh + pyridine,False,83.2894702270452,0.05783816151527395,0.0007629087112548057,0.0005975785907435867,1.2432948952584668,False
+orig_pure/455,original_pure,meoh,meoh,meoh + toluene,False,2.6406198406340057e-13,1.8246931165888787e-16,0.0,0.443194341817821,2.7620933666309692e-15,False
+orig_pure/456,original_pure,meoh,meoh,acetonitrile + meoh,False,85.70932178511426,0.05925624076061511,0.002089411483141646,0.002324895050351027,1.9949978306975107,False
+orig_pure/457,original_pure,meoh,meoh,1-undecanethiol + meoh,False,9.82026637994606e-16,6.889267948063951e-19,0.0,0.02557308099852987,3.388752462191168e-15,False
+orig_pure/458,original_pure,meoh,meoh,meoh + pyridine,False,38.469872631345844,0.027868618869908476,0.0014515710975062366,0.014137500592347843,0.0,False
+orig_pure/459,original_pure,meoh,meoh,meoh + pyridine,False,36.082720867756,0.026407664246235425,0.001230291067150135,0.011730556236291654,0.0,False
+orig_pure/460,original_pure,meoh,meoh,meoh + pyridine,False,35.08333262870588,0.02596215297954785,0.0009077997761880029,0.006592157927811465,0.0,False
+orig_pure/461,original_pure,meoh,meoh,meoh + pyridine,False,35.698238090655195,0.026391186843096003,0.0,1.9904140197498447e-16,0.0,False
+orig_pure/462,original_pure,meoh,meoh,benzene + meoh,False,35.454239128816866,0.02582565534224504,5.775338021569818e-05,0.0003901741227749613,0.0,False
+orig_pure/463,original_pure,meoh,meoh,meoh + pyridine,False,34.51872653949759,0.02515016184851811,0.000677439154372096,0.004352067884716428,0.0,False
+orig_pure/464,original_pure,meoh,meoh,meoh + pyridine,False,33.654939944589294,0.024625487069306454,0.00032994471091633143,0.0007443096059231275,0.0,False
+orig_pure/465,original_pure,meoh,meoh,acetonitrile + meoh,False,34.262424854037604,0.025009741179503775,0.0003658811590855795,0.0004778434461606686,0.0,False
+orig_pure/466,original_pure,meoh,meoh,benzene + meoh,False,34.35957547927549,0.025310996037083148,3.290415711034138e-05,0.00028702139837450644,0.0,False
+orig_pure/467,original_pure,meoh,meoh,dichloromethane + meoh,False,36.08045218002601,0.026462769031723475,0.0,3.9386575989390403e-16,0.0,False
+orig_pure/468,original_pure,meoh,meoh,meoh + pyridine,False,39.72453830441579,0.029009544365321393,0.00018639893916191742,0.00010706991577534957,0.0,False
+orig_pure/469,original_pure,meoh,meoh,dichloromethane + meoh,False,38.295257400035446,0.027876660921495856,6.422060850116831e-05,0.00017240608031441932,0.0,False
+orig_pure/470,original_pure,meoh,meoh,benzene + meoh,False,37.34419718716332,0.027161503638999912,2.7992252806836848e-05,3.738726541146577e-05,0.0,False
+orig_pure/471,original_pure,meoh,meoh,meoh + pyridine,False,35.8278102313333,0.025994587324878714,0.0006680003587332163,0.0030480830094795643,0.0,False
+orig_pure/472,original_pure,meoh,meoh,meoh + pyridine,False,37.31718371864036,0.026993382868994026,0.000901380013763402,0.006111499188040406,0.0,False
+orig_pure/473,original_pure,meoh,meoh,"meoh + n,n-dimethylformamide",False,35.38175584708749,0.025554287708946383,0.0,0.0,0.0,False
+orig_pure/474,original_pure,meoh,meoh,"1,9-nonanedithiol + meoh",False,0.0,0.0,0.0,0.0,0.0,False
+orig_pure/475,original_pure,meoh,meoh,meoh + pyridine,False,38.124794314272975,0.02741877546045069,5.416364213300124e-05,2.3584035897571143e-05,0.0,False
+orig_pure/476,original_pure,meoh,meoh,meoh + pyridine,False,33.867011875849826,0.024477086769440635,0.00034411745903509743,0.0005815342671729662,0.0,False
+orig_pure/477,original_pure,meoh,meoh,meoh + pyridine,False,35.1944504673174,0.025702493644474612,0.00028537650073148904,0.0007306994017815227,0.0,False
+orig_pure/478,original_pure,meoh,meoh,meoh + pyridine,False,34.02201402458691,0.024888816039696577,0.00043346406308951055,0.0010477615590316798,0.0,False
+orig_pure/479,original_pure,meoh,meoh,meoh + pyridine,False,35.62618295700686,0.026052304504048416,0.00044618364037001006,0.0012985934584095113,0.0,False
+orig_pure/480,original_pure,meoh,meoh,meoh + pyridine,False,35.825015618075525,0.026156908976102133,0.0007661906508176924,0.005046593533217841,0.0,False
+orig_pure/481,original_pure,meoh,meoh,meoh + pyridine,False,36.26508014827491,0.026518609107750345,0.00022910650747232902,0.00045083915500016654,0.0,False
+orig_pure/482,original_pure,meoh,meoh,meoh + pyridine,False,34.33966570889084,0.025104651058176,0.0004602086542541929,0.0009352589466236428,0.0,False
+orig_pure/483,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","n,n-dimethylformamide + toluene",False,48.28665967876284,0.014293938337915766,0.00027424759757822175,0.00019525364098656143,0.0,False
+orig_pure/484,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","n,n-dimethylformamide + tris(2-ethylhexyl) phosphate",False,4.97583058059439e-13,1.466799808407947e-16,3.6206880261243784e-18,2.848379305894649e-05,7.430594957206785e-15,False
+orig_pure/485,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","1-dodecanethiol + n,n-dimethylformamide",False,5.17366008591674e-16,2.0164485389264973e-19,0.0,0.003002530785601771,1.5330946682112439e-15,False
+orig_pure/486,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","acetonitrile + n,n-dimethylformamide",False,0.0,0.0,0.0,0.0,0.0,False
+orig_pure/487,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",False,53.43253400364039,0.01582663662073027,0.0033439060160437837,0.000993832925910944,0.0,False
+orig_pure/488,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","n,n-dimethylformamide + toluene",False,50.33918130327492,0.014911566781144227,0.0006767619245348888,0.0031587500090938868,0.0,False
+orig_pure/489,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","n,n-dimethylformamide + toluene",False,47.43073267296986,0.0140737847102335,0.00031934661071527233,3.0550574348694075e-06,1.0150699921529909,False
+orig_pure/490,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","acetonitrile + n,n-dimethylformamide",False,0.0,0.0,0.0,0.0,0.0,False
+orig_pure/491,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","n,n-dimethylformamide + n-hexane",False,48.655538754031035,0.014434201593964724,0.001286202680112724,0.0006496228036455224,0.0,False
+orig_pure/492,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","acetonitrile + n,n-dimethylformamide",False,47.85729098438731,0.014199888643536695,0.00040444202320498386,0.0003180653767280586,0.0,False
+orig_pure/493,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","dmmp + n,n-dimethylformamide",False,50.86118111036663,0.015078973226775717,0.0002710615961136401,0.0004206974635457321,4.6293524629542,False
+orig_pure/494,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","1,9-nonanedithiol + n,n-dimethylformamide",False,47.19700476176826,0.013947100438396193,0.0013876504245070563,2.6651395611062327e-06,0.0,False
+orig_pure/495,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","1,9-nonanedithiol + n,n-dimethylformamide",False,4.0474173349599245e-13,1.192291407517324e-16,0.0,0.0,0.0,False
+orig_pure/496,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","acetonitrile + n,n-dimethylformamide",False,48.34542026179536,0.014292863640967896,0.0004659423664878628,0.0001188635963655051,0.0,False
+orig_pure/497,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","1,9-nonanedithiol + n,n-dimethylformamide",False,42.74493904566523,0.012622189413753008,0.0008330498878372171,0.00016497677461711514,0.0,False
+orig_pure/498,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","1,9-nonanedithiol + n,n-dimethylformamide",False,2.1813759722085093e-17,6.451031352423454e-21,0.0,0.0,1.796799640842902e-16,False
+orig_pure/499,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","benzenethiol + n,n-dimethylformamide",False,45.53788108570276,0.013432515588935117,0.0004996471328250655,0.00039273806202642133,0.0,False
+orig_pure/500,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","1,9-nonanedithiol + n,n-dimethylformamide",False,47.84008206466068,0.01410391228055903,0.001018920089793934,7.2608052953618875e-06,3.451195025740955,False
+orig_pure/501,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","dichloromethane + n,n-dimethylformamide",False,7.445682935482842e-17,2.200550309856844e-20,0.0,0.0077362201415424915,3.846145478620899e-16,False
+orig_pure/502,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","etoh + n,n-dimethylformamide",False,44.1187718069394,0.013040449838224546,0.0023840172896345845,0.00036510291433857557,0.0,False
+orig_pure/503,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","n,n-dimethylformamide + n-hexane",False,44.8343050649987,0.013236036936033478,0.0019045176689910272,0.0006303041764721752,0.0,False
+orig_pure/504,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","n,n-dimethylformamide + tris(2-ethylhexyl) phosphate",False,1.4899446927520832e-16,4.392073121130761e-20,2.831963181072373e-19,0.26544852836300487,0.0,False
+orig_pure/505,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","diethylamine + n,n-dimethylformamide",False,48.24241218395135,0.014248968134622966,0.003437054363416102,0.0005502326116222949,2.3535174429737102,False
+orig_pure/506,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","etoh + n,n-dimethylformamide",False,0.0,0.0,6.157457350295874e-21,0.0,0.0,False
+orig_pure/507,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","n,n-dimethylformamide + pyridine",False,50.76281768755148,0.015017881827358706,0.0002922714352450931,0.0002925003025057679,4.714308646804236,False
+orig_pure/508,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","benzenethiol + n,n-dimethylformamide",False,51.06036336624478,0.01507473859132414,0.0010063096481027801,0.0008313987485976597,0.38334392187872196,False
+orig_pure/509,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","n,n-dimethylformamide + toluene",False,53.37567088006706,0.015753746501838656,0.00023436630640980076,0.0003462887079962376,3.2809162348193017,False
+orig_pure/510,original_pure,"n,n-dimethylformamide","n,n-dimethylformamide","n,n-dimethylformamide + toluene",False,56.329935685750904,0.01657779051936857,0.0005827960208823408,0.0009064555919905676,3.340350849398276,False
+orig_pure/511,original_pure,pyridine,pyridine,benzenethiol + pyridine,False,46.67075656301176,0.008696981985664966,0.0018098873107046819,0.004035758374240023,0.0,False
+orig_pure/512,original_pure,pyridine,pyridine,benzene + pyridine,False,5.371135952064474e-13,9.982020913577619e-17,0.0,1.2338766746843375,0.0,False
+orig_pure/513,original_pure,pyridine,pyridine,etoh + pyridine,False,4.476563504052256e-16,8.349580153127757e-20,0.0,1.710143062168879e-06,1.6463706564009145e-15,False
+orig_pure/514,original_pure,pyridine,pyridine,meoh + pyridine,False,54.88797115900604,0.010243477182826996,0.006827837411997609,0.005814647036776553,2.9553246001017057,False
+orig_pure/515,original_pure,pyridine,pyridine,1-undecanethiol + pyridine,False,0.0,0.0,1.6254104018401117e-20,4.347204570675246e-05,0.0,False
+orig_pure/516,original_pure,pyridine,pyridine,meoh + pyridine,False,52.25188205822854,0.009727604843292367,0.00327513409598467,0.0006615639915058213,4.209128266281591,False
+orig_pure/517,original_pure,pyridine,pyridine,diethylamine + pyridine,False,52.4290058114039,0.009743095161982126,0.0024764470943879975,0.001197174853729594,0.0,False
+orig_pure/518,original_pure,pyridine,pyridine,dichloromethane + pyridine,False,0.0,0.0,0.0,0.0,0.0,False
+orig_pure/519,original_pure,pyridine,pyridine,benzene + pyridine,False,49.36836076030035,0.009205640716206774,0.0009435289884036337,0.039366524101388196,0.0,False
+orig_pure/520,original_pure,pyridine,pyridine,benzene + pyridine,False,51.07290580563255,0.00949816697340871,0.0006283143534697897,0.01430050314771811,4.289775711362888,False
+orig_pure/521,original_pure,pyridine,pyridine,meoh + pyridine,False,52.30965807266913,0.00971807623789439,0.0019217431097723965,0.0010491267885300523,1.1757333020245437,False
+orig_pure/522,original_pure,pyridine,pyridine,benzenethiol + pyridine,False,51.764273427495915,0.00963042126497473,0.0007959527567720146,0.00042753069534792065,0.0,False
+orig_pure/523,original_pure,pyridine,pyridine,dichloromethane + pyridine,False,0.0,0.0,2.266939139994654e-23,0.3540085841544413,0.0,False
+orig_pure/524,original_pure,pyridine,pyridine,benzene + pyridine,False,52.291138113069096,0.009727127287130474,0.0005713193563513627,0.006466481248445972,2.307183910038084,False
+orig_pure/525,original_pure,pyridine,pyridine,benzenethiol + pyridine,False,50.9289093081653,0.009442455247315911,0.0025131141044251078,0.00907219680846658,0.8684686049937317,False
+orig_pure/526,original_pure,pyridine,pyridine,pyridine + tris(2-ethylhexyl) phosphate,False,7.086649746140755e-13,1.3162625736646213e-16,1.4578897469361977e-18,0.03336831265944101,0.0,False
+orig_pure/527,original_pure,pyridine,pyridine,meoh + pyridine,False,56.28831103624865,0.010453574852542698,0.0036438383008296008,0.00249680898535132,1.112073153063263,False
+orig_pure/528,original_pure,pyridine,pyridine,benzene + pyridine,False,3.676815566452974e-15,6.850416113651279e-19,1.7442106640468236e-18,0.01453773563425213,1.1283417387685817e-18,False
+orig_pure/529,original_pure,pyridine,pyridine,benzene + pyridine,False,0.0,0.0,0.0,7.833313801509767e-06,0.0,False
+orig_pure/530,original_pure,pyridine,pyridine,meoh + pyridine,False,59.27123206265378,0.011032626648600755,0.006058234784079918,0.004906735209630535,0.0,False
+orig_pure/531,original_pure,pyridine,pyridine,"n,n-dimethylformamide + pyridine",False,2.3496380204281327e-14,4.3664570409785384e-18,1.091680708724991e-19,0.015532993764165937,1.2454129595459391e-16,False
+orig_pure/532,original_pure,pyridine,pyridine,meoh + pyridine,False,60.58325023176669,0.011266034409685587,0.0067839396391305195,0.004518710882932649,0.0,False
+orig_pure/533,original_pure,pyridine,pyridine,dmmp + pyridine,False,62.98220787988759,0.011746087435510892,0.0006688186461500093,0.0006709042234191967,0.0,False
+orig_pure/534,original_pure,pyridine,pyridine,pyridine + toluene,False,59.9287128481606,0.01116657183153403,0.0009720233785253671,0.0018588255827892127,0.0,False
+orig_pure/535,original_pure,pyridine,pyridine,benzenethiol + pyridine,False,63.52124406675979,0.011809926100690163,0.0029731620361875314,0.005740924790475738,0.0,False
+orig_pure/536,original_pure,pyridine,pyridine,pyridine + tris(2-ethylhexyl) phosphate,False,52.60693544241041,0.009785179844219272,0.002196277555947938,0.0012883640056480998,0.0,False
+orig_pure/537,original_pure,pyridine,pyridine,dmmp + pyridine,False,55.477425746969445,0.010305448365777608,0.0008226591339233748,0.0017347674593166888,3.5078542174835574,False
+orig_pure/538,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,meoh + tris(2-ethylhexyl) phosphate,False,44.716776415803224,0.02231853016553092,0.0025018491534664605,0.0011347857781050744,0.0,False
+orig_pure/539,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,etoh + tris(2-ethylhexyl) phosphate,False,4.763402156237114e-14,2.3988763570294848e-17,6.46267475379634e-20,0.00013240707996242733,1.4281564328861608e-16,False
+orig_pure/540,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,benzene + tris(2-ethylhexyl) phosphate,False,3.591883091293174e-16,2.642936140024219e-19,0.0,0.10035781438714751,1.1530702818999707e-15,False
+orig_pure/541,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,benzene + tris(2-ethylhexyl) phosphate,False,57.0178355035248,0.02858333559620844,0.0001677275951783135,0.0009418015278475653,1.0449706249816992,False
+orig_pure/542,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,diethylamine + tris(2-ethylhexyl) phosphate,False,54.52061530692018,0.027205320232769573,0.0038570767516128528,0.0007442001556690818,0.0,False
+orig_pure/543,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,dmmp + tris(2-ethylhexyl) phosphate,False,5.633110385999389e-14,2.791145376322598e-17,9.364975704137269e-18,0.031122574899632233,0.0,False
+orig_pure/544,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,acetonitrile + tris(2-ethylhexyl) phosphate,False,1.6506602606734253e-14,8.128712932501214e-18,1.8458577308455237e-18,0.0024015424330385807,8.381488712925326e-15,False
+orig_pure/545,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,meoh + tris(2-ethylhexyl) phosphate,False,52.1716545211258,0.025930379939659617,0.0038727919191206255,0.0037719727311905774,0.0,False
+orig_pure/546,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,benzenethiol + tris(2-ethylhexyl) phosphate,False,0.0,0.0,1.4919504189960583e-21,0.001818748158705828,0.0,False
+orig_pure/547,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,benzene + tris(2-ethylhexyl) phosphate,False,53.00193962168882,0.026202280228468457,0.00010885403899430529,0.0013393045972333538,0.0,False
+orig_pure/548,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,pyridine + tris(2-ethylhexyl) phosphate,False,4.5100056530231446e-13,2.219630348057492e-16,1.689240327126699e-18,0.0004991132791074791,4.2196631775514975e-14,False
+orig_pure/549,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,etoh + tris(2-ethylhexyl) phosphate,False,51.02818314738886,0.025116687188756575,0.0038143226881076128,0.0002800426837959623,0.3142680130052228,False
+orig_pure/550,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,pyridine + tris(2-ethylhexyl) phosphate,False,51.0695874632501,0.025339775588587566,0.0007045872828208029,0.000631803814614802,0.0,False
+orig_pure/551,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,n-hexane + tris(2-ethylhexyl) phosphate,False,1.4015178294671953e-14,6.942845370183117e-18,0.0,0.023284721652191313,0.0,False
+orig_pure/552,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,"1,9-nonanedithiol + tris(2-ethylhexyl) phosphate",False,0.0,0.0,0.0,0.0,0.0,False
+orig_pure/553,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,pyridine + tris(2-ethylhexyl) phosphate,False,52.5797403646658,0.026091275108977276,0.0003067204161004981,4.481645016975856e-05,0.0,False
+orig_pure/554,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,etoh + tris(2-ethylhexyl) phosphate,False,2.5018537765542006e-17,1.2356992697564088e-20,3.494527794874552e-20,0.45639775695248497,0.0,False
+orig_pure/555,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1-dodecanethiol + tris(2-ethylhexyl) phosphate,False,53.814770923918886,0.026821147310732273,0.0032377127436702276,0.0003095803311486509,4.795643919994382,False
+orig_pure/556,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,etoh + tris(2-ethylhexyl) phosphate,False,53.1573126303171,0.026653550608880257,0.0012356392031674444,0.0002849065063036541,0.0,False
+orig_pure/557,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,n-hexane + tris(2-ethylhexyl) phosphate,False,52.59792407680157,0.02627772835519553,0.004378418258633876,0.004301130413079845,0.0,False
+orig_pure/558,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,"1,9-nonanedithiol + tris(2-ethylhexyl) phosphate",False,53.40996050970241,0.02656791493585532,0.0020422106810844298,0.0014852796121914938,2.6653916398517152,False
+orig_pure/559,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1-undecanethiol + tris(2-ethylhexyl) phosphate,False,54.89315049103335,0.027412186958041384,0.003775282992045313,0.00018226915653851385,0.0,False
+orig_pure/560,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1-dodecanethiol + tris(2-ethylhexyl) phosphate,False,54.242741846854834,0.02704564687894981,0.0036522656228043003,0.00026103891039383666,1.1196989451427315,False
+orig_pure/561,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,6-mercapto-1-hexanol + tris(2-ethylhexyl) phosphate,False,53.10391173359073,0.02653038312109187,0.006059056921480435,0.0011941186555661572,2.2148536062597217,False
+orig_pure/562,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1-undecanethiol + tris(2-ethylhexyl) phosphate,False,53.90977429937193,0.02698174926030377,0.003116950329005813,0.00018101232388932138,0.0,False
+orig_pure/563,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1-dodecanethiol + tris(2-ethylhexyl) phosphate,False,53.92623376416692,0.027036155539751444,0.0036649365367742073,0.00036039750427421476,0.0,False
+orig_pure/564,original_pure,tris(2-ethylhexyl) phosphate,tris(2-ethylhexyl) phosphate,1-undecanethiol + tris(2-ethylhexyl) phosphate,False,52.50689847797448,0.026364086700910498,0.00325314395235455,0.0005813226754032462,0.4288404363642917,False

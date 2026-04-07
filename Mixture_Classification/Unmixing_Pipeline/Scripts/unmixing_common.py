@@ -281,6 +281,46 @@ def compute_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, float]:
     }
 
 
+def search_best_pair_with_atom_sets(
+    spectrum: np.ndarray,
+    classes: list[str],
+    atom_sets: dict[str, np.ndarray],
+    baseline_atom: np.ndarray,
+) -> tuple[dict[str, float | int | tuple[str, str]], dict[str, float | int | tuple[str, str]]]:
+    pair_defs = list(combinations(classes, 2))
+    best = None
+    second = None
+
+    for left_label, right_label in pair_defs:
+        left_atoms = atom_sets[left_label]
+        right_atoms = atom_sets[right_label]
+        design = np.column_stack([left_atoms, right_atoms, baseline_atom])
+        coef, _ = nnls(design, spectrum)
+        recon = design @ coef
+        residual = float(np.linalg.norm(spectrum - recon))
+        n_left = left_atoms.shape[1]
+        n_right = right_atoms.shape[1]
+        entry = {
+            "labels": tuple(sorted((left_label, right_label))),
+            "left_sum": float(coef[:n_left].sum()),
+            "right_sum": float(coef[n_left : n_left + n_right].sum()),
+            "baseline_sum": float(coef[-1]),
+            "residual": residual,
+            "n_left_atoms": n_left,
+            "n_right_atoms": n_right,
+        }
+        if best is None or residual < float(best["residual"]):
+            second = best
+            best = entry
+        elif second is None or residual < float(second["residual"]):
+            second = entry
+
+    assert best is not None
+    if second is None:
+        second = best
+    return best, second
+
+
 def evaluate_pair_records_with_atom_sets(
     records: list[SpectrumRecord],
     classes: list[str],
@@ -288,35 +328,14 @@ def evaluate_pair_records_with_atom_sets(
     baseline_atom: np.ndarray,
 ):
     class_to_i = {label: idx for idx, label in enumerate(classes)}
-    pair_defs = list(combinations(classes, 2))
     y_true = np.zeros((len(records), len(classes)), dtype=int)
     y_pred = np.zeros_like(y_true)
     rows = []
 
     for row_idx, record in enumerate(records):
-        best = None
-        for left_label, right_label in pair_defs:
-            left_atoms = atom_sets[left_label]
-            right_atoms = atom_sets[right_label]
-            design = np.column_stack([left_atoms, right_atoms, baseline_atom])
-            coef, _ = nnls(design, record.spectrum)
-            recon = design @ coef
-            residual = float(np.linalg.norm(record.spectrum - recon))
-            if best is None or residual < best["residual"]:
-                n_left = left_atoms.shape[1]
-                n_right = right_atoms.shape[1]
-                best = {
-                    "labels": tuple(sorted((left_label, right_label))),
-                    "left_sum": float(coef[:n_left].sum()),
-                    "right_sum": float(coef[n_left : n_left + n_right].sum()),
-                    "baseline_sum": float(coef[-1]),
-                    "residual": residual,
-                    "n_left_atoms": n_left,
-                    "n_right_atoms": n_right,
-                }
-
+        best, _ = search_best_pair_with_atom_sets(record.spectrum, classes, atom_sets, baseline_atom)
         assert best is not None
-        pred_labels = best["labels"]
+        pred_labels = tuple(best["labels"])
         for label in record.true_labels:
             y_true[row_idx, class_to_i[label]] = 1
         y_pred[row_idx, class_to_i[pred_labels[0]]] = 1

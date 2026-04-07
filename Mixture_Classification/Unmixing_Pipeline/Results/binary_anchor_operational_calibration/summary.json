@@ -1,0 +1,96 @@
+{
+  "mode": "baseline_corrected",
+  "n_extra_reps": 9,
+  "calibration_targets": {
+    "pure_reject_target": 0.995,
+    "mixture_coverage_target": 0.98,
+    "mixture_calibration_dataset": "existing_real",
+    "negative_calibration_datasets": [
+      "original_pure",
+      "pt2_pure"
+    ]
+  },
+  "selected_thresholds": {
+    "residual_rel_threshold": 0.4237,
+    "minor_share_threshold": 0.0979,
+    "gap_ratio_threshold": 0.0,
+    "balanced_accuracy": 0.9844827586206897,
+    "mixture_coverage_calibration": 0.9689655172413794,
+    "pure_reject_rate_calibration": 1.0,
+    "accepted_exact_match_calibration": 0.9092526690391459
+  },
+  "anchor_metrics": {
+    "existing_real": {
+      "exact_match": 0.906896551724138,
+      "micro_precision": 0.9534482758620689,
+      "micro_recall": 0.9534482758620689,
+      "micro_f1": 0.9534482758620689,
+      "mean_true_labels": 2.0,
+      "mean_predicted_labels": 2.0
+    },
+    "pt2_real": {
+      "exact_match": 1.0,
+      "micro_precision": 1.0,
+      "micro_recall": 1.0,
+      "micro_f1": 1.0,
+      "mean_true_labels": 2.0,
+      "mean_predicted_labels": 2.0
+    },
+    "original_pure_as_forced_binary": {
+      "exact_match": 0.0,
+      "micro_precision": 0.5,
+      "micro_recall": 1.0,
+      "micro_f1": 0.6666666666666666,
+      "mean_true_labels": 1.0,
+      "mean_predicted_labels": 2.0
+    },
+    "pt2_pure_as_forced_binary": {
+      "exact_match": 0.0,
+      "micro_precision": 0.5,
+      "micro_recall": 1.0,
+      "micro_f1": 0.6666666666666666,
+      "mean_true_labels": 1.0,
+      "mean_predicted_labels": 2.0
+    }
+  },
+  "operational_binary": {
+    "existing_real": {
+      "coverage": 0.9689655172413794,
+      "reject_rate": 0.03103448275862064,
+      "accepted_exact_match": 0.9092526690391459,
+      "accepted_micro_precision": 0.9546263345195729,
+      "accepted_micro_recall": 0.9546263345195729,
+      "accepted_micro_f1": 0.9546263345195729,
+      "mean_residual_rel_accepted": 0.10829947000173398,
+      "mean_gap_ratio_accepted": 0.9581301984415285
+    },
+    "pt2_real": {
+      "coverage": 1.0,
+      "reject_rate": 0.0,
+      "accepted_exact_match": 1.0,
+      "accepted_micro_precision": 1.0,
+      "accepted_micro_recall": 1.0,
+      "accepted_micro_f1": 1.0,
+      "mean_residual_rel_accepted": 0.16949911865541462,
+      "mean_gap_ratio_accepted": 1.0779086755056677
+    },
+    "original_pure": {
+      "binary_accept_rate": 0.0,
+      "binary_reject_rate": 1.0,
+      "mean_residual_rel_accepted": 0.0,
+      "mean_gap_ratio_accepted": 0.0
+    },
+    "pt2_pure": {
+      "binary_accept_rate": 0.0,
+      "binary_reject_rate": 1.0,
+      "mean_residual_rel_accepted": 0.0,
+      "mean_gap_ratio_accepted": 0.0
+    },
+    "all_pure": {
+      "binary_accept_rate": 0.0,
+      "binary_reject_rate": 1.0,
+      "mean_residual_rel_accepted": 0.0,
+      "mean_gap_ratio_accepted": 0.0
+    }
+  }
+}

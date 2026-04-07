@@ -1,0 +1,31 @@
+{
+  "mode": "baseline_corrected",
+  "n_extra_reps": 9,
+  "baseline_rel_threshold": 0.02,
+  "alt_baseline_rel_max": 0.005,
+  "residual_margin": 0.01,
+  "existing_real": {
+    "exact_match": 0.906896551724138,
+    "micro_precision": 0.9534482758620689,
+    "micro_recall": 0.9534482758620689,
+    "micro_f1": 0.9534482758620689,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.0
+  },
+  "pt2_real": {
+    "exact_match": 1.0,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.0
+  },
+  "target_pair_accuracy": {
+    "6-mercapto-1-hexanol + pyridine": 0.0,
+    "1-dodecanethiol + meoh": 0.8860759493670886
+  },
+  "fallback_rates": {
+    "existing_real": 0.0,
+    "pt2_real": 0.0
+  }
+}

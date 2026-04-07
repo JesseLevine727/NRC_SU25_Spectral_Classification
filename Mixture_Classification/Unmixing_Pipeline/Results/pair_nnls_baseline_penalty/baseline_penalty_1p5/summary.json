@@ -1,0 +1,25 @@
+{
+  "mode": "baseline_corrected",
+  "n_extra_reps": 9,
+  "baseline_penalty": 1.5,
+  "existing_real": {
+    "exact_match": 0.8051724137931034,
+    "micro_precision": 0.8982758620689655,
+    "micro_recall": 0.8982758620689655,
+    "micro_f1": 0.8982758620689655,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.0
+  },
+  "pt2_real": {
+    "exact_match": 1.0,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.0
+  },
+  "target_pair_accuracy": {
+    "6-mercapto-1-hexanol + pyridine": 1.0,
+    "1-dodecanethiol + meoh": 0.2848101265822785
+  }
+}

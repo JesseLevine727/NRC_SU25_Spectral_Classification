@@ -415,7 +415,256 @@ Current conclusion:
 - treat cardinality-adaptive NNLS as the active open-cardinality prototype to improve next
 - focus next on better support-size selection rather than changing the dictionary again immediately
 
-## Current Ranking
+### Experiment 008: Operational Calibration Of The Binary Anchor
+
+Script:
+- `Scripts/run_binary_anchor_operational_calibration.py`
+
+Results:
+- `Results/binary_anchor_operational_calibration/`
+
+Setup:
+- Started from the current best binary anchor:
+  - baseline-corrected spectra
+  - replicate-aware compound dictionaries with up to `9` extra representatives
+  - one constant nuisance baseline atom
+- Kept binary pair inference fixed
+- Added a calibrated accept / reject gate for the question:
+  - "does this spectrum look like a trustworthy binary-mixture prediction?"
+- Calibrated the gate using:
+  - positives: original real binary mixtures
+  - negatives: original pure spectra and pt2 pure spectra
+- Swept thresholds over:
+  - relative reconstruction residual
+  - minor coefficient share
+  - pair-gap ratio
+
+Selected thresholds:
+
+- residual relative threshold: `0.4237`
+- minor share threshold: `0.0979`
+- gap ratio threshold: `0.0000`
+
+Headline results:
+- existing real mixtures:
+  - coverage `0.969`
+  - accepted exact `0.909`
+  - accepted micro-F1 `0.955`
+- pt2 real mixtures:
+  - coverage `1.000`
+  - accepted exact `1.000`
+  - accepted micro-F1 `1.000`
+- original pure spectra:
+  - binary reject rate `1.000`
+- pt2 pure spectra:
+  - binary reject rate `1.000`
+
+Interpretation:
+
+- This does not replace the binary anchor as the primary benchmark because it introduces abstention
+- It does finalize the current operational story:
+  - use the binary anchor when the spectrum passes the binary-compatibility gate
+  - reject / escalate spectra that do not look like trustworthy binary mixtures
+- In practice, the calibrated gate rejects all pure spectra while preserving almost all real binary mixtures
+- The pair-gap feature was not needed in the selected solution; the useful calibration came from residual and minor-share structure
+- This supports the current framing:
+  - binary-constrained inference is appropriate for the present dataset
+  - open-cardinality handling remains exploratory rather than the main deployment path
+
+### Experiment 009: Targeted Audit Of Remaining Original-Mixture Errors
+
+Script:
+- `Scripts/run_existing_real_failure_audit.py`
+
+Results:
+- `Results/existing_real_failure_audit/`
+
+Setup:
+- Audited the current best binary anchor on the original real-mixture set only
+- Merged:
+  - the best replicate-aware pair-NNLS predictions
+  - the operational binary gate outputs
+- Split the remaining non-perfect behavior into:
+  - accepted misclassifications
+  - rejected but actually correct binary predictions
+  - rejected and incorrect predictions
+- Grouped results by true mixture pair and by confusion pattern
+
+Headline results:
+- original real samples audited: `580`
+- anchor exact match: `0.9069`
+- total anchor errors: `54`
+- operational accepted count: `562`
+- operational rejected count: `18`
+- accepted errors: `51`
+- rejected but anchor-correct: `15`
+- rejected and anchor-incorrect: `3`
+
+Dominant failure modes:
+- `6-mercapto-1-hexanol + pyridine` -> `benzenethiol + pyridine`
+  - `36 / 36` samples
+- `1-dodecanethiol + meoh` family
+  - `9` samples predicted as `1-dodecanethiol + diethylamine`
+  - `8` samples predicted as `1-undecanethiol + meoh`
+  - `1` sample predicted as `1-dodecanethiol + tris(2-ethylhexyl) phosphate`
+
+Interpretation:
+
+- The classical ceiling is not being set by broad model weakness anymore
+- Almost all remaining error is concentrated in two chemistry-specific regions:
+  - a complete confusion between `6-mercapto-1-hexanol` and `benzenethiol` when paired with `pyridine`
+  - a smaller ambiguity cluster around `1-dodecanethiol + meoh`
+- The operational gate mostly rejects borderline `1-dodecanethiol + meoh` cases
+- It does not catch the `6-mercapto-1-hexanol + pyridine` failure because those predictions are made confidently under the current features
+
+Implication for next steps:
+
+- The next classical round should be targeted, not broad
+- Priority order:
+  - inspect the `6-mercapto-1-hexanol` vs `benzenethiol` dictionary geometry in the presence of `pyridine`
+  - inspect the `1-dodecanethiol + meoh` neighborhood for within-class reference overlap and near-tie pair fits
+- This is still not a reason to pivot to deep learning yet
+
+### Experiment 010: Selective Low-Baseline Fallback For Pair NNLS
+
+Scripts:
+- `Scripts/run_targeted_pair_diagnostics.py`
+- `Scripts/run_pair_nnls_baseline_penalty.py`
+- `Scripts/run_pair_nnls_baseline_fallback.py`
+
+Results:
+- `Results/targeted_pair_diagnostics/`
+- `Results/pair_nnls_baseline_penalty/`
+- `Results/pair_nnls_baseline_fallback/`
+
+Setup:
+- Started from the current best binary anchor:
+  - baseline-corrected spectra
+  - replicate-aware compound dictionaries with up to `9` extra representatives
+  - one constant nuisance baseline atom
+- First diagnosed the two remaining dominant error regions:
+  - `6-mercapto-1-hexanol + pyridine`
+  - `1-dodecanethiol + meoh`
+- Diagnostics showed:
+  - `1-dodecanethiol + meoh` is mainly a near-tie problem
+  - `6-mercapto-1-hexanol + pyridine` is a systematic ranking problem
+  - the wrong `benzenethiol + pyridine` solution relies strongly on the nuisance baseline atom, while the true pair does not
+- Tested two fixes:
+  - a global baseline-use penalty
+  - a selective fallback rule that only reranks when:
+    - the best pair uses unusually high baseline mass
+    - and a low-baseline alternative is close in residual
+
+Diagnostic headline:
+- `1-dodecanethiol + meoh`
+  - top-1 exact `0.886`
+  - mean true-pair rank `1.44`
+  - mean residual gap to best pair `0.0008`
+- `6-mercapto-1-hexanol + pyridine`
+  - top-1 exact `0.000`
+  - mean true-pair rank `2.89`
+  - mean residual gap to best pair `0.0389`
+
+Global-penalty result:
+- a large baseline penalty could fix `6-mercapto-1-hexanol + pyridine`
+- but it damaged `1-dodecanethiol + meoh` too much
+- not promoted
+
+Best selective fallback configuration:
+- baseline relative threshold: `0.025`
+- low-baseline alternative threshold: `0.005`
+- residual margin: `0.05`
+
+Headline results:
+- existing real mixtures:
+  - exact `0.969`
+  - micro-F1 `0.984`
+- pt2 real mixtures:
+  - exact `1.000`
+  - micro-F1 `1.000`
+- target pair accuracy:
+  - `6-mercapto-1-hexanol + pyridine`: `1.000`
+  - `1-dodecanethiol + meoh`: `0.886`
+- fallback trigger rate:
+  - existing real: `0.062`
+  - pt2 real: `0.000`
+
+Interpretation:
+
+- This is the first classical change that materially improves the benchmark after the replicate-aware dictionary
+- The fix is targeted and interpretable:
+  - only override the raw best pair when that best pair appears to be leaning too heavily on the nuisance baseline atom
+  - and only when a low-baseline alternative is still competitive in reconstruction error
+- It completely resolves the `6-mercapto-1-hexanol + pyridine` failure mode without harming pt2
+- The remaining main weakness is now concentrated almost entirely in `1-dodecanethiol + meoh`
+
+Implication for next steps:
+
+- keep this selective-fallback binary solver as the new benchmark
+- the final major classical target is now the `1-dodecanethiol + meoh` family
+- deep learning is still not justified yet because the error surface has become even more localized and class-specific
+
+### Experiment 011: Family-Specific Near-Tie Fallback For `1-dodecanethiol + meoh`
+
+Script:
+- `Scripts/run_pair_nnls_family_fallback.py`
+
+Results:
+- `Results/pair_nnls_family_fallback/`
+
+Setup:
+- Built directly on the current best selective low-baseline fallback solver
+- Added one additional narrow reranking rule for the remaining `1-dodecanethiol + meoh` cluster
+- Applied only when:
+  - the current selected pair was one of:
+    - `1-undecanethiol + meoh`
+    - `1-dodecanethiol + tris(2-ethylhexyl) phosphate`
+  - and `1-dodecanethiol + meoh` was present as a close alternative within a very small residual margin
+
+Best configuration:
+- family residual margin: `0.002`
+
+Headline results:
+- existing real mixtures:
+  - exact `0.984`
+  - micro-F1 `0.992`
+- pt2 real mixtures:
+  - exact `1.000`
+  - micro-F1 `1.000`
+- target pair accuracy:
+  - `6-mercapto-1-hexanol + pyridine`: `1.000`
+  - `1-dodecanethiol + meoh`: `0.943`
+- fallback trigger rates:
+  - existing low-baseline fallback: `0.062`
+  - existing family fallback: `0.016`
+  - pt2 low-baseline fallback: `0.000`
+  - pt2 family fallback: `0.000`
+
+Interpretation:
+
+- This is the strongest classical result in the repo so far
+- The new family fallback improves the remaining `1-dodecanethiol + meoh` neighborhood substantially:
+  - from `0.886` to `0.943`
+- The improvement comes from correcting the very tight local near-ties:
+  - `1-undecanethiol + meoh`
+  - occasional `1-dodecanethiol + tris(2-ethylhexyl) phosphate`
+- The harder `1-dodecanethiol + diethylamine` subset still remains and now dominates the residual error budget
+- pt2 remains untouched, which is important because the fallback never triggered there
+
+Implication for next steps:
+
+- This is likely the practical classical ceiling for the current binary-first framing
+- The remaining error surface is now extremely small and highly localized
+- The next decision is no longer "broad classical versus deep"
+- It is now:
+  - either stop and freeze this classical benchmark
+  - or do one last targeted analysis of the `1-dodecanethiol + diethylamine` collapse to decide whether it is recoverable classically at all
+
+## Current Benchmark View
+
+### Clean benchmark ranking
+
+These are the methods that should count as the main scientific comparison set because they do not rely on pair- or family-specific override rules.
 
 1. Pair NNLS + nuisance baseline atom + replicate-aware dictionary, `baseline_corrected`, extra reps `9`
 2. Pair NNLS + nuisance baseline atom, `baseline_corrected`, degree `0`
@@ -424,16 +673,34 @@ Current conclusion:
 5. Non-negative elastic net, `raw`
 6. Exhaustive pair NNLS, `raw`
 
-Not promoted into the ranking:
+### Diagnostic engineering variants
+
+These variants improved performance, but they should be treated separately from the clean benchmark because they use localized decision logic discovered from the observed confusion structure.
+
+1. Pair NNLS + replicate-aware dictionary + selective low-baseline fallback + family near-tie fallback, `baseline_corrected`, extra reps `9`
+2. Pair NNLS + replicate-aware dictionary + selective low-baseline fallback, `baseline_corrected`, extra reps `9`
+
+Not promoted into either main ranking:
 
 - Cardinality-adaptive NNLS prototype
   - strong on the original real-mixture set
   - not yet benchmark-beating overall because pt2 binary-mixture exactness dropped from `1.000` to `0.889`
+- Operationally calibrated binary anchor
+  - useful as a deployment-facing reject / abstain layer
+  - not directly comparable because it can abstain
+- Global baseline-penalty pair NNLS
+  - fixes the `6-mercapto-1-hexanol + pyridine` failure only at the cost of broader regression
 
-Ranking criterion:
+Benchmark criterion:
 - priority to real-mixture exact support recovery
 - then micro-F1
 - then simplicity and interpretability
+
+Current interpretation:
+
+- if the goal is a clean, defensible general method, the replicate-aware binary pair NNLS anchor remains the main benchmark
+- if the goal is maximum performance on the current dataset, the localized fallback variants currently perform best
+- this split is the main reason a deep pivot is now reasonable to discuss
 
 ## Next Candidate Experiments
 

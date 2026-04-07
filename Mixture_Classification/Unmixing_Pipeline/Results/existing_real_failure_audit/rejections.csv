@@ -1,0 +1,19 @@
+sample_id,true_labels,predicted_labels,correct_anchor_prediction,residual_rel,minor_share,gap_ratio
+existing/399,1-dodecanethiol + meoh,1-dodecanethiol + diethylamine,False,0.4237196894673477,0.3741983222902277,0.0067187468728183
+existing/408,1-dodecanethiol + meoh,1-dodecanethiol + diethylamine,False,0.141079660567158,0.0968126710211593,0.0112042159926214
+existing/409,1-dodecanethiol + meoh,1-dodecanethiol + tris(2-ethylhexyl) phosphate,False,0.1267603292131474,0.0774377173142391,0.0019131855746576
+existing/410,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.1221579683455923,0.0843155971615216,0.0027869678260217
+existing/415,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.1121908387678426,0.0893734475833434,0.0164304703674302
+existing/413,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.1120677951150935,0.0767080818916047,0.0162656632716438
+existing/411,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.1118005205870312,0.080599698007267,0.0183365698992669
+existing/414,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.1083834158888166,0.0825364291495831,0.0167273303016205
+existing/416,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.1035075135145391,0.0868420590990699,0.038558263817532
+existing/418,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.0995315841249193,0.0955532249854888,0.0422981385839794
+existing/419,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.0933801089806712,0.0921208608034121,0.0534298789652857
+existing/420,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.0912912418774111,0.0892936491746926,0.0446411853565303
+existing/422,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.0886041546566303,0.0976396665382293,0.0656334483563795
+existing/355,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.0842018669904779,0.0922540346524497,0.0832155818953996
+existing/354,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.0829552130165484,0.0971807917317272,0.0921974142445982
+existing/269,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.0808886480276663,0.0924830885914498,0.0784777376124813
+existing/356,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.0788810383275176,0.0877732645556267,0.0652730112430338
+existing/270,1-dodecanethiol + meoh,1-dodecanethiol + meoh,True,0.0779501551687208,0.096896049823452,0.0822462582201601

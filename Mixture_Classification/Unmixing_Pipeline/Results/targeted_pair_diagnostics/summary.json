@@ -1,0 +1,56 @@
+{
+  "pairs_audited": [
+    "1-dodecanethiol + meoh",
+    "6-mercapto-1-hexanol + pyridine"
+  ],
+  "sample_count": 194,
+  "per_true_pair": [
+    {
+      "true_pair": "1-dodecanethiol + meoh",
+      "samples": 158,
+      "top1_exact_rate": 0.8860759493670886,
+      "mean_true_pair_rank": 1.4367088607594938,
+      "mean_best_vs_true_delta": 0.0007611273843010354,
+      "max_true_pair_rank": 14,
+      "mean_best_residual_rel": 0.10598048384871328,
+      "mean_true_pair_residual_rel": 0.10674161123301434
+    },
+    {
+      "true_pair": "6-mercapto-1-hexanol + pyridine",
+      "samples": 36,
+      "top1_exact_rate": 0.0,
+      "mean_true_pair_rank": 2.888888888888889,
+      "mean_best_vs_true_delta": 0.03886726930311768,
+      "max_true_pair_rank": 3,
+      "mean_best_residual_rel": 0.22921003667728915,
+      "mean_true_pair_residual_rel": 0.26807730598040685
+    }
+  ],
+  "top1_confusions": [
+    {
+      "true_pair": "1-dodecanethiol + meoh",
+      "best_pair": "1-dodecanethiol + meoh",
+      "samples": 140
+    },
+    {
+      "true_pair": "1-dodecanethiol + meoh",
+      "best_pair": "1-dodecanethiol + diethylamine",
+      "samples": 9
+    },
+    {
+      "true_pair": "1-dodecanethiol + meoh",
+      "best_pair": "1-undecanethiol + meoh",
+      "samples": 8
+    },
+    {
+      "true_pair": "1-dodecanethiol + meoh",
+      "best_pair": "1-dodecanethiol + tris(2-ethylhexyl) phosphate",
+      "samples": 1
+    },
+    {
+      "true_pair": "6-mercapto-1-hexanol + pyridine",
+      "best_pair": "benzenethiol + pyridine",
+      "samples": 36
+    }
+  ]
+}
