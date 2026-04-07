@@ -15,20 +15,21 @@
 \small
 \setlength{\tabcolsep}{5pt}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{>{\raggedright\arraybackslash}p{3.2cm} >{\raggedright\arraybackslash}p{2.4cm} >{\raggedright\arraybackslash}p{3.5cm} c c c}
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.0cm} >{\raggedright\arraybackslash}p{2.2cm} >{\raggedright\arraybackslash}p{3.7cm} c c c c}
 \toprule
-Setup & Class space & Evaluation protocol & Precision & Recall & Micro-F1 \\
+Setup & Class space & Evaluation protocol & Precision & Recall & Micro-F1 & Avg. pred. chemicals \\
 \midrule
-Original \texttt{Siamese\_MLP\_6\_FFT\_Threshold} calibrated & 12-class head & 25\% calibration / 75\% held-out test, calibrated thresholds & 0.970 & 0.980 & 0.970 \\
-PT2-expanded retrain, default scoring & 17-class head & Full original real set, all 17 classes counted, fixed threshold 0.5 & 0.597 & 0.888 & 0.714 \\
-PT2-expanded retrain, notebook-style filtered & 17-class head & Full original real set, report filtered to original supported classes only, fixed threshold 0.5 & 0.872 & 0.888 & 0.880 \\
-PT2-expanded retrain, recalibrated & 17-class head & 25\% calibration / 75\% held-out test on original real set, notebook-style filtered report, recalibrated 17-class thresholds & 0.774 & 0.936 & 0.847 \\
+Original \texttt{Siamese\_MLP\_6\_FFT\_Threshold} calibrated & 12-class head & 25\% calibration / 75\% held-out test, calibrated thresholds & 0.970 & 0.980 & 0.970 & 2.02\tnote{a} \\
+PT2-expanded retrain, default scoring & 17-class head & Full original real set, all 17 classes counted, fixed threshold 0.5 & 0.597 & 0.888 & 0.714 & 2.97 \\
+PT2-expanded retrain, notebook-style filtered & 17-class head & Full original real set, report filtered to original supported classes only, fixed threshold 0.5 & 0.872 & 0.888 & 0.880 & 2.97 \\
+PT2-expanded retrain, recalibrated & 17-class head & 25\% calibration / 75\% held-out test on original real set, notebook-style filtered report, recalibrated 17-class thresholds & 0.774 & 0.936 & 0.847 & 3.36 \\
 \bottomrule
 \end{tabular}
 }
 
 \begin{tablenotes}\footnotesize
 \item The original calibrated row is taken from \texttt{Siamese\_MLP\_6\_FFT\_Threshold.ipynb}.
+\item[a] The original notebook did not log mean predicted-label count explicitly; 2.02 is inferred from micro precision and recall, with mean true labels fixed at 2.0.
 \item ``Notebook-style filtered'' means the report only includes classes with nonzero support in the original real-mixture set, matching the notebook logic and ignoring false positives on absent classes.
 \item The recalibrated PT2-expanded row uses newly fit 17-class thresholds from the new directory \texttt{pt2\_augmented\_existing\_real\_recalibrated}; its exact filtered micro metrics are precision 0.7738, recall 0.9356, micro-F1 0.8470.
 \end{tablenotes}
