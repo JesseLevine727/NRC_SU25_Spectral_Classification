@@ -1,0 +1,68 @@
+{
+  "mode": "baseline_corrected",
+  "baseline_reference_results_dir": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Results/exhaustive_pair_nnls",
+  "existing_real": {
+    "exact_match": 0.8637931034482759,
+    "micro_precision": 0.9318965517241379,
+    "micro_recall": 0.9318965517241379,
+    "micro_f1": 0.9318965517241379,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.0
+  },
+  "pt2_real": {
+    "exact_match": 1.0,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.0
+  },
+  "reject_thresholds": {
+    "residual_rel_threshold": 0.4863,
+    "minor_share_threshold": 0.0824,
+    "balanced_accuracy": 0.9991379310344812,
+    "tpr_mixture_accept": 0.9982758620689638,
+    "tnr_pure_reject": 0.9999999999999987
+  },
+  "reject_existing_real": {
+    "coverage": 0.9982758620689656,
+    "accepted_exact_match": 0.8652849740932642
+  },
+  "reject_pt2_real": {
+    "coverage": 1.0,
+    "accepted_exact_match": 1.0
+  },
+  "pure_binary_accept_rate": 0.0,
+  "pt2_split_validation": [
+    {
+      "seed": 0,
+      "pt2_exact_match": 1.0,
+      "pt2_micro_f1": 1.0,
+      "pt2_mean_residual_rel": 0.19007638016705447
+    },
+    {
+      "seed": 1,
+      "pt2_exact_match": 1.0,
+      "pt2_micro_f1": 1.0,
+      "pt2_mean_residual_rel": 0.1901577645530368
+    },
+    {
+      "seed": 2,
+      "pt2_exact_match": 1.0,
+      "pt2_micro_f1": 1.0,
+      "pt2_mean_residual_rel": 0.19126042712142127
+    },
+    {
+      "seed": 3,
+      "pt2_exact_match": 1.0,
+      "pt2_micro_f1": 1.0,
+      "pt2_mean_residual_rel": 0.19070024672895544
+    },
+    {
+      "seed": 4,
+      "pt2_exact_match": 1.0,
+      "pt2_micro_f1": 1.0,
+      "pt2_mean_residual_rel": 0.19081557640831634
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "mode": "baseline_corrected",
+  "n_extra_reps": 9,
+  "max_support_size": 3,
+  "shortlist_strategy": {
+    "top_single_candidates": 6,
+    "top_pair_candidates": 10,
+    "max_shortlist_size": 8
+  },
+  "selected_hyperparameters": {
+    "size_penalty": 0.01,
+    "min_share_threshold": 0.03
+  },
+  "existing_real": {
+    "exact_match": 0.9,
+    "micro_precision": 0.9579124579124579,
+    "micro_recall": 0.9810344827586207,
+    "micro_f1": 0.969335604770017,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.0482758620689654,
+    "zero_prediction_rate": 0.0,
+    "predicted_cardinality_hist": {
+      "1": 8,
+      "2": 536,
+      "3": 36
+    },
+    "mean_residual_rel": 0.10567235414699631,
+    "mean_baseline_coef": 10.276349945010137,
+    "reject_rate": 0.020689655172413793
+  },
+  "original_pure": {
+    "exact_match": 1.0,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "mean_true_labels": 1.0,
+    "mean_predicted_labels": 1.0,
+    "zero_prediction_rate": 0.0,
+    "predicted_cardinality_hist": {
+      "1": 565
+    },
+    "mean_residual_rel": 0.03915121114435706,
+    "mean_baseline_coef": 3.991831673018348,
+    "reject_rate": 0.0
+  },
+  "pt2_pure": {
+    "exact_match": 1.0,
+    "micro_precision": 1.0,
+    "micro_recall": 1.0,
+    "micro_f1": 1.0,
+    "mean_true_labels": 1.0,
+    "mean_predicted_labels": 1.0,
+    "zero_prediction_rate": 0.0,
+    "predicted_cardinality_hist": {
+      "1": 180
+    },
+    "mean_residual_rel": 0.049988163010709276,
+    "mean_baseline_coef": 2.4098398220663673,
+    "reject_rate": 0.15
+  },
+  "pt2_real": {
+    "exact_match": 0.8888888888888888,
+    "micro_precision": 0.9473684210526315,
+    "micro_recall": 1.0,
+    "micro_f1": 0.972972972972973,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.111111111111111,
+    "zero_prediction_rate": 0.0,
+    "predicted_cardinality_hist": {
+      "2": 288,
+      "3": 36
+    },
+    "mean_residual_rel": 0.16724886917800402,
+    "mean_baseline_coef": 2.8342090396551973,
+    "per_mixture": [
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 13",
+        "samples": 36,
+        "true_labels": "n-hexane + pyridine",
+        "mean_residual_rel": 0.2417555312089506
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 15",
+        "samples": 36,
+        "true_labels": "benzene + n-hexane",
+        "mean_residual_rel": 0.09928505779108655
+      },
+      {
+        "exact_match": 0.0,
+        "micro_precision": 0.6666666666666666,
+        "micro_recall": 1.0,
+        "micro_f1": 0.8,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 3.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 16",
+        "samples": 36,
+        "true_labels": "dichloromethane + n-hexane",
+        "mean_residual_rel": 0.2530521848180409
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 17",
+        "samples": 36,
+        "true_labels": "diethylamine + pyridine",
+        "mean_residual_rel": 0.2725847152083405
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 18",
+        "samples": 36,
+        "true_labels": "6-mercapto-1-hexanol + dichloromethane",
+        "mean_residual_rel": 0.08475859861338256
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 19",
+        "samples": 36,
+        "true_labels": "benzene + pyridine",
+        "mean_residual_rel": 0.17328021161067386
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 20",
+        "samples": 36,
+        "true_labels": "benzene + toluene",
+        "mean_residual_rel": 0.08488937841840997
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 21",
+        "samples": 36,
+        "true_labels": "acetonitrile + dichloromethane",
+        "mean_residual_rel": 0.09968660154583946
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 22",
+        "samples": 36,
+        "true_labels": "acetonitrile + pyridine",
+        "mean_residual_rel": 0.19594754338731193
+      }
+    ],
+    "reject_rate": 0.3425925925925926
+  },
+  "reject_thresholds": {
+    "residual_rel_99pct_calibration": 0.20923996021576027
+  }
+}

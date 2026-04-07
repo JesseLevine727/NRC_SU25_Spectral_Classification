@@ -1,0 +1,905 @@
+sample_id,dataset,source,true_labels,predicted_labels,residual_norm,compound_coef_sum,baseline_coef_sum
+existing/0,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2524.4594537333305,1.5877530113929168,2342.5844014905165
+existing/1,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2337.22338535262,1.5737013617265958,2152.221458350165
+existing/2,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2250.2703198939516,1.5569907592608316,2168.7402275018458
+existing/3,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2376.260353386729,1.5634906322391422,2241.196562904047
+existing/4,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2082.2633180230255,1.561061593245335,2461.3017523393914
+existing/5,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2047.37388481029,1.5192346012073692,2315.1401996495724
+existing/6,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2122.9070771480506,1.5547159061026656,2840.895748791
+existing/7,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2004.2826254406489,1.521062240803447,2303.097573538221
+existing/8,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2020.9948413890893,1.537829899989692,2297.6512983947764
+existing/9,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2079.3850204685373,1.5286865699022343,2302.7533903139492
+existing/10,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1768.3593575954228,1.521114969629033,2514.6951847504474
+existing/11,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2521.1728391177676,1.6143669964836087,2152.481049400029
+existing/12,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1686.3541936515805,1.5204309754131926,2401.5797116003587
+existing/13,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1724.7571243830298,1.5205652522078563,2423.747613344581
+existing/14,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1697.3871015053874,1.5077536246010608,2436.2318634493845
+existing/15,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1671.0397305930305,1.4945982470440573,2392.8709655290413
+existing/16,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1663.4286394161188,1.5122014254538365,2449.2935797566315
+existing/17,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1418.1703185811625,1.4890930621941092,2492.5707348861006
+existing/18,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1412.8618558338123,1.4968263033783897,2356.1685603990722
+existing/19,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1427.152021552793,1.5012939161818848,2316.6265225007055
+existing/20,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1347.5299334695799,1.4891820283871897,2338.1994067705054
+existing/21,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1366.8777209758152,1.4938554587987176,2412.7114376679297
+existing/22,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2519.098726358104,1.6118282711786533,2123.4136038541264
+existing/23,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1358.6624710642227,1.500693892035201,2365.709854664872
+existing/24,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1248.9921748632285,1.5260178884504463,2371.292629658358
+existing/25,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1256.493305225247,1.508833128124377,2256.698463985612
+existing/26,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1199.203051609131,1.5238740254581193,2217.8287975254334
+existing/27,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1161.2754721522615,1.5058953459250142,2272.899790370575
+existing/28,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1122.4055211904554,1.5154992894354642,2608.0989171239507
+existing/29,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,1146.5898192316167,1.5195299737242458,2269.0086818938826
+existing/30,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2451.387949225003,1.6028337057712059,2144.5310027898345
+existing/31,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2457.8963539049428,1.5985865268094355,2149.672702853949
+existing/32,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2478.9364365922866,1.5960560032428828,2150.8954953191806
+existing/33,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2278.591477302798,1.5601285812951848,2364.5224230880467
+existing/34,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2331.8024247121934,1.5706086293418398,2207.5902632999273
+existing/35,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene,2308.706669871559,1.5831633694497622,2132.0714300953427
+existing/36,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2362.3346630174174,1.777568895328093,371.58484402304475
+existing/37,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2345.1558612024196,1.7811200548607657,264.7877537236652
+existing/38,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2360.216428113068,1.7912726247831865,292.40977357383844
+existing/39,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2336.6896205457283,1.7822064409640355,199.52486558353843
+existing/40,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2312.0250088254134,1.801674116798937,193.6605446579294
+existing/41,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2325.7083965627357,1.7955887971281599,147.67215902722958
+existing/42,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2325.7121041610603,1.7962610405373987,104.65218438373732
+existing/43,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2293.1864057586336,1.7913759894070227,46.77532352889969
+existing/44,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2298.371713107464,1.7891657809952275,48.666768450400085
+existing/45,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2286.9244314787693,1.7925052939024648,157.94716597650137
+existing/46,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2283.744947390799,1.8215955876104857,291.4735796561099
+existing/47,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2354.393965868701,1.7668886706487235,219.2405849499468
+existing/48,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2280.1735408054624,1.8068753535495872,145.5486365452564
+existing/49,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2292.998539673202,1.8028753410791007,121.96322601526713
+existing/50,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2276.6439196602605,1.806043750882242,182.14470878102608
+existing/51,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2271.600076122608,1.8100584840724692,180.90476917008468
+existing/52,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2252.3200220819695,1.8009574207787973,115.10405871958363
+existing/53,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2206.4102798304443,1.8241859879955937,233.95462932864726
+existing/54,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2205.345367332179,1.817164059614863,126.11923001569072
+existing/55,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2221.3356169994468,1.8144853726194916,93.68415167266915
+existing/56,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2211.6681864894563,1.813459676035894,137.10173341172379
+existing/57,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2211.672732810747,1.813264923406107,163.9193388379967
+existing/58,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2377.898245627291,1.767249741466331,172.78246726938693
+existing/59,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2191.947557533611,1.80609306884207,193.33862645873458
+existing/60,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2146.2418745807404,1.8254091219746045,348.7742768473541
+existing/61,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2148.714821513977,1.8270940007376253,201.17836843811764
+existing/62,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2170.9382645230967,1.829735392770706,160.23298134122143
+existing/63,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2144.5082870889446,1.8263004240273628,110.82077930869536
+existing/64,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2135.095600432779,1.8228642769879113,132.6199748790368
+existing/65,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2134.2197327060608,1.821265329353196,177.05111124586497
+existing/66,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2380.3377198953517,1.7701290259459106,129.55717959214206
+existing/67,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2358.5228845348524,1.760472934788904,147.52247164976643
+existing/68,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2374.8026016194503,1.7698980627126586,188.24972989253575
+existing/69,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2361.460246238125,1.7836902070757206,256.60544582421454
+existing/70,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2374.705016490899,1.7818789060479934,146.78855800471845
+existing/71,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,benzenethiol + pyridine,2365.7743465125873,1.779882168132278,150.71271673102336
+existing/72,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7128.964064037811,2.0555935769160083,0.0
+existing/73,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7173.741373109179,1.9929645717049063,0.0
+existing/74,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7143.009300786425,1.9907169465385026,0.0
+existing/75,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7132.397391407479,1.99538497701358,0.0
+existing/76,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7320.743443710074,2.030479069648919,0.0
+existing/77,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7298.095418053451,2.00058528920703,0.0
+existing/78,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7279.431079497804,1.990983573989109,0.0
+existing/79,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7253.055045526414,1.9905352175797981,0.0
+existing/80,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7230.741444374195,1.9887182943142445,0.0
+existing/81,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7187.068670776394,1.9903367124233693,0.0
+existing/82,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7284.556485168659,2.014731261226202,0.0
+existing/83,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7148.399737959388,2.034769802973523,0.0
+existing/84,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7250.590902228188,1.9868539069606654,0.0
+existing/85,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7236.225598234387,1.9749708137186646,0.0
+existing/86,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7234.916702754006,1.974321991557489,0.0
+existing/87,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7187.677547359908,1.969684269924923,0.0
+existing/88,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7200.584854015662,1.980491579596972,0.0
+existing/89,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7333.164800005771,2.01741698192723,0.0
+existing/90,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7311.119597958399,1.9940102424248043,0.0
+existing/91,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7265.999314923999,1.9791951360292397,0.0
+existing/92,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7267.218267575443,1.9750347574986715,0.0
+existing/93,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7196.918898786878,1.9677880555768081,0.0
+existing/94,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7142.416332512064,2.0186719465436687,0.0
+existing/95,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7116.507336471171,1.9695304691134703,0.0
+existing/96,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7176.659585283258,1.9978244589706022,0.0
+existing/97,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7184.035088121352,1.9825887225018173,0.0
+existing/98,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7168.8387764726285,1.965982277893251,0.0
+existing/99,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7161.973760848073,1.9608728487124463,0.0
+existing/100,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7102.7639044897,1.9526851302876214,0.0
+existing/101,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7063.577015180478,1.9561987169043966,0.0
+existing/102,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7172.816843403182,2.014747271140994,0.0
+existing/103,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7117.2317625073765,2.008805234436428,0.0
+existing/104,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7098.627563690178,2.0034947096120446,0.0
+existing/105,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7282.742358826823,2.034773879404317,0.0
+existing/106,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7257.829547714464,2.013631005519411,0.0
+existing/107,existing_real,existing_real,benzene + benzenethiol,benzene + benzenethiol,7179.001798902453,1.9974630069529975,0.0
+existing/108,existing_real,existing_real,benzene + etoh,benzene + etoh,1974.5408625066666,1.6712800836414001,850.714712748972
+existing/109,existing_real,existing_real,benzene + etoh,benzene + etoh,1921.8031015048675,1.638582370725922,281.60855892947757
+existing/110,existing_real,existing_real,benzene + etoh,benzene + etoh,1954.7249857985937,1.6221675470736603,263.4854200338795
+existing/111,existing_real,existing_real,benzene + etoh,benzene + etoh,1883.778700055262,1.6070806796702621,315.379755228547
+existing/112,existing_real,existing_real,benzene + etoh,benzene + etoh,2068.0052536527296,1.6597457207516002,861.0663134481786
+existing/113,existing_real,existing_real,benzene + etoh,benzene + etoh,2099.849832973254,1.6337151122761677,569.0905041625609
+existing/114,existing_real,existing_real,benzene + etoh,benzene + etoh,2118.7153258204075,1.6119495834024855,352.6779591049761
+existing/115,existing_real,existing_real,benzene + etoh,benzene + etoh,2091.0420322381856,1.5980965413663804,259.9010325415859
+existing/116,existing_real,existing_real,benzene + etoh,benzene + etoh,2017.8238091842804,1.5928183475927034,252.20397398702147
+existing/117,existing_real,existing_real,benzene + etoh,benzene + etoh,2021.5909198780646,1.5915524269460706,278.0948923510134
+existing/118,existing_real,existing_real,benzene + etoh,benzene + etoh,2185.9447632375263,1.6340969152744882,611.8896883365152
+existing/119,existing_real,existing_real,benzene + etoh,benzene + etoh,1935.7803886756578,1.6799343202307575,624.4992579357286
+existing/120,existing_real,existing_real,benzene + etoh,benzene + etoh,2103.8592673672183,1.62767755861193,525.1156076336439
+existing/121,existing_real,existing_real,benzene + etoh,benzene + etoh,2060.258485524508,1.6115373746938013,330.50136869088436
+existing/122,existing_real,existing_real,benzene + etoh,benzene + etoh,2064.7659476302665,1.5997252766359535,255.36278419507767
+existing/123,existing_real,existing_real,benzene + etoh,benzene + etoh,2090.8322701086945,1.60532865829181,223.335270621549
+existing/124,existing_real,existing_real,benzene + etoh,benzene + etoh,2043.0296428485879,1.5940990449201287,266.04705766946876
+existing/125,existing_real,existing_real,benzene + etoh,benzene + etoh,2162.7534842131918,1.6321787810237731,573.1562913648604
+existing/126,existing_real,existing_real,benzene + etoh,benzene + etoh,2154.1716498490855,1.6302378269416504,496.51173170604415
+existing/127,existing_real,existing_real,benzene + etoh,benzene + etoh,2109.40787426734,1.6217576223401549,332.5875247684357
+existing/128,existing_real,existing_real,benzene + etoh,benzene + etoh,2048.1780716923518,1.6177629390422585,252.16557262846013
+existing/129,existing_real,existing_real,benzene + etoh,benzene + etoh,2115.204146370281,1.6123903288942862,236.15926263490803
+existing/130,existing_real,existing_real,benzene + etoh,benzene + etoh,1940.174361934831,1.6902261401066683,469.32678640923285
+existing/131,existing_real,existing_real,benzene + etoh,benzene + etoh,2073.8088232763507,1.6114975431139091,243.34565349771546
+existing/132,existing_real,existing_real,benzene + etoh,benzene + etoh,2113.821072437082,1.6564077268744488,564.1111673644435
+existing/133,existing_real,existing_real,benzene + etoh,benzene + etoh,2073.3439984820607,1.6428785682719627,433.11523011587207
+existing/134,existing_real,existing_real,benzene + etoh,benzene + etoh,2055.644084675835,1.6374257504835195,348.5959756384254
+existing/135,existing_real,existing_real,benzene + etoh,benzene + etoh,2021.4079572701705,1.6331153687318272,306.91903021731633
+existing/136,existing_real,existing_real,benzene + etoh,benzene + etoh,2031.3519650853798,1.6242415018927945,288.1055332279218
+existing/137,existing_real,existing_real,benzene + etoh,benzene + etoh,2017.8248742311716,1.6179260383942302,258.41510659032645
+existing/138,existing_real,existing_real,benzene + etoh,benzene + etoh,1887.0912997589337,1.6868723323979786,407.6721225425511
+existing/139,existing_real,existing_real,benzene + etoh,benzene + etoh,1870.9199221659262,1.6743584799724964,474.03171416802223
+existing/140,existing_real,existing_real,benzene + etoh,benzene + etoh,1896.3906165846392,1.6547330272119294,480.6109933939839
+existing/141,existing_real,existing_real,benzene + etoh,benzene + etoh,1860.070817475153,1.6838995685786193,656.7672880418928
+existing/142,existing_real,existing_real,benzene + etoh,benzene + etoh,1830.2414632661516,1.6922924585339265,641.6807668655654
+existing/143,existing_real,existing_real,benzene + etoh,benzene + etoh,1875.9074125961295,1.6687624225154072,378.69101448719545
+existing/144,existing_real,existing_real,benzene + meoh,benzene + meoh,2020.2040383903106,1.3424974773465905,7664.75856690392
+existing/145,existing_real,existing_real,benzene + meoh,benzene + meoh,1584.4702653958475,1.3077496499742325,5221.458283626465
+existing/146,existing_real,existing_real,benzene + meoh,benzene + meoh,1620.4433140720805,1.2990390084550194,5213.502667787411
+existing/147,existing_real,existing_real,benzene + meoh,benzene + meoh,1720.9782358729115,1.298483163815564,5487.016498800639
+existing/148,existing_real,existing_real,benzene + meoh,benzene + meoh,1849.1265063604087,1.2772785993457898,5745.320254404987
+existing/149,existing_real,existing_real,benzene + meoh,benzene + meoh,1917.7204631267778,1.3063658702567371,5203.845603042735
+existing/150,existing_real,existing_real,benzene + meoh,benzene + meoh,1936.3924759860583,1.3324043839270427,4896.898332678384
+existing/151,existing_real,existing_real,benzene + meoh,benzene + meoh,1928.5449819082464,1.3278095246444868,4629.309966134297
+existing/152,existing_real,existing_real,benzene + meoh,benzene + meoh,1879.0641887168101,1.3323427922947573,4327.721319159591
+existing/153,existing_real,existing_real,benzene + meoh,benzene + meoh,1817.0269246515802,1.3371748350941748,4418.342604198775
+existing/154,existing_real,existing_real,benzene + meoh,benzene + meoh,1826.8815381533936,1.3369290781403467,5429.77143389849
+existing/155,existing_real,existing_real,benzene + meoh,benzene + meoh,1924.4547063468294,1.3540950661777105,6238.0621321429135
+existing/156,existing_real,existing_real,benzene + meoh,benzene + meoh,1761.5400604149843,1.338460964443863,4931.688160348494
+existing/157,existing_real,existing_real,benzene + meoh,benzene + meoh,1694.8852270367195,1.3445111695304623,4679.677276425291
+existing/158,existing_real,existing_real,benzene + meoh,benzene + meoh,1663.5960535132065,1.3505798984874537,4253.146820061829
+existing/159,existing_real,existing_real,benzene + meoh,benzene + meoh,1650.6729039472368,1.352951801909912,4207.377798826101
+existing/160,existing_real,existing_real,benzene + meoh,benzene + meoh,1625.4098696617427,1.3511739192003298,4446.693268611916
+existing/161,existing_real,existing_real,benzene + meoh,benzene + meoh,1599.7102444782774,1.330971797675096,5720.834723552656
+existing/162,existing_real,existing_real,benzene + meoh,benzene + meoh,1536.5267588165814,1.3318469820176366,4892.067523371394
+existing/163,existing_real,existing_real,benzene + meoh,benzene + meoh,1500.6354195080808,1.3351767988746275,4708.312976860298
+existing/164,existing_real,existing_real,benzene + meoh,benzene + meoh,1444.8467621006375,1.3374985554517331,4629.162943556839
+existing/165,existing_real,existing_real,benzene + meoh,benzene + meoh,1437.1883479556784,1.3421819625654012,4413.065427494355
+existing/166,existing_real,existing_real,benzene + meoh,benzene + meoh,1890.6191842956164,1.3427835699397805,6226.849610323262
+existing/167,existing_real,existing_real,benzene + meoh,benzene + meoh,1354.428726833702,1.342483829244233,4585.683829695497
+existing/168,existing_real,existing_real,benzene + meoh,benzene + meoh,1293.7884572764947,1.3223295603634133,5979.942522377779
+existing/169,existing_real,existing_real,benzene + meoh,benzene + meoh,1303.7342922913158,1.3277167776538292,4990.053712106454
+existing/170,existing_real,existing_real,benzene + meoh,benzene + meoh,1236.5808169443105,1.3274566764635622,4759.880306028528
+existing/171,existing_real,existing_real,benzene + meoh,benzene + meoh,1192.3311831074182,1.334939257477688,4581.968564073663
+existing/172,existing_real,existing_real,benzene + meoh,benzene + meoh,1267.0534673664406,1.3308265724708142,4586.365248081696
+existing/173,existing_real,existing_real,benzene + meoh,benzene + meoh,1253.1011384097087,1.3307988192684028,4877.082932222489
+existing/174,existing_real,existing_real,benzene + meoh,benzene + meoh,1861.413060504074,1.3470881055221642,5764.468407164547
+existing/175,existing_real,existing_real,benzene + meoh,benzene + meoh,1795.6919253924295,1.3451539503986703,5553.709937910475
+existing/176,existing_real,existing_real,benzene + meoh,benzene + meoh,1795.2278198451475,1.337264201747744,6317.467469209885
+existing/177,existing_real,existing_real,benzene + meoh,benzene + meoh,1777.4805101271843,1.3284296038801895,6014.100339675049
+existing/178,existing_real,existing_real,benzene + meoh,benzene + meoh,1711.8244131239323,1.3269519808991412,5304.92026419488
+existing/179,existing_real,existing_real,benzene + meoh,benzene + meoh,1678.9300827832149,1.3167439524528226,5159.791592728734
+existing/180,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,447.0642301099525,1.6806895515226024,96.83017992691461
+existing/181,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,413.1980806074877,1.6231223920425732,122.58337394121855
+existing/182,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,419.79643653327844,1.6276258899744307,129.06138495870005
+existing/183,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,418.3033436282487,1.6332602819697453,123.58983442575008
+existing/184,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,447.84093825653434,1.686789434443084,127.73145686172555
+existing/185,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,436.0103427283202,1.6616251435050486,116.23322354936795
+existing/186,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,435.81022297041176,1.6341874750761294,111.37567644866917
+existing/187,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,427.99102655482244,1.6222489035559073,107.59178922999227
+existing/188,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,428.20935137891666,1.62279086810843,95.42217194824097
+existing/189,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,439.24619280679707,1.635281193514326,72.94257624493619
+existing/190,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,468.82157035583145,1.6821425697481658,59.41416661702748
+existing/191,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,440.19017202938153,1.6568647440993767,91.77171197682036
+existing/192,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,464.6564378697393,1.6624504764473376,37.68696915619543
+existing/193,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,455.64194020955523,1.6385808316607717,51.43097819269169
+existing/194,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,440.3636130577329,1.6237155747778376,60.76451752999138
+existing/195,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,441.8728914811125,1.6203907938650923,73.76152645760307
+existing/196,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,437.83860385595904,1.6278265553212483,64.16776127018171
+existing/197,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,468.6338145978205,1.6915877056139614,71.90163424227596
+existing/198,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,455.95219227082555,1.6863446355555758,124.7329655978185
+existing/199,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,445.6505886861505,1.6723610983478108,133.4406041467876
+existing/200,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,430.39687629649666,1.663074967082331,148.3728707174053
+existing/201,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,421.64638912639117,1.6596066287941522,174.85924027845596
+existing/202,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,430.3974807382634,1.6399762601955383,96.46530056110127
+existing/203,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,419.67841488960687,1.6747349720706517,179.35751753259458
+existing/204,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,453.6698980555656,1.7169096755511073,153.0288589967103
+existing/205,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,464.0252195330209,1.6969417814543377,115.20552415971859
+existing/206,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,447.295726248953,1.688841602020887,137.20830912337664
+existing/207,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,439.33655598161346,1.6791815803717203,149.5885317870557
+existing/208,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,431.28230046491774,1.6778298818291344,142.4032404341567
+existing/209,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,441.7433602511636,1.6857181821478577,153.68786234848275
+existing/210,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,412.2792719804953,1.6236620477076404,131.21105580888798
+existing/211,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,399.2030398471166,1.6310223590665416,171.11804274753254
+existing/212,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,402.8946754353165,1.6309307391524832,169.18036706305134
+existing/213,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,443.4694220162782,1.683719846672623,116.54291488089547
+existing/214,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,438.1540691728939,1.6567160989648269,93.08388676046107
+existing/215,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + etoh,431.1881425023416,1.6389611596932858,106.94349280129362
+existing/216,existing_real,existing_real,etoh + meoh,etoh + meoh,586.0122809926958,1.6386676140958356,0.0
+existing/217,existing_real,existing_real,etoh + meoh,etoh + meoh,564.8930809280788,1.6602711717902185,0.0
+existing/218,existing_real,existing_real,etoh + meoh,etoh + meoh,563.2855238038563,1.6534902992125446,0.0
+existing/219,existing_real,existing_real,etoh + meoh,etoh + meoh,572.7309137915033,1.6612843681386893,0.0
+existing/220,existing_real,existing_real,etoh + meoh,etoh + meoh,554.780024506166,1.6509362116111426,0.0
+existing/221,existing_real,existing_real,etoh + meoh,etoh + meoh,552.535230756018,1.6433829264753428,0.0
+existing/222,existing_real,existing_real,etoh + meoh,etoh + meoh,575.4106288297207,1.6427071506914066,0.0
+existing/223,existing_real,existing_real,etoh + meoh,etoh + meoh,561.847144566195,1.6449926724020267,0.0
+existing/224,existing_real,existing_real,etoh + meoh,etoh + meoh,556.812244722655,1.651231373978939,0.0
+existing/225,existing_real,existing_real,etoh + meoh,etoh + meoh,557.4432965906668,1.6539980357977742,0.0
+existing/226,existing_real,existing_real,etoh + meoh,etoh + meoh,545.0657830928487,1.6497834000815566,0.0
+existing/227,existing_real,existing_real,etoh + meoh,etoh + meoh,586.3271384936892,1.6545599118128014,0.0
+existing/228,existing_real,existing_real,etoh + meoh,etoh + meoh,556.5580693675374,1.6540653935299519,0.0
+existing/229,existing_real,existing_real,etoh + meoh,etoh + meoh,562.1698331745997,1.6512872577587858,0.0
+existing/230,existing_real,existing_real,etoh + meoh,etoh + meoh,568.813773487226,1.6448141518980932,0.0
+existing/231,existing_real,existing_real,etoh + meoh,etoh + meoh,549.7231673520458,1.644127195190354,0.0
+existing/232,existing_real,existing_real,etoh + meoh,etoh + meoh,547.5184901850408,1.6529995456485542,0.0
+existing/233,existing_real,existing_real,etoh + meoh,etoh + meoh,543.0214763999207,1.651610574219301,0.0
+existing/234,existing_real,existing_real,etoh + meoh,etoh + meoh,538.7325188008425,1.650094040765799,0.0
+existing/235,existing_real,existing_real,etoh + meoh,etoh + meoh,543.7828057618434,1.65210190474759,0.0
+existing/236,existing_real,existing_real,etoh + meoh,etoh + meoh,541.4202052317764,1.6452655070669857,0.0
+existing/237,existing_real,existing_real,etoh + meoh,etoh + meoh,552.9155464339738,1.6426996124399817,0.0
+existing/238,existing_real,existing_real,etoh + meoh,etoh + meoh,576.893176781625,1.6507263278486206,0.0
+existing/239,existing_real,existing_real,etoh + meoh,etoh + meoh,542.0645035237618,1.6444480149850842,0.0
+existing/240,existing_real,existing_real,etoh + meoh,etoh + meoh,538.1675751340905,1.6494771732574693,0.0
+existing/241,existing_real,existing_real,etoh + meoh,etoh + meoh,545.6947053136562,1.659381105044794,0.0
+existing/242,existing_real,existing_real,etoh + meoh,etoh + meoh,542.1443653475753,1.6551741790655172,0.0
+existing/243,existing_real,existing_real,etoh + meoh,etoh + meoh,546.6491150985717,1.6504202547035711,0.0
+existing/244,existing_real,existing_real,etoh + meoh,etoh + meoh,548.0532830553577,1.646135608503772,0.0
+existing/245,existing_real,existing_real,etoh + meoh,etoh + meoh,555.3709692604602,1.6464051181631654,0.0
+existing/246,existing_real,existing_real,etoh + meoh,etoh + meoh,537.999683474994,1.6387198678866728,0.0
+existing/247,existing_real,existing_real,etoh + meoh,etoh + meoh,532.0385047240943,1.649409756019083,0.0
+existing/248,existing_real,existing_real,etoh + meoh,etoh + meoh,533.5129439079465,1.6572031250530825,0.0
+existing/249,existing_real,existing_real,etoh + meoh,etoh + meoh,570.1726369458339,1.6529571859727519,0.0
+existing/250,existing_real,existing_real,etoh + meoh,etoh + meoh,525.1608722462431,1.654052427646449,0.0
+existing/251,existing_real,existing_real,etoh + meoh,etoh + meoh,534.0008141622583,1.649628757459836,0.0
+existing/252,existing_real,existing_real,etoh + meoh,etoh + meoh,550.111790857485,1.645828471359284,0.0
+existing/253,existing_real,existing_real,etoh + meoh,etoh + meoh,551.9561688890931,1.641158838717175,0.0
+existing/254,existing_real,existing_real,etoh + meoh,etoh + meoh,532.010186811445,1.6476800909179938,0.0
+existing/255,existing_real,existing_real,etoh + meoh,etoh + meoh,512.4096498665817,1.6499205827710077,0.0
+existing/256,existing_real,existing_real,etoh + meoh,etoh + meoh,509.25752056514165,1.6598914086874164,0.0
+existing/257,existing_real,existing_real,etoh + meoh,etoh + meoh,507.2906644506378,1.6653526990224798,0.0
+existing/258,existing_real,existing_real,etoh + meoh,etoh + meoh,515.5678916466139,1.658624484487161,0.0
+existing/259,existing_real,existing_real,etoh + meoh,etoh + meoh,534.2496374148935,1.6581325931229434,0.0
+existing/260,existing_real,existing_real,etoh + meoh,etoh + meoh,559.07437608815,1.654593339308371,0.0
+existing/261,existing_real,existing_real,etoh + meoh,etoh + meoh,563.4255216855224,1.6624999479493634,0.0
+existing/262,existing_real,existing_real,etoh + meoh,etoh + meoh,552.9674764319519,1.6557235652474975,0.0
+existing/263,existing_real,existing_real,etoh + meoh,etoh + meoh,572.4153382061469,1.6554983299717176,0.0
+existing/264,existing_real,existing_real,etoh + meoh,etoh + meoh,555.5190116625839,1.6458738489470082,0.0
+existing/265,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,181.80003897441551,0.9182003135067808,1442.687447774673
+existing/266,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,164.36256965096706,0.8718173983861899,1713.3294994706507
+existing/267,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,197.82063032077895,0.7818185898452316,2937.0023489822465
+existing/268,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,187.44396374316568,0.8196339713356573,2561.3540135120356
+existing/269,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,193.01454699507178,0.9419322128273104,1835.411505320296
+existing/270,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,183.4224543096853,0.9267581725055868,1755.9304355168006
+existing/271,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,187.0588233663999,0.731250519556448,2437.5018058429337
+existing/272,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,171.69916786995637,0.6977830204526865,2446.1913046451946
+existing/273,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,169.2236590936589,0.8151399439113042,1838.4189263613703
+existing/274,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,166.0468445399497,0.7631287060690474,1978.1586291659735
+existing/275,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,162.75051900836425,0.7330965306279202,2439.953196425901
+existing/276,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,153.1539134344279,0.6641480036958551,2340.4135171520734
+existing/277,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,169.3192729948394,0.8587988379387671,1793.6503716497932
+existing/278,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,165.7544482142882,0.8302313367749811,1584.6536576208634
+existing/279,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,171.04491571382167,0.9133504882603416,1174.4999093029314
+existing/280,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,179.75581035099034,0.9022397907486223,1141.775446206555
+existing/281,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,168.67626255379128,0.7751859508679795,1570.416978638677
+existing/282,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,163.28767325819257,0.7255872293857245,1721.8370247127102
+existing/283,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,158.80139179723284,0.6879780450072414,1855.562275313829
+existing/284,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,144.49371068223394,0.7492214722302095,1565.890276691427
+existing/285,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,151.78785140868447,0.7961609496550723,1315.5319214773701
+existing/286,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,150.80099959379396,0.7083493091970506,1703.9851904433071
+existing/287,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,147.22904473251427,0.7941418022883429,1334.5605607086725
+existing/288,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,165.1972992365243,0.8685141630799147,1717.7174891871628
+existing/289,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,152.25153027079284,0.8252770791960399,1177.0902174750283
+existing/290,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,167.62406296951235,0.9677829749919207,661.61215073769
+existing/291,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,190.06823839058424,1.0007747265630373,555.1604869192307
+existing/292,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,178.9345519709604,0.984580571004179,569.7488134151622
+existing/293,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,192.87054345104784,0.9948007100628922,562.2443283910171
+existing/294,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,182.20660840548592,0.9783114046819441,562.4030498260348
+existing/295,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,158.63591525292864,0.931159856737672,640.0171802030244
+existing/296,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,134.61062707824158,0.790557395844282,1031.9872676965
+existing/297,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,127.54502854585347,0.6352429657607142,1746.6764849449075
+existing/298,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,129.8783705359339,0.6210782716875087,1656.0843904367644
+existing/299,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,169.77196026259062,0.9202625951238903,1687.4778143169478
+existing/300,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,127.89374517349083,0.8351088509190356,1062.788771835999
+existing/301,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,125.80098767714199,0.7342326701233776,1298.674863134924
+existing/302,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,125.88009596303026,0.6416271941787767,1626.6931340441176
+existing/303,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,135.8041104104483,0.656425721125155,1601.005366733302
+existing/304,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,126.20594405374369,0.6954671688783793,1476.0116532066272
+existing/305,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,153.61020752704937,0.9636384953880677,900.0125331841065
+existing/306,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,159.77529956664756,1.0142741221568299,852.1191949178292
+existing/307,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,167.43580682294987,1.0414163545247814,827.5710546172627
+existing/308,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,163.36059259656736,1.0166877415652849,906.5267238856383
+existing/309,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,156.52290769096209,0.9838497433712383,972.826659278491
+existing/310,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,181.08799225941837,0.9770577819611747,1566.716156080748
+existing/311,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,141.0878152610448,0.8836863082642961,1113.1854361606552
+existing/312,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,121.70562996672304,0.7716371789703058,1270.9450806368015
+existing/313,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,116.37078518762182,0.7633326422203724,1304.3462311618825
+existing/314,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,107.77057351599196,0.6958967089007261,1379.7973858510632
+existing/315,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,99.43574214924692,0.6095129205994696,1456.7868322799397
+existing/316,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,87.56844371397362,0.5237456264270903,1551.5038191950864
+existing/317,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,73.87614520337333,0.41815723535825267,1638.815557041835
+existing/318,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,71.10676129341194,0.28356233329269626,1749.2300504116747
+existing/319,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,65.41190210552206,0.2740021255529282,1751.5623561009634
+existing/320,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,70.53522621424585,0.28481320662942033,1736.2762352170355
+existing/321,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,170.90375349169625,0.95719182676896,1693.3383791700717
+existing/322,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,68.54934391569063,0.285711997419558,1747.957891798279
+existing/323,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,68.87292063403848,0.2095980565520707,1792.5004837962397
+existing/324,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,67.49623165114595,0.16420111405736496,1807.4439073233684
+existing/325,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,69.39367089974712,0.14073508163825055,1804.619300925844
+existing/326,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,71.65643910423665,0.11281548953417042,1824.97460274585
+existing/327,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,71.92343151149711,0.09559588784249806,1846.461234600891
+existing/328,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,72.28831456607217,0.08181980985471325,1849.451691020016
+existing/329,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,72.78292036559354,0.07487077988849597,1843.2891880380369
+existing/330,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,74.84466356316709,0.06285776318133748,1834.2971249406878
+existing/331,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,165.16733216493265,0.955214142367499,1672.1465417777126
+existing/332,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,155.41937881734123,0.9372029654290946,1648.3495825785467
+existing/333,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,154.52281593590206,0.9168933066903286,1602.2290514044523
+existing/334,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,162.03629756236953,0.9376186636099392,1587.741897758734
+existing/335,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,189.15599514052212,0.8731569347156828,2100.731105673391
+existing/336,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,146.86523593723354,0.9123847335984534,1689.4513150626772
+existing/337,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,161.13589417281693,0.9198906084248756,1613.0927824277055
+existing/338,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,151.62056173702786,0.9080158857450852,1583.1155794280394
+existing/339,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,143.6070984083057,0.8838261126098155,1644.2617398595546
+existing/340,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,143.8133818222312,0.8799074417457478,1636.2212345299704
+existing/341,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,152.03635349809446,0.9016335229606691,1622.550299835818
+existing/342,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,140.14272209144792,0.8780589141954873,1766.8961506598916
+existing/343,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,158.80331418109762,0.8934396623779648,1818.191091984236
+existing/344,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,158.90772484736303,0.9208996578922816,1661.971922707788
+existing/345,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,162.19475722385417,0.9199495524729412,1653.1930281071914
+existing/346,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,151.49708975020516,0.606551472000239,2613.0924449439244
+existing/347,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,165.0438775711674,0.9411520011591314,1586.5362560012381
+existing/348,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,170.46062412684054,0.9624864714622273,1565.2547193365453
+existing/349,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,150.41982817366414,0.9316198584648282,1651.4000860020174
+existing/350,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,165.22739134569412,0.9170830813306006,1692.789831303276
+existing/351,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,158.7874526493926,0.9287954952673249,1554.0355376572168
+existing/352,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,149.72212759831345,0.9063683912930932,1637.2801237112867
+existing/353,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,149.34857326670135,0.9097645718609023,1655.0041348805548
+existing/354,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,230.42762716035278,0.9128177984429439,3663.8968909406103
+existing/355,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,226.2816261817116,0.928748882097662,3345.9004244312027
+existing/356,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,210.10626908347655,0.9144494453298563,3119.760695277418
+existing/357,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,174.76887697172018,0.7815427922935633,1897.3711565162737
+existing/358,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,204.60873169730394,0.8507150073642124,3077.9958420606167
+existing/359,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,191.76275568410566,0.8753926656379845,2776.1846027730153
+existing/360,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,186.90527496981636,0.8519156850405313,2625.4065789234724
+existing/361,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,187.10459614402328,0.8603414458764994,2437.9182171223283
+existing/362,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,182.49582016094104,0.8331123317167497,2343.5381464479924
+existing/363,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,182.9339633697038,0.8802539783486704,1982.8759250074859
+existing/364,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,176.05395594231226,0.9118399262137222,1741.8626935981447
+existing/365,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,167.56539097248987,0.8363380882421191,1916.8545638343185
+existing/366,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,163.8902176483492,0.7753323384490534,2033.4088493142433
+existing/367,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,155.29874560825084,0.7809776002754412,1936.8037173420157
+existing/368,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,184.0182018296657,0.8071039669126471,1379.770037281642
+existing/369,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,153.05586626269897,0.7177206637199819,2080.577071394577
+existing/370,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,147.41310655924374,0.7054368355185004,2074.1181383636513
+existing/371,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,157.27379483198737,0.8795634557678463,1441.8963037516962
+existing/372,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,170.0872240000311,1.0018972312743524,921.2511677372793
+existing/373,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,156.40001755704378,0.9094056301952529,1208.3611179331374
+existing/374,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,147.44886391217906,0.772105795464119,1718.4409003847682
+existing/375,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,141.31658137333642,0.7809895266066087,1673.9664573440564
+existing/376,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,145.83468953612797,0.8226222360691554,1481.3656384091069
+existing/377,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,151.84426174234028,0.9957848202270208,785.1308443119485
+existing/378,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,163.94902387777523,1.0043766181947855,688.1582283309933
+existing/379,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,142.31103148884682,0.6794480746439374,1950.711140061957
+existing/380,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,139.74296415615723,0.8554599453034639,1201.4662244037802
+existing/381,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,141.8671616232736,0.8285165896082561,1262.7283935570654
+existing/382,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,146.37622793253013,0.9423197370647134,824.0029527440855
+existing/383,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,133.66812865391597,0.7784556894821222,1382.829553224151
+existing/384,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,137.752927899726,0.7626426983629576,1496.0625913740796
+existing/385,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,134.8606776142672,0.8708654472610756,1121.1499471003594
+existing/386,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,153.6011826326653,1.0015650183090634,668.5313668767487
+existing/387,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,135.22426533721662,0.8972457723173444,947.6718309145003
+existing/388,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,143.08697287871973,0.9198173399776113,916.4948346624174
+existing/389,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,178.438492375142,1.006843364135702,717.3706237356485
+existing/390,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,150.90291769675946,0.7287010196751358,2008.9004990511185
+existing/391,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,196.56938557513718,1.0169469440253711,695.8584678574317
+existing/392,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,162.03415191234117,0.9967050988477535,700.3907443388989
+existing/393,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,133.85463101827332,0.8942538414291203,909.527229317857
+existing/394,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,117.98819216360252,0.7896710433413917,1130.707511245167
+existing/395,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,124.76817358016167,0.7730151127285474,1148.5073642223224
+existing/396,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,128.33998898215364,0.8340867345261359,1069.6893358746445
+existing/397,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,108.77690041360134,0.7005402463802106,1314.5391090789246
+existing/398,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,122.52668796561935,0.6728513807940433,1542.3325888715444
+existing/399,existing_real,existing_real,1-dodecanethiol + meoh,"acetonitrile + n,n-dimethylformamide",2793.153963618239,0.19279671471582832,55000.469846863765
+existing/400,existing_real,existing_real,1-dodecanethiol + meoh,"acetonitrile + n,n-dimethylformamide",2837.6700700713295,0.21938353853644588,55679.14884162617
+existing/401,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,153.16174813439804,0.7386068093689324,2098.8495716237067
+existing/402,existing_real,existing_real,1-dodecanethiol + meoh,"1-undecanethiol + n,n-dimethylformamide",2616.64695000405,0.30361091618467556,51223.31724915937
+existing/403,existing_real,existing_real,1-dodecanethiol + meoh,"1-undecanethiol + n,n-dimethylformamide",2264.251934351792,0.4114212610829543,44319.57994163558
+existing/404,existing_real,existing_real,1-dodecanethiol + meoh,"1-undecanethiol + n,n-dimethylformamide",1838.483052578965,0.49634680215379523,36210.52542260997
+existing/405,existing_real,existing_real,1-dodecanethiol + meoh,"1-undecanethiol + n,n-dimethylformamide",1424.1039008623814,0.5408579263259112,28313.43784066898
+existing/406,existing_real,existing_real,1-dodecanethiol + meoh,"1-undecanethiol + n,n-dimethylformamide",1179.5016738023658,0.5026672219539308,23388.21464052578
+existing/407,existing_real,existing_real,1-dodecanethiol + meoh,"1-undecanethiol + n,n-dimethylformamide",1198.3513201403882,0.6203894589218323,23502.199211895037
+existing/408,existing_real,existing_real,1-dodecanethiol + meoh,"1-undecanethiol + n,n-dimethylformamide",1001.654267170368,0.7976486662025087,19807.89758049821
+existing/409,existing_real,existing_real,1-dodecanethiol + meoh,"1-undecanethiol + n,n-dimethylformamide",795.2978227535124,0.864438088465694,15666.13249913556
+existing/410,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + n-hexane,636.6775728889928,0.8929092178225182,12532.8322186417
+existing/411,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + n-hexane,517.9732779562472,0.9256304947658816,10289.425033089063
+existing/412,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,169.60750733648288,0.8843553308315162,1675.0291328434253
+existing/413,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + n-hexane,450.1798228099895,0.8306699867284164,8944.379744686108
+existing/414,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + n-hexane,399.9928799044606,0.8283599006718873,7847.133806348704
+existing/415,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + n-hexane,352.1638856407026,0.7692653601559427,6961.703900837621
+existing/416,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + n-hexane,320.66823807323453,0.8183429527067018,6094.152404055701
+existing/417,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,299.3479304612263,0.8312357476625215,5624.493637988954
+existing/418,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh,261.5538705940972,0.8975178645644065,4790.928274376922
+existing/419,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,248.2240410344366,0.8594711208869621,3898.354089615759
+existing/420,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,233.85222058878367,0.7451817294811655,4190.920666620244
+existing/421,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,224.88268226699847,0.7539155848753022,3754.55132265231
+existing/422,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh,204.4348430556115,0.7836631063878196,3190.3364498840165
+existing/423,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",311.25226711889735,1.413331526148895,2194.219084076893
+existing/424,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",298.10622177503757,1.4911934464428398,1769.1923498478586
+existing/425,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",306.4803436738438,1.4899259277726353,1760.2491856818506
+existing/426,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",313.17074176250213,1.4896900262184471,1819.0110221798957
+existing/427,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",327.5773977919393,1.534283966252364,1761.612451682742
+existing/428,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",306.8175236759594,1.5232606159121687,1650.1919792178646
+existing/429,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",301.96201979684065,1.5338073907710017,1597.5299642929435
+existing/430,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",316.44416336571163,1.5351092048465276,1582.4715066014114
+existing/431,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",312.0549336636262,1.5379413765437482,1583.9194734794737
+existing/432,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",310.9961858213723,1.5453412460602622,1600.9835994177556
+existing/433,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",327.6139525469366,1.5754604777945826,1612.8628171827604
+existing/434,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",311.3136662239576,1.4189434303159132,2079.324949620636
+existing/435,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",326.2534376329824,1.576808890782493,1483.4025584776355
+existing/436,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",317.66821857124177,1.572194891112736,1461.4596513677795
+existing/437,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",316.34568081726104,1.5732419567331817,1469.681605509511
+existing/438,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",332.9831757401505,1.5904647032341264,1447.6658364650584
+existing/439,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",331.22366358650964,1.5838530399426418,1477.6802728948417
+existing/440,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",340.95624988732675,1.604399834362615,1539.8428159931427
+existing/441,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",334.0739873206902,1.6063682247601663,1406.3695633989569
+existing/442,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",337.94725906642515,1.6045964759944387,1370.28525945282
+existing/443,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",336.8263867370041,1.6128772894257792,1343.7433598488792
+existing/444,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",337.4007364892833,1.616822523049274,1360.6176623022561
+existing/445,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",304.03864268736345,1.419495124387626,2130.3909925650955
+existing/446,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",342.03163077734183,1.6153564307295771,1397.4229623789352
+existing/447,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",353.59337776036034,1.6263615331722558,1505.2484053976464
+existing/448,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",352.60493303564226,1.631246845642941,1375.0816967240235
+existing/449,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",347.3965897409089,1.6270088443232074,1344.6468636203526
+existing/450,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",354.8660162688571,1.6370698643649413,1314.2347979641415
+existing/451,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",350.2306224692645,1.6362118792792668,1311.9276878695239
+existing/452,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",353.3932715626514,1.6394393842084696,1364.7485589502944
+existing/453,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",307.0459343087246,1.4229672554490103,2139.910763190557
+existing/454,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",304.66823099556757,1.4236794134151005,2076.0210406005426
+existing/455,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",304.12302612404176,1.4178466496507809,2145.6414540295036
+existing/456,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",319.74283453596405,1.494276443696934,1945.1303150278557
+existing/457,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",311.12832345706795,1.4840684090886171,1833.4046428203646
+existing/458,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","6-mercapto-1-hexanol + n,n-dimethylformamide",310.5064392514981,1.4923150643707386,1773.1703541113463
+existing/459,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1265.3974725630978,2.146544788324633,0.0
+existing/460,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1256.2237290011637,2.0079742611097458,0.0
+existing/461,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1208.5643683570827,2.0403465608629574,0.0
+existing/462,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1170.9780549189713,2.0914334777971466,0.0
+existing/463,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1422.371447207047,1.9932117352055538,0.0
+existing/464,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1384.64775393445,1.96137238753455,0.0
+existing/465,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1251.9917006291296,1.9565957458401364,0.0
+existing/466,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1201.2208482055848,1.9618962274227407,0.0
+existing/467,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1143.2088768971523,1.99142962802167,0.0
+existing/468,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1079.4303221103905,2.034128228162477,0.0
+existing/469,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1426.3261212571144,1.963118696747733,0.0
+existing/470,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1250.5839205541786,2.1193842618240417,0.0
+existing/471,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1397.9391248596894,1.9246408492443121,0.0
+existing/472,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1283.677748488075,1.923184895225892,0.0
+existing/473,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1184.5000079752567,1.9300001417670989,0.0
+existing/474,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1152.3515053077297,1.951455657492029,0.0
+existing/475,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1107.3966079715512,1.992835559972708,0.0
+existing/476,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1398.8820476693381,1.944730566252208,0.0
+existing/477,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1364.0464638860497,1.9138527362000333,0.0
+existing/478,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1229.7117556392582,1.9209980809459957,0.0
+existing/479,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1131.708410102973,1.9293200425427193,0.0
+existing/480,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1136.3197422279006,1.9305958040588402,0.0
+existing/481,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1232.0665489757466,2.1103047994361237,0.0
+existing/482,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1170.927230999683,1.9263109251247776,0.0
+existing/483,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1331.5244647040954,1.9228327934653002,0.0
+existing/484,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1256.1927635932493,1.919360294292553,0.0
+existing/485,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1119.712482947109,1.9361802476880614,0.0
+existing/486,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1074.8108059885665,1.951389450321494,0.0
+existing/487,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1064.567917531551,1.9401927846992555,0.0
+existing/488,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1109.662312292014,1.9397487125799318,0.0
+existing/489,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1218.5461214288227,2.1106029968608966,0.0
+existing/490,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1194.2859420093218,2.110240738112376,0.0
+existing/491,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1172.139915863306,2.1383537841011897,0.0
+existing/492,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1416.8304889651042,2.0334279390953913,0.0
+existing/493,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1405.4206939435564,2.0119848505751885,0.0
+existing/494,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine",1327.0556333275817,2.004012460852522,0.0
+existing/495,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6758.330532190747,2.132257941464283,0.0
+existing/496,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6614.445671556492,2.0953554936767533,0.0
+existing/497,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6757.047409919568,2.1343874105747824,0.0
+existing/498,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6971.011671453156,2.192185285131039,0.0
+existing/499,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6881.533286940063,2.170962303086747,0.0
+existing/500,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6698.253163241964,2.116165004495066,0.0
+existing/501,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6737.688616988158,2.128280616933625,0.0
+existing/502,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6906.9401938056135,2.177314079703538,0.0
+existing/503,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6931.536485849365,2.181386109808237,0.0
+existing/504,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6847.893913825904,2.1563771399532636,0.0
+existing/505,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6779.275620054622,2.1360549964858815,0.0
+existing/506,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6743.076729291291,2.1254286367425452,0.0
+existing/507,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6826.916999707958,2.155100276704684,0.0
+existing/508,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6911.207696981787,2.1791230928367904,0.0
+existing/509,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6901.459594602007,2.17762615621393,0.0
+existing/510,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6812.452763255281,2.146049826874318,0.0
+existing/511,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6739.064203825262,2.127948740714149,0.0
+existing/512,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6811.113263831646,2.149974239405122,0.0
+existing/513,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6952.001692536575,2.1917808707147914,0.0
+existing/514,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,7045.657509790978,2.213710307437172,0.0
+existing/515,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6988.97945660437,2.1993327555650817,0.0
+existing/516,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6855.691814043806,2.167038320660655,0.0
+existing/517,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6652.060050944059,2.1058801603804294,0.0
+existing/518,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6839.451204342258,2.154094894083557,0.0
+existing/519,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,7028.232054397014,2.205499426234231,0.0
+existing/520,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,7070.325524037728,2.2113119218762356,0.0
+existing/521,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,7036.174882122416,2.202677948030857,0.0
+existing/522,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6865.3525387340405,2.1568798569181555,0.0
+existing/523,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6760.637752132285,2.1391282767462254,0.0
+existing/524,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6705.825155899184,2.124408584309862,0.0
+existing/525,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6785.333203512731,2.1459138942848965,0.0
+existing/526,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6665.144067053159,2.1167051937419665,0.0
+existing/527,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6836.116915200028,2.1551903885148205,0.0
+existing/528,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6659.965636734112,2.106519598817734,0.0
+existing/529,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6875.829820851493,2.1675429165124123,0.0
+existing/530,existing_real,existing_real,benzenethiol + pyridine,pyridine + toluene,6863.41067402748,2.160572072251372,0.0
+existing/531,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2668.7620926105733,0.977575795639703,230.22071046384053
+existing/532,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2611.155413237294,0.9867257534726288,188.87395393105626
+existing/533,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2534.7342123868734,0.9775231010114289,190.18793084850753
+existing/534,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2506.751369536638,0.9686373282350789,177.91147857151213
+existing/535,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2526.55274788364,0.9611659317604403,179.49531758240798
+existing/536,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2492.83142883765,0.9509954741939991,201.32695898152292
+existing/537,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2476.3216787900114,0.970097580564375,202.96553862297839
+existing/538,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2495.874697506674,0.9731355298496526,181.66957744371882
+existing/539,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2483.25372128121,0.9745920922144753,188.72378093954464
+existing/540,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2520.342979878469,0.9763052925534013,189.4511237758019
+existing/541,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2525.667754779652,0.9777063625507236,189.94313857188732
+existing/542,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2633.847436839443,0.9704171320692145,224.03105113763476
+existing/543,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2605.152712564588,0.9835449501219775,207.15737694085027
+existing/544,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2537.7280798973234,0.9883975277873274,213.67577431853448
+existing/545,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2646.1290751241386,1.0095269649797616,234.13306522940672
+existing/546,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2586.2169902224514,1.0072968277807453,196.27920721325128
+existing/547,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2629.6989341456374,1.0007250880377685,194.53761394670022
+existing/548,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2602.1821527614393,0.9987713475998266,179.94174563794402
+existing/549,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2564.229607029782,0.9905964030374128,192.06034239055842
+existing/550,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2581.1115476738205,0.98758958308782,194.32855939596698
+existing/551,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2502.8632799802926,0.9833969096843939,204.62673197398516
+existing/552,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2645.267806597884,1.0064410494638638,229.136905787969
+existing/553,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2591.7423108379694,0.9713481192117135,220.62754125408313
+existing/554,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2634.271836793908,0.9985664230001482,228.25722424176246
+existing/555,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2626.927874172051,0.9914066639581177,215.60281710585994
+existing/556,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2606.9328701391782,0.9845156104795452,222.18330915198698
+existing/557,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2596.5031290758325,0.9782856648311423,214.65905519451962
+existing/558,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2573.565868962749,0.9711063947946361,220.34917229733637
+existing/559,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2550.6877194155286,0.9644102845122049,219.454795908283
+existing/560,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2662.4256825738426,1.0026502068994785,247.69044215668393
+existing/561,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2678.3520165542645,0.9950513588607739,245.33560118696158
+existing/562,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2648.0651229872874,0.9901170399519087,226.9911802678038
+existing/563,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2605.216148602086,0.9852874370264848,241.66456140347213
+existing/564,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2591.847376872899,0.9714059046936032,225.6944192047018
+existing/565,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2601.493536471985,0.9780461391186228,235.1930969999242
+existing/566,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2578.306309192521,0.9704546686076971,231.65212097478502
+existing/567,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2543.4810241933988,0.964745701620183,228.82173247795075
+existing/568,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2643.4404732329162,0.996228500056288,242.4031779665218
+existing/569,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2608.765177107021,0.9953681328321712,247.1792878903189
+existing/570,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2662.9439806839046,0.9912694194371745,249.5497595441114
+existing/571,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2579.559970732976,0.9862740498834182,261.90969840471286
+existing/572,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2595.565385877368,0.9813215824172317,249.84321331705752
+existing/573,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2509.031996024606,0.9729731090070469,263.24827515862273
+existing/574,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2504.5088821466084,0.972227608363318,258.80972745337135
+existing/575,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2551.288852929655,0.9723364706577309,201.79418265032447
+existing/576,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2565.956075368529,0.9741468285729138,195.5025745118481
+existing/577,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2585.171357235191,0.9778839581093267,182.9548439660698
+existing/578,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2598.425331186374,1.0019209940706344,187.16345286559184
+existing/579,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + benzene,2602.4100900770204,0.9948791111521782,185.70518029872028
+Mix 13/mix 13_Y0_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,849.287127136723,0.6878268882053659,399.3383934281202
+Mix 13/mix 13_Y0_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,831.2702824933447,0.6908750915872905,398.6483734829588
+Mix 13/mix 13_Y0_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,837.4177050168881,0.6973570176108128,382.36065886971807
+Mix 13/mix 13_Y0_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,824.7145989647603,0.6977285737224588,379.66586437276214
+Mix 13/mix 13_Y0_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,816.0081711251285,0.6927763266281952,387.4387782573465
+Mix 13/mix 13_Y0_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,830.842874225346,0.689588212215977,394.7064166411686
+Mix 13/mix 13_Y1_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,816.7239083979301,0.6863895259446364,390.3357760015116
+Mix 13/mix 13_Y1_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,796.3126304720307,0.6863586439138596,389.0820577906236
+Mix 13/mix 13_Y1_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,801.7727913391911,0.6913728216983893,381.53567871567884
+Mix 13/mix 13_Y1_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,798.0539758700592,0.6903607603230458,376.35151667987463
+Mix 13/mix 13_Y1_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,795.1726206891888,0.6859667370889165,386.17703356130585
+Mix 13/mix 13_Y1_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,810.1904142584704,0.6842291495036723,394.1235380941992
+Mix 13/mix 13_Y2_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,801.465246494831,0.6839495975703123,383.0739447641147
+Mix 13/mix 13_Y2_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,784.3811854518023,0.68362502951635,392.11243757378884
+Mix 13/mix 13_Y2_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,808.3709144747903,0.6930313261786337,368.05123350618913
+Mix 13/mix 13_Y2_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,801.4787243084122,0.6903112090073824,379.755395903533
+Mix 13/mix 13_Y2_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,812.4327055100889,0.6843904264388291,393.0012909957942
+Mix 13/mix 13_Y2_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,809.6752394898261,0.6822737576106261,392.10483603428713
+Mix 13/mix 13_Y3_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,821.6498565261683,0.6860628954781197,364.2180004116054
+Mix 13/mix 13_Y3_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,832.3129819767589,0.6823341281007993,381.1751640255527
+Mix 13/mix 13_Y3_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,828.7515180685381,0.6832085924013412,382.2711716642015
+Mix 13/mix 13_Y3_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,841.2610514816918,0.6849597490580376,391.713954531195
+Mix 13/mix 13_Y3_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,850.0700044420402,0.6896956355920659,381.71704960500387
+Mix 13/mix 13_Y3_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,847.0514268659658,0.6867078609584559,389.04997432753015
+Mix 13/mix 13_Y4_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,869.0706049348868,0.6949046461903051,383.6100382527928
+Mix 13/mix 13_Y4_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,872.1204361291016,0.6941744006041294,370.63386906306204
+Mix 13/mix 13_Y4_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,875.0105615100546,0.6912098336185724,373.42282068125735
+Mix 13/mix 13_Y4_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,881.3726050134983,0.6890864062499622,363.83704601024596
+Mix 13/mix 13_Y4_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,886.4872642606961,0.6832171381121721,377.725624213536
+Mix 13/mix 13_Y4_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,894.2737389525909,0.6833913825504216,379.37851213704545
+Mix 13/mix 13_Y5_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,908.8103324624949,0.6960467451384185,354.10298654375316
+Mix 13/mix 13_Y5_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,913.2946584439594,0.6948052485192677,357.2543536719407
+Mix 13/mix 13_Y5_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,929.4391983710348,0.6912286542457393,373.42313583860994
+Mix 13/mix 13_Y5_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,934.8267691648567,0.692228018133881,364.3674402921449
+Mix 13/mix 13_Y5_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,937.4584342763811,0.6886092610594697,372.716016079102
+Mix 13/mix 13_Y5_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine,954.239534730698,0.6873606004614164,368.00116645112377
+Mix 15/mix 15_Y0_X0.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,390.01213438304444,0.38609412699664114,948.8568182551935
+Mix 15/mix 15_Y0_X1.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,414.7029977645729,0.3873011668782753,911.552112270892
+Mix 15/mix 15_Y0_X2.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,425.9022147167982,0.3892590154957495,895.5488411813451
+Mix 15/mix 15_Y0_X3.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,434.26557268103477,0.38922366295189015,896.0391035576616
+Mix 15/mix 15_Y0_X4.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,438.56490874655185,0.3884467541458948,903.3459954953832
+Mix 15/mix 15_Y0_X5.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,467.1418821113486,0.3874017864522135,909.3551787027847
+Mix 15/mix 15_Y1_X0.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,492.4819924812498,0.3938270907959687,922.4811299885866
+Mix 15/mix 15_Y1_X1.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,503.0094882927063,0.3943660150251477,904.2989642071362
+Mix 15/mix 15_Y1_X2.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,506.72445398956654,0.39642961582432157,886.7860603485404
+Mix 15/mix 15_Y1_X3.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,523.7879986248405,0.3959205537890711,885.1495274761908
+Mix 15/mix 15_Y1_X4.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,532.8883274863089,0.3930461372372854,910.6633457551329
+Mix 15/mix 15_Y1_X5.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,546.9457358124197,0.3934252751508766,917.0937983146401
+Mix 15/mix 15_Y2_X0.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,574.071845040979,0.4005723871416915,906.1566597892783
+Mix 15/mix 15_Y2_X1.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,562.797324553739,0.395792834484028,914.1528104642557
+Mix 15/mix 15_Y2_X2.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,595.9987946497912,0.3981088407792378,893.9445621585436
+Mix 15/mix 15_Y2_X3.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,592.6948992958131,0.3958955504481706,896.8561191990336
+Mix 15/mix 15_Y2_X4.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,635.8719713008165,0.3930688101420074,919.0038233198413
+Mix 15/mix 15_Y2_X5.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,607.2764764929193,0.39437228460641943,914.1293257222828
+Mix 15/mix 15_Y3_X0.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,663.677648219386,0.391391595165283,923.0719390795601
+Mix 15/mix 15_Y3_X1.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,674.8466613781801,0.3914313877093943,908.0655592920913
+Mix 15/mix 15_Y3_X2.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,681.4328238503261,0.38802927609181215,923.7421113309738
+Mix 15/mix 15_Y3_X3.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,696.6586979780374,0.38860237856915314,910.4789245203692
+Mix 15/mix 15_Y3_X4.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,684.6551303679316,0.3874239191244729,929.2380365705834
+Mix 15/mix 15_Y3_X5.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,684.5129166156444,0.38778357967657084,936.7851486601626
+Mix 15/mix 15_Y4_X0.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,696.2850805563098,0.38129085946378605,928.7162937584885
+Mix 15/mix 15_Y4_X1.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,690.8211245863898,0.3796291708231798,926.1591046352344
+Mix 15/mix 15_Y4_X2.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,707.233527482689,0.37977227006717795,921.3900636197035
+Mix 15/mix 15_Y4_X3.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,699.8984322795447,0.37814264809192,930.1527853983238
+Mix 15/mix 15_Y4_X4.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,707.5982104429205,0.37816168934122774,930.8345576877241
+Mix 15/mix 15_Y4_X5.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,689.3185327198158,0.3760570712314693,950.4556342907757
+Mix 15/mix 15_Y5_X0.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,686.1028791169704,0.3652792709684543,952.5118193738545
+Mix 15/mix 15_Y5_X1.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,683.8660462450596,0.3656523681953213,944.6777039263982
+Mix 15/mix 15_Y5_X2.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,674.0116698315818,0.3665651969924789,946.3812260652071
+Mix 15/mix 15_Y5_X3.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,664.6615709310348,0.3669580589610808,939.0554037098013
+Mix 15/mix 15_Y5_X4.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,665.5697021713712,0.3668558919535024,944.6907964656377
+Mix 15/mix 15_Y5_X5.txt,pt2_real,Mix 15,benzene + n-hexane,benzene + n-hexane,663.4297598729432,0.3642112586270284,957.0393394370299
+Mix 16/mix 16_Y0_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1625.8023598635205,0.87529922297546,163.2698250669353
+Mix 16/mix 16_Y0_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1539.856836100254,0.856453625696874,151.04389852054024
+Mix 16/mix 16_Y0_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1533.2383337552035,0.8495980350723125,145.65206472407658
+Mix 16/mix 16_Y0_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1515.5855784636651,0.8475460792944551,141.1123662357674
+Mix 16/mix 16_Y0_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1508.4803028768606,0.8540832021635979,150.71489366499696
+Mix 16/mix 16_Y0_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1528.1471057406518,0.8513074604730458,167.72282353290055
+Mix 16/mix 16_Y1_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1536.645817549745,0.8482681798123366,162.2637013370517
+Mix 16/mix 16_Y1_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1530.9017685482772,0.8468691036635143,165.25004558700684
+Mix 16/mix 16_Y1_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1526.7573701136457,0.8412517508490227,165.8494292581911
+Mix 16/mix 16_Y1_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1531.148301806686,0.8411052122087492,155.41011928822954
+Mix 16/mix 16_Y1_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1532.0495466320676,0.8409289171777541,167.19161246486846
+Mix 16/mix 16_Y1_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1495.3709301331094,0.8396979001617495,177.3939143769513
+Mix 16/mix 16_Y2_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1506.048392438543,0.8389476051128864,181.0251917765255
+Mix 16/mix 16_Y2_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1489.1006092421244,0.8392697977622413,180.322467324157
+Mix 16/mix 16_Y2_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1515.7736889351488,0.841486805512316,165.18472320032475
+Mix 16/mix 16_Y2_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1505.7798185087474,0.8400355932933841,176.2538758084661
+Mix 16/mix 16_Y2_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1505.7373234229499,0.842021884747012,162.98232875928144
+Mix 16/mix 16_Y2_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1513.7823728377293,0.8389539672257191,179.19585647991426
+Mix 16/mix 16_Y3_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1498.5416148610161,0.8382525434708537,174.59878616746263
+Mix 16/mix 16_Y3_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1518.806888702904,0.8380639754873527,173.8708990892026
+Mix 16/mix 16_Y3_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1503.4837267791177,0.8356748242535794,172.82417335703747
+Mix 16/mix 16_Y3_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1510.9668333089119,0.8355586362595051,159.52929929818532
+Mix 16/mix 16_Y3_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1506.5088171875486,0.8335012978008771,165.09971287344428
+Mix 16/mix 16_Y3_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1504.2555291356732,0.8339338142917565,178.46864745599328
+Mix 16/mix 16_Y4_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1497.946235468744,0.8346874423940249,174.7843820872156
+Mix 16/mix 16_Y4_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1512.7596452497066,0.8393469990783919,177.54008287550147
+Mix 16/mix 16_Y4_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1518.5073778691792,0.8390903550539429,170.2947044417349
+Mix 16/mix 16_Y4_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1535.5983406367948,0.837649692985873,169.22355564614696
+Mix 16/mix 16_Y4_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1529.7883611012958,0.8412504411188964,176.10147204436254
+Mix 16/mix 16_Y4_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1539.575584624447,0.8392065518887319,173.1634387493034
+Mix 16/mix 16_Y5_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1532.1365934800415,0.8282221149200217,181.8547896858575
+Mix 16/mix 16_Y5_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1543.1619372507132,0.8298168513181878,188.15895669047072
+Mix 16/mix 16_Y5_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1539.7483649290068,0.8316278844695024,187.0925028967095
+Mix 16/mix 16_Y5_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1552.7479713875339,0.8322927072307287,187.6684293453702
+Mix 16/mix 16_Y5_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1551.2587008892722,0.8318520771632372,187.16238352078742
+Mix 16/mix 16_Y5_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane,1546.9846793203922,0.831577683629609,180.22810980809152
+Mix 17/mix 17_Y0_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1121.0925639011364,0.9365771134829846,4320.080677025179
+Mix 17/mix 17_Y0_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1085.0092598163,0.9405162148530226,4219.452741238841
+Mix 17/mix 17_Y0_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1085.981936805088,0.9463855304021702,3967.5685875794607
+Mix 17/mix 17_Y0_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1100.9167155896714,0.9472778511585207,4308.745703202176
+Mix 17/mix 17_Y0_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1074.2082494518288,0.9463552406409963,4029.1035678466455
+Mix 17/mix 17_Y0_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1058.9551708696047,0.9457534024205254,3880.8015933976144
+Mix 17/mix 17_Y1_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1066.9778502781796,0.9508017293587092,4253.041817713902
+Mix 17/mix 17_Y1_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1086.7272729612237,0.9687088685962157,4007.5061373027647
+Mix 17/mix 17_Y1_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1056.0231619869494,0.9597243319684647,4009.9534738608872
+Mix 17/mix 17_Y1_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1031.9252809577017,0.9495993662470374,4132.058618575238
+Mix 17/mix 17_Y1_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1022.3008047710385,0.947524567562347,4127.276411526473
+Mix 17/mix 17_Y1_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1027.6057244950227,0.9546179258471551,4185.003355846993
+Mix 17/mix 17_Y2_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1041.9282558392715,0.9611030068500872,4170.304355133684
+Mix 17/mix 17_Y2_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1040.5688196941414,0.9521616644914067,4282.852381023267
+Mix 17/mix 17_Y2_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1009.0563595489238,0.9476404394573446,4161.284736053672
+Mix 17/mix 17_Y2_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1007.8319994816999,0.9408465693254047,4233.477723012095
+Mix 17/mix 17_Y2_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1020.6218488716925,0.9398212243142305,4245.704172706439
+Mix 17/mix 17_Y2_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,1039.656924765903,0.9554527699954494,4192.599189835641
+Mix 17/mix 17_Y3_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,992.6133411131168,0.9466606421508917,4319.019784486905
+Mix 17/mix 17_Y3_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,989.9486143228279,0.9302774209107395,4369.331876676017
+Mix 17/mix 17_Y3_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,997.5039630469696,0.9232887511585259,4484.666048944868
+Mix 17/mix 17_Y3_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,990.8777879287278,0.9252847138174469,4180.006472233272
+Mix 17/mix 17_Y3_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,994.4596452992245,0.9289856418783452,4630.520272384056
+Mix 17/mix 17_Y3_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,999.8520706280008,0.930765644792939,4806.5018788094785
+Mix 17/mix 17_Y4_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,991.2143406838483,0.9250560402176304,4637.5320086676675
+Mix 17/mix 17_Y4_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,983.6974438061422,0.9143007618201888,4649.86736331183
+Mix 17/mix 17_Y4_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,970.5496566632235,0.9217063591074925,4561.889757285266
+Mix 17/mix 17_Y4_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,964.8032852650558,0.917750775113391,4776.789640636769
+Mix 17/mix 17_Y4_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,959.0847440702114,0.9173486866182898,4829.156587117284
+Mix 17/mix 17_Y4_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,937.4173908269944,0.9073415586744571,4811.288684619625
+Mix 17/mix 17_Y5_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,946.2532825546128,0.9067086482917348,4731.537245660083
+Mix 17/mix 17_Y5_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,931.6247641027117,0.9147088642419956,4720.705403148481
+Mix 17/mix 17_Y5_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,938.6809321727666,0.9122324213654028,4675.608109619066
+Mix 17/mix 17_Y5_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,943.3726896133434,0.9085735624358434,4893.0678270983835
+Mix 17/mix 17_Y5_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,929.8926598244946,0.9055740473451284,4646.133099180954
+Mix 17/mix 17_Y5_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine,950.5698927473388,0.9005072720083351,4813.581537388188
+Mix 18/mix 18_Y0_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",315.711436667221,0.41837229327324943,327.32325329482603
+Mix 18/mix 18_Y0_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",325.0368629592209,0.4167468629858123,328.341403234923
+Mix 18/mix 18_Y0_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",309.7804366992344,0.4186821782371508,317.9866027554188
+Mix 18/mix 18_Y0_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",318.31849367302584,0.41428865094817646,333.30156112805525
+Mix 18/mix 18_Y0_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,306.36926573068627,0.6529318667805022,180.3093217448422
+Mix 18/mix 18_Y0_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,318.07075005586063,0.6474206722298124,186.01106132293435
+Mix 18/mix 18_Y1_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",313.2732772192146,0.4201930859371193,299.14379923107447
+Mix 18/mix 18_Y1_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",316.1279283675004,0.4157504124920359,307.332773273401
+Mix 18/mix 18_Y1_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",317.6351799919831,0.41661801839962975,297.57883998117427
+Mix 18/mix 18_Y1_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,325.1510332690371,0.6511919471581711,165.70213083583852
+Mix 18/mix 18_Y1_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",329.0279738788874,0.4130446328378302,323.4513398256959
+Mix 18/mix 18_Y1_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",339.5152379283086,0.4118249646123891,329.56732777941136
+Mix 18/mix 18_Y2_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,341.6319093396078,0.6583770453480897,145.30453199620587
+Mix 18/mix 18_Y2_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",331.8529575644899,0.41919526550680264,280.7039299417404
+Mix 18/mix 18_Y2_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",323.812171189356,0.41668510650889423,274.4009841434246
+Mix 18/mix 18_Y2_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",333.55594246005694,0.4143499914223444,294.02905213483785
+Mix 18/mix 18_Y2_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",330.9970193012688,0.4133145306129456,294.6094656590608
+Mix 18/mix 18_Y2_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",320.732442808119,0.41179868431531647,295.031104330856
+Mix 18/mix 18_Y3_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",333.61589382446255,0.4160548038134985,288.1790678723967
+Mix 18/mix 18_Y3_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",327.9348287922057,0.41819315308268556,263.7065662992412
+Mix 18/mix 18_Y3_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",322.0322038238373,0.41614705636296523,257.22889644157186
+Mix 18/mix 18_Y3_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",322.0790359772421,0.41329343559325077,277.98300843317145
+Mix 18/mix 18_Y3_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",330.29494624850616,0.4146165621020328,271.4902259692471
+Mix 18/mix 18_Y3_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",333.5622691888253,0.4175295881714076,289.4071218499953
+Mix 18/mix 18_Y4_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,324.7955723130579,0.6560070255115571,156.393795067254
+Mix 18/mix 18_Y4_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",326.01699136186124,0.41692495297952153,309.181577408347
+Mix 18/mix 18_Y4_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,311.0300287106423,0.6586544267488206,134.98507239470337
+Mix 18/mix 18_Y4_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",323.1226613544593,0.4149317050427219,302.2175716048292
+Mix 18/mix 18_Y4_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,311.04057046974344,0.6556663675093152,143.62858495092294
+Mix 18/mix 18_Y4_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",307.63328491110354,0.4172102518597418,299.18144359945086
+Mix 18/mix 18_Y5_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",310.0313824804061,0.4141761976371827,316.8430457527967
+Mix 18/mix 18_Y5_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,298.107415126511,0.6560192213161483,143.55108237462002
+Mix 18/mix 18_Y5_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,289.3091594914166,0.6556455023055741,140.59587264714042
+Mix 18/mix 18_Y5_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,298.68201619156133,0.6554402005032979,148.65775963259344
+Mix 18/mix 18_Y5_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane",285.57672169625675,0.41473747223810453,317.3386412511222
+Mix 18/mix 18_Y5_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,6-mercapto-1-hexanol + dichloromethane,286.25423446499536,0.6592600731923952,149.91153482230948
+Mix 19/mix 19_Y0_X0.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2324.5950995765993,1.1348455950012155,0.0
+Mix 19/mix 19_Y0_X1.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2323.8297689956894,1.1271670964229976,0.0
+Mix 19/mix 19_Y0_X2.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2333.441907694879,1.113422473774459,0.0
+Mix 19/mix 19_Y0_X3.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2348.3539769313534,1.109654644020155,0.0
+Mix 19/mix 19_Y0_X4.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2336.6816478300816,1.1124851385229764,0.0
+Mix 19/mix 19_Y0_X5.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2352.1919159686813,1.1126362126734763,0.0
+Mix 19/mix 19_Y1_X0.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2343.219124136899,1.1362103556313503,0.0
+Mix 19/mix 19_Y1_X1.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2363.3769628247755,1.1328904985569912,0.0
+Mix 19/mix 19_Y1_X2.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2344.132236077952,1.1144694628127962,0.0
+Mix 19/mix 19_Y1_X3.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2340.5171981346343,1.110436345243629,0.0
+Mix 19/mix 19_Y1_X4.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2347.900891211837,1.1109559047761741,0.0
+Mix 19/mix 19_Y1_X5.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2347.936931656241,1.1081392459271586,0.0
+Mix 19/mix 19_Y2_X0.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2326.986045815823,1.128160106828807,0.0
+Mix 19/mix 19_Y2_X1.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2297.4198568147076,1.1250688831317126,0.0
+Mix 19/mix 19_Y2_X2.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2314.643141510955,1.1126593912366656,0.0
+Mix 19/mix 19_Y2_X3.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2317.970579911565,1.1108152071028181,0.0
+Mix 19/mix 19_Y2_X4.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2313.563059039534,1.1089138134998469,0.0
+Mix 19/mix 19_Y2_X5.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2301.8054685618217,1.1123091858189227,0.0
+Mix 19/mix 19_Y3_X0.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2307.4347991190098,1.1196421141860426,0.0
+Mix 19/mix 19_Y3_X1.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2312.013670349053,1.1213905778502755,0.0
+Mix 19/mix 19_Y3_X2.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2315.166565470531,1.114899441380143,0.0
+Mix 19/mix 19_Y3_X3.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2246.812664834278,1.1060021409809475,0.0
+Mix 19/mix 19_Y3_X4.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2254.3779110065543,1.107932611503632,0.0
+Mix 19/mix 19_Y3_X5.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2252.052612436611,1.1077389003801155,0.0
+Mix 19/mix 19_Y4_X0.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2252.5069423589066,1.1227486030560492,0.0
+Mix 19/mix 19_Y4_X1.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2253.071072054088,1.119922341790494,0.0
+Mix 19/mix 19_Y4_X2.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2270.514313326659,1.1113790594936261,0.0
+Mix 19/mix 19_Y4_X3.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2239.100330779529,1.1035685181924746,0.0
+Mix 19/mix 19_Y4_X4.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2211.192271666621,1.1054125277633533,0.0
+Mix 19/mix 19_Y4_X5.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2226.7789641320933,1.1079315802131786,0.0
+Mix 19/mix 19_Y5_X0.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2213.5064065291635,1.1211474089675217,0.0
+Mix 19/mix 19_Y5_X1.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2202.795945070368,1.1194787281369403,0.0
+Mix 19/mix 19_Y5_X2.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2187.998137655982,1.1106446246282327,0.0
+Mix 19/mix 19_Y5_X3.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2157.409501503862,1.1054169708267025,0.0
+Mix 19/mix 19_Y5_X4.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2122.276495745819,1.1045741733574395,0.0
+Mix 19/mix 19_Y5_X5.txt,pt2_real,Mix 19,benzene + pyridine,benzene + pyridine,2123.9526155404956,1.1073193376628394,0.0
+Mix 20/mix 20_Y0_X0.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,573.6025277698017,0.6389391318616291,523.3552344460555
+Mix 20/mix 20_Y0_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,481.78465340333395,0.5583646882408277,804.5014819174444
+Mix 20/mix 20_Y0_X2.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,547.0494315346888,0.6071617417327407,579.7990721014603
+Mix 20/mix 20_Y0_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,651.9394947119678,0.6892334128898887,279.4877143513003
+Mix 20/mix 20_Y0_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,743.1784888021041,0.7165709913200478,172.57543158339388
+Mix 20/mix 20_Y0_X5.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,779.3060499845523,0.7275203694790698,123.09817518363846
+Mix 20/mix 20_Y1_X0.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,614.3325343010581,0.6615829534201263,350.9184386928673
+Mix 20/mix 20_Y1_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,507.0484531315504,0.6013613214030757,565.0027165049869
+Mix 20/mix 20_Y1_X2.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,511.09143775872235,0.6265078509992209,481.654907893591
+Mix 20/mix 20_Y1_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,698.0256060709095,0.6972482177256892,234.121212956277
+Mix 20/mix 20_Y1_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,752.726367076542,0.7161984104159237,168.68636062416715
+Mix 20/mix 20_Y1_X5.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,869.5089606738561,0.7241514224521988,132.10596662068977
+Mix 20/mix 20_Y2_X0.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,827.5995260607496,0.7069500819620818,172.78352222230254
+Mix 20/mix 20_Y2_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,750.4176361518588,0.6953015533145043,178.98467438355794
+Mix 20/mix 20_Y2_X2.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,815.6865069068052,0.6960951046285572,163.54723777263644
+Mix 20/mix 20_Y2_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,830.0367762239935,0.7129221947129978,140.25751242831626
+Mix 20/mix 20_Y2_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,907.8435747418599,0.7199216817177405,131.51053507781256
+Mix 20/mix 20_Y2_X5.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,915.5942787534423,0.7212878115435292,112.94311383848303
+Mix 20/mix 20_Y3_X0.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,888.2037815168087,0.7127307844215112,162.38323373550668
+Mix 20/mix 20_Y3_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,913.4522703044778,0.7061612624205644,150.8191280608632
+Mix 20/mix 20_Y3_X2.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,905.118235382841,0.7084451452288918,136.14507264951152
+Mix 20/mix 20_Y3_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,937.2597024930249,0.7176516890072516,141.87502164528118
+Mix 20/mix 20_Y3_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,947.972120145089,0.7252019396739858,106.99833612900048
+Mix 20/mix 20_Y3_X5.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,963.0792029900613,0.7238391180444625,98.33921401086818
+Mix 20/mix 20_Y4_X0.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,973.7305345385341,0.7126950401008508,108.75166395794837
+Mix 20/mix 20_Y4_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,946.9181041256999,0.7081671682577695,95.14190958949304
+Mix 20/mix 20_Y4_X2.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,984.107307933553,0.7119699082222997,86.02455061074411
+Mix 20/mix 20_Y4_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,1007.5676985217539,0.7155127648453261,102.98670879556566
+Mix 20/mix 20_Y4_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,1031.9062304011586,0.7183787923300267,102.97573159096065
+Mix 20/mix 20_Y4_X5.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,1018.4493237435431,0.7172461118296731,100.19343046108482
+Mix 20/mix 20_Y5_X0.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,986.5518544258532,0.717561469788305,97.65643474995674
+Mix 20/mix 20_Y5_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,994.8456847056518,0.7183377363578498,70.97482338860029
+Mix 20/mix 20_Y5_X2.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,1032.6696511796401,0.7193415687057342,68.8261051874815
+Mix 20/mix 20_Y5_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,1023.666840358081,0.720163008051674,88.73425858662556
+Mix 20/mix 20_Y5_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,1017.4975220056234,0.7193719028549987,97.90341667874405
+Mix 20/mix 20_Y5_X5.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene,1010.1475622951209,0.7202166676084809,83.36305993335515
+Mix 21/mix 21_Y0_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,441.8290361968573,0.8171760819601332,767.949928619064
+Mix 21/mix 21_Y0_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,431.81142915424516,0.8205180759871429,660.3694734607391
+Mix 21/mix 21_Y0_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,424.84867595077344,0.8202079947669325,584.8716741594578
+Mix 21/mix 21_Y0_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,422.0863791182446,0.8170127835215089,501.5261465590412
+Mix 21/mix 21_Y0_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,409.3002769786097,0.8177646327576191,408.29138972401535
+Mix 21/mix 21_Y0_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,423.77144672651445,0.8216293984485021,390.45450381168666
+Mix 21/mix 21_Y1_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,430.8344385793716,0.8237346926907558,901.6405733567383
+Mix 21/mix 21_Y1_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,419.5010094764654,0.8215946306632389,806.1419643005174
+Mix 21/mix 21_Y1_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,411.43892981504297,0.8239175651610957,676.0918801459312
+Mix 21/mix 21_Y1_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,409.90598868387906,0.82072002950518,543.3003184023946
+Mix 21/mix 21_Y1_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,386.19019376497045,0.8175956544845097,444.0209725051696
+Mix 21/mix 21_Y1_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,404.9064858512843,0.8215191115942265,405.0467701152643
+Mix 21/mix 21_Y2_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,390.92598324952917,0.8161042432875323,911.6745575485887
+Mix 21/mix 21_Y2_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,400.0600994414421,0.8212096615398586,817.0024942901007
+Mix 21/mix 21_Y2_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,398.58018481895476,0.8274854531919883,677.57000680383
+Mix 21/mix 21_Y2_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,383.68190513729866,0.8201322449998563,575.5055835186805
+Mix 21/mix 21_Y2_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,384.6832213124741,0.821082742671992,458.2477584322343
+Mix 21/mix 21_Y2_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,379.76946542610403,0.8190471068140432,386.2646983153362
+Mix 21/mix 21_Y3_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,373.773019087838,0.819173729242285,720.1033256640076
+Mix 21/mix 21_Y3_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,371.56010883623907,0.8161711835511856,665.1924577859356
+Mix 21/mix 21_Y3_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,367.2538346940989,0.8181161215339319,549.4727339516933
+Mix 21/mix 21_Y3_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,368.16028630763157,0.8181034929817879,467.252186819688
+Mix 21/mix 21_Y3_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,363.23277404289684,0.8201561457669616,412.6393280697938
+Mix 21/mix 21_Y3_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,354.10793509343284,0.8193062347377718,348.9278163833447
+Mix 21/mix 21_Y4_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,350.2026789641407,0.8111896153699227,572.0213035294734
+Mix 21/mix 21_Y4_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,349.2365894628813,0.816973368065737,419.4670689028994
+Mix 21/mix 21_Y4_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,345.3340189669459,0.8146235964113395,347.1257435045009
+Mix 21/mix 21_Y4_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,337.1490012969974,0.8143956409805835,315.0286057282167
+Mix 21/mix 21_Y4_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,336.5105786488643,0.8113696781746416,336.66740218047175
+Mix 21/mix 21_Y4_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,324.77364774093286,0.8173067551805738,321.0383960348498
+Mix 21/mix 21_Y5_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,332.30852003281694,0.8100641342268649,503.4909900779787
+Mix 21/mix 21_Y5_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,334.71973815594504,0.8127319018964883,356.4549154342705
+Mix 21/mix 21_Y5_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,323.5610075581578,0.8181441227088676,281.5900513080879
+Mix 21/mix 21_Y5_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,326.04741923964724,0.8127523689671614,301.5055228038751
+Mix 21/mix 21_Y5_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,335.3372581394018,0.8148477642168648,308.05345915275973
+Mix 21/mix 21_Y5_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane,316.93394335466746,0.8149192971953535,317.9017072238837
+Mix 22/mix 22_Y0_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1223.0886060709008,1.2780054065375475,1362.7781777966163
+Mix 22/mix 22_Y0_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1219.398575971364,1.2833142456387732,1845.0522199942532
+Mix 22/mix 22_Y0_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1207.6423801267151,1.2870490538317725,2111.554374970104
+Mix 22/mix 22_Y0_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1177.4451471107723,1.2730194062494653,1734.059535742189
+Mix 22/mix 22_Y0_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1160.4625642281317,1.266129496087304,1518.855089024816
+Mix 22/mix 22_Y0_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1142.5195934360088,1.2615795160260455,1298.6261752250173
+Mix 22/mix 22_Y1_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1152.7796377544728,1.270415071221288,690.1170654262351
+Mix 22/mix 22_Y1_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1141.4565596305845,1.269738256811318,972.0968016533259
+Mix 22/mix 22_Y1_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1143.1879353698207,1.275572554780584,1319.8864591670742
+Mix 22/mix 22_Y1_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1122.6158929879434,1.2735340074622283,1262.9070147969514
+Mix 22/mix 22_Y1_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1139.8981347366182,1.2688703421149545,988.6601029559675
+Mix 22/mix 22_Y1_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1121.9513980917918,1.2629093752153346,940.2808688761858
+Mix 22/mix 22_Y2_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1131.880256331826,1.2735583205069734,330.80554559332995
+Mix 22/mix 22_Y2_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1125.2978115109083,1.2683443120628368,451.69266862843256
+Mix 22/mix 22_Y2_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1112.8852443348478,1.2709083735206308,761.2427332139107
+Mix 22/mix 22_Y2_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1109.8116112723396,1.2745327683724812,796.1971910431034
+Mix 22/mix 22_Y2_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1121.96969954039,1.2770992222874065,569.4985986849848
+Mix 22/mix 22_Y2_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1100.783374746883,1.2751049020850505,597.8407914674978
+Mix 22/mix 22_Y3_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1105.8668569520955,1.2779149229389675,245.95714873020455
+Mix 22/mix 22_Y3_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1110.0262055580176,1.2739731290902154,308.9065145949723
+Mix 22/mix 22_Y3_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1082.581808404055,1.2669669323193653,569.197285164392
+Mix 22/mix 22_Y3_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1092.3608888155816,1.2751454392745973,603.6995562338076
+Mix 22/mix 22_Y3_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1084.6365876054892,1.2758119653326052,398.37824441123047
+Mix 22/mix 22_Y3_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1099.599791506626,1.2794916778556034,401.2550832070029
+Mix 22/mix 22_Y4_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1105.727626137728,1.2827806905807377,76.17339330730809
+Mix 22/mix 22_Y4_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1077.6640520218668,1.2802719031442233,192.57156109229538
+Mix 22/mix 22_Y4_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1077.4221264080898,1.2821529701607375,506.35986807459466
+Mix 22/mix 22_Y4_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1077.4093283666311,1.281729182958191,607.3751393575734
+Mix 22/mix 22_Y4_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1083.1627859180614,1.2843843454292139,413.3134221968097
+Mix 22/mix 22_Y4_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1076.8892201753104,1.2761676182615163,244.7442802813625
+Mix 22/mix 22_Y5_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1081.3508510798338,1.284777845431444,0.0
+Mix 22/mix 22_Y5_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1068.980062175674,1.286298785703294,0.0
+Mix 22/mix 22_Y5_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1051.652547316442,1.2862901975585928,302.58155965324295
+Mix 22/mix 22_Y5_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1047.791059926324,1.2914902773043586,423.1288479901235
+Mix 22/mix 22_Y5_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1034.9189880618296,1.290029991078308,385.4700560641428
+Mix 22/mix 22_Y5_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + pyridine,1031.0235080865793,1.2829860557128305,233.26850511251635

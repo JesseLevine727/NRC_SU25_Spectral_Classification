@@ -1,0 +1,158 @@
+{
+  "mode": "baseline_corrected",
+  "dictionary_classes": [
+    "1,9-nonanedithiol",
+    "1-dodecanethiol",
+    "1-undecanethiol",
+    "6-mercapto-1-hexanol",
+    "acetonitrile",
+    "benzene",
+    "benzenethiol",
+    "dichloromethane",
+    "diethylamine",
+    "dmmp",
+    "etoh",
+    "meoh",
+    "n,n-dimethylformamide",
+    "n-hexane",
+    "pyridine",
+    "toluene",
+    "tris(2-ethylhexyl) phosphate"
+  ],
+  "pair_nnls_results_dir": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Results/exhaustive_pair_nnls",
+  "selected_hyperparameters": {
+    "alpha": 0.03,
+    "l1_ratio": 0.8,
+    "share_threshold": 0.15
+  },
+  "existing_real": {
+    "exact_match": 0.6689655172413793,
+    "micro_precision": 0.8421052631578947,
+    "micro_recall": 0.896551724137931,
+    "micro_f1": 0.8684759916492694,
+    "mean_true_labels": 2.0,
+    "mean_predicted_labels": 2.1293103448275863,
+    "zero_prediction_rate": 0.0
+  },
+  "pt2_real": {
+    "overall": {
+      "exact_match": 0.8888888888888888,
+      "micro_precision": 1.0,
+      "micro_recall": 0.9444444444444444,
+      "micro_f1": 0.9714285714285714,
+      "mean_true_labels": 2.0,
+      "mean_predicted_labels": 1.8888888888888888,
+      "zero_prediction_rate": 0.0
+    },
+    "per_mixture": [
+      {
+        "exact_match": 0.0,
+        "micro_precision": 1.0,
+        "micro_recall": 0.5,
+        "micro_f1": 0.6666666666666666,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 1.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 13",
+        "samples": 36,
+        "true_labels": "n-hexane + pyridine"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 15",
+        "samples": 36,
+        "true_labels": "benzene + n-hexane"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 16",
+        "samples": 36,
+        "true_labels": "dichloromethane + n-hexane"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 17",
+        "samples": 36,
+        "true_labels": "diethylamine + pyridine"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 18",
+        "samples": 36,
+        "true_labels": "6-mercapto-1-hexanol + dichloromethane"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 19",
+        "samples": 36,
+        "true_labels": "benzene + pyridine"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 20",
+        "samples": 36,
+        "true_labels": "benzene + toluene"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 21",
+        "samples": 36,
+        "true_labels": "acetonitrile + dichloromethane"
+      },
+      {
+        "exact_match": 1.0,
+        "micro_precision": 1.0,
+        "micro_recall": 1.0,
+        "micro_f1": 1.0,
+        "mean_true_labels": 2.0,
+        "mean_predicted_labels": 2.0,
+        "zero_prediction_rate": 0.0,
+        "source": "Mix 22",
+        "samples": 36,
+        "true_labels": "acetonitrile + pyridine"
+      }
+    ]
+  }
+}
