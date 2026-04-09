@@ -2,57 +2,57 @@
 
 This repository is organized around three main projects:
 
-- [Projects/Standard_Raman_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/Standard_Raman_Classification)
-- [Projects/SERS_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification)
-- [Mixture_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification)
+- [Projects/Standard_Raman_Classification](Projects/Standard_Raman_Classification)
+- [Projects/SERS_Classification](Projects/SERS_Classification)
+- [Mixture_Classification](Mixture_Classification)
 
 The supporting shared material lives in:
 
-- [Data](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data)
-- [Docs](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Docs)
-- [Archive](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Archive)
+- [Data](Data)
+- [Docs](Docs)
+- [Archive](Archive)
 
 ## Repo Map
 
 ### Standard Raman classification
 
-- active home: [Projects/Standard_Raman_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/Standard_Raman_Classification)
-- core scripts: [Projects/Standard_Raman_Classification/Scripts](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/Standard_Raman_Classification/Scripts)
-- exploratory notebooks: [Projects/Standard_Raman_Classification/Notebooks](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/Standard_Raman_Classification/Notebooks)
-- extended Siamese work: [Projects/Standard_Raman_Classification/ExtendingSiamese](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/Standard_Raman_Classification/ExtendingSiamese)
+- active home: [Projects/Standard_Raman_Classification](Projects/Standard_Raman_Classification)
+- core scripts: [Projects/Standard_Raman_Classification/Scripts](Projects/Standard_Raman_Classification/Scripts)
+- exploratory notebooks: [Projects/Standard_Raman_Classification/Notebooks](Projects/Standard_Raman_Classification/Notebooks)
+- extended Siamese work: [Projects/Standard_Raman_Classification/ExtendingSiamese](Projects/Standard_Raman_Classification/ExtendingSiamese)
 
 ### SERS classification
 
-- active home: [Projects/SERS_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification)
-- current workspace: [Projects/SERS_Classification/Workspace](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace)
+- active home: [Projects/SERS_Classification](Projects/SERS_Classification)
+- current workspace: [Projects/SERS_Classification/Workspace](Projects/SERS_Classification/Workspace)
 
 ### Mixture classification
 
-- active home: [Mixture_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification)
-- active unmixing pipeline: [Mixture_Classification/Unmixing_Pipeline](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline)
-- legacy Siamese pipeline: [Mixture_Classification/Legacy_Siamese_Pipeline](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Legacy_Siamese_Pipeline)
-- result index: [Mixture_Classification/RESULTS_INDEX.md](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/RESULTS_INDEX.md)
+- active home: [Mixture_Classification](Mixture_Classification)
+- active unmixing pipeline: [Mixture_Classification/Unmixing_Pipeline](Mixture_Classification/Unmixing_Pipeline)
+- legacy Siamese pipeline: [Mixture_Classification/Legacy_Siamese_Pipeline](Mixture_Classification/Legacy_Siamese_Pipeline)
+- result index: [Mixture_Classification/RESULTS_INDEX.md](Mixture_Classification/RESULTS_INDEX.md)
 
 ## Datasets
 
-The top-level datasets are grouped under [Data](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data):
+The top-level datasets are grouped under [Data](Data):
 
-- [Data/Jesse_Dataset](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Jesse_Dataset): original pure/reference Raman data and related exports
-- [Data/Jesse_Dataset_v2](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Jesse_Dataset_v2): later mixed Raman/SERS dataset bundle
-- [Data/Jesse_Dataset_Update](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Jesse_Dataset_Update): updated Raman and SERS folders
-- [Data/Jesse_Dataset_PT2](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Jesse_Dataset_PT2): pt2 pure and mixture spectra
-- [Data/Feb26_Spectra](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Feb26_Spectra): February 26 spectra collection
-- [Data/Test_Data](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Test_Data): split query/reference CSVs used in earlier experiments
+- [Data/Jesse_Dataset](Data/Jesse_Dataset): original pure/reference Raman data and related exports
+- [Data/Jesse_Dataset_v2](Data/Jesse_Dataset_v2): later mixed Raman/SERS dataset bundle
+- [Data/Jesse_Dataset_Update](Data/Jesse_Dataset_Update): updated Raman and SERS folders
+- [Data/Jesse_Dataset_PT2](Data/Jesse_Dataset_PT2): pt2 pure and mixture spectra
+- [Data/Feb26_Spectra](Data/Feb26_Spectra): February 26 spectra collection
+- [Data/Test_Data](Data/Test_Data): split query/reference CSVs used in earlier experiments
 
-The active mixture pipeline also carries its own self-contained copy of the data it needs under [Mixture_Classification/Unmixing_Pipeline/Data](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Data).
+The active mixture pipeline also carries its own self-contained copy of the data it needs under [Mixture_Classification/Unmixing_Pipeline/Data](Mixture_Classification/Unmixing_Pipeline/Data).
 
 ## Results
 
 If you need the most relevant current results first:
 
-- mixture unmixing results: [Mixture_Classification/Unmixing_Pipeline/Results](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Results)
-- mixture result guide: [Mixture_Classification/RESULTS_INDEX.md](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/RESULTS_INDEX.md)
-- legacy mixture Siamese outputs: [Mixture_Classification/Legacy_Siamese_Pipeline/Notebooks](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Legacy_Siamese_Pipeline/Notebooks)
+- mixture unmixing results: [Mixture_Classification/Unmixing_Pipeline/Results](Mixture_Classification/Unmixing_Pipeline/Results)
+- mixture result guide: [Mixture_Classification/RESULTS_INDEX.md](Mixture_Classification/RESULTS_INDEX.md)
+- legacy mixture Siamese outputs: [Mixture_Classification/Legacy_Siamese_Pipeline/Notebooks](Mixture_Classification/Legacy_Siamese_Pipeline/Notebooks)
 
 ## Notes
 

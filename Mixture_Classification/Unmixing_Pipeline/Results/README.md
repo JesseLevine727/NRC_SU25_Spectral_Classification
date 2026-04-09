@@ -4,16 +4,16 @@ This directory contains the active saved outputs for mixture-classification expe
 
 ## Recommended entry points
 
-- [best_models_full_new_dataset_comparison](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Results/best_models_full_new_dataset_comparison)
-  Start here for the main mixture-only full 17-class comparison across legacy Siamese, clean classical, and clean deep models.
+- [../mixture_only_full_new_dataset_model_comparison.pdf](../mixture_only_full_new_dataset_model_comparison.pdf)
+  Start here for the main mixture-only full 17-class comparison across legacy Siamese, the replicate-dictionary pair NNLS baseline, and the similarity-supervised coefficient regressor.
 
-- [pair_nnls_replicate_dictionary](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Results/pair_nnls_replicate_dictionary)
+- [pair_nnls_replicate_dictionary](pair_nnls_replicate_dictionary)
   Main clean classical benchmark.
 
-- [deep_similarity_supervision](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Results/deep_similarity_supervision)
+- [deep_similarity_supervision](deep_similarity_supervision)
   Main clean deep benchmark.
 
-- [best_models_existing_real_comparison](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Results/best_models_existing_real_comparison)
+- [best_models_existing_real_comparison](best_models_existing_real_comparison)
   Full 17-class comparison on the original real-mixture dataset only.
 
 ## Naming convention
