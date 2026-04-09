@@ -370,6 +370,7 @@ def build_latex(
 \usepackage{{longtable}}
 \usepackage{{pdflscape}}
 \usepackage{{parskip}}
+\usepackage{{graphicx}}
 \begin{{document}}
 
 \begin{{center}}
@@ -384,6 +385,8 @@ def build_latex(
 \begin{{table}}[ht]
 \centering
 \caption{{Full 17-class mixture-only comparison across original and PT2 real mixtures.}}
+\small
+\resizebox{{\linewidth}}{{!}}{{%
 \begin{{tabular}}{{lccccc}}
 \toprule
 Model & Exact match & Micro-precision & Micro-recall & Micro-F1 & Avg. returned chemicals \\
@@ -391,6 +394,7 @@ Model & Exact match & Micro-precision & Micro-recall & Micro-F1 & Avg. returned 
 {summary_rows}
 \bottomrule
 \end{{tabular}}
+}}
 \end{{table}}
 
 \begin{{landscape}}
@@ -419,6 +423,16 @@ Chemical & Support & \multicolumn{{3}}{{c}}{{Siamese 0.5}} & \multicolumn{{3}}{{
 \textbf{{Selected clean classical model.}} {tex_escape(best_classical_name)}. Candidate scores on the same mixture-only set: {tex_escape(classical_note)}.
 
 \textbf{{Selected clean deep model.}} {tex_escape(best_deep_name)}. Candidate scores on the same mixture-only set: {tex_escape(deep_note)}.
+
+\textbf{{How the default Siamese+MLP 2-head works.}} This is the original PT2-expanded retrained Siamese pipeline. It starts from synthetic binary mixtures generated from the expanded pure-spectrum library. Each synthetic sample mixes two reference compounds at sampled ratios, then passes the result through the same preprocessing used at test time. The model has two Siamese-style encoders: one branch for the preprocessed Raman spectrum and one branch for its FFT representation. Those two embeddings are concatenated and passed to a multilabel MLP presence head with one sigmoid output per compound in the 17-class library. Training therefore optimizes a class-presence detection problem, not an explicit unmixing problem. At inference, every class with output score above the fixed threshold 0.5 is returned as present, so the number of predicted chemicals can vary from sample to sample.
+
+\textbf{{How the calibrated Siamese+MLP 2-head works.}} The calibrated Siamese model uses the exact same trained Raman encoder, FFT encoder, and multilabel presence head as the default row. The only change is the decision rule at inference time. Instead of using a flat 0.5 threshold for every class, it applies the saved class-specific thresholds that were tuned on the original real-mixture calibration experiment. That can improve recall for weak classes by lowering their trigger threshold, but it also increases the risk of overpredicting absent compounds because every class is still decided independently. In this mixture-only 17-class evaluation, that tradeoff pushes predicted support size up from about 2.89 to about 3.17 chemicals per sample and hurts exact-match performance.
+
+\textbf{{How the best clean classical model works.}} The selected clean classical winner is the replicate-dictionary pair NNLS model. It assumes the task is binary mixture identification and explicitly searches over all compound pairs in the 17-class library. For each candidate pair, it builds a design matrix containing multiple reference atoms per compound rather than a single prototype spectrum. Those atoms include the class mean plus selected representative replicates, which lets the fit absorb within-class spectral variation without changing the label set. A constant nuisance baseline atom is appended so simple background offset can be absorbed without forcing the pair choice to explain it. For every mixture spectrum, the method solves a nonnegative least-squares fit for every candidate pair, ranks pairs by residual error, and returns the minimum-residual support. Training in the machine-learning sense is not required; the method is entirely driven by the reference library and the NNLS optimization at inference time.
+
+\textbf{{How the best clean deep model works.}} The selected clean deep winner is the similarity-supervised coefficient regressor. It also trains on synthetic binary mixtures generated from the expanded reference library, but unlike the Siamese classifier it predicts a full nonnegative coefficient-share vector over the 17 compounds. The network is an MLP operating directly on the preprocessed spectrum. Its output is normalized into coefficient shares, one share per compound. Training combines several objectives: coefficient regression toward the true synthetic mixture ratios, a support loss that separates active from inactive compounds, a reconstruction loss through a fixed decoder built from the reference dictionary, a margin-ranking term that pushes true compounds above false ones, and a similarity-weighted false-positive penalty that is especially harsh on spectrally similar impostor compounds. At inference, the model ranks all predicted shares and returns the top two compounds, which matches the binary structure of the measured mixture datasets without introducing pair-specific rules.
+
+\textbf{{Why the clean deep model wins here.}} On this combined mixture-only set, the clean deep winner outperforms the clean classical winner because it keeps the binary top-2 deployment rule while learning a smoother global representation over the entire 17-class library. The classical NNLS solver is still very strong, but its remaining errors are concentrated in a few chemically similar neighborhoods where residual-based pair selection can flip to the wrong pair. The similarity-supervised regressor learns a library-level ranking that reduces those near-tie flips without needing the hand-tuned fallback rules used in the stronger engineering-only classical variants.
 
 \end{{document}}
 """
