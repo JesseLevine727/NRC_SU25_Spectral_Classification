@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{graphicx}
+
+\begin{document}
+
+\begin{table}[ht]
+\centering
+\caption{Best classical, best deep, and original Siamese+MLP 2-head results on the full PT2 real-mixture dataset}
+\begin{threeparttable}
+\small
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.2cm} >{\raggedright\arraybackslash}p{1.7cm} >{\raggedright\arraybackslash}p{2.3cm} >{\raggedright\arraybackslash}p{4.3cm} c c c c c}
+\toprule
+Setup & Family & Class space & Evaluation protocol & Exact & Precision & Recall & Micro-F1 & Avg. pred. chemicals \\
+\midrule
+Best classical & Classical & 17-compound expanded library & Best overall classical variant on PT2, pairwise NNLS with family fallback & 1.000 & 1.000 & 1.000 & 1.000 & 2.00 \\
+Best deep & Deep & 17-compound expanded library & Similarity-supervised coefficient regressor, binary top-2 support inference & 1.000 & 1.000 & 1.000 & 1.000 & 2.00 \\
+Original Siamese+MLP 2-head & Original deep pipeline & 17-class sigmoid head & PT2-expanded Siamese Raman+FT retrain, fixed threshold 0.5 & 0.410 & 0.646 & 0.886 & 0.747 & 2.74 \\
+\bottomrule
+\end{tabular}
+}
+
+\begin{tablenotes}\footnotesize
+\item ``Full PT2 real-mixture dataset'' here means the nine real mixture families in \texttt{Data/pt2}: Mix 13 through Mix 22, for 324 measured mixture spectra total.
+\item The classical row uses the strongest overall classical result in the repo. The clean classical benchmark also reaches perfect PT2 exact support recovery, but this row reflects the best classical number available in the current project state.
+\item The deep row uses the strongest promoted pure-deep model rather than the hybrid deep-plus-classical reranker.
+\item The Siamese row is the PT2-expanded 17-class retrain from \texttt{pt2\_augmented\_reference\_experiment}, evaluated with the default threshold 0.5 used in that experiment summary.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption{Per-mixture comparison on the PT2 real-mixture dataset}
+\begin{threeparttable}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+
+\begin{tabular}{>{\raggedright\arraybackslash}p{1.3cm} >{\raggedright\arraybackslash}p{3.3cm} c c c c c c c c c}
+\toprule
+& & \multicolumn{3}{c}{Best classical} & \multicolumn{3}{c}{Best deep} & \multicolumn{3}{c}{Original Siamese+MLP 2-head} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8} \cmidrule(lr){9-11}
+Mix & True labels & Exact & F1 & Avg. pred. & Exact & F1 & Avg. pred. & Exact & F1 & Avg. pred. \\
+\midrule
+Mix 13 & n-hexane + pyridine & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 \\
+Mix 15 & benzene + n-hexane & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 & 0.000 & 0.333 & 4.00 \\
+Mix 16 & dichloromethane + n-hexane & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 & 0.000 & 0.796 & 3.03 \\
+Mix 17 & diethylamine + pyridine & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 & 0.944 & 0.986 & 1.94 \\
+Mix 18 & 6-mercapto-1-hexanol + dichloromethane & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 & 0.000 & 0.367 & 3.44 \\
+Mix 19 & benzene + pyridine & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 & 0.000 & 0.800 & 3.00 \\
+Mix 20 & benzene + toluene & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 & 0.750 & 0.941 & 2.25 \\
+Mix 21 & acetonitrile + dichloromethane & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 \\
+Mix 22 & acetonitrile + pyridine & 1.000 & 1.000 & 2.00 & 1.000 & 1.000 & 2.00 & 0.000 & 0.800 & 3.00 \\
+\bottomrule
+\end{tabular}
+
+}
+
+\begin{tablenotes}\footnotesize
+\item For each PT2 mixture family, the table reports exact support match, micro-F1, and mean predicted compound count.
+\item The classical and deep best models are uniformly perfect on this PT2 evaluation set.
+\item The original Siamese+MLP 2-head model succeeds on some PT2 mixtures but overpredicts support on several others, which is why its overall PT2 exact match remains low despite some perfect individual rows.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+\section*{How Each Best Model Works}
+
+\subsection*{Best Classical: Pair NNLS With Replicate Dictionary And Family Fallback}
+
+The classical winner is still based on explicit spectral unmixing. For each candidate binary pair of compounds, the method builds a nonnegative linear model of the observed mixture spectrum using:
+\begin{itemize}
+\item replicate-level atoms for each candidate compound rather than only one class mean,
+\item one nuisance baseline atom to absorb simple background structure,
+\item nonnegative least squares to fit the candidate pair.
+\end{itemize}
+
+In symbols, for each candidate pair $(i, j)$ it solves a problem of the form
+\[
+x \approx A_{ij} c + b \mathbf{1} + e,
+\]
+where $x$ is the observed spectrum, $A_{ij}$ is the dictionary made from the replicate atoms of compounds $i$ and $j$, $c \ge 0$ are compound coefficients, $b \ge 0$ is a nuisance baseline coefficient, and $e$ is the residual. The solver evaluates every pair in the library and ranks them by reconstruction quality.
+
+The version used here is the best overall classical result in the repo, so it adds one localized near-tie fallback after the NNLS search. That fallback does not change the underlying unmixing model; it only reranks very specific ambiguous pair solutions when the residual gap is tiny. This makes it the strongest classical number in the repo, though the clean scientific classical benchmark remains the replicate-aware pair NNLS anchor without that final family-specific rule.
+
+\subsection*{Best Deep: Similarity-Supervised Coefficient Regressor}
+
+The best promoted deep model is library-constrained rather than pair-identity based. It trains on synthetic binary mixtures generated directly from the expanded pure-spectrum library. Each synthetic sample is made by selecting two library compounds, mixing their spectra at a random ratio, adding mild intensity jitter and noise, and then applying the same preprocessing used at evaluation time.
+
+The network is an MLP that reads the processed spectrum and outputs a nonnegative coefficient-share vector over the full library. Training uses several coupled signals:
+\begin{itemize}
+\item a coefficient regression loss so the two true compounds receive the right mixture shares,
+\item a support loss so the active compounds are separated from the inactive ones,
+\item a reconstruction loss through a fixed library decoder,
+\item a similarity-aware penalty that pushes down false positives that are spectrally close to the true compounds.
+\end{itemize}
+
+At inference, the model does not threshold an arbitrary number of labels. Instead, because the real task here is binary mixtures, it takes the top two predicted compounds as the final support. This keeps the deployment framing aligned with the current dataset while still using a general library-level learned representation.
+
+\subsection*{Original Siamese+MLP 2-Head Pipeline}
+
+The original deep pipeline starts from synthetic binary mixtures too, but it learns mixture embeddings rather than explicit library coefficients. It has two Siamese-style branches:
+\begin{itemize}
+\item one branch processes the baseline-corrected Raman spectrum,
+\item the second branch processes the Fourier-transformed representation.
+\end{itemize}
+
+Those learned embeddings are concatenated and passed to a multilabel MLP head with one sigmoid output per compound class. The model is then used as a multilabel presence detector: each class output is thresholded independently, and any class above the threshold is treated as present in the mixture.
+
+That framing is weaker for this problem because it is not explicitly solving an additive unmixing problem. It is learning a representation and then using class-wise thresholding to infer support. In practice, on the PT2-expanded 17-class task, that produces too many extra labels on several real mixtures, which is why the project pivoted first to classical unmixing and then to library-constrained coefficient regression rather than continuing to optimize the old Siamese head.
+
+
+\end{document}

@@ -1,0 +1,10 @@
+source,true_labels,samples,exact_match,micro_f1,mean_predicted_labels
+Mix 13,n-hexane + pyridine,36,1.0,1.0,2.0
+Mix 15,benzene + n-hexane,36,0.0,0.3333333333333333,4.0
+Mix 16,dichloromethane + n-hexane,36,0.0,0.7955801104972375,3.0277777777777777
+Mix 17,diethylamine + pyridine,36,0.9444444444444444,0.9859154929577465,1.9444444444444444
+Mix 18,6-mercapto-1-hexanol + dichloromethane,36,0.0,0.3673469387755102,3.4444444444444446
+Mix 19,benzene + pyridine,36,0.0,0.8,3.0
+Mix 20,benzene + toluene,36,0.75,0.9411764705882353,2.25
+Mix 21,acetonitrile + dichloromethane,36,1.0,1.0,2.0
+Mix 22,acetonitrile + pyridine,36,0.0,0.8,3.0

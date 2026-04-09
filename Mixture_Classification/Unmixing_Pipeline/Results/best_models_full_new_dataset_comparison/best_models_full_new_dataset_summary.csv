@@ -1,0 +1,4 @@
+setup,family,class_space,evaluation_protocol,exact_match,micro_precision,micro_recall,micro_f1,avg_pred_chemicals,notes
+Best classical,Classical,17-compound expanded library,"Best overall classical variant on PT2, pairwise NNLS with family fallback",1.0,1.0,1.0,1.0,2.0,Best overall classical on current repo state; the clean classical anchor also reaches 1.000 on PT2.
+Best deep,Deep,17-compound expanded library,"Similarity-supervised coefficient regressor, binary top-2 support inference",1.0,1.0,1.0,1.0,2.0,Best promoted pure-deep model without pair-specific rules.
+Original Siamese+MLP 2-head,Original deep pipeline,17-class sigmoid head,"PT2-expanded Siamese Raman+FT retrain, fixed threshold 0.5",0.4104938271604938,0.6463963963963963,0.8858024691358025,0.7473958333333334,2.740740740740741,Original two-head Siamese+MLP architecture after expanding the reference to PT2 classes.
