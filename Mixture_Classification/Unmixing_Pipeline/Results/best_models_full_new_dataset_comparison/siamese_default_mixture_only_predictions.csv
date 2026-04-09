@@ -1,0 +1,905 @@
+sample_id,dataset,source,true_labels,predicted_labels
+existing/0,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/1,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/2,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/3,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/4,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/5,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/6,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/7,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/8,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene + etoh
+existing/9,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/10,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/11,existing_real,existing_real,6-mercapto-1-hexanol + benzene,1-undecanethiol + 6-mercapto-1-hexanol + benzene
+existing/12,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene + etoh
+existing/13,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene + etoh
+existing/14,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene + etoh
+existing/15,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene + etoh
+existing/16,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene + etoh
+existing/17,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/18,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/19,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/20,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/21,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/22,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/23,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/24,existing_real,existing_real,6-mercapto-1-hexanol + benzene,1-undecanethiol + 6-mercapto-1-hexanol + benzene
+existing/25,existing_real,existing_real,6-mercapto-1-hexanol + benzene,1-undecanethiol + 6-mercapto-1-hexanol + benzene
+existing/26,existing_real,existing_real,6-mercapto-1-hexanol + benzene,1-undecanethiol + 6-mercapto-1-hexanol + benzene
+existing/27,existing_real,existing_real,6-mercapto-1-hexanol + benzene,1-undecanethiol + 6-mercapto-1-hexanol + benzene
+existing/28,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/29,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/30,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/31,existing_real,existing_real,6-mercapto-1-hexanol + benzene,1-undecanethiol + 6-mercapto-1-hexanol + benzene
+existing/32,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/33,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/34,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/35,existing_real,existing_real,6-mercapto-1-hexanol + benzene,6-mercapto-1-hexanol + benzene
+existing/36,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/37,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/38,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/39,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/40,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/41,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/42,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/43,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/44,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/45,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/46,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/47,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/48,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/49,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/50,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/51,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/52,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/53,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/54,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/55,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/56,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/57,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/58,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/59,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/60,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/61,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/62,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/63,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/64,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + pyridine"
+existing/65,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/66,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/67,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/68,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/69,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/70,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/71,existing_real,existing_real,6-mercapto-1-hexanol + pyridine,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + pyridine"
+existing/72,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/73,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/74,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/75,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/76,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/77,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/78,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/79,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/80,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/81,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/82,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/83,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/84,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/85,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/86,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/87,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/88,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/89,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/90,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/91,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/92,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/93,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/94,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/95,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/96,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/97,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/98,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/99,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/100,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/101,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/102,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/103,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/104,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/105,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/106,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/107,existing_real,existing_real,benzene + benzenethiol,acetonitrile + benzene + benzenethiol + dmmp
+existing/108,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/109,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/110,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/111,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/112,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/113,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/114,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/115,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/116,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/117,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/118,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/119,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/120,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/121,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/122,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/123,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/124,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/125,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/126,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/127,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/128,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/129,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/130,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/131,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/132,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/133,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/134,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/135,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/136,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/137,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/138,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/139,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/140,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/141,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/142,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/143,existing_real,existing_real,benzene + etoh,6-mercapto-1-hexanol + benzene + diethylamine + etoh
+existing/144,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/145,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh
+existing/146,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh
+existing/147,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh
+existing/148,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh
+existing/149,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh
+existing/150,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/151,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/152,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/153,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/154,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/155,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/156,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/157,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/158,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/159,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/160,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/161,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/162,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/163,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/164,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/165,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/166,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/167,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/168,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/169,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/170,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh
+existing/171,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh
+existing/172,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh
+existing/173,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/174,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/175,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/176,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh
+existing/177,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + meoh + tris(2-ethylhexyl) phosphate
+existing/178,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/179,existing_real,existing_real,benzene + meoh,benzene + diethylamine + etoh + tris(2-ethylhexyl) phosphate
+existing/180,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/181,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/182,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/183,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/184,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/185,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/186,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/187,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/188,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/189,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/190,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/191,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/192,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/193,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/194,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/195,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/196,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/197,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/198,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/199,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/200,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/201,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/202,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/203,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/204,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/205,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/206,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/207,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/208,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/209,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/210,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/211,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/212,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/213,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/214,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/215,existing_real,existing_real,1-dodecanethiol + etoh,1-dodecanethiol + 1-undecanethiol + etoh
+existing/216,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/217,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/218,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/219,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/220,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/221,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/222,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/223,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/224,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/225,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/226,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/227,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/228,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/229,existing_real,existing_real,etoh + meoh,meoh
+existing/230,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/231,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/232,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/233,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/234,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/235,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/236,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/237,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/238,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/239,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/240,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/241,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/242,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/243,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/244,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/245,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/246,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/247,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/248,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/249,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/250,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/251,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/252,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/253,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/254,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/255,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/256,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/257,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/258,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/259,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/260,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/261,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/262,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/263,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/264,existing_real,existing_real,etoh + meoh,etoh + meoh
+existing/265,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/266,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/267,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh"
+existing/268,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh"
+existing/269,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh
+existing/270,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh + n-hexane
+existing/271,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/272,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/273,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh
+existing/274,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/275,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/276,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/277,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/278,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh
+existing/279,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh
+existing/280,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/281,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/282,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/283,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/284,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/285,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/286,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/287,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/288,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/289,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/290,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/291,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/292,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/293,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/294,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/295,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/296,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/297,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/298,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/299,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/300,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/301,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/302,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/303,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/304,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/305,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/306,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/307,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/308,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/309,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/310,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/311,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/312,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/313,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/314,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh
+existing/315,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/316,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/317,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/318,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/319,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh
+existing/320,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/321,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/322,existing_real,existing_real,1-dodecanethiol + meoh,1-undecanethiol + meoh
+existing/323,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + diethylamine + meoh"
+existing/324,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + meoh"
+existing/325,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh + n-hexane
+existing/326,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh + n-hexane
+existing/327,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + meoh"
+existing/328,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + meoh + n-hexane
+existing/329,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + meoh"
+existing/330,existing_real,existing_real,1-dodecanethiol + meoh,meoh + n-hexane + tris(2-ethylhexyl) phosphate
+existing/331,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/332,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/333,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/334,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/335,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh
+existing/336,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/337,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/338,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/339,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/340,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/341,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/342,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/343,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/344,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/345,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/346,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/347,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/348,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/349,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/350,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/351,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/352,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/353,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/354,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/355,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/356,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/357,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/358,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh"
+existing/359,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/360,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/361,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh"
+existing/362,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh
+existing/363,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh + n-hexane
+existing/364,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh + n-hexane
+existing/365,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/366,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/367,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/368,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/369,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/370,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/371,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/372,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/373,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/374,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/375,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/376,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/377,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/378,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/379,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/380,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/381,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/382,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/383,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/384,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/385,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/386,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/387,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/388,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/389,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/390,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/391,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/392,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/393,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/394,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/395,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/396,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/397,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/398,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/399,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + diethylamine + n-hexane
+existing/400,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + diethylamine + n-hexane
+existing/401,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh + n-hexane
+existing/402,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + diethylamine
+existing/403,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + diethylamine
+existing/404,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + diethylamine"
+existing/405,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + diethylamine
+existing/406,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + diethylamine
+existing/407,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + diethylamine"
+existing/408,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + diethylamine"
+existing/409,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + diethylamine + n-hexane"
+existing/410,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + diethylamine + meoh + n-hexane"
+existing/411,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + diethylamine + meoh + n-hexane"
+existing/412,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + meoh
+existing/413,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/414,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + diethylamine + meoh + n-hexane"
+existing/415,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/416,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/417,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/418,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + diethylamine + meoh + n-hexane"
+existing/419,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/420,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh + n-hexane"
+existing/421,existing_real,existing_real,1-dodecanethiol + meoh,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh"
+existing/422,existing_real,existing_real,1-dodecanethiol + meoh,1-dodecanethiol + 1-undecanethiol + 6-mercapto-1-hexanol + meoh
+existing/423,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/424,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/425,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/426,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/427,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/428,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/429,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/430,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/431,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/432,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/433,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/434,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/435,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/436,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/437,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/438,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/439,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/440,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/441,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/442,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/443,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/444,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/445,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/446,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/447,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/448,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/449,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/450,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/451,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/452,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/453,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/454,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/455,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/456,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/457,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/458,existing_real,existing_real,"6-mercapto-1-hexanol + n,n-dimethylformamide","n,n-dimethylformamide"
+existing/459,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/460,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/461,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/462,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/463,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/464,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/465,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/466,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/467,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/468,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/469,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/470,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/471,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/472,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/473,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/474,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/475,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/476,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/477,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/478,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/479,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/480,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/481,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/482,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/483,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/484,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/485,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/486,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/487,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/488,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/489,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/490,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/491,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/492,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/493,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/494,existing_real,existing_real,"n,n-dimethylformamide + pyridine","n,n-dimethylformamide + pyridine"
+existing/495,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/496,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/497,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/498,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/499,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/500,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/501,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/502,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/503,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/504,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/505,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/506,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/507,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/508,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/509,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/510,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/511,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/512,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/513,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/514,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/515,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/516,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/517,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/518,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/519,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/520,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/521,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/522,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/523,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/524,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/525,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/526,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/527,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/528,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/529,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/530,existing_real,existing_real,benzenethiol + pyridine,benzenethiol + pyridine
+existing/531,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/532,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/533,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/534,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/535,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/536,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/537,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/538,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/539,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/540,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/541,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/542,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/543,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/544,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/545,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/546,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/547,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/548,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/549,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/550,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/551,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/552,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/553,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/554,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/555,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/556,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/557,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/558,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/559,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/560,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/561,existing_real,existing_real,1-dodecanethiol + benzene,benzene
+existing/562,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/563,existing_real,existing_real,1-dodecanethiol + benzene,benzene
+existing/564,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/565,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/566,existing_real,existing_real,1-dodecanethiol + benzene,1-undecanethiol + benzene
+existing/567,existing_real,existing_real,1-dodecanethiol + benzene,benzene
+existing/568,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/569,existing_real,existing_real,1-dodecanethiol + benzene,benzene
+existing/570,existing_real,existing_real,1-dodecanethiol + benzene,1-undecanethiol + benzene
+existing/571,existing_real,existing_real,1-dodecanethiol + benzene,1-undecanethiol + benzene
+existing/572,existing_real,existing_real,1-dodecanethiol + benzene,1-undecanethiol + benzene
+existing/573,existing_real,existing_real,1-dodecanethiol + benzene,1-undecanethiol + benzene
+existing/574,existing_real,existing_real,1-dodecanethiol + benzene,1-undecanethiol + benzene
+existing/575,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/576,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/577,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/578,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+existing/579,existing_real,existing_real,1-dodecanethiol + benzene,1-dodecanethiol + 1-undecanethiol + benzene
+Mix 13/mix 13_Y0_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y0_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y0_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y0_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y0_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y0_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y1_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y1_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y1_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y1_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y1_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y1_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y2_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y2_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y2_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y2_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y2_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y2_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y3_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y3_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y3_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y3_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y3_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y3_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y4_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y4_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y4_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y4_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y4_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y4_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y5_X0.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y5_X1.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y5_X2.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y5_X3.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y5_X4.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 13/mix 13_Y5_X5.txt,pt2_real,Mix 13,n-hexane + pyridine,n-hexane + pyridine
+Mix 15/mix 15_Y0_X0.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y0_X1.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y0_X2.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y0_X3.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y0_X4.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y0_X5.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y1_X0.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y1_X1.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y1_X2.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y1_X3.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y1_X4.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y1_X5.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y2_X0.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y2_X1.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y2_X2.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y2_X3.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y2_X4.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y2_X5.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y3_X0.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y3_X1.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y3_X2.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y3_X3.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y3_X4.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y3_X5.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y4_X0.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y4_X1.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y4_X2.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y4_X3.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y4_X4.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y4_X5.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y5_X0.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y5_X1.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y5_X2.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y5_X3.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y5_X4.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 15/mix 15_Y5_X5.txt,pt2_real,Mix 15,benzene + n-hexane,1-dodecanethiol + 1-undecanethiol + benzene + etoh
+Mix 16/mix 16_Y0_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y0_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y0_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y0_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y0_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y0_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y1_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y1_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y1_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y1_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y1_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y1_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y2_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y2_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y2_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y2_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + diethylamine + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y2_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y2_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y3_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y3_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y3_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y3_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y3_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y3_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y4_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y4_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y4_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y4_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y4_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y4_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y5_X0.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y5_X1.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y5_X2.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y5_X3.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y5_X4.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 16/mix 16_Y5_X5.txt,pt2_real,Mix 16,dichloromethane + n-hexane,dichloromethane + n-hexane + tris(2-ethylhexyl) phosphate
+Mix 17/mix 17_Y0_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y0_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y0_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y0_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y0_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y0_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y1_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y1_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y1_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y1_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,pyridine
+Mix 17/mix 17_Y1_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y1_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y2_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y2_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y2_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y2_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y2_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y2_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y3_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y3_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y3_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y3_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y3_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y3_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y4_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y4_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y4_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y4_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y4_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y4_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y5_X0.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y5_X1.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y5_X2.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y5_X3.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y5_X4.txt,pt2_real,Mix 17,diethylamine + pyridine,diethylamine + pyridine
+Mix 17/mix 17_Y5_X5.txt,pt2_real,Mix 17,diethylamine + pyridine,pyridine
+Mix 18/mix 18_Y0_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y0_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y0_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y0_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y0_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y0_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + dichloromethane"
+Mix 18/mix 18_Y1_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y1_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y1_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y1_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y1_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y1_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y2_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y2_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y2_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y2_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y2_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y2_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y3_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y3_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y3_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y3_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y3_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y3_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y4_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y4_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y4_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y4_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y4_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y4_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y5_X0.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y5_X1.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y5_X2.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 18/mix 18_Y5_X3.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y5_X4.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + dichloromethane"
+Mix 18/mix 18_Y5_X5.txt,pt2_real,Mix 18,6-mercapto-1-hexanol + dichloromethane,"1,9-nonanedithiol + 1-dodecanethiol + 1-undecanethiol + dichloromethane"
+Mix 19/mix 19_Y0_X0.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y0_X1.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y0_X2.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y0_X3.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y0_X4.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y0_X5.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y1_X0.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y1_X1.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y1_X2.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y1_X3.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y1_X4.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y1_X5.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y2_X0.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y2_X1.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y2_X2.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y2_X3.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y2_X4.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y2_X5.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y3_X0.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y3_X1.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y3_X2.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y3_X3.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y3_X4.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y3_X5.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y4_X0.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y4_X1.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y4_X2.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y4_X3.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y4_X4.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y4_X5.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y5_X0.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y5_X1.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y5_X2.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y5_X3.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y5_X4.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 19/mix 19_Y5_X5.txt,pt2_real,Mix 19,benzene + pyridine,"1,9-nonanedithiol + benzene + pyridine"
+Mix 20/mix 20_Y0_X0.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y0_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y0_X2.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y0_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y0_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y0_X5.txt,pt2_real,Mix 20,benzene + toluene,"benzene + n,n-dimethylformamide + toluene"
+Mix 20/mix 20_Y1_X0.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y1_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y1_X2.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y1_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y1_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y1_X5.txt,pt2_real,Mix 20,benzene + toluene,"benzene + n,n-dimethylformamide + toluene"
+Mix 20/mix 20_Y2_X0.txt,pt2_real,Mix 20,benzene + toluene,"benzene + n,n-dimethylformamide + toluene"
+Mix 20/mix 20_Y2_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y2_X2.txt,pt2_real,Mix 20,benzene + toluene,"benzene + n,n-dimethylformamide + toluene"
+Mix 20/mix 20_Y2_X3.txt,pt2_real,Mix 20,benzene + toluene,"benzene + n,n-dimethylformamide + toluene"
+Mix 20/mix 20_Y2_X4.txt,pt2_real,Mix 20,benzene + toluene,"benzene + n,n-dimethylformamide + toluene"
+Mix 20/mix 20_Y2_X5.txt,pt2_real,Mix 20,benzene + toluene,"benzene + n,n-dimethylformamide + toluene"
+Mix 20/mix 20_Y3_X0.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y3_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y3_X2.txt,pt2_real,Mix 20,benzene + toluene,"benzene + n,n-dimethylformamide + toluene"
+Mix 20/mix 20_Y3_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y3_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y3_X5.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y4_X0.txt,pt2_real,Mix 20,benzene + toluene,"benzene + n,n-dimethylformamide + toluene"
+Mix 20/mix 20_Y4_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y4_X2.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y4_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y4_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y4_X5.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y5_X0.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y5_X1.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y5_X2.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y5_X3.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y5_X4.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 20/mix 20_Y5_X5.txt,pt2_real,Mix 20,benzene + toluene,benzene + toluene
+Mix 21/mix 21_Y0_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y0_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y0_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y0_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y0_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y0_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y1_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y1_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y1_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y1_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y1_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y1_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y2_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y2_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y2_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y2_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y2_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y2_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y3_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y3_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y3_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y3_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y3_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y3_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y4_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y4_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y4_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y4_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y4_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y4_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y5_X0.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y5_X1.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y5_X2.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y5_X3.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y5_X4.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 21/mix 21_Y5_X5.txt,pt2_real,Mix 21,acetonitrile + dichloromethane,acetonitrile + dichloromethane
+Mix 22/mix 22_Y0_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y0_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y0_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y0_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y0_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y0_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y1_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y1_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y1_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y1_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y1_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y1_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y2_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y2_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y2_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y2_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y2_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y2_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y3_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y3_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y3_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y3_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y3_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y3_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y4_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y4_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y4_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y4_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y4_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y4_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y5_X0.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y5_X1.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y5_X2.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y5_X3.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y5_X4.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
+Mix 22/mix 22_Y5_X5.txt,pt2_real,Mix 22,acetonitrile + pyridine,acetonitrile + dmmp + pyridine
