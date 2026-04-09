@@ -1,5 +1,21 @@
 # Raman Mixture Classification Pivot
 
+## Where This Fits In The Repo
+
+The repository is now organized around three main workstreams:
+
+- `Projects/Standard_Raman_Classification/`
+- `Projects/SERS_Classification/`
+- `Mixture_Classification/`
+
+This directory is the active mixture-classification workspace inside `Mixture_Classification/`.
+
+For mixture work specifically:
+
+- active unmixing code, data, and results: `Mixture_Classification/Unmixing_Pipeline/`
+- legacy Siamese + MLP mixture experiments: `Mixture_Classification/Legacy_Siamese_Pipeline/`
+- archived dead ends: `Mixture_Classification/Archive/`
+
 ## Why This Directory Exists
 
 This directory is a clean restart for Raman mixture classification under the correct problem framing:
@@ -71,7 +87,7 @@ Runtime data now lives under:
 - `Data/pt2/Mixtures.txt`
 - `Data/pt2/<compound-or-mixture>/txt/*.txt`
 
-The active scripts should use the shared loaders in `Scripts/unmixing_common.py` rather than reaching into `Notebooks/` or sibling dataset folders directly.
+The active scripts should use the shared loaders in `Scripts/unmixing_common.py` rather than reaching into `Legacy_Siamese_Pipeline/Notebooks/` or repo-level dataset folders directly.
 
 ## Problem Definition
 
@@ -158,7 +174,8 @@ There are two reference definitions that matter.
 
 Original reference:
 
-- source: `Notebooks/reference_v2.csv`
+- historical source: `Legacy_Siamese_Pipeline/Notebooks/reference_v2.csv`
+- active self-contained copy: `Data/reference/reference_v2.csv`
 - pure-compound library only
 - 12 compounds:
   - `1,9-nonanedithiol`

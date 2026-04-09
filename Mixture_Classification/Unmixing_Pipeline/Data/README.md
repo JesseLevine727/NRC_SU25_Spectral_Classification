@@ -17,8 +17,8 @@ This directory makes the active `Unmixing_Pipeline` self-contained.
 
 The earlier experiment scripts reached into:
 
-- `Notebooks/`
-- `../Jesse dataset pt2/`
+- `Legacy_Siamese_Pipeline/Notebooks/`
+- repo-level dataset folders such as `Data/Jesse_Dataset_PT2/`
 
 That made the active pipeline harder to reason about and harder to move or version cleanly.
 

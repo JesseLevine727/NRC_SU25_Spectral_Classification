@@ -9,10 +9,10 @@ import pandas as pd
 from sklearn.metrics import precision_recall_fscore_support
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-UNMIXING_RESULTS = REPO_ROOT / "Unmixing_Pipeline" / "Results"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+UNMIXING_RESULTS = REPO_ROOT / "Mixture_Classification" / "Unmixing_Pipeline" / "Results"
 OUTPUT_DIR = UNMIXING_RESULTS / "best_models_full_new_dataset_comparison"
-LEGACY_SCRIPTS_DIR = REPO_ROOT / "Scripts"
+LEGACY_SCRIPTS_DIR = REPO_ROOT / "Mixture_Classification" / "Legacy_Siamese_Pipeline" / "Scripts"
 if str(LEGACY_SCRIPTS_DIR) not in sys.path:
     sys.path.append(str(LEGACY_SCRIPTS_DIR))
 
@@ -53,6 +53,8 @@ ALL_CLASSES = [
 
 SIAMESE_THRESHOLDS_PATH = (
     REPO_ROOT
+    / "Mixture_Classification"
+    / "Legacy_Siamese_Pipeline"
     / "Notebooks"
     / "pt2_augmented_existing_real_recalibrated"
     / "calibrated_thresholds_17class.json"

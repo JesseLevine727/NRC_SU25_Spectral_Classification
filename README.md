@@ -1,60 +1,61 @@
-# Spectral Classification Project
+# NRC SU25 Spectral Classification
 
-This repository contains implementations of various machine learning and deep learning methods for the **one-shot classification of chemical spectra**. The goal is to identify the **chemical identity** of an unknown **Raman spectrum** by finding the best match from a reference library of known spectra.
+This repository is organized around three main projects:
 
-The project explores and compares **four distinct approaches**, inspired by the methods described in *[Halas et al., ACS Nano, 2023](https://doi.org/10.1021/acsnano.3c05510)*.
+- [Projects/Standard_Raman_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/Standard_Raman_Classification)
+- [Projects/SERS_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification)
+- [Mixture_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification)
 
+The supporting shared material lives in:
 
----
+- [Data](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data)
+- [Docs](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Docs)
+- [Archive](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Archive)
 
-## Core Concept: Spectral Identification
+## Repo Map
 
-The fundamental problem is to take a **high-dimensional spectrum** from an unknown sample and accurately identify it by comparing it against a **library of known spectra**. Each method in this repository tackles this problem through a different **feature extraction** and **similarity matching** strategy.
+### Standard Raman classification
 
-# Spectral Classification Project
+- active home: [Projects/Standard_Raman_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/Standard_Raman_Classification)
+- core scripts: [Projects/Standard_Raman_Classification/Scripts](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/Standard_Raman_Classification/Scripts)
+- exploratory notebooks: [Projects/Standard_Raman_Classification/Notebooks](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/Standard_Raman_Classification/Notebooks)
+- extended Siamese work: [Projects/Standard_Raman_Classification/ExtendingSiamese](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/Standard_Raman_Classification/ExtendingSiamese)
 
-This repository tracks the evolution of one-shot spectral classification for Raman and SERS data.  
-The work progresses from implementing the 2023 Halas “CaPSim” method to Siamese-network
-approaches for mixtures and SERS spectra, with extensive clustering analyses.
+### SERS classification
 
-## Project Evolution
+- active home: [Projects/SERS_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification)
+- current workspace: [Projects/SERS_Classification/Workspace](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace)
 
-1. **CaPSim (Halas et al., ACS Nano 2023)**  
-   - Implementation of Characteristic Peak Similarity for single Raman spectra  
-   - Code: `Scripts/CaPSim.py`  
-   - Notebook: `Notebooks/CaPE_CaPSIM_Notebook.ipynb`
+### Mixture classification
 
-2. **CaPSim + k-NN**  
-   - Adds a k-nearest-neighbor classifier on CaPSim features  
-   - Code: `Scripts/CaPSim_kNN.py`  
-   - Notebook: `Notebooks/CaPSim_with_kNN.ipynb`
+- active home: [Mixture_Classification](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification)
+- active unmixing pipeline: [Mixture_Classification/Unmixing_Pipeline](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline)
+- legacy Siamese pipeline: [Mixture_Classification/Legacy_Siamese_Pipeline](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Legacy_Siamese_Pipeline)
+- result index: [Mixture_Classification/RESULTS_INDEX.md](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/RESULTS_INDEX.md)
 
-3. **Siamese Network for Raman One‑Shot Learning**  
-   - 1D convolutional Siamese model replacing hand‑engineered features  
-   - Code: `Scripts/SiameseNetwork.py`  
-   - Notebook: `Notebooks/Siamese_Network_OneShot.ipynb`
+## Datasets
 
-4. **SERS Single‑Spectrum Classification**  
-   - Adapts the Siamese approach to SERS signals  
-   - Data & notebook: `SERS_to_ Raman/Siamese_Network_OneShot.ipynb`
+The top-level datasets are grouped under [Data](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data):
 
-5. **Raman Mixture Classification (Siamese + MLP)**  
-   - Embeddings from a Siamese network fed to an MLP classifier  
-   - Notebook: `Mixture_Classification/Notebooks/Siamese_MLP_3.ipynb`
+- [Data/Jesse_Dataset](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Jesse_Dataset): original pure/reference Raman data and related exports
+- [Data/Jesse_Dataset_v2](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Jesse_Dataset_v2): later mixed Raman/SERS dataset bundle
+- [Data/Jesse_Dataset_Update](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Jesse_Dataset_Update): updated Raman and SERS folders
+- [Data/Jesse_Dataset_PT2](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Jesse_Dataset_PT2): pt2 pure and mixture spectra
+- [Data/Feb26_Spectra](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Feb26_Spectra): February 26 spectra collection
+- [Data/Test_Data](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Data/Test_Data): split query/reference CSVs used in earlier experiments
 
-## Clustering & Exploratory Analyses
-- `Notebooks/PCA_Centroid_Correlation_Notebook.ipynb` – PCA visualization and centroid correlations  
-- `Mixture_Classification/Notebooks/PCA_tSNE_UMAP_HDBSCAN.ipynb` – PCA, t‑SNE, UMAP, and HDBSCAN clustering for standard Raman single spectra and Mixtures
-- `SERS_to_Raman` - PCA, t‑SNE, UMAP, and HDBSCAN clustering for SERS data  
+The active mixture pipeline also carries its own self-contained copy of the data it needs under [Mixture_Classification/Unmixing_Pipeline/Data](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Data).
 
-## Repository Structure
-- `Scripts/` – Core Python implementations (CaPSim, CaPSim_kNN, PCA, Siamese)
-- `Notebooks/` – Development notebooks for single-spectrum models
-- `SERS_to_ Raman/` – SERS datasets and notebooks
-- `Mixture_Classification/` – Mixture datasets, Siamese + MLP workflow, and clustering studies
-- `Papers/` – Related literature and presentations
+## Results
 
-## Reference
-- N. J. Halas et al., “Identifying Surface-Enhanced Raman Spectra with a Raman Library Using Machine Learning,” ACS Nano, 2023.
+If you need the most relevant current results first:
 
+- mixture unmixing results: [Mixture_Classification/Unmixing_Pipeline/Results](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Unmixing_Pipeline/Results)
+- mixture result guide: [Mixture_Classification/RESULTS_INDEX.md](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/RESULTS_INDEX.md)
+- legacy mixture Siamese outputs: [Mixture_Classification/Legacy_Siamese_Pipeline/Notebooks](/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Mixture_Classification/Legacy_Siamese_Pipeline/Notebooks)
 
+## Notes
+
+- `Mixture_Classification/Unmixing_Pipeline` is the active mixture-classification codebase.
+- `Mixture_Classification/Legacy_Siamese_Pipeline` is preserved for comparison and historical reproducibility.
+- `Archive` contains legacy loose notes and ad hoc material that are no longer part of the main workflow.

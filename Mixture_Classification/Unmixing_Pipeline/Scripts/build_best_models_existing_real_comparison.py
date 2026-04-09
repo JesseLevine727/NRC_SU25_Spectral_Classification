@@ -9,8 +9,8 @@ import pandas as pd
 from sklearn.metrics import precision_recall_fscore_support
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-SCRIPTS_ROOT = REPO_ROOT / "Scripts"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+SCRIPTS_ROOT = REPO_ROOT / "Mixture_Classification" / "Legacy_Siamese_Pipeline" / "Scripts"
 if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.append(str(SCRIPTS_ROOT))
 
@@ -21,9 +21,16 @@ from evaluate_pt2_augmented_existing_real import (  # noqa: E402
 from retrain_with_pt2_reference import load_reference  # noqa: E402
 
 
-RESULTS_DIR = REPO_ROOT / "Unmixing_Pipeline" / "Results" / "best_models_existing_real_comparison"
+RESULTS_DIR = (
+    REPO_ROOT
+    / "Mixture_Classification"
+    / "Unmixing_Pipeline"
+    / "Results"
+    / "best_models_existing_real_comparison"
+)
 CLASSICAL_PREDICTIONS = (
     REPO_ROOT
+    / "Mixture_Classification"
     / "Unmixing_Pipeline"
     / "Results"
     / "pair_nnls_family_fallback"
@@ -32,6 +39,7 @@ CLASSICAL_PREDICTIONS = (
 )
 DEEP_PREDICTIONS = (
     REPO_ROOT
+    / "Mixture_Classification"
     / "Unmixing_Pipeline"
     / "Results"
     / "deep_similarity_supervision"
@@ -40,6 +48,8 @@ DEEP_PREDICTIONS = (
 )
 SIAMESE_THRESHOLDS = (
     REPO_ROOT
+    / "Mixture_Classification"
+    / "Legacy_Siamese_Pipeline"
     / "Notebooks"
     / "pt2_augmented_existing_real_recalibrated"
     / "calibrated_thresholds_17class.json"
