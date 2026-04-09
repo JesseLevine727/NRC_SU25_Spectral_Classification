@@ -240,6 +240,8 @@ def build_per_class_table(per_class_by_model: dict[str, pd.DataFrame]) -> str:
         d_row = deep.loc[chemical]
         s_row = siamese.loc[chemical]
         support = int(max(c_row["support"], d_row["support"], s_row["support"]))
+        if support == 0:
+            continue
         rows.append(
             "        "
             + " & ".join(
@@ -370,6 +372,7 @@ def main() -> None:
     summary_df.to_csv(summary_csv, index=False)
 
     per_class_merged = classical_per_class[["chemical", "support"]].copy()
+    per_class_merged = per_class_merged[per_class_merged["support"] > 0].copy()
     for model_name, model_df in per_class_by_model.items():
         slug = (
             model_name.lower()
