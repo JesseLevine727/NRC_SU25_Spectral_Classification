@@ -1,0 +1,7 @@
+held_out_substrate,prototype_mode,n_train,n_test,test_labels,accuracy,balanced_accuracy,macro_f1,final_loss
+Ag,substrate_balanced,250,25,benzenethiol,0.72,0.72,0.4186046511627907,0.00016819182835752145
+AgNP,substrate_balanced,225,50,"4np,pyridine",0.42,0.42,0.3043478260869565,0.0002829606464042121
+Au,substrate_balanced,250,25,benzenethiol,0.96,0.96,0.4897959183673469,0.00018297727266326547
+AuNP,substrate_balanced,250,25,pyridine,1.0,1.0,1.0,0.0002889679876388982
+PICO,substrate_balanced,200,75,"4np,bt,pyridine",0.68,0.68,0.5096153846153846,0.00031729710171930493
+pSERS,substrate_balanced,200,75,"4np,bt,pyridine",0.6533333333333333,0.6533333333333333,0.49489795918367346,0.00023838157998397946
