@@ -1,0 +1,42 @@
+{
+  "dataset": {
+    "mode": "baseline_corrected",
+    "n_real_mixture_spectra": 904,
+    "existing_real_spectra": 580,
+    "pt2_real_spectra": 324
+  },
+  "nnls": {
+    "repeats": 5,
+    "total_seconds_mean": 7.687208031804767,
+    "total_seconds_std": 0.01526885451466494,
+    "milliseconds_per_sample_mean": 8.503548707748635,
+    "milliseconds_per_sample_std": 0.01689032579055856
+  },
+  "deep": {
+    "repeats": 5,
+    "device": "cpu",
+    "batched_total_seconds_mean": 0.001682461192831397,
+    "batched_total_seconds_std": 0.00038013424397562536,
+    "batched_milliseconds_per_sample_mean": 0.0018611296380878287,
+    "batched_milliseconds_per_sample_std": 0.0004205024822739218,
+    "single_total_seconds_mean": 0.06539875598391517,
+    "single_total_seconds_std": 0.0021712528354018382,
+    "single_milliseconds_per_sample_mean": 0.0723437566193752,
+    "single_milliseconds_per_sample_std": 0.002401828357745396,
+    "metrics": {
+      "exact_match": 0.9734513274336283,
+      "micro_precision": 0.9867256637168141,
+      "micro_recall": 0.9867256637168141,
+      "micro_f1": 0.9867256637168141,
+      "mean_true_labels": 2.0,
+      "mean_predicted_labels": 2.0
+    }
+  },
+  "deep_model_trained_during_this_run": false,
+  "notes": [
+    "Timings exclude data loading and deep-model training.",
+    "NNLS timing is an exhaustive search over all 136 binary supports using the replicate dictionary.",
+    "Deep batched timing runs all 904 spectra in one tensor batch.",
+    "Deep single timing loops one spectrum at a time through the trained network."
+  ]
+}

@@ -1,0 +1,4 @@
+method,mode,total_seconds_mean,total_seconds_std,milliseconds_per_sample_mean,milliseconds_per_sample_std
+Replicate-Dictionary Pair NNLS,per-spectrum loop,7.687208031804767,0.01526885451466494,8.503548707748635,0.01689032579055856
+Similarity-Supervised Coefficient Regressor,batched forward pass,0.001682461192831397,0.00038013424397562536,0.0018611296380878287,0.0004205024822739218
+Similarity-Supervised Coefficient Regressor,single-spectrum loop,0.06539875598391517,0.0021712528354018382,0.0723437566193752,0.002401828357745396
