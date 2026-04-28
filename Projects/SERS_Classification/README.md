@@ -7,16 +7,18 @@ This directory groups the SERS-focused classification and exploration work.
 - [Workspace](Workspace)
   Mixed notebook-and-data workspace containing SERS references, cleaned CSVs, txt exports, clustering notebooks, and Siamese one-shot experiments.
 
-## Current substrate-agnostic work
+## Current Substrate-Agnostic Work
 
-- [SERS_SUBSTRATE_AGNOSTIC_AUDIT.md](SERS_SUBSTRATE_AGNOSTIC_AUDIT.md)
+- [docs/SERS_SUBSTRATE_AGNOSTIC_AUDIT.md](docs/SERS_SUBSTRATE_AGNOSTIC_AUDIT.md)
   Documents why the original notebook results were chemical-substrate pair classification and summarizes the current leave-one-substrate-out substrate-agnostic baselines.
-- [AGNP_FAILURE_DIAGNOSTIC.md](AGNP_FAILURE_DIAGNOSTIC.md)
+- [docs/AGNP_FAILURE_DIAGNOSTIC.md](docs/AGNP_FAILURE_DIAGNOSTIC.md)
   Details the current AgNP failure mode after canonicalizing `bt -> benzenethiol`.
-- `sers_siamese_substrate_agnostic.py`
+- [Workspace/substrate_agnostic](Workspace/substrate_agnostic)
+  Cleaned result tree for the current substrate-agnostic story: best model, diagnostics, sweeps, baselines, and archived comparison runs.
+- `scripts/sers_siamese_substrate_agnostic.py`
   CUDA-first Siamese/triplet training script for substrate-held-out chemical classification.
-- `sers_agnp_deep_dive.py`
-  Generates the average spectra, PCA, prototype-distance, and raw-file diagnostics in `Workspace/agnp_diagnostics/`.
+- `scripts/sers_agnp_deep_dive.py`
+  Generates average spectra, PCA, UMAP, t-SNE, prototype-distance, and raw-file diagnostics in `Workspace/substrate_agnostic/diagnostics/agnp_failure/`.
 
 ## Typical contents in `Workspace`
 
@@ -24,6 +26,20 @@ This directory groups the SERS-focused classification and exploration work.
 - Raman reference CSVs used for comparison
 - notebook-driven exploratory analysis
 - per-platform folders such as `Ag`, `AgNP`, `Au`, `AuNP`, `PICO`, and `pSERS`
+- `substrate_agnostic/` for current substrate-agnostic outputs and diagnostics
+
+Current organization:
+
+- `Workspace/data/processed/`
+  Processed SERS CSVs, including `consolidated_SERS.csv`.
+- `Workspace/data/raw_by_substrate/`
+  Raw per-substrate SERS text exports grouped by substrate.
+- `Workspace/data/raw_curated/`
+  Curated raw SERS folder hierarchy used by the diagnostics.
+- `Workspace/data/reference/` and `Workspace/references/`
+  Raman/reference CSVs and raw reference exports.
+- `Workspace/notebooks/`
+  Legacy exploratory notebooks, including the original Siamese pair-classification notebooks.
 
 ## Related datasets
 

@@ -27,7 +27,7 @@ from sklearn.metrics import accuracy_score, balanced_accuracy_score, confusion_m
 from torch.utils.data import DataLoader, Dataset
 
 
-DEFAULT_DATA = Path("Workspace/consolidated_SERS.csv")
+DEFAULT_DATA = Path("Workspace/data/processed/consolidated_SERS.csv")
 DEFAULT_CANONICAL_LABELS = {
     "bt": "benzenethiol",
 }
@@ -590,11 +590,15 @@ def main() -> int:
         action="store_true",
         help="Permit CPU training. Without this flag, CPU execution is rejected.",
     )
-    parser.add_argument("--out", type=Path, default=Path("Workspace/siamese_triplet_substrate_agnostic_results.csv"))
+    parser.add_argument(
+        "--out",
+        type=Path,
+        default=Path("Workspace/substrate_agnostic/current/best_siamese_triplet/results.csv"),
+    )
     parser.add_argument(
         "--confusions-dir",
         type=Path,
-        default=Path("Workspace/siamese_triplet_substrate_agnostic_confusions"),
+        default=Path("Workspace/substrate_agnostic/current/best_siamese_triplet/confusions"),
     )
     args = parser.parse_args()
 

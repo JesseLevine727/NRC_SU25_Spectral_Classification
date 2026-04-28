@@ -9,7 +9,7 @@ Evidence:
 - `Workspace/Siamese_Network_OneShot*.ipynb` creates `Class = Label + "__" + Substrate`.
 - The saved Siamese reports score classes such as `4np__AgNP`, `pyridine__PICO`, and `bt__pSERS`.
 - `Workspace/PCA_Centroid_Correlation_Notebook.ipynb` also constructs the same chemical-substrate `Class` for SERS PCA analysis.
-- `Workspace/consolidated_SERS.csv` has separate `Label` and `Substrate` columns, but the previous supervised Siamese target used their concatenation.
+- `Workspace/data/processed/consolidated_SERS.csv` has separate `Label` and `Substrate` columns, but the previous supervised Siamese target used their concatenation.
 
 ## Label Canonicalization
 
@@ -23,7 +23,7 @@ The source CSV is not modified; canonicalization happens in the training/evaluat
 
 ## Data Coverage
 
-`Workspace/consolidated_SERS.csv` contains 503 SERS spectra over 5 chemical labels and 6 substrate labels.
+`Workspace/data/processed/consolidated_SERS.csv` contains 503 SERS spectra over 5 chemical labels and 6 substrate labels.
 
 | Chemical | Ag | AgNP | Au | AuNP | PICO | pSERS |
 |---|---:|---:|---:|---:|---:|---:|
@@ -44,10 +44,10 @@ Implications:
 Run:
 
 ```bash
-./.venv/bin/python sers_substrate_agnostic_detection.py
-./.venv/bin/python sers_siamese_substrate_agnostic.py --feature derivative_1 --loss triplet --prototype-mode substrate_balanced --margin 0.2
-./.venv/bin/python sers_siamese_substrate_agnostic.py --feature derivative_1 --loss batch_hard_triplet
-./.venv/bin/python run_siamese_sers_sweep.py --epochs 100 --seeds 42 --out-dir Workspace/siamese_sweep
+./.venv/bin/python scripts/sers_substrate_agnostic_detection.py
+./.venv/bin/python scripts/sers_siamese_substrate_agnostic.py --feature derivative_1 --loss triplet --prototype-mode substrate_balanced --margin 0.2
+./.venv/bin/python scripts/sers_siamese_substrate_agnostic.py --feature derivative_1 --loss batch_hard_triplet --out Workspace/substrate_agnostic/archive/comparison_runs/batch_hard_derivative1_results.csv
+./.venv/bin/python scripts/run_siamese_sers_sweep.py --epochs 100 --seeds 42
 ```
 
 Both scripts evaluate chemical-label prediction with leave-one-substrate-out folds. Substrate is used only as the held-out group, not as a target. The Siamese script keeps the original notebook architecture but uses chemical `Label` for contrastive pairs instead of `Label__Substrate`.
@@ -101,21 +101,18 @@ Current best classical comparison:
 - Mean held-out-substrate balanced accuracy: `0.761`
 - Mean held-out-substrate macro F1: `0.535`
 
-Outputs:
+Cleaned output layout:
 
-- `Workspace/substrate_agnostic_results.csv`
-- `Workspace/substrate_agnostic_confusions/*.csv`
-- `Workspace/siamese_substrate_agnostic_derivative1_results.csv`
-- `Workspace/siamese_substrate_agnostic_derivative1_confusions/*.csv`
-- `Workspace/siamese_triplet_m02_substrate_agnostic_peak_results.csv`
-- `Workspace/siamese_triplet_m02_substrate_agnostic_peak_confusions/*.csv`
-- `Workspace/siamese_batch_hard_substrate_agnostic_derivative1_results.csv`
-- `Workspace/siamese_batch_hard_substrate_agnostic_derivative1_confusions/*.csv`
-- `Workspace/siamese_sweep/summary.csv`
-- `Workspace/siamese_canonical_derivative1_triplet_results.csv`
-- `Workspace/siamese_canonical_derivative1_triplet_confusions/*.csv`
-- `Workspace/agnp_diagnostics/*.csv`
-- `Workspace/agnp_diagnostics/*.png`
+- `Workspace/substrate_agnostic/current/best_siamese_triplet/results.csv`
+- `Workspace/substrate_agnostic/current/best_siamese_triplet/confusions/*.csv`
+- `Workspace/substrate_agnostic/diagnostics/agnp_failure/*.csv`
+- `Workspace/substrate_agnostic/diagnostics/agnp_failure/*.png`
+- `Workspace/substrate_agnostic/diagnostics/geometry_analysis/*.csv`
+- `Workspace/substrate_agnostic/diagnostics/geometry_analysis/geometry_analysis.md`
+- `Workspace/substrate_agnostic/sweeps/siamese_feature_loss_sweep/summary.csv`
+- `Workspace/substrate_agnostic/classical_baselines/results.csv`
+- `Workspace/substrate_agnostic/classical_baselines/confusions/*.csv`
+- `Workspace/substrate_agnostic/archive/comparison_runs/`
 
 ## AgNP Failure Deep Dive
 
@@ -128,19 +125,21 @@ The AgNP confusion is concentrated in `4np`:
 | 4np | 0 | 25 | 0 |
 | pyridine | 0 | 3 | 22 |
 
-The deep-dive diagnostics in `Workspace/agnp_diagnostics/` show:
+The deep-dive diagnostics in `Workspace/substrate_agnostic/diagnostics/agnp_failure/` show:
 
 - The raw `4np` AgNP files are present: 25 map spectra, each 1024 rows by 2 columns.
 - Average spectra and the raw-file audit show the AgNP `4np` map is heterogeneous, with many spectra peaking near `1094-1096 cm^-1` and others near `1570-1585 cm^-1`.
 - In first-derivative input PCA, AgNP `4np` remains closer to `4np` than to `benzenethiol`.
 - In the trained AgNP-held-out Siamese embedding, AgNP `4np` moves closer to the `benzenethiol` prototype than the `4np` prototype.
+- UMAP and t-SNE diagnostics were added for the derivative input space and the Siamese embedding spaces. They are useful qualitative figures, but the primary evidence remains the leave-one-substrate-out confusion matrices and prototype distances.
+- All-class geometry analysis shows the derivative input has no negative class-level prototype margins, while the Siamese embedding has exactly one negative margin: held-out `AgNP` `4np` collapsing toward `benzenethiol`. PCA, UMAP, and t-SNE projection tables were generated for every held-out substrate and show the same unique negative embedding case.
 
 This means the failure is not simply "not enough data" in a generic sense. The specific issue is that the learned embedding does not have enough substrate coverage to preserve `4np` identity when AgNP is absent from training for that chemical. The derivative representation still contains useful chemical structure, but the Siamese embedding collapses AgNP `4np` toward `benzenethiol`.
 
 ## Practical Next Steps
 
 - Treat old 92.8-98.8% Siamese accuracy as pair-classification accuracy, not substrate-agnostic performance.
-- Use `sers_substrate_agnostic_detection.py` as the baseline gate for future work.
+- Use `scripts/sers_substrate_agnostic_detection.py` as the baseline gate for future work.
 - Add more chemicals measured on more substrates, especially missing chemical-substrate combinations and non-singleton chemicals like `n,n-dimethylformamide`.
 - Optimize on leave-one-substrate-out validation only; random row splits are not adequate for this goal.
 - Try hybrid inference or an auxiliary geometry-preserving loss before increasing model capacity, because the AgNP failure is introduced by the learned embedding rather than by the first-derivative input representation.

@@ -15,8 +15,10 @@ import numpy as np
 import pandas as pd
 import torch
 from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
 from sklearn.metrics import confusion_matrix
 from torch.utils.data import DataLoader
+from umap import UMAP
 
 import sers_siamese_substrate_agnostic as sers
 
@@ -114,21 +116,68 @@ def save_average_spectra(df, cols, out_dir):
     pd.DataFrame(rows).to_csv(out_dir / "average_spectra_summary.csv", index=False)
 
 
-def pca_plot(features, labels, substrates, title, out_path):
-    coords = PCA(n_components=2, random_state=42).fit_transform(features)
-    plot_df = pd.DataFrame({"pc1": coords[:, 0], "pc2": coords[:, 1], "label": labels, "substrate": substrates})
+def plot_projection(coords, labels, substrates, title, out_path, x_label, y_label):
+    plot_df = pd.DataFrame(
+        {x_label: coords[:, 0], y_label: coords[:, 1], "label": labels, "substrate": substrates}
+    )
     plot_df.to_csv(out_path.with_suffix(".csv"), index=False)
     fig, ax = plt.subplots(figsize=(9, 7))
     for (label, substrate), group in plot_df.groupby(["label", "substrate"]):
-        ax.scatter(group["pc1"], group["pc2"], s=28, alpha=0.75, label=f"{label}_{substrate}")
+        ax.scatter(group[x_label], group[y_label], s=28, alpha=0.75, label=f"{label}_{substrate}")
     ax.set_title(title)
-    ax.set_xlabel("PC1")
-    ax.set_ylabel("PC2")
+    ax.set_xlabel(x_label.upper())
+    ax.set_ylabel(y_label.upper())
     ax.legend(fontsize=7, ncol=2)
     ax.grid(alpha=0.2)
     fig.tight_layout()
     fig.savefig(out_path, dpi=180)
     plt.close(fig)
+
+
+def pca_plot(features, labels, substrates, title, out_path):
+    coords = PCA(n_components=2, random_state=42).fit_transform(features)
+    plot_projection(coords, labels, substrates, title, out_path, "pc1", "pc2")
+
+
+def tsne_plot(features, labels, substrates, title, out_path, seed):
+    coords = TSNE(
+        n_components=2,
+        perplexity=20,
+        init="pca",
+        learning_rate="auto",
+        random_state=seed,
+    ).fit_transform(features)
+    plot_projection(coords, labels, substrates, title, out_path, "tsne1", "tsne2")
+
+
+def umap_plot(features, labels, substrates, title, out_path, seed):
+    coords = UMAP(
+        n_components=2,
+        n_neighbors=15,
+        min_dist=0.1,
+        metric="euclidean",
+        random_state=seed,
+    ).fit_transform(features)
+    plot_projection(coords, labels, substrates, title, out_path, "umap1", "umap2")
+
+
+def nonlinear_diagnostics(features, labels, substrates, prefix, title_prefix, out_dir, seed):
+    tsne_plot(
+        features,
+        labels,
+        substrates,
+        f"t-SNE of {title_prefix}",
+        out_dir / f"{prefix}_tsne.png",
+        seed,
+    )
+    umap_plot(
+        features,
+        labels,
+        substrates,
+        f"UMAP of {title_prefix}",
+        out_dir / f"{prefix}_umap.png",
+        seed,
+    )
 
 
 def fold_diagnostics(X, y, groups, held_out, args, out_dir, device):
@@ -166,10 +215,19 @@ def fold_diagnostics(X, y, groups, held_out, args, out_dir, device):
         f"Siamese embedding PCA, held out {held_out}",
         out_dir / f"{held_out}_embedding_pca.png",
     )
+    nonlinear_diagnostics(
+        embeddings,
+        y,
+        groups,
+        f"{held_out}_embedding",
+        f"Siamese embedding, held out {held_out}",
+        out_dir,
+        args.seed,
+    )
 
 
 def raw_file_audit(out_dir):
-    paths = sorted(Path("Workspace/SERs/4-NP - 632nm/AgNP").glob("*.txt"))
+    paths = sorted(Path("Workspace/data/raw_curated/SERs/4-NP - 632nm/AgNP").glob("*.txt"))
     rows = []
     for path in paths:
         data = np.loadtxt(path)
@@ -190,7 +248,11 @@ def raw_file_audit(out_dir):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--out-dir", type=Path, default=Path("Workspace/agnp_diagnostics"))
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        default=Path("Workspace/substrate_agnostic/diagnostics/agnp_failure"),
+    )
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--embed-dim", type=int, default=64)
@@ -212,7 +274,7 @@ def main() -> int:
     args.out_dir.mkdir(parents=True, exist_ok=True)
     device = torch.device("cuda")
     df, cols = sers.load_dataset(
-        Path("Workspace/consolidated_SERS.csv"),
+        Path("Workspace/data/processed/consolidated_SERS.csv"),
         args.crop_min,
         args.crop_max,
         args.min_substrates,
@@ -226,6 +288,15 @@ def main() -> int:
     y = df["Label"].astype(str).to_numpy()
     groups = df["Substrate"].astype(str).to_numpy()
     pca_plot(X, y, groups, "PCA of derivative_1 input features", args.out_dir / "input_derivative1_pca.png")
+    nonlinear_diagnostics(
+        X,
+        y,
+        groups,
+        "input_derivative1",
+        "derivative_1 input features",
+        args.out_dir,
+        args.seed,
+    )
     for held_out in ["AgNP", "pSERS"]:
         fold_diagnostics(X, y, groups, held_out, args, args.out_dir, device)
     raw_file_audit(args.out_dir)

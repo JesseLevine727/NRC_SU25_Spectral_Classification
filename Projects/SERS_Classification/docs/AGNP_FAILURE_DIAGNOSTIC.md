@@ -25,7 +25,7 @@ Per held-out substrate:
 
 ## What Fails In AgNP
 
-`Workspace/siamese_canonical_derivative1_triplet_confusions/AgNP.csv`:
+`Workspace/substrate_agnostic/current/best_siamese_triplet/confusions/AgNP.csv`:
 
 | True | Pred 4np | Pred benzenethiol | Pred pyridine |
 |---|---:|---:|---:|
@@ -40,7 +40,7 @@ So the dominant failure is:
 
 ## Prototype-Distance Evidence
 
-Diagnostics were generated in `Workspace/agnp_diagnostics/`.
+Diagnostics were generated in `Workspace/substrate_agnostic/diagnostics/agnp_failure/`.
 
 The diagnostic bundle includes five checks:
 
@@ -48,6 +48,7 @@ The diagnostic bundle includes five checks:
 - Prototype-distance tables for held-out `AgNP` and held-out `pSERS`.
 - PCA of the first-derivative input representation.
 - PCA of the trained Siamese embeddings for the held-out `AgNP` and `pSERS` folds.
+- UMAP and t-SNE projections for the same first-derivative input and Siamese embedding spaces.
 - Raw-file and label audit for `4np` on `AgNP`.
 
 For the AgNP-held-out model, AgNP `4np` spectra are much closer to the `benzenethiol` prototype than to the `4np` prototype:
@@ -91,12 +92,73 @@ The network/prototype geometry is creating the AgNP 4np -> benzenethiol collapse
 The derivative input representation itself still contains a usable 4np signal.
 ```
 
+UMAP and t-SNE were added as qualitative checks. These projections are useful visual evidence because they emphasize local neighborhood structure, but they should not be treated as stronger evidence than prototype distances or held-out confusion matrices. The useful interpretation is whether the same failure pattern appears across multiple projections:
+
+- In the AgNP-held-out Siamese embedding UMAP/t-SNE plots, AgNP `4np` separates from the trained `4np` PICO/pSERS cluster and sits much closer to the benzenethiol region than it should.
+- In the pSERS-held-out Siamese embedding UMAP/t-SNE plots, the three chemical identities remain cleanly separated, matching the perfect pSERS confusion matrix.
+- In the derivative-input UMAP/t-SNE plots, AgNP `4np` still shows local neighborhood ambiguity with benzenethiol-like regions, which reinforces that AgNP `4np` is the hard chemical-substrate case rather than a random model artifact.
+
+## All-Class Geometry Analysis
+
+`Workspace/substrate_agnostic/diagnostics/geometry_analysis/` quantifies the same effect across all held-out substrates and all chemical classes. It now also writes PCA, UMAP, and t-SNE projection coordinate tables for every held-out fold:
+
+```text
+6 held-out substrates x 2 spaces x 3 projections = 36 projection CSVs
+```
+
+The key metric is:
+
+```text
+margin = nearest wrong chemical prototype distance - own chemical prototype distance
+```
+
+Positive margin means the held-out spectra are closer to their own chemical prototype. Negative margin means they are closer to a wrong chemical prototype.
+
+The derivative-input space has no negative class-level margins. Its weakest case is already `AgNP 4np`, but it is barely positive:
+
+```text
+derivative input, held-out AgNP, true 4np:
+own distance = 1.082
+nearest wrong distance = 1.087
+margin = +0.005
+accuracy = 0.600
+nearest wrong chemical = benzenethiol
+```
+
+The Siamese embedding creates one negative class-level margin, and it is exactly the observed failure:
+
+```text
+Siamese embedding, held-out AgNP, true 4np:
+own distance = 0.528
+nearest wrong distance = 0.275
+margin = -0.253
+accuracy = 0.000
+nearest wrong chemical = benzenethiol
+dominant prediction = benzenethiol
+```
+
+Across all classes, the embedding improves average label separation, but the AgNP `4np` margin flips sign:
+
+| Space | Mean class accuracy | Mean margin |
+|---|---:|---:|
+| derivative input | 0.938 | 0.305 |
+| Siamese embedding | 0.865 | 0.490 |
+
+So the embedding generally makes classes more compact and chemically separated, but it over-warps the weakest derivative-space case. This is why the AgNP failure is best interpreted as a representation-collapse problem rather than a simple global failure of the Siamese method.
+
+The projection-level result is consistent with the prototype result:
+
+- PCA of the Siamese embedding has one negative projected centroid margin: held-out `AgNP`, `4np_AgNP`.
+- UMAP of the Siamese embedding has one negative projected centroid margin: held-out `AgNP`, `4np_AgNP`.
+- t-SNE of the Siamese embedding has one negative projected centroid margin: held-out `AgNP`, `4np_AgNP`.
+- Derivative-input UMAP/t-SNE show some qualitative local-neighborhood ambiguity, but derivative-input prototype geometry does not collapse any class to a wrong prototype.
+
 ## Raw File/Label Audit
 
 The expected raw files exist:
 
 ```text
-Workspace/SERs/4-NP - 632nm/AgNP/*.txt
+Workspace/data/raw_curated/SERs/4-NP - 632nm/AgNP/*.txt
 ```
 
 The file audit found 25 AgNP 4np map spectra, each with 1024 rows and two columns. There is no obvious file-count or shape issue.

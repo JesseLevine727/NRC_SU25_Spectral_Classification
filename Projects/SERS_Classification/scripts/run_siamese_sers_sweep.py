@@ -11,6 +11,9 @@ from pathlib import Path
 import pandas as pd
 
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+
 def run(cmd: list[str]) -> None:
     print(" ".join(cmd), flush=True)
     subprocess.run(cmd, check=True)
@@ -20,7 +23,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--python", default="./.venv/bin/python")
     parser.add_argument("--epochs", type=int, default=100)
-    parser.add_argument("--out-dir", type=Path, default=Path("Workspace/siamese_sweep"))
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        default=Path("Workspace/substrate_agnostic/sweeps/siamese_feature_loss_sweep"),
+    )
     parser.add_argument("--seeds", default="42")
     args = parser.parse_args()
 
@@ -41,7 +48,7 @@ def main() -> int:
         conf_dir = args.out_dir / f"{stem}_confusions"
         cmd = [
             args.python,
-            "sers_siamese_substrate_agnostic.py",
+            str(SCRIPT_DIR / "sers_siamese_substrate_agnostic.py"),
             "--feature",
             feature,
             "--loss",

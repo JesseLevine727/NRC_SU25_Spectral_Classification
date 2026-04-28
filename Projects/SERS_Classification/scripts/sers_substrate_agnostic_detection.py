@@ -29,7 +29,7 @@ from sklearn.preprocessing import FunctionTransformer, StandardScaler
 from sklearn.svm import SVC
 
 
-DEFAULT_DATA = Path("Workspace/consolidated_SERS.csv")
+DEFAULT_DATA = Path("Workspace/data/processed/consolidated_SERS.csv")
 
 
 def snv_l2(X: np.ndarray) -> np.ndarray:
@@ -217,8 +217,16 @@ def main() -> int:
     )
     parser.add_argument("--crop-max", type=float, default=1800.0)
     parser.add_argument("--min-substrates", type=int, default=2)
-    parser.add_argument("--out", type=Path, default=Path("Workspace/substrate_agnostic_results.csv"))
-    parser.add_argument("--confusions-dir", type=Path, default=Path("Workspace/substrate_agnostic_confusions"))
+    parser.add_argument(
+        "--out",
+        type=Path,
+        default=Path("Workspace/substrate_agnostic/classical_baselines/results.csv"),
+    )
+    parser.add_argument(
+        "--confusions-dir",
+        type=Path,
+        default=Path("Workspace/substrate_agnostic/classical_baselines/confusions"),
+    )
     args = parser.parse_args()
 
     df, cols = load_dataset(args.data, args.crop_min, args.crop_max, args.min_substrates)
