@@ -146,6 +146,20 @@ Across all classes, the embedding improves average label separation, but the AgN
 
 So the embedding generally makes classes more compact and chemically separated, but it over-warps the weakest derivative-space case. This is why the AgNP failure is best interpreted as a representation-collapse problem rather than a simple global failure of the Siamese method.
 
+Silhouette analysis shows the same global improvement:
+
+| Space | Mean chemical-label silhouette | Mean substrate silhouette | Label minus substrate |
+|---|---:|---:|---:|
+| derivative input | 0.304 | 0.054 | 0.250 |
+| Siamese embedding | 0.791 | -0.246 | 1.037 |
+
+The corresponding visual summaries are:
+
+- `Workspace/substrate_agnostic/diagnostics/geometry_analysis/silhouette_scores_by_fold.png`
+- `Workspace/substrate_agnostic/diagnostics/geometry_analysis/silhouette_label_minus_substrate_by_fold.png`
+- `Workspace/substrate_agnostic/diagnostics/geometry_analysis/silhouette_sample_distributions.png`
+- `Workspace/substrate_agnostic/diagnostics/geometry_analysis/silhouette_by_class_and_substrate.png`
+
 The projection-level result is consistent with the prototype result:
 
 - PCA of the Siamese embedding has one negative projected centroid margin: held-out `AgNP`, `4np_AgNP`.

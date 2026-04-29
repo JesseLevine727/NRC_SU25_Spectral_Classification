@@ -6,12 +6,17 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+import matplotlib
+
+matplotlib.use("Agg")
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import torch
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
-from sklearn.metrics import silhouette_score
+from sklearn.metrics import silhouette_samples, silhouette_score
 from torch.utils.data import DataLoader
 from umap import UMAP
 
@@ -73,6 +78,26 @@ def separation_scores(features, labels, substrates, space, held_out):
             "label_minus_substrate_silhouette": label_score - substrate_score,
         }
     )
+    return rows
+
+
+def sample_silhouettes(features, labels, substrates, space, held_out):
+    label_values = silhouette_samples(features, labels, metric="euclidean")
+    substrate_values = silhouette_samples(features, substrates, metric="euclidean")
+    rows = []
+    for idx, (label_value, substrate_value) in enumerate(zip(label_values, substrate_values)):
+        rows.append(
+            {
+                "space": space,
+                "held_out": held_out,
+                "row_index": idx,
+                "label": labels[idx],
+                "substrate": substrates[idx],
+                "silhouette_label": float(label_value),
+                "silhouette_substrate": float(substrate_value),
+                "label_minus_substrate_silhouette": float(label_value - substrate_value),
+            }
+        )
     return rows
 
 
@@ -206,6 +231,147 @@ def save_projection_analysis(features, labels, substrates, space, held_out, out_
     return rows
 
 
+def plot_silhouette_bars(score_df, out_dir):
+    spaces = ["derivative_input", "siamese_embedding"]
+    held_outs = sorted(score_df["held_out"].unique())
+    x = np.arange(len(held_outs))
+    width = 0.2
+    series = [
+        ("derivative_input", "silhouette_label", "Derivative label", "#4C78A8"),
+        ("derivative_input", "silhouette_substrate", "Derivative substrate", "#9ECAE9"),
+        ("siamese_embedding", "silhouette_label", "Embedding label", "#F58518"),
+        ("siamese_embedding", "silhouette_substrate", "Embedding substrate", "#FFBF79"),
+    ]
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    for offset_idx, (space, column, label, color) in enumerate(series):
+        values = []
+        for held_out in held_outs:
+            row = score_df[(score_df["space"] == space) & (score_df["held_out"] == held_out)].iloc[0]
+            values.append(row[column])
+        ax.bar(x + (offset_idx - 1.5) * width, values, width, label=label, color=color)
+    ax.axhline(0, color="black", linewidth=0.8)
+    ax.set_xticks(x)
+    ax.set_xticklabels(held_outs)
+    ax.set_ylabel("Silhouette score")
+    ax.set_title("Chemical-label vs substrate silhouette by held-out fold")
+    ax.legend(ncol=2)
+    ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out_dir / "silhouette_scores_by_fold.png", dpi=180)
+    plt.close(fig)
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    for offset_idx, space in enumerate(spaces):
+        values = [
+            score_df[(score_df["space"] == space) & (score_df["held_out"] == held_out)][
+                "label_minus_substrate_silhouette"
+            ].iloc[0]
+            for held_out in held_outs
+        ]
+        ax.bar(x + (offset_idx - 0.5) * 0.35, values, 0.35, label=space)
+    ax.axhline(0, color="black", linewidth=0.8)
+    ax.set_xticks(x)
+    ax.set_xticklabels(held_outs)
+    ax.set_ylabel("Label silhouette - substrate silhouette")
+    ax.set_title("Representation preference for chemistry over substrate")
+    ax.legend()
+    ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out_dir / "silhouette_label_minus_substrate_by_fold.png", dpi=180)
+    plt.close(fig)
+
+
+def plot_sample_silhouette_distributions(sample_df, out_dir):
+    long_rows = []
+    for _, row in sample_df.iterrows():
+        long_rows.append(
+            {
+                "space": row["space"],
+                "held_out": row["held_out"],
+                "label": row["label"],
+                "substrate": row["substrate"],
+                "metric": "chemical label",
+                "silhouette": row["silhouette_label"],
+            }
+        )
+        long_rows.append(
+            {
+                "space": row["space"],
+                "held_out": row["held_out"],
+                "label": row["label"],
+                "substrate": row["substrate"],
+                "metric": "substrate",
+                "silhouette": row["silhouette_substrate"],
+            }
+        )
+    long_df = pd.DataFrame(long_rows)
+    long_df.to_csv(out_dir / "silhouette_samples_long.csv", index=False)
+
+    groups = [
+        ("derivative_input", "chemical label"),
+        ("siamese_embedding", "chemical label"),
+        ("derivative_input", "substrate"),
+        ("siamese_embedding", "substrate"),
+    ]
+    data = [
+        long_df[(long_df["space"] == space) & (long_df["metric"] == metric)]["silhouette"].to_numpy()
+        for space, metric in groups
+    ]
+    labels = ["Derivative\nlabel", "Embedding\nlabel", "Derivative\nsubstrate", "Embedding\nsubstrate"]
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.boxplot(data, labels=labels, showmeans=True, patch_artist=True)
+    ax.axhline(0, color="black", linewidth=0.8)
+    ax.set_ylabel("Per-spectrum silhouette score")
+    ax.set_title("Per-spectrum silhouette distributions")
+    ax.grid(axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out_dir / "silhouette_sample_distributions.png", dpi=180)
+    plt.close(fig)
+
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5), sharey=True)
+    for ax, column, title in [
+        (axes[0], "silhouette_label", "Chemical-label silhouette by class"),
+        (axes[1], "silhouette_substrate", "Substrate silhouette by substrate"),
+    ]:
+        group_col = "label" if column == "silhouette_label" else "substrate"
+        groups_sorted = sorted(sample_df[group_col].unique())
+        positions = np.arange(len(groups_sorted))
+        for offset, space in [(-0.18, "derivative_input"), (0.18, "siamese_embedding")]:
+            data = [
+                sample_df[(sample_df["space"] == space) & (sample_df[group_col] == group)][column].to_numpy()
+                for group in groups_sorted
+            ]
+            box = ax.boxplot(
+                data,
+                positions=positions + offset,
+                widths=0.28,
+                patch_artist=True,
+                showfliers=False,
+            )
+            color = "#4C78A8" if space == "derivative_input" else "#F58518"
+            for patch in box["boxes"]:
+                patch.set_facecolor(color)
+                patch.set_alpha(0.45)
+        ax.axhline(0, color="black", linewidth=0.8)
+        ax.set_xticks(positions)
+        ax.set_xticklabels(groups_sorted, rotation=30, ha="right")
+        ax.set_title(title)
+        ax.grid(axis="y", alpha=0.25)
+    axes[0].set_ylabel("Per-spectrum silhouette score")
+    axes[1].legend(
+        handles=[
+            plt.Line2D([0], [0], color="#4C78A8", linewidth=8, alpha=0.45, label="derivative_input"),
+            plt.Line2D([0], [0], color="#F58518", linewidth=8, alpha=0.45, label="siamese_embedding"),
+        ],
+        loc="lower right",
+    )
+    fig.tight_layout()
+    fig.savefig(out_dir / "silhouette_by_class_and_substrate.png", dpi=180)
+    plt.close(fig)
+
+
 def write_markdown(out_dir, class_df, score_df, projection_df):
     lines = [
         "# SERS Geometry Analysis",
@@ -217,6 +383,13 @@ def write_markdown(out_dir, class_df, score_df, projection_df):
         "## Separation Scores",
         "",
         score_df.to_markdown(index=False, floatfmt=".3f"),
+        "",
+        "Silhouette visuals:",
+        "",
+        "- `silhouette_scores_by_fold.png` shows chemical-label and substrate silhouette scores side by side.",
+        "- `silhouette_label_minus_substrate_by_fold.png` shows how strongly each space favors chemical identity over substrate identity.",
+        "- `silhouette_sample_distributions.png` shows per-spectrum silhouette distributions.",
+        "- `silhouette_by_class_and_substrate.png` breaks per-spectrum silhouettes down by chemical class and substrate.",
         "",
         "## Held-Out Class Prototype Margins",
         "",
@@ -287,6 +460,7 @@ def main() -> int:
     sample_rows = []
     class_rows = []
     score_rows = []
+    silhouette_rows = []
     projection_rows = []
 
     for held_out in sorted(np.unique(substrates)):
@@ -294,6 +468,7 @@ def main() -> int:
         sample_rows.extend(input_sample)
         class_rows.extend(input_class)
         score_rows.extend(separation_scores(X, labels, substrates, "derivative_input", held_out))
+        silhouette_rows.extend(sample_silhouettes(X, labels, substrates, "derivative_input", held_out))
         projection_rows.extend(
             save_projection_analysis(
                 X,
@@ -318,6 +493,7 @@ def main() -> int:
         sample_rows.extend(embedding_sample)
         class_rows.extend(embedding_class)
         score_rows.extend(separation_scores(embeddings, labels, substrates, "siamese_embedding", held_out))
+        silhouette_rows.extend(sample_silhouettes(embeddings, labels, substrates, "siamese_embedding", held_out))
         projection_rows.extend(
             save_projection_analysis(
                 embeddings,
@@ -333,9 +509,13 @@ def main() -> int:
     sample_df = pd.DataFrame(sample_rows)
     class_df = pd.DataFrame(class_rows)
     score_df = pd.DataFrame(score_rows)
+    silhouette_df = pd.DataFrame(silhouette_rows)
     sample_df.to_csv(args.out_dir / "sample_prototype_distances.csv", index=False)
     class_df.to_csv(args.out_dir / "class_prototype_margins.csv", index=False)
     score_df.to_csv(args.out_dir / "space_separation_scores.csv", index=False)
+    silhouette_df.to_csv(args.out_dir / "silhouette_samples.csv", index=False)
+    plot_silhouette_bars(score_df, args.out_dir)
+    plot_sample_silhouette_distributions(silhouette_df, args.out_dir)
 
     projection_df = pd.DataFrame(projection_rows)
     projection_df.to_csv(args.out_dir / "projection_centroid_margins.csv", index=False)

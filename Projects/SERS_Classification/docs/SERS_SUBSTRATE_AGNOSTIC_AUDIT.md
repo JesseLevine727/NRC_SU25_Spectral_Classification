@@ -133,6 +133,7 @@ The deep-dive diagnostics in `Workspace/substrate_agnostic/diagnostics/agnp_fail
 - In the trained AgNP-held-out Siamese embedding, AgNP `4np` moves closer to the `benzenethiol` prototype than the `4np` prototype.
 - UMAP and t-SNE diagnostics were added for the derivative input space and the Siamese embedding spaces. They are useful qualitative figures, but the primary evidence remains the leave-one-substrate-out confusion matrices and prototype distances.
 - All-class geometry analysis shows the derivative input has no negative class-level prototype margins, while the Siamese embedding has exactly one negative margin: held-out `AgNP` `4np` collapsing toward `benzenethiol`. PCA, UMAP, and t-SNE projection tables were generated for every held-out substrate and show the same unique negative embedding case.
+- Silhouette visualizations in `Workspace/substrate_agnostic/diagnostics/geometry_analysis/` show the embedding increases mean chemical-label silhouette from `0.304` to `0.791` while reducing substrate silhouette from `0.054` to `-0.246`.
 
 This means the failure is not simply "not enough data" in a generic sense. The specific issue is that the learned embedding does not have enough substrate coverage to preserve `4np` identity when AgNP is absent from training for that chemical. The derivative representation still contains useful chemical structure, but the Siamese embedding collapses AgNP `4np` toward `benzenethiol`.
 
