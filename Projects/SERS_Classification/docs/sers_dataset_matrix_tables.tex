@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.8in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\captionsetup{font=small,labelfont=bf}
+
+\begin{document}
+
+\section*{SERS Substrate-Agnostic Dataset Matrix}
+
+The current substrate-agnostic evaluation uses canonical chemical labels. In
+this analysis, BT is merged into benzenethiol. The table below shows the current
+number of spectra for each chemical-substrate pair.
+
+\begin{table}[h]
+\centering
+\caption{Current canonical three-chemical SERS matrix.}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Chemical & Ag & AgNP & Au & AuNP & PICO & pSERS & Current total \\
+\midrule
+\texttt{4np} & 0 & 25 & 0 & 0 & 25 & 25 & 75 \\
+\texttt{benzenethiol} & 25 & 0 & 25 & 0 & 25 & 25 & 100 \\
+\texttt{pyridine} & 0 & 25 & 0 & 25 & 25 & 25 & 100 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The minimum recommended expansion is to fill every missing chemical-substrate
+cell before heavily increasing spectra from already-covered cells.
+
+\begin{table}[h]
+\centering
+\caption{Minimum target matrix for stronger substrate-agnostic evaluation.}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Chemical & Ag & AgNP & Au & AuNP & PICO & pSERS & Target total \\
+\midrule
+\texttt{4np} & 25+ & 25+ & 25+ & 25+ & 25+ & 25+ & 150+ \\
+\texttt{benzenethiol} & 25+ & 25+ & 25+ & 25+ & 25+ & 25+ & 150+ \\
+\texttt{pyridine} & 25+ & 25+ & 25+ & 25+ & 25+ & 25+ & 150+ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+If time allows, the stronger target is two to three independent
+preparations/maps per chemical-substrate pair, with approximately 25 spectra per
+preparation. Independent preparations are more useful for substrate-agnostic
+validation than many correlated spectra from a single map.
+
+\end{document}

@@ -21,6 +21,26 @@ This directory contains generated outputs for the current substrate-agnostic SER
 
 The current best model is substrate-agnostic in formulation: it predicts chemical identity and evaluates by holding out whole substrates. The remaining failure is held-out `AgNP`, specifically `4np` on `AgNP` being mapped to `benzenethiol`. The diagnostics show this is a learned embedding/prototype geometry problem rather than a missing-file issue.
 
+## Dataset Matrix
+
+Current canonical three-chemical coverage used for substrate-agnostic evaluation:
+
+| Chemical | Ag | AgNP | Au | AuNP | PICO | pSERS | Current total |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `4np` | 0 | 25 | 0 | 0 | 25 | 25 | 75 |
+| `benzenethiol` | 25 | 0 | 25 | 0 | 25 | 25 | 100 |
+| `pyridine` | 0 | 25 | 0 | 25 | 25 | 25 | 100 |
+
+Target minimum matrix for a stronger substrate-agnostic claim:
+
+| Chemical | Ag | AgNP | Au | AuNP | PICO | pSERS | Target total |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `4np` | 25+ | 25+ | 25+ | 25+ | 25+ | 25+ | 150+ |
+| `benzenethiol` | 25+ | 25+ | 25+ | 25+ | 25+ | 25+ | 150+ |
+| `pyridine` | 25+ | 25+ | 25+ | 25+ | 25+ | 25+ | 150+ |
+
+Higher-value target if time allows: `2-3` independent preparations/maps per chemical-substrate pair, with `25` spectra per preparation. Independent preparations are more useful than many additional correlated spectra from one existing map.
+
 The all-class geometry analysis shows that the Siamese embedding generally improves chemical organization:
 
 | Space | Mean chemical-label silhouette | Mean substrate silhouette | Label minus substrate |

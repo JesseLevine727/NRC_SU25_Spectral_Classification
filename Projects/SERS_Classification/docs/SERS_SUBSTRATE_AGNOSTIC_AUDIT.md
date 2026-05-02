@@ -39,6 +39,24 @@ Implications:
 - Valid substrate-held-out evaluation is possible for `4np`, `benzenethiol`, `bt`, and `pyridine`.
 - Coverage is sparse and imbalanced, so substrate-held-out metrics are more meaningful than random train/test splits.
 
+After canonicalizing `bt -> benzenethiol`, the current three-chemical substrate-agnostic matrix is:
+
+| Chemical | Ag | AgNP | Au | AuNP | PICO | pSERS | Current total |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `4np` | 0 | 25 | 0 | 0 | 25 | 25 | 75 |
+| `benzenethiol` | 25 | 0 | 25 | 0 | 25 | 25 | 100 |
+| `pyridine` | 0 | 25 | 0 | 25 | 25 | 25 | 100 |
+
+The minimum target matrix should fill every missing chemical-substrate pair before adding many more spectra to already-covered cells:
+
+| Chemical | Ag | AgNP | Au | AuNP | PICO | pSERS | Target total |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `4np` | 25+ | 25+ | 25+ | 25+ | 25+ | 25+ | 150+ |
+| `benzenethiol` | 25+ | 25+ | 25+ | 25+ | 25+ | 25+ | 150+ |
+| `pyridine` | 25+ | 25+ | 25+ | 25+ | 25+ | 25+ | 150+ |
+
+Preferred collection target, if time allows: `2-3` independent preparations/maps per chemical-substrate pair with `25` spectra per preparation. This is more useful for substrate-agnostic detection than collecting many additional correlated spectra from a single existing map.
+
 ## Current Substrate-Agnostic Baselines
 
 Run:
