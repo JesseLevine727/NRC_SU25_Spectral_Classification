@@ -38,8 +38,9 @@ Implications:
 - `n,n-dimethylformamide` cannot be evaluated substrate-agnostically with this dataset because it appears on only `AuNP`.
 - Valid substrate-held-out evaluation is possible for `4np`, `benzenethiol`, `bt`, and `pyridine`.
 - Coverage is sparse and imbalanced, so substrate-held-out metrics are more meaningful than random train/test splits.
+- The six labels above are raw dataset labels. The corrected scientific interpretation groups `AgNP` with `Ag` and `AuNP` with `Au`.
 
-After canonicalizing `bt -> benzenethiol`, the current three-chemical substrate-agnostic matrix is:
+After canonicalizing `bt -> benzenethiol`, the old six-substrate-label matrix was:
 
 | Chemical | Ag | AgNP | Au | AuNP | PICO | pSERS | Current total |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -47,7 +48,27 @@ After canonicalizing `bt -> benzenethiol`, the current three-chemical substrate-
 | `benzenethiol` | 25 | 0 | 25 | 0 | 25 | 25 | 100 |
 | `pyridine` | 0 | 25 | 0 | 25 | 25 | 25 | 100 |
 
-The minimum target matrix should fill every missing chemical-substrate pair before adding many more spectra to already-covered cells:
+That matrix is retained for traceability, but it should not be the primary scientific matrix if `Ag/AgNP` and `Au/AuNP` are substrate-family duplicates.
+
+The corrected grouped-substrate-family matrix is:
+
+| Chemical | Ag | Au | PICO | pSERS | Current total | Interpretation |
+|---|---:|---:|---:|---:|---:|---|
+| `4np` | 25 | 0 | 25 | 25 | 75 | `4np` does not respond on Au, so Au should be treated as N/A rather than a missing target cell. |
+| `benzenethiol` | 25 | 25 | 25 | 25 | 100 | Complete across four substrate families. |
+| `pyridine` | 25 | 25 | 25 | 25 | 100 | Complete across four substrate families. |
+| `n,n-dimethylformamide` | 0 | 228 | 0 | 0 | 228 | Present only on Au; useful only if expanded to additional substrate families. |
+
+The corrected minimum target matrix is:
+
+| Chemical | Ag | Au | PICO | pSERS | Target total | Priority |
+|---|---:|---:|---:|---:|---:|---|
+| `4np` | 25+ | N/A | 25+ | 25+ | 75+ | Already covers its valid responding substrate families. |
+| `benzenethiol` | 25+ | 25+ | 25+ | 25+ | 100+ | Already complete; prioritize independent repeats only if time allows. |
+| `pyridine` | 25+ | 25+ | 25+ | 25+ | 100+ | Already complete; prioritize independent repeats only if time allows. |
+| additional chemical, e.g. `n,n-dimethylformamide` if responsive | 25+ | 25+ | 25+ | 25+ | 100+ | Highest-value expansion for a stronger claim. |
+
+The old ungrouped target below is superseded by the corrected grouped matrix:
 
 | Chemical | Ag | AgNP | Au | AuNP | PICO | pSERS | Target total |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -57,7 +78,75 @@ The minimum target matrix should fill every missing chemical-substrate pair befo
 
 Preferred collection target, if time allows: `2-3` independent preparations/maps per chemical-substrate pair with `25` spectra per preparation. This is more useful for substrate-agnostic detection than collecting many additional correlated spectra from a single existing map.
 
-## Current Substrate-Agnostic Baselines
+## Corrected Grouped-Substrate Results
+
+Run:
+
+```bash
+./.venv/bin/python scripts/sers_substrate_agnostic_detection.py --group-metal-substrates --out Workspace/substrate_agnostic/grouped_metal_substrates/classical_baselines/results.csv --confusions-dir Workspace/substrate_agnostic/grouped_metal_substrates/classical_baselines/confusions
+./.venv/bin/python scripts/run_siamese_sers_sweep.py --group-metal-substrates --epochs 100 --seeds 42 --out-dir Workspace/substrate_agnostic/grouped_metal_substrates/sweeps/siamese_feature_loss_sweep
+./.venv/bin/python scripts/analyze_sers_geometry.py --group-metal-substrates --prototype-mode row_mean --out-dir Workspace/substrate_agnostic/grouped_metal_substrates/diagnostics/geometry_analysis
+```
+
+The corrected grouped folds are `Ag`, `Au`, `PICO`, and `pSERS`. `Ag` includes the original `Ag` and `AgNP` rows. `Au` includes the original `Au` and `AuNP` rows.
+
+Best grouped Siamese result selected from the grouped sweep:
+
+- Feature/model: `derivative_1` + Siamese Conv1D encoder + nearest chemical prototype
+- Loss: triplet loss with margin `0.2`
+- Prototype mode: `row_mean`
+- Device: CUDA/GPU
+- Canonical labels: `bt -> benzenethiol`
+- Grouped substrates: `AgNP -> Ag`, `AuNP -> Au`
+- Mean held-out-substrate-family accuracy: `0.975`
+- Mean held-out-substrate-family balanced accuracy: `0.975`
+- Mean held-out-substrate-family macro F1: `0.895`
+
+Per-fold accuracy for the corrected grouped best Siamese run:
+
+| Held-out substrate family | Test labels | Accuracy |
+|---|---|---:|
+| Ag | `4np,benzenethiol,pyridine` | 0.920 |
+| Au | `benzenethiol,pyridine` | 0.980 |
+| PICO | `4np,benzenethiol,pyridine` | 1.000 |
+| pSERS | `4np,benzenethiol,pyridine` | 1.000 |
+
+Grouped best Siamese confusion summary:
+
+| Held-out substrate family | Main errors |
+|---|---|
+| Ag | 6/25 `4np` predicted as `benzenethiol`; `benzenethiol` and `pyridine` are 25/25 correct. |
+| Au | 1/25 `benzenethiol` predicted as `4np`; `pyridine` is 25/25 correct. |
+| PICO | 75/75 correct. |
+| pSERS | 75/75 correct. |
+
+Best grouped classical baseline:
+
+- Feature/model: `derivative_2` + nearest centroid
+- Mean held-out-substrate-family accuracy: `0.987`
+- Mean held-out-substrate-family balanced accuracy: `0.987`
+- Mean held-out-substrate-family macro F1: `0.987`
+
+Grouped raw-spectrum Siamese comparison:
+
+- Feature/model: raw cropped spectra + Siamese Conv1D encoder
+- Loss/prototype mode: triplet loss + `row_mean`
+- Mean held-out-substrate-family accuracy: `0.440`
+- Mean held-out-substrate-family balanced accuracy: `0.440`
+- Mean held-out-substrate-family macro F1: `0.399`
+
+This confirms that the derivative preprocessing remains important even after substrate regrouping.
+
+Grouped geometry analysis:
+
+| Space | Mean chemical-label silhouette | Mean substrate-family silhouette | Label minus substrate |
+|---|---:|---:|---:|
+| derivative input | 0.304 | 0.101 | 0.203 |
+| Siamese embedding | 0.797 | -0.040 | 0.837 |
+
+The corrected interpretation is that the model is generally learning chemical organization across substrate families. The remaining weakness is no longer a distinct `AgNP` substrate failure. It is a smaller `4np`-on-silver-family ambiguity against `benzenethiol`.
+
+## Historical Six-Substrate-Label Baselines
 
 Run:
 
@@ -72,7 +161,7 @@ Both scripts evaluate chemical-label prediction with leave-one-substrate-out fol
 
 The report identifies an instrumental artifact around `300 cm^-1`; these scripts default to retaining only spectra from `330 cm^-1` upward.
 
-Current best canonical triplet-Siamese result:
+Historical best ungrouped canonical triplet-Siamese result:
 
 - Feature/model: `derivative_1` + Siamese Conv1D encoder + nearest chemical prototype
 - Loss: substrate-aware triplet loss with margin `0.2`
@@ -94,7 +183,7 @@ Per-fold accuracy for this best run:
 | PICO | 0.867 |
 | pSERS | 1.000 |
 
-The remaining dominant failure is `AgNP`: canonical `4np` on `AgNP` is predicted as `benzenethiol` for all 25 spectra, and 6/25 `pyridine` on `AgNP` spectra are also predicted as `benzenethiol`.
+The dominant ungrouped failure was `AgNP`: canonical `4np` on `AgNP` was predicted as `benzenethiol` for all 25 spectra, and 6/25 `pyridine` on `AgNP` spectra were also predicted as `benzenethiol`. This is now considered a superseded diagnostic because `Ag` and `AgNP` should be evaluated as one silver substrate family.
 
 Best contrastive-Siamese comparison:
 
@@ -112,7 +201,7 @@ Batch-hard triplet comparison:
 - Mean held-out-substrate balanced accuracy: `0.768`
 - Mean held-out-substrate macro F1: `0.480`
 
-Current best classical comparison:
+Historical best ungrouped classical comparison:
 
 - Feature/model: `peak_emphasis` + cosine kNN
 - Mean held-out-substrate accuracy: `0.761`
@@ -132,9 +221,9 @@ Cleaned output layout:
 - `Workspace/substrate_agnostic/classical_baselines/confusions/*.csv`
 - `Workspace/substrate_agnostic/archive/comparison_runs/`
 
-## AgNP Failure Deep Dive
+## Historical AgNP Failure Deep Dive
 
-The current bottleneck is held-out `AgNP`, not held-out `pSERS`. After canonicalizing `bt -> benzenethiol`, `pSERS` reaches 75/75 correct spectra in the best Siamese run.
+The old six-substrate-label bottleneck was held-out `AgNP`, not held-out `pSERS`. After canonicalizing `bt -> benzenethiol`, `pSERS` reached 75/75 correct spectra in the best ungrouped Siamese run.
 
 The AgNP confusion is concentrated in `4np`:
 
@@ -153,12 +242,12 @@ The deep-dive diagnostics in `Workspace/substrate_agnostic/diagnostics/agnp_fail
 - All-class geometry analysis shows the derivative input has no negative class-level prototype margins, while the Siamese embedding has exactly one negative margin: held-out `AgNP` `4np` collapsing toward `benzenethiol`. PCA, UMAP, and t-SNE projection tables were generated for every held-out substrate and show the same unique negative embedding case.
 - Silhouette visualizations in `Workspace/substrate_agnostic/diagnostics/geometry_analysis/` show the embedding increases mean chemical-label silhouette from `0.304` to `0.791` while reducing substrate silhouette from `0.054` to `-0.246`.
 
-This means the failure is not simply "not enough data" in a generic sense. The specific issue is that the learned embedding does not have enough substrate coverage to preserve `4np` identity when AgNP is absent from training for that chemical. The derivative representation still contains useful chemical structure, but the Siamese embedding collapses AgNP `4np` toward `benzenethiol`.
+This remains useful as a historical diagnostic, but it is no longer the primary scientific interpretation after substrate-family correction. In the corrected grouped analysis, `AgNP` is not a separate held-out substrate. The remaining weakness is smaller: held-out silver-family `4np` has some ambiguity against `benzenethiol`, while the overall grouped Siamese accuracy rises to `0.975`.
 
 ## Practical Next Steps
 
 - Treat old 92.8-98.8% Siamese accuracy as pair-classification accuracy, not substrate-agnostic performance.
-- Use `scripts/sers_substrate_agnostic_detection.py` as the baseline gate for future work.
-- Add more chemicals measured on more substrates, especially missing chemical-substrate combinations and non-singleton chemicals like `n,n-dimethylformamide`.
+- Use `scripts/sers_substrate_agnostic_detection.py --group-metal-substrates` as the baseline gate for future work.
+- Add one or more additional chemicals measured on all four substrate families. `n,n-dimethylformamide` is a candidate only if it responds reliably beyond Au.
 - Optimize on leave-one-substrate-out validation only; random row splits are not adequate for this goal.
-- Try hybrid inference or an auxiliary geometry-preserving loss before increasing model capacity, because the AgNP failure is introduced by the learned embedding rather than by the first-derivative input representation.
+- Prefer independent preparations/maps over many additional spectra from the same existing map.

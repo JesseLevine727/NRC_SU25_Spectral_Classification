@@ -1,0 +1,5 @@
+held_out_substrate,prototype_mode,n_train,n_test,test_labels,accuracy,balanced_accuracy,macro_f1,final_loss
+Ag,row_mean,200,75,"4np,benzenethiol,pyridine",0.68,0.68,0.5667949053652118,0.0
+Au,row_mean,225,50,"benzenethiol,pyridine",1.0,1.0,1.0,0.0027577139685551325
+PICO,row_mean,200,75,"4np,benzenethiol,pyridine",0.9733333333333334,0.9733333333333333,0.9730392156862745,0.0
+pSERS,row_mean,200,75,"4np,benzenethiol,pyridine",1.0,1.0,1.0,0.0

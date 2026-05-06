@@ -31,6 +31,10 @@ DEFAULT_DATA = Path("Workspace/data/processed/consolidated_SERS.csv")
 DEFAULT_CANONICAL_LABELS = {
     "bt": "benzenethiol",
 }
+DEFAULT_SUBSTRATE_GROUPS = {
+    "AgNP": "Ag",
+    "AuNP": "Au",
+}
 
 
 def set_seed(seed: int) -> None:
@@ -63,6 +67,7 @@ def load_dataset(
     crop_max: float | None,
     min_substrates: int,
     canonicalize_labels: bool = True,
+    group_metal_substrates: bool = False,
 ) -> tuple[pd.DataFrame, list[str]]:
     df = pd.read_csv(path)
     missing = {"Label", "Substrate"}.difference(df.columns)
@@ -71,6 +76,9 @@ def load_dataset(
     if canonicalize_labels:
         df = df.copy()
         df["Label"] = df["Label"].replace(DEFAULT_CANONICAL_LABELS)
+    if group_metal_substrates:
+        df = df.copy()
+        df["Substrate"] = df["Substrate"].replace(DEFAULT_SUBSTRATE_GROUPS)
 
     valid_labels = (
         df.groupby("Label")["Substrate"].nunique().loc[lambda s: s >= min_substrates].index
@@ -542,6 +550,11 @@ def main() -> int:
         action="store_true",
         help="Disable chemical label canonicalization such as bt -> benzenethiol.",
     )
+    parser.add_argument(
+        "--group-metal-substrates",
+        action="store_true",
+        help="Group AgNP with Ag and AuNP with Au before leave-substrate-out evaluation.",
+    )
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--embed-dim", type=int, default=64)
@@ -619,6 +632,7 @@ def main() -> int:
         args.crop_max,
         args.min_substrates,
         canonicalize_labels=not args.no_canonicalize_labels,
+        group_metal_substrates=args.group_metal_substrates,
     )
     X_raw = df[cols].to_numpy(dtype=np.float64)
     X = prepare_features(X_raw, args)
@@ -650,6 +664,7 @@ def main() -> int:
     print("Feature:", args.feature)
     print("Loss:", args.loss)
     print("Canonical labels:", not args.no_canonicalize_labels)
+    print("Grouped metal substrates:", args.group_metal_substrates)
     print("Rows evaluated:", len(df))
     print("Labels:", ", ".join(sorted(df["Label"].unique())))
     print("Substrates:", ", ".join(sorted(df["Substrate"].unique())))

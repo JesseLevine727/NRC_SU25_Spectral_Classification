@@ -13,45 +13,49 @@
 
 \section*{SERS Substrate-Agnostic Dataset Matrix}
 
-The current substrate-agnostic evaluation uses canonical chemical labels. In
-this analysis, BT is merged into benzenethiol. The table below shows the current
-number of spectra for each chemical-substrate pair.
+The corrected substrate-family analysis groups AgNP with Ag and AuNP with Au.
+Canonical chemical labels are used, with BT merged into benzenethiol. The table
+below shows the current number of spectra for each grouped chemical-substrate
+family pair.
 
 \begin{table}[h]
 \centering
-\caption{Current canonical three-chemical SERS matrix.}
-\begin{tabular}{lrrrrrrr}
+\caption{Current corrected grouped SERS matrix.}
+\begin{tabular}{lrrrrrl}
 \toprule
-Chemical & Ag & AgNP & Au & AuNP & PICO & pSERS & Current total \\
+Chemical & Ag & Au & PICO & pSERS & Total & Note \\
 \midrule
-\texttt{4np} & 0 & 25 & 0 & 0 & 25 & 25 & 75 \\
-\texttt{benzenethiol} & 25 & 0 & 25 & 0 & 25 & 25 & 100 \\
-\texttt{pyridine} & 0 & 25 & 0 & 25 & 25 & 25 & 100 \\
+\texttt{4np} & 25 & 0 & 25 & 25 & 75 & Au is N/A \\
+\texttt{benzenethiol} & 25 & 25 & 25 & 25 & 100 & complete \\
+\texttt{pyridine} & 25 & 25 & 25 & 25 & 100 & complete \\
+\texttt{DMF} & 0 & 228 & 0 & 0 & 228 & Au only \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The minimum recommended expansion is to fill every missing chemical-substrate
-cell before heavily increasing spectra from already-covered cells.
+The minimum recommended expansion is to add another responsive chemical on all
+four substrate families before heavily increasing spectra from already-covered
+cells.
 
 \begin{table}[h]
 \centering
 \caption{Minimum target matrix for stronger substrate-agnostic evaluation.}
-\begin{tabular}{lrrrrrrr}
+\begin{tabular}{lrrrrrl}
 \toprule
-Chemical & Ag & AgNP & Au & AuNP & PICO & pSERS & Target total \\
+Chemical & Ag & Au & PICO & pSERS & Total & Priority \\
 \midrule
-\texttt{4np} & 25+ & 25+ & 25+ & 25+ & 25+ & 25+ & 150+ \\
-\texttt{benzenethiol} & 25+ & 25+ & 25+ & 25+ & 25+ & 25+ & 150+ \\
-\texttt{pyridine} & 25+ & 25+ & 25+ & 25+ & 25+ & 25+ & 150+ \\
+\texttt{4np} & 25+ & N/A & 25+ & 25+ & 75+ & already valid \\
+\texttt{benzenethiol} & 25+ & 25+ & 25+ & 25+ & 100+ & already complete \\
+\texttt{pyridine} & 25+ & 25+ & 25+ & 25+ & 100+ & already complete \\
+additional chemical & 25+ & 25+ & 25+ & 25+ & 100+ & highest value \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \noindent
-If time allows, the stronger target is two to three independent
-preparations/maps per chemical-substrate pair, with approximately 25 spectra per
-preparation. Independent preparations are more useful for substrate-agnostic
-validation than many correlated spectra from a single map.
+If time allows, the stronger target is two to three independent preparations or
+maps per chemical-substrate-family pair, with approximately 25 spectra per
+preparation. Independent preparations are more useful than many correlated
+spectra from a single map.
 
 \end{document}

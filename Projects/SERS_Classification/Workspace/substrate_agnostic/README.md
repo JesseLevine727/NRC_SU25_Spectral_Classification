@@ -1,56 +1,72 @@
 # Substrate-Agnostic SERS Outputs
 
-This directory contains generated outputs for the current substrate-agnostic SERS classification story. Raw spectra, cleaned CSVs, and legacy notebooks remain one level up in `Workspace/` so older exploratory notebooks are not broken.
-
-## Layout
-
-- `current/best_siamese_triplet/`
-  Best current canonical-label Siamese/triplet run: `derivative_1`, triplet loss, margin `0.2`, substrate-balanced prototypes.
-- `diagnostics/agnp_failure/`
-  AgNP failure deep dive: average spectra, PCA, UMAP, t-SNE, prototype distances, confusion matrices, and raw-file audit.
-- `diagnostics/geometry_analysis/`
-  Quantitative derivative-input vs Siamese-embedding geometry analysis across all held-out substrates and classes. Includes all-fold PCA, UMAP, and t-SNE projection coordinate tables under `projections/`, plus silhouette visualizations showing chemical-label clustering versus substrate clustering.
-- `sweeps/siamese_feature_loss_sweep/`
-  Feature/loss/prototype sweep outputs and summary CSV.
-- `classical_baselines/`
-  Non-deep-learning leave-one-substrate-out baseline results and confusion matrices.
-- `archive/comparison_runs/`
-  Older or secondary Siamese comparison runs retained for traceability but not treated as the current best model.
+This directory contains generated outputs for the substrate-agnostic SERS classification work. Raw spectra, cleaned CSVs, and legacy notebooks remain one level up in `Workspace/` so older exploratory notebooks are not broken.
 
 ## Current Interpretation
 
-The current best model is substrate-agnostic in formulation: it predicts chemical identity and evaluates by holding out whole substrates. The remaining failure is held-out `AgNP`, specifically `4np` on `AgNP` being mapped to `benzenethiol`. The diagnostics show this is a learned embedding/prototype geometry problem rather than a missing-file issue.
+The corrected substrate-family analysis groups `AgNP -> Ag` and `AuNP -> Au`. Under this interpretation, the earlier held-out `AgNP` failure is not the right primary conclusion because `Ag` and `AgNP` are the same substrate family. The corrected leave-one-substrate-family-out folds are `Ag`, `Au`, `PICO`, and `pSERS`.
 
-## Dataset Matrix
+The grouped analysis is much stronger than the original six-substrate-label analysis:
 
-Current canonical three-chemical coverage used for substrate-agnostic evaluation:
+| Analysis | Mean accuracy | Mean balanced accuracy | Mean macro F1 | Weakest fold |
+|---|---:|---:|---:|---|
+| old six substrate labels, best Siamese | 0.854 | 0.854 | 0.686 | `AgNP` at 0.380 |
+| grouped substrate families, best Siamese | 0.975 | 0.975 | 0.895 | `Ag` at 0.920 |
+| grouped substrate families, raw-spectrum Siamese | 0.440 | 0.440 | 0.399 | `Au` at 0.000 |
+| grouped substrate families, best classical baseline | 0.987 | 0.987 | 0.987 | `Ag` at 0.960 |
 
-| Chemical | Ag | AgNP | Au | AuNP | PICO | pSERS | Current total |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| `4np` | 0 | 25 | 0 | 0 | 25 | 25 | 75 |
-| `benzenethiol` | 25 | 0 | 25 | 0 | 25 | 25 | 100 |
-| `pyridine` | 0 | 25 | 0 | 25 | 25 | 25 | 100 |
+The strongest current Siamese run after regrouping is `derivative_1` + triplet loss + row-mean chemical prototypes. Its only material errors are in the held-out `Ag` family: 6/25 `4np` spectra are predicted as `benzenethiol`. The grouped `PICO` and `pSERS` folds are perfect, and the grouped `Au` fold has 1/50 error.
 
-Target minimum matrix for a stronger substrate-agnostic claim:
+## Corrected Dataset Matrix
 
-| Chemical | Ag | AgNP | Au | AuNP | PICO | pSERS | Target total |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| `4np` | 25+ | 25+ | 25+ | 25+ | 25+ | 25+ | 150+ |
-| `benzenethiol` | 25+ | 25+ | 25+ | 25+ | 25+ | 25+ | 150+ |
-| `pyridine` | 25+ | 25+ | 25+ | 25+ | 25+ | 25+ | 150+ |
+Current canonical coverage after `bt -> benzenethiol` and metal-substrate grouping:
 
-Higher-value target if time allows: `2-3` independent preparations/maps per chemical-substrate pair, with `25` spectra per preparation. Independent preparations are more useful than many additional correlated spectra from one existing map.
+| Chemical | Ag | Au | PICO | pSERS | Current total | Notes |
+|---|---:|---:|---:|---:|---:|---|
+| `4np` | 25 | 0 | 25 | 25 | 75 | `4np` does not respond on Au, so Au is not a useful target cell. |
+| `benzenethiol` | 25 | 25 | 25 | 25 | 100 | Complete across four substrate families. |
+| `pyridine` | 25 | 25 | 25 | 25 | 100 | Complete across four substrate families. |
+| `n,n-dimethylformamide` | 0 | 228 | 0 | 0 | 228 | Present only on Au, so not currently substrate-agnostic. |
 
-The all-class geometry analysis shows that the Siamese embedding generally improves chemical organization:
+Minimum target matrix:
 
-| Space | Mean chemical-label silhouette | Mean substrate silhouette | Label minus substrate |
+| Chemical | Ag | Au | PICO | pSERS | Target total | Priority |
+|---|---:|---:|---:|---:|---:|---|
+| `4np` | 25+ | N/A | 25+ | 25+ | 75+ | Already covers the valid responding families. |
+| `benzenethiol` | 25+ | 25+ | 25+ | 25+ | 100+ | Already complete; add independent repeats if time allows. |
+| `pyridine` | 25+ | 25+ | 25+ | 25+ | 100+ | Already complete; add independent repeats if time allows. |
+| additional chemical, e.g. `n,n-dimethylformamide` if it responds | 25+ | 25+ | 25+ | 25+ | 100+ | Highest-value expansion is another complete four-family chemical. |
+
+If time is limited, the most useful expansion is not more row count from existing maps. It is one or more additional chemicals measured on all four substrate families, with independent preparations/maps where possible.
+
+## Layout
+
+- `grouped_metal_substrates/current/best_siamese_triplet/`
+  Current corrected best Siamese/triplet run: grouped substrate families, `derivative_1`, triplet loss, row-mean prototypes.
+- `grouped_metal_substrates/classical_baselines/`
+  Corrected grouped-substrate classical leave-one-substrate-family-out baselines.
+- `grouped_metal_substrates/diagnostics/geometry_analysis/`
+  Corrected grouped-substrate derivative-input vs Siamese-embedding geometry analysis with PCA, UMAP, t-SNE scatter plots, prototype distances, and silhouette visuals.
+- `grouped_metal_substrates/sweeps/siamese_feature_loss_sweep/`
+  Corrected grouped-substrate Siamese feature/loss/prototype sweep outputs and summary CSV.
+- `grouped_metal_substrates/archive/comparison_runs/raw_siamese_triplet_row_mean/`
+  Corrected grouped-substrate raw-spectra Siamese comparison. It performs poorly, confirming the derivative preprocessing is still necessary.
+- `current/`, `classical_baselines/`, `diagnostics/`, `sweeps/`
+  Historical six-substrate-label outputs retained for traceability. These should be treated as superseded by the grouped-substrate-family results for scientific interpretation.
+
+## Corrected Geometry
+
+Grouped geometry still shows that the Siamese embedding organizes spectra more by chemical identity than by substrate family:
+
+| Space | Mean chemical-label silhouette | Mean substrate-family silhouette | Label minus substrate |
 |---|---:|---:|---:|
-| derivative input | 0.304 | 0.054 | 0.250 |
-| Siamese embedding | 0.791 | -0.246 | 1.037 |
+| derivative input | 0.304 | 0.101 | 0.203 |
+| Siamese embedding | 0.797 | -0.040 | 0.837 |
 
-Useful visual summaries:
+Useful grouped visual summaries:
 
-- `diagnostics/geometry_analysis/silhouette_scores_by_fold.png`
-- `diagnostics/geometry_analysis/silhouette_label_minus_substrate_by_fold.png`
-- `diagnostics/geometry_analysis/silhouette_sample_distributions.png`
-- `diagnostics/geometry_analysis/silhouette_by_class_and_substrate.png`
+- `grouped_metal_substrates/diagnostics/geometry_analysis/silhouette_scores_by_fold.png`
+- `grouped_metal_substrates/diagnostics/geometry_analysis/silhouette_label_minus_substrate_by_fold.png`
+- `grouped_metal_substrates/diagnostics/geometry_analysis/silhouette_sample_distributions.png`
+- `grouped_metal_substrates/diagnostics/geometry_analysis/silhouette_by_class_and_substrate.png`
+- `grouped_metal_substrates/diagnostics/geometry_analysis/projections/*.png`

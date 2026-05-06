@@ -29,6 +29,11 @@ def main() -> int:
         default=Path("Workspace/substrate_agnostic/sweeps/siamese_feature_loss_sweep"),
     )
     parser.add_argument("--seeds", default="42")
+    parser.add_argument(
+        "--group-metal-substrates",
+        action="store_true",
+        help="Pass corrected Ag/AgNP and Au/AuNP grouping to each Siamese run.",
+    )
     args = parser.parse_args()
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
@@ -64,6 +69,8 @@ def main() -> int:
             "--confusions-dir",
             str(conf_dir),
         ]
+        if args.group_metal_substrates:
+            cmd.append("--group-metal-substrates")
         run(cmd)
         df = pd.read_csv(result_path)
         rows.append(

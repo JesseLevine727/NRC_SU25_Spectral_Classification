@@ -30,6 +30,13 @@ from sklearn.svm import SVC
 
 
 DEFAULT_DATA = Path("Workspace/data/processed/consolidated_SERS.csv")
+DEFAULT_CANONICAL_LABELS = {
+    "bt": "benzenethiol",
+}
+DEFAULT_SUBSTRATE_GROUPS = {
+    "AgNP": "Ag",
+    "AuNP": "Au",
+}
 
 
 def snv_l2(X: np.ndarray) -> np.ndarray:
@@ -106,12 +113,20 @@ def load_dataset(
     crop_min: float | None,
     crop_max: float | None,
     min_substrates: int,
+    canonicalize_labels: bool = True,
+    group_metal_substrates: bool = False,
 ) -> tuple[pd.DataFrame, list[str]]:
     df = pd.read_csv(path)
     required = {"Label", "Substrate"}
     missing = required.difference(df.columns)
     if missing:
         raise ValueError(f"{path} is missing required columns: {sorted(missing)}")
+    if canonicalize_labels:
+        df = df.copy()
+        df["Label"] = df["Label"].replace(DEFAULT_CANONICAL_LABELS)
+    if group_metal_substrates:
+        df = df.copy()
+        df["Substrate"] = df["Substrate"].replace(DEFAULT_SUBSTRATE_GROUPS)
 
     cols = spectral_columns(df, crop_min, crop_max)
     valid_labels = (
@@ -218,6 +233,16 @@ def main() -> int:
     parser.add_argument("--crop-max", type=float, default=1800.0)
     parser.add_argument("--min-substrates", type=int, default=2)
     parser.add_argument(
+        "--no-canonicalize-labels",
+        action="store_true",
+        help="Disable chemical label canonicalization such as bt -> benzenethiol.",
+    )
+    parser.add_argument(
+        "--group-metal-substrates",
+        action="store_true",
+        help="Group AgNP with Ag and AuNP with Au before leave-substrate-out evaluation.",
+    )
+    parser.add_argument(
         "--out",
         type=Path,
         default=Path("Workspace/substrate_agnostic/classical_baselines/results.csv"),
@@ -229,7 +254,14 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    df, cols = load_dataset(args.data, args.crop_min, args.crop_max, args.min_substrates)
+    df, cols = load_dataset(
+        args.data,
+        args.crop_min,
+        args.crop_max,
+        args.min_substrates,
+        canonicalize_labels=not args.no_canonicalize_labels,
+        group_metal_substrates=args.group_metal_substrates,
+    )
     results, confusions = evaluate(df, cols)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
@@ -239,6 +271,8 @@ def main() -> int:
         matrix.to_csv(args.confusions_dir / f"{name}.csv")
 
     print("Dataset:", args.data)
+    print("Canonical labels:", not args.no_canonicalize_labels)
+    print("Grouped metal substrates:", args.group_metal_substrates)
     print("Rows evaluated:", len(df))
     print("Labels:", ", ".join(sorted(df["Label"].unique())))
     print("Substrates:", ", ".join(sorted(df["Substrate"].unique())))

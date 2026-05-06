@@ -61,6 +61,18 @@ def substrate_balanced_prototypes(features, labels, substrates):
     return prototype_labels, np.vstack(prototypes)
 
 
+def chemical_prototypes(features, labels, substrates, prototype_mode):
+    prototype_labels = sorted(np.unique(labels))
+    if prototype_mode == "substrate_balanced":
+        return substrate_balanced_prototypes(features, labels, substrates)
+    if prototype_mode == "row_mean":
+        prototypes = []
+        for label in prototype_labels:
+            prototypes.append(features[labels == label].mean(axis=0))
+        return prototype_labels, np.vstack(prototypes)
+    raise ValueError(f"Unsupported prototype mode: {prototype_mode}")
+
+
 def separation_scores(features, labels, substrates, space, held_out):
     rows = []
     label_score = np.nan
@@ -101,13 +113,14 @@ def sample_silhouettes(features, labels, substrates, space, held_out):
     return rows
 
 
-def prototype_geometry(features, labels, substrates, held_out, space):
+def prototype_geometry(features, labels, substrates, held_out, space, prototype_mode):
     train_mask = substrates != held_out
     test_mask = substrates == held_out
-    prototype_labels, prototypes = substrate_balanced_prototypes(
+    prototype_labels, prototypes = chemical_prototypes(
         features[train_mask],
         labels[train_mask],
         substrates[train_mask],
+        prototype_mode,
     )
     test_features = features[test_mask]
     test_labels = labels[test_mask]
@@ -120,6 +133,7 @@ def prototype_geometry(features, labels, substrates, held_out, space):
         row = {
             "space": space,
             "held_out": held_out,
+            "prototype_mode": prototype_mode,
             "row_index": int(row_idx),
             "true_label": test_labels[local_idx],
             "pred_label": pred_labels[local_idx],
@@ -146,6 +160,7 @@ def prototype_geometry(features, labels, substrates, held_out, space):
             {
                 "space": space,
                 "held_out": held_out,
+                "prototype_mode": prototype_mode,
                 "true_label": label,
                 "n": int(mask.sum()),
                 "accuracy": float((pred_labels[mask] == label).mean()),
@@ -220,6 +235,66 @@ def projection_frames(features, labels, substrates, seed):
     return frames
 
 
+def plot_projection_frame(frame, projection, space, held_out, out_path):
+    label_values = sorted(frame["label"].unique())
+    substrate_values = sorted(frame["substrate"].unique())
+    label_colors = {
+        "4np": "#4C78A8",
+        "benzenethiol": "#F58518",
+        "pyridine": "#54A24B",
+        "n,n-dimethylformamide": "#B279A2",
+    }
+    substrate_colors = {
+        "Ag": "#8C8C8C",
+        "Au": "#D4A017",
+        "PICO": "#E45756",
+        "pSERS": "#72B7B2",
+    }
+    markers = ["o", "s", "^", "D", "P", "X"]
+    substrate_markers = {substrate: markers[idx % len(markers)] for idx, substrate in enumerate(substrate_values)}
+    label_markers = {label: markers[idx % len(markers)] for idx, label in enumerate(label_values)}
+
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharex=True, sharey=True)
+    for ax, color_by in [(axes[0], "chemical"), (axes[1], "substrate family")]:
+        for label in label_values:
+            for substrate in substrate_values:
+                mask = (frame["label"] == label) & (frame["substrate"] == substrate)
+                if not mask.any():
+                    continue
+                if color_by == "chemical":
+                    color = label_colors.get(label, "#777777")
+                    marker = substrate_markers[substrate]
+                    legend_label = f"{label} / {substrate}"
+                else:
+                    color = substrate_colors.get(substrate, "#777777")
+                    marker = label_markers[label]
+                    legend_label = f"{substrate} / {label}"
+                edge = "black" if substrate == held_out else "white"
+                line_width = 1.0 if substrate == held_out else 0.35
+                ax.scatter(
+                    frame.loc[mask, "x1"],
+                    frame.loc[mask, "x2"],
+                    c=color,
+                    marker=marker,
+                    s=42,
+                    alpha=0.82,
+                    edgecolors=edge,
+                    linewidths=line_width,
+                    label=legend_label,
+                )
+        ax.axhline(0, color="black", linewidth=0.4, alpha=0.25)
+        ax.axvline(0, color="black", linewidth=0.4, alpha=0.25)
+        ax.grid(alpha=0.2)
+        ax.set_xlabel(f"{projection.upper()} 1")
+        ax.set_ylabel(f"{projection.upper()} 2")
+        ax.set_title(f"Color by {color_by}")
+        ax.legend(fontsize=7, loc="best", frameon=True)
+    fig.suptitle(f"{space}: {projection.upper()} projection, held-out {held_out}", fontsize=13)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=180)
+    plt.close(fig)
+
+
 def save_projection_analysis(features, labels, substrates, space, held_out, out_dir, seed):
     projection_dir = out_dir / "projections"
     projection_dir.mkdir(parents=True, exist_ok=True)
@@ -227,8 +302,23 @@ def save_projection_analysis(features, labels, substrates, space, held_out, out_
     for projection, frame in projection_frames(features, labels, substrates, seed).items():
         stem = f"{space}__heldout_{held_out}__{projection}"
         frame.to_csv(projection_dir / f"{stem}.csv", index=False)
+        plot_projection_frame(frame, projection, space, held_out, projection_dir / f"{stem}.png")
         rows.extend(projection_summary(frame, projection, space, held_out))
     return rows
+
+
+def plot_existing_projection_csvs(out_dir):
+    projection_dir = out_dir / "projections"
+    for csv_path in sorted(projection_dir.glob("*.csv")):
+        parts = csv_path.stem.split("__")
+        if len(parts) != 3 or not parts[1].startswith("heldout_"):
+            continue
+        space = parts[0]
+        held_out = parts[1].replace("heldout_", "", 1)
+        projection = parts[2]
+        frame = pd.read_csv(csv_path)
+        plot_projection_frame(frame, projection, space, held_out, csv_path.with_suffix(".png"))
+
 
 
 def plot_silhouette_bars(score_df, out_dir):
@@ -321,7 +411,7 @@ def plot_sample_silhouette_distributions(sample_df, out_dir):
     labels = ["Derivative\nlabel", "Embedding\nlabel", "Derivative\nsubstrate", "Embedding\nsubstrate"]
 
     fig, ax = plt.subplots(figsize=(10, 6))
-    ax.boxplot(data, labels=labels, showmeans=True, patch_artist=True)
+    ax.boxplot(data, tick_labels=labels, showmeans=True, patch_artist=True)
     ax.axhline(0, color="black", linewidth=0.8)
     ax.set_ylabel("Per-spectrum silhouette score")
     ax.set_title("Per-spectrum silhouette distributions")
@@ -397,6 +487,7 @@ def write_markdown(out_dir, class_df, score_df, projection_df):
             [
                 "space",
                 "held_out",
+                "prototype_mode",
                 "true_label",
                 "n",
                 "accuracy",
@@ -435,14 +526,35 @@ def main() -> int:
     parser.add_argument("--crop-max", type=float, default=1800.0)
     parser.add_argument("--min-substrates", type=int, default=2)
     parser.add_argument("--feature", default="derivative_1")
+    parser.add_argument(
+        "--prototype-mode",
+        choices=["row_mean", "substrate_balanced"],
+        default="substrate_balanced",
+        help="How chemical prototypes are formed for distance/margin diagnostics.",
+    )
+    parser.add_argument(
+        "--group-metal-substrates",
+        action="store_true",
+        help="Group AgNP with Ag and AuNP with Au before leave-substrate-out geometry analysis.",
+    )
     parser.add_argument("--baseline-lam", type=float, default=1e4)
     parser.add_argument("--baseline-p", type=float, default=0.01)
     parser.add_argument("--baseline-niter", type=int, default=10)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument(
+        "--plot-existing-projections",
+        action="store_true",
+        help="Create PCA/UMAP/t-SNE scatter PNGs from existing projection CSVs without retraining.",
+    )
     args = parser.parse_args()
 
     sers.set_seed(args.seed)
     args.out_dir.mkdir(parents=True, exist_ok=True)
+    if args.plot_existing_projections:
+        plot_existing_projection_csvs(args.out_dir)
+        print(f"Saved projection scatter plots to {args.out_dir / 'projections'}")
+        return 0
+
     device = torch.device("cuda")
 
     df, cols = sers.load_dataset(
@@ -451,6 +563,7 @@ def main() -> int:
         args.crop_max,
         args.min_substrates,
         canonicalize_labels=True,
+        group_metal_substrates=args.group_metal_substrates,
     )
     X_raw = df[cols].to_numpy(dtype=float)
     X = sers.prepare_features(X_raw, args)
@@ -464,7 +577,14 @@ def main() -> int:
     projection_rows = []
 
     for held_out in sorted(np.unique(substrates)):
-        input_sample, input_class = prototype_geometry(X, labels, substrates, held_out, "derivative_input")
+        input_sample, input_class = prototype_geometry(
+            X,
+            labels,
+            substrates,
+            held_out,
+            "derivative_input",
+            args.prototype_mode,
+        )
         sample_rows.extend(input_sample)
         class_rows.extend(input_class)
         score_rows.extend(separation_scores(X, labels, substrates, "derivative_input", held_out))
@@ -489,6 +609,7 @@ def main() -> int:
             substrates,
             held_out,
             "siamese_embedding",
+            args.prototype_mode,
         )
         sample_rows.extend(embedding_sample)
         class_rows.extend(embedding_class)
