@@ -1,0 +1,13 @@
+method,accuracy,macro_f1
+"Pair one-shot
+notebook",0.9876,0.98
+"Six-label
+Siamese",0.854,0.686
+"Grouped
+Siamese",0.975,0.977
+"K-shot
+Siamese K=5",0.873,0.85
+"Classical
+centroid",0.987,0.987
+"Raw spectra
+control",0.44,0.399

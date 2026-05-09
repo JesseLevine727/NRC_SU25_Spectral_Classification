@@ -12,10 +12,13 @@ The grouped analysis is much stronger than the original six-substrate-label anal
 |---|---:|---:|---:|---|
 | old six substrate labels, best Siamese | 0.854 | 0.854 | 0.686 | `AgNP` at 0.380 |
 | grouped substrate families, best Siamese | 0.975 | 0.975 | 0.895 | `Ag` at 0.920 |
+| grouped substrate families, K-shot Siamese (`K=5`) | 0.873 | 0.873 | 0.850* | `pSERS` at 0.333 |
 | grouped substrate families, raw-spectrum Siamese | 0.440 | 0.440 | 0.399 | `Au` at 0.000 |
 | grouped substrate families, best classical baseline | 0.987 | 0.987 | 0.987 | `Ag` at 0.960 |
 
 The strongest current Siamese run after regrouping is `derivative_1` + triplet loss + row-mean chemical prototypes. Its only material errors are in the held-out `Ag` family: 6/25 `4np` spectra are predicted as `benzenethiol`. The grouped `PICO` and `pSERS` folds are perfect, and the grouped `Au` fold has 1/50 error.
+
+`*` The K-shot value is mean true-label macro F1, computed over labels actually present in each held-out fold.
 
 ## Corrected Dataset Matrix
 
@@ -47,6 +50,8 @@ If time is limited, the most useful expansion is not more row count from existin
   Corrected grouped-substrate classical leave-one-substrate-family-out baselines.
 - `grouped_metal_substrates/diagnostics/geometry_analysis/`
   Corrected grouped-substrate derivative-input vs Siamese-embedding geometry analysis with PCA, UMAP, t-SNE scatter plots, prototype distances, and silhouette visuals.
+- `grouped_metal_substrates/kshot_siamese/`
+  Formal K-shot grouped-substrate Siamese evaluation. `K` is sampled per held-in chemical-substrate-family cell and tested on the held-out substrate family. Includes five-seed results for `K=1,3,5,10,25` and K=5 PCA/UMAP/t-SNE geometry diagnostics.
 - `grouped_metal_substrates/sweeps/siamese_feature_loss_sweep/`
   Corrected grouped-substrate Siamese feature/loss/prototype sweep outputs and summary CSV.
 - `grouped_metal_substrates/archive/comparison_runs/raw_siamese_triplet_row_mean/`
@@ -62,6 +67,7 @@ Grouped geometry still shows that the Siamese embedding organizes spectra more b
 |---|---:|---:|---:|
 | derivative input | 0.304 | 0.101 | 0.203 |
 | Siamese embedding | 0.797 | -0.040 | 0.837 |
+| K=5 Siamese embedding | 0.748 | -0.042 | 0.789 |
 
 Useful grouped visual summaries:
 

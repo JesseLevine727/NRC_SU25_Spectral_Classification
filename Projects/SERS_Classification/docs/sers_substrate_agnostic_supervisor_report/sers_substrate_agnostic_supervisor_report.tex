@@ -42,6 +42,7 @@ The current work changes the task. The model now predicts \textbf{chemical ident
 \midrule
 Previous chemical-substrate Siamese evaluation & 0.854 & 0.854 & 0.686 & 0.380 \\
 Best substrate-agnostic Siamese & 0.975 & 0.975 & 0.977 & \texttt{Ag}: 0.920 \\
+K-shot Siamese check, $K=5$ & 0.873 & 0.873 & 0.850 & \texttt{pSERS}: 0.333 \\
 Best classical baseline & 0.987 & 0.987 & 0.987 & \texttt{Ag}: 0.960 \\
 Raw-spectrum Siamese control & 0.440 & 0.440 & 0.399 & \texttt{Au}: 0.000 \\
 \bottomrule
@@ -53,29 +54,29 @@ Raw-spectrum Siamese control & 0.440 & 0.440 & 0.399 & \texttt{Au}: 0.000 \\
 \begin{tikzpicture}
 \begin{axis}[
   ybar,
-  width=0.86\linewidth,
+  width=0.94\linewidth,
   height=5.4cm,
   ymin=0,
   ymax=1.08,
   ylabel={Score},
-  symbolic x coords={Old Siamese,Best Siamese,Best classical,Raw Siamese},
+  symbolic x coords={Old Siamese,Best Siamese,K-shot,Best classical,Raw Siamese},
   xtick=data,
-  x tick label style={rotate=18,anchor=east},
+  x tick label style={rotate=22,anchor=east},
   bar width=13pt,
   legend style={at={(0.5,1.05)},anchor=south,legend columns=2},
   nodes near coords,
   nodes near coords style={font=\scriptsize,/pgf/number format/fixed,/pgf/number format/precision=3},
 ]
 \addplot+[fill=siamese!65,draw=siamese] coordinates {
-  (Old Siamese,0.854) (Best Siamese,0.975) (Best classical,0.987) (Raw Siamese,0.440)
+  (Old Siamese,0.854) (Best Siamese,0.975) (K-shot,0.873) (Best classical,0.987) (Raw Siamese,0.440)
 };
 \addplot+[fill=classical!65,draw=classical] coordinates {
-  (Old Siamese,0.686) (Best Siamese,0.977) (Best classical,0.987) (Raw Siamese,0.399)
+  (Old Siamese,0.686) (Best Siamese,0.977) (K-shot,0.850) (Best classical,0.987) (Raw Siamese,0.399)
 };
 \legend{Accuracy,Macro F1}
 \end{axis}
 \end{tikzpicture}
-\caption{Main result comparison. For the grouped runs, macro F1 is computed over the true labels present in each held-out fold. The best substrate-agnostic Siamese model performs well, but the best non-deep baseline is slightly better on this small dataset. Raw spectra perform poorly, confirming that derivative preprocessing is important.}
+\caption{Main result comparison. For the grouped runs, macro F1 is computed over the true labels present in each held-out fold. The K-shot result uses $K=5$ support spectra per held-in chemical-substrate-family cell. The best substrate-agnostic Siamese model performs well, but the best non-deep baseline is slightly better on this small dataset. Raw spectra perform poorly, confirming that derivative preprocessing is important.}
 \end{figure}
 
 \section*{Dataset And Evaluation}
@@ -175,6 +176,26 @@ The saved CSV reports \texttt{0.660} macro F1 for the held-out \texttt{Au} fold 
 \caption{Best Siamese confusion matrices. The only meaningful failure mode is \texttt{4np} in the held-out Ag fold being pulled toward \texttt{benzenethiol}.}
 \end{figure}
 
+\section*{Formal K-Shot Check}
+
+The submitted abstract used the phrase few-shot because the original chemical-substrate pair model was trained from a small number of spectra per measured pair. I tested whether that claim still holds in the harder substrate-agnostic setting by restricting training to $K$ support spectra per held-in chemical-substrate-family cell, while keeping the same leave-one-substrate-family-out test. The encoder, triplet loss, prototype inference, first-derivative preprocessing, and GPU-only training setup were unchanged.
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+\textbf{K} & \textbf{Mean acc.} & \textbf{Mean true-label macro F1} & \textbf{Worst fold acc.} \\
+\midrule
+1 & 0.913 & 0.905 & 0.653 \\
+3 & 0.840 & 0.819 & 0.000 \\
+5 & 0.873 & 0.850 & 0.333 \\
+10 & 0.874 & 0.853 & 0.560 \\
+25 & 0.930 & 0.924 & 0.600 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This is useful evidence, but it is not strong enough to claim a robust few-shot substrate-agnostic detector. The K-shot runs are high variance because support selection and triplet training matter at this dataset size. A precise wording is: \textbf{Siamese metric learning for substrate-agnostic SERS classification on a small dataset, with a formal K-shot stress test.}
+
 \section*{Best Classical Baseline}
 
 The best non-deep-learning baseline is:
@@ -210,12 +231,13 @@ The Siamese embedding improves chemical organization. Silhouette scores compare 
 \textbf{Space} & \textbf{Chemical silhouette} & \textbf{Substrate silhouette} & \textbf{Difference} \\
 \midrule
 Derivative input & 0.304 & 0.101 & 0.203 \\
+K-shot Siamese embedding, $K=5$ & 0.748 & -0.042 & 0.789 \\
 Siamese embedding & 0.797 & -0.040 & 0.837 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-The embedding therefore clusters spectra much more by chemical identity and less by substrate family.
+The embedding therefore clusters spectra much more by chemical identity and less by substrate family. The $K=5$ embedding shows the same direction of improvement, but the full-data embedding is more stable and slightly more chemically organized.
 
 \begin{figure}[ht]
 \centering
@@ -231,7 +253,7 @@ The embedding therefore clusters spectra much more by chemical identity and less
 
 \section*{Interpretation And Next Steps}
 
-The current substrate-agnostic result is credible for the available three-chemical dataset, but it is not yet a broad SERS substrate-agnostic detector. The evidence is strongest for \texttt{benzenethiol} and \texttt{pyridine}, which are measured on all four substrate families. \texttt{4np} is valid on three substrate families but remains the main weak class in the held-out Ag fold.
+The current substrate-agnostic result is credible for the available three-chemical dataset, but it is not yet a broad SERS substrate-agnostic detector. The evidence is strongest for \texttt{benzenethiol} and \texttt{pyridine}, which are measured on all four substrate families. \texttt{4np} is valid on three substrate families but remains the main weak class in the held-out Ag fold. The formal K-shot check supports the same direction of progress, but its fold variance shows that the current dataset is still too small for a strong few-shot substrate-agnostic claim.
 
 The next dataset improvement should be to add another responsive chemical across all four substrate families. DMF is a candidate only if it responds reliably beyond Au.
 
@@ -241,6 +263,6 @@ For a stronger substrate-agnostic deep-learning claim, each new chemical-substra
 
 \section*{Bottom Line}
 
-We have moved from chemical-substrate pair classification to a true chemical-label, leave-one-substrate-family-out evaluation. The best Siamese model reaches 0.975 mean accuracy, and the best classical derivative baseline reaches 0.987. The current data support a strong proof of concept, but the next step for a stronger substrate-agnostic claim is another complete chemical across all substrate families.
+We have moved from chemical-substrate pair classification to a true chemical-label, leave-one-substrate-family-out evaluation. The best Siamese model reaches 0.975 mean accuracy, the formal $K=5$ check reaches 0.873 mean accuracy, and the best classical derivative baseline reaches 0.987. The current data support a strong proof of concept, but the next step for a stronger substrate-agnostic claim is another complete chemical across all substrate families plus more independent maps or preparations.
 
 \end{document}

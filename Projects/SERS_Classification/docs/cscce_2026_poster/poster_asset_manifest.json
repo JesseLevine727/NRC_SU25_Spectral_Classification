@@ -1,0 +1,26 @@
+{
+  "generated_by": "scripts/generate_cscce_poster_assets.py",
+  "requires_cuda": true,
+  "torch_cuda_available": true,
+  "torch_cuda_version": "13.0",
+  "gpu_name": "NVIDIA GeForce RTX 5080",
+  "representative_loss": {
+    "fold": "held-out Ag",
+    "feature": "derivative_1",
+    "loss": "triplet",
+    "epochs": 100,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "margin": 0.2,
+    "final_loss": 0.0
+  },
+  "assets": [
+    "dataset_matrix_counts.csv",
+    "dataset_matrix_heatmap.png",
+    "kshot_summary.png",
+    "performance_milestones.csv",
+    "performance_milestones.png",
+    "training_loss_traces.csv",
+    "training_loss_traces.png"
+  ]
+}

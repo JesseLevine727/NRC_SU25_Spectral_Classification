@@ -1,0 +1,201 @@
+model,epoch,loss
+pair contrastive notebook,1,0.463
+pair contrastive notebook,2,0.4947
+pair contrastive notebook,3,0.4811
+pair contrastive notebook,4,0.2575
+pair contrastive notebook,5,0.1714
+pair contrastive notebook,6,0.3619
+pair contrastive notebook,7,0.3021
+pair contrastive notebook,8,0.2151
+pair contrastive notebook,9,0.1361
+pair contrastive notebook,10,0.2822
+pair contrastive notebook,11,0.301
+pair contrastive notebook,12,0.1573
+pair contrastive notebook,13,0.1914
+pair contrastive notebook,14,0.1531
+pair contrastive notebook,15,0.2044
+pair contrastive notebook,16,0.2043
+pair contrastive notebook,17,0.0967
+pair contrastive notebook,18,0.093
+pair contrastive notebook,19,0.0598
+pair contrastive notebook,20,0.0693
+pair contrastive notebook,21,0.0313
+pair contrastive notebook,22,0.0342
+pair contrastive notebook,23,0.0597
+pair contrastive notebook,24,0.0459
+pair contrastive notebook,25,0.0539
+pair contrastive notebook,26,0.0462
+pair contrastive notebook,27,0.0338
+pair contrastive notebook,28,0.0605
+pair contrastive notebook,29,0.065
+pair contrastive notebook,30,0.0515
+pair contrastive notebook,31,0.0514
+pair contrastive notebook,32,0.0634
+pair contrastive notebook,33,0.0691
+pair contrastive notebook,34,0.0413
+pair contrastive notebook,35,0.017
+pair contrastive notebook,36,0.0222
+pair contrastive notebook,37,0.0467
+pair contrastive notebook,38,0.0331
+pair contrastive notebook,39,0.0332
+pair contrastive notebook,40,0.0212
+pair contrastive notebook,41,0.0363
+pair contrastive notebook,42,0.0313
+pair contrastive notebook,43,0.0217
+pair contrastive notebook,44,0.0279
+pair contrastive notebook,45,0.0263
+pair contrastive notebook,46,0.0214
+pair contrastive notebook,47,0.0241
+pair contrastive notebook,48,0.0183
+pair contrastive notebook,49,0.0317
+pair contrastive notebook,50,0.0208
+pair contrastive notebook,51,0.023
+pair contrastive notebook,52,0.0157
+pair contrastive notebook,53,0.0117
+pair contrastive notebook,54,0.0185
+pair contrastive notebook,55,0.0204
+pair contrastive notebook,56,0.0168
+pair contrastive notebook,57,0.0243
+pair contrastive notebook,58,0.0181
+pair contrastive notebook,59,0.0094
+pair contrastive notebook,60,0.0172
+pair contrastive notebook,61,0.0188
+pair contrastive notebook,62,0.0119
+pair contrastive notebook,63,0.0133
+pair contrastive notebook,64,0.0141
+pair contrastive notebook,65,0.0165
+pair contrastive notebook,66,0.0177
+pair contrastive notebook,67,0.0216
+pair contrastive notebook,68,0.015
+pair contrastive notebook,69,0.0245
+pair contrastive notebook,70,0.0139
+pair contrastive notebook,71,0.0187
+pair contrastive notebook,72,0.0153
+pair contrastive notebook,73,0.0231
+pair contrastive notebook,74,0.0199
+pair contrastive notebook,75,0.0187
+pair contrastive notebook,76,0.0261
+pair contrastive notebook,77,0.0428
+pair contrastive notebook,78,0.013
+pair contrastive notebook,79,0.0146
+pair contrastive notebook,80,0.0088
+pair contrastive notebook,81,0.0142
+pair contrastive notebook,82,0.0101
+pair contrastive notebook,83,0.0302
+pair contrastive notebook,84,0.0113
+pair contrastive notebook,85,0.0133
+pair contrastive notebook,86,0.0148
+pair contrastive notebook,87,0.0065
+pair contrastive notebook,88,0.012
+pair contrastive notebook,89,0.0073
+pair contrastive notebook,90,0.0087
+pair contrastive notebook,91,0.005
+pair contrastive notebook,92,0.0149
+pair contrastive notebook,93,0.0045
+pair contrastive notebook,94,0.0053
+pair contrastive notebook,95,0.0057
+pair contrastive notebook,96,0.0106
+pair contrastive notebook,97,0.0157
+pair contrastive notebook,98,0.0124
+pair contrastive notebook,99,0.0034
+pair contrastive notebook,100,0.0064
+"substrate-agnostic triplet, held-out Ag",1,0.16288477718830108
+"substrate-agnostic triplet, held-out Ag",2,0.08068904533982277
+"substrate-agnostic triplet, held-out Ag",3,0.002156004533171654
+"substrate-agnostic triplet, held-out Ag",4,0.0009969756007194518
+"substrate-agnostic triplet, held-out Ag",5,0.0
+"substrate-agnostic triplet, held-out Ag",6,4.814580082893372e-05
+"substrate-agnostic triplet, held-out Ag",7,0.0
+"substrate-agnostic triplet, held-out Ag",8,5.6600719690322874e-05
+"substrate-agnostic triplet, held-out Ag",9,0.0
+"substrate-agnostic triplet, held-out Ag",10,0.0
+"substrate-agnostic triplet, held-out Ag",11,0.0
+"substrate-agnostic triplet, held-out Ag",12,0.0
+"substrate-agnostic triplet, held-out Ag",13,0.0
+"substrate-agnostic triplet, held-out Ag",14,0.0
+"substrate-agnostic triplet, held-out Ag",15,0.0
+"substrate-agnostic triplet, held-out Ag",16,0.0
+"substrate-agnostic triplet, held-out Ag",17,0.0
+"substrate-agnostic triplet, held-out Ag",18,7.237866520881653e-05
+"substrate-agnostic triplet, held-out Ag",19,0.0
+"substrate-agnostic triplet, held-out Ag",20,0.0
+"substrate-agnostic triplet, held-out Ag",21,0.00035949379205703737
+"substrate-agnostic triplet, held-out Ag",22,0.0
+"substrate-agnostic triplet, held-out Ag",23,0.0005514951795339584
+"substrate-agnostic triplet, held-out Ag",24,0.0
+"substrate-agnostic triplet, held-out Ag",25,0.00021652817726135253
+"substrate-agnostic triplet, held-out Ag",26,0.0005498133599758148
+"substrate-agnostic triplet, held-out Ag",27,0.0
+"substrate-agnostic triplet, held-out Ag",28,4.5112520456314084e-05
+"substrate-agnostic triplet, held-out Ag",29,0.0
+"substrate-agnostic triplet, held-out Ag",30,0.0
+"substrate-agnostic triplet, held-out Ag",31,0.0
+"substrate-agnostic triplet, held-out Ag",32,0.0
+"substrate-agnostic triplet, held-out Ag",33,2.321973443031311e-05
+"substrate-agnostic triplet, held-out Ag",34,0.0
+"substrate-agnostic triplet, held-out Ag",35,0.0
+"substrate-agnostic triplet, held-out Ag",36,0.0
+"substrate-agnostic triplet, held-out Ag",37,0.0
+"substrate-agnostic triplet, held-out Ag",38,0.0
+"substrate-agnostic triplet, held-out Ag",39,0.0
+"substrate-agnostic triplet, held-out Ag",40,0.0
+"substrate-agnostic triplet, held-out Ag",41,0.0
+"substrate-agnostic triplet, held-out Ag",42,0.0
+"substrate-agnostic triplet, held-out Ag",43,0.0
+"substrate-agnostic triplet, held-out Ag",44,0.0
+"substrate-agnostic triplet, held-out Ag",45,0.0
+"substrate-agnostic triplet, held-out Ag",46,0.0
+"substrate-agnostic triplet, held-out Ag",47,0.0
+"substrate-agnostic triplet, held-out Ag",48,0.0
+"substrate-agnostic triplet, held-out Ag",49,0.0
+"substrate-agnostic triplet, held-out Ag",50,0.0
+"substrate-agnostic triplet, held-out Ag",51,0.0
+"substrate-agnostic triplet, held-out Ag",52,0.0
+"substrate-agnostic triplet, held-out Ag",53,0.0
+"substrate-agnostic triplet, held-out Ag",54,0.0
+"substrate-agnostic triplet, held-out Ag",55,0.0
+"substrate-agnostic triplet, held-out Ag",56,0.0
+"substrate-agnostic triplet, held-out Ag",57,0.0
+"substrate-agnostic triplet, held-out Ag",58,0.0
+"substrate-agnostic triplet, held-out Ag",59,0.0
+"substrate-agnostic triplet, held-out Ag",60,0.0
+"substrate-agnostic triplet, held-out Ag",61,0.0
+"substrate-agnostic triplet, held-out Ag",62,0.0
+"substrate-agnostic triplet, held-out Ag",63,0.0
+"substrate-agnostic triplet, held-out Ag",64,0.0
+"substrate-agnostic triplet, held-out Ag",65,0.0
+"substrate-agnostic triplet, held-out Ag",66,0.0
+"substrate-agnostic triplet, held-out Ag",67,0.0
+"substrate-agnostic triplet, held-out Ag",68,0.0
+"substrate-agnostic triplet, held-out Ag",69,0.0
+"substrate-agnostic triplet, held-out Ag",70,0.0
+"substrate-agnostic triplet, held-out Ag",71,0.0
+"substrate-agnostic triplet, held-out Ag",72,0.0
+"substrate-agnostic triplet, held-out Ag",73,0.0
+"substrate-agnostic triplet, held-out Ag",74,0.0
+"substrate-agnostic triplet, held-out Ag",75,0.0
+"substrate-agnostic triplet, held-out Ag",76,0.0
+"substrate-agnostic triplet, held-out Ag",77,0.0
+"substrate-agnostic triplet, held-out Ag",78,0.0
+"substrate-agnostic triplet, held-out Ag",79,0.0
+"substrate-agnostic triplet, held-out Ag",80,0.0
+"substrate-agnostic triplet, held-out Ag",81,0.0
+"substrate-agnostic triplet, held-out Ag",82,0.0
+"substrate-agnostic triplet, held-out Ag",83,0.0
+"substrate-agnostic triplet, held-out Ag",84,0.0
+"substrate-agnostic triplet, held-out Ag",85,0.0
+"substrate-agnostic triplet, held-out Ag",86,0.0
+"substrate-agnostic triplet, held-out Ag",87,0.0
+"substrate-agnostic triplet, held-out Ag",88,0.0
+"substrate-agnostic triplet, held-out Ag",89,0.0
+"substrate-agnostic triplet, held-out Ag",90,0.0
+"substrate-agnostic triplet, held-out Ag",91,0.0
+"substrate-agnostic triplet, held-out Ag",92,0.0
+"substrate-agnostic triplet, held-out Ag",93,0.0
+"substrate-agnostic triplet, held-out Ag",94,0.0
+"substrate-agnostic triplet, held-out Ag",95,0.0
+"substrate-agnostic triplet, held-out Ag",96,0.0
+"substrate-agnostic triplet, held-out Ag",97,0.0
+"substrate-agnostic triplet, held-out Ag",98,0.0
+"substrate-agnostic triplet, held-out Ag",99,0.0
+"substrate-agnostic triplet, held-out Ag",100,0.0

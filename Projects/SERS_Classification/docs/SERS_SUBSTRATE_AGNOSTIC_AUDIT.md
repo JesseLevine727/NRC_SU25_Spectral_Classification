@@ -146,6 +146,35 @@ Grouped geometry analysis:
 
 The corrected interpretation is that the model is generally learning chemical organization across substrate families. The remaining weakness is no longer a distinct `AgNP` substrate failure. It is a smaller `4np`-on-silver-family ambiguity against `benzenethiol`.
 
+### Formal K-Shot Check
+
+Run:
+
+```bash
+./.venv/bin/python scripts/sers_kshot_substrate_agnostic.py --group-metal-substrates --ks 1,3,5,10,25 --seeds 42,43,44,45,46 --epochs 100 --geometry-k 5 --geometry-seed 42 --out-dir Workspace/substrate_agnostic/grouped_metal_substrates/kshot_siamese
+```
+
+This evaluates the few-shot claim directly. For each held-out substrate family, `K` support spectra are sampled per held-in chemical-substrate-family cell. The same Conv1D Siamese encoder is trained with triplet loss on CUDA, and all known chemicals in the held-out substrate family are tested.
+
+| K | Mean accuracy | Mean true-label macro F1 | Std true-label macro F1 | Worst fold accuracy |
+|---:|---:|---:|---:|---:|
+| 1 | 0.913 | 0.905 | 0.140 | 0.653 |
+| 3 | 0.840 | 0.819 | 0.260 | 0.000 |
+| 5 | 0.873 | 0.850 | 0.218 | 0.333 |
+| 10 | 0.874 | 0.853 | 0.200 | 0.560 |
+| 25 | 0.930 | 0.924 | 0.138 | 0.600 |
+
+The K-shot result supports a cautious interpretation: the Siamese method can work with few support spectra, but the substrate-agnostic K-shot result is seed-sensitive and less stable than the full-data grouped Siamese result. The poster should describe the trajectory as few-shot chemical-substrate pair learning moving toward substrate-agnostic transfer, not as a fully robust few-shot substrate-agnostic system.
+
+K=5 geometry analysis also mirrors the full-data diagnostics:
+
+| Space | Mean chemical-label silhouette | Mean substrate-family silhouette | Label minus substrate |
+|---|---:|---:|---:|
+| derivative input | 0.304 | 0.101 | 0.203 |
+| K=5 Siamese embedding | 0.748 | -0.042 | 0.789 |
+
+The K=5 embedding still generally increases chemical-label organization and suppresses substrate-family organization, but not as strongly as the full-data embedding.
+
 ## Historical Six-Substrate-Label Baselines
 
 Run:

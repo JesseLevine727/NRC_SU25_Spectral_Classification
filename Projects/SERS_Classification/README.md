@@ -17,6 +17,8 @@ This directory groups the SERS-focused classification and exploration work.
   Cleaned result tree for the current substrate-agnostic story: best model, diagnostics, sweeps, baselines, and archived comparison runs.
 - `scripts/sers_siamese_substrate_agnostic.py`
   CUDA-first Siamese/triplet training script for substrate-held-out chemical classification.
+- `scripts/sers_kshot_substrate_agnostic.py`
+  CUDA-first formal K-shot version of the grouped substrate-held-out Siamese evaluation. It samples only `K` spectra per held-in chemical-substrate-family cell and generates matching clustering/geometry diagnostics.
 - `scripts/sers_agnp_deep_dive.py`
   Generates average spectra, PCA, UMAP, t-SNE, prototype-distance, and raw-file diagnostics in `Workspace/substrate_agnostic/diagnostics/agnp_failure/`.
 
