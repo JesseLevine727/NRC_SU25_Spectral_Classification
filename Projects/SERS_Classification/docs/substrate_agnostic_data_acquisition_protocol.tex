@@ -1,0 +1,72 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlist[itemize]{leftmargin=*,nosep}
+\setlist[enumerate]{leftmargin=*,nosep}
+\renewcommand{\arraystretch}{1.12}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries SERS Dataset Acquisition Protocol}\\[-1pt]
+{\normalsize Substrate-agnostic chemical classification dataset}
+\end{center}
+
+\textbf{Goal.} Build a complete chemical-by-substrate matrix/dataset. 
+
+\textbf{Core matrix.}
+\begin{center}
+\begin{tabular}{p{0.34\linewidth}p{0.56\linewidth}}
+\toprule
+\textbf{Item} & \textbf{Target} \\
+\midrule
+Substrate families & Ag, Au, PICO, pSERS \\
+Chemicals & Ideally 8 chemicals that respond on all 4 substrates; minimum 5 if time-limited \\
+Chemical-substrate pairs & Ideal: $8 \times 4 = 32$ pairs; minimum: $5 \times 4 = 20$ pairs \\
+Spectra per pair & Ideal: 200+ usable spectra; minimum pilot: 100 usable spectra \\
+Ideal analyte total & $32 \times 200+ = 6400+$ spectra \\
+Minimum pilot total & $20 \times 100 = 2000$ spectra \\
+Blanks/controls & Per substrate family: 100+ substrate-only spectra \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Per chemical-substrate pair: collect 200+ usable spectra across independent samples.}
+\begin{center}
+\begin{tabular}{p{0.17\linewidth}p{0.25\linewidth}p{0.17\linewidth}p{0.17\linewidth}p{0.12\linewidth}}
+\toprule
+\textbf{Timing} & \textbf{Independent sample} & \textbf{Substrate piece/batch} & \textbf{Maps} & \textbf{Spectra} \\
+\midrule
+Preferred day 1 & Preparation A & Piece/batch 1 & 2 maps x 25 & 50 \\
+Preferred day 1 & Preparation B & Piece/batch 2 & 2 maps x 25 & 50 \\
+Preferred day 2 & Preparation C & Piece/batch 1 or 3 & 2 maps x 25 & 50 \\
+Preferred day 2 & Preparation D & Piece/batch 2 or 4 & 2 maps x 25 & 50 \\
+\midrule
+\multicolumn{4}{r}{\textbf{Total per chemical-substrate pair}} & \textbf{200} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Procedure.}
+\begin{enumerate}
+  \item For each chemical-substrate pair, prepare four independent samples: A, B, C, and D.
+  \item Collect two 5 x 5 maps from each preparation. Each map gives 25 spectra.
+  \item Prefer acquisition over two days. Same-day acquisition is perfectly fine if the samples are independently prepared and measured on different substrate pieces/batches.
+  \item What we don't want: all spectra from one preparation, one substrate piece, one spot, or one map.
+  \item For every substrate family, collect 100 substrate-only spectra.
+\end{enumerate}
+
+\textbf{Note.} If more independent samples, substrate pieces/batches, acquisition days, or spectra can be prepared, that is better. More independent variation will make the substrate-agnostic dataset stronger.
+
+
+
+\end{document}
