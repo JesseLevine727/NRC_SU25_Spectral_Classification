@@ -36,3 +36,6 @@ Docs/** linguist-documentation
 **/Reports/** linguist-documentation
 Archive/** linguist-documentation
 **/Archive/** linguist-documentation
+
+# Large Agilent archives added with the July 2026 dataset.
+2026July21/**/*.cez filter=lfs diff=lfs merge=lfs -text
