@@ -1,0 +1,71 @@
+{
+  "axis_cm1": {
+    "maximum": 1800.0,
+    "minimum": 400.0,
+    "points": 1401,
+    "step": 1.0
+  },
+  "candidate_order": [
+    "minimal_minmax",
+    "robust_minmax",
+    "asls_minmax",
+    "arpls_minmax",
+    "derivative_1",
+    "derivative_2"
+  ],
+  "config": {
+    "arpls_iterations": 30,
+    "arpls_lambda": 1000000.0,
+    "arpls_tolerance": 0.001,
+    "asls_asymmetry": 0.001,
+    "asls_iterations": 12,
+    "asls_lambda": 1000000.0,
+    "axis_max_cm1": 1800,
+    "axis_min_cm1": 400,
+    "axis_step_cm1": 1,
+    "derivative_polynomial_order": 3,
+    "derivative_window_points": 17,
+    "injected_baseline_fraction": 0.3,
+    "injected_noise_fraction": 0.03,
+    "injected_shift_points": 3,
+    "injected_spike_fraction": 0.8,
+    "robust_high_percentile": 99.0,
+    "robust_low_percentile": 1.0,
+    "saturation_min_plateau_points": 3,
+    "saturation_relative_tolerance": 1e-06,
+    "spike_max_half_prominence_width_points": 1.25,
+    "spike_min_prominence_fraction": 0.1
+  },
+  "created_utc": "2026-07-22T18:38:03.348282+00:00",
+  "dataset_version": "nato-sers-preprocessing-v1",
+  "fixed_baseline": {
+    "classifier": "class-balanced logistic regression",
+    "pca_components": 32,
+    "pca_whiten": true,
+    "secondary_classifier": "nearest centroid",
+    "seed": 2026
+  },
+  "input_sha256": {
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/domain_evaluation_partitions.csv": "1ada524029c68302df9e4b30e4923f15500fc465fadddaecb42af84404e4348a",
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/grouped_sample_cv_assignments.csv": "4003e2e2b8a66b57a69653dc40afad7f2d3a17f5c3b579faba0e137fa9680fc8",
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/sers_core_manifest.csv": "154efb30e69f11012b08c29689d75fb3b2626130b2dbef9b66826dbfe31513c1",
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/sers_core_spectra_raw_common_grid.npz": "8c28ae26ef46601b5a17ce4ae53f25bed8bfa5c25a5ac4ba75b443ee89ece36f",
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/sers_qc_pass_manifest.csv": "2c5148c04c390cfeccd294e1141bf0fdc9c240c93bc7a5f9ef6e03e716381898",
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/freeze_nato_sers_preprocessing.py": "86fe4fb007c993b5211b5a26cf01bddcfb194b7a0a0927dc6d185ce6be2d7d04"
+  },
+  "quality_pass_observations": 500,
+  "selected_frozen_representations": [
+    "minimal_minmax",
+    "arpls_minmax",
+    "derivative_1"
+  ],
+  "software": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "python": "3.12.3",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.17.1"
+  },
+  "source_archive_modified": false,
+  "strict_core_observations": 598
+}

@@ -1,0 +1,114 @@
+{
+  "ambiguous_sers_recording_observations": 3,
+  "common_grid_cm1": [
+    400,
+    1800,
+    1
+  ],
+  "conflicting_source_references": 38,
+  "core_observations": 598,
+  "corrected_source_ids": 1,
+  "important_semantics": {
+    "include_sers_core": "Named sensor, source matched, ground truth resolved, unambiguous source reference, valid numeric spectrum.",
+    "include_sers_qc_pass": "Core plus conservative exclusion of severe/low-signal notes.",
+    "instrument_result": "Field instrument/library output, not ground truth.",
+    "na": "No SERS sensor; normal Raman spectrum (exclude from SERS-only data).",
+    "target_analyte": "Derived only from the master sample list."
+  },
+  "instrument_counts_core": {
+    "Agilent-1": 29,
+    "Agilent-3": 73,
+    "Mira-1": 23,
+    "Mira-2": 75,
+    "Mira-3": 72,
+    "Pendar-1": 46,
+    "Pendar-2": 98,
+    "Pendar-3": 70,
+    "RMX-1": 47,
+    "RMX-2": 65
+  },
+  "manual_low_signal_or_noise_core": 23,
+  "manual_severe_qc_core": 88,
+  "named_sers_recording_observations": 721,
+  "normal_raman_or_non_sers_observations": 448,
+  "qc_pass_observations": 500,
+  "recording_observations": 1172,
+  "sensor_alias_counts": {
+    "Ag P-SERS": 55,
+    "AgGaN": 12,
+    "AgPol": 6,
+    "AuGaN": 9,
+    "AuPol": 2,
+    "CAN": 4,
+    "CAN Au SERS": 1,
+    "CAN-H2": 21,
+    "CAN-SERS": 48,
+    "CAN-SERS (KI)": 1,
+    "Can SERS": 7,
+    "Canadian SERS": 3,
+    "H-Ag SERS": 1,
+    "H-Kit": 202,
+    "H-SERS Ag": 1,
+    "MAG": 1,
+    "MAg": 5,
+    "MR AG SRS": 1,
+    "Metrohm silver": 13,
+    "NRC SERS": 1,
+    "NRC SERS ANH2": 4,
+    "NRC SERS CAN H2": 12,
+    "NRC SRS": 1,
+    "NRC Sensor ANH2": 10,
+    "NRC-SERS Canada": 1,
+    "NRC-SRS": 1,
+    "NRC-SRS Canada": 3,
+    "NRS SERS CAN H2": 1,
+    "P-SERS": 240,
+    "P-SERS Ag": 53,
+    "Silver SERS": 1
+  },
+  "sensor_family_counts_core": {
+    "GaN_polymer": 23,
+    "H_SERS_H_Kit": 153,
+    "NRC_Canadian_SERS": 98,
+    "pSERS_Metrohm_silver": 324
+  },
+  "sensor_family_counts_named_sers": {
+    "GaN_polymer": 29,
+    "H_SERS_H_Kit": 204,
+    "NRC_Canadian_SERS": 119,
+    "pSERS_Metrohm_silver": 369
+  },
+  "sensor_flag_conflicts": 20,
+  "source_match_status_all": {
+    "instrument_data_unavailable": 74,
+    "matched": 1056,
+    "no_scan_file_logged": 37,
+    "scan_not_found": 5
+  },
+  "source_match_status_named_sers": {
+    "instrument_data_unavailable": 58,
+    "matched": 626,
+    "no_scan_file_logged": 37
+  },
+  "source_spectra_indexed": {
+    "Agilent-1": 54,
+    "Agilent-3": 157,
+    "Mira-1": 74,
+    "Mira-2": 166,
+    "Mira-3": 157,
+    "Pendar-1": 115,
+    "Pendar-2": 249,
+    "Pendar-3": 160,
+    "RMX-1": 115,
+    "RMX-2": 126
+  },
+  "target_counts_core": {
+    "4_ANPP": 102,
+    "4_nitrophenol": 92,
+    "acetaminophen": 81,
+    "benzyl_fentanyl": 120,
+    "blank": 87,
+    "ethanol": 62,
+    "ethyl_paraoxon": 54
+  }
+}

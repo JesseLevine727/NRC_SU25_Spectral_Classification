@@ -1,0 +1,167 @@
+{
+  "common_objectives": {
+    "composite_corruption_target": "max",
+    "cross_instrument_separation_margin": "max",
+    "instrument_leakage_increment": "min",
+    "same_master_cross_instrument_distance": "min",
+    "sensor_leakage_increment": "min",
+    "target_core": "max",
+    "target_quality": "max"
+  },
+  "corrected_intensity_peak_gates": {
+    "minimum_median_spectral_correlation": 0.9,
+    "minimum_peak_recall_5cm": 0.9
+  },
+  "global_pareto": [
+    "minimal_minmax",
+    "robust_minmax",
+    "asls_minmax",
+    "arpls_minmax",
+    "derivative_1",
+    "derivative_2"
+  ],
+  "intensity_role_additional_objectives": {
+    "peak_recall": "max",
+    "spectral_correlation_to_minimal": "max"
+  },
+  "role_pareto": {
+    "derivative": [
+      "derivative_1",
+      "derivative_2"
+    ],
+    "intensity": [
+      "asls_minmax",
+      "arpls_minmax",
+      "minimal_minmax",
+      "robust_minmax"
+    ]
+  },
+  "selected_frozen_representations": [
+    "minimal_minmax",
+    "arpls_minmax",
+    "derivative_1"
+  ],
+  "selection_basis": "Nested inner-validation Pareto selection. The globally Pareto-optimal minimal min-max representation is retained as the causal no-baseline control; corrected intensity candidates must preserve at least 90% of reference peaks within 5 cm^-1 and retain at least 0.90 median spectral correlation, after which one corrected representation and one derivative control are selected by equal-weight generalization utility from their role-specific Pareto fronts.",
+  "table": [
+    {
+      "composite_corruption_target": 0.6638923462302835,
+      "composite_prediction_agreement": 0.8566102620689666,
+      "cross_instrument_separation_margin": 0.11334034090769998,
+      "family": "intensity",
+      "generalization_utility": 0.38166195980807005,
+      "global_pareto": true,
+      "instrument_leakage_increment": 0.6714937556604224,
+      "peak_recall": 1.0,
+      "representation": "minimal_minmax",
+      "role_pareto": true,
+      "role_utility": 0.450743571975492,
+      "same_master_cross_instrument_distance": 0.7603972082971211,
+      "selected_frozen": true,
+      "sensor_leakage_increment": 0.4415267700422499,
+      "spectral_correlation_to_minimal": 1.0,
+      "target_centroid_core": 0.42355377454625576,
+      "target_core": 0.696657186643947,
+      "target_quality": 0.738976861058015
+    },
+    {
+      "composite_corruption_target": 0.6845338385280769,
+      "composite_prediction_agreement": 0.8585798127202542,
+      "cross_instrument_separation_margin": 0.1064171968833774,
+      "family": "intensity",
+      "generalization_utility": 0.32697611259013304,
+      "global_pareto": true,
+      "instrument_leakage_increment": 0.682082342759426,
+      "peak_recall": 0.9964711651180241,
+      "representation": "robust_minmax",
+      "role_pareto": true,
+      "role_utility": 0.421682725188575,
+      "same_master_cross_instrument_distance": 0.768177942084708,
+      "selected_frozen": false,
+      "sensor_leakage_increment": 0.44217126457993333,
+      "spectral_correlation_to_minimal": 0.9990988605043247,
+      "target_centroid_core": 0.444634064806466,
+      "target_core": 0.6964697901985415,
+      "target_quality": 0.7296906897677167
+    },
+    {
+      "composite_corruption_target": 0.6544768170925004,
+      "composite_prediction_agreement": 0.8259466568096727,
+      "cross_instrument_separation_margin": 0.14825632057601434,
+      "family": "intensity",
+      "generalization_utility": 0.6106627883334887,
+      "global_pareto": true,
+      "instrument_leakage_increment": 0.6608488361873779,
+      "peak_recall": 0.9607385022931126,
+      "representation": "asls_minmax",
+      "role_pareto": true,
+      "role_utility": 0.5273597101736605,
+      "same_master_cross_instrument_distance": 0.6999170720840427,
+      "selected_frozen": false,
+      "sensor_leakage_increment": 0.44619965534981015,
+      "spectral_correlation_to_minimal": 0.9839614196121099,
+      "target_centroid_core": 0.5116381492631084,
+      "target_core": 0.7138823570911671,
+      "target_quality": 0.7546364454485981
+    },
+    {
+      "composite_corruption_target": 0.6525699656850359,
+      "composite_prediction_agreement": 0.7990735455416413,
+      "cross_instrument_separation_margin": 0.18578144613233408,
+      "family": "intensity",
+      "generalization_utility": 0.7042585795312768,
+      "global_pareto": true,
+      "instrument_leakage_increment": 0.6107699068115735,
+      "peak_recall": 0.9370704276513173,
+      "representation": "arpls_minmax",
+      "role_pareto": true,
+      "role_utility": 0.45492836210323045,
+      "same_master_cross_instrument_distance": 0.675259219599846,
+      "selected_frozen": true,
+      "sensor_leakage_increment": 0.44638619682118136,
+      "spectral_correlation_to_minimal": 0.9442082665742613,
+      "target_centroid_core": 0.4629996018973216,
+      "target_core": 0.707092410513463,
+      "target_quality": 0.7417719302599981
+    },
+    {
+      "composite_corruption_target": 0.5502006159589931,
+      "composite_prediction_agreement": 0.6582835688354214,
+      "cross_instrument_separation_margin": 0.16283919703430647,
+      "family": "derivative",
+      "generalization_utility": 0.5886952195409233,
+      "global_pareto": true,
+      "instrument_leakage_increment": 0.6396937637041804,
+      "peak_recall": NaN,
+      "representation": "derivative_1",
+      "role_pareto": true,
+      "role_utility": 0.7142857142857143,
+      "same_master_cross_instrument_distance": 0.683602905874595,
+      "selected_frozen": true,
+      "sensor_leakage_increment": 0.43323589857568184,
+      "spectral_correlation_to_minimal": NaN,
+      "target_centroid_core": 0.6486507020956596,
+      "target_core": 0.7006163908237707,
+      "target_quality": 0.7390293844944058
+    },
+    {
+      "composite_corruption_target": 0.45226550430064644,
+      "composite_prediction_agreement": 0.5276402101054354,
+      "cross_instrument_separation_margin": 0.15544193964200265,
+      "family": "derivative",
+      "generalization_utility": 0.4676743280673145,
+      "global_pareto": true,
+      "instrument_leakage_increment": 0.5273197863041613,
+      "peak_recall": NaN,
+      "representation": "derivative_2",
+      "role_pareto": true,
+      "role_utility": 0.2857142857142857,
+      "same_master_cross_instrument_distance": 0.7072230671692525,
+      "selected_frozen": false,
+      "sensor_leakage_increment": 0.4093525241515887,
+      "spectral_correlation_to_minimal": NaN,
+      "target_centroid_core": 0.6267152821434859,
+      "target_core": 0.6456295422323127,
+      "target_quality": 0.7108613680506047
+    }
+  ]
+}

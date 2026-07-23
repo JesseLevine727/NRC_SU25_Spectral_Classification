@@ -1,0 +1,831 @@
+{
+  "domain_protocols": {
+    "domain_and_sample": "Test on one held-out sensor/instrument and exclude every test master sample from training. Unsupported target classes are reported rather than folded into balanced accuracy.",
+    "domain_only": "Test on one held-out sensor/instrument; other-domain spectra of the same master sample may remain in training. Use as a paired domain-shift diagnostic, not as the deployment headline."
+  },
+  "grouped_sample_cv": {
+    "description": "Five deterministic folds stratified at the master-sample level; all repeated spectra of one sample remain in one fold.",
+    "folds": {
+      "0": {
+        "master_samples": 14,
+        "observations": 118,
+        "target_master_samples": {
+          "4_ANPP": 2,
+          "4_nitrophenol": 1,
+          "acetaminophen": 2,
+          "benzyl_fentanyl": 3,
+          "blank": 2,
+          "ethanol": 2,
+          "ethyl_paraoxon": 2
+        },
+        "target_observations": {
+          "4_ANPP": 20,
+          "4_nitrophenol": 20,
+          "acetaminophen": 15,
+          "benzyl_fentanyl": 25,
+          "blank": 20,
+          "ethanol": 12,
+          "ethyl_paraoxon": 6
+        }
+      },
+      "1": {
+        "master_samples": 12,
+        "observations": 119,
+        "target_master_samples": {
+          "4_ANPP": 2,
+          "4_nitrophenol": 1,
+          "acetaminophen": 3,
+          "benzyl_fentanyl": 3,
+          "blank": 1,
+          "ethanol": 1,
+          "ethyl_paraoxon": 1
+        },
+        "target_observations": {
+          "4_ANPP": 20,
+          "4_nitrophenol": 19,
+          "acetaminophen": 16,
+          "benzyl_fentanyl": 23,
+          "blank": 15,
+          "ethanol": 12,
+          "ethyl_paraoxon": 14
+        }
+      },
+      "2": {
+        "master_samples": 15,
+        "observations": 117,
+        "target_master_samples": {
+          "4_ANPP": 2,
+          "4_nitrophenol": 2,
+          "acetaminophen": 1,
+          "benzyl_fentanyl": 3,
+          "blank": 2,
+          "ethanol": 3,
+          "ethyl_paraoxon": 2
+        },
+        "target_observations": {
+          "4_ANPP": 21,
+          "4_nitrophenol": 16,
+          "acetaminophen": 18,
+          "benzyl_fentanyl": 24,
+          "blank": 21,
+          "ethanol": 12,
+          "ethyl_paraoxon": 5
+        }
+      },
+      "3": {
+        "master_samples": 12,
+        "observations": 120,
+        "target_master_samples": {
+          "4_ANPP": 2,
+          "4_nitrophenol": 2,
+          "acetaminophen": 3,
+          "benzyl_fentanyl": 2,
+          "blank": 1,
+          "ethanol": 1,
+          "ethyl_paraoxon": 1
+        },
+        "target_observations": {
+          "4_ANPP": 20,
+          "4_nitrophenol": 18,
+          "acetaminophen": 16,
+          "benzyl_fentanyl": 24,
+          "blank": 13,
+          "ethanol": 13,
+          "ethyl_paraoxon": 16
+        }
+      },
+      "4": {
+        "master_samples": 16,
+        "observations": 124,
+        "target_master_samples": {
+          "4_ANPP": 3,
+          "4_nitrophenol": 2,
+          "acetaminophen": 2,
+          "benzyl_fentanyl": 4,
+          "blank": 2,
+          "ethanol": 2,
+          "ethyl_paraoxon": 1
+        },
+        "target_observations": {
+          "4_ANPP": 21,
+          "4_nitrophenol": 19,
+          "acetaminophen": 16,
+          "benzyl_fentanyl": 24,
+          "blank": 18,
+          "ethanol": 13,
+          "ethyl_paraoxon": 13
+        }
+      }
+    },
+    "seed": 2026
+  },
+  "partitions": {
+    "instrument:Agilent-1:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 172,
+        "test": 29,
+        "train": 397
+      },
+      "supported_test_observations": 19,
+      "test_classes": [
+        "4_ANPP",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "test_master_samples": 19,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": [
+        "blank"
+      ]
+    },
+    "instrument:Agilent-1:domain_only": {
+      "partition_counts": {
+        "test": 29,
+        "train": 569
+      },
+      "supported_test_observations": 29,
+      "test_classes": [
+        "4_ANPP",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "test_master_samples": 19,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:Agilent-3:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 414,
+        "test": 73,
+        "train": 111
+      },
+      "supported_test_observations": 62,
+      "test_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 45,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": [
+        "blank"
+      ]
+    },
+    "instrument:Agilent-3:domain_only": {
+      "partition_counts": {
+        "test": 73,
+        "train": 525
+      },
+      "supported_test_observations": 73,
+      "test_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 45,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:Mira-1:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 142,
+        "test": 23,
+        "train": 433
+      },
+      "supported_test_observations": 23,
+      "test_classes": [
+        "4_ANPP",
+        "acetaminophen",
+        "benzyl_fentanyl"
+      ],
+      "test_master_samples": 17,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:Mira-1:domain_only": {
+      "partition_counts": {
+        "test": 23,
+        "train": 575
+      },
+      "supported_test_observations": 23,
+      "test_classes": [
+        "4_ANPP",
+        "acetaminophen",
+        "benzyl_fentanyl"
+      ],
+      "test_master_samples": 17,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:Mira-2:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 160,
+        "test": 75,
+        "train": 363
+      },
+      "supported_test_observations": 3,
+      "test_classes": [
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 26,
+      "train_classes": [
+        "4_ANPP",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "unsupported_test_classes": [
+        "4_nitrophenol",
+        "ethanol",
+        "ethyl_paraoxon"
+      ]
+    },
+    "instrument:Mira-2:domain_only": {
+      "partition_counts": {
+        "test": 75,
+        "train": 523
+      },
+      "supported_test_observations": 75,
+      "test_classes": [
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 26,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:Mira-3:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 132,
+        "test": 72,
+        "train": 394
+      },
+      "supported_test_observations": 41,
+      "test_classes": [
+        "4_ANPP",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "test_master_samples": 19,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": [
+        "blank"
+      ]
+    },
+    "instrument:Mira-3:domain_only": {
+      "partition_counts": {
+        "test": 72,
+        "train": 526
+      },
+      "supported_test_observations": 72,
+      "test_classes": [
+        "4_ANPP",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "test_master_samples": 19,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:Pendar-1:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 162,
+        "test": 46,
+        "train": 390
+      },
+      "supported_test_observations": 25,
+      "test_classes": [
+        "4_ANPP",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "test_master_samples": 20,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": [
+        "blank"
+      ]
+    },
+    "instrument:Pendar-1:domain_only": {
+      "partition_counts": {
+        "test": 46,
+        "train": 552
+      },
+      "supported_test_observations": 46,
+      "test_classes": [
+        "4_ANPP",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "test_master_samples": 20,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:Pendar-2:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 342,
+        "test": 98,
+        "train": 158
+      },
+      "supported_test_observations": 21,
+      "test_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 53,
+      "train_classes": [
+        "4_ANPP",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "unsupported_test_classes": [
+        "4_nitrophenol",
+        "acetaminophen",
+        "ethanol",
+        "ethyl_paraoxon"
+      ]
+    },
+    "instrument:Pendar-2:domain_only": {
+      "partition_counts": {
+        "test": 98,
+        "train": 500
+      },
+      "supported_test_observations": 98,
+      "test_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 53,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:Pendar-3:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 404,
+        "test": 70,
+        "train": 124
+      },
+      "supported_test_observations": 61,
+      "test_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 44,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": [
+        "blank"
+      ]
+    },
+    "instrument:Pendar-3:domain_only": {
+      "partition_counts": {
+        "test": 70,
+        "train": 528
+      },
+      "supported_test_observations": 70,
+      "test_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 44,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:RMX-1:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 142,
+        "test": 47,
+        "train": 409
+      },
+      "supported_test_observations": 22,
+      "test_classes": [
+        "4_nitrophenol",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 18,
+      "train_classes": [
+        "4_ANPP",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": [
+        "4_nitrophenol"
+      ]
+    },
+    "instrument:RMX-1:domain_only": {
+      "partition_counts": {
+        "test": 47,
+        "train": 551
+      },
+      "supported_test_observations": 47,
+      "test_classes": [
+        "4_nitrophenol",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 18,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:RMX-2:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 114,
+        "test": 65,
+        "train": 419
+      },
+      "supported_test_observations": 65,
+      "test_classes": [
+        "4_ANPP",
+        "acetaminophen",
+        "benzyl_fentanyl"
+      ],
+      "test_master_samples": 23,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "instrument:RMX-2:domain_only": {
+      "partition_counts": {
+        "test": 65,
+        "train": 533
+      },
+      "supported_test_observations": 65,
+      "test_classes": [
+        "4_ANPP",
+        "acetaminophen",
+        "benzyl_fentanyl"
+      ],
+      "test_master_samples": 23,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "sensor_family:GaN_polymer:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 62,
+        "test": 23,
+        "train": 513
+      },
+      "supported_test_observations": 23,
+      "test_classes": [
+        "4_nitrophenol",
+        "benzyl_fentanyl"
+      ],
+      "test_master_samples": 5,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "sensor_family:GaN_polymer:domain_only": {
+      "partition_counts": {
+        "test": 23,
+        "train": 575
+      },
+      "supported_test_observations": 23,
+      "test_classes": [
+        "4_nitrophenol",
+        "benzyl_fentanyl"
+      ],
+      "test_master_samples": 5,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "sensor_family:H_SERS_H_Kit:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 63,
+        "test": 153,
+        "train": 382
+      },
+      "supported_test_observations": 1,
+      "test_classes": [
+        "4_nitrophenol",
+        "acetaminophen",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 25,
+      "train_classes": [
+        "4_ANPP",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "unsupported_test_classes": [
+        "4_nitrophenol",
+        "ethanol",
+        "ethyl_paraoxon"
+      ]
+    },
+    "sensor_family:H_SERS_H_Kit:domain_only": {
+      "partition_counts": {
+        "test": 153,
+        "train": 445
+      },
+      "supported_test_observations": 153,
+      "test_classes": [
+        "4_nitrophenol",
+        "acetaminophen",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 25,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "sensor_family:NRC_Canadian_SERS:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 356,
+        "test": 98,
+        "train": 144
+      },
+      "supported_test_observations": 78,
+      "test_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 38,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": [
+        "blank"
+      ]
+    },
+    "sensor_family:NRC_Canadian_SERS:domain_only": {
+      "partition_counts": {
+        "test": 98,
+        "train": 500
+      },
+      "supported_test_observations": 98,
+      "test_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "test_master_samples": 38,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    },
+    "sensor_family:pSERS_Metrohm_silver:domain_and_sample": {
+      "partition_counts": {
+        "excluded_same_master_sample": 66,
+        "test": 324,
+        "train": 208
+      },
+      "supported_test_observations": 0,
+      "test_classes": [
+        "4_ANPP",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "test_master_samples": 45,
+      "train_classes": [
+        "4_nitrophenol",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": [
+        "4_ANPP",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank"
+      ]
+    },
+    "sensor_family:pSERS_Metrohm_silver:domain_only": {
+      "partition_counts": {
+        "test": 324,
+        "train": 274
+      },
+      "supported_test_observations": 324,
+      "test_classes": [
+        "4_ANPP",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank"
+      ],
+      "test_master_samples": 45,
+      "train_classes": [
+        "4_ANPP",
+        "4_nitrophenol",
+        "acetaminophen",
+        "benzyl_fentanyl",
+        "blank",
+        "ethanol",
+        "ethyl_paraoxon"
+      ],
+      "unsupported_test_classes": []
+    }
+  }
+}

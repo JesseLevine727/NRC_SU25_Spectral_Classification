@@ -1,0 +1,90 @@
+{
+  "baseline": {
+    "detected_candidate_points": 9,
+    "injected_spike_points": 0,
+    "injected_spike_precision_among_detected": 0.0,
+    "injected_spike_recall": null
+  },
+  "composite": {
+    "detected_candidate_points": 791,
+    "injected_spike_points": 1196,
+    "injected_spike_precision_among_detected": 0.9785082174462706,
+    "injected_spike_recall": 0.6471571906354515
+  },
+  "noise": {
+    "detected_candidate_points": 1174,
+    "injected_spike_points": 0,
+    "injected_spike_precision_among_detected": 0.0,
+    "injected_spike_recall": null
+  },
+  "observed_candidate_flags_by_instrument": {
+    "Agilent-1": {
+      "candidate_spike_points": 0,
+      "spectra_with_candidate_spikes": 0,
+      "spectra_with_saturation_plateau": 0
+    },
+    "Agilent-3": {
+      "candidate_spike_points": 0,
+      "spectra_with_candidate_spikes": 0,
+      "spectra_with_saturation_plateau": 0
+    },
+    "Mira-1": {
+      "candidate_spike_points": 0,
+      "spectra_with_candidate_spikes": 0,
+      "spectra_with_saturation_plateau": 0
+    },
+    "Mira-2": {
+      "candidate_spike_points": 0,
+      "spectra_with_candidate_spikes": 0,
+      "spectra_with_saturation_plateau": 0
+    },
+    "Mira-3": {
+      "candidate_spike_points": 0,
+      "spectra_with_candidate_spikes": 0,
+      "spectra_with_saturation_plateau": 0
+    },
+    "Pendar-1": {
+      "candidate_spike_points": 0,
+      "spectra_with_candidate_spikes": 0,
+      "spectra_with_saturation_plateau": 0
+    },
+    "Pendar-2": {
+      "candidate_spike_points": 0,
+      "spectra_with_candidate_spikes": 0,
+      "spectra_with_saturation_plateau": 0
+    },
+    "Pendar-3": {
+      "candidate_spike_points": 0,
+      "spectra_with_candidate_spikes": 0,
+      "spectra_with_saturation_plateau": 0
+    },
+    "RMX-1": {
+      "candidate_spike_points": 0,
+      "spectra_with_candidate_spikes": 0,
+      "spectra_with_saturation_plateau": 0
+    },
+    "RMX-2": {
+      "candidate_spike_points": 6,
+      "spectra_with_candidate_spikes": 5,
+      "spectra_with_saturation_plateau": 0
+    }
+  },
+  "scale_offset": {
+    "detected_candidate_points": 6,
+    "injected_spike_points": 0,
+    "injected_spike_precision_among_detected": 0.0,
+    "injected_spike_recall": null
+  },
+  "shift": {
+    "detected_candidate_points": 6,
+    "injected_spike_points": 0,
+    "injected_spike_precision_among_detected": 0.0,
+    "injected_spike_recall": null
+  },
+  "spike": {
+    "detected_candidate_points": 871,
+    "injected_spike_points": 1196,
+    "injected_spike_precision_among_detected": 1.0,
+    "injected_spike_recall": 0.7282608695652174
+  }
+}

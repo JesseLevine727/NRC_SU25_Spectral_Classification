@@ -1,0 +1,619 @@
+{
+  "baseline_proxy_interpretation": "The manifest proxy is a rolling lower-envelope estimate on each vendor's native axis. The AsLS metrics use the common 400--1800 cm^-1 grid. Their disagreement, especially for broad RMX structure, is evidence that no baseline estimate should be treated as ground truth.",
+  "domain_transfer_protocol_notes": {
+    "domain_and_sample": "Hold out the domain and remove every test master sample from training. Scores use only target classes still represented in training; unsupported classes are listed explicitly.",
+    "domain_only": "Train on all other domains; the same master sample may occur in both train and test. This isolates domain shift but is not a deployment-style unseen-specimen result."
+  },
+  "instrument_discriminability": {
+    "asls_corrected_snv": {
+      "grouped_physical_sample_cv_balanced_accuracy": [
+        0.9128390688259109,
+        0.9258058608058608,
+        0.8529419191919192,
+        0.9041699604743082,
+        0.8667293233082706
+      ],
+      "grouped_physical_sample_cv_mean": 0.8924972265212539,
+      "random_spectrum_cv_balanced_accuracy": [
+        0.8888095238095237,
+        0.9193711843711844,
+        0.8776251526251526,
+        0.8176482873851295,
+        0.8216017608122872
+      ],
+      "random_spectrum_cv_mean": 0.8650111818006554
+    },
+    "interpretation": "High grouped accuracy means instrument identity remains recoverable for unseen physical samples; it is not an analyte score.",
+    "raw_snv": {
+      "grouped_physical_sample_cv_balanced_accuracy": [
+        0.8401253936122357,
+        0.9362820512820512,
+        0.8489303751803753,
+        0.7977550348202522,
+        0.859983291562239
+      ],
+      "grouped_physical_sample_cv_mean": 0.8566152292914306,
+      "random_spectrum_cv_balanced_accuracy": [
+        0.923901098901099,
+        0.8574664224664226,
+        0.8731746031746033,
+        0.8635878156930789,
+        0.8398203842940685
+      ],
+      "random_spectrum_cv_mean": 0.8715900649058543
+    }
+  },
+  "leave_one_instrument_out_domain_and_sample": {
+    "asls_corrected_snv": {
+      "Agilent-1": {
+        "n_test_all": 29,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 19,
+        "n_train": 397,
+        "supported_class_balanced_accuracy": 0.5340909090909092,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "Agilent-3": {
+        "n_test_all": 73,
+        "n_test_classes_all": 7,
+        "n_test_classes_supported": 6,
+        "n_test_supported": 62,
+        "n_train": 111,
+        "supported_class_balanced_accuracy": 0.5066798941798942,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "Mira-1": {
+        "n_test_all": 23,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 3,
+        "n_test_supported": 23,
+        "n_train": 433,
+        "supported_class_balanced_accuracy": 0.7542087542087542,
+        "unsupported_test_classes": []
+      },
+      "Mira-2": {
+        "n_test_all": 75,
+        "n_test_classes_all": 5,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 3,
+        "n_train": 363,
+        "supported_class_balanced_accuracy": 0.0,
+        "unsupported_test_classes": [
+          "4_nitrophenol",
+          "ethanol",
+          "ethyl_paraoxon"
+        ]
+      },
+      "Mira-3": {
+        "n_test_all": 72,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 41,
+        "n_train": 394,
+        "supported_class_balanced_accuracy": 0.09125,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "Pendar-1": {
+        "n_test_all": 46,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 25,
+        "n_train": 390,
+        "supported_class_balanced_accuracy": 0.5972222222222222,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "Pendar-2": {
+        "n_test_all": 98,
+        "n_test_classes_all": 7,
+        "n_test_classes_supported": 3,
+        "n_test_supported": 21,
+        "n_train": 158,
+        "supported_class_balanced_accuracy": 1.0,
+        "unsupported_test_classes": [
+          "4_nitrophenol",
+          "acetaminophen",
+          "ethanol",
+          "ethyl_paraoxon"
+        ]
+      },
+      "Pendar-3": {
+        "n_test_all": 70,
+        "n_test_classes_all": 7,
+        "n_test_classes_supported": 6,
+        "n_test_supported": 61,
+        "n_train": 124,
+        "supported_class_balanced_accuracy": 0.49106098579782786,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "RMX-1": {
+        "n_test_all": 47,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 22,
+        "n_train": 409,
+        "supported_class_balanced_accuracy": 0.6818181818181819,
+        "unsupported_test_classes": [
+          "4_nitrophenol"
+        ]
+      },
+      "RMX-2": {
+        "n_test_all": 65,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 3,
+        "n_test_supported": 65,
+        "n_train": 419,
+        "supported_class_balanced_accuracy": 0.6388888888888888,
+        "unsupported_test_classes": []
+      }
+    },
+    "raw_snv": {
+      "Agilent-1": {
+        "n_test_all": 29,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 19,
+        "n_train": 397,
+        "supported_class_balanced_accuracy": 0.3806818181818182,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "Agilent-3": {
+        "n_test_all": 73,
+        "n_test_classes_all": 7,
+        "n_test_classes_supported": 6,
+        "n_test_supported": 62,
+        "n_train": 111,
+        "supported_class_balanced_accuracy": 0.5261243386243386,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "Mira-1": {
+        "n_test_all": 23,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 3,
+        "n_test_supported": 23,
+        "n_train": 433,
+        "supported_class_balanced_accuracy": 0.6430976430976432,
+        "unsupported_test_classes": []
+      },
+      "Mira-2": {
+        "n_test_all": 75,
+        "n_test_classes_all": 5,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 3,
+        "n_train": 363,
+        "supported_class_balanced_accuracy": 0.0,
+        "unsupported_test_classes": [
+          "4_nitrophenol",
+          "ethanol",
+          "ethyl_paraoxon"
+        ]
+      },
+      "Mira-3": {
+        "n_test_all": 72,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 41,
+        "n_train": 394,
+        "supported_class_balanced_accuracy": 0.03125,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "Pendar-1": {
+        "n_test_all": 46,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 25,
+        "n_train": 390,
+        "supported_class_balanced_accuracy": 0.6215277777777778,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "Pendar-2": {
+        "n_test_all": 98,
+        "n_test_classes_all": 7,
+        "n_test_classes_supported": 3,
+        "n_test_supported": 21,
+        "n_train": 158,
+        "supported_class_balanced_accuracy": 0.9333333333333332,
+        "unsupported_test_classes": [
+          "4_nitrophenol",
+          "acetaminophen",
+          "ethanol",
+          "ethyl_paraoxon"
+        ]
+      },
+      "Pendar-3": {
+        "n_test_all": 70,
+        "n_test_classes_all": 7,
+        "n_test_classes_supported": 6,
+        "n_test_supported": 61,
+        "n_train": 124,
+        "supported_class_balanced_accuracy": 0.4830827067669173,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "RMX-1": {
+        "n_test_all": 47,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 22,
+        "n_train": 409,
+        "supported_class_balanced_accuracy": 0.6363636363636364,
+        "unsupported_test_classes": [
+          "4_nitrophenol"
+        ]
+      },
+      "RMX-2": {
+        "n_test_all": 65,
+        "n_test_classes_all": 3,
+        "n_test_classes_supported": 3,
+        "n_test_supported": 65,
+        "n_train": 419,
+        "supported_class_balanced_accuracy": 0.125,
+        "unsupported_test_classes": []
+      }
+    }
+  },
+  "leave_one_instrument_out_domain_only": {
+    "asls_corrected_snv": {
+      "Agilent-1": {
+        "balanced_accuracy": 0.7863636363636365,
+        "n_test": 29,
+        "n_test_classes": 3
+      },
+      "Agilent-3": {
+        "balanced_accuracy": 0.5207766439909297,
+        "n_test": 73,
+        "n_test_classes": 7
+      },
+      "Mira-1": {
+        "balanced_accuracy": 0.8653198653198654,
+        "n_test": 23,
+        "n_test_classes": 3
+      },
+      "Mira-2": {
+        "balanced_accuracy": 0.44857142857142857,
+        "n_test": 75,
+        "n_test_classes": 5
+      },
+      "Mira-3": {
+        "balanced_accuracy": 0.14833333333333334,
+        "n_test": 72,
+        "n_test_classes": 3
+      },
+      "Pendar-1": {
+        "balanced_accuracy": 0.7152777777777777,
+        "n_test": 46,
+        "n_test_classes": 3
+      },
+      "Pendar-2": {
+        "balanced_accuracy": 0.5486621315192743,
+        "n_test": 98,
+        "n_test_classes": 7
+      },
+      "Pendar-3": {
+        "balanced_accuracy": 0.49720730397422125,
+        "n_test": 70,
+        "n_test_classes": 7
+      },
+      "RMX-1": {
+        "balanced_accuracy": 0.5733333333333334,
+        "n_test": 47,
+        "n_test_classes": 3
+      },
+      "RMX-2": {
+        "balanced_accuracy": 0.7188697318007663,
+        "n_test": 65,
+        "n_test_classes": 3
+      }
+    },
+    "raw_snv": {
+      "Agilent-1": {
+        "balanced_accuracy": 0.7946969696969698,
+        "n_test": 29,
+        "n_test_classes": 3
+      },
+      "Agilent-3": {
+        "balanced_accuracy": 0.5846088435374149,
+        "n_test": 73,
+        "n_test_classes": 7
+      },
+      "Mira-1": {
+        "balanced_accuracy": 0.7609427609427609,
+        "n_test": 23,
+        "n_test_classes": 3
+      },
+      "Mira-2": {
+        "balanced_accuracy": 0.2583333333333333,
+        "n_test": 75,
+        "n_test_classes": 5
+      },
+      "Mira-3": {
+        "balanced_accuracy": 0.08333333333333333,
+        "n_test": 72,
+        "n_test_classes": 3
+      },
+      "Pendar-1": {
+        "balanced_accuracy": 0.7734788359788359,
+        "n_test": 46,
+        "n_test_classes": 3
+      },
+      "Pendar-2": {
+        "balanced_accuracy": 0.6129931972789117,
+        "n_test": 98,
+        "n_test_classes": 7
+      },
+      "Pendar-3": {
+        "balanced_accuracy": 0.42778374507697814,
+        "n_test": 70,
+        "n_test_classes": 7
+      },
+      "RMX-1": {
+        "balanced_accuracy": 0.6206060606060606,
+        "n_test": 47,
+        "n_test_classes": 3
+      },
+      "RMX-2": {
+        "balanced_accuracy": 0.43342911877394635,
+        "n_test": 65,
+        "n_test_classes": 3
+      }
+    }
+  },
+  "leave_one_sensor_family_out_domain_and_sample": {
+    "asls_corrected_snv": {
+      "GaN_polymer": {
+        "n_test_all": 23,
+        "n_test_classes_all": 2,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 23,
+        "n_train": 513,
+        "supported_class_balanced_accuracy": 0.5055555555555555,
+        "unsupported_test_classes": []
+      },
+      "H_SERS_H_Kit": {
+        "n_test_all": 153,
+        "n_test_classes_all": 4,
+        "n_test_classes_supported": 1,
+        "n_test_supported": 1,
+        "n_train": 382,
+        "supported_class_balanced_accuracy": 1.0,
+        "unsupported_test_classes": [
+          "4_nitrophenol",
+          "ethanol",
+          "ethyl_paraoxon"
+        ]
+      },
+      "NRC_Canadian_SERS": {
+        "n_test_all": 98,
+        "n_test_classes_all": 7,
+        "n_test_classes_supported": 6,
+        "n_test_supported": 78,
+        "n_train": 144,
+        "supported_class_balanced_accuracy": 0.24842885872297635,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "pSERS_Metrohm_silver": {
+        "n_test_all": 324,
+        "n_test_classes_all": 4,
+        "n_test_classes_supported": 0,
+        "n_test_supported": 0,
+        "n_train": 208,
+        "supported_class_balanced_accuracy": null,
+        "unsupported_test_classes": [
+          "4_ANPP",
+          "acetaminophen",
+          "benzyl_fentanyl",
+          "blank"
+        ]
+      }
+    },
+    "raw_snv": {
+      "GaN_polymer": {
+        "n_test_all": 23,
+        "n_test_classes_all": 2,
+        "n_test_classes_supported": 2,
+        "n_test_supported": 23,
+        "n_train": 513,
+        "supported_class_balanced_accuracy": 0.46111111111111114,
+        "unsupported_test_classes": []
+      },
+      "H_SERS_H_Kit": {
+        "n_test_all": 153,
+        "n_test_classes_all": 4,
+        "n_test_classes_supported": 1,
+        "n_test_supported": 1,
+        "n_train": 382,
+        "supported_class_balanced_accuracy": 1.0,
+        "unsupported_test_classes": [
+          "4_nitrophenol",
+          "ethanol",
+          "ethyl_paraoxon"
+        ]
+      },
+      "NRC_Canadian_SERS": {
+        "n_test_all": 98,
+        "n_test_classes_all": 7,
+        "n_test_classes_supported": 6,
+        "n_test_supported": 78,
+        "n_train": 144,
+        "supported_class_balanced_accuracy": 0.15473856209150327,
+        "unsupported_test_classes": [
+          "blank"
+        ]
+      },
+      "pSERS_Metrohm_silver": {
+        "n_test_all": 324,
+        "n_test_classes_all": 4,
+        "n_test_classes_supported": 0,
+        "n_test_supported": 0,
+        "n_train": 208,
+        "supported_class_balanced_accuracy": null,
+        "unsupported_test_classes": [
+          "4_ANPP",
+          "acetaminophen",
+          "benzyl_fentanyl",
+          "blank"
+        ]
+      }
+    }
+  },
+  "leave_one_sensor_family_out_domain_only": {
+    "asls_corrected_snv": {
+      "GaN_polymer": {
+        "balanced_accuracy": 0.5333333333333333,
+        "n_test": 23,
+        "n_test_classes": 2
+      },
+      "H_SERS_H_Kit": {
+        "balanced_accuracy": 0.45491803278688525,
+        "n_test": 153,
+        "n_test_classes": 4
+      },
+      "NRC_Canadian_SERS": {
+        "balanced_accuracy": 0.2130952380952381,
+        "n_test": 98,
+        "n_test_classes": 7
+      },
+      "pSERS_Metrohm_silver": {
+        "balanced_accuracy": 0.3346290605794557,
+        "n_test": 324,
+        "n_test_classes": 4
+      }
+    },
+    "raw_snv": {
+      "GaN_polymer": {
+        "balanced_accuracy": 0.46111111111111114,
+        "n_test": 23,
+        "n_test_classes": 2
+      },
+      "H_SERS_H_Kit": {
+        "balanced_accuracy": 0.44672131147540983,
+        "n_test": 153,
+        "n_test_classes": 4
+      },
+      "NRC_Canadian_SERS": {
+        "balanced_accuracy": 0.3085057799343514,
+        "n_test": 98,
+        "n_test_classes": 7
+      },
+      "pSERS_Metrohm_silver": {
+        "balanced_accuracy": 0.3225108525997463,
+        "n_test": 324,
+        "n_test_classes": 4
+      }
+    }
+  },
+  "median_asls_baseline_energy_fraction_by_instrument": {
+    "Agilent-1": 0.013958266357150693,
+    "Agilent-3": 0.015042971204974932,
+    "Mira-1": 0.9558175968149765,
+    "Mira-2": 0.7883823479981931,
+    "Mira-3": 0.9353735619716245,
+    "Pendar-1": 0.027745042972476985,
+    "Pendar-2": 0.015680826465285642,
+    "Pendar-3": 0.026821273159481906,
+    "RMX-1": 0.8325126567492107,
+    "RMX-2": 0.9576960119716759
+  },
+  "median_asls_baseline_span_fraction_by_instrument": {
+    "Agilent-1": 0.0061784924409804395,
+    "Agilent-3": 0.008009043676191227,
+    "Mira-1": 0.7047647105804674,
+    "Mira-2": 0.46151015272254703,
+    "Mira-3": 0.6910310922685158,
+    "Pendar-1": 0.03278724780402338,
+    "Pendar-2": 0.025788018402215278,
+    "Pendar-3": 0.033441502841695496,
+    "RMX-1": 0.36673202293859825,
+    "RMX-2": 0.5509840021595235
+  },
+  "median_background_proxy_by_instrument": {
+    "Agilent-1": 0.1317308922029306,
+    "Agilent-3": 0.1353180013981014,
+    "Mira-1": 0.9614525624844792,
+    "Mira-2": 0.8579354187612048,
+    "Mira-3": 0.9478741557417636,
+    "Pendar-1": 0.24015211923704588,
+    "Pendar-2": 0.2571947696011284,
+    "Pendar-3": 0.26182970933749317,
+    "RMX-1": 0.0376894404046192,
+    "RMX-2": 0.0201126129743082
+  },
+  "median_manifest_lower_envelope_span_fraction_by_instrument": {
+    "Agilent-1": 0.1059396823639318,
+    "Agilent-3": 0.1203837334371241,
+    "Mira-1": 0.8993224922362133,
+    "Mira-2": 0.7077846006224975,
+    "Mira-3": 0.8865889764911434,
+    "Pendar-1": 0.055272811250965795,
+    "Pendar-2": 0.09841432324395699,
+    "Pendar-3": 0.0610876229241921,
+    "RMX-1": 0.0151990955352783,
+    "RMX-2": 0.0027034939770194
+  },
+  "mira_system_suitability_counts": {
+    "Mira-1 | Fail, 2024-03-07 09:58:38-05:00": 23,
+    "Mira-2 | Pass, 2024-03-06 10:07:29-05:00": 75,
+    "Mira-3 | Pass, 2024-03-06 10:11:38-05:00": 72
+  },
+  "n_core": 598,
+  "target_classification": {
+    "asls_corrected_snv": {
+      "grouped_physical_sample_cv_balanced_accuracy": [
+        0.7260703668312364,
+        0.7484805420143765,
+        0.7068158032443748,
+        0.6667554876201492,
+        0.6725340136054422
+      ],
+      "grouped_physical_sample_cv_mean": 0.7041312426631159,
+      "random_spectrum_cv_balanced_accuracy": [
+        0.6994235493240358,
+        0.7158456039758561,
+        0.6757284382284381,
+        0.740422077922078,
+        0.6667735515258734
+      ],
+      "random_spectrum_cv_mean": 0.6996386441952563
+    },
+    "raw_snv": {
+      "grouped_physical_sample_cv_balanced_accuracy": [
+        0.7542622232839624,
+        0.7465757801096148,
+        0.6905459619745333,
+        0.6449967638877414,
+        0.6274659863945578
+      ],
+      "grouped_physical_sample_cv_mean": 0.6927693431300821,
+      "random_spectrum_cv_balanced_accuracy": [
+        0.6894035126012127,
+        0.7449782360496646,
+        0.633069708069708,
+        0.7070887445887445,
+        0.6961668878077546
+      ],
+      "random_spectrum_cv_mean": 0.694141417823417
+    }
+  },
+  "warning": "These are diagnostic linear baselines. AsLS lambda=1e6 and p=0.001 are candidates to validate, not frozen production settings."
+}
