@@ -1,0 +1,11 @@
+archive_row,observation_uid,instrument,target_analyte,sensor_family,master_sample_id,quality_pass,quality_fallback_required,candidate_spike_count,median_correlation_distance_to_instrument,instrument_quality_candidate_count
+447,session3_row268,Agilent-1,benzyl_fentanyl,pSERS_Metrohm_silver,11.0,True,False,0,0.4045650362968445,29
+578,session3_row482,Agilent-3,acetaminophen,pSERS_Metrohm_silver,41.0,True,False,0,0.49121013283729553,72
+544,session3_row415,Mira-1,acetaminophen,pSERS_Metrohm_silver,32.0,True,False,0,0.03490269184112549,21
+322,session2_row381,Mira-2,ethanol,H_SERS_H_Kit,60.0,True,False,0,0.14342671632766724,74
+422,session3_row235,Mira-3,benzyl_fentanyl,pSERS_Metrohm_silver,11.0,True,False,0,0.039616167545318604,71
+496,session3_row328,Pendar-1,benzyl_fentanyl,pSERS_Metrohm_silver,5.0,True,False,0,0.5567035675048828,40
+260,session2_row273,Pendar-2,acetaminophen,pSERS_Metrohm_silver,49.0,True,False,0,0.6355821490287781,42
+554,session3_row457,Pendar-3,benzyl_fentanyl,pSERS_Metrohm_silver,35.0,True,False,0,0.20948949456214905,42
+103,session1_row218,RMX-1,4_nitrophenol,GaN_polymer,58.0,True,False,0,0.24451816082000732,45
+529,session3_row400,RMX-2,acetaminophen,pSERS_Metrohm_silver,31.0,True,False,0,0.09316375851631165,64
