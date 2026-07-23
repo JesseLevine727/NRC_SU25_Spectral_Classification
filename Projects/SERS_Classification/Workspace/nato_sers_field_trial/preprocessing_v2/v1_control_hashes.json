@@ -1,0 +1,27 @@
+{
+  "artifact_hash_catalog_sha256": "1aad852920b4b898bfb3f35a613bda71055e9272f20c00e6c1b000832fedc67e",
+  "catalog": {
+    "README.md": "a66f2346b63ee6c59572452503397c6b9ad75a444a549b05cac8248d793975a5",
+    "artifact_detection_summary.json": "8e67020c5be0e8e029ec74bca90ca9e20b313c5c934ab91d207af0f25613f82c",
+    "benchmark_fold_metrics.csv": "84611f045e8706444402ea81de57c55cc5e94fa54380262d25c55ec01fcd3085",
+    "benchmark_summary.csv": "da973ba01fb3a26dac1ec9c131649ce9570e9bc2ed7972875af610b1618623d6",
+    "candidate_spectra_core.npz": "62a4f095c16a57fb8470a9b085a8a4061cadc91bfc23ec3a51d8c2e162270124",
+    "candidate_spectra_quality.npz": "6dc6159a168fb4a0ed0e2d240f6ad8310c798d5c659368a365b7136aac7aa6ce",
+    "core_preprocessing_manifest.csv": "68ca205d8fd6fe36a84f777b9141f38cafea9c18f599747c577f97cb0b6a64df",
+    "core_split_assignments.csv": "db8dad5864e7153981f299fe30db9969fb2ed4d323c0ce6869368a5b8598cb7f",
+    "dataset_version.json": "69ef6e597f726e57b454bb7847dc7b295ebaf2b39243aca87b6138cf13121e01",
+    "domain_evaluation_partitions_core.csv": "1ada524029c68302df9e4b30e4923f15500fc465fadddaecb42af84404e4348a",
+    "domain_evaluation_partitions_quality.csv": "f3e56c14967206258759ae850d89a2089c0c1ceea0f1462387993f41e3ddf2b5",
+    "figures/preprocessing_tradeoff.png": "8a3d99d8c0fb8ee790128e626e2e29cfa7fe9a3540c6a8c0199dcfcdaf2a8daa",
+    "figures/selected_corruption_robustness.png": "64521db55b389a4af6a2c17ae7c16186cd14797258985f7320a52e4bc0a74d38",
+    "frozen_model_inputs_core.npz": "d196e66ecf667c33bf5add8a10a09196b2a9348403f14a79c9c89721193b6648",
+    "frozen_model_inputs_quality.npz": "f7bea47d42222274ff826d476e6830a4bc1593b02be8fca96b051df4ed6196d4",
+    "frozen_selection.json": "99dbf58f105a890b5f36810b3c56409eb59a844edd0af63d3e2cf83e1cb9a18e",
+    "nested_group_cv_assignments.csv": "89548c6a72e6240eb1460632f32c625d5badc92fd10f0cdd024d18e0a1a6b59c",
+    "peak_preservation_metrics.csv": "5f334af0663cd88fa2185b232787cf3f32203583413cb145134bc3b2a76dee1b",
+    "quality_preprocessing_manifest.csv": "71be84873b9926b3d3efbece846e7d8174f07d6d6e78d60defab486dc1fb5aa4",
+    "quality_split_assignments.csv": "f8a14ae03162f10cc064709fa8b96a2326b5423a82186578eef3ad79722dbe41",
+    "selection_objectives.csv": "2c6330e41ec2bf1d790a194efdc49edd088cf6833f26d3f2d5b278b1ab82e86e"
+  },
+  "dataset_version_sha256": "69ef6e597f726e57b454bb7847dc7b295ebaf2b39243aca87b6138cf13121e01"
+}

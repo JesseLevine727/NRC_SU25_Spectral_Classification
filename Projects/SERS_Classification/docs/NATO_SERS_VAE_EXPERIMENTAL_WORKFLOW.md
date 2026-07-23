@@ -4,6 +4,18 @@ Date: 2026-07-22
 Project: NATO field-trial SERS classification  
 Primary objective: learn a chemical representation that remains useful when substrate, Raman instrument, vendor processing, baseline, acquisition conditions, and field noise change.
 
+## Current implementation status
+
+Preprocessing Phase 1 is complete and frozen as
+[`nato-sers-preprocessing-v2`](../Workspace/nato_sers_field_trial/preprocessing_v2/README.md).
+The final inputs are `minimal_minmax`, `arpls_minmax`, and `derivative_1`.
+The predeclared study rejected general smoothing, conditional smoothing, and
+additional alignment. The full evidence and exact downstream contract are in
+[`NATO_SERS_PREPROCESSING_FINAL_V2.md`](NATO_SERS_PREPROCESSING_FINAL_V2.md).
+The workflow below remains the model-research plan; statements that originally
+described future preprocessing exploration are superseded by that frozen
+decision.
+
 ## 1. Executive decision
 
 The work should proceed as a controlled comparison of increasingly structured representation-learning models:
@@ -189,7 +201,11 @@ Therefore, NATO cannot produce one defensible universal “unseen surface” num
 
 The source archive remains read-only. Every derived row retains its original log position, source scan, instrument, sensor text, normalized family, master sample, target, station, quality flags, and acquisition metadata.
 
-The existing derived directory is [`Workspace/nato_sers_field_trial`](../Workspace/nato_sers_field_trial/README.md).
+The existing derived directory is
+[`Workspace/nato_sers_field_trial`](../Workspace/nato_sers_field_trial/README.md).
+The authorized downstream arrays are in its validated
+[`preprocessing_v2`](../Workspace/nato_sers_field_trial/preprocessing_v2/README.md)
+bundle.
 
 The canonical data layers are:
 
@@ -326,7 +342,11 @@ The domain-blind pipeline is the headline experiment. The known-system pipeline 
 
 ### 8.4 Smoothing and derivatives
 
-No smoothing is used in the initial VAE representation. If noise diagnostics justify it, compare Savitzky--Golay windows of approximately 7, 11, and 15 cm⁻¹ with polynomial order 3. The chosen window must remain narrower than the narrowest repeatable chemical feature.
+The completed v2 study compared Savitzky--Golay windows of 7, 11, and
+15 cm⁻¹ with polynomial order 3. Every smoother reduced a target-blind
+high-frequency score, but every smoother failed the predeclared repeatable
+peak-recall gate and none met either classifier-based synthetic-noise benefit
+gate. No smoothing is therefore present in the frozen VAE inputs.
 
 Derivative branches are retained because the poster established their importance:
 
@@ -337,7 +357,10 @@ Derivatives will not initially be the sole VAE reconstruction target because the
 
 ### 8.5 Alignment
 
-Wavenumber alignment is added only if standards or same-master comparisons demonstrate repeatable system-level shifts.
+Wavenumber alignment was audited using 17 named standards and 2,473
+same-master cross-instrument pairs. Standards covered only five of ten
+instruments and paired shifts were not sufficiently uniform or independently
+identifiable. No additional alignment is applied.
 
 - Prefer a single small correction per instrument/session estimated without target labels.
 - Estimate corrections inside the training data.
@@ -346,7 +369,11 @@ Wavenumber alignment is added only if standards or same-master comparisons demon
 
 Flexible label-informed warping would convert peak position into a leakage channel.
 
-## 9. How preprocessing will be selected
+## 9. How preprocessing was selected
+
+This plan was implemented in preprocessing-v1 and the bounded v2 smoothing
+and alignment study. The final decision is closed; the criteria below explain
+the selection logic rather than authorize a new search.
 
 No method is selected because its spectra look flatter or because its target accuracy alone is highest.
 
@@ -612,18 +639,22 @@ Gate: baseline results must reproduce within declared seed variability before VA
 
 ### Phase 1: Select minimal preprocessing
 
-**Data:** NATO-L598 with NATO-Q500 sensitivity.  
-**Models:** simple linear/centroid classifiers and fixed-capacity autoencoder diagnostic.  
-**Experiments:** spike handling, ordinary/robust min--max, baseline candidates, then optional smoothing/alignment.
+**Status:** complete, validated, and frozen.  
+**Data:** NATO-L598 with NATO-Q500 sensitivity and a confirmatory 98-row
+field-quality stress cohort.  
+**Screening:** grouped PCA/logistic and nearest-centroid classifiers, domain
+probes, corruption tests, peak fidelity, same-master geometry, standards, and
+alignment diagnostics.
 
-Gate: retain a small Pareto set, expected to include at least:
+The retained set is:
 
 ```text
 P0 = despiked + per-spectrum min--max
-P1 = despiked + domain-blind baseline correction + per-spectrum min--max
+P1 = despiked + domain-blind arPLS + per-spectrum min--max
 P2 = SNV + first derivative + row L2
-P3 = SNV + second derivative + row L2
 ```
+
+No smoothing or additional alignment passed the gates.
 
 ### Phase 2: AE versus denoising AE
 
@@ -732,14 +763,13 @@ Projection plots such as PCA, UMAP, and t-SNE remain qualitative diagnostics and
 
 ## 16. Required ablations
 
-### Preprocessing ablations
+### Closed preprocessing ablations
 
-- no spike correction versus spike correction;
-- ordinary versus robust min--max;
-- no baseline versus AsLS/arPLS/rubber band;
-- raw/min--max versus first/second derivative;
-- no smoothing versus selected Savitzky--Golay smoothing;
-- domain-blind versus known-system preprocessing.
+The v1/v2 preprocessing study has already audited spike correction, ordinary
+and robust scaling, baseline candidates, derivative controls, three smoothing
+windows, and alignment evidence. Downstream model experiments use only the
+three frozen v2 inputs. Candidate archives remain available for audit, not
+post hoc reselection.
 
 ### Model ablations
 
@@ -822,20 +852,28 @@ The cleanest future experiment is a crossed design:
 
 Additional spectra from the missing PMCDS and Agilent-2 systems should be recovered if possible, but file recovery alone does not fix the missing-cell design.
 
-## 20. Immediate implementation order
+## 20. Implementation order
 
-1. Freeze and version the 598 and 500 manifests and existing split files.
-2. Generate spike masks and ordinary/robust min--max arrays without overwriting the common raw matrix.
-3. Implement the sequential preprocessing benchmark and paired-master diagnostics.
-4. Reproduce the poster derivative, classical, and Siamese baselines from frozen splits.
-5. Establish NATO classical and Siamese baselines using the retained preprocessing branches.
+1. **Complete:** freeze/version the manifests, inputs, and split files.
+2. **Complete:** generate artifact masks and candidate representations without
+   overwriting the common raw matrix.
+3. **Complete:** run the nested preprocessing, smoothing, preservation, and
+   alignment audit and freeze v2.
+4. Reproduce the poster derivative, classical, and Siamese baselines from
+   frozen splits.
+5. Establish NATO classical and Siamese baselines using the retained v2
+   branches.
 6. Implement capacity-matched deterministic and denoising autoencoders.
 7. Implement the standard VAE and characterize its mixed latent.
-8. Add chemical supervision and then the two-block chemical/nuisance architecture.
+8. Add chemical supervision and then the two-block chemical/nuisance
+   architecture.
 9. Add the cross-domain metric objective from the Siamese work.
-10. Introduce domain conditioning, independence, and adversarial terms one at a time.
+10. Introduce domain conditioning, independence, and adversarial terms one at
+    a time.
 11. Run measured-counterpart swap tests and all supported domain stress tests.
-12. Produce a final comparison centered on chemical performance, domain leakage, reconstruction/peak preservation, corruption robustness, and localized failures.
+12. Produce a final comparison centered on chemical performance, domain
+    leakage, reconstruction/peak preservation, corruption robustness, and
+    localized failures.
 
 ## 21. Final methodological position
 

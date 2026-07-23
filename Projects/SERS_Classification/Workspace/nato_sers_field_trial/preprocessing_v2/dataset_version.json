@@ -1,0 +1,46 @@
+{
+  "alignment_applied": false,
+  "axis_cm1": {
+    "maximum": 1800.0,
+    "minimum": 400.0,
+    "points": 1401,
+    "step": 1.0
+  },
+  "candidate_order": [
+    "minimal_minmax",
+    "minimal_sg7_minmax",
+    "minimal_sg11_minmax",
+    "minimal_sg15_minmax",
+    "arpls_minmax",
+    "arpls_sg7_minmax",
+    "arpls_sg11_minmax",
+    "arpls_sg15_minmax",
+    "derivative_1"
+  ],
+  "created_utc": "2026-07-23T19:07:08.018384+00:00",
+  "dataset_version": "nato-sers-preprocessing-v2",
+  "field_quality_stress_observations": 98,
+  "input_sha256": {
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v1/artifact_hashes.json": "1aad852920b4b898bfb3f35a613bda71055e9272f20c00e6c1b000832fedc67e",
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v1/dataset_version.json": "69ef6e597f726e57b454bb7847dc7b295ebaf2b39243aca87b6138cf13121e01",
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/nato_sers_preprocessing_v2.json": "5edab3e80920997ad9ce782ebe1994d6e94f02b11e55d20d95d71170e387e2de",
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/finalize_nato_sers_preprocessing_v2.py": "9f83023fb58f9e210b454edada9add61011c7a69adbcacbab3972c9eb79614d1"
+  },
+  "preprocessing_closed": true,
+  "quality_pass_observations": 500,
+  "selected_final_representations": [
+    "minimal_minmax",
+    "arpls_minmax",
+    "derivative_1"
+  ],
+  "software": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "python": "3.12.3",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.17.1"
+  },
+  "source_archive_modified": false,
+  "strict_core_observations": 598,
+  "v1_dataset_version": "nato-sers-preprocessing-v1"
+}

@@ -1,5 +1,11 @@
 # NATO SERS preprocessing baseline v1
 
+> **Historical baseline.** This immutable bundle remains the audited control,
+> but preprocessing-v2 has now completed the bounded smoothing and alignment
+> study. Downstream model comparisons must use the final contract in
+> [`NATO_SERS_PREPROCESSING_FINAL_V2.md`](NATO_SERS_PREPROCESSING_FINAL_V2.md).
+> The v1 files were hash-verified and were not modified.
+
 ## Decision
 
 The leakage-safe preprocessing baseline is frozen as

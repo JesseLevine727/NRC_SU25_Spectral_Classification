@@ -15,11 +15,20 @@ Rebuild from the repository root:
 .venv/bin/python scripts/make_nato_sers_splits.py
 .venv/bin/python scripts/freeze_nato_sers_preprocessing.py
 .venv/bin/python scripts/validate_nato_sers_preprocessing_freeze.py
+.venv/bin/python scripts/finalize_nato_sers_preprocessing_v2.py
+.venv/bin/python scripts/validate_nato_sers_preprocessing_v2.py
 ```
 
 `sers_core_manifest.csv` is the main 598-observation manifest, and
 `sers_qc_pass_manifest.csv` is the conservative 500-observation sensitivity
 subset. The validated [`preprocessing_v1`](preprocessing_v1/README.md) bundle
 freezes `minimal_minmax`, `arpls_minmax`, and `derivative_1` for the subsequent
-model comparisons. The full rationale and results are in
-[`docs/NATO_SERS_PREPROCESSING_BASELINE_V1.md`](../../docs/NATO_SERS_PREPROCESSING_BASELINE_V1.md).
+model comparisons. It remains the immutable control.
+
+The closed
+[`preprocessing_v2`](preprocessing_v2/README.md) bundle is the authorized
+downstream dataset. It retains `minimal_minmax`, `arpls_minmax`, and
+`derivative_1`; the bounded study rejected global or conditional smoothing
+and additional spectral alignment. The full rationale, exact protocol, and
+results are in
+[`docs/NATO_SERS_PREPROCESSING_FINAL_V2.md`](../../docs/NATO_SERS_PREPROCESSING_FINAL_V2.md).

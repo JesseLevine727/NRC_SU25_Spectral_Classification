@@ -1,0 +1,123 @@
+{
+  "protocol_version": "nato-sers-preprocessing-v2",
+  "status_before_execution": "predeclared",
+  "protocol_amendments_before_model_screening": [
+    {
+      "stage": "implementation sanity check before any classifier benchmark",
+      "change": "All-detected-peak recall remains reported but is not a hard preservation gate. Repeatable peaks are restricted to prominent peaks supported by at least half of the other same-master observations, including another instrument.",
+      "reason": "The initial mechanical check showed that dense high-frequency Pendar maxima were counted as peaks that a denoiser was required to preserve. That definition contradicted the purpose of smoothing and could reward retained noise. No target, domain, corruption-classifier, outer-test, or stress-cohort result had been computed when this amendment was made."
+    }
+  ],
+  "immutable_control_bundle": "Workspace/nato_sers_field_trial/preprocessing_v1",
+  "primary_subset": "strict_core_598",
+  "sensitivity_subset": "quality_pass_500",
+  "confirmatory_stress_subset": "field_quality_flagged_98",
+  "axis_cm1": {
+    "minimum": 400,
+    "maximum": 1800,
+    "step": 1,
+    "points": 1401
+  },
+  "smoothing": {
+    "method": "Savitzky-Golay",
+    "polynomial_order": 3,
+    "windows_points_and_cm1": [
+      7,
+      11,
+      15
+    ],
+    "operation_order_minimal": [
+      "common_axis",
+      "candidate_spike_detection",
+      "derived_spike_interpolation",
+      "optional_smoothing",
+      "per_spectrum_minmax"
+    ],
+    "operation_order_arpls": [
+      "common_axis",
+      "candidate_spike_detection",
+      "derived_spike_interpolation",
+      "arpls_baseline_estimation",
+      "baseline_subtraction",
+      "optional_smoothing",
+      "per_spectrum_minmax"
+    ],
+    "uniform_candidate_names": [
+      "minimal_minmax",
+      "minimal_sg7_minmax",
+      "minimal_sg11_minmax",
+      "minimal_sg15_minmax",
+      "arpls_minmax",
+      "arpls_sg7_minmax",
+      "arpls_sg11_minmax",
+      "arpls_sg15_minmax"
+    ],
+    "unchanged_control": "derivative_1",
+    "noise_gated_policy_trigger": {
+      "consider_only_if": "A uniform smoother improves inner-validation noise robustness or reduces the target-blind high-frequency noise score, but its clean-performance or preservation effect is inconsistent between quality-pass and flagged spectra or across instruments.",
+      "maximum_policies_if_triggered": 1,
+      "instrument_labels_allowed": false,
+      "target_labels_allowed": false,
+      "threshold_fitted_inside_training_fold": true
+    }
+  },
+  "preservation_gates": {
+    "repeatable_peak_definition": {
+      "reference_prominence_minimum": 0.15,
+      "support_tolerance_cm1": 3,
+      "minimum_fraction_of_other_same_master_observations": 0.5,
+      "support_from_another_instrument_required": true
+    },
+    "repeatable_peak_weighted_recall_minimum": 0.98,
+    "all_peak_weighted_recall_diagnostic_reference": 0.95,
+    "all_peak_recall_is_hard_gate": false,
+    "median_matched_peak_shift_cm1_maximum": 1.0,
+    "median_absolute_relative_peak_width_change_maximum": 0.15,
+    "median_absolute_peak_prominence_change_maximum": 0.10,
+    "median_row_correlation_to_unsmoothed_family_minimum": 0.98,
+    "clean_target_balanced_accuracy_drop_maximum": 0.01,
+    "target_adjusted_instrument_leakage_increase_maximum": 0.02,
+    "target_adjusted_sensor_leakage_increase_maximum": 0.02,
+    "same_master_cross_instrument_distance_increase_maximum": 0.02,
+    "gate_evaluation_data": "nested inner validation only",
+    "stress_cohort_used_for_selection": false
+  },
+  "benefit_gate": {
+    "at_least_one_required": [
+      "noise_corruption_balanced_accuracy improvement >= 0.01",
+      "noise_corruption clean-prediction agreement improvement >= 0.02",
+      "median normalized high-frequency noise score reduction >= 0.10 relative"
+    ],
+    "selection_rule": "Among candidates passing every preservation gate and at least one benefit gate, retain at most one smoother per intensity family using equal-weight generalization utility. If none passes, retain no smoothing."
+  },
+  "alignment": {
+    "headline_pipeline_is_domain_blind": true,
+    "flexible_per_spectrum_warping_allowed": false,
+    "target_informed_alignment_allowed": false,
+    "acceptance_requirements": {
+      "shared_standard_or_calibration_corroboration_required": true,
+      "minimum_pair_count": 20,
+      "minimum_master_samples": 3,
+      "minimum_target_classes": 3,
+      "absolute_median_shift_cm1_minimum_to_justify_correction": 1.0,
+      "shift_iqr_cm1_maximum": 1.0,
+      "fraction_within_one_cm1_of_pair_median_minimum": 0.70,
+      "quality_pass_direction_must_agree": true
+    },
+    "fallback_when_requirements_fail": "No alignment; retain each spectrum's own calibrated native axis followed by the frozen common-grid interpolation."
+  },
+  "selection_and_leakage": {
+    "outer_test_used_for_selection": false,
+    "grouping_key": "master_sample_id",
+    "frozen_fold_column": "grouped_sample_fold_5",
+    "random_spectrum_split_allowed": false,
+    "per_instrument_preprocessing_allowed_in_headline_pipeline": false
+  },
+  "terminal_limits": {
+    "unsmoothed_minimal_control_always_retained": true,
+    "unsmoothed_arpls_control_always_retained": true,
+    "unchanged_first_derivative_control_always_retained": true,
+    "maximum_smoothed_variants_per_intensity_family": 1,
+    "preprocessing_reopened_after_v2": false
+  }
+}
