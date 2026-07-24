@@ -1,0 +1,12 @@
+{
+  "dataset_version": "sers-representation-baselines-v1",
+  "nato_roles": {
+    "field_quality_stress": 98,
+    "quality_pass": 500,
+    "strict_core": 598
+  },
+  "nato_source_version": "nato-sers-preprocessing-v2",
+  "poster_chemical_only_rows": 275,
+  "selection_closed": true,
+  "vae_models_run": false
+}

@@ -1,0 +1,454 @@
+{
+  "protocol_version": "sers-representation-baselines-v1",
+  "status_before_model_execution": "predeclared",
+  "created_date": "2026-07-23",
+  "protocol_amendments_before_model_screening": [
+    {
+      "stage": "strict determinism smoke test before any AE/DAE candidate metric",
+      "change": "Specify nearest-neighbour decoder upsampling followed by learned convolution instead of CUDA linear interpolation.",
+      "reason": "PyTorch reported that upsample_linear1d_backward_out_cuda has no deterministic implementation. No candidate training result, validation metric, target probe, domain probe, outer result, stress result, or poster result had been calculated. Nearest upsampling preserves the predeclared interpolation-plus-convolution decoder structure while satisfying the mandatory exact-rerun requirement."
+    }
+  ],
+  "terminal_scope": {
+    "included_models": [
+      "classical_controls",
+      "historical_siamese_triplet_control",
+      "deterministic_convolutional_autoencoder",
+      "matched_denoising_autoencoder"
+    ],
+    "prohibited_models": [
+      "variational_autoencoder",
+      "beta_vae",
+      "disentangled_vae",
+      "adversarial_latent_model",
+      "hybrid_vae_metric_model"
+    ],
+    "preprocessing_may_be_reopened": false
+  },
+  "immutable_nato_input": {
+    "bundle": "Workspace/nato_sers_field_trial/preprocessing_v2",
+    "validator": "scripts/validate_nato_sers_preprocessing_v2.py",
+    "version": "nato-sers-preprocessing-v2",
+    "representations": [
+      "minimal_minmax",
+      "arpls_minmax",
+      "derivative_1"
+    ],
+    "strict_core_rows": 598,
+    "quality_pass_rows": 500,
+    "field_quality_stress_rows": 98,
+    "axis_min_cm1": 400,
+    "axis_max_cm1": 1800,
+    "axis_step_cm1": 1,
+    "axis_points": 1401,
+    "grouping_key": "master_sample_id",
+    "fold_column": "grouped_sample_fold_5",
+    "hash_verification_required_at_every_entry_point": true,
+    "stress_cohort_used_for_selection": false
+  },
+  "poster_input": {
+    "source_csv": "Workspace/data/processed/consolidated_SERS.csv",
+    "source_sha256": "a77ccf4dc389affa80bfedcaa70d8511fcf10ff4f4e4dcd9bbcb1329ce52c49b",
+    "canonical_label_map": {
+      "bt": "benzenethiol"
+    },
+    "substrate_family_map": {
+      "AgNP": "Ag",
+      "AuNP": "Au"
+    },
+    "exclude_labels_with_fewer_than_two_substrate_families": true,
+    "expected_chemical_only_rows": 275,
+    "historical_control_axis_cm1": {
+      "minimum_column_at_or_above": 330,
+      "maximum_column_at_or_below": 1800
+    },
+    "new_reconstructive_axis_cm1": {
+      "minimum": 400,
+      "maximum": 1800,
+      "step": 1,
+      "points": 1401,
+      "reason": "Use only measured support shared with NATO and the same encoder shape; no unsupported values are padded."
+    },
+    "new_reconstructive_representations": [
+      "minimal_minmax",
+      "arpls_minmax",
+      "derivative_1"
+    ],
+    "poster_preprocessing_parameters": "exact frozen NATO preprocessing-v2 mathematical definitions; no poster-specific parameter selection",
+    "selection_role": "confirmatory transfer and localized failure analysis only",
+    "physical_sample_grouping_available": false,
+    "independence_limitation": "The 25 rows in a chemical-substrate cell are map locations, not 25 independent preparations."
+  },
+  "determinism": {
+    "cublas_workspace_config": ":4096:8",
+    "torch_deterministic_algorithms": true,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "allow_tf32": false,
+    "dataloader_workers": 0,
+    "seeded_dataloader_generator": true,
+    "run_seed_is_derived_from": [
+      "protocol_version",
+      "dataset",
+      "stage",
+      "outer_fold",
+      "inner_fold_or_domain",
+      "model",
+      "representation",
+      "configuration",
+      "declared_seed"
+    ],
+    "selection_seeds": [
+      1729
+    ],
+    "final_neural_seeds": [
+      1729,
+      2718,
+      3141
+    ],
+    "classical_seed": 2026,
+    "independent_exact_rerun_seed": 1729
+  },
+  "classical_controls": {
+    "representations": [
+      "minimal_minmax",
+      "arpls_minmax",
+      "derivative_1"
+    ],
+    "models": {
+      "nearest_centroid": {
+        "metric": "euclidean"
+      },
+      "pca_logistic": {
+        "pca_components_maximum": 32,
+        "pca_whiten": true,
+        "logistic_class_weight": "balanced",
+        "logistic_max_iterations": 3000
+      },
+      "linear_svm": {
+        "class_weight": "balanced",
+        "C": 1.0
+      }
+    },
+    "fit_only_on_training_partition": true,
+    "poster_derivative_2_nearest_centroid": "report-only historical reference; prohibited as a NATO-v2 model input"
+  },
+  "siamese_control": {
+    "historical_poster_reproduction": {
+      "representation": "derivative_1",
+      "channels": [
+        16,
+        32
+      ],
+      "kernels": [
+        7,
+        5
+      ],
+      "pool_after_each_convolution": 2,
+      "embedding_dimension": 64,
+      "loss": "triplet_margin",
+      "margin": 0.2,
+      "prototype": "row_mean",
+      "positive_sampling": "same chemical, different domain preferred",
+      "negative_sampling": "different chemical, same domain preferred",
+      "optimizer": "Adam",
+      "learning_rate": 0.001,
+      "batch_size": 32,
+      "epochs": 100,
+      "noise_standard_deviation": 0.01,
+      "maximum_shift_indices": 2,
+      "legacy_circular_shift_used_only_for_historical_reproduction": true
+    },
+    "deterministic_shared_harness": {
+      "same_fixed_architecture_loss_and_hyperparameters": true,
+      "edge_filled_shift_replaces_circular_roll": true,
+      "nato_domain_for_sampling": "instrument",
+      "poster_domain_for_sampling": "substrate_family",
+      "configuration_selected_on_nato_or_poster_outer_results": false
+    }
+  },
+  "autoencoder_search": {
+    "selection_dataset": "NATO strict-core nested inner validation only",
+    "quality_sensitivity": "Evaluate the two highest-utility candidates per representation on quality-pass inner folds before the final choice.",
+    "representations": [
+      "minimal_minmax",
+      "arpls_minmax"
+    ],
+    "encoder_families": {
+      "compact": {
+        "channels": [
+          8,
+          16
+        ],
+        "kernels": [
+          7,
+          5
+        ],
+        "pool_after_each_convolution": 2
+      },
+      "poster_matched": {
+        "channels": [
+          16,
+          32
+        ],
+        "kernels": [
+          7,
+          5
+        ],
+        "pool_after_each_convolution": 2
+      }
+    },
+    "bottleneck_dimensions": [
+      16,
+      64
+    ],
+    "decoder": "symmetric deterministic nearest-upsampling-plus-convolution decoder with exact output-length correction and sigmoid intensity output",
+    "reconstruction_losses": {
+      "mse": {
+        "mse_weight": 1.0
+      },
+      "spectral_composite": {
+        "smooth_l1_weight": 1.0,
+        "spectral_angle_weight": 0.1,
+        "first_derivative_weight": 0.1
+      }
+    },
+    "training": {
+      "optimizer": "Adam",
+      "learning_rate": 0.001,
+      "weight_decay": 0.00001,
+      "batch_size": 64,
+      "maximum_epochs": 100,
+      "minimum_epochs": 20,
+      "early_stopping_patience": 12,
+      "early_stopping_minimum_delta": 0.00001,
+      "gradient_clip_norm": 5.0,
+      "validation_monitor": "declared reconstruction loss",
+      "restore_best_epoch": true
+    },
+    "same_encoder_and_decoder_for_ae_and_dae": true
+  },
+  "denoising_search": {
+    "architecture_and_loss": "For each intensity representation, use the AE architecture, bottleneck, and loss selected without corruption.",
+    "curricula": {
+      "gaussian_only": {
+        "corruptions": [
+          "gaussian_noise"
+        ],
+        "severity_schedule": "full"
+      },
+      "mixed_uniform": {
+        "corruptions": [
+          "scale_offset",
+          "smooth_baseline",
+          "gaussian_noise",
+          "isolated_spikes",
+          "edge_filled_shift",
+          "gaussian_broadening",
+          "composite"
+        ],
+        "severity_schedule": "full"
+      },
+      "mixed_progressive": {
+        "corruptions": [
+          "scale_offset",
+          "smooth_baseline",
+          "gaussian_noise",
+          "isolated_spikes",
+          "edge_filled_shift",
+          "gaussian_broadening",
+          "composite"
+        ],
+        "severity_schedule": "linear from 0.25 to 1.0 between minimum and maximum training epoch"
+      }
+    },
+    "training_corruptions_are_generated_from": "training-clean spectra only after split assignment",
+    "validation_and_test_corruptions_are_generated_from": "held-out clean copies only after split assignment and are never used as training examples",
+    "clean_target_is_always": "the frozen uncorrupted representation",
+    "base_severity": {
+      "scale_factor_range": [
+        0.7,
+        1.3
+      ],
+      "offset_fraction_of_unit_range": 0.1,
+      "smooth_baseline_maximum_amplitude": 0.25,
+      "gaussian_noise_standard_deviation": 0.03,
+      "isolated_spike_count": 2,
+      "isolated_spike_amplitude": 0.5,
+      "edge_filled_shift_maximum_cm1": 3,
+      "gaussian_broadening_sigma_cm1": 1.0
+    },
+    "evaluation_severity_multipliers": [
+      0.5,
+      1.0,
+      1.5
+    ],
+    "clip_corrupted_model_input_to_zero_one": true
+  },
+  "nested_selection": {
+    "outer_test_used_for_selection": false,
+    "poster_folds_used_for_selection": false,
+    "field_quality_stress_used_for_selection": false,
+    "stage_1": "Evaluate all 16 AE configurations on the 20 strict-core inner folds with seed 1729.",
+    "stage_2": "For each representation, carry the two highest-utility gate-passing AE candidates to the 20 quality-pass inner folds and select one.",
+    "stage_3": "Evaluate all three DAE curricula using the selected AE architecture/loss on strict-core inner folds; carry the two highest-utility gate-passing curricula per representation to quality-pass inner folds and select at most one.",
+    "stage_4": "Freeze one AE per intensity representation and zero or one DAE per intensity representation before any outer, field-stress, poster, or domain-transfer neural evaluation.",
+    "normalization_of_utility": "within the candidate set evaluated at the same stage; no outer information",
+    "utility_weights": {
+      "chemical_probe_balanced_accuracy": 0.3,
+      "reconstruction_fidelity": 0.2,
+      "corrupted_recovery": 0.2,
+      "repeatable_peak_preservation": 0.15,
+      "negative_target_adjusted_domain_leakage": 0.1,
+      "negative_same_master_cross_instrument_distance": 0.05
+    }
+  },
+  "eligibility_gates": {
+    "ae": {
+      "clean_median_row_correlation_minimum": 0.95,
+      "clean_repeatable_peak_recall_minimum": 0.9,
+      "chemical_probe_balanced_accuracy_drop_from_same_view_classical_maximum": 0.05,
+      "target_adjusted_instrument_leakage_increase_maximum": 0.02,
+      "same_master_cross_instrument_correlation_distance_increase_maximum": 0.02,
+      "quality_pass_chemical_probe_drop_from_strict_core_maximum": 0.05
+    },
+    "dae_relative_to_matched_ae": {
+      "clean_median_row_correlation_drop_maximum": 0.02,
+      "clean_repeatable_peak_recall_drop_maximum": 0.03,
+      "clean_chemical_probe_balanced_accuracy_drop_maximum": 0.02,
+      "at_least_one_benefit_required": [
+        "mixed-corruption reconstruction composite error relative reduction >= 0.05",
+        "mixed-corruption chemical prediction agreement improvement >= 0.02",
+        "mixed-corruption latent drift relative reduction >= 0.05"
+      ]
+    },
+    "when_no_candidate_passes": "Retain the least-complex AE as a compression diagnostic but mark it ineligible to advance; retain no DAE if no DAE passes."
+  },
+  "final_evaluation": {
+    "nato_outer": {
+      "strict_core": "train on outer development and test the sealed outer fold",
+      "quality_pass": "fit and test only quality-pass rows under the same outer master split",
+      "field_quality_stress": "train on quality-pass outer development and test flagged rows in the sealed outer fold"
+    },
+    "poster": {
+      "protocol": "leave one grouped substrate family out",
+      "model_settings": "NATO-selected AE/DAE settings transferred unchanged",
+      "historical_control": "exact legacy first-derivative triplet configuration",
+      "localized_failure": "report all 4NP rows in the held-out Ag family and AgNP source subgroup"
+    },
+    "domain_transfer": {
+      "source_partitions": [
+        "domain_evaluation_partitions_core.csv",
+        "domain_evaluation_partitions_quality.csv"
+      ],
+      "protocols": [
+        "domain_only",
+        "domain_and_sample"
+      ],
+      "domain_types": [
+        "instrument",
+        "sensor_family"
+      ],
+      "unsupported_test_classes_are_reported_and_excluded_from_supported_metrics": true,
+      "neural_seeds": [
+        1729,
+        2718,
+        3141
+      ],
+      "models": "classical controls, deterministic Siamese control, and selected AE/DAE on the selected advancing intensity view"
+    }
+  },
+  "metrics": {
+    "classification": [
+      "balanced_accuracy_over_supported_true_classes",
+      "macro_f1_over_supported_true_classes",
+      "macro_f1_over_union_of_true_and_predicted_classes",
+      "per_class_recall",
+      "per_class_precision",
+      "confusion_matrix",
+      "prediction_confidence_where_available"
+    ],
+    "reconstruction": [
+      "mse",
+      "smooth_l1",
+      "spectral_angle",
+      "pearson_correlation",
+      "first_derivative_error",
+      "repeatable_peak_recall",
+      "peak_shift",
+      "relative_peak_width_change",
+      "peak_prominence_change"
+    ],
+    "robustness": [
+      "prediction_agreement_clean_vs_corrupted",
+      "chemical_balanced_accuracy_by_corruption_and_severity",
+      "latent_cosine_drift",
+      "reconstruction_recovery_relative_to_known_clean_target"
+    ],
+    "representation": [
+      "target_adjusted_instrument_probe_increment_over_target_only",
+      "target_adjusted_sensor_probe_increment_over_target_only",
+      "same_master_cross_instrument_correlation_distance",
+      "different_target_cross_instrument_distance",
+      "cross_instrument_separation_margin"
+    ],
+    "qualitative_only": [
+      "pca",
+      "umap",
+      "tsne"
+    ]
+  },
+  "required_artifacts": {
+    "root": "Workspace/sers_representation_baselines/baselines_v1",
+    "records": [
+      "README.md",
+      "DECISION_REGISTRY.md",
+      "predeclared_protocol.json",
+      "provenance_audit.json",
+      "environment.json",
+      "dataset_version.json",
+      "input_hashes.json",
+      "split_seed_assignments.csv",
+      "search_run_registry.csv",
+      "training_histories.csv",
+      "selection_metrics.csv",
+      "selected_configurations.json",
+      "outer_fold_metrics.csv",
+      "domain_transfer_metrics.csv",
+      "corruption_metrics.csv",
+      "reconstruction_metrics.csv",
+      "per_spectrum_predictions.csv",
+      "failure_cases.csv",
+      "uncertainty_summary.csv",
+      "artifact_hashes.json"
+    ],
+    "binary_directories": [
+      "checkpoints",
+      "embeddings",
+      "reconstructions"
+    ],
+    "figure_directory": "figures",
+    "checkpoint_policy": "Save every selected outer/domain/poster neural checkpoint and best-epoch metadata; candidate-search histories and deterministic state hashes are mandatory, but nonselected search checkpoints may be discarded after selection."
+  },
+  "closure_requirements": {
+    "automated_validator": true,
+    "independent_clean_rebuild": true,
+    "exact_rebuild_comparison": [
+      "selected configurations",
+      "fold metrics",
+      "predictions",
+      "embeddings",
+      "reconstructions",
+      "training histories",
+      "checkpoint tensors"
+    ],
+    "final_decisions_required": [
+      "classical reference performance",
+      "siamese reference performance and reproducibility qualification",
+      "whether deterministic reconstruction adds value",
+      "whether explicit denoising improves robustness without unacceptable clean or peak loss",
+      "which intensity input view advances",
+      "which encoder-decoder capacity, bottleneck, reconstruction loss, and corruption curriculum advance unchanged to the standard-VAE goal"
+    ]
+  }
+}

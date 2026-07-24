@@ -1,0 +1,16 @@
+stage,scenario,outer_fold,model_family,model,representation,curriculum,seed,balanced_accuracy_supported,macro_f1_supported,macro_f1_union,n_test,n_test_supported,n_test_unsupported,unsupported_classes,reconstruction_mse,reconstruction_smooth_l1,reconstruction_spectral_angle,reconstruction_median_row_correlation,reconstruction_first_derivative_mae,repeatable_peak_recall,median_peak_shift_cm1,median_absolute_relative_peak_width_change,median_absolute_peak_prominence_change
+controls,nato_outer_o0_label_permutation,0,negative_control,pca_logistic_group_label_permutation,arpls_minmax,none,2026,0.10714285714285714,0.09319313091090095,0.09319313091090095,118.0,118.0,0.0,,,,,,,,,,
+controls,nato_outer_o0_identity,0,identity_control,identity_mapping,minimal_minmax,none,0,,,,,,,,0.0,0.0,1.4125908318522035e-09,1.0,0.0,1.0,0.0,0.0,0.0
+controls,nato_outer_o0_identity,0,identity_control,identity_mapping,arpls_minmax,none,0,,,,,,,,0.0,0.0,1.1381119653523052e-09,1.0,0.0,1.0,0.0,0.0,0.0
+controls,nato_outer_o1_label_permutation,1,negative_control,pca_logistic_group_label_permutation,arpls_minmax,none,2026,0.05577258363299553,0.058285800221284094,0.058285800221284094,119.0,119.0,0.0,,,,,,,,,,
+controls,nato_outer_o1_identity,1,identity_control,identity_mapping,minimal_minmax,none,0,,,,,,,,0.0,0.0,9.827904928890391e-10,1.0,0.0,1.0,0.0,0.0,0.0
+controls,nato_outer_o1_identity,1,identity_control,identity_mapping,arpls_minmax,none,0,,,,,,,,0.0,0.0,1.3938816465563719e-09,1.0,0.0,1.0,0.0,0.0,0.0
+controls,nato_outer_o2_label_permutation,2,negative_control,pca_logistic_group_label_permutation,arpls_minmax,none,2026,0.2655895691609978,0.23452376776590184,0.23452376776590184,117.0,117.0,0.0,,,,,,,,,,
+controls,nato_outer_o2_identity,2,identity_control,identity_mapping,minimal_minmax,none,0,,,,,,,,0.0,0.0,1.5323732862625334e-09,1.0,0.0,1.0,0.0,0.0,0.0
+controls,nato_outer_o2_identity,2,identity_control,identity_mapping,arpls_minmax,none,0,,,,,,,,0.0,0.0,1.6638301316056295e-09,1.0,0.0,1.0,0.0,0.0,0.0
+controls,nato_outer_o3_label_permutation,3,negative_control,pca_logistic_group_label_permutation,arpls_minmax,none,2026,0.12098595848595849,0.12867085295656724,0.12867085295656724,120.0,120.0,0.0,,,,,,,,,,
+controls,nato_outer_o3_identity,3,identity_control,identity_mapping,minimal_minmax,none,0,,,,,,,,0.0,0.0,1.5403721969557348e-09,1.0,0.0,1.0,0.0,0.0,0.0
+controls,nato_outer_o3_identity,3,identity_control,identity_mapping,arpls_minmax,none,0,,,,,,,,0.0,0.0,1.4776915178340193e-09,1.0,0.0,1.0,0.0,0.0,0.0
+controls,nato_outer_o4_label_permutation,4,negative_control,pca_logistic_group_label_permutation,arpls_minmax,none,2026,0.15117521367521367,0.1478500244640847,0.1478500244640847,124.0,124.0,0.0,,,,,,,,,,
+controls,nato_outer_o4_identity,4,identity_control,identity_mapping,minimal_minmax,none,0,,,,,,,,0.0,0.0,1.3732097979669164e-09,1.0,0.0,1.0,0.0,0.0,0.0
+controls,nato_outer_o4_identity,4,identity_control,identity_mapping,arpls_minmax,none,0,,,,,,,,0.0,0.0,1.4934012221824094e-09,1.0,0.0,1.0,0.0,0.0,0.0

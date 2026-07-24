@@ -1,0 +1,45 @@
+{
+  "all_required_comparisons_exact": true,
+  "comparison_semantics": {
+    "CSV": "byte-identical or parsed frames equal with exact values, dtypes, columns, and row order; the original AE-core execution fingerprint is retained as an allowed provenance difference and is not a scientific metric",
+    "JSON": "parsed values exactly equal",
+    "NPZ": "archive keys, dtypes, shapes, and every array value equal",
+    "checkpoints": "relative path set, every state tensor hash, and metadata equal"
+  },
+  "comparison_version": "sers-baseline-clean-rebuild-comparison-v1",
+  "comparisons": {
+    "checkpoint_tensors": {
+      "failures": [],
+      "files": 726,
+      "status": "exact"
+    },
+    "embeddings": {
+      "failures": [],
+      "files": 801,
+      "status": "exact"
+    },
+    "fold_metrics_and_predictions": {
+      "failures": [],
+      "files": 20,
+      "status": "exact"
+    },
+    "reconstructions": {
+      "failures": [],
+      "files": 564,
+      "status": "exact"
+    },
+    "selected_configurations_and_protocol": {
+      "failures": [],
+      "files": 5,
+      "status": "exact"
+    },
+    "training_histories": {
+      "failures": [],
+      "files": 6,
+      "status": "exact"
+    }
+  },
+  "rebuild": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_representation_baselines/baselines_v1_rebuild",
+  "reference": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_representation_baselines/baselines_v1",
+  "status": "exact_match"
+}

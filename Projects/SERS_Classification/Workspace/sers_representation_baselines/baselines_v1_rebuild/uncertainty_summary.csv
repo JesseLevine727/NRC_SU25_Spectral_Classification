@@ -1,0 +1,58 @@
+evaluation,subset,domain_type,protocol,model,mean_balanced_accuracy,ci95_half_width,independent_unit,n_units
+outer,field_quality_stress,,grouped_outer_fold,AE arPLS,0.3351587301587301,0.1359593555043736,outer_fold,5
+outer,field_quality_stress,,grouped_outer_fold,AE minimal,0.3782804232804232,0.1960896458036946,outer_fold,5
+outer,field_quality_stress,,grouped_outer_fold,Classical,0.4471428571428572,0.16760339132588425,outer_fold,5
+outer,field_quality_stress,,grouped_outer_fold,DAE arPLS,0.35619047619047617,0.1435601361071098,outer_fold,5
+outer,field_quality_stress,,grouped_outer_fold,DAE minimal,0.3606878306878306,0.18354758816867872,outer_fold,5
+outer,field_quality_stress,,grouped_outer_fold,Siamese,0.3704497354497355,0.14056680956887274,outer_fold,5
+outer,quality_pass,,grouped_outer_fold,AE arPLS,0.7214756084664551,0.05411361403913573,outer_fold,5
+outer,quality_pass,,grouped_outer_fold,AE minimal,0.7069648032037702,0.05092362836407164,outer_fold,5
+outer,quality_pass,,grouped_outer_fold,Classical,0.7713363196862707,0.04705347468221332,outer_fold,5
+outer,quality_pass,,grouped_outer_fold,DAE arPLS,0.7139095272047217,0.0647193747578584,outer_fold,5
+outer,quality_pass,,grouped_outer_fold,DAE minimal,0.7160901436171132,0.047808859419331974,outer_fold,5
+outer,quality_pass,,grouped_outer_fold,Siamese,0.6766688629315305,0.04868785334877857,outer_fold,5
+outer,strict_core,,grouped_outer_fold,AE arPLS,0.7033385071879678,0.04781384315654175,outer_fold,5
+outer,strict_core,,grouped_outer_fold,AE minimal,0.6945237252365398,0.0708206137942491,outer_fold,5
+outer,strict_core,,grouped_outer_fold,Classical,0.7246314659877916,0.07525826556987968,outer_fold,5
+outer,strict_core,,grouped_outer_fold,DAE arPLS,0.713069975397697,0.0516842414925152,outer_fold,5
+outer,strict_core,,grouped_outer_fold,DAE minimal,0.6891592070104655,0.06269561172345771,outer_fold,5
+outer,strict_core,,grouped_outer_fold,Siamese,0.6320941608547035,0.07133683301928725,outer_fold,5
+poster,chemical_only_275,substrate_family,leave_one_substrate_family_out,AE arPLS,0.8861111111111111,0.1966539548879888,substrate_family_descriptive_not_independent_preparation,4
+poster,chemical_only_275,substrate_family,leave_one_substrate_family_out,AE minimal,0.7866666666666666,0.3152180467788133,substrate_family_descriptive_not_independent_preparation,4
+poster,chemical_only_275,substrate_family,leave_one_substrate_family_out,Classical,0.82,0.2952550025636745,substrate_family_descriptive_not_independent_preparation,4
+poster,chemical_only_275,substrate_family,leave_one_substrate_family_out,DAE arPLS,0.9144444444444444,0.1728812163026697,substrate_family_descriptive_not_independent_preparation,4
+poster,chemical_only_275,substrate_family,leave_one_substrate_family_out,DAE minimal,0.8188888888888889,0.3633425500555371,substrate_family_descriptive_not_independent_preparation,4
+poster,chemical_only_275,substrate_family,leave_one_substrate_family_out,Historical Siamese,0.9283333333333333,0.1334478832899738,substrate_family_descriptive_not_independent_preparation,4
+poster,chemical_only_275,substrate_family,leave_one_substrate_family_out,Siamese,0.8577777777777778,0.24176526209424215,substrate_family_descriptive_not_independent_preparation,4
+domain_transfer,quality_pass,instrument,domain_and_sample,AE arPLS,0.5489232172148839,0.2094500155402743,heldout_domain,10
+domain_transfer,quality_pass,instrument,domain_and_sample,Classical,0.5950678164428165,0.21637770066433618,heldout_domain,10
+domain_transfer,quality_pass,instrument,domain_and_sample,DAE arPLS,0.5434827333160667,0.20589369028801005,heldout_domain,10
+domain_transfer,quality_pass,instrument,domain_and_sample,Siamese,0.5804154040404039,0.16563794987753294,heldout_domain,10
+domain_transfer,quality_pass,sensor_family,domain_and_sample,AE arPLS,0.4003001628001628,2.0487268350813217,heldout_domain,2
+domain_transfer,quality_pass,sensor_family,domain_and_sample,Classical,0.4474257224257224,2.2318601176290573,heldout_domain,2
+domain_transfer,quality_pass,sensor_family,domain_and_sample,DAE arPLS,0.3947344322344322,2.2171861835879927,heldout_domain,2
+domain_transfer,quality_pass,sensor_family,domain_and_sample,Siamese,0.5069512277845611,3.13709747886131,heldout_domain,2
+domain_transfer,quality_pass,instrument,domain_only,AE arPLS,0.6101148521748935,0.15347993726033135,heldout_domain,10
+domain_transfer,quality_pass,instrument,domain_only,Classical,0.647473053770003,0.17144309830936902,heldout_domain,10
+domain_transfer,quality_pass,instrument,domain_only,DAE arPLS,0.5968748288849678,0.1563861763506426,heldout_domain,10
+domain_transfer,quality_pass,instrument,domain_only,Siamese,0.6160032507457,0.08356116101308746,heldout_domain,10
+domain_transfer,quality_pass,sensor_family,domain_only,AE arPLS,0.33873368011720056,0.24891329647765087,heldout_domain,4
+domain_transfer,quality_pass,sensor_family,domain_only,Classical,0.36404490908128584,0.20306168255955176,heldout_domain,4
+domain_transfer,quality_pass,sensor_family,domain_only,DAE arPLS,0.33260175068136966,0.22117510101936397,heldout_domain,4
+domain_transfer,quality_pass,sensor_family,domain_only,Siamese,0.4662532016023302,0.549907435390483,heldout_domain,4
+domain_transfer,strict_core,instrument,domain_and_sample,AE arPLS,0.5616890443920086,0.19324086970522203,heldout_domain,10
+domain_transfer,strict_core,instrument,domain_and_sample,Classical,0.5637971588890374,0.21754516776531024,heldout_domain,10
+domain_transfer,strict_core,instrument,domain_and_sample,DAE arPLS,0.5340459666087314,0.21500420391264066,heldout_domain,10
+domain_transfer,strict_core,instrument,domain_and_sample,Siamese,0.6009192859077916,0.1606114882430356,heldout_domain,10
+domain_transfer,strict_core,sensor_family,domain_and_sample,AE arPLS,0.6072738445287464,0.9514469188548696,heldout_domain,3
+domain_transfer,strict_core,sensor_family,domain_and_sample,Classical,0.6046349619879031,0.93279298279092,heldout_domain,3
+domain_transfer,strict_core,sensor_family,domain_and_sample,DAE arPLS,0.5615436306612777,0.9869840404511757,heldout_domain,3
+domain_transfer,strict_core,sensor_family,domain_and_sample,Siamese,0.34983495081534294,1.0709805471550269,heldout_domain,3
+domain_transfer,strict_core,instrument,domain_only,AE arPLS,0.6228204317711107,0.13012175872953186,heldout_domain,10
+domain_transfer,strict_core,instrument,domain_only,Classical,0.6136306529760848,0.15005564915447014,heldout_domain,10
+domain_transfer,strict_core,instrument,domain_only,DAE arPLS,0.5756334994655015,0.14386677923802743,heldout_domain,10
+domain_transfer,strict_core,instrument,domain_only,Siamese,0.6275337316657915,0.08814058903777122,heldout_domain,10
+domain_transfer,strict_core,sensor_family,domain_only,AE arPLS,0.4521489220202931,0.3586067496136013,heldout_domain,4
+domain_transfer,strict_core,sensor_family,domain_only,Classical,0.40709450960169247,0.23052912804567732,heldout_domain,4
+domain_transfer,strict_core,sensor_family,domain_only,DAE arPLS,0.4250814993495676,0.22665392488483202,heldout_domain,4
+domain_transfer,strict_core,sensor_family,domain_only,Siamese,0.44473546678050985,0.44715305587446824,heldout_domain,4

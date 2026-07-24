@@ -1,0 +1,5 @@
+{
+  "historical_control": "330-1800 cm-1 SNV + Savitzky-Golay first derivative + L2, fixed triplet network, circular shift retained only for exact legacy-method control.",
+  "interpretation": "Leave-one-substrate-family-out evaluates substrate-domain transfer over map-location rows. It must not be interpreted as validation on independent chemical preparations.",
+  "physical_preparation_ids_available": false
+}

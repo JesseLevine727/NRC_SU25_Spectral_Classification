@@ -1,0 +1,26 @@
+{
+  "common_script": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/sers_baseline_common.py",
+    "sha256": "1419ca83cf735c9e4d6e325ffbb8894ba432b31f63b2ea20be8e7d3d340e95b0"
+  },
+  "nato_artifact_hash_catalog": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/artifact_hashes.json",
+    "sha256": "2f7f03b7caf7a08cda0ee70a06ea7ba66fdd59a4ccc8751c1ffe4d46b109db24"
+  },
+  "nato_dataset_version": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/dataset_version.json",
+    "sha256": "cde5347049fb593741dabfed0f36e3c01b9cf170d6cecc4d05278bf2aeaf4213"
+  },
+  "orchestrator": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/run_sers_representation_baselines.py",
+    "sha256": "1d70a2f471f6a28d41697a91a8b6e4ca372fa84615d0c314c743e4fda27647dd"
+  },
+  "poster_source": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/data/processed/consolidated_SERS.csv",
+    "sha256": "a77ccf4dc389affa80bfedcaa70d8511fcf10ff4f4e4dcd9bbcb1329ce52c49b"
+  },
+  "protocol": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/sers_representation_baselines_v1.json",
+    "sha256": "a7e0d2a85efc26daabf479fe3f846f9570569664c1081c4a267fe96232b97fce"
+  }
+}

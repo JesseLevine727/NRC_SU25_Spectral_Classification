@@ -1,0 +1,370 @@
+{
+  "checks": [
+    {
+      "details": [],
+      "name": "required record files",
+      "status": "pass"
+    },
+    {
+      "details": [],
+      "name": "required artifact directories",
+      "status": "pass"
+    },
+    {
+      "name": "required artifact declarations",
+      "status": "pass"
+    },
+    {
+      "details": [],
+      "name": "strict JSON parsing",
+      "status": "pass"
+    },
+    {
+      "name": "predeclared protocol is copied exactly",
+      "status": "pass"
+    },
+    {
+      "details": "sers-representation-baselines-v1",
+      "name": "protocol version",
+      "status": "pass"
+    },
+    {
+      "name": "preprocessing remains closed",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "field_quality_stress_used": false,
+        "outer_test_used": false,
+        "poster_used": false,
+        "selection_closed": true,
+        "selection_data": "NATO nested inner validation only"
+      },
+      "name": "selection leakage flags",
+      "status": "pass"
+    },
+    {
+      "name": "baseline terminates before VAE models",
+      "status": "pass"
+    },
+    {
+      "name": "frozen next-goal starting point",
+      "status": "pass"
+    },
+    {
+      "name": "selected reconstructive representations",
+      "status": "pass"
+    },
+    {
+      "name": "all clean AEs fail at least one gate",
+      "status": "pass"
+    },
+    {
+      "name": "advancing arPLS DAE configuration",
+      "status": "pass"
+    },
+    {
+      "name": "no prohibited VAE-family model output",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "axis_points": 1401,
+        "representations": [
+          "arpls_minmax",
+          "derivative_1",
+          "minimal_minmax"
+        ],
+        "rows": 598
+      },
+      "name": "immutable NATO core loads with verified hashes",
+      "status": "pass"
+    },
+    {
+      "name": "immutable preprocessing-v2 verification",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 400,
+        "expected": 400
+      },
+      "name": "ae_search_fold_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 200,
+        "expected": 200
+      },
+      "name": "dae_search_fold_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 15,
+        "expected": 15
+      },
+      "name": "control_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 360,
+        "expected": 360
+      },
+      "name": "outer_fold_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 28704,
+        "expected": 28704
+      },
+      "name": "outer_fold_predictions.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 14352,
+        "expected": 14352
+      },
+      "name": "outer_fold_reconstruction_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 3780,
+        "expected": 3780
+      },
+      "name": "outer_fold_corruption_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 108,
+        "expected": 108
+      },
+      "name": "poster_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 7425,
+        "expected": 7425
+      },
+      "name": "poster_predictions.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 3300,
+        "expected": 3300
+      },
+      "name": "poster_reconstruction_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 1008,
+        "expected": 1008
+      },
+      "name": "poster_corruption_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 1008,
+        "expected": 1008
+      },
+      "name": "domain_transfer_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 79056,
+        "expected": 79056
+      },
+      "name": "domain_transfer_predictions.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 26352,
+        "expected": 26352
+      },
+      "name": "domain_transfer_reconstruction_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 7056,
+        "expected": 7056
+      },
+      "name": "domain_transfer_corruption_metrics.csv row count",
+      "status": "pass"
+    },
+    {
+      "details": [],
+      "name": "AE nested-search coverage",
+      "status": "pass"
+    },
+    {
+      "name": "AE search run IDs unique",
+      "status": "pass"
+    },
+    {
+      "details": [],
+      "name": "DAE nested-search coverage",
+      "status": "pass"
+    },
+    {
+      "name": "DAE search run IDs unique",
+      "status": "pass"
+    },
+    {
+      "details": 0.14013323641960446,
+      "name": "group-label permutation is near chance",
+      "status": "pass"
+    },
+    {
+      "name": "identity reconstruction control",
+      "status": "pass"
+    },
+    {
+      "details": [],
+      "name": "sealed outer-fold coverage and prediction alignment",
+      "status": "pass"
+    },
+    {
+      "details": [],
+      "name": "poster transfer coverage and limitation",
+      "status": "pass"
+    },
+    {
+      "details": [],
+      "name": "domain-transfer grid, support flags, and prediction alignment",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "checkpoints": 150,
+        "rows": 225,
+        "run_ids": 150
+      },
+      "name": "outer_fold_run_registry.json coverage",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "checkpoints": 72,
+        "rows": 72,
+        "run_ids": 72
+      },
+      "name": "poster_run_registry.json coverage",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "checkpoints": 504,
+        "rows": 504,
+        "run_ids": 504
+      },
+      "name": "domain_transfer_run_registry.json coverage",
+      "status": "pass"
+    },
+    {
+      "details": [],
+      "name": "registry checkpoint metadata consistency",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "checked": 726,
+        "failures": []
+      },
+      "name": "all selected neural checkpoint tensors and metadata",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 726,
+        "expected": 726
+      },
+      "name": "checkpoints file count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 801,
+        "expected": 801
+      },
+      "name": "embeddings file count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "actual": 564,
+        "expected": 564
+      },
+      "name": "reconstructions file count",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "checked": 1365,
+        "failures": []
+      },
+      "name": "embedding and reconstruction archives",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "expected": [
+          "corruption_robustness.pdf",
+          "corruption_robustness.png",
+          "outer_performance.pdf",
+          "outer_performance.png",
+          "poster_transfer.pdf",
+          "poster_transfer.png",
+          "strict_domain_transfer.pdf",
+          "strict_domain_transfer.png"
+        ],
+        "found": [
+          "corruption_robustness.pdf",
+          "corruption_robustness.png",
+          "outer_performance.pdf",
+          "outer_performance.png",
+          "poster_transfer.pdf",
+          "poster_transfer.png",
+          "strict_domain_transfer.pdf",
+          "strict_domain_transfer.png"
+        ]
+      },
+      "name": "publication figure set",
+      "status": "pass"
+    },
+    {
+      "details": "not yet present",
+      "name": "independent clean rebuild comparison",
+      "status": "pass"
+    },
+    {
+      "details": {
+        "entries": 2154,
+        "failures": []
+      },
+      "name": "artifact SHA-256 catalog",
+      "status": "pass"
+    }
+  ],
+  "protocol_version": "sers-representation-baselines-v1",
+  "require_clean_rebuild": false,
+  "status": "pass",
+  "summary": {
+    "checks": 52,
+    "failed": 0,
+    "passed": 52
+  },
+  "validator": "sers-baseline-bundle-validator-v1"
+}

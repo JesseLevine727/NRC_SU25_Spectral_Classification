@@ -1,0 +1,60 @@
+{
+  "canonical_inference": {
+    "evaluation_device": "cpu",
+    "reason": "Exact CUDA checkpoint tensors with tiny separate-process CUDA inference variation; CPU replay is bitwise stable.",
+    "training_device": "cuda"
+  },
+  "historical_poster_result": {
+    "fresh_exact_reproducibility_qualification": "legacy implementation was nondeterministic; the new shared harness uses strict deterministic kernels.",
+    "original_random_row_train_query_protocol": "98.76% label+substrate prediction; not comparable to grouped substrate-family transfer.",
+    "saved_grouped_siamese_mean_balanced_accuracy": 0.975
+  },
+  "metric_correction": "Final repeatable-test peak definition corrected before interpretation; checkpoints/predictions unchanged and replayed.",
+  "poster_rows": {
+    "chemical_only": 275,
+    "physical_preparation_ids_available": false,
+    "source": 503
+  },
+  "source_hashes": {
+    "bundle_validator": {
+      "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/validate_sers_baseline_bundle.py",
+      "sha256": "7386ed17d39d204b7e716c92b9d3cb2abed6decf2506b49ea2770a5099a52a58"
+    },
+    "clean_rebuild_comparator": {
+      "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/compare_sers_baseline_rebuild.py",
+      "sha256": "85ff25a578701f3ef416c9a9fd2fa49ee269e7c0a401aa5de4435bf3d2ddb224"
+    },
+    "final_evaluation_script": {
+      "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/run_sers_baseline_final.py",
+      "sha256": "404611f69f17f7617ae2aaaaebbf578fcf042ddd289844c2bb6db52c8127df31"
+    },
+    "finalization_script": {
+      "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/finalize_sers_baseline_bundle.py",
+      "sha256": "735c0ff7e69f56366340e608994f23807df692e54d5508d55b3cc502eb64a777"
+    },
+    "poster_source_csv": {
+      "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/data/processed/consolidated_SERS.csv",
+      "sha256": "a77ccf4dc389affa80bfedcaa70d8511fcf10ff4f4e4dcd9bbcb1329ce52c49b"
+    },
+    "preprocessing_v2_artifact_hashes": {
+      "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/artifact_hashes.json",
+      "sha256": "2f7f03b7caf7a08cda0ee70a06ea7ba66fdd59a4ccc8751c1ffe4d46b109db24"
+    },
+    "preprocessing_v2_dataset_version": {
+      "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/dataset_version.json",
+      "sha256": "cde5347049fb593741dabfed0f36e3c01b9cf170d6cecc4d05278bf2aeaf4213"
+    },
+    "protocol_source": {
+      "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/sers_representation_baselines_v1.json",
+      "sha256": "a7e0d2a85efc26daabf479fe3f846f9570569664c1081c4a267fe96232b97fce"
+    },
+    "selection_script": {
+      "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/run_sers_representation_baselines.py",
+      "sha256": "1d70a2f471f6a28d41697a91a8b6e4ca372fa84615d0c314c743e4fda27647dd"
+    },
+    "shared_harness": {
+      "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/sers_baseline_common.py",
+      "sha256": "1419ca83cf735c9e4d6e325ffbb8894ba432b31f63b2ea20be8e7d3d340e95b0"
+    }
+  }
+}
