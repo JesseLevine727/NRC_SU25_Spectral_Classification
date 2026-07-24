@@ -1,0 +1,180 @@
+{
+  "claim_limits": [
+    "The one-block VAE is not a disentangled model.",
+    "Poster rows are map locations without independent preparation IDs.",
+    "Synthetic corruption and poster gains do not establish universal field denoising.",
+    "Unsupported unseen analytes remain excluded from supported-class metrics and are listed separately."
+  ],
+  "decision": "Retain the standard VAE as a noncollapsed mixed-latent diagnostic and required comparator, but do not advance it as the final representation. It preserves competitive chemical classification and improves descriptive poster transfer, yet fails registered correlation, repeatable-peak, and same-master geometry gates and does not improve real NATO stress or unseen-instrument transfer.",
+  "eligible_to_advance": false,
+  "frozen_comparator_context": {
+    "advancing_view": {
+      "mandatory_sensitivity_control": "minimal_minmax",
+      "primary": "arpls_minmax",
+      "reason": "Pre-outer inner-only decision prioritized target separation, instrument invariance, same-master geometry, and corruption stability. Minimal remains mandatory because it reconstructs clean spectra and repeatable peaks more faithfully."
+    },
+    "baseline_protocol": "sers-representation-baselines-v1",
+    "claim_limits": [
+      "No model solved the 98-spectrum field-quality stress cohort.",
+      "No AE passed the predeclared absolute repeatable-peak gate.",
+      "Poster rows lack physical-preparation IDs.",
+      "Unsupported unseen analyte classes are excluded from supported-class metrics and reported separately.",
+      "Synthetic denoising success is not evidence of universal real-domain denoising."
+    ],
+    "classical_reference": {
+      "decision": "PCA-logistic is the primary clean classification reference.",
+      "outer_balanced_accuracy": {
+        "field_quality_stress": {
+          "AE arPLS": 0.3351587301587301,
+          "AE minimal": 0.3782804232804232,
+          "Classical": 0.4471428571428572,
+          "DAE arPLS": 0.35619047619047617,
+          "DAE minimal": 0.36068783068783067,
+          "Siamese": 0.3704497354497354
+        },
+        "quality_pass": {
+          "AE arPLS": 0.7214756084664552,
+          "AE minimal": 0.7069648032037701,
+          "Classical": 0.7713363196862707,
+          "DAE arPLS": 0.7139095272047217,
+          "DAE minimal": 0.7160901436171133,
+          "Siamese": 0.6766688629315305
+        },
+        "strict_core": {
+          "AE arPLS": 0.7033385071879679,
+          "AE minimal": 0.6945237252365398,
+          "Classical": 0.7246314659877916,
+          "DAE arPLS": 0.7130699753976969,
+          "DAE minimal": 0.6891592070104656,
+          "Siamese": 0.6320941608547036
+        }
+      }
+    },
+    "denoising": {
+      "decision": "DAE adds substantial synthetic composite-corruption recovery and latent stability, but does not consistently improve clean, real-stress, or unseen-domain classification.",
+      "strict_core_composite_severity_1": {
+        "AE arPLS": {
+          "balanced_accuracy": 0.6228197624176702,
+          "latent_drift": 0.06897565995653467,
+          "prediction_agreement": 0.7115401850038263,
+          "reconstruction_mse": 0.014207268577331782
+        },
+        "AE minimal": {
+          "balanced_accuracy": 0.6506710858608538,
+          "latent_drift": 0.05697909866770104,
+          "prediction_agreement": 0.7988034822888327,
+          "reconstruction_mse": 0.018051672969343274
+        },
+        "DAE arPLS": {
+          "balanced_accuracy": 0.6654207607860763,
+          "latent_drift": 0.016346543406446735,
+          "prediction_agreement": 0.8481923275822224,
+          "reconstruction_mse": 0.007404760809906113
+        },
+        "DAE minimal": {
+          "balanced_accuracy": 0.6560848828686356,
+          "latent_drift": 0.02644367354611552,
+          "prediction_agreement": 0.8384947994516064,
+          "reconstruction_mse": 0.008660216867258912
+        }
+      }
+    },
+    "deterministic_reconstruction": {
+      "decision": "Clean AE is a useful matched compression/reconstruction diagnostic but does not outperform the classical clean reference and fails the absolute repeatable-peak gate."
+    },
+    "reproducibility": {
+      "canonical_evaluation_device": "CPU",
+      "reason": "CUDA-trained checkpoint tensors reproduce exactly, but separate-process CUDA convolution inference showed approximately 1e-7 to 1e-5 floating variation. CPU replay from verified checkpoints is the canonical bitwise-stable evaluation layer.",
+      "training_device": "CUDA with deterministic kernels"
+    },
+    "siamese": {
+      "decision": "Retain as deterministic metric-learning control; it does not provide reconstruction or explicit denoising and is not the strongest NATO classifier."
+    },
+    "standard_vae_starting_point": {
+      "bottleneck_dimension": 64,
+      "channels": [
+        8,
+        16
+      ],
+      "clean_curriculum": "clean",
+      "denoising_comparator_curriculum": "mixed_uniform",
+      "reconstruction_loss": "spectral_composite",
+      "representation": "arpls_minmax",
+      "unchanged_from_baseline_selection": true
+    },
+    "strict_instrument_and_sample_balanced_accuracy": {
+      "AE arPLS": 0.5616890443920087,
+      "Classical": 0.5637971588890374,
+      "DAE arPLS": 0.5340459666087313,
+      "Siamese": 0.6009192859077916
+    }
+  },
+  "next_stage": "Proceed to a separately registered structured-latent experiment using this VAE as the mixed-latent reference. The next model must explicitly improve the chemical-versus-domain trade-off without further peak or reconstruction loss.",
+  "outer": {
+    "field_quality_stress__arpls_minmax": {
+      "balanced_accuracy_supported": 0.34248677248677245,
+      "macro_f1_supported": 0.2956545330368635,
+      "reconstruction_median_row_correlation": 0.29619638295492984,
+      "repeatable_peak_recall": 0.128730164845394,
+      "vae_active_units_var_mu_gt_0_01": 29.666666666666668,
+      "vae_kl_unnormalized_per_observation": 6.219385048385822
+    },
+    "field_quality_stress__minimal_minmax": {
+      "balanced_accuracy_supported": 0.36666666666666664,
+      "macro_f1_supported": 0.3225270076132526,
+      "reconstruction_median_row_correlation": 0.4269428528878452,
+      "repeatable_peak_recall": 0.11953569644047891,
+      "vae_active_units_var_mu_gt_0_01": 33.93333333333333,
+      "vae_kl_unnormalized_per_observation": 6.1055912354578545
+    },
+    "quality_pass__arpls_minmax": {
+      "balanced_accuracy_supported": 0.7283527826344105,
+      "macro_f1_supported": 0.7007038899839031,
+      "reconstruction_median_row_correlation": 0.9286248062084721,
+      "repeatable_peak_recall": 0.4866939150504276,
+      "vae_active_units_var_mu_gt_0_01": 57.2,
+      "vae_kl_unnormalized_per_observation": 7.588105433574796
+    },
+    "quality_pass__minimal_minmax": {
+      "balanced_accuracy_supported": 0.7087919285320398,
+      "macro_f1_supported": 0.6826416780737408,
+      "reconstruction_median_row_correlation": 0.955415117889543,
+      "repeatable_peak_recall": 0.6145301239989422,
+      "vae_active_units_var_mu_gt_0_01": 52.53333333333333,
+      "vae_kl_unnormalized_per_observation": 8.379146963793808
+    },
+    "strict_core__arpls_minmax": {
+      "balanced_accuracy_supported": 0.70608086561895,
+      "macro_f1_supported": 0.6889242990058235,
+      "reconstruction_median_row_correlation": 0.9060724913700358,
+      "repeatable_peak_recall": 0.41939400750981964,
+      "vae_active_units_var_mu_gt_0_01": 43.733333333333334,
+      "vae_kl_unnormalized_per_observation": 7.020043838397446
+    },
+    "strict_core__minimal_minmax": {
+      "balanced_accuracy_supported": 0.6905780889953822,
+      "macro_f1_supported": 0.6755873056500847,
+      "reconstruction_median_row_correlation": 0.9435200394696673,
+      "repeatable_peak_recall": 0.525899994801725,
+      "vae_active_units_var_mu_gt_0_01": 41.8,
+      "vae_kl_unnormalized_per_observation": 7.855756356666624
+    }
+  },
+  "poster_arpls_mean_balanced_accuracy": 0.9272222222222223,
+  "poster_heldout_ag_4np_recall": 0.4666666666666667,
+  "protocol": "sers-standard-vae-v1",
+  "selected_configuration": "c8x16_z64_spectral_composite_beta1_cyclical_4",
+  "selected_kl_schedule": "cyclical_4",
+  "selection_gate_failures": [
+    "gate_clean_correlation",
+    "gate_peak_recall",
+    "gate_same_master_distance"
+  ],
+  "strict_core_composite_severity_1_arpls": {
+    "balanced_accuracy_supported": 0.6095952079593794,
+    "latent_cosine_drift": 0.15459425946076708,
+    "prediction_agreement": 0.6995183006261063,
+    "reconstruction_mse": 0.01803491431132288
+  },
+  "strict_instrument_and_sample_balanced_accuracy": 0.5574903917025816
+}

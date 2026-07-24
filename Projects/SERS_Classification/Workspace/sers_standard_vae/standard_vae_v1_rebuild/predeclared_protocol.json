@@ -1,0 +1,285 @@
+{
+  "protocol_version": "sers-standard-vae-v1",
+  "created_date": "2026-07-24",
+  "status_before_model_execution": "predeclared",
+  "scientific_question": "What does stochastic variational regularization add to the frozen deterministic SERS representation baselines before chemical/nuisance supervision or latent partitioning is introduced?",
+  "terminal_scope": {
+    "included": [
+      "one-block unsupervised standard VAE",
+      "inner-only KL-schedule selection",
+      "frozen minimal_minmax sensitivity",
+      "sealed NATO outer, field-stress, domain, corruption, and poster evaluation",
+      "comparison to frozen PCA-logistic, Siamese, AE, and DAE baselines",
+      "clean exact rebuild"
+    ],
+    "prohibited": [
+      "beta-VAE beta search",
+      "chemical classification loss in the encoder",
+      "chemical/nuisance latent partition",
+      "domain adversary",
+      "domain-conditioned decoder",
+      "triplet or contrastive VAE loss",
+      "outer, stress, poster, or domain result use in model selection",
+      "modification of preprocessing-v2 or baselines-v1"
+    ]
+  },
+  "immutable_inputs": {
+    "nato_bundle": "Workspace/nato_sers_field_trial/preprocessing_v2",
+    "nato_artifact_catalog_sha256": "2f7f03b7caf7a08cda0ee70a06ea7ba66fdd59a4ccc8751c1ffe4d46b109db24",
+    "nato_version": "nato-sers-preprocessing-v2",
+    "strict_core_rows": 598,
+    "quality_pass_rows": 500,
+    "field_quality_stress_rows": 98,
+    "axis_min_cm1": 400,
+    "axis_max_cm1": 1800,
+    "axis_step_cm1": 1,
+    "axis_points": 1401,
+    "grouping_key": "master_sample_id",
+    "fold_column": "grouped_sample_fold_5",
+    "baseline_bundle": "Workspace/sers_representation_baselines/baselines_v1",
+    "baseline_selected_configurations_sha256": "6dd61d63343c9733041fb33853ebf8486471b6636fb44ba41e9b48e5d118ebe1",
+    "baseline_final_decisions_sha256": "d0718c63f322c3c6866890485581f537ab9b33e5572dd048d2a0c3fdd3e8ec62",
+    "baseline_artifact_catalog_sha256": "b52f19fafdeaaf3648399078601a4b7e3ccaa54e02d087313806b2f94b515345",
+    "poster_source": "Workspace/data/processed/consolidated_SERS.csv",
+    "poster_source_sha256": "a77ccf4dc389affa80bfedcaa70d8511fcf10ff4f4e4dcd9bbcb1329ce52c49b"
+  },
+  "frozen_model": {
+    "primary_representation": "arpls_minmax",
+    "mandatory_sensitivity_representation": "minimal_minmax",
+    "channels": [
+      8,
+      16
+    ],
+    "kernels": [
+      7,
+      5
+    ],
+    "pool_after_each_convolution": 2,
+    "latent_dimension": 64,
+    "decoder": "symmetric deterministic nearest-upsampling-plus-convolution decoder with exact 1401-point output and sigmoid intensity",
+    "reconstruction_loss": {
+      "name": "spectral_composite",
+      "smooth_l1_weight": 1.0,
+      "spectral_angle_weight": 0.1,
+      "first_derivative_weight": 0.1
+    },
+    "posterior": "diagonal Gaussian",
+    "prior": "isotropic unit Gaussian",
+    "evaluation_latent": "posterior_mean",
+    "evaluation_reconstruction": "decoder_of_posterior_mean",
+    "stochastic_training_samples_per_observation": 1,
+    "beta": 1.0,
+    "kl_definition": "mean over observations of the sum across 64 latent dimensions",
+    "kl_normalization_divisor": 1401,
+    "reason_for_kl_normalization": "The reconstruction components are means over the spectral axis. Dividing summed per-observation KL by the 1401 measured features expresses both ELBO terms per measured feature while retaining beta=1.",
+    "training": {
+      "optimizer": "Adam",
+      "learning_rate": 0.001,
+      "weight_decay": 0.00001,
+      "batch_size": 64,
+      "maximum_epochs": 100,
+      "minimum_epochs": 30,
+      "early_stopping_patience": 15,
+      "early_stopping_minimum_delta": 0.00001,
+      "gradient_clip_norm": 5.0,
+      "validation_monitor": "full normalized negative ELBO at beta=1",
+      "restore_best_epoch": true
+    }
+  },
+  "vae_specific_search": {
+    "selection_representation": "arpls_minmax",
+    "selection_dataset": "NATO nested inner validation only",
+    "fixed_beta": 1.0,
+    "candidates": {
+      "constant": {
+        "schedule": "beta=1 from epoch 1"
+      },
+      "linear_warmup_20": {
+        "schedule": "linear beta from 0 at epoch 1 to 1 at epoch 20, then beta=1"
+      },
+      "cyclical_4": {
+        "schedule": "four equal 25-epoch cycles; beta rises linearly from 0 to 1 during the first half of each cycle and remains 1 during the second half"
+      }
+    },
+    "strict_core_inner_folds_per_candidate": 20,
+    "selection_seed": 1729,
+    "quality_sensitivity": "Carry the two highest-utility gate-passing schedules to all 20 quality-pass inner folds. If none passes, carry the two highest-utility schedules but mark the final VAE diagnostic-only.",
+    "minimal_minmax_role": "After the arPLS schedule is frozen, run that identical schedule and architecture on strict-core and quality inner folds as a mandatory nonselective preprocessing sensitivity.",
+    "selection_closed_before": [
+      "NATO outer evaluation",
+      "field-quality stress evaluation",
+      "domain transfer",
+      "poster transfer"
+    ]
+  },
+  "selection_metrics": {
+    "chemical": [
+      "posterior_mean_target_balanced_accuracy",
+      "posterior_mean_target_macro_f1"
+    ],
+    "reconstruction": [
+      "mse",
+      "smooth_l1",
+      "spectral_angle",
+      "median_row_correlation",
+      "first_derivative_mae",
+      "repeatable_peak_recall",
+      "peak_shift",
+      "relative_peak_width_change",
+      "peak_prominence_change"
+    ],
+    "variational": [
+      "normalized_kl",
+      "unnormalized_kl_per_observation",
+      "kl_per_latent_dimension",
+      "active_units_var_mu_gt_0.01",
+      "dimensions_mean_kl_gt_0.01",
+      "posterior_mean_absolute_mu",
+      "posterior_mean_log_variance",
+      "posterior_sample_reconstruction_variability"
+    ],
+    "robustness": [
+      "prediction_agreement_clean_vs_corrupted",
+      "chemical_balanced_accuracy_by_corruption_and_severity",
+      "posterior_mean_cosine_drift",
+      "reconstruction_recovery_relative_to_clean_target"
+    ],
+    "representation": [
+      "target_adjusted_instrument_probe_increment",
+      "target_adjusted_sensor_probe_increment",
+      "same_master_cross_instrument_correlation_distance",
+      "different_target_cross_instrument_distance",
+      "cross_instrument_separation_margin"
+    ],
+    "qualitative_only": [
+      "PCA",
+      "UMAP",
+      "t-SNE",
+      "latent traversals"
+    ]
+  },
+  "eligibility_gates": {
+    "relative_to_frozen_arpls_ae": {
+      "clean_median_row_correlation_drop_maximum": 0.03,
+      "clean_repeatable_peak_recall_drop_maximum": 0.05,
+      "chemical_probe_balanced_accuracy_drop_maximum": 0.03,
+      "target_adjusted_instrument_probe_increment_increase_maximum": 0.02,
+      "same_master_cross_instrument_distance_increase_maximum": 0.05
+    },
+    "variational_health": {
+      "minimum_active_units_var_mu_gt_0.01": 4,
+      "minimum_dimensions_mean_kl_gt_0.01": 2,
+      "minimum_unnormalized_kl_per_observation": 0.01,
+      "maximum_unnormalized_kl_per_observation": 1000.0,
+      "all_outputs_must_be_finite": true
+    },
+    "quality_sensitivity": {
+      "chemical_probe_drop_from_strict_core_maximum": 0.05
+    },
+    "when_no_candidate_passes": "Retain the highest-utility schedule as a standard-VAE diagnostic, mark it ineligible for direct advancement, and use its failure mode to design the next registered model."
+  },
+  "selection_utility": {
+    "normalization": "within schedules evaluated at the same selection stage; outer data never enter utility",
+    "weights": {
+      "chemical_probe_balanced_accuracy": 0.25,
+      "clean_reconstruction_and_correlation": 0.15,
+      "repeatable_peak_preservation": 0.15,
+      "controlled_corruption_stability": 0.10,
+      "negative_target_adjusted_instrument_leakage": 0.10,
+      "negative_same_master_cross_instrument_distance": 0.10,
+      "active_latent_units": 0.10,
+      "noncollapsed_finite_kl": 0.05
+    }
+  },
+  "final_evaluation": {
+    "neural_seeds": [
+      1729,
+      2718,
+      3141
+    ],
+    "canonical_inference_device": "cpu",
+    "training_device": "deterministic_cuda",
+    "nato_outer": [
+      "strict_core",
+      "quality_pass",
+      "quality-development_to-field-quality-stress"
+    ],
+    "controlled_corruption_severities": [
+      0.5,
+      1.0,
+      1.5
+    ],
+    "domain_protocols": [
+      "domain_only",
+      "domain_and_sample"
+    ],
+    "domain_types": [
+      "instrument",
+      "sensor_family"
+    ],
+    "unsupported_classes": "predicted and reported, excluded from supported-class balanced accuracy",
+    "poster": "leave one grouped substrate family out; descriptive because physical-preparation IDs are unavailable",
+    "frozen_comparators": [
+      "PCA-logistic",
+      "deterministic Siamese",
+      "clean AE",
+      "DAE"
+    ]
+  },
+  "determinism": {
+    "cublas_workspace_config": ":4096:8",
+    "torch_deterministic_algorithms": true,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "allow_tf32": false,
+    "dataloader_workers": 0,
+    "seeded_dataloader_generator": true,
+    "run_seed_derived_from_full_run_identity": true,
+    "clean_rebuild_required": true,
+    "exact_cpu_canonical_comparison_required": true
+  },
+  "go_no_go_for_disentangled_stage": {
+    "go_if": "At least one noncollapsed standard VAE yields a scientifically usable mixed latent and the complete bundle identifies a measurable chemical-versus-domain limitation that an explicitly structured model can test.",
+    "do_not_claim": [
+      "that a one-block VAE is disentangled",
+      "that lower instrument probe alone proves nuisance removal",
+      "that synthetic corruption recovery proves arbitrary field denoising",
+      "that a projection plot proves factor separation"
+    ],
+    "required_final_decision": "Freeze either a valid standard-VAE reference or a documented diagnostic failure as the comparator for the next semi-supervised/two-block experiment."
+  },
+  "required_artifacts": {
+    "root": "Workspace/sers_standard_vae/standard_vae_v1",
+    "records": [
+      "README.md",
+      "DECISION_REGISTRY.md",
+      "predeclared_protocol.json",
+      "environment.json",
+      "input_hashes.json",
+      "split_seed_assignments.csv",
+      "selection_fold_metrics.csv",
+      "selection_summary.csv",
+      "selected_configuration.json",
+      "training_histories.csv",
+      "outer_fold_metrics.csv",
+      "domain_transfer_metrics.csv",
+      "poster_metrics.csv",
+      "corruption_metrics.csv",
+      "reconstruction_metrics.csv",
+      "variational_metrics.csv",
+      "per_spectrum_predictions.csv",
+      "failure_cases.csv",
+      "uncertainty_summary.csv",
+      "final_decisions.json",
+      "artifact_hashes.json",
+      "validation_report.json",
+      "clean_rebuild_comparison.json"
+    ],
+    "binary_directories": [
+      "checkpoints",
+      "embeddings",
+      "reconstructions"
+    ],
+    "figure_directory": "figures"
+  }
+}

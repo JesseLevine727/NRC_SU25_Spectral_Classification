@@ -1,0 +1,45 @@
+{
+  "all_required_comparisons_exact": true,
+  "comparison_semantics": {
+    "CSV": "byte-identical or parsed frames exactly equal",
+    "JSON": "parsed values exactly equal",
+    "NPZ": "keys, dtypes, shapes, and every array value exactly equal",
+    "checkpoints": "metadata, state hashes, and every tensor exactly equal"
+  },
+  "comparison_version": "sers-standard-vae-clean-rebuild-v1",
+  "comparisons": {
+    "checkpoint_tensors": {
+      "failures": [],
+      "files": 252,
+      "status": "exact"
+    },
+    "embeddings": {
+      "failures": [],
+      "files": 282,
+      "status": "exact"
+    },
+    "fold_metrics_and_predictions": {
+      "failures": [],
+      "files": 22,
+      "status": "exact"
+    },
+    "reconstructions": {
+      "failures": [],
+      "files": 282,
+      "status": "exact"
+    },
+    "selected_configuration_and_protocol": {
+      "failures": [],
+      "files": 6,
+      "status": "exact"
+    },
+    "training_histories": {
+      "failures": [],
+      "files": 5,
+      "status": "exact"
+    }
+  },
+  "rebuild": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_standard_vae/standard_vae_v1_rebuild",
+  "reference": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_standard_vae/standard_vae_v1",
+  "status": "exact_match"
+}
