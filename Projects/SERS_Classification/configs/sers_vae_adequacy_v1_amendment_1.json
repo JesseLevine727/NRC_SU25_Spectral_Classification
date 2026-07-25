@@ -1,0 +1,39 @@
+{
+  "amendment_version": "sers-vae-adequacy-v1-amendment-1",
+  "status_before_amended_model_execution": "predeclared",
+  "created_date": "2026-07-24",
+  "parent_protocol": "sers-vae-adequacy-v1",
+  "reason": "Stage 1 reached epoch 300 without satisfying the registered convergence definition. The constant-LR candidate retained a median 1.099 percent validation-ELBO improvement over epochs 250–300 and 55 percent of folds improved by at least 1 percent. Architecture comparison at a demonstrably unconverged epoch would confound the requested diagnosis.",
+  "stage_1b_convergence_extension": {
+    "architecture": "base_maxpool",
+    "latent_dimension": 64,
+    "reconstruction_loss": "spectral_composite",
+    "beta_target": 1.0,
+    "first_100_epochs": "unchanged four fixed 25-epoch cycles",
+    "after_epoch_100_beta": 1.0,
+    "maximum_epoch": 500,
+    "metric_checkpoints": [100, 150, 200, 250, 300, 350, 400, 450, 500],
+    "optimizer_policies": {
+      "constant_lr": {
+        "learning_rate": 0.001
+      },
+      "step_lr_300": {
+        "learning_rate_epochs_1_to_300": 0.001,
+        "learning_rate_epochs_301_to_500": 0.0001
+      }
+    },
+    "selection_rule": "Apply the parent convergence definition and scientific gates. Prefer a converged all-gate candidate; otherwise prefer converged gate count, registered utility, lower parameter count, and lexical identifier. If neither policy converges by 500, document optimization nonconvergence and use the least-failing epoch-500 policy for the bounded architecture diagnosis.",
+    "selection_data": "The same 20 master-sample-grouped strict-core arpls_minmax inner folds only."
+  },
+  "implementation_corrections_before_stage_1b": {
+    "kl_arithmetic_grouping": "Compute KL/divisor before multiplying by beta, exactly matching standard-VAE v1. The initial adequacy execution multiplied by beta before division, causing at most 1.35e-9 history drift over the shared first 100 epochs.",
+    "checkpoint_probe_seeds": "Use the same target, instrument, sensor, and posterior-variability seed within a fold at every checkpoint so checkpoint changes reflect the representation rather than probe randomness.",
+    "scientific_interpretation": "Neither correction changes the preregistered model class, data, split, metric, gate, or locked-cohort boundary. The authoritative adequacy execution must be rebuilt after these corrections."
+  },
+  "unchanged_constraints": [
+    "No outer, field-stress, held-out-domain, or poster result enters selection.",
+    "arpls_minmax remains primary and minimal_minmax remains mandatory sensitivity.",
+    "No chemical/nuisance partitioning or supervised latent loss is introduced.",
+    "The parent stage-2 candidates and gates remain unchanged."
+  ]
+}

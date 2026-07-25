@@ -1,0 +1,61 @@
+{
+  "amendment_version": "sers-vae-adequacy-v1-amendment-2",
+  "status_before_stage_2_model_execution": "predeclared",
+  "created_date": "2026-07-24",
+  "parent_protocol": "sers-vae-adequacy-v1",
+  "parent_amendment": "sers-vae-adequacy-v1-amendment-1",
+  "reason": "Stage 1b established convergence at epoch 500 under constant learning rate, repaired the clean-correlation gate, and still failed repeatable-peak and same-master geometry gates. This opens the parent protocol's bounded stage-2 branch.",
+  "fixed_stage_2_training": {
+    "maximum_epoch": 500,
+    "optimizer_policy": "constant_lr",
+    "learning_rate": 0.001,
+    "first_100_epochs": "four fixed 25-epoch KL cycles",
+    "after_epoch_100_beta": "candidate target beta",
+    "selection_checkpoint": 500,
+    "paired_run_seeds": "Reuse each standard-VAE v1 fold seed for every candidate in that fold.",
+    "selection_data": "20 strict-core arpls_minmax grouped inner folds only"
+  },
+  "sequential_stages": [
+    {
+      "stage": "architecture",
+      "candidates": ["base_maxpool", "residual_multiscale", "single_pool_peak"],
+      "fixed": "z64, spectral_composite, beta1"
+    },
+    {
+      "stage": "loss",
+      "candidates": ["spectral_composite", "peak_multiscale"],
+      "fixed": "selected architecture, z64, beta1"
+    },
+    {
+      "stage": "latent_capacity",
+      "candidates": [32, 64, 128],
+      "fixed": "selected architecture and loss, beta1"
+    },
+    {
+      "stage": "kl_strength",
+      "candidates": [0.25, 1.0, 4.0],
+      "fixed": "selected architecture, loss, and latent dimension"
+    }
+  ],
+  "stage_winner_rule": "Prefer candidates satisfying the registered convergence definition. Then sort by passes-all-gates, gate count, registered utility, lower parameter count, and lexical identifier. Reuse an identical earlier candidate rather than retraining it.",
+  "quality_confirmation": {
+    "carry_count": 2,
+    "source": "Top two strict-core KL-stage candidates under the registered ranking.",
+    "data": "20 quality-pass arpls_minmax grouped inner folds",
+    "gate": "Quality chemical balanced accuracy may be at most 0.05 below the candidate's strict-core value.",
+    "winner_rule": "Prefer quality-gate-passing candidates, then the unchanged strict-core ranking."
+  },
+  "mandatory_sensitivity": {
+    "configuration": "Final arpls-selected configuration only",
+    "representation": "minimal_minmax",
+    "subsets": ["strict_core", "quality_pass"],
+    "cannot_change_selection": true
+  },
+  "locked_cohorts_used": false,
+  "unchanged_constraints": [
+    "No outer, field-stress, held-out-domain, or poster result enters selection.",
+    "No encoder-decoder skip connections.",
+    "No supervised, contrastive, adversarial, or partitioned latent objective.",
+    "No preprocessing changes."
+  ]
+}

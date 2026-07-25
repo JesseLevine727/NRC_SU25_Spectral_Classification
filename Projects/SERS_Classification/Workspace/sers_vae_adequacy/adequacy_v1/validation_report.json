@@ -1,0 +1,223 @@
+{
+  "checks": [
+    {
+      "detail": [],
+      "name": "required_artifacts",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "results_report_complete",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "protocol_version",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "amendments_registered",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "selection_closed_without_locked_data",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "selected_configuration_frozen",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "final_decision_matches_selection",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "attribution_categories_complete",
+      "status": "pass"
+    },
+    {
+      "detail": {
+        "distinct_confirmatory_training_runs": 252,
+        "distinct_inner_training_runs": 260,
+        "total_distinct_training_runs": 512,
+        "total_training_epochs": 256000
+      },
+      "name": "compute_accounting_complete",
+      "status": "pass"
+    },
+    {
+      "detail": 6.821210263296962e-13,
+      "name": "first_100_within_registered_tolerance",
+      "status": "pass"
+    },
+    {
+      "detail": 580,
+      "name": "checkpoint_metric_row_count",
+      "status": "pass"
+    },
+    {
+      "detail": 130000,
+      "name": "selection_history_row_count",
+      "status": "pass"
+    },
+    {
+      "detail": 3,
+      "name": "architecture_candidates",
+      "status": "pass"
+    },
+    {
+      "detail": 2,
+      "name": "loss_candidates",
+      "status": "pass"
+    },
+    {
+      "detail": 3,
+      "name": "latent_candidates",
+      "status": "pass"
+    },
+    {
+      "detail": 3,
+      "name": "beta_candidates",
+      "status": "pass"
+    },
+    {
+      "detail": 40,
+      "name": "minimal_sensitivity_folds",
+      "status": "pass"
+    },
+    {
+      "detail": 90,
+      "name": "outer_metric_row_count",
+      "status": "pass"
+    },
+    {
+      "detail": 24,
+      "name": "poster_metric_row_count",
+      "status": "pass"
+    },
+    {
+      "detail": 168,
+      "name": "domain_metric_row_count",
+      "status": "pass"
+    },
+    {
+      "detail": 5922,
+      "name": "corruption_row_count",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "outer_cohorts_complete",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "outer_representations_complete",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "domain_protocols_complete",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "geometry_comparators_complete",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "support_flags_complete",
+      "status": "pass"
+    },
+    {
+      "detail": 4080,
+      "name": "unsupported_predictions_retained",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "outer_balanced_accuracy_range",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "poster_balanced_accuracy_range",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "domain_balanced_accuracy_range",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "outer_variational_metrics_finite",
+      "status": "pass"
+    },
+    {
+      "detail": null,
+      "name": "selected_stage1_converged",
+      "status": "pass"
+    },
+    {
+      "detail": 252,
+      "name": "confirmatory_checkpoint_count",
+      "status": "pass"
+    },
+    {
+      "detail": 260,
+      "name": "selection_checkpoint_count",
+      "status": "pass"
+    },
+    {
+      "detail": 282,
+      "name": "embedding_count",
+      "status": "pass"
+    },
+    {
+      "detail": 282,
+      "name": "reconstruction_array_count",
+      "status": "pass"
+    },
+    {
+      "detail": [],
+      "name": "checkpoint_tensor_hashes",
+      "status": "pass"
+    },
+    {
+      "detail": [],
+      "name": "selection_cache_tensor_integrity",
+      "status": "pass"
+    },
+    {
+      "detail": [],
+      "name": "artifact_hash_catalog",
+      "status": "pass"
+    },
+    {
+      "detail": [],
+      "name": "figures_complete",
+      "status": "pass"
+    },
+    {
+      "detail": "exact_match",
+      "name": "clean_rebuild_exact",
+      "status": "pass"
+    }
+  ],
+  "protocol_version": "sers-vae-adequacy-v1",
+  "require_clean_rebuild": true,
+  "status": "pass",
+  "summary": {
+    "checks": 41,
+    "failed": 0,
+    "passed": 41
+  },
+  "validator": "validate_sers_vae_adequacy.py"
+}

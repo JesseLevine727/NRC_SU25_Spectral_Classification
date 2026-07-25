@@ -1,0 +1,57 @@
+{
+  "all_required_comparisons_exact": true,
+  "comparison_semantics": {
+    "JSON": "parsed values exactly equal",
+    "NPZ": "keys, dtypes, shapes, and every array value exactly equal",
+    "canonical_CSV": "byte-identical or parsed frames exactly equal",
+    "confirmatory_checkpoints": "metadata, state hashes, and every tensor exactly equal",
+    "history_CSV": "exact schema/order and floating values within 1e-12",
+    "selection_checkpoints": "configuration/seed, every model and optimizer tensor exactly equal, histories within registered tolerance"
+  },
+  "comparison_version": "sers-vae-adequacy-clean-rebuild-v1",
+  "comparisons": {
+    "canonical_scientific_tables": {
+      "failures": [],
+      "files": 38,
+      "status": "exact"
+    },
+    "confirmatory_checkpoint_tensors": {
+      "failures": [],
+      "files": 252,
+      "status": "exact"
+    },
+    "documentation": {
+      "failures": [],
+      "files": 4,
+      "status": "exact"
+    },
+    "embeddings": {
+      "failures": [],
+      "files": 282,
+      "status": "exact"
+    },
+    "floating_training_histories": {
+      "failures": [],
+      "files": 5,
+      "status": "exact"
+    },
+    "protocol_selection_and_decisions": {
+      "failures": [],
+      "files": 16,
+      "status": "exact"
+    },
+    "reconstructions": {
+      "failures": [],
+      "files": 282,
+      "status": "exact"
+    },
+    "selection_checkpoint_tensors": {
+      "failures": [],
+      "files": 260,
+      "status": "exact"
+    }
+  },
+  "rebuild": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_vae_adequacy/adequacy_v1_rebuild",
+  "reference": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_vae_adequacy/adequacy_v1",
+  "status": "exact_match"
+}

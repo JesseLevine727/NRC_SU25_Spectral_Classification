@@ -1,0 +1,12 @@
+phase,stage,distinct_training_runs,epochs_per_run,total_training_epochs,minimum_parameter_count,maximum_parameter_count,aggregate_metric_rows,canonical_training_device,canonical_inference_device
+inner_selection,stage_1_convergence,40,500,20000,1082353,1082353,360,deterministic_cuda,cpu
+inner_selection,stage_2_architecture,40,500,20000,1081705,1088849,40,deterministic_cuda,cpu
+inner_selection,stage_2_beta,40,500,20000,1082353,1082353,40,deterministic_cuda,cpu
+inner_selection,stage_2_latent,40,500,20000,544689,2157681,40,deterministic_cuda,cpu
+inner_selection,stage_2_loss,20,500,10000,1082353,1082353,20,deterministic_cuda,cpu
+inner_selection,stage_2_minimal_quality_pass,20,500,10000,1082353,1082353,20,deterministic_cuda,cpu
+inner_selection,stage_2_minimal_strict_core,20,500,10000,1082353,1082353,20,deterministic_cuda,cpu
+inner_selection,stage_2_quality_confirmation,40,500,20000,1082353,1082353,40,deterministic_cuda,cpu
+locked_confirmation,outer,60,500,30000,1082353,1082353,90,deterministic_cuda,cpu
+locked_confirmation,poster,24,500,12000,1082353,1082353,24,deterministic_cuda,cpu
+locked_confirmation,domain,168,500,84000,1082353,1082353,168,deterministic_cuda,cpu

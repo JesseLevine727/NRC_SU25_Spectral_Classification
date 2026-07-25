@@ -1,0 +1,318 @@
+{
+  "adequacy_decision": "The converged standard-VAE backbone is scientifically adequate as a reconstruction-capable mixed-latent comparator and initialization for the next study, but it is not adequate as an instrument- and substrate-invariant representation. It remains below the frozen PCA/logistic clean benchmark, fails the registered instrument and same-master gates, and does not solve field or sensor-family shift.",
+  "claim_limits": [
+    "This is still a standard mixed-latent VAE, not evidence of disentanglement.",
+    "Previously observed outer cohorts are confirmatory, not human-blind.",
+    "The poster split is descriptive and lacks independent preparation IDs.",
+    "Synthetic corruption robustness does not establish universal real-field denoising.",
+    "Unsupported unseen analyte classes remain excluded from supported-class metrics and are retained in failure tables.",
+    "Only the 400\u20131800 cm-1 common axis and frozen preprocessing-v2 population are supported."
+  ],
+  "converged": true,
+  "failed_inner_gates": [
+    "gate_instrument_probe",
+    "gate_same_master_distance"
+  ],
+  "frozen_backbone": {
+    "architecture": "base_maxpool",
+    "batch_size": 64,
+    "beta_target": 0.25,
+    "channels": [
+      8,
+      16
+    ],
+    "epoch_policy": "exact four 25-epoch KL cycles for epochs 1-100, then fixed beta=0.25 through epoch 500",
+    "gradient_clip_norm": 5.0,
+    "latent_dimension": 64,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "parameter_count": 1082353,
+    "preprocessing_primary": "arpls_minmax",
+    "preprocessing_sensitivity": "minimal_minmax",
+    "reason": "It was the converged inner-selected candidate with the best registered preservation/chemical utility. Architecture, loss, latent-width, and beta ablations did not produce a standard mixed latent that passed every gate.",
+    "reconstruction_loss": "spectral_composite",
+    "selection_checkpoint": 500,
+    "weight_decay": 1e-05
+  },
+  "frozen_comparator_context": {
+    "advancing_view": {
+      "mandatory_sensitivity_control": "minimal_minmax",
+      "primary": "arpls_minmax",
+      "reason": "Pre-outer inner-only decision prioritized target separation, instrument invariance, same-master geometry, and corruption stability. Minimal remains mandatory because it reconstructs clean spectra and repeatable peaks more faithfully."
+    },
+    "baseline_protocol": "sers-representation-baselines-v1",
+    "claim_limits": [
+      "No model solved the 98-spectrum field-quality stress cohort.",
+      "No AE passed the predeclared absolute repeatable-peak gate.",
+      "Poster rows lack physical-preparation IDs.",
+      "Unsupported unseen analyte classes are excluded from supported-class metrics and reported separately.",
+      "Synthetic denoising success is not evidence of universal real-domain denoising."
+    ],
+    "classical_reference": {
+      "decision": "PCA-logistic is the primary clean classification reference.",
+      "outer_balanced_accuracy": {
+        "field_quality_stress": {
+          "AE arPLS": 0.3351587301587301,
+          "AE minimal": 0.3782804232804232,
+          "Classical": 0.4471428571428572,
+          "DAE arPLS": 0.35619047619047617,
+          "DAE minimal": 0.36068783068783067,
+          "Siamese": 0.3704497354497354
+        },
+        "quality_pass": {
+          "AE arPLS": 0.7214756084664552,
+          "AE minimal": 0.7069648032037701,
+          "Classical": 0.7713363196862707,
+          "DAE arPLS": 0.7139095272047217,
+          "DAE minimal": 0.7160901436171133,
+          "Siamese": 0.6766688629315305
+        },
+        "strict_core": {
+          "AE arPLS": 0.7033385071879679,
+          "AE minimal": 0.6945237252365398,
+          "Classical": 0.7246314659877916,
+          "DAE arPLS": 0.7130699753976969,
+          "DAE minimal": 0.6891592070104656,
+          "Siamese": 0.6320941608547036
+        }
+      }
+    },
+    "denoising": {
+      "decision": "DAE adds substantial synthetic composite-corruption recovery and latent stability, but does not consistently improve clean, real-stress, or unseen-domain classification.",
+      "strict_core_composite_severity_1": {
+        "AE arPLS": {
+          "balanced_accuracy": 0.6228197624176702,
+          "latent_drift": 0.06897565995653467,
+          "prediction_agreement": 0.7115401850038263,
+          "reconstruction_mse": 0.014207268577331782
+        },
+        "AE minimal": {
+          "balanced_accuracy": 0.6506710858608538,
+          "latent_drift": 0.05697909866770104,
+          "prediction_agreement": 0.7988034822888327,
+          "reconstruction_mse": 0.018051672969343274
+        },
+        "DAE arPLS": {
+          "balanced_accuracy": 0.6654207607860763,
+          "latent_drift": 0.016346543406446735,
+          "prediction_agreement": 0.8481923275822224,
+          "reconstruction_mse": 0.007404760809906113
+        },
+        "DAE minimal": {
+          "balanced_accuracy": 0.6560848828686356,
+          "latent_drift": 0.02644367354611552,
+          "prediction_agreement": 0.8384947994516064,
+          "reconstruction_mse": 0.008660216867258912
+        }
+      }
+    },
+    "deterministic_reconstruction": {
+      "decision": "Clean AE is a useful matched compression/reconstruction diagnostic but does not outperform the classical clean reference and fails the absolute repeatable-peak gate."
+    },
+    "reproducibility": {
+      "canonical_evaluation_device": "CPU",
+      "reason": "CUDA-trained checkpoint tensors reproduce exactly, but separate-process CUDA convolution inference showed approximately 1e-7 to 1e-5 floating variation. CPU replay from verified checkpoints is the canonical bitwise-stable evaluation layer.",
+      "training_device": "CUDA with deterministic kernels"
+    },
+    "siamese": {
+      "decision": "Retain as deterministic metric-learning control; it does not provide reconstruction or explicit denoising and is not the strongest NATO classifier."
+    },
+    "standard_vae_starting_point": {
+      "bottleneck_dimension": 64,
+      "channels": [
+        8,
+        16
+      ],
+      "clean_curriculum": "clean",
+      "denoising_comparator_curriculum": "mixed_uniform",
+      "reconstruction_loss": "spectral_composite",
+      "representation": "arpls_minmax",
+      "unchanged_from_baseline_selection": true
+    },
+    "strict_instrument_and_sample_balanced_accuracy": {
+      "AE arPLS": 0.5616890443920087,
+      "Classical": 0.5637971588890374,
+      "DAE arPLS": 0.5340459666087313,
+      "Siamese": 0.6009192859077916
+    }
+  },
+  "inner_gate_count": 7,
+  "inner_gate_total": 9,
+  "inner_primary_metrics": {
+    "architecture": "base_maxpool",
+    "batch_size": 64.0,
+    "beta_target": 0.25,
+    "checkpoint_epoch": 500,
+    "clean_median_absolute_peak_prominence_change": 0.0581171959638595,
+    "clean_median_absolute_relative_peak_width_change": 0.278416305465501,
+    "clean_median_peak_shift_cm1": 2.0,
+    "clean_reconstruction_first_derivative_mae": 0.0191049335184595,
+    "clean_reconstruction_median_row_correlation": 0.944932968280255,
+    "clean_reconstruction_mse": 0.0056926846759995,
+    "clean_reconstruction_smooth_l1": 0.0028463423379997,
+    "clean_reconstruction_spectral_angle": 0.0671032892633684,
+    "clean_repeatable_peak_recall": 0.4975392010313374,
+    "converged": true,
+    "corrupted_latent_cosine_drift": 0.165134996920824,
+    "corrupted_median_absolute_peak_prominence_change": 0.0753043783444809,
+    "corrupted_median_absolute_relative_peak_width_change": 0.3672511417839206,
+    "corrupted_median_peak_shift_cm1": 2.0,
+    "corrupted_prediction_agreement": 0.7317568878499795,
+    "corrupted_reconstruction_first_derivative_mae": 0.019804819190832,
+    "corrupted_reconstruction_median_row_correlation": 0.8896013571634362,
+    "corrupted_reconstruction_mse": 0.0143853653906383,
+    "corrupted_reconstruction_smooth_l1": 0.0071926826953191,
+    "corrupted_reconstruction_spectral_angle": 0.1053927396542699,
+    "corrupted_repeatable_peak_recall": 0.4787417506070827,
+    "corrupted_target_balanced_accuracy": 0.6256064790200537,
+    "fold_count_x": 20,
+    "fold_count_y": 20,
+    "folds_improving_at_least_1_percent": 0.1,
+    "gate_active_units": true,
+    "gate_chemical_probe": true,
+    "gate_clean_correlation": true,
+    "gate_count": 7,
+    "gate_finite": true,
+    "gate_instrument_probe": false,
+    "gate_kl_dimensions": true,
+    "gate_kl_range": true,
+    "gate_peak_recall": true,
+    "gate_same_master_distance": false,
+    "gate_total": 9,
+    "gradient_clip_norm": 5.0,
+    "identifier": "base_maxpool__z64__spectral_composite__beta0p25__constant_lr__e500",
+    "instrument_probe_increment_delta": -0.0164917819605319,
+    "kl_health_score": 1.0,
+    "kl_normalization_divisor": 1401.0,
+    "latent_cross_instrument_separation_margin": 0.2540310514571321,
+    "latent_different_target_cross_instrument_distance": 1.0315611290817055,
+    "latent_dimension": 64,
+    "latent_instrument_probe_increment": 0.5925838599015683,
+    "latent_same_master_cross_instrument_distance": 0.7775300776245733,
+    "latent_sensor_probe_increment": 0.4389908146692202,
+    "latent_target_balanced_accuracy": 0.6921185250812172,
+    "latent_target_macro_f1_supported": 0.6806921124663751,
+    "latent_target_macro_f1_union": 0.6806921124663751,
+    "learning_rate": 0.001,
+    "maximum_epoch": 500,
+    "maximum_relative_improvement_50": 0.0269987025524108,
+    "mean_relative_improvement_50": 0.0026680757143647,
+    "median_relative_improvement_50": 0.0003830048545544,
+    "minimum_learning_rate": 1e-05,
+    "model_family": "vae_adequacy",
+    "n_train": 358.8,
+    "n_validation": 119.6,
+    "optimizer_policy": "constant_lr",
+    "parameter_count": 1082353.0,
+    "passes_all_gates": false,
+    "plateau_factor": 0.5,
+    "plateau_patience": 20.0,
+    "plateau_threshold": 1e-05,
+    "raw_instrument_probe_increment": 0.6090756418621002,
+    "raw_same_master_cross_instrument_distance": 0.6752592197001345,
+    "raw_sensor_probe_increment": 0.449243774571948,
+    "raw_target_balanced_accuracy": 0.7096563291689967,
+    "reconstruction_loss": "spectral_composite",
+    "representation": "arpls_minmax",
+    "same_master_distance_delta": 0.1022708579244388,
+    "selection_utility": 0.641838801835215,
+    "sensor_probe_increment_delta": -0.0102529599027277,
+    "stage": "stage_2_beta",
+    "subset": "strict_core",
+    "vae_active_units_var_mu_gt_0_01": 33.35,
+    "vae_dimensions_mean_kl_gt_0_01": 48.35,
+    "vae_kl_normalized": 0.0113704478450444,
+    "vae_kl_unnormalized_per_observation": 15.929997430907298,
+    "vae_max_kl_per_latent_dimension": 2.4562449788596585,
+    "vae_mean_kl_per_latent_dimension": 0.2489062098579265,
+    "vae_median_kl_per_latent_dimension": 0.0150825784869382,
+    "vae_posterior_mean_absolute_mu": 0.2229136983497309,
+    "vae_posterior_mean_log_variance": -0.5329092307684176,
+    "vae_posterior_sample_reconstruction_variability": 0.0225663371384143,
+    "weight_decay": 1e-05
+  },
+  "next_goal_boundary": "Use the frozen backbone and training policy in a separately preregistered structured/disentangled-latent study. Do not reopen preprocessing, backbone, epoch count, loss, latent width, or beta using locked outer outcomes.",
+  "outer_original_vae": {
+    "field_quality_stress__arpls_minmax": {
+      "balanced_accuracy_supported": 0.34248677248677245,
+      "macro_f1_supported": 0.2956545330368635,
+      "reconstruction_median_row_correlation": 0.29619638295492984,
+      "repeatable_peak_recall": 0.128730164845394
+    },
+    "field_quality_stress__minimal_minmax": {
+      "balanced_accuracy_supported": 0.36666666666666664,
+      "macro_f1_supported": 0.3225270076132526,
+      "reconstruction_median_row_correlation": 0.4269428528878452,
+      "repeatable_peak_recall": 0.11953569644047891
+    },
+    "quality_pass__arpls_minmax": {
+      "balanced_accuracy_supported": 0.7283527826344105,
+      "macro_f1_supported": 0.7007038899839031,
+      "reconstruction_median_row_correlation": 0.9286248062084721,
+      "repeatable_peak_recall": 0.4866939150504276
+    },
+    "quality_pass__minimal_minmax": {
+      "balanced_accuracy_supported": 0.7087919285320398,
+      "macro_f1_supported": 0.6826416780737408,
+      "reconstruction_median_row_correlation": 0.955415117889543,
+      "repeatable_peak_recall": 0.6145301239989422
+    },
+    "strict_core__arpls_minmax": {
+      "balanced_accuracy_supported": 0.70608086561895,
+      "macro_f1_supported": 0.6889242990058235,
+      "reconstruction_median_row_correlation": 0.9060724913700358,
+      "repeatable_peak_recall": 0.41939400750981964
+    },
+    "strict_core__minimal_minmax": {
+      "balanced_accuracy_supported": 0.6905780889953822,
+      "macro_f1_supported": 0.6755873056500847,
+      "reconstruction_median_row_correlation": 0.9435200394696673,
+      "repeatable_peak_recall": 0.525899994801725
+    }
+  },
+  "outer_selected": {
+    "field_quality_stress__arpls_minmax": {
+      "balanced_accuracy_supported": 0.3685449735449735,
+      "macro_f1_supported": 0.31140659208462984,
+      "reconstruction_median_row_correlation": 0.3943928428812884,
+      "repeatable_peak_recall": 0.18071959189122208
+    },
+    "field_quality_stress__minimal_minmax": {
+      "balanced_accuracy_supported": 0.3965608465608465,
+      "macro_f1_supported": 0.33299327970478354,
+      "reconstruction_median_row_correlation": 0.47616445043322736,
+      "repeatable_peak_recall": 0.17062066757155261
+    },
+    "quality_pass__arpls_minmax": {
+      "balanced_accuracy_supported": 0.7444925693184927,
+      "macro_f1_supported": 0.7222437375269948,
+      "reconstruction_median_row_correlation": 0.9654102160714734,
+      "repeatable_peak_recall": 0.52256068693292
+    },
+    "quality_pass__minimal_minmax": {
+      "balanced_accuracy_supported": 0.7296037133958023,
+      "macro_f1_supported": 0.7002144744268662,
+      "reconstruction_median_row_correlation": 0.9808561328961249,
+      "repeatable_peak_recall": 0.6566270056747378
+    },
+    "strict_core__arpls_minmax": {
+      "balanced_accuracy_supported": 0.70623583291988,
+      "macro_f1_supported": 0.696067998317601,
+      "reconstruction_median_row_correlation": 0.9481123854012949,
+      "repeatable_peak_recall": 0.4796267400963709
+    },
+    "strict_core__minimal_minmax": {
+      "balanced_accuracy_supported": 0.6881454044544923,
+      "macro_f1_supported": 0.6770987046680137,
+      "reconstruction_median_row_correlation": 0.9731473171943978,
+      "repeatable_peak_recall": 0.5976068178778352
+    }
+  },
+  "parameter_count": 1082353,
+  "poster_arpls_mean_balanced_accuracy": 0.7877777777777778,
+  "protocol": "sers-vae-adequacy-v1",
+  "selected_configuration": "base_maxpool__z64__spectral_composite__beta0p25__constant_lr__e500",
+  "selection_closed_without_locked_outcomes": true,
+  "strict_instrument_and_sample_balanced_accuracy": 0.5963743005778698,
+  "strict_sensor_and_sample_balanced_accuracy": 0.5843171534348005
+}

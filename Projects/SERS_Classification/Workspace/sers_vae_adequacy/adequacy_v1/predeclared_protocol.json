@@ -1,0 +1,227 @@
+{
+  "protocol_version": "sers-vae-adequacy-v1",
+  "status_before_model_execution": "predeclared",
+  "created_date": "2026-07-24",
+  "scientific_question": "Were the standard-VAE failures caused by the 100-epoch boundary, by a lossy or mismatched backbone/objective, or by domain shift that an unsupervised mixed latent cannot resolve?",
+  "scope": {
+    "included": [
+      "standard-VAE convergence",
+      "bounded backbone, loss, latent-capacity, and KL-strength ablations",
+      "locked confirmatory comparison after inner-only freezing"
+    ],
+    "excluded": [
+      "chemical/nuisance latent partitioning",
+      "domain-adversarial training",
+      "domain-conditioned decoding",
+      "supervised or contrastive latent losses",
+      "preprocessing changes",
+      "selection using outer, field-stress, domain-transfer, or poster outcomes"
+    ]
+  },
+  "immutable_inputs": {
+    "nato_bundle": "Workspace/nato_sers_field_trial/preprocessing_v2",
+    "nato_artifact_catalog_sha256": "2f7f03b7caf7a08cda0ee70a06ea7ba66fdd59a4ccc8751c1ffe4d46b109db24",
+    "nato_version": "nato-sers-preprocessing-v2",
+    "strict_core_rows": 598,
+    "quality_pass_rows": 500,
+    "field_quality_stress_rows": 98,
+    "axis_min_cm1": 400,
+    "axis_max_cm1": 1800,
+    "axis_step_cm1": 1,
+    "axis_points": 1401,
+    "grouping_key": "master_sample_id",
+    "fold_column": "grouped_sample_fold_5",
+    "standard_vae_bundle": "Workspace/sers_standard_vae/standard_vae_v1",
+    "standard_vae_protocol": "sers-standard-vae-v1",
+    "baseline_bundle": "Workspace/sers_representation_baselines/baselines_v1",
+    "poster_source": "Workspace/data/processed/consolidated_SERS.csv",
+    "primary_representation": "arpls_minmax",
+    "mandatory_sensitivity_representation": "minimal_minmax"
+  },
+  "original_reference": {
+    "architecture": "base_maxpool",
+    "channels": [8, 16],
+    "latent_dimension": 64,
+    "parameter_count": 1082353,
+    "loss": "spectral_composite",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.00001,
+    "batch_size": 64,
+    "gradient_clip_norm": 5.0,
+    "kl_normalization_divisor": 1401,
+    "beta_target": 1.0,
+    "epochs_1_to_100_schedule": "four fixed 25-epoch cycles; beta rises from 0 to 1 in the first half and remains 1 in the second half",
+    "original_maximum_epochs": 100
+  },
+  "selection": {
+    "data": "master-sample-grouped nested inner folds only",
+    "primary_subset": "strict_core",
+    "quality_confirmation_subset": "quality_pass",
+    "selection_seed": 1729,
+    "fold_count": 20,
+    "utility_weights": {
+      "chemical_balanced_accuracy": 0.25,
+      "reconstruction_correlation": 0.075,
+      "reconstruction_mse": 0.075,
+      "repeatable_peak_recall": 0.15,
+      "corruption_balanced_accuracy": 0.05,
+      "corruption_prediction_agreement": 0.05,
+      "negative_instrument_leakage": 0.10,
+      "negative_same_master_distance": 0.10,
+      "active_units": 0.10,
+      "kl_health": 0.05
+    },
+    "tie_break_order": [
+      "gate_count descending",
+      "selection_utility descending",
+      "parameter_count ascending",
+      "configuration lexical"
+    ],
+    "outer_blinding_statement": "Previously observed outer cohorts are locked confirmatory evaluations, not human-blind tests."
+  },
+  "stage_0_existing_audit": {
+    "required": [
+      "best-epoch boundary frequency",
+      "validation ELBO change from epoch 90 to 100",
+      "beta-cycle and early-stopping interaction",
+      "training-row and parameter-count ratio",
+      "original gate failures"
+    ]
+  },
+  "stage_1_convergence": {
+    "architecture": "base_maxpool",
+    "latent_dimension": 64,
+    "loss": "spectral_composite",
+    "beta_target": 1.0,
+    "maximum_epoch": 300,
+    "metric_checkpoints": [100, 125, 150, 175, 200, 225, 250, 275, 300],
+    "first_100_epochs": "bitwise-equivalent optimization path where the original run reached the checkpoint",
+    "after_epoch_100_beta": 1.0,
+    "optimizer_policies": {
+      "constant_lr": {
+        "learning_rate": 0.001
+      },
+      "plateau_lr": {
+        "learning_rate": 0.001,
+        "active_after_epoch": 100,
+        "factor": 0.5,
+        "patience": 20,
+        "threshold": 0.00001,
+        "minimum_learning_rate": 0.00001
+      }
+    },
+    "no_diagnostic_early_termination": true,
+    "convergence_definition": "Median beta=1 validation ELBO improvement over the final 50 epochs is less than 0.5 percent and fewer than 25 percent of folds improve by at least 1 percent.",
+    "undertraining_evidence": "A post-100 checkpoint improves at least one failed scientific metric by its material-change threshold without chemical balanced accuracy decreasing by more than 0.02.",
+    "material_change": {
+      "clean_reconstruction_median_row_correlation": 0.01,
+      "clean_repeatable_peak_recall": 0.03,
+      "latent_same_master_cross_instrument_distance_decrease": 0.03,
+      "latent_target_balanced_accuracy": 0.02
+    },
+    "sufficient_to_skip_ablation": "A converged checkpoint passes every standard-VAE gate on strict-core and the quality confirmation."
+  },
+  "stage_2_bounded_ablation": {
+    "opens_only_if": "No converged stage-1 candidate passes every gate.",
+    "fixed_epoch_policy": "Best converged or least-failing stage-1 epoch and optimizer policy selected without outer information.",
+    "architecture_candidates": {
+      "base_maxpool": "Original two-convolution, two-max-pool backbone.",
+      "residual_multiscale": "Parameter-matched two-pool backbone with residual dilated feature blocks and no latent bypass.",
+      "single_pool_peak": "One-pool 8-channel terminal map retaining 700 positions and approximately the same flattened dense size."
+    },
+    "loss_candidates_after_architecture_freeze": {
+      "spectral_composite": "Smooth-L1 + 0.1 spectral angle + 0.1 first derivative.",
+      "peak_multiscale": "Smooth-L1 + 0.1 spectral angle + 0.25 first derivative + 0.1 second derivative + 0.1 mean of pooled-scale L1 at widths 5 and 15."
+    },
+    "latent_candidates_after_loss_freeze": [32, 64, 128],
+    "beta_candidates_after_latent_freeze": [0.25, 1.0, 4.0],
+    "maximum_architecture_parameter_ratio_to_reference": 1.25,
+    "minimum_architecture_parameter_ratio_to_reference": 0.75,
+    "prohibited": [
+      "encoder-decoder skip connections",
+      "outer-driven candidate reopening",
+      "unbounded Cartesian search"
+    ]
+  },
+  "eligibility_gates": {
+    "reference": "frozen arpls clean-AE strict-core inner metrics",
+    "clean_correlation_drop_maximum": 0.03,
+    "repeatable_peak_recall_drop_maximum": 0.05,
+    "chemical_balanced_accuracy_drop_maximum": 0.03,
+    "instrument_probe_increment_increase_maximum": 0.02,
+    "same_master_distance_increase_maximum": 0.05,
+    "quality_chemical_drop_maximum": 0.05,
+    "minimum_active_units": 4,
+    "minimum_kl_dimensions": 2,
+    "minimum_kl_per_observation": 0.01,
+    "maximum_kl_per_observation": 1000.0,
+    "all_outputs_finite": true
+  },
+  "mandatory_sensitivity": {
+    "representation": "minimal_minmax",
+    "cannot_change_primary_selection": true,
+    "subsets": ["strict_core", "quality_pass"]
+  },
+  "locked_confirmation": {
+    "neural_seeds": [1729, 2718, 3141],
+    "canonical_inference_device": "cpu",
+    "training_device": "deterministic_cuda",
+    "evaluations": [
+      "grouped outer strict-core and quality-pass",
+      "field-quality stress",
+      "controlled corruption severities 0.5, 1.0, and 1.5",
+      "domain-only and domain-and-sample instrument and sensor transfer",
+      "same-master cross-instrument geometry",
+      "descriptive poster substrate transfer"
+    ]
+  },
+  "failure_attribution_categories": [
+    "convergence",
+    "architecture/downsampling",
+    "reconstruction objective",
+    "latent capacity or KL pressure",
+    "data coverage/domain shift",
+    "unresolved interaction"
+  ],
+  "reproducibility": {
+    "deterministic_cuda_training": true,
+    "canonical_cpu_inference": true,
+    "clean_rebuild_required": true,
+    "checkpoint_tensor_comparison": "exact",
+    "canonical_scientific_table_comparison": "exact",
+    "floating_history_tolerance": 1e-12
+  },
+  "required_outputs": {
+    "root": "Workspace/sers_vae_adequacy/adequacy_v1",
+    "records": [
+      "README.md",
+      "DECISION_REGISTRY.md",
+      "predeclared_protocol.json",
+      "input_hashes.json",
+      "environment.json",
+      "existing_run_audit.json",
+      "checkpoint_metrics.csv",
+      "training_histories.csv",
+      "stage_summaries.csv",
+      "selected_configuration.json",
+      "minimal_sensitivity_metrics.csv",
+      "outer_fold_metrics.csv",
+      "corruption_metrics.csv",
+      "domain_transfer_metrics.csv",
+      "poster_metrics.csv",
+      "per_spectrum_predictions.csv",
+      "per_class_metrics.csv",
+      "failure_cases.csv",
+      "failure_attribution.json",
+      "uncertainty_summary.csv",
+      "final_decisions.json",
+      "artifact_hashes.json",
+      "validation_report.json",
+      "clean_rebuild_comparison.json"
+    ],
+    "binary_directories": ["checkpoints", "embeddings", "reconstructions"],
+    "figure_directory": "figures"
+  },
+  "terminal_decision": "Freeze an adequate converged standard-VAE backbone or a rigorously documented least-failing backbone and its claim limits for the later structured-latent experiment; do not begin disentanglement here."
+}

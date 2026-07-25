@@ -1,0 +1,18 @@
+{
+  "accounting_note": "Epoch counts measure executed optimizer epochs. Outer field-stress evaluation reuses its matching quality-pass training checkpoints and is therefore counted as evaluation, not an additional training run.",
+  "confirmatory_checkpoint_count": 252,
+  "controlled_corruption_aggregate_rows": 5922,
+  "distinct_confirmatory_training_runs": 252,
+  "distinct_inner_training_runs": 260,
+  "parameter_range": [
+    544689,
+    2157681
+  ],
+  "protocol": "sers-vae-adequacy-v1",
+  "selected_parameter_count": 1082353,
+  "selection_checkpoint_count": 260,
+  "spectrum_level_prediction_rows": 22002,
+  "spectrum_level_reconstruction_rows": 22002,
+  "total_distinct_training_runs": 512,
+  "total_training_epochs": 256000
+}

@@ -1,0 +1,34 @@
+{
+  "baseline_artifact_catalog": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_representation_baselines/baselines_v1/artifact_hashes.json",
+    "sha256": "b52f19fafdeaaf3648399078601a4b7e3ccaa54e02d087313806b2f94b515345"
+  },
+  "baseline_selected_configurations": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_representation_baselines/baselines_v1/selected_configurations.json",
+    "sha256": "6dd61d63343c9733041fb33853ebf8486471b6636fb44ba41e9b48e5d118ebe1"
+  },
+  "nato_artifact_catalog": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/artifact_hashes.json",
+    "sha256": "2f7f03b7caf7a08cda0ee70a06ea7ba66fdd59a4ccc8751c1ffe4d46b109db24"
+  },
+  "protocol": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/sers_vae_adequacy_v1.json",
+    "sha256": "733bbd0ec85cd3bbc7cffcf59c037366ae77726b6160f1e8e1a7fccac30b7102"
+  },
+  "protocol_amendment_1": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/sers_vae_adequacy_v1_amendment_1.json",
+    "sha256": "1c8c017033721d327c6081f50e5548c69cc7df4cacfc61fcd3289ca14ec75c69"
+  },
+  "standard_vae_artifact_catalog": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_standard_vae/standard_vae_v1/artifact_hashes.json",
+    "sha256": "2dbae9d9552e277a2e8c34b4b3c73a8feb6fbea189baff80a791bbb0a9feedcf"
+  },
+  "standard_vae_final_decisions": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_standard_vae/standard_vae_v1/final_decisions.json",
+    "sha256": "d12605711e3f8a650095988612f19e981049d6c1e4456a464a1c51133923423c"
+  },
+  "standard_vae_selected_configuration": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_standard_vae/standard_vae_v1/selected_configuration.json",
+    "sha256": "1cdcc2fe4457bfc720535d1ea7226d7d4f51f2e98a6f9c2ff352aca0b344c461"
+  }
+}

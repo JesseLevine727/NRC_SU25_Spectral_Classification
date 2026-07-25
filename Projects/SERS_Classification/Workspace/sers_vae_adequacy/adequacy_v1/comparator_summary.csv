@@ -1,0 +1,190 @@
+evaluation,subset,representation,display_model,metric,mean,standard_deviation,minimum,maximum,record_count,independent_unit_count
+corruption,strict_core__composite__severity1,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.6095952079593794,0.033323901300940185,0.5623295428011021,0.6710600907029478,15,5
+corruption,strict_core__composite__severity1,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.6391657343177446,0.05357212168598211,0.5824899982876446,0.7471428571428571,15,5
+corruption,strict_core__composite__severity1,arpls_minmax,VAE-100 β=1,latent_cosine_drift,0.15459425946076708,0.009570126395762161,0.1424944251775741,0.1791052967309951,15,5
+corruption,strict_core__composite__severity1,arpls_minmax,VAE-500 β=0.25,latent_cosine_drift,0.16562481621901196,0.008083556440981047,0.1567431390285492,0.1796285957098007,15,5
+corruption,strict_core__composite__severity1,arpls_minmax,VAE-100 β=1,prediction_agreement,0.6995183006261063,0.045555238520436095,0.6333333333333333,0.7815126050420168,15,5
+corruption,strict_core__composite__severity1,arpls_minmax,VAE-500 β=0.25,prediction_agreement,0.7269204232982254,0.05085761340142719,0.625,0.8205128205128205,15,5
+corruption,strict_core__composite__severity1,arpls_minmax,VAE-100 β=1,reconstruction_mse,0.01803491431132288,0.0012161664330046422,0.0157558568591078,0.0194873799529533,15,5
+corruption,strict_core__composite__severity1,arpls_minmax,VAE-500 β=0.25,reconstruction_mse,0.014015440025108702,0.0015645483002924923,0.011224039589049,0.018061824616127,15,5
+corruption,strict_core__composite__severity1,minimal_minmax,VAE-100 β=1,balanced_accuracy_supported,0.6452811398220029,0.05454963700943742,0.5752054826507262,0.7604761904761904,15,5
+corruption,strict_core__composite__severity1,minimal_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.6456145293690242,0.03476282867066413,0.5920918367346939,0.72,15,5
+corruption,strict_core__composite__severity1,minimal_minmax,VAE-100 β=1,latent_cosine_drift,0.15355465809504187,0.010655196157741478,0.1351529061794281,0.1737528890371322,15,5
+corruption,strict_core__composite__severity1,minimal_minmax,VAE-500 β=0.25,latent_cosine_drift,0.1523300523559252,0.014031546225003019,0.1157115325331687,0.1676365584135055,15,5
+corruption,strict_core__composite__severity1,minimal_minmax,VAE-100 β=1,prediction_agreement,0.8042688820772312,0.035128715465186734,0.75,0.8548387096774194,15,5
+corruption,strict_core__composite__severity1,minimal_minmax,VAE-500 β=0.25,prediction_agreement,0.8025352825423581,0.04876737539145519,0.7,0.8907563025210085,15,5
+corruption,strict_core__composite__severity1,minimal_minmax,VAE-100 β=1,reconstruction_mse,0.021952569731014494,0.002842884065708801,0.0191644655713743,0.0286237061718134,15,5
+corruption,strict_core__composite__severity1,minimal_minmax,VAE-500 β=0.25,reconstruction_mse,0.01828053485889129,0.000870857707094726,0.0167963527728057,0.0195983733427289,15,5
+domain_transfer,quality_pass__domain_and_sample__instrument,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.5491126728210061,0.29286613888748825,0.0,1.0,10,10
+domain_transfer,quality_pass__domain_and_sample__instrument,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.5930907765074431,0.26762197882450606,0.0,1.0,10,10
+domain_transfer,quality_pass__domain_and_sample__sensor_family,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.3818070818070818,0.23604761169279861,0.21489621489621488,0.5487179487179487,2,4
+domain_transfer,quality_pass__domain_and_sample__sensor_family,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.3776285442952109,0.22745220162709323,0.21679555012888344,0.5384615384615384,2,4
+domain_transfer,quality_pass__domain_only__instrument,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.6093596195333194,0.21750988629304852,0.2373291925465838,0.9455555555555555,10,10
+domain_transfer,quality_pass__domain_only__instrument,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.647281480393921,0.20404337957224378,0.3167080745341615,0.9255555555555556,10,10
+domain_transfer,quality_pass__domain_only__sensor_family,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.34958473785767324,0.1817384167592779,0.19520030234315944,0.6128205128205129,4,4
+domain_transfer,quality_pass__domain_only__sensor_family,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.37207791381406213,0.1707089188952084,0.19281644281644275,0.5923076923076923,4,4
+domain_transfer,strict_core__domain_and_sample__instrument,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.5574903917025816,0.29156710219888854,0.0,1.0,10,10
+domain_transfer,strict_core__domain_and_sample__instrument,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.5963743005778698,0.24637384880422455,0.16666666666666666,1.0,10,10
+domain_transfer,strict_core__domain_and_sample__sensor_family,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.6239116819999172,0.39600062018552734,0.21062393488864073,1.0,3,4
+domain_transfer,strict_core__domain_and_sample__sensor_family,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.5843171534348004,0.3856577161703112,0.23813664548958666,1.0,3,4
+domain_transfer,strict_core__domain_only__instrument,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.6057289226176831,0.18620725302261995,0.26261904761904764,0.8616161616161616,10,10
+domain_transfer,strict_core__domain_only__instrument,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.6336339694148698,0.17525891033353327,0.34943548387096773,0.8484848484848485,10,10
+domain_transfer,strict_core__domain_only__sensor_family,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.38503632358679324,0.15344138706707935,0.20259497738489332,0.5481481481481482,4,4
+domain_transfer,strict_core__domain_only__sensor_family,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.42343308761156945,0.20638299309611555,0.1905653869939584,0.6851851851851851,4,4
+outer,field_quality_stress,arpls_minmax,AE,balanced_accuracy_supported,0.3351587301587301,0.11094981408765739,0.1666666666666666,0.5555555555555556,15,5
+outer,field_quality_stress,arpls_minmax,DAE,balanced_accuracy_supported,0.35619047619047606,0.11611125448119822,0.219047619047619,0.5972222222222222,15,5
+outer,field_quality_stress,arpls_minmax,PCA-logistic,balanced_accuracy_supported,0.4471428571428572,0.13498288713238474,0.2805555555555555,0.6,5,5
+outer,field_quality_stress,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.3424867724867724,0.08985713678197317,0.2222222222222222,0.5416666666666666,15,5
+outer,field_quality_stress,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.36854497354497356,0.14846039669890101,0.1666666666666666,0.6805555555555555,15,5
+outer,field_quality_stress,arpls_minmax,VAE-100 β=1,macro_f1_supported,0.2956545330368635,0.08185866010284586,0.1333333333333333,0.4509379509379509,15,5
+outer,field_quality_stress,arpls_minmax,VAE-500 β=0.25,macro_f1_supported,0.3114065920846299,0.14200121166408416,0.0588235294117647,0.5531746031746032,15,5
+outer,field_quality_stress,arpls_minmax,AE,reconstruction_median_row_correlation,0.4094152073673744,0.05046495814553999,0.2931666971457851,0.492531760136441,15,5
+outer,field_quality_stress,arpls_minmax,DAE,reconstruction_median_row_correlation,0.430820903147042,0.040040331673549395,0.3685123051271918,0.4847285357502431,15,5
+outer,field_quality_stress,arpls_minmax,VAE-100 β=1,reconstruction_median_row_correlation,0.29619638295492984,0.050731431133307116,0.2080360632950219,0.3945213099266016,15,5
+outer,field_quality_stress,arpls_minmax,VAE-500 β=0.25,reconstruction_median_row_correlation,0.39439284288128834,0.050309902874056116,0.3068660200884643,0.4794977473779536,15,5
+outer,field_quality_stress,arpls_minmax,AE,repeatable_peak_recall,0.19176974996207563,0.023031630273315937,0.1540130151843818,0.2230483271375464,12,5
+outer,field_quality_stress,arpls_minmax,DAE,repeatable_peak_recall,0.17362537808375486,0.029186666610164034,0.1380670611439842,0.2342007434944238,12,5
+outer,field_quality_stress,arpls_minmax,VAE-100 β=1,repeatable_peak_recall,0.128730164845394,0.02424812507167094,0.1019522776572668,0.1833333333333333,12,5
+outer,field_quality_stress,arpls_minmax,VAE-500 β=0.25,repeatable_peak_recall,0.18071959189122208,0.02305337734157983,0.1540130151843818,0.2156133828996282,12,5
+outer,field_quality_stress,derivative_1,Siamese,balanced_accuracy_supported,0.3704497354497354,0.10889749800140801,0.219047619047619,0.5972222222222222,15,5
+outer,field_quality_stress,minimal_minmax,VAE-100 β=1,balanced_accuracy_supported,0.36666666666666664,0.09604767394754497,0.1944444444444444,0.5555555555555556,15,5
+outer,field_quality_stress,minimal_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.39656084656084645,0.15551756520065457,0.236111111111111,0.7222222222222222,15,5
+outer,field_quality_stress,minimal_minmax,VAE-100 β=1,macro_f1_supported,0.3225270076132526,0.09612672688985201,0.1309523809523809,0.5025252525252525,15,5
+outer,field_quality_stress,minimal_minmax,VAE-500 β=0.25,macro_f1_supported,0.3329932797047835,0.13248844040432312,0.1864745898359343,0.6678571428571428,15,5
+outer,field_quality_stress,minimal_minmax,VAE-100 β=1,reconstruction_median_row_correlation,0.4269428528878452,0.029517113083552492,0.3741428330694659,0.4648001444249444,15,5
+outer,field_quality_stress,minimal_minmax,VAE-500 β=0.25,reconstruction_median_row_correlation,0.4761644504332274,0.014088149315808821,0.4447572047229839,0.4947892910022598,15,5
+outer,field_quality_stress,minimal_minmax,VAE-100 β=1,repeatable_peak_recall,0.11953569644047891,0.011850908152479809,0.1083844580777096,0.1504065040650406,12,5
+outer,field_quality_stress,minimal_minmax,VAE-500 β=0.25,repeatable_peak_recall,0.17062066757155261,0.023353014697621213,0.1329243353783231,0.1991869918699187,12,5
+outer,quality_pass,arpls_minmax,AE,balanced_accuracy_supported,0.7214756084664551,0.045651202682196274,0.6588423653641045,0.7916857124931659,15,5
+outer,quality_pass,arpls_minmax,DAE,balanced_accuracy_supported,0.7139095272047217,0.054009856080481644,0.6139428204645595,0.7852769039104442,15,5
+outer,quality_pass,arpls_minmax,PCA-logistic,balanced_accuracy_supported,0.7713363196862707,0.03789549729257075,0.7180741963350659,0.8207766439909296,5,5
+outer,quality_pass,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.7283527826344108,0.05359011290132268,0.6578385382733208,0.7966836734693877,15,5
+outer,quality_pass,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.7444925693184927,0.05136268923707894,0.657692599797863,0.8417233560090703,15,5
+outer,quality_pass,arpls_minmax,VAE-100 β=1,macro_f1_supported,0.7007038899839031,0.04306076082335504,0.6338417901242294,0.7590813113369503,15,5
+outer,quality_pass,arpls_minmax,VAE-500 β=0.25,macro_f1_supported,0.7222437375269949,0.04821002915760664,0.6582480147367532,0.8361076236852634,15,5
+outer,quality_pass,arpls_minmax,AE,reconstruction_median_row_correlation,0.9710563980540808,0.008362949754273274,0.954269610180526,0.9846272082089316,15,5
+outer,quality_pass,arpls_minmax,DAE,reconstruction_median_row_correlation,0.9663988737334142,0.006381320409553537,0.954274159683126,0.9751318915482976,15,5
+outer,quality_pass,arpls_minmax,VAE-100 β=1,reconstruction_median_row_correlation,0.9286248062084722,0.009482058466769435,0.907281092103578,0.9396950530221116,15,5
+outer,quality_pass,arpls_minmax,VAE-500 β=0.25,reconstruction_median_row_correlation,0.9654102160714734,0.00605052216035066,0.9565864279483198,0.9729483892802412,15,5
+outer,quality_pass,arpls_minmax,AE,repeatable_peak_recall,0.5281136119100115,0.08749155304272313,0.4,0.6660117878192534,15,5
+outer,quality_pass,arpls_minmax,DAE,repeatable_peak_recall,0.5199799562206893,0.0874008480628486,0.3788819875776397,0.6483300589390962,15,5
+outer,quality_pass,arpls_minmax,VAE-100 β=1,repeatable_peak_recall,0.48669391505042775,0.09008743759857603,0.3652173913043478,0.6345776031434185,15,5
+outer,quality_pass,arpls_minmax,VAE-500 β=0.25,repeatable_peak_recall,0.5225606869329201,0.08248782603361268,0.4124223602484472,0.6522593320235757,15,5
+outer,quality_pass,derivative_1,Siamese,balanced_accuracy_supported,0.6766688629315305,0.04555589007036118,0.588061696757349,0.761592970521542,15,5
+outer,quality_pass,minimal_minmax,VAE-100 β=1,balanced_accuracy_supported,0.7087919285320398,0.044909572850188394,0.645199003894656,0.7960209907414877,15,5
+outer,quality_pass,minimal_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.7296037133958025,0.03535350035473248,0.6848084663874138,0.7869614512471655,15,5
+outer,quality_pass,minimal_minmax,VAE-100 β=1,macro_f1_supported,0.6826416780737408,0.027530271080877373,0.6400475827249282,0.7276960396561726,15,5
+outer,quality_pass,minimal_minmax,VAE-500 β=0.25,macro_f1_supported,0.7002144744268662,0.02452444973128745,0.6634965796712755,0.7650336130313884,15,5
+outer,quality_pass,minimal_minmax,VAE-100 β=1,reconstruction_median_row_correlation,0.9554151178895428,0.01492004791284488,0.9121128237997376,0.9704653395992914,15,5
+outer,quality_pass,minimal_minmax,VAE-500 β=0.25,reconstruction_median_row_correlation,0.9808561328961248,0.004421868838812465,0.9717854068749312,0.9843644999925883,15,5
+outer,quality_pass,minimal_minmax,VAE-100 β=1,repeatable_peak_recall,0.6145301239989422,0.08229599030474054,0.4970238095238095,0.7193548387096774,15,5
+outer,quality_pass,minimal_minmax,VAE-500 β=0.25,repeatable_peak_recall,0.6566270056747376,0.07986543079111978,0.5238095238095238,0.7689873417721519,15,5
+outer,strict_core,arpls_minmax,AE,balanced_accuracy_supported,0.7033385071879678,0.042864757708578685,0.6224783620542038,0.7723072562358277,15,5
+outer,strict_core,arpls_minmax,DAE,balanced_accuracy_supported,0.7130699753976969,0.046512069192855776,0.6407944081816263,0.7953514739229025,15,5
+outer,strict_core,arpls_minmax,PCA-logistic,balanced_accuracy_supported,0.7246314659877916,0.06061081393899718,0.6636267867470875,0.82,5,5
+outer,strict_core,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.70608086561895,0.055051272019105896,0.627431155528573,0.8114285714285714,15,5
+outer,strict_core,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.7062358329198801,0.0556386573919832,0.6393192229658394,0.7985714285714286,15,5
+outer,strict_core,arpls_minmax,VAE-100 β=1,macro_f1_supported,0.6889242990058236,0.048158559688572126,0.6124688611144721,0.8006098605291772,15,5
+outer,strict_core,arpls_minmax,VAE-500 β=0.25,macro_f1_supported,0.6960679983176011,0.05126368268167312,0.6341316689672999,0.7856898740357388,15,5
+outer,strict_core,arpls_minmax,AE,reconstruction_median_row_correlation,0.9606409548809715,0.013228420241621726,0.9406238168522892,0.9786247354057908,15,5
+outer,strict_core,arpls_minmax,DAE,reconstruction_median_row_correlation,0.9539541995832509,0.012677882407224604,0.9349979145501106,0.9753855636416694,15,5
+outer,strict_core,arpls_minmax,VAE-100 β=1,reconstruction_median_row_correlation,0.9060724913700358,0.0228688608945417,0.8337959896137817,0.9290674279788876,15,5
+outer,strict_core,arpls_minmax,VAE-500 β=0.25,reconstruction_median_row_correlation,0.9481123854012948,0.012630671121147203,0.9281629554265088,0.9674203667688154,15,5
+outer,strict_core,arpls_minmax,AE,repeatable_peak_recall,0.4881675529013884,0.05939567632226037,0.3776634827332844,0.5759803921568627,15,5
+outer,strict_core,arpls_minmax,DAE,repeatable_peak_recall,0.473366413823409,0.06674096430589514,0.3629684055841293,0.5808823529411765,15,5
+outer,strict_core,arpls_minmax,VAE-100 β=1,repeatable_peak_recall,0.4193940075098197,0.0665058657275408,0.2887582659808964,0.5110294117647058,15,5
+outer,strict_core,arpls_minmax,VAE-500 β=0.25,repeatable_peak_recall,0.479626740096371,0.06888498000812303,0.3666421748714181,0.5784313725490197,15,5
+outer,strict_core,derivative_1,Siamese,balanced_accuracy_supported,0.6320941608547036,0.06798048239027107,0.5184807256235828,0.7466666666666667,15,5
+outer,strict_core,minimal_minmax,VAE-100 β=1,balanced_accuracy_supported,0.6905780889953822,0.04164692088857256,0.6253620544034078,0.7623809523809525,15,5
+outer,strict_core,minimal_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.6881454044544922,0.061537251858855654,0.5902109699715127,0.8047619047619047,15,5
+outer,strict_core,minimal_minmax,VAE-100 β=1,macro_f1_supported,0.6755873056500846,0.04153184306512965,0.6262172608601181,0.7560347074860629,15,5
+outer,strict_core,minimal_minmax,VAE-500 β=0.25,macro_f1_supported,0.6770987046680138,0.0598219835927508,0.5896944518895738,0.7850693197021011,15,5
+outer,strict_core,minimal_minmax,VAE-100 β=1,reconstruction_median_row_correlation,0.9435200394696674,0.010208474383749146,0.9175359241455532,0.9557913779693616,15,5
+outer,strict_core,minimal_minmax,VAE-500 β=0.25,reconstruction_median_row_correlation,0.973147317194398,0.005674023573901762,0.9629543621970412,0.9808323241718372,15,5
+outer,strict_core,minimal_minmax,VAE-100 β=1,repeatable_peak_recall,0.5258999948017249,0.07384048683573746,0.4323843416370106,0.6457399103139013,15,5
+outer,strict_core,minimal_minmax,VAE-500 β=0.25,repeatable_peak_recall,0.5976068178778353,0.07065053502081615,0.5071174377224199,0.6879120879120879,15,5
+poster,leave_substrate_family_out,arpls_minmax,VAE-100 β=1,balanced_accuracy_supported,0.9272222222222223,0.08666429246510568,0.8044444444444444,0.9955555555555556,4,4
+poster,leave_substrate_family_out,arpls_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.7877777777777778,0.21089267451623123,0.5688888888888889,1.0,4,4
+poster,leave_substrate_family_out,minimal_minmax,VAE-100 β=1,balanced_accuracy_supported,0.6827777777777777,0.15565473029024335,0.49333333333333335,0.8733333333333334,4,4
+poster,leave_substrate_family_out,minimal_minmax,VAE-500 β=0.25,balanced_accuracy_supported,0.8077777777777777,0.18021934509280352,0.64,0.991111111111111,4,4
+same_master_geometry,field_quality_stress,arpls_minmax,AE,latent_cross_instrument_separation_margin,-0.02505599428506372,0.0925111078520488,-0.210697882435005,0.0744765120905347,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,DAE,latent_cross_instrument_separation_margin,-0.01619547253387718,0.11146054526156168,-0.2329880373753428,0.101337003071154,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,VAE-100 β=1,latent_cross_instrument_separation_margin,-0.01974643261176186,0.176669292997968,-0.3172921254862439,0.1598636134614999,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,VAE-500 β=0.25,latent_cross_instrument_separation_margin,-0.023869864302433916,0.1293227530737559,-0.2605362883663134,0.0854782762056892,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,AE,latent_same_master_cross_instrument_distance,0.29751947081203284,0.15449529120262845,0.1101337279292615,0.5403151712225929,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,DAE,latent_same_master_cross_instrument_distance,0.3533045697092578,0.19486554262077446,0.1101908669800898,0.6986034747265456,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,VAE-100 β=1,latent_same_master_cross_instrument_distance,0.49048471360327595,0.26488106842451875,0.1764991127836182,0.9216646823981288,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,VAE-500 β=0.25,latent_same_master_cross_instrument_distance,0.549058902546872,0.2168157308008479,0.3068505133585223,0.902316502075626,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,AE,same_master_distance_delta,-0.5800006985362721,0.14783557249802887,-0.7570880901671635,-0.3357733268360361,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,DAE,same_master_distance_delta,-0.5242155996390473,0.19252930823721223,-0.7570309511163352,-0.1774850233320833,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,VAE-100 β=1,same_master_distance_delta,-0.387035455745029,0.2613334206123866,-0.6907227053128069,0.0455761843394999,12,5
+same_master_geometry,field_quality_stress,arpls_minmax,VAE-500 β=0.25,same_master_distance_delta,-0.328461266801433,0.21515285084444083,-0.5603713047379026,0.026228004016997,12,5
+same_master_geometry,field_quality_stress,derivative_1,Siamese,latent_cross_instrument_separation_margin,0.04229272762516237,0.042092887438607035,-0.0328482577737571,0.1193621971481148,12,5
+same_master_geometry,field_quality_stress,derivative_1,Siamese,latent_same_master_cross_instrument_distance,0.17901102823787785,0.07440126058173688,0.0786809708127785,0.3264168196363558,12,5
+same_master_geometry,field_quality_stress,derivative_1,Siamese,same_master_distance_delta,-0.7473238453488958,0.08114923257980253,-0.8541166341145767,-0.6208381039080996,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,AE,latent_cross_instrument_separation_margin,-0.014135129319001188,0.07005152161324833,-0.1281530271311967,0.058832881414547,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,DAE,latent_cross_instrument_separation_margin,-0.0025137730562769605,0.08434657884822966,-0.1554592637121641,0.0902339638969951,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,VAE-100 β=1,latent_cross_instrument_separation_margin,-0.027701048264501166,0.19401894517868667,-0.3693468623795398,0.1265894842122504,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,VAE-500 β=0.25,latent_cross_instrument_separation_margin,-0.04843546729826755,0.15987970541321833,-0.3164946327053115,0.0898021690414893,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,AE,latent_same_master_cross_instrument_distance,0.2706285729539067,0.10281466132133266,0.169571949768503,0.4755908970604044,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,DAE,latent_same_master_cross_instrument_distance,0.36542614714794847,0.1366941745546552,0.1589499554055284,0.6269806779823139,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,VAE-100 β=1,latent_same_master_cross_instrument_distance,0.668296324789804,0.24630876457386577,0.4662575566205004,1.0975483410067293,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,VAE-500 β=0.25,latent_same_master_cross_instrument_distance,0.684285996936932,0.17460452470949994,0.5122796512565847,0.9826698133451128,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,AE,same_master_distance_delta,-0.588910504051564,0.076211739873651,-0.6858609467993364,-0.4416363681788356,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,DAE,same_master_distance_delta,-0.49411292985752214,0.11196757088849443,-0.6402169162776257,-0.2902465872569262,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,VAE-100 β=1,same_master_distance_delta,-0.19124275221566656,0.2104841117338606,-0.3391843307463364,0.1803210757674891,12,5
+same_master_geometry,field_quality_stress,minimal_minmax,VAE-500 β=0.25,same_master_distance_delta,-0.17525308006853849,0.1400290050096031,-0.2912838553621169,0.0654425481058726,12,5
+same_master_geometry,quality_pass,arpls_minmax,AE,latent_cross_instrument_separation_margin,0.16172803717212433,0.04750906851025029,0.0916093505942882,0.2515600969179022,15,5
+same_master_geometry,quality_pass,arpls_minmax,DAE,latent_cross_instrument_separation_margin,0.21506385534622116,0.05002423785276089,0.1515496659100409,0.3044490250382823,15,5
+same_master_geometry,quality_pass,arpls_minmax,VAE-100 β=1,latent_cross_instrument_separation_margin,0.3428012427385378,0.062395989668970135,0.2669885139640954,0.4462999066106659,15,5
+same_master_geometry,quality_pass,arpls_minmax,VAE-500 β=0.25,latent_cross_instrument_separation_margin,0.30318532995114494,0.05122384619816455,0.2339141591388297,0.3919870187890099,15,5
+same_master_geometry,quality_pass,arpls_minmax,AE,latent_same_master_cross_instrument_distance,0.3838706408500789,0.05770158594284409,0.2857263966256437,0.4858692142901877,15,5
+same_master_geometry,quality_pass,arpls_minmax,DAE,latent_same_master_cross_instrument_distance,0.4177155446745681,0.04521975114308501,0.3466453770183159,0.4905880937293504,15,5
+same_master_geometry,quality_pass,arpls_minmax,VAE-100 β=1,latent_same_master_cross_instrument_distance,0.7092197194211995,0.057585096498566746,0.6118072374580346,0.7835126045370863,15,5
+same_master_geometry,quality_pass,arpls_minmax,VAE-500 β=0.25,latent_same_master_cross_instrument_distance,0.7295954353875861,0.05511459991463462,0.6348356928999865,0.7988377025467097,15,5
+same_master_geometry,quality_pass,arpls_minmax,AE,same_master_distance_delta,-0.21557325589066495,0.07424166951063567,-0.3615934568133785,-0.090710315434518,15,5
+same_master_geometry,quality_pass,arpls_minmax,DAE,same_master_distance_delta,-0.18172835206617574,0.051981906338072405,-0.316944448399028,-0.1003201184553411,15,5
+same_master_geometry,quality_pass,arpls_minmax,VAE-100 β=1,same_master_distance_delta,0.1097758226804557,0.025166907404807155,0.075800342003592,0.1536124583832339,15,5
+same_master_geometry,quality_pass,arpls_minmax,VAE-500 β=0.25,same_master_distance_delta,0.13015153864684226,0.017531420994166578,0.1000447234291043,0.1564592442953204,15,5
+same_master_geometry,quality_pass,derivative_1,Siamese,latent_cross_instrument_separation_margin,0.334163609680783,0.08660592306864183,0.1841613893762331,0.4540159531081549,15,5
+same_master_geometry,quality_pass,derivative_1,Siamese,latent_same_master_cross_instrument_distance,0.13694702478189022,0.03817489021995959,0.0791292671403094,0.2109102767216761,15,5
+same_master_geometry,quality_pass,derivative_1,Siamese,same_master_distance_delta,-0.45721810583940825,0.06621638890041219,-0.5931747205308239,-0.3744707229628879,15,5
+same_master_geometry,quality_pass,minimal_minmax,AE,latent_cross_instrument_separation_margin,0.1143780235016871,0.0266002327594982,0.0658961959615213,0.1641792368326368,15,5
+same_master_geometry,quality_pass,minimal_minmax,DAE,latent_cross_instrument_separation_margin,0.1489259395249435,0.023841247458270157,0.1064339966289323,0.1833174736162487,15,5
+same_master_geometry,quality_pass,minimal_minmax,VAE-100 β=1,latent_cross_instrument_separation_margin,0.2550416038567561,0.038001352538252584,0.1930059700423334,0.3092338084358328,15,5
+same_master_geometry,quality_pass,minimal_minmax,VAE-500 β=0.25,latent_cross_instrument_separation_margin,0.22477339714313357,0.029640924879483777,0.1704672676511017,0.2733161812698277,15,5
+same_master_geometry,quality_pass,minimal_minmax,AE,latent_same_master_cross_instrument_distance,0.4602744698514486,0.0795555664293371,0.3230765453584006,0.6288950582465459,15,5
+same_master_geometry,quality_pass,minimal_minmax,DAE,latent_same_master_cross_instrument_distance,0.4918052439595885,0.06342400903588814,0.3593728769884271,0.6082309218024238,15,5
+same_master_geometry,quality_pass,minimal_minmax,VAE-100 β=1,latent_same_master_cross_instrument_distance,0.8151639255952396,0.04050109500366664,0.7623740388670609,0.891222176750388,15,5
+same_master_geometry,quality_pass,minimal_minmax,VAE-500 β=0.25,latent_same_master_cross_instrument_distance,0.8212025861954632,0.028549808045483904,0.7676421134822571,0.8685107627330949,15,5
+same_master_geometry,quality_pass,minimal_minmax,AE,same_master_distance_delta,-0.2507633705443019,0.08344172623124908,-0.4195343898673293,-0.1002635113051652,15,5
+same_master_geometry,quality_pass,minimal_minmax,DAE,same_master_distance_delta,-0.21923259643616197,0.045549887702410835,-0.3447244002934208,-0.1654589692697409,15,5
+same_master_geometry,quality_pass,minimal_minmax,VAE-100 β=1,same_master_distance_delta,0.10412608519948911,0.015209343098525025,0.0809727945052483,0.1396404632968884,15,5
+same_master_geometry,quality_pass,minimal_minmax,VAE-500 β=0.25,same_master_distance_delta,0.11016474579971267,0.02177865549727799,0.0720425956207845,0.1504256615712501,15,5
+same_master_geometry,strict_core,arpls_minmax,AE,latent_cross_instrument_separation_margin,0.13867090146618813,0.02601290868345466,0.1040364419998611,0.1893684408911779,15,5
+same_master_geometry,strict_core,arpls_minmax,DAE,latent_cross_instrument_separation_margin,0.1740307592850235,0.0330361362337434,0.0976075417038219,0.2366377729750902,15,5
+same_master_geometry,strict_core,arpls_minmax,VAE-100 β=1,latent_cross_instrument_separation_margin,0.2893433826757413,0.0365659957765709,0.2258165661750111,0.351057406307097,15,5
+same_master_geometry,strict_core,arpls_minmax,VAE-500 β=0.25,latent_cross_instrument_separation_margin,0.2513126104197342,0.03243447130064094,0.1820447823826919,0.2996865034285965,15,5
+same_master_geometry,strict_core,arpls_minmax,AE,latent_same_master_cross_instrument_distance,0.43272374877368414,0.051138753936474074,0.3330260810137032,0.5559621447351756,15,5
+same_master_geometry,strict_core,arpls_minmax,DAE,latent_same_master_cross_instrument_distance,0.4505736157125559,0.07750103943141588,0.2644832145396042,0.5563653995845766,15,5
+same_master_geometry,strict_core,arpls_minmax,VAE-100 β=1,latent_same_master_cross_instrument_distance,0.7578068522912289,0.02893687387135524,0.6934738094113313,0.7952584335586805,15,5
+same_master_geometry,strict_core,arpls_minmax,VAE-500 β=0.25,latent_same_master_cross_instrument_distance,0.7773278827451092,0.025882990369637367,0.7313369430968484,0.8139335653176769,15,5
+same_master_geometry,strict_core,arpls_minmax,AE,same_master_distance_delta,-0.2425354708110206,0.04294660972639193,-0.3111749156030148,-0.178427308402352,15,5
+same_master_geometry,strict_core,arpls_minmax,DAE,same_master_distance_delta,-0.22468560387214875,0.07730719480756582,-0.3797177820771138,-0.0878355970321413,15,5
+same_master_geometry,strict_core,arpls_minmax,VAE-100 β=1,same_master_distance_delta,0.08254763270652421,0.028232727940111377,0.0440540751474715,0.1304179679069427,15,5
+same_master_geometry,strict_core,arpls_minmax,VAE-500 β=0.25,same_master_distance_delta,0.10206866316040465,0.024142462674371885,0.0674314907533688,0.1370131587112771,15,5
+same_master_geometry,strict_core,derivative_1,Siamese,latent_cross_instrument_separation_margin,0.29004002720388616,0.10136552526189244,0.1126928789072297,0.4526560517445687,15,5
+same_master_geometry,strict_core,derivative_1,Siamese,latent_same_master_cross_instrument_distance,0.14611411913965106,0.07297603582195492,0.059319274380076,0.2455632731672355,15,5
+same_master_geometry,strict_core,derivative_1,Siamese,same_master_distance_delta,-0.537488786752948,0.09914166151175251,-0.6970575797547001,-0.4205266606131563,15,5
+same_master_geometry,strict_core,minimal_minmax,AE,latent_cross_instrument_separation_margin,0.09162322376961647,0.021657381650769955,0.0649689326752352,0.1323517230119365,15,5
+same_master_geometry,strict_core,minimal_minmax,DAE,latent_cross_instrument_separation_margin,0.12196932527628052,0.02688623395096066,0.0848829094443386,0.1775523387435956,15,5
+same_master_geometry,strict_core,minimal_minmax,VAE-100 β=1,latent_cross_instrument_separation_margin,0.20376717619169588,0.037695974070133066,0.1411195395427041,0.2620782700863565,15,5
+same_master_geometry,strict_core,minimal_minmax,VAE-500 β=0.25,latent_cross_instrument_separation_margin,0.1842310786470688,0.027181790000387264,0.1285381566517326,0.2182268950587078,15,5
+same_master_geometry,strict_core,minimal_minmax,AE,latent_same_master_cross_instrument_distance,0.44344999048765305,0.06026563354783039,0.3413365327158408,0.5562078591476902,15,5
+same_master_geometry,strict_core,minimal_minmax,DAE,latent_same_master_cross_instrument_distance,0.520043846187185,0.06389464659647212,0.3944806893585655,0.6024365037739509,15,5
+same_master_geometry,strict_core,minimal_minmax,VAE-100 β=1,latent_same_master_cross_instrument_distance,0.8576410568907512,0.03300310354540625,0.8042850127598261,0.9158969063714872,15,5
+same_master_geometry,strict_core,minimal_minmax,VAE-500 β=0.25,latent_same_master_cross_instrument_distance,0.8508615002604218,0.01756188179076644,0.8112983595208612,0.8728689643097436,15,5
+same_master_geometry,strict_core,minimal_minmax,AE,same_master_distance_delta,-0.3169472179534813,0.060692170575310254,-0.408478055601385,-0.1936067291695357,15,5
+same_master_geometry,strict_core,minimal_minmax,DAE,same_master_distance_delta,-0.24035336225394938,0.05893319528209833,-0.3580882365576818,-0.1501324221422965,15,5
+same_master_geometry,strict_core,minimal_minmax,VAE-100 β=1,same_master_distance_delta,0.09724384844961692,0.01331210370671714,0.0731355850341132,0.120644499812669,15,5
+same_master_geometry,strict_core,minimal_minmax,VAE-500 β=0.25,same_master_distance_delta,0.09046429181928754,0.014717106291554516,0.0614837712036352,0.115813950232636,15,5

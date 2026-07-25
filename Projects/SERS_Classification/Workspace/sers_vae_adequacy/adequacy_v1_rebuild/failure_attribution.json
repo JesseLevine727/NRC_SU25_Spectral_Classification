@@ -1,0 +1,203 @@
+{
+  "categories": {
+    "architecture_downsampling": {
+      "evidence": [
+        {
+          "architecture": "base_maxpool",
+          "clean_reconstruction_median_row_correlation": 0.9276923795521352,
+          "clean_repeatable_peak_recall": 0.4374139818019046,
+          "converged": true,
+          "latent_target_balanced_accuracy": 0.7114571974509454
+        },
+        {
+          "architecture": "residual_multiscale",
+          "clean_reconstruction_median_row_correlation": 0.9270427919753984,
+          "clean_repeatable_peak_recall": 0.417619848057816,
+          "converged": false,
+          "latent_target_balanced_accuracy": 0.6846776789281692
+        },
+        {
+          "architecture": "single_pool_peak",
+          "clean_reconstruction_median_row_correlation": 0.9239765381133764,
+          "clean_repeatable_peak_recall": 0.4452810409774713,
+          "converged": false,
+          "latent_target_balanced_accuracy": 0.7104829038873661
+        }
+      ],
+      "interpretation": "Neither the residual/multiscale candidate nor the single-pool peak-preserving candidate produced a converged, consistent improvement over the base backbone.",
+      "verdict": "not_supported_as_primary_failure"
+    },
+    "convergence": {
+      "evidence": {
+        "epoch300_converged": false,
+        "epoch500_converged": true,
+        "epoch500_median_relative_elbo_improvement_final_50": 0.0025432072233069,
+        "outer_strict_balanced_accuracy_change_vs_100": 0.00015496730093012,
+        "outer_strict_correlation_change_vs_100": 0.04203989403125907,
+        "outer_strict_peak_recall_change_vs_100": 0.06023273258655132
+      },
+      "interpretation": "The 100-epoch boundary was premature for spectral preservation, but extending training alone did not improve ordinary strict-core classification materially.",
+      "verdict": "confirmed_material_contributor"
+    },
+    "data_coverage_domain_shift": {
+      "evidence": {
+        "field_stress_arpls_balanced_accuracy": 0.36854497354497356,
+        "poster_arpls_balanced_accuracy": 0.7877777777777778,
+        "strict_instrument_and_sample_balanced_accuracy": 0.5963743005778698,
+        "strict_sensor_and_sample_balanced_accuracy": 0.5843171534348005
+      },
+      "interpretation": "Field stress and unseen sensor families remain much harder than grouped clean cohorts. Quality filtering does not erase the sensor-family failure.",
+      "verdict": "dominant_unresolved_confirmatory_failure"
+    },
+    "latent_capacity_or_kl_pressure": {
+      "evidence": {
+        "beta_candidates": [
+          {
+            "beta_target": 0.25,
+            "clean_reconstruction_median_row_correlation": 0.944932968280255,
+            "clean_repeatable_peak_recall": 0.4975392010313374,
+            "converged": true,
+            "latent_instrument_probe_increment": 0.5925838599015683,
+            "latent_same_master_cross_instrument_distance": 0.7775300776245733,
+            "latent_target_balanced_accuracy": 0.6921185250812172,
+            "vae_active_units_var_mu_gt_0_01": 33.35,
+            "vae_kl_unnormalized_per_observation": 15.929997430907298
+          },
+          {
+            "beta_target": 1.0,
+            "clean_reconstruction_median_row_correlation": 0.9276923795521352,
+            "clean_repeatable_peak_recall": 0.4374139818019046,
+            "converged": true,
+            "latent_instrument_probe_increment": 0.5580526657609991,
+            "latent_same_master_cross_instrument_distance": 0.7620500620435575,
+            "latent_target_balanced_accuracy": 0.7114571974509454,
+            "vae_active_units_var_mu_gt_0_01": 7.95,
+            "vae_kl_unnormalized_per_observation": 6.5980750302597695
+          },
+          {
+            "beta_target": 4.0,
+            "clean_reconstruction_median_row_correlation": 0.876078160695761,
+            "clean_repeatable_peak_recall": 0.4070438509093569,
+            "converged": true,
+            "latent_instrument_probe_increment": 0.5046430954764288,
+            "latent_same_master_cross_instrument_distance": 0.746167020076779,
+            "latent_target_balanced_accuracy": 0.6751503140715301,
+            "vae_active_units_var_mu_gt_0_01": 12.95,
+            "vae_kl_unnormalized_per_observation": 2.825034297732412
+          }
+        ],
+        "latent_candidates": [
+          {
+            "clean_reconstruction_median_row_correlation": 0.9254823274032418,
+            "clean_repeatable_peak_recall": 0.4312467863909555,
+            "converged": false,
+            "latent_dimension": 128,
+            "latent_target_balanced_accuracy": 0.7016332791785963
+          },
+          {
+            "clean_reconstruction_median_row_correlation": 0.9279663844609156,
+            "clean_repeatable_peak_recall": 0.4437600129209592,
+            "converged": false,
+            "latent_dimension": 32,
+            "latent_target_balanced_accuracy": 0.6852707443976241
+          },
+          {
+            "clean_reconstruction_median_row_correlation": 0.9276923795521352,
+            "clean_repeatable_peak_recall": 0.4374139818019046,
+            "converged": true,
+            "latent_dimension": 64,
+            "latent_target_balanced_accuracy": 0.7114571974509454
+          }
+        ]
+      },
+      "interpretation": "Lower \u03b2 preserved spectra and peaks; higher \u03b2 suppressed instrument information but damaged chemistry and spectral fidelity. Changing latent width did not remove this tradeoff.",
+      "verdict": "strong_tradeoff_confirmed"
+    },
+    "reconstruction_objective": {
+      "evidence": [
+        {
+          "clean_reconstruction_median_row_correlation": 0.9326589253427258,
+          "clean_repeatable_peak_recall": 0.4373203787771395,
+          "latent_target_balanced_accuracy": 0.7087617246951587,
+          "reconstruction_loss": "peak_multiscale"
+        },
+        {
+          "clean_reconstruction_median_row_correlation": 0.9276923795521352,
+          "clean_repeatable_peak_recall": 0.4374139818019046,
+          "latent_target_balanced_accuracy": 0.7114571974509454,
+          "reconstruction_loss": "spectral_composite"
+        }
+      ],
+      "interpretation": "The multiscale peak-aware loss improved correlation but did not improve repeatable-peak recall and slightly reduced chemical accuracy.",
+      "verdict": "peak_aware_loss_not_a_solution"
+    },
+    "unresolved_interaction": {
+      "evidence": {
+        "failed_inner_gates": [
+          "gate_instrument_probe",
+          "gate_same_master_distance"
+        ],
+        "outer_same_master_summary": [
+          {
+            "display_model": "VAE-500 \u03b2=0.25",
+            "latent_cross_instrument_separation_margin": -0.0238698643024338,
+            "latent_same_master_cross_instrument_distance": 0.549058902546872,
+            "raw_same_master_cross_instrument_distance": 0.8775201693483049,
+            "representation": "arpls_minmax",
+            "same_master_distance_delta": -0.328461266801433,
+            "subset": "field_quality_stress"
+          },
+          {
+            "display_model": "VAE-500 \u03b2=0.25",
+            "latent_cross_instrument_separation_margin": -0.0484354672982675,
+            "latent_same_master_cross_instrument_distance": 0.684285996936932,
+            "raw_same_master_cross_instrument_distance": 0.8595390770054706,
+            "representation": "minimal_minmax",
+            "same_master_distance_delta": -0.1752530800685384,
+            "subset": "field_quality_stress"
+          },
+          {
+            "display_model": "VAE-500 \u03b2=0.25",
+            "latent_cross_instrument_separation_margin": 0.303185329951145,
+            "latent_same_master_cross_instrument_distance": 0.7295954353875863,
+            "raw_same_master_cross_instrument_distance": 0.5994438967407439,
+            "representation": "arpls_minmax",
+            "same_master_distance_delta": 0.1301515386468422,
+            "subset": "quality_pass"
+          },
+          {
+            "display_model": "VAE-500 \u03b2=0.25",
+            "latent_cross_instrument_separation_margin": 0.2247733971431335,
+            "latent_same_master_cross_instrument_distance": 0.8212025861954633,
+            "raw_same_master_cross_instrument_distance": 0.7110378403957506,
+            "representation": "minimal_minmax",
+            "same_master_distance_delta": 0.1101647457997127,
+            "subset": "quality_pass"
+          },
+          {
+            "display_model": "VAE-500 \u03b2=0.25",
+            "latent_cross_instrument_separation_margin": 0.2513126104197342,
+            "latent_same_master_cross_instrument_distance": 0.7773278827451093,
+            "raw_same_master_cross_instrument_distance": 0.6752592195847047,
+            "representation": "arpls_minmax",
+            "same_master_distance_delta": 0.1020686631604047,
+            "subset": "strict_core"
+          },
+          {
+            "display_model": "VAE-500 \u03b2=0.25",
+            "latent_cross_instrument_separation_margin": 0.1842310786470688,
+            "latent_same_master_cross_instrument_distance": 0.850861500260422,
+            "raw_same_master_cross_instrument_distance": 0.7603972084411343,
+            "representation": "minimal_minmax",
+            "same_master_distance_delta": 0.0904642918192875,
+            "subset": "strict_core"
+          }
+        ]
+      },
+      "interpretation": "The same mixed latent must reconstruct nuisance-rich spectra and support chemistry. The registered search found no setting that achieved both preservation and invariance.",
+      "verdict": "standard_mixed_latent_inadequate_for_invariance"
+    }
+  },
+  "protocol": "sers-vae-adequacy-v1",
+  "selected_configuration": "base_maxpool__z64__spectral_composite__beta0p25__constant_lr__e500"
+}
