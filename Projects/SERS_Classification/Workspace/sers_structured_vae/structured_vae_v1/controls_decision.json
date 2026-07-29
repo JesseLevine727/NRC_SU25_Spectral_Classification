@@ -1,0 +1,31 @@
+{
+  "converged": true,
+  "gate_count": 13,
+  "gate_total": 17,
+  "passes_all_gates": false,
+  "protocol": "sers-structured-vae-v1",
+  "selected_configuration": {
+    "batch_size": 64.0,
+    "beta_target": 0.25,
+    "chemical_dimension": 48,
+    "chemical_supervision_weight": 0.0,
+    "condition_decoder": false,
+    "cross_reconstruction_weight": 0.0,
+    "dependence_weight": 0.0,
+    "gradient_clip_norm": 5.0,
+    "instrument_adversary_weight": 0.0,
+    "instrument_supervision_weight": 0.0,
+    "kl_normalization_divisor": 1401.0,
+    "learning_rate": 0.001,
+    "maximum_epoch": 500.0,
+    "nuisance_dimension": 16,
+    "same_master_consistency_weight": 0.0,
+    "sensor_adversary_weight": 0.0,
+    "sensor_supervision_weight": 0.0,
+    "weight_decay": 1e-05
+  },
+  "selected_identifier": "zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0__e500",
+  "selection_used_locked_outcomes": false,
+  "selection_utility": 0.34259182775710384,
+  "stage": "controls"
+}

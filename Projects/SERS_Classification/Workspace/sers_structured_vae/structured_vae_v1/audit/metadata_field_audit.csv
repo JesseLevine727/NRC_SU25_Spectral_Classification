@@ -1,0 +1,33 @@
+field,semantic_role,nonmissing,missing,coverage_fraction,unique_nonmissing,largest_level_count,smallest_level_count,top_levels
+target_analyte,chemical target,598,0,1.0,7,120,54,benzyl_fentanyl:120; 4_ANPP:102; 4_nitrophenol:92; blank:87; acetaminophen:81; ethanol:62; ethyl_paraoxon:54
+instrument,primary nuisance/domain,598,0,1.0,10,98,23,Pendar-2:98; Mira-2:75; Agilent-3:73; Mira-3:72; Pendar-3:70; RMX-2:65; RMX-1:47; Pendar-1:46
+sensor_family,primary nuisance/domain,598,0,1.0,4,324,23,pSERS_Metrohm_silver:324; H_SERS_H_Kit:153; NRC_Canadian_SERS:98; GaN_polymer:23
+sensor_variant,nested sensor nuisance,598,0,1.0,10,324,1,pSERS:324; HKit:153; NRC_unspecified:59; NRC_H2:25; NRC_ANH2:13; AgGaN:9; AuGaN:6; AgPol:6
+master_sample_id,physical-sample grouping/pair identity,598,0,1.0,69,20,1,51.0:20; 56.0:19; 28.0:18; 36.0:18; 50.0:16; 12.0:15; 58.0:15; 61.0:14
+team,operator/team nuisance candidate,598,0,1.0,3,229,166,B:229; C:203; A:166
+operator_initials,operator nuisance candidate,598,0,1.0,15,110,1,SW:110; AF:90; SK:60; NL:53; BB:52; MB:46; SM:44; TD:41
+station,matrix/scenario factor; chemically confounded,598,0,1.0,3,208,182,pills:208; cwa:208; surfaces:182
+sample_matrix,matrix factor; chemically confounded,598,0,1.0,3,208,182,pill:208; cwa_solution:208; field_surface_coupon:182
+carrier_geometry,partial surface geometry,182,416,0.30434782608695654,2,119,63,Hexa_L:119; Square_P:63
+nominal_concentration,partial chemical covariate,177,421,0.2959866220735786,3,108,31,3 mM:108; 4 mM:38; 5%:31
+session,trial-session nuisance candidate,598,0,1.0,3,262,141,3:262; 2:195; 1:141
+paper_sheet,worksheet/proxy only,598,0,1.0,12,82,15,5:82; 3:79; 8:61; 4:60; 7:60; 2:55; 6:53; 9:45
+scenario,scenario/proxy only,598,0,1.0,17,61,8,C1:61; S2:53; C2:53; C3:52; P3:50; S1:46; P2:45; P1:43
+source_format,instrument-derived file format,598,0,1.0,4,214,102,"Pendar two-column CSV:214; Mira two-column CSV:170; RMX metadata TXT: processed spectrum + dark spectrum:112; Agilent aggregate CSV: Xaxis,SORS,bZero,bOffset:102"
+instrument_serial,partial instrument identity,486,112,0.8127090301003345,8,98,23,B446:98; 192601100201104:75; RES90152:73; 192601100601640:72; B431:70; B440:46; RES90090:29; 192600200502138:23
+firmware_package,partial instrument-specific acquisition,170,428,0.2842809364548495,2,147,23,8.0.3.56:147; 8.1.3.55:23
+integration_time,partial acquisition covariate,170,428,0.2842809364548495,147,12,1,10.00 s:12; 2.72 s:2; 2.67 s:2; 1.93 s:2; 1.12 s:2; 2.87 s:2; 6.43 s:2; 1.59 s:2
+averages,partial acquisition covariate,170,428,0.2842809364548495,3,108,1,3.0:108; 1.0:61; 6.0:1
+laser_power,constant where observed,170,428,0.2842809364548495,1,170,170,5.0:170
+smart_tip_type,partial instrument-specific acquisition,170,428,0.2842809364548495,4,161,1,"Intelligent UA, Surface (Position 1):161; Intelligent UA, Bottle (Position 3):6; Stand Off Attachment Lens:2; Intelligent UA, Bag (Position 2):1"
+system_suitability,partial instrument-specific QC,170,428,0.2842809364548495,3,75,23,"Pass, 2024-03-06 10:07:29-05:00:75; Pass, 2024-03-06 10:11:38-05:00:72; Fail, 2024-03-07 09:58:38-05:00:23"
+software_version,constant where observed,214,384,0.35785953177257523,1,214,214,2.4.1.170:214
+measurement_duration,partial acquisition covariate,214,384,0.35785953177257523,42,62,1,3.15 sec:62; 29.25 sec:16; 28.35 sec:15; 28.8 sec:15; 29.7 sec:15; 27.9 sec:12; 4.5 sec:7; 27.45 sec:7
+instrument_start_date,partial date/batch proxy,214,384,0.35785953177257523,4,105,3,2024-03-06:105; 2024-03-07:92; 2024-03-24:14; 2018-06-22:3
+rmx_ccdbias,RMX-only acquisition covariate,112,486,0.18729096989966554,112,1,1,998.554688:1; 994.276855:1; 992.410156:1; 991.254883:1; 990.967285:1; 991.645996:1; 996.453125:1; 994.45166:1
+rmx_ccdgain,RMX-only acquisition covariate,112,486,0.18729096989966554,2,65,47,4.313516:65; 4.045375:47
+rmx_laserwavenum,RMX-only acquisition covariate,112,486,0.18729096989966554,112,1,1,0.079729:1; 0.035684:1; -0.065385:1; -0.040656:1; -0.039825:1; -0.043819:1; 0.008436:1; -0.064106:1
+rmx_scancount,RMX-only acquisition covariate,112,486,0.18729096989966554,13,57,1,2.0:57; 3.0:23; 1.0:7; 9.0:5; 5.0:3; 6.0:3; 4.0:3; 8.0:3
+rmx_totalexposurems,RMX-only acquisition covariate,112,486,0.18729096989966554,79,12,1,3075.0:12; 6075.0:10; 75.0:7; 24075.0:5; 12075.0:3; 21075.0:2; 4949.0:1; 2103.0:1
+rmx_singleexposurems,RMX-only acquisition covariate,112,486,0.18729096989966554,73,34,1,3000.0:34; 75.0:7; 2437.0:1; 2028.0:1; 2712.0:1; 1939.0:1; 2026.0:1; 1117.0:1
+rmx_scanmode,constant for RMX,112,486,0.18729096989966554,1,112,112,Auto:112

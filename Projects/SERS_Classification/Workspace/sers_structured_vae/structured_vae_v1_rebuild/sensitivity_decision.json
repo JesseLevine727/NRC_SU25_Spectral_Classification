@@ -1,0 +1,11 @@
+{
+  "configuration": "zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0p001__e500",
+  "locked_outcomes_used": false,
+  "minimal_sensitivity_can_change_selection": false,
+  "protocol": "sers-structured-vae-v1",
+  "quality_arpls_mean_ba_delta_vs_strict_arpls": 0.051234185670582334,
+  "quality_drop_limit": 0.05,
+  "quality_sensitivity_passed": true,
+  "selection_remains_closed": true,
+  "strict_minimal_mean_ba_delta_vs_strict_arpls": -0.03940455696595367
+}

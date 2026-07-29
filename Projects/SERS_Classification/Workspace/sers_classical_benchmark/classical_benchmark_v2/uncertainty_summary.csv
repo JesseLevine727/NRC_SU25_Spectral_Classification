@@ -1,0 +1,19 @@
+training_subset,evaluation_subset,metric,independent_unit,mean,sd,ci95_half_width,n_independent_units
+quality_pass,field_quality_stress,balanced_accuracy,outer master-group fold,0.47785714285714287,0.14478374591569557,0.17977276482860047,5
+quality_pass,field_quality_stress,macro_f1,outer master-group fold,0.39746715273031064,0.10033936558400353,0.124587777848263,5
+quality_pass,field_quality_stress,accuracy,outer master-group fold,0.41164274322169064,0.09105349621035566,0.11305784815498149,5
+quality_pass,field_quality_stress,negative_log_likelihood,outer master-group fold,2.1706203206886325,0.6271644678978858,0.7787275407414251,5
+quality_pass,field_quality_stress,brier_multiclass,outer master-group fold,0.8401631602019852,0.13014238045627116,0.16159310845308905,5
+quality_pass,field_quality_stress,expected_calibration_error_10,outer master-group fold,0.3278600318569439,0.08950730311261126,0.11113799585124112,5
+quality_pass,quality_pass,balanced_accuracy,outer master-group fold,0.7449411155115634,0.06935581279614848,0.0861166158151375,5
+quality_pass,quality_pass,macro_f1,outer master-group fold,0.7196395572888103,0.06694191755105737,0.08311936899387262,5
+quality_pass,quality_pass,accuracy,outer master-group fold,0.7541967541100053,0.05147518151575721,0.06391487968911959,5
+quality_pass,quality_pass,negative_log_likelihood,outer master-group fold,0.8249205495769768,0.21020324850509275,0.2610018059742529,5
+quality_pass,quality_pass,brier_multiclass,outer master-group fold,0.3533127913904736,0.07363605535874863,0.09143123890869755,5
+quality_pass,quality_pass,expected_calibration_error_10,outer master-group fold,0.08185220577175784,0.02728425187003948,0.03387787326495175,5
+strict_core,strict_core,balanced_accuracy,outer master-group fold,0.6854684585328588,0.05354583436444668,0.06648593478411538,5
+strict_core,strict_core,macro_f1,outer master-group fold,0.6760432385204974,0.05248677748567214,0.06517094198569098,5
+strict_core,strict_core,accuracy,outer master-group fold,0.702394613198492,0.050653764972127174,0.0628949563393652,5
+strict_core,strict_core,negative_log_likelihood,outer master-group fold,0.8566408897015538,0.12231237089798794,0.1518708674789774,5
+strict_core,strict_core,brier_multiclass,outer master-group fold,0.39676135525160194,0.06405767732664598,0.07953811174504986,5
+strict_core,strict_core,expected_calibration_error_10,outer master-group fold,0.10028856290508839,0.020234817917738377,0.025124844918664197,5

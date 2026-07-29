@@ -1,0 +1,67 @@
+{
+  "convergence": {
+    "inner_selected": {
+      "converged": true,
+      "fraction_folds_improving_at_least_1_percent": 0.15,
+      "median_final50_relative_improvement": 0.001572406930546
+    },
+    "interpretation": "The selected inner configuration satisfies the registered convergence criterion. A minority of locked fits remain at the 1% boundary, but median validation objective does not improve over the final 50 epochs; undertraining is not the primary explanation for partition dependence or domain failure.",
+    "locked_outer": {
+      "fraction_runs_improving_at_least_1_percent": 0.25,
+      "fraction_runs_worsening": 0.5,
+      "maximum_final50_relative_improvement": 0.023088402001509394,
+      "mean_final50_relative_improvement": 0.0003891820078833757,
+      "median_final50_relative_improvement": -0.0006016502146584284,
+      "run_count": 20
+    }
+  },
+  "domain_transfer": {
+    "quality_domain_only_instrument_ba": 0.6334187468913446,
+    "quality_domain_only_sensor_ba": 0.34407958131131683,
+    "strict_domain_only_instrument_ba": 0.6127569523953622,
+    "strict_domain_only_sensor_ba": 0.38395276551882
+  },
+  "failed_selected_gates": [
+    "gate_same_master",
+    "gate_fold_chemical_direction"
+  ],
+  "idea_worked_as_disentanglement": false,
+  "idea_worked_as_general_nuisance_filter": false,
+  "inner_partial_effect": {
+    "chemical_balanced_accuracy": 0.6670112720585506,
+    "cross_covariance_mean_square": 0.0247907829554733,
+    "instrument_probe_increment": 0.5425116075897326,
+    "maximum_canonical_correlation": 0.9902884388246932,
+    "same_master_distance": 0.7826932600906367
+  },
+  "locked_outer_arpls": {
+    "field_stress_chemical_ba": 0.3267460317460317,
+    "field_stress_reconstruction_correlation": 0.3929328447676753,
+    "quality_chemical_ba": 0.7278185555318605,
+    "quality_instrument_probe": 0.5912498289545702,
+    "strict_chemical_ba": 0.6808285249674593,
+    "strict_instrument_probe": 0.5842414438247772,
+    "strict_nuisance_partition_chemical_ba": 0.5856709014533467,
+    "strict_partition_maximum_canonical_correlation": 0.9944398065652381,
+    "strict_same_master_distance": 0.7738905458817434
+  },
+  "poster_descriptive": {
+    "arpls_chemical_ba": 0.7533333333333333,
+    "interpretation": "Architecture transfer is viable, but nuisance partition chemistry and approximately unit canonical correlation preclude a disentanglement claim.",
+    "minimal_chemical_ba": 0.7783333333333333
+  },
+  "protocol": "sers-structured-vae-v1",
+  "selected_by_hierarchy": "zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0p001__e500",
+  "selected_gate_count": 15,
+  "selected_gate_total": 17,
+  "selected_passes_all_gates": false,
+  "terminal_classification": "unsuccessful",
+  "why": [
+    "No registered inner candidate passed every eligibility gate.",
+    "The selected dependence penalty reduced covariance but left maximum canonical correlation near one.",
+    "The nuisance partition retained substantial analyte information.",
+    "Locked instrument leakage and same-master geometry failed.",
+    "Field-stress and held-out sensor-family performance collapsed.",
+    "The chemical partition did not outperform the frozen mixed VAE or PCA/logistic comparator."
+  ]
+}

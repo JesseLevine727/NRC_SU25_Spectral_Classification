@@ -1,0 +1,175 @@
+{
+  "artifacts_compared": 21,
+  "artifacts_exact": 21,
+  "details": [
+    {
+      "artifact": "candidate_registry.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "3c16e1ebaf852598edc8b26edffbd536db6e3f716b5a324c71243aeb0bb24519",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "3c16e1ebaf852598edc8b26edffbd536db6e3f716b5a324c71243aeb0bb24519"
+    },
+    {
+      "artifact": "inner_fold_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "69659bae0770607285ba1ba8c6416d895383502dea9c579d68706ff84440a117",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "69659bae0770607285ba1ba8c6416d895383502dea9c579d68706ff84440a117"
+    },
+    {
+      "artifact": "outer_selection.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "efa83055e2dea1f3d5b25813f6fbee99266054631842caeb0a0ff576799e78f8",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "efa83055e2dea1f3d5b25813f6fbee99266054631842caeb0a0ff576799e78f8"
+    },
+    {
+      "artifact": "global_champions.json",
+      "canonical_exists": true,
+      "canonical_sha256": "22349e23bcfce6e3ac4290ad5906dc6562762f6085825c458f3a05681f4a479f",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "22349e23bcfce6e3ac4290ad5906dc6562762f6085825c458f3a05681f4a479f"
+    },
+    {
+      "artifact": "outer_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "7a48860e2997e7fe63249c85528b6646b82b15a3a099f553e5cca02ed373e6ee",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "7a48860e2997e7fe63249c85528b6646b82b15a3a099f553e5cca02ed373e6ee"
+    },
+    {
+      "artifact": "predictions.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "66198aeafa0fa9f72ddfa90e2cc6e25310f40c5741e27dc6fa5414b9875ea481",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "66198aeafa0fa9f72ddfa90e2cc6e25310f40c5741e27dc6fa5414b9875ea481"
+    },
+    {
+      "artifact": "per_class_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "0a90ba16b6df97de561adf3673d4d368f02d5f2a8cc11874fa2d8be22c1d320c",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "0a90ba16b6df97de561adf3673d4d368f02d5f2a8cc11874fa2d8be22c1d320c"
+    },
+    {
+      "artifact": "calibration_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "932b158f24c1803753a45a8467be3d5dafbfbf090a9a65db374b0a55232dbe71",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "932b158f24c1803753a45a8467be3d5dafbfbf090a9a65db374b0a55232dbe71"
+    },
+    {
+      "artifact": "selective_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "3da7913fba6f0406a56171d8521d73a9af218e98a38303c98f1fb0c9806b1ff2",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "3da7913fba6f0406a56171d8521d73a9af218e98a38303c98f1fb0c9806b1ff2"
+    },
+    {
+      "artifact": "field_stress_ood_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "c66f1a371f3dd3d4f081f9cf71c76c0601d2bd3041f209f1fda3bbc449dd6c7a",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "c66f1a371f3dd3d4f081f9cf71c76c0601d2bd3041f209f1fda3bbc449dd6c7a"
+    },
+    {
+      "artifact": "outer_domain_slices.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "53159e2f5918a94bd18caf8b56353762f45d9533e3392b395dd11d9b19eccfad",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "53159e2f5918a94bd18caf8b56353762f45d9533e3392b395dd11d9b19eccfad"
+    },
+    {
+      "artifact": "domain_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "e32180bdef55bca0087bb7b1f6cf8516b32413de7390da8dc1a9d55f0b2a5fc2",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "e32180bdef55bca0087bb7b1f6cf8516b32413de7390da8dc1a9d55f0b2a5fc2"
+    },
+    {
+      "artifact": "domain_predictions.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "19e0a90e129f78c526e977d35744ace1e158e54eb1864d0e8113ac4eb3b1321f",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "19e0a90e129f78c526e977d35744ace1e158e54eb1864d0e8113ac4eb3b1321f"
+    },
+    {
+      "artifact": "domain_per_class_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "aaea781c21277d95b5634e0df02aaf41b8537eeb533c991f9caa4bc275ffb5e2",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "aaea781c21277d95b5634e0df02aaf41b8537eeb533c991f9caa4bc275ffb5e2"
+    },
+    {
+      "artifact": "domain_selective_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "10497fa5cd4329cf4931469a22218da029b22f44c4be46b50cdc77b3b7101664",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "10497fa5cd4329cf4931469a22218da029b22f44c4be46b50cdc77b3b7101664"
+    },
+    {
+      "artifact": "learning_curve_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "f42d610ad6e7075d4eea8298ac308f6d7559df7a5997807f4336be4c36c6c890",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "f42d610ad6e7075d4eea8298ac308f6d7559df7a5997807f4336be4c36c6c890"
+    },
+    {
+      "artifact": "negative_control_metrics.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "d12ea053203d4d523760afb88fcacd2777320aee9b4523958af9bbac9811f898",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "d12ea053203d4d523760afb88fcacd2777320aee9b4523958af9bbac9811f898"
+    },
+    {
+      "artifact": "uncertainty_summary.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "004034e5d03b7cfc5acdf3ebe08a74af8c0fa059b0cfc74d58993eb4c20ffac4",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "004034e5d03b7cfc5acdf3ebe08a74af8c0fa059b0cfc74d58993eb4c20ffac4"
+    },
+    {
+      "artifact": "domain_summary.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "3640085bf2af59995c644f1b6857f29732e4044a0c7e44e3cd6f428f4f7bc54d",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "3640085bf2af59995c644f1b6857f29732e4044a0c7e44e3cd6f428f4f7bc54d"
+    },
+    {
+      "artifact": "learning_curve_summary.csv",
+      "canonical_exists": true,
+      "canonical_sha256": "2cfa696e02f906eeb722ec173056c06a07e713b5a1e351be237c8c01ea7ef373",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "2cfa696e02f906eeb722ec173056c06a07e713b5a1e351be237c8c01ea7ef373"
+    },
+    {
+      "artifact": "confusion_matrices.json",
+      "canonical_exists": true,
+      "canonical_sha256": "3119e882509e4caf3aa564a95c35ca030e4ba7c80831e0daf123f6c21a3350b5",
+      "exact": true,
+      "rebuild_exists": true,
+      "rebuild_sha256": "3119e882509e4caf3aa564a95c35ca030e4ba7c80831e0daf123f6c21a3350b5"
+    }
+  ],
+  "status": "exact_match"
+}

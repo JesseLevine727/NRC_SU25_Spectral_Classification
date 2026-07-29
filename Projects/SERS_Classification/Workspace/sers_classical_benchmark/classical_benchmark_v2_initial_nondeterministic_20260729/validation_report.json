@@ -1,0 +1,713 @@
+{
+  "checks": 141,
+  "details": [
+    {
+      "check": "copied_protocol_exists",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "copied_protocol_exact",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "artifact_hash_catalog_exists",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::FINAL_REPORT.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::FINAL_REPORT.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::calibration_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::calibration_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::candidate_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::candidate_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::domain_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::domain_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::domain_per_class_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::domain_per_class_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::domain_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::domain_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::domain_selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::domain_selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::domain_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::domain_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::environment.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::environment.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::field_stress_ood_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::field_stress_ood_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::figures/classical_benchmark_summary.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::figures/classical_benchmark_summary.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::figures/classical_benchmark_summary.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::figures/classical_benchmark_summary.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::figures/selective_domain_summary.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::figures/selective_domain_summary.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::figures/selective_domain_summary.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::figures/selective_domain_summary.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::global_champions.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::global_champions.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::inner_fold_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::inner_fold_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::input_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::input_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::learning_curve_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::learning_curve_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::learning_curve_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::learning_curve_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::negative_control_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::negative_control_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::outer_domain_slices.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_domain_slices.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::outer_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::outer_selection.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_selection.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::per_class_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::per_class_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::predeclared_protocol.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::predeclared_protocol.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_file_exists::uncertainty_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::uncertainty_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::input_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::environment.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::candidate_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::inner_fold_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::outer_selection.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::global_champions.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::outer_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::per_class_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::calibration_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::domain_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::domain_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::learning_curve_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::negative_control_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::artifact_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required_output::validation_report.json",
+      "detail": "created by this validator",
+      "passed": true
+    },
+    {
+      "check": "required_output::FINAL_REPORT.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::field_stress_ood_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::outer_domain_slices.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::domain_per_class_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::domain_selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::uncertainty_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::domain_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::learning_curve_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::figures/classical_benchmark_summary.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::figures/classical_benchmark_summary.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::figures/selective_domain_summary.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "derived_output::figures/selective_domain_summary.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "candidate_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "candidate_ids_unique",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "candidate_families",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "candidate_representations",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "inner_metric_count",
+      "detail": "observed=4560",
+      "passed": true
+    },
+    {
+      "check": "all_inner_candidates_pass",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "inner_unique_runs",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "inner_balanced_accuracy_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "inner_macro_f1_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "inner_accuracy_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_selection_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_selection_unique",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "selected_candidates_registered",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "global_champion_subsets",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_metric_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_scenarios",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_balanced_accuracy_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_macro_f1_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_accuracy_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_negative_log_likelihood_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_brier_multiclass_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_expected_calibration_error_10_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "prediction_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "prediction_rows::strict_core::strict_core",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "prediction_uid_unique::strict_core::strict_core",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "prediction_rows::quality_pass::quality_pass",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "prediction_uid_unique::quality_pass::quality_pass",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "prediction_rows::quality_pass::field_quality_stress",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "prediction_uid_unique::quality_pass::field_quality_stress",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stress_trained_only_on_quality",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "confidence_bounds",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "per_class_nonempty",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "calibration_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "calibration_methods",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "selective_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_metric_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_balanced_accuracy_finite_when_supported",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_balanced_accuracy_undefined_without_support",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_macro_f1_finite_when_supported",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_macro_f1_undefined_without_support",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_accuracy_finite_when_supported",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_accuracy_undefined_without_support",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_prediction_membership_exact",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "learning_curve_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "learning_balanced_accuracy_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "learning_macro_f1_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "learning_accuracy_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "negative_control_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "negative_balanced_accuracy_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "negative_macro_f1_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "negative_accuracy_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_master_groups_disjoint",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "strict_quality_stress_counts",
+      "detail": "",
+      "passed": true
+    }
+  ],
+  "failed": 0,
+  "passed": 141,
+  "status": "pass"
+}

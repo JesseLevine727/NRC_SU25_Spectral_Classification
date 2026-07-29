@@ -1,0 +1,27 @@
+{
+  "all_applicable_controls_passed": true,
+  "chemical_group_permutation": {
+    "applicable": true,
+    "fold_count": 20,
+    "maximum_balanced_accuracy": 0.21827508191605557,
+    "mean_balanced_accuracy": 0.16178275931610267,
+    "passed": true,
+    "registered_per_fold_maximum": 0.25
+  },
+  "frozen_configuration": "zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0p001__e500",
+  "nuisance_label_permutation": {
+    "applicable": false,
+    "reason": "The frozen dependence-only objective has zero nuisance-label and adversarial weights; permuting those labels cannot alter its optimized objective."
+  },
+  "pair_identity_permutation": {
+    "applicable": false,
+    "reason": "The frozen dependence-only objective has zero pair and cross-reconstruction weights; partner identities cannot alter its optimized objective."
+  },
+  "protocol": "sers-structured-vae-v1",
+  "zero_structure_reference": {
+    "applicable": true,
+    "identity_control_gate": true,
+    "reference_identifier": "zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0__e500",
+    "reference_stage": "controls"
+  }
+}

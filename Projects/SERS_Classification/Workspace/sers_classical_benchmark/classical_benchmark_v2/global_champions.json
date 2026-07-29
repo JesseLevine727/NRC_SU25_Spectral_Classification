@@ -1,0 +1,250 @@
+{
+  "quality_pass": {
+    "candidate_id": "derivative_1__pca_logistic__a6ef1b1b0c",
+    "candidate_order": 82,
+    "folds_evaluated": 20,
+    "mean_balanced_accuracy": 0.753446053034358,
+    "mean_macro_f1": 0.7347293337678116,
+    "model_family": "pca_logistic",
+    "parameters_json": "{\"C\": 0.1, \"pca_components\": 32, \"pca_whiten\": true}",
+    "representation": "derivative_1",
+    "sd_balanced_accuracy": 0.07430847222385782,
+    "selection_source": "20 nested inner folds; no outer/stress/domain outcomes",
+    "top_10": [
+      {
+        "candidate_id": "derivative_1__pca_logistic__a6ef1b1b0c",
+        "candidate_order": 82,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.753446053034358,
+        "mean_macro_f1": 0.7347293337678116,
+        "model_family": "pca_logistic",
+        "parameters_json": "{\"C\": 0.1, \"pca_components\": 32, \"pca_whiten\": true}",
+        "representation": "derivative_1",
+        "sd_balanced_accuracy": 0.07430847222385782
+      },
+      {
+        "candidate_id": "derivative_1__rbf_svm__08b1cb6123",
+        "candidate_order": 109,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7440045925796989,
+        "mean_macro_f1": 0.7215670952303815,
+        "model_family": "rbf_svm",
+        "parameters_json": "{\"C\": 3.0, \"gamma\": 0.0001}",
+        "representation": "derivative_1",
+        "sd_balanced_accuracy": 0.0701882265173833
+      },
+      {
+        "candidate_id": "arpls_minmax__elastic_net_logistic__f87472b166",
+        "candidate_order": 12,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7429178896545683,
+        "mean_macro_f1": 0.7218714658631089,
+        "model_family": "elastic_net_logistic",
+        "parameters_json": "{\"C\": 0.3, \"l1_ratio\": 0.1}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.05829331146666905
+      },
+      {
+        "candidate_id": "arpls_minmax__pca_logistic__0dd07f07ad",
+        "candidate_order": 7,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7427684863264301,
+        "mean_macro_f1": 0.7226790802591423,
+        "model_family": "pca_logistic",
+        "parameters_json": "{\"C\": 1.0, \"pca_components\": 32, \"pca_whiten\": true}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.04900606953677698
+      },
+      {
+        "candidate_id": "arpls_minmax__elastic_net_logistic__1dc6cdd559",
+        "candidate_order": 17,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7407714848806709,
+        "mean_macro_f1": 0.7180112165357089,
+        "model_family": "elastic_net_logistic",
+        "parameters_json": "{\"C\": 3.0, \"l1_ratio\": 0.9}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.052145024676883575
+      },
+      {
+        "candidate_id": "minimal_minmax__pca_logistic__0dd07f07ad",
+        "candidate_order": 45,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7404830595378977,
+        "mean_macro_f1": 0.7147916801573656,
+        "model_family": "pca_logistic",
+        "parameters_json": "{\"C\": 1.0, \"pca_components\": 32, \"pca_whiten\": true}",
+        "representation": "minimal_minmax",
+        "sd_balanced_accuracy": 0.04934580892164488
+      },
+      {
+        "candidate_id": "arpls_minmax__pca_logistic__a6ef1b1b0c",
+        "candidate_order": 6,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.73986611353214,
+        "mean_macro_f1": 0.7134388005895489,
+        "model_family": "pca_logistic",
+        "parameters_json": "{\"C\": 0.1, \"pca_components\": 32, \"pca_whiten\": true}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.054057918452406935
+      },
+      {
+        "candidate_id": "minimal_minmax__shrinkage_lda__cc4521ca8a",
+        "candidate_order": 58,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7389512474376809,
+        "mean_macro_f1": 0.7164729350747463,
+        "model_family": "shrinkage_lda",
+        "parameters_json": "{\"shrinkage\": 0.1}",
+        "representation": "minimal_minmax",
+        "sd_balanced_accuracy": 0.057720870779505114
+      },
+      {
+        "candidate_id": "arpls_minmax__elastic_net_logistic__ab48501425",
+        "candidate_order": 16,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7389244628550774,
+        "mean_macro_f1": 0.7153630186831692,
+        "model_family": "elastic_net_logistic",
+        "parameters_json": "{\"C\": 3.0, \"l1_ratio\": 0.5}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.05929256964130995
+      },
+      {
+        "candidate_id": "minimal_minmax__shrinkage_lda__ec5a70e192",
+        "candidate_order": 56,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7378941760584046,
+        "mean_macro_f1": 0.7168066663121201,
+        "model_family": "shrinkage_lda",
+        "parameters_json": "{\"shrinkage\": \"auto\"}",
+        "representation": "minimal_minmax",
+        "sd_balanced_accuracy": 0.05622328042538926
+      }
+    ]
+  },
+  "strict_core": {
+    "candidate_id": "arpls_minmax__pca_logistic__a6ef1b1b0c",
+    "candidate_order": 6,
+    "folds_evaluated": 20,
+    "mean_balanced_accuracy": 0.7099937340364767,
+    "mean_macro_f1": 0.698225936237528,
+    "model_family": "pca_logistic",
+    "parameters_json": "{\"C\": 0.1, \"pca_components\": 32, \"pca_whiten\": true}",
+    "representation": "arpls_minmax",
+    "sd_balanced_accuracy": 0.05020353359110255,
+    "selection_source": "20 nested inner folds; no outer/stress/domain outcomes",
+    "top_10": [
+      {
+        "candidate_id": "arpls_minmax__pca_logistic__a6ef1b1b0c",
+        "candidate_order": 6,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7099937340364767,
+        "mean_macro_f1": 0.698225936237528,
+        "model_family": "pca_logistic",
+        "parameters_json": "{\"C\": 0.1, \"pca_components\": 32, \"pca_whiten\": true}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.05020353359110255
+      },
+      {
+        "candidate_id": "arpls_minmax__shrinkage_lda__b63bb581c7",
+        "candidate_order": 21,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7077145405718468,
+        "mean_macro_f1": 0.6990351145853122,
+        "model_family": "shrinkage_lda",
+        "parameters_json": "{\"shrinkage\": 0.5}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.05484009621683252
+      },
+      {
+        "candidate_id": "arpls_minmax__pca_logistic__0dd07f07ad",
+        "candidate_order": 7,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.707423199312583,
+        "mean_macro_f1": 0.6935685183842681,
+        "model_family": "pca_logistic",
+        "parameters_json": "{\"C\": 1.0, \"pca_components\": 32, \"pca_whiten\": true}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.04756077992410153
+      },
+      {
+        "candidate_id": "derivative_1__pca_logistic__a6ef1b1b0c",
+        "candidate_order": 82,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7063076692567539,
+        "mean_macro_f1": 0.696515906254508,
+        "model_family": "pca_logistic",
+        "parameters_json": "{\"C\": 0.1, \"pca_components\": 32, \"pca_whiten\": true}",
+        "representation": "derivative_1",
+        "sd_balanced_accuracy": 0.037873145038947835
+      },
+      {
+        "candidate_id": "arpls_minmax__pls_da__8a5445fad5",
+        "candidate_order": 25,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7035715001191464,
+        "mean_macro_f1": 0.6973058631173666,
+        "model_family": "pls_da",
+        "parameters_json": "{\"components\": 16}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.04544236670457841
+      },
+      {
+        "candidate_id": "minimal_minmax__pls_da__8a5445fad5",
+        "candidate_order": 63,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7032446427024721,
+        "mean_macro_f1": 0.6951517937940644,
+        "model_family": "pls_da",
+        "parameters_json": "{\"components\": 16}",
+        "representation": "minimal_minmax",
+        "sd_balanced_accuracy": 0.03902944689346394
+      },
+      {
+        "candidate_id": "arpls_minmax__elastic_net_logistic__0ef7c42cbc",
+        "candidate_order": 9,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7028358117582537,
+        "mean_macro_f1": 0.6901810217901478,
+        "model_family": "elastic_net_logistic",
+        "parameters_json": "{\"C\": 0.03, \"l1_ratio\": 0.1}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.0617142999561571
+      },
+      {
+        "candidate_id": "derivative_1__pca_logistic__0dd07f07ad",
+        "candidate_order": 83,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7019420652583042,
+        "mean_macro_f1": 0.6918693993658309,
+        "model_family": "pca_logistic",
+        "parameters_json": "{\"C\": 1.0, \"pca_components\": 32, \"pca_whiten\": true}",
+        "representation": "derivative_1",
+        "sd_balanced_accuracy": 0.04607953036847822
+      },
+      {
+        "candidate_id": "arpls_minmax__elastic_net_logistic__b082a5041e",
+        "candidate_order": 13,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.7018550854860515,
+        "mean_macro_f1": 0.6913590235328917,
+        "model_family": "elastic_net_logistic",
+        "parameters_json": "{\"C\": 0.3, \"l1_ratio\": 0.5}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.05449902354340285
+      },
+      {
+        "candidate_id": "arpls_minmax__rbf_svm__fa9a146187",
+        "candidate_order": 36,
+        "folds_evaluated": 20,
+        "mean_balanced_accuracy": 0.70182767851904,
+        "mean_macro_f1": 0.6933101835869707,
+        "model_family": "rbf_svm",
+        "parameters_json": "{\"C\": 30.0, \"gamma\": 0.0001}",
+        "representation": "arpls_minmax",
+        "sd_balanced_accuracy": 0.040668066868585616
+      }
+    ]
+  }
+}

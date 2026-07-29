@@ -1,0 +1,69 @@
+{
+  "adversarial_instability": {
+    "evidence": "The internal adversary objective does not monotonically reduce the independent target-adjusted domain probe.",
+    "fold_fraction_improving_instrument": 0.65,
+    "fold_fraction_preserving_chemical": 0.55,
+    "primary_failure": true,
+    "selected_instrument_probe": 0.5801318394287145
+  },
+  "capacity_or_depth": {
+    "architecture": {
+      "chemical_dimension": 48,
+      "encoder_channels": [
+        8,
+        16
+      ],
+      "nuisance_dimension": 16,
+      "pooling_stages": 2,
+      "selected_parameter_count": 1169412,
+      "standard_vae_parameter_count": 1082353,
+      "total_latent_dimension": 64
+    },
+    "evidence": "The union latent approximately reproduces mixed-VAE classification, reconstruction and posterior activity. Capacity is sufficient to encode the spectra, but the objective does not identify a unique chemical/nuisance split.",
+    "primary_failure": false
+  },
+  "data_identifiability_and_shift": {
+    "evidence": [
+      "Analyte\u00d7instrument and analyte\u00d7sensor support is incomplete.",
+      "Sensor family is strongly confounded with analyte.",
+      "No independent preparation identifier is available.",
+      "Field-stress reconstruction and classification collapse.",
+      "Held-out sensor-family transfer is poor."
+    ],
+    "primary_failure": true
+  },
+  "pair_overalignment": {
+    "chemical_balanced_accuracy": 0.6547379938039877,
+    "different_class_separation_margin": 0.0022361172492069,
+    "evidence": "Pair loss drives same-master distance near zero but also drives different-analyte separation near zero; invariance is obtained by compressing chemistry.",
+    "primary_failure": true,
+    "same_master_distance": 0.0081748317780822
+  },
+  "partition_non_identifiability": {
+    "control_maximum_canonical_correlation": 0.9969918849573992,
+    "evidence": "A batchwise linear covariance penalty lowers mean-square cross-covariance but leaves an almost perfectly predictable linear combination between partitions.",
+    "primary_failure": true,
+    "selected_cross_covariance": 0.0247907829554733,
+    "selected_maximum_canonical_correlation": 0.9902884388246932
+  },
+  "terminal_classification": "unsuccessful",
+  "undertraining": {
+    "evidence": {
+      "inner_selected": {
+        "converged": true,
+        "fraction_folds_improving_at_least_1_percent": 0.15,
+        "median_final50_relative_improvement": 0.001572406930546
+      },
+      "interpretation": "The selected inner configuration satisfies the registered convergence criterion. A minority of locked fits remain at the 1% boundary, but median validation objective does not improve over the final 50 epochs; undertraining is not the primary explanation for partition dependence or domain failure.",
+      "locked_outer": {
+        "fraction_runs_improving_at_least_1_percent": 0.25,
+        "fraction_runs_worsening": 0.5,
+        "maximum_final50_relative_improvement": 0.023088402001509394,
+        "mean_final50_relative_improvement": 0.0003891820078833757,
+        "median_final50_relative_improvement": -0.0006016502146584284,
+        "run_count": 20
+      }
+    },
+    "primary_failure": false
+  }
+}

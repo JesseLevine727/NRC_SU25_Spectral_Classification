@@ -1,0 +1,52 @@
+{
+  "candidate_stages_completed": [
+    "controls",
+    "instrument_adversary",
+    "pair",
+    "dependence"
+  ],
+  "claim_ceiling_after_inner_selection": "unsuccessful; locked evaluation is characterization only",
+  "combination": {
+    "eligible_mechanism_count": 0,
+    "opened": false,
+    "reason": "Closed: fewer than two individually eligible mechanisms are available."
+  },
+  "domain_used": false,
+  "eligible_candidate_count": 0,
+  "field_quality_stress_used": false,
+  "outer_used": false,
+  "poster_used": false,
+  "protocol": "sers-structured-vae-v1",
+  "selected_by_registered_hierarchy": "zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0p001__e500",
+  "selected_configuration": {
+    "batch_size": 64.0,
+    "beta_target": 0.25,
+    "chemical_dimension": 48,
+    "chemical_supervision_weight": 0.0,
+    "condition_decoder": false,
+    "cross_reconstruction_weight": 0.0,
+    "dependence_weight": 0.001,
+    "gradient_clip_norm": 5.0,
+    "instrument_adversary_weight": 0.0,
+    "instrument_supervision_weight": 0.0,
+    "kl_normalization_divisor": 1401.0,
+    "learning_rate": 0.001,
+    "maximum_epoch": 500.0,
+    "nuisance_dimension": 16,
+    "same_master_consistency_weight": 0.0,
+    "sensor_adversary_weight": 0.0,
+    "sensor_supervision_weight": 0.0,
+    "weight_decay": 1e-05
+  },
+  "selected_converged": true,
+  "selected_gate_count": 15,
+  "selected_gate_total": 17,
+  "selected_passes_all_gates": false,
+  "selected_source_stage": "dependence",
+  "selection_closed": true,
+  "selection_used_locked_outcomes": false,
+  "sensor_adversary": {
+    "opened": false,
+    "reason": "Closed: no instrument-adversarial candidate passed every gate while preserving chemistry and improving the instrument probe."
+  }
+}

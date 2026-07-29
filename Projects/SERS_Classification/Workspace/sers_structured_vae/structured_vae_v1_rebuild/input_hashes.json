@@ -1,0 +1,26 @@
+{
+  "adequacy_artifact_catalog": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_vae_adequacy/adequacy_v1/artifact_hashes.json",
+    "sha256": "8d0e9211fb8992e6fa4f1079d36f43452b3762ebb7cd9394a9c416142c62c7c3"
+  },
+  "adequacy_selected_configuration": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_vae_adequacy/adequacy_v1/selected_configuration.json",
+    "sha256": "52b718d6309a9e16ba2a3ffd9946b3d8f57902a76d20814f81f3c9f06140bb64"
+  },
+  "metadata_audit_summary": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_structured_vae/structured_vae_v1_rebuild/audit/audit_summary.json",
+    "sha256": "d3b2aee731e4799289562a8a2a720413d8887574655b1b05c81be6580284a573"
+  },
+  "nato_artifact_catalog": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/artifact_hashes.json",
+    "sha256": "2f7f03b7caf7a08cda0ee70a06ea7ba66fdd59a4ccc8751c1ffe4d46b109db24"
+  },
+  "protocol": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/sers_structured_vae_v1.json",
+    "sha256": "bec5ef94dd5baf915d24b6ac697e27af432f6e726c8075a9d96991260a03379a"
+  },
+  "protocol_document": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/docs/SERS_STRUCTURED_VAE_PROTOCOL_V1.md",
+    "sha256": "b8f6aeceb63b44344a203c76ded2310a153db5e8f03eebaeb6dfad3ca1859731"
+  }
+}

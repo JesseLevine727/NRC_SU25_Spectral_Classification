@@ -1,0 +1,17 @@
+{
+  "cross_instrument_pairs": 2473,
+  "cross_sensor_pairs": 1171,
+  "identifiability_claim_ceiling": "structured_or_nuisance_suppressed_without_convergent_multi_evidence_support",
+  "instruments": 10,
+  "master_samples": 69,
+  "nested_assignments_sha256": "89548c6a72e6240eb1460632f32c625d5badc92fd10f0cdd024d18e0a1a6b59c",
+  "protocol_family": "sers-structured-vae-v1",
+  "sensor_families": 4,
+  "source_manifest": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/core_preprocessing_manifest.csv",
+  "source_manifest_sha256": "beab98eb36b0817d0605e2446d063af1a151418920a61d23ed6badc4a3a8b56f",
+  "spectra": 598,
+  "status": "complete_before_structured_model_preregistration",
+  "target_instrument_support_fraction": 0.6285714285714286,
+  "target_sensor_support_fraction": 0.6071428571428571,
+  "targets": 7
+}

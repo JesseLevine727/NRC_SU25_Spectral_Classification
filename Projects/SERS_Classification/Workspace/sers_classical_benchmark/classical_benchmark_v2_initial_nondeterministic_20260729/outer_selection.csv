@@ -1,0 +1,11 @@
+subset,outer_fold,candidate_order,candidate_id,representation,model_family,parameters_json,mean_balanced_accuracy,mean_macro_f1,sd_balanced_accuracy,folds_evaluated
+quality_pass,0,82,derivative_1__pca_logistic__a6ef1b1b0c,derivative_1,pca_logistic,"{""C"": 0.1, ""pca_components"": 32, ""pca_whiten"": true}",0.7414598953950049,0.717407020362185,0.07108595162239023,4
+quality_pass,1,82,derivative_1__pca_logistic__a6ef1b1b0c,derivative_1,pca_logistic,"{""C"": 0.1, ""pca_components"": 32, ""pca_whiten"": true}",0.7986486844355021,0.7843384610395399,0.0707973691804727,4
+quality_pass,2,45,minimal_minmax__pca_logistic__0dd07f07ad,minimal_minmax,pca_logistic,"{""C"": 1.0, ""pca_components"": 32, ""pca_whiten"": true}",0.7570258393852706,0.7327851665280554,0.01610057120679006,4
+quality_pass,3,25,arpls_minmax__pls_da__8a5445fad5,arpls_minmax,pls_da,"{""components"": 16}",0.7544208336522001,0.746715137755295,0.06441673002702117,4
+quality_pass,4,82,derivative_1__pca_logistic__a6ef1b1b0c,derivative_1,pca_logistic,"{""C"": 0.1, ""pca_components"": 32, ""pca_whiten"": true}",0.7555398910549694,0.7331208581448714,0.09815270533419476,4
+strict_core,0,6,arpls_minmax__pca_logistic__a6ef1b1b0c,arpls_minmax,pca_logistic,"{""C"": 0.1, ""pca_components"": 32, ""pca_whiten"": true}",0.7063340086958917,0.694593549975784,0.06315589225097458,4
+strict_core,1,21,arpls_minmax__shrinkage_lda__b63bb581c7,arpls_minmax,shrinkage_lda,"{""shrinkage"": 0.5}",0.7382271039319912,0.7260109237744203,0.031249368237735952,4
+strict_core,2,63,minimal_minmax__pls_da__8a5445fad5,minimal_minmax,pls_da,"{""components"": 16}",0.7243327147499262,0.7202336539311046,0.05344888142422006,4
+strict_core,3,82,derivative_1__pca_logistic__a6ef1b1b0c,derivative_1,pca_logistic,"{""C"": 0.1, ""pca_components"": 32, ""pca_whiten"": true}",0.7111277883652435,0.7058914965840904,0.04321457893344698,4
+strict_core,4,83,derivative_1__pca_logistic__0dd07f07ad,derivative_1,pca_logistic,"{""C"": 1.0, ""pca_components"": 32, ""pca_whiten"": true}",0.7190584599737918,0.7000145820064358,0.03509919906655821,4

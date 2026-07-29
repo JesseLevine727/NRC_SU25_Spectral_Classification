@@ -1,0 +1,6 @@
+outer_fold,score,n_quality,n_stress,ood_auroc,ood_auprc
+0,one_minus_calibrated_max_probability,103,15,0.7365695792880259,0.23644053929910763
+1,one_minus_calibrated_max_probability,104,15,0.8262820512820512,0.5082753728187275
+2,one_minus_calibrated_max_probability,95,22,0.3583732057416268,0.15606220312443947
+3,one_minus_calibrated_max_probability,101,19,0.7357998957790516,0.2929624731388343
+4,one_minus_calibrated_max_probability,97,27,0.7319587628865979,0.37114609455575076

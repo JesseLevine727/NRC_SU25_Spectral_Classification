@@ -1,0 +1,13 @@
+candidate_id,name,representation,architecture,embedding_dimension,classification_weight,supervised_contrastive_weight,pair_margin_weight,contrastive_temperature,pair_margin,domain_aware_positives,hard_negative_mining,domain_balanced_batches
+domain_aware_stage1__arpls_minmax__legacy64__037801b7f02a,domain_aware_stage1,arpls_minmax,legacy,64,1.0,0.25,0.1,0.1,0.2,True,True,True
+domain_aware_stage1__arpls_minmax__legacy64__d781ab81703d,domain_aware_stage1,arpls_minmax,legacy,64,1.0,0.25,0.25,0.1,0.2,True,True,True
+domain_aware_stage1__arpls_minmax__legacy64__82bbd1ef5047,domain_aware_stage1,arpls_minmax,legacy,64,1.0,0.5,0.1,0.1,0.2,True,True,True
+domain_aware_stage1__arpls_minmax__legacy64__6832389fb131,domain_aware_stage1,arpls_minmax,legacy,64,1.0,0.5,0.25,0.1,0.2,True,True,True
+domain_aware_stage1__minimal_minmax__legacy64__4221af65625a,domain_aware_stage1,minimal_minmax,legacy,64,1.0,0.25,0.1,0.1,0.2,True,True,True
+domain_aware_stage1__minimal_minmax__legacy64__323ba3e90ba9,domain_aware_stage1,minimal_minmax,legacy,64,1.0,0.25,0.25,0.1,0.2,True,True,True
+domain_aware_stage1__minimal_minmax__legacy64__ca2cc946f2fd,domain_aware_stage1,minimal_minmax,legacy,64,1.0,0.5,0.1,0.1,0.2,True,True,True
+domain_aware_stage1__minimal_minmax__legacy64__2499ae1e3749,domain_aware_stage1,minimal_minmax,legacy,64,1.0,0.5,0.25,0.1,0.2,True,True,True
+domain_aware_stage1__derivative_1__legacy64__49f4430f6e50,domain_aware_stage1,derivative_1,legacy,64,1.0,0.25,0.1,0.1,0.2,True,True,True
+domain_aware_stage1__derivative_1__legacy64__f145e658fdd7,domain_aware_stage1,derivative_1,legacy,64,1.0,0.25,0.25,0.1,0.2,True,True,True
+domain_aware_stage1__derivative_1__legacy64__99c357563ccb,domain_aware_stage1,derivative_1,legacy,64,1.0,0.5,0.1,0.1,0.2,True,True,True
+domain_aware_stage1__derivative_1__legacy64__3e5787696911,domain_aware_stage1,derivative_1,legacy,64,1.0,0.5,0.25,0.1,0.2,True,True,True

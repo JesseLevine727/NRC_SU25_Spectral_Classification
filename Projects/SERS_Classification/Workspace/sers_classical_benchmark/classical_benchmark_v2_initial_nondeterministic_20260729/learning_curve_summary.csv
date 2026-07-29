@@ -1,0 +1,17 @@
+subset,training_group_fraction,mean_train_groups,metric,independent_unit,mean,sd,ci95_half_width,n_independent_units
+quality_pass,0.25,16.6,balanced_accuracy,outer master-group fold after averaging subsample seeds,0.6844906024441821,0.07059474099319323,0.08765494835376747,5
+quality_pass,0.25,16.6,macro_f1,outer master-group fold after averaging subsample seeds,0.6617334341658542,0.06600575410451487,0.08195696854586645,5
+quality_pass,0.5,29.2,balanced_accuracy,outer master-group fold after averaging subsample seeds,0.7173684385910604,0.06356663444595122,0.0789284014785169,5
+quality_pass,0.5,29.2,macro_f1,outer master-group fold after averaging subsample seeds,0.6903389809523945,0.06290767578940042,0.07811019623837305,5
+quality_pass,0.75,44.0,balanced_accuracy,outer master-group fold after averaging subsample seeds,0.7437282163794097,0.07008013054654046,0.08701597508905916,5
+quality_pass,0.75,44.0,macro_f1,outer master-group fold after averaging subsample seeds,0.7180103889790423,0.06910297787358671,0.08580267979430392,5
+quality_pass,1.0,55.2,balanced_accuracy,outer master-group fold after averaging subsample seeds,0.7398743568733762,0.0641314931435939,0.07962976618745209,5
+quality_pass,1.0,55.2,macro_f1,outer master-group fold after averaging subsample seeds,0.7148528146389599,0.06310452163663308,0.07835461264007776,5
+strict_core,0.25,16.6,balanced_accuracy,outer master-group fold after averaging subsample seeds,0.6233558671723104,0.051805679751626796,0.0643252474500687,5
+strict_core,0.25,16.6,macro_f1,outer master-group fold after averaging subsample seeds,0.6171277076611716,0.05066194288964232,0.06290511056512404,5
+strict_core,0.5,29.2,balanced_accuracy,outer master-group fold after averaging subsample seeds,0.6581449857456723,0.053075039199109185,0.06590136537678742,5
+strict_core,0.5,29.2,macro_f1,outer master-group fold after averaging subsample seeds,0.6496505802833823,0.05188354188102308,0.06442192605296357,5
+strict_core,0.75,44.0,balanced_accuracy,outer master-group fold after averaging subsample seeds,0.6864965416939919,0.04155075875341394,0.051592081242164,5
+strict_core,0.75,44.0,macro_f1,outer master-group fold after averaging subsample seeds,0.6765852529240363,0.04090628757813008,0.05079186458593396,5
+strict_core,1.0,55.2,balanced_accuracy,outer master-group fold after averaging subsample seeds,0.6874393580037581,0.05835885972631433,0.07246209509838808,5
+strict_core,1.0,55.2,macro_f1,outer master-group fold after averaging subsample seeds,0.6760679750660725,0.05593279998874486,0.06944974406475639,5

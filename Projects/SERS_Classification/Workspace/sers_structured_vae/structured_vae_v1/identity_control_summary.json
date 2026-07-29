@@ -1,0 +1,12 @@
+{
+  "all_checkpoint_tensors_exact": true,
+  "all_optimizer_states_exact": true,
+  "candidate": "mixed_z64_zero_structure",
+  "fold_count": 20,
+  "history_tolerance": 1e-12,
+  "identity_gate_passed": true,
+  "maximum_history_absolute_difference": 0.0,
+  "protocol": "sers-structured-vae-v1",
+  "reference": "frozen adequacy stage_2_beta beta0p25",
+  "structured_selection_permitted": true
+}

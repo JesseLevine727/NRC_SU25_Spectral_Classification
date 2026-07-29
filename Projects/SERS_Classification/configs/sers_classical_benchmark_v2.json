@@ -1,0 +1,131 @@
+{
+  "protocol_version": "sers-classical-benchmark-v2",
+  "status_before_execution": "predeclared",
+  "created_date": "2026-07-29",
+  "scientific_claim": "Leakage-safe chemical classification and calibrated selective prediction under sample, instrument, sensor, and field-quality shift; no physical disentanglement claim.",
+  "immutable_input": {
+    "bundle": "Workspace/nato_sers_field_trial/preprocessing_v2",
+    "validator": "scripts/validate_nato_sers_preprocessing_v2.py",
+    "strict_core_rows": 598,
+    "quality_pass_rows": 500,
+    "field_quality_stress_rows": 98,
+    "grouping_key": "master_sample_id",
+    "outer_fold_column": "grouped_sample_fold_5",
+    "representations": [
+      "arpls_minmax",
+      "minimal_minmax",
+      "derivative_1"
+    ],
+    "selection_roles": {
+      "strict_core": "primary nested model-selection and generalization estimate",
+      "quality_pass": "prespecified sensitivity selection and clean-development cohort",
+      "field_quality_stress": "sealed confirmation only"
+    }
+  },
+  "selection": {
+    "outer_folds": 5,
+    "inner_folds_per_outer": 4,
+    "primary_metric": "balanced_accuracy",
+    "secondary_metric": "macro_f1",
+    "tie_tolerance": 1e-12,
+    "final_tie_break": "declared candidate order",
+    "fit_components_on_training_only": true,
+    "outer_test_used_for_selection": false,
+    "field_stress_used_for_selection": false,
+    "domain_holdouts_used_for_selection": false
+  },
+  "candidate_grid": {
+    "pca_logistic": {
+      "pca_components": [8, 16, 32],
+      "pca_whiten": true,
+      "C": [0.1, 1.0, 10.0],
+      "class_weight": "balanced",
+      "maximum_iterations": 5000
+    },
+    "elastic_net_logistic": {
+      "standard_scaler": true,
+      "C": [0.03, 0.3, 3.0],
+      "l1_ratio": [0.1, 0.5, 0.9],
+      "solver": "saga",
+      "class_weight": "balanced",
+      "maximum_iterations": 8000
+    },
+    "shrinkage_lda": {
+      "standard_scaler": true,
+      "solver": "lsqr",
+      "shrinkage": ["auto", 0.01, 0.1, 0.5]
+    },
+    "pls_da": {
+      "standard_scaler": true,
+      "components": [2, 4, 8, 16],
+      "maximum_iterations": 1000,
+      "tolerance": 1e-06
+    },
+    "linear_svm": {
+      "standard_scaler": true,
+      "C": [0.03, 0.3, 3.0],
+      "class_weight": "balanced"
+    },
+    "rbf_svm": {
+      "standard_scaler": true,
+      "C": [0.3, 3.0, 30.0],
+      "gamma": ["scale", 0.0001, 0.001],
+      "class_weight": "balanced"
+    }
+  },
+  "calibration": {
+    "method": "single_temperature_softmax",
+    "temperature_bounds": [0.05, 20.0],
+    "fit_source": "cross-fitted inner-validation scores from development groups only",
+    "fallback_temperature": 1.0,
+    "metrics": ["negative_log_likelihood", "brier_multiclass", "expected_calibration_error_10"]
+  },
+  "evaluation": {
+    "metrics": [
+      "balanced_accuracy",
+      "macro_f1",
+      "per_class_recall",
+      "accuracy",
+      "negative_log_likelihood",
+      "brier_multiclass",
+      "expected_calibration_error_10"
+    ],
+    "selective_coverages": [1.0, 0.9, 0.8, 0.7, 0.5],
+    "domain_protocols": ["domain_only", "domain_and_sample"],
+    "domain_types": ["instrument", "sensor_family"],
+    "unsupported_test_classes_excluded_from_supported_metrics": true,
+    "unsupported_rows_retained_in_predictions": true
+  },
+  "learning_curves": {
+    "training_group_fractions": [0.25, 0.5, 0.75, 1.0],
+    "repeats": [1729, 2718, 3141],
+    "sampling": "target-stratified master-sample groups within each outer-development partition",
+    "configuration": "outer-fold inner-selected champion"
+  },
+  "negative_control": {
+    "type": "master-group target-label permutation",
+    "seed": 8675309,
+    "model": "strict global champion",
+    "evaluation": "five grouped outer folds"
+  },
+  "required_outputs": [
+    "input_hashes.json",
+    "environment.json",
+    "candidate_registry.csv",
+    "inner_fold_metrics.csv",
+    "outer_selection.csv",
+    "global_champions.json",
+    "outer_metrics.csv",
+    "predictions.csv",
+    "per_class_metrics.csv",
+    "calibration_metrics.csv",
+    "selective_metrics.csv",
+    "domain_metrics.csv",
+    "domain_predictions.csv",
+    "learning_curve_metrics.csv",
+    "negative_control_metrics.csv",
+    "artifact_hashes.json",
+    "validation_report.json",
+    "FINAL_REPORT.md"
+  ]
+}

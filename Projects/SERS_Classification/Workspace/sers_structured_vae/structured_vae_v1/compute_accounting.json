@@ -1,0 +1,21 @@
+{
+  "authoritative_optimizer_epoch_count": 202000,
+  "authoritative_run_counts": {
+    "dependence": 40,
+    "identity_control": 20,
+    "instrument_adversary": 60,
+    "locked_domain": 56,
+    "locked_outer": 20,
+    "locked_poster": 8,
+    "pair_alignment": 60,
+    "partition_controls": 80,
+    "preprocessing_sensitivity": 60
+  },
+  "authoritative_training_run_count": 404,
+  "diagnostic_smoke_runs_excluded": true,
+  "parameter_increase": 87059,
+  "parameter_increase_fraction": 0.08043494128070972,
+  "registered_epoch_count_per_run": 500,
+  "selected_parameter_count": 1169412,
+  "standard_vae_parameter_count": 1082353
+}

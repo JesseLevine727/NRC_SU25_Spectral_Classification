@@ -1,0 +1,25 @@
+subset,protocol,domain_type,metric,independent_unit,mean,sd,ci95_half_width,n_independent_units
+quality_pass,domain_and_sample,instrument,balanced_accuracy,heldout domain,0.6129915686165686,0.25442552014510855,0.18200505289098187,10
+quality_pass,domain_and_sample,instrument,macro_f1,heldout domain,0.4244199763199763,0.2558876280492544,0.18305098187748692,10
+quality_pass,domain_and_sample,instrument,accuracy,heldout domain,0.6341346625918665,0.25868038236004076,0.18504879796038726,10
+quality_pass,domain_and_sample,sensor_family,balanced_accuracy,heldout domain,0.5571428571428572,0.4848732213850613,4.356413052402753,2
+quality_pass,domain_and_sample,sensor_family,macro_f1,heldout domain,0.5074074074074073,0.5918745649931842,5.317781982176816,2
+quality_pass,domain_and_sample,sensor_family,accuracy,heldout domain,0.5347222222222222,0.5794347234723097,5.20601444051602,2
+quality_pass,domain_only,instrument,balanced_accuracy,heldout domain,0.6784298373516495,0.21019197515469945,0.15036228100652863,10
+quality_pass,domain_only,instrument,macro_f1,heldout domain,0.5581424805730598,0.22922640285877696,0.1639786903158398,10
+quality_pass,domain_only,instrument,accuracy,heldout domain,0.7291182759808307,0.15456227117690463,0.11056718808890934,10
+quality_pass,domain_only,sensor_family,balanced_accuracy,heldout domain,0.4975683530403307,0.2628568166266053,0.41826385244598857,4
+quality_pass,domain_only,sensor_family,macro_f1,heldout domain,0.3232038077332816,0.20976144849071002,0.33377727337010943,4
+quality_pass,domain_only,sensor_family,accuracy,heldout domain,0.5568227115483213,0.25036018188854553,0.39837891792067937,4
+strict_core,domain_and_sample,instrument,balanced_accuracy,heldout domain,0.6175870964419058,0.28097767240648497,0.2009993183795421,10
+strict_core,domain_and_sample,instrument,macro_f1,heldout domain,0.48115110152090806,0.2999973565976862,0.214605180815099,10
+strict_core,domain_and_sample,instrument,accuracy,heldout domain,0.6179995782360506,0.26962311582598836,0.19287675791544917,10
+strict_core,domain_and_sample,sensor_family,balanced_accuracy,heldout domain,0.5905575361457714,0.3955421675832464,0.9825812150810113,3
+strict_core,domain_and_sample,sensor_family,macro_f1,heldout domain,0.45195202479259056,0.478045266539789,1.187530274535228,3
+strict_core,domain_and_sample,sensor_family,accuracy,heldout domain,0.6020066889632106,0.42530182884532314,1.0565083119110514,3
+strict_core,domain_only,instrument,balanced_accuracy,heldout domain,0.6286419374743787,0.18073131081441868,0.12928739131622508,10
+strict_core,domain_only,instrument,macro_f1,heldout domain,0.49306151328335507,0.20070672384756874,0.1435769409791054,10
+strict_core,domain_only,instrument,accuracy,heldout domain,0.6458364276029818,0.1369222864174134,0.09794830316999002,10
+strict_core,domain_only,sensor_family,balanced_accuracy,heldout domain,0.41250772478252185,0.14428664030132568,0.2295922426643766,4
+strict_core,domain_only,sensor_family,macro_f1,heldout domain,0.19653123355121332,0.06506395660002966,0.10353127414445194,4
+strict_core,domain_only,sensor_family,accuracy,heldout domain,0.41554766028794765,0.1978631700024491,0.31484445716300813,4

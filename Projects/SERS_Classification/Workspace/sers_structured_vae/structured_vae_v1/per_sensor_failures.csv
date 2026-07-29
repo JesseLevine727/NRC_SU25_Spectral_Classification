@@ -1,0 +1,13 @@
+test_subset,sensor_family,spectrum_count,supported_count,correct_count,accuracy,analyte_count
+field_quality_stress,GaN_polymer,5,5,2,0.4,1
+field_quality_stress,H_SERS_H_Kit,49,49,12,0.24489795918367346,4
+field_quality_stress,NRC_Canadian_SERS,16,16,6,0.375,7
+field_quality_stress,pSERS_Metrohm_silver,28,28,14,0.5,4
+quality_pass,GaN_polymer,18,18,14,0.7777777777777778,2
+quality_pass,H_SERS_H_Kit,104,104,72,0.6923076923076923,3
+quality_pass,NRC_Canadian_SERS,82,82,27,0.32926829268292684,7
+quality_pass,pSERS_Metrohm_silver,296,296,257,0.8682432432432432,4
+strict_core,GaN_polymer,23,23,19,0.8260869565217391,2
+strict_core,H_SERS_H_Kit,153,153,98,0.6405228758169934,4
+strict_core,NRC_Canadian_SERS,98,98,32,0.32653061224489793,7
+strict_core,pSERS_Metrohm_silver,324,324,266,0.8209876543209876,4

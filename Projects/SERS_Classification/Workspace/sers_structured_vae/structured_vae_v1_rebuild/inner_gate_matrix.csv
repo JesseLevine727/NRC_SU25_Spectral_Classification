@@ -1,0 +1,13 @@
+source_stage,identifier,gate_count,gate_total,gate_chemical_ba,gate_chemical_f1,gate_instrument_probe,gate_same_master,gate_separation_margin,gate_reconstruction_correlation,gate_peak_recall,gate_chemical_active,gate_nuisance_active,gate_kl_dimensions,gate_kl_range,gate_fold_instrument_direction,gate_fold_chemical_direction,gate_sensor_probe,gate_nuisance_capture,gate_finite,gate_converged,gate_count,gate_total
+controls,zc32__zn32__chem0__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0__e500,13,17,False,False,True,False,True,True,True,True,True,True,True,True,False,True,True,True,True,13,17
+controls,zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0__e500,13,17,True,True,False,False,True,True,True,True,True,True,True,False,False,True,True,True,True,13,17
+controls,zc48__zn16__chem0p005__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0__e500,12,17,False,True,False,False,True,True,True,True,True,True,True,False,False,True,True,True,True,12,17
+controls,zc48__zn16__chem0p005__ni0p0025__ns0p0025__cond1__ai0__as0__pair0__xrec0__dep0__e500,13,17,False,False,True,True,True,True,True,True,True,True,True,True,False,True,True,True,False,13,17
+instrument_adversary,zc48__zn16__chem0__ni0__ns0__cond0__ai0p00125__as0__pair0__xrec0__dep0__e500,14,17,True,True,False,True,True,True,True,True,True,True,True,False,False,True,True,True,True,14,17
+instrument_adversary,zc48__zn16__chem0__ni0__ns0__cond0__ai0p0025__as0__pair0__xrec0__dep0__e500,14,17,True,True,False,True,True,True,True,True,True,True,True,False,False,True,True,True,True,14,17
+instrument_adversary,zc48__zn16__chem0__ni0__ns0__cond0__ai0p005__as0__pair0__xrec0__dep0__e500,14,17,True,True,False,True,True,True,True,True,True,True,True,False,False,True,True,True,True,14,17
+pair,zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0p005__xrec0p25__dep0__e500,12,17,False,False,True,True,False,True,True,False,True,True,True,True,False,True,True,True,True,12,17
+pair,zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0p01__xrec0p25__dep0__e500,12,17,False,False,True,True,False,True,True,False,True,True,True,True,False,True,True,True,True,12,17
+pair,zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0p02__xrec0p25__dep0__e500,12,17,False,False,True,True,False,True,True,False,True,True,True,True,False,True,True,True,True,12,17
+dependence,zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0p001__e500,15,17,True,True,True,False,True,True,True,True,True,True,True,True,False,True,True,True,True,15,17
+dependence,zc48__zn16__chem0__ni0__ns0__cond0__ai0__as0__pair0__xrec0__dep0p005__e500,12,17,True,True,False,False,False,True,True,True,True,True,True,True,False,True,True,True,False,12,17

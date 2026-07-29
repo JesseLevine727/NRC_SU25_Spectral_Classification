@@ -1,0 +1,240 @@
+{
+  "protocol_version": "sers-structured-vae-v1",
+  "status_before_structured_model_execution": "predeclared",
+  "created_date": "2026-07-28",
+  "scientific_question": "Can explicit chemical and nuisance structure reduce acquisition-domain information and cross-instrument replicate distance without erasing analyte information, repeatable peaks, or reconstruction fidelity?",
+  "claim_vocabulary": {
+    "structured": "The architecture or objectives assign different roles to latent partitions.",
+    "nuisance_suppressed": "The chemical partition passes registered nuisance-reduction and chemical-preservation gates.",
+    "disentangled": "Nuisance-suppressed plus convergent partition-specific probes, dependence diagnostics, real-pair swaps, negative controls, and unseen-domain confirmation.",
+    "unsuccessful": "No registered candidate passes the required gates."
+  },
+  "immutable_inputs": {
+    "nato_bundle": "Workspace/nato_sers_field_trial/preprocessing_v2",
+    "nato_artifact_catalog_sha256": "2f7f03b7caf7a08cda0ee70a06ea7ba66fdd59a4ccc8751c1ffe4d46b109db24",
+    "adequacy_bundle": "Workspace/sers_vae_adequacy/adequacy_v1",
+    "adequacy_artifact_catalog_sha256": "8d0e9211fb8992e6fa4f1079d36f43452b3762ebb7cd9394a9c416142c62c7c3",
+    "baseline_bundle": "Workspace/sers_representation_baselines/baselines_v1",
+    "baseline_artifact_catalog_sha256": "b52f19fafdeaaf3648399078601a4b7e3ccaa54e02d087313806b2f94b515345",
+    "strict_core_rows": 598,
+    "quality_pass_rows": 500,
+    "field_quality_stress_rows": 98,
+    "axis_min_cm1": 400,
+    "axis_max_cm1": 1800,
+    "axis_step_cm1": 1,
+    "axis_points": 1401,
+    "grouping_key": "master_sample_id",
+    "fold_column": "grouped_sample_fold_5",
+    "primary_representation": "arpls_minmax",
+    "mandatory_sensitivity": "minimal_minmax"
+  },
+  "metadata_audit": {
+    "audit_summary_sha256": "d3b2aee731e4799289562a8a2a720413d8887574655b1b05c81be6580284a573",
+    "audit_report_sha256": "e902a4b7b8f782048e3f4f56d223909c64bbda28a887f3fe47f75f96de3533ba",
+    "master_samples": 69,
+    "master_samples_multi_instrument": 67,
+    "master_samples_multi_sensor": 39,
+    "cross_instrument_pairs": 2473,
+    "cross_sensor_pairs": 1171,
+    "target_instrument_supported_cells": 44,
+    "target_instrument_possible_cells": 70,
+    "target_sensor_supported_cells": 17,
+    "target_sensor_possible_cells": 28,
+    "identifiability_ceiling_before_confirmation": "structured_or_nuisance_suppressed"
+  },
+  "frozen_backbone": {
+    "architecture": "base_maxpool",
+    "channels": [8, 16],
+    "total_latent_dimension": 64,
+    "reconstruction_loss": "spectral_composite",
+    "beta_target": 0.25,
+    "kl_normalization_divisor": 1401,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.00001,
+    "batch_size": 64,
+    "gradient_clip_norm": 5.0,
+    "maximum_epochs": 500,
+    "epoch_schedule": "four fixed 25-epoch beta cycles during epochs 1-100, then beta=0.25 through epoch 500",
+    "encoder_decoder_skips": false
+  },
+  "frozen_reference_inner_metrics": {
+    "chemical_balanced_accuracy": 0.6921185250812172,
+    "chemical_macro_f1": 0.6806921124663751,
+    "instrument_probe_increment": 0.5925838599015683,
+    "sensor_probe_increment": 0.4389908146692202,
+    "same_master_cross_instrument_distance": 0.7775300776245733,
+    "cross_instrument_separation_margin": 0.2540310514571321,
+    "reconstruction_median_row_correlation": 0.944932968280255,
+    "repeatable_peak_recall": 0.4975392010313374
+  },
+  "leakage_boundary": {
+    "selection_data": "20 master-sample-grouped strict-core arpls_minmax inner folds",
+    "quality_confirmation": "top eligible inner candidates only",
+    "minimal_sensitivity": "selected arpls candidate only and cannot alter selection",
+    "locked_until_selection_closes": [
+      "grouped outer strict and quality outcomes",
+      "98 field-quality-stress spectra",
+      "confirmatory corruption outcomes",
+      "held-out instrument and sensor outcomes",
+      "poster substrate outcomes"
+    ],
+    "outer_status": "confirmatory_not_human_blind"
+  },
+  "stage_0_identity": {
+    "candidate": "mixed_z64_zero_structure",
+    "requirement": "Invoke the exact frozen adequacy model, objective, seeds, folds, optimizer arithmetic and checkpoints; histories must agree within 1e-12 and checkpoint tensors exactly.",
+    "failure_action": "Stop structured selection and repair implementation."
+  },
+  "partition_controls": [
+    {
+      "identifier": "partition48_16_unsupervised",
+      "chemical_dimension": 48,
+      "nuisance_dimension": 16,
+      "chemical_supervision_weight": 0.0,
+      "nuisance_supervision_weight": 0.0,
+      "condition_decoder": false
+    },
+    {
+      "identifier": "partition32_32_unsupervised",
+      "chemical_dimension": 32,
+      "nuisance_dimension": 32,
+      "chemical_supervision_weight": 0.0,
+      "nuisance_supervision_weight": 0.0,
+      "condition_decoder": false
+    },
+    {
+      "identifier": "partition48_16_chemical_control",
+      "chemical_dimension": 48,
+      "nuisance_dimension": 16,
+      "chemical_supervision_weight": 0.005,
+      "nuisance_supervision_weight": 0.0,
+      "condition_decoder": false
+    },
+    {
+      "identifier": "partition48_16_multitask_conditioned",
+      "chemical_dimension": 48,
+      "nuisance_dimension": 16,
+      "chemical_supervision_weight": 0.005,
+      "instrument_supervision_weight": 0.0025,
+      "sensor_supervision_weight": 0.0025,
+      "condition_decoder": true,
+      "conditioning": "instrument and sensor one-hot with unknown all-zero inference state"
+    }
+  ],
+  "mechanism_search": {
+    "fixed_base": "best eligible partition control by registered hierarchy",
+    "instrument_adversary_weights": [0.00125, 0.0025, 0.005],
+    "sensor_adversary_weights": [0.00125, 0.0025],
+    "adversary": "target-conditioned domain classifier, analyte-domain cell-balanced cross entropy, gradient reversal ramped linearly from epochs 101-200 and fixed thereafter",
+    "same_master_consistency_weights": [0.005, 0.01, 0.02],
+    "same_master_loss": "one minus cosine similarity between chemical posterior means for deterministic real cross-instrument partners",
+    "cross_reconstruction_weight": 0.25,
+    "cross_reconstruction": "decode source chemical plus partner nuisance/conditioning and compare only with the real same-master partner spectrum",
+    "dependence_weights": [0.001, 0.005],
+    "dependence_loss": "squared Frobenius norm of standardized chemical-nuisance cross-covariance",
+    "opening_rules": {
+      "sensor_adversary": "opens only after an instrument-adversarial candidate preserves chemistry and improves the instrument probe",
+      "dependence": "opens only when the selected partition has mean maximum canonical correlation above 0.50",
+      "combination": "combine only individually eligible mechanisms with compatible directional gains"
+    }
+  },
+  "negative_controls": {
+    "nuisance_permutation": "permute instrument and sensor labels within analyte strata and inner-training partition",
+    "pair_permutation": "permute partner master IDs within analyte strata while retaining the pair-count distribution",
+    "chemical_permutation": "permute analyte labels across master_sample_id groups",
+    "execution": "run on the frozen structured candidate after inner selection and before locked confirmation",
+    "expectations": {
+      "nuisance_permutation": "removes genuine domain-head and adversarial benefit",
+      "pair_permutation": "removes genuine same-master geometry benefit",
+      "chemical_permutation_balanced_accuracy_maximum": 0.25
+    }
+  },
+  "eligibility_gates": {
+    "chemical_balanced_accuracy_minimum": 0.6621185250812172,
+    "chemical_macro_f1_minimum": 0.6506921124663751,
+    "instrument_probe_increment_maximum": 0.5425838599015683,
+    "sensor_probe_increment_maximum_when_sensor_claimed": 0.3989908146692202,
+    "same_master_distance_maximum": 0.7275300776245733,
+    "cross_instrument_separation_margin_minimum": 0.2240310514571321,
+    "reconstruction_correlation_minimum": 0.914932968280255,
+    "repeatable_peak_recall_minimum": 0.4475392010313374,
+    "chemical_active_units_minimum": 8,
+    "nuisance_active_units_minimum": 4,
+    "kl_dimensions_per_nonempty_partition_minimum": 2,
+    "kl_per_observation_minimum": 0.01,
+    "kl_per_observation_maximum": 1000.0,
+    "nuisance_instrument_probe_minimum_when_capture_claimed": 0.1,
+    "fold_fraction_with_instrument_probe_improvement_minimum": 0.75,
+    "fold_fraction_preserving_chemical_accuracy_minimum": 0.75,
+    "quality_balanced_accuracy_drop_maximum": 0.05,
+    "all_outputs_finite": true
+  },
+  "convergence": {
+    "median_validation_objective_improvement_final_50_maximum": 0.005,
+    "fold_fraction_improving_at_least_1_percent_maximum": 0.25,
+    "no_diagnostic_early_stopping": true,
+    "checkpoints": [100, 300, 400, 500]
+  },
+  "selection": {
+    "paired_seed": 1729,
+    "fold_count": 20,
+    "hierarchy": [
+      "converged",
+      "passes all applicable gates",
+      "gate count descending",
+      "Pareto nondominated for chemical accuracy, instrument probe, same-master distance, correlation and peak recall",
+      "registered utility descending",
+      "parameter count ascending",
+      "configuration lexical"
+    ],
+    "utility_weights": {
+      "chemical_balanced_accuracy": 0.2,
+      "chemical_macro_f1": 0.05,
+      "negative_instrument_probe": 0.15,
+      "negative_sensor_probe": 0.1,
+      "negative_same_master_distance": 0.15,
+      "separation_margin": 0.05,
+      "reconstruction_correlation": 0.05,
+      "repeatable_peak_recall": 0.1,
+      "nuisance_capture": 0.05,
+      "partition_independence": 0.05,
+      "posterior_health": 0.05
+    }
+  },
+  "required_metrics": [
+    "chemical and nuisance balanced accuracy and macro F1",
+    "target-adjusted cell-balanced instrument and sensor probes for each partition and union",
+    "same-master and different-analyte cross-instrument geometry",
+    "cross-covariance and maximum canonical correlation between partitions",
+    "KL, active units and posterior sampling variability per partition",
+    "MSE, Smooth L1, spectral angle, derivative error and median row correlation",
+    "repeatable-peak recall, shift, width and prominence",
+    "corruption classification agreement, reconstruction recovery and latent drift",
+    "real-pair consistency, cross-reconstruction and swap metrics",
+    "negative-control outcomes"
+  ],
+  "locked_confirmation": {
+    "seeds": [1729, 2718, 3141],
+    "canonical_inference_device": "cpu",
+    "training_device": "deterministic_cuda",
+    "evaluations": [
+      "grouped outer strict and quality",
+      "field-quality stress",
+      "controlled corruption severities 0.5, 1.0 and 1.5",
+      "domain-only and domain-plus-sample instrument transfer",
+      "domain-only and domain-plus-sample sensor transfer",
+      "same-master geometry",
+      "per-class, instrument and sensor failures",
+      "descriptive poster substrate transfer"
+    ]
+  },
+  "reproducibility": {
+    "clean_rebuild_required": true,
+    "checkpoint_and_optimizer_tensor_comparison": "exact",
+    "canonical_scientific_table_comparison": "exact",
+    "embedding_and_reconstruction_comparison": "exact",
+    "floating_history_tolerance": 1e-12
+  },
+  "terminal_decision": "Classify the final evidence as disentangled, nuisance-suppressed, structured-only, or unsuccessful; freeze the model for downstream work only if its registered claim level is supported."
+}

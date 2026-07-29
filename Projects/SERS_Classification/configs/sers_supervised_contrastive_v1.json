@@ -1,0 +1,193 @@
+{
+  "protocol_version": "sers-supervised-contrastive-v1",
+  "status_before_execution": "predeclared_before_classical_outer_results",
+  "created_date": "2026-07-29",
+  "protocol_history": {
+    "initial_declaration": "Architecture, losses, nested selection, seeds, ablations, and broad promotion criteria were frozen before the expanded classical outer results.",
+    "pre_training_clarification": "Before any registered successor fit, nested selection was restricted to the 500 quality-pass rows so the 98 field-stress rows remain absent, rejection selection was made development-only, and the two primary shift endpoints were specified exactly. This clarification used cohort support structure, not successor outcomes; no successor outcome existed."
+  },
+  "claim": "Domain-robust chemical classification with selective abstention; no physical denoising or chemical/nuisance disentanglement claim.",
+  "inputs": {
+    "preprocessing_bundle": "Workspace/nato_sers_field_trial/preprocessing_v2",
+    "classical_bundle": "Workspace/sers_classical_benchmark/classical_benchmark_v2",
+    "prior_baseline_bundle": "Workspace/sers_representation_baselines/baselines_v1",
+    "strict_core_rows": 598,
+    "quality_pass_rows": 500,
+    "field_stress_rows": 98,
+    "grouping_key": "master_sample_id",
+    "representations": ["arpls_minmax", "minimal_minmax", "derivative_1"],
+    "outer_fold_column": "grouped_sample_fold_5"
+  },
+  "fixed_training": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_anchors": 24,
+    "maximum_epochs": 200,
+    "minimum_epochs": 50,
+    "early_stopping_patience": 25,
+    "gradient_clip_norm": 5.0,
+    "selection_seed": 1729,
+    "final_seeds": [1729, 2718, 3141],
+    "augmentation": {
+      "gaussian_noise_standard_deviation": 0.01,
+      "edge_filled_shift_maximum_cm1": 2,
+      "scale_range": [0.95, 1.05]
+    }
+  },
+  "legacy_encoder": {
+    "purpose": "Objective-isolation control shared with the existing Siamese model",
+    "channels": [16, 32],
+    "kernels": [7, 5],
+    "pool_after_each_convolution": 2,
+    "embedding_dimension": 64,
+    "l2_normalized_embedding": true,
+    "expected_encoder_parameters": 719584
+  },
+  "compact_encoder": {
+    "purpose": "Bounded secondary architecture ablation",
+    "channels": [32, 64, 128],
+    "kernels": [9, 7, 5],
+    "pooling": "adaptive_average",
+    "embedding_dimensions": [32, 64],
+    "l2_normalized_embedding": true
+  },
+  "objectives": {
+    "siamese_triplet_control": {
+      "representation": "derivative_1",
+      "epochs": 100,
+      "margin": 0.2,
+      "prototype": "row_mean",
+      "positive": "same analyte, different instrument preferred",
+      "negative": "different analyte, same instrument preferred"
+    },
+    "cross_entropy_control": {
+      "classification_weight": 1.0,
+      "supervised_contrastive_weight": 0.0,
+      "pair_margin_weight": 0.0
+    },
+    "supervised_contrastive_control": {
+      "classification_weight": 0.0,
+      "supervised_contrastive_weight": 1.0,
+      "pair_margin_weight": 0.0,
+      "temperature": 0.1,
+      "prediction": "training-row class prototypes"
+    },
+    "combined_control": {
+      "classification_weight": 1.0,
+      "supervised_contrastive_weight": 0.5,
+      "pair_margin_weight": 0.0,
+      "temperature": 0.1
+    },
+    "domain_aware_successor": {
+      "classification_weight": 1.0,
+      "supervised_contrastive_weights": [0.25, 0.5],
+      "pair_margin_weights": [0.1, 0.25],
+      "temperature": 0.1,
+      "margin": 0.2,
+      "positive_priority": [
+        "same master and different instrument",
+        "same analyte and different instrument",
+        "same analyte"
+      ],
+      "hard_negative_priority": [
+        "different analyte and same instrument",
+        "different analyte and same sensor family",
+        "different analyte"
+      ],
+      "domain_balanced_anchor_batches": true
+    }
+  },
+  "nested_selection": {
+    "stage_1": "Select representation and the two registered loss weights for the legacy domain-aware successor using quality-pass inner folds only; all 98 field-stress rows are excluded from selection.",
+    "stage_2": "With representation and weights fixed, compare legacy-32, legacy-64, compact-32, and compact-64 on the same quality-pass inner folds.",
+    "ranking": [
+      "chemical balanced accuracy",
+      "macro F1",
+      "positive-negative distance margin",
+      "lower parameter count"
+    ],
+    "collapse_gates": {
+      "different_analyte_distance_must_exceed_same_analyte_distance": true,
+      "embedding_effective_rank_minimum": 4,
+      "prediction_uses_at_least_two_classes": true
+    },
+    "quality_pass_role": "sole nested-selection cohort so the field-stress rows remain sealed",
+    "strict_core_role": "locked all-spectrum sensitivity evaluation after quality-only selection",
+    "outer_stress_domain_results_used_for_selection": false
+  },
+  "final_ablations": [
+    "historical_siamese_triplet",
+    "cross_entropy_only",
+    "supervised_contrastive_only",
+    "cross_entropy_plus_supervised_contrastive",
+    "full_domain_aware_successor",
+    "random_positive_instead_of_domain_aware",
+    "ordinary_negative_instead_of_same_domain_hard_negative",
+    "without_domain_balanced_batches",
+    "selected_preprocessing_versus_two_frozen_sensitivities"
+  ],
+  "calibration_and_ood": {
+    "temperature": "fit from cross-fitted development scores",
+    "scores": [
+      "calibrated_max_probability",
+      "energy",
+      "class_conditional_embedding_mahalanobis"
+    ],
+    "rejection_selection": {
+      "development_data_only": true,
+      "ranking_metric": "mean selective accuracy over requested coverages below 1.0",
+      "tie_break_order": [
+        "calibrated_max_probability",
+        "energy",
+        "class_conditional_embedding_mahalanobis"
+      ],
+      "applied_to_field_stress_without_reselection": true
+    },
+    "quality_head": "prohibited unless a training-only target and added value are demonstrated; field-stress labels remain sealed",
+    "selective_coverages": [1.0, 0.9, 0.8, 0.7, 0.5],
+    "metrics": [
+      "NLL",
+      "Brier",
+      "ECE10",
+      "field_stress_AUROC",
+      "field_stress_AUPRC",
+      "selective_risk"
+    ]
+  },
+  "evaluation": {
+    "outer": ["strict_core", "quality_pass", "field_quality_stress"],
+    "domains": [
+      "instrument_domain_only",
+      "instrument_domain_and_sample",
+      "sensor_domain_only",
+      "sensor_domain_and_sample"
+    ],
+    "representation_diagnostics": [
+      "analyte_linear_probe",
+      "instrument_probe",
+      "sensor_probe",
+      "same_master_cross_instrument_distance",
+      "same_analyte_distance",
+      "different_analyte_distance",
+      "effective_rank",
+      "class_count_predicted",
+      "integrated_gradient_peak_stability"
+    ],
+    "negative_controls": [
+      "master_group_analyte_label_permutation",
+      "randomized_domain_relationships"
+    ]
+  },
+  "success_gate": {
+    "must_reproducibly_beat_current_siamese": true,
+    "must_improve_classical_on": "held-domain and/or field-stress selective performance",
+    "primary_held_domain_endpoint": "equal-weight mean balanced-accuracy difference across supported held-instrument plus new-master-sample scenarios, pooling strict and quality cohorts",
+    "primary_field_stress_endpoint": "outer-fold mean selective-accuracy difference at requested coverage 0.8 using the development-selected rejection score for the successor and the locked calibrated-max-probability score for the classical champion",
+    "secondary_domain_endpoints": "domain-only and held-sensor results are reported but cannot independently promote the successor",
+    "minimum_mean_advantage_for_materiality": 0.02,
+    "maximum_allowed_strict_or_quality_balanced_accuracy_loss": 0.03,
+    "seed_direction_requirement": "advantage in at least two of three final seeds",
+    "low_domain_probe_alone_is_not_success": true
+  }
+}
