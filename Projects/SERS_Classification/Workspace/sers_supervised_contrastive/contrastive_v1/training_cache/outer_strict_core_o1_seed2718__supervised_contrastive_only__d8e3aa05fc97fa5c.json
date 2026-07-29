@@ -1,0 +1,26 @@
+{
+  "best_epoch": 66,
+  "candidate_id": "supervised_contrastive_only__minimal_minmax__legacy64__402183ef09a8",
+  "parameters": {
+    "classifier_parameters": 455,
+    "encoder_parameters": 719584,
+    "total_parameters": 720039
+  },
+  "scenario": "outer_strict_core_o1_seed2718",
+  "seed": 1921580748,
+  "spec": {
+    "architecture": "legacy",
+    "classification_weight": 0.0,
+    "contrastive_temperature": 0.1,
+    "domain_aware_positives": false,
+    "domain_balanced_batches": false,
+    "embedding_dimension": 64,
+    "hard_negative_mining": false,
+    "name": "supervised_contrastive_only",
+    "pair_margin": 0.2,
+    "pair_margin_weight": 0.0,
+    "representation": "minimal_minmax",
+    "supervised_contrastive_weight": 1.0
+  },
+  "state_sha256": "07a744dbe46882ead4603333cd418357fcdccc7e695ef11417c95faa1e8710a3"
+}

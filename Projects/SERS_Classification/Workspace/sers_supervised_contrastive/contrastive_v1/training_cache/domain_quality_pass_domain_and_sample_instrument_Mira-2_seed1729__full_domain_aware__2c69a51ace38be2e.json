@@ -1,0 +1,26 @@
+{
+  "best_epoch": 61,
+  "candidate_id": "full_domain_aware__derivative_1__legacy64__ea0223d19cfe",
+  "parameters": {
+    "classifier_parameters": 260,
+    "encoder_parameters": 719584,
+    "total_parameters": 719844
+  },
+  "scenario": "domain_quality_pass_domain_and_sample_instrument_Mira-2_seed1729",
+  "seed": 26552087,
+  "spec": {
+    "architecture": "legacy",
+    "classification_weight": 1.0,
+    "contrastive_temperature": 0.1,
+    "domain_aware_positives": true,
+    "domain_balanced_batches": true,
+    "embedding_dimension": 64,
+    "hard_negative_mining": true,
+    "name": "full_domain_aware",
+    "pair_margin": 0.2,
+    "pair_margin_weight": 0.25,
+    "representation": "derivative_1",
+    "supervised_contrastive_weight": 0.5
+  },
+  "state_sha256": "b58a3f608e3afc65e775f38e23f5c3c3bdd131c35d58f49c0d9a5114833613af"
+}

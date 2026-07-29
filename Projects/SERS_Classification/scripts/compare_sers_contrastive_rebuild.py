@@ -45,6 +45,7 @@ ARTIFACTS = (
     "final_training_histories.csv",
     "outer_uncertainty_summary.csv",
     "locked_model_comparison.csv",
+    "preprocessing_sensitivity_summary.csv",
     "terminal_decision.json",
     "successor_confusion_matrices.json",
     "successor_failure_cases.csv",

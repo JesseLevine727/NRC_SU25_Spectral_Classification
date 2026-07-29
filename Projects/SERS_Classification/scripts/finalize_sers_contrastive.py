@@ -72,6 +72,9 @@ def mean_ci(values: pd.Series) -> dict[str, float | int]:
 
 
 def deep_outer_summary(frame: pd.DataFrame) -> pd.DataFrame:
+    frame = frame[
+        ~frame["variant"].str.startswith("preprocessing_sensitivity_")
+    ].copy()
     per_fold = (
         frame.groupby(
             ["variant", "evaluation_subset", "outer_fold"], as_index=False
@@ -127,6 +130,40 @@ def deep_outer_summary(frame: pd.DataFrame) -> pd.DataFrame:
                     "evaluation_subset": subset,
                     "metric": metric,
                     "independent_unit": "outer master-group fold after averaging seeds",
+                    **mean_ci(group[metric]),
+                }
+            )
+    return pd.DataFrame(rows)
+
+
+def preprocessing_sensitivity_summary(frame: pd.DataFrame) -> pd.DataFrame:
+    sensitivity = frame[
+        (frame["variant"] == "full_domain_aware")
+        | frame["variant"].str.startswith("preprocessing_sensitivity_")
+    ].copy()
+    per_fold = (
+        sensitivity.groupby(
+            ["representation", "evaluation_subset", "outer_fold"],
+            as_index=False,
+        )
+        .agg(
+            balanced_accuracy=("balanced_accuracy", "mean"),
+            macro_f1=("macro_f1", "mean"),
+        )
+    )
+    rows: list[dict[str, Any]] = []
+    for (representation, subset), group in per_fold.groupby(
+        ["representation", "evaluation_subset"], sort=True
+    ):
+        for metric in ("balanced_accuracy", "macro_f1"):
+            rows.append(
+                {
+                    "representation": representation,
+                    "evaluation_subset": subset,
+                    "metric": metric,
+                    "independent_unit": (
+                        "outer master-group fold after averaging seeds"
+                    ),
                     **mean_ci(group[metric]),
                 }
             )
@@ -961,6 +998,7 @@ def write_report(
     stage1: pd.DataFrame,
     stage2: pd.DataFrame,
     classical_champions: dict[str, Any],
+    preprocessing_summary: pd.DataFrame,
 ) -> None:
     status = "SUPPORTED" if gate["successor_supported"] else "NOT SUPPORTED"
     lines = [
@@ -1009,6 +1047,44 @@ def write_report(
             f"- Historical Siamese leave-one-master-out analyte probe balanced accuracy: {siamese_diagnostics['analyte_heldout_master_probe_balanced_accuracy'].mean():.3f} where supported.",
             f"- Historical Siamese cross-fitted correctness-confidence ECE10: {siamese_diagnostics['correctness_ece_10'].mean():.3f}. This is correctness calibration from nearest-prototype distance, not multiclass probability calibration.",
             f"- Historical Siamese encoder parameters: {int(siamese_diagnostics['encoder_parameters'].iloc[0]):,}; selected successor total parameters: {int(outer.loc[outer['variant'] == 'full_domain_aware', 'total_parameters'].iloc[0]):,}.",
+            "",
+            "## Frozen preprocessing sensitivity",
+            "",
+            "Each representation below uses all five outer folds: when a representation was selected it contributes the full-model row; otherwise it contributes the registered sensitivity row. This prevents partial-fold aggregation.",
+            "",
+            "| Representation | Strict BA | Quality BA | Stress BA |",
+            "|---|---:|---:|---:|",
+        ]
+    )
+    for representation in (
+        "arpls_minmax",
+        "minimal_minmax",
+        "derivative_1",
+    ):
+        values = {}
+        for subset in (
+            "strict_core",
+            "quality_pass",
+            "field_quality_stress",
+        ):
+            row = preprocessing_summary[
+                (preprocessing_summary["representation"] == representation)
+                & (
+                    preprocessing_summary["evaluation_subset"]
+                    == subset
+                )
+                & (preprocessing_summary["metric"] == "balanced_accuracy")
+            ].iloc[0]
+            values[subset] = (
+                f"{row['mean']:.3f} ± {row['ci95_half_width']:.3f}"
+            )
+        lines.append(
+            f"| `{representation}` | {values['strict_core']} | "
+            f"{values['quality_pass']} | "
+            f"{values['field_quality_stress']} |"
+        )
+    lines.extend(
+        [
             "",
             "## Direct answers",
             "",
@@ -1119,6 +1195,7 @@ def main() -> None:
         args.output_dir / "siamese_control_selective_metrics.csv"
     )
     deep_summary = deep_outer_summary(outer)
+    preprocessing_summary = preprocessing_sensitivity_summary(outer)
     siamese_summary = prior_siamese_summary(siamese)
     classical_frame = classical_summary(args.classical_bundle)
     models = model_summary(deep_summary, siamese_summary, classical_frame)
@@ -1135,6 +1212,10 @@ def main() -> None:
     )
     models.to_csv(
         args.output_dir / "locked_model_comparison.csv", index=False
+    )
+    preprocessing_summary.to_csv(
+        args.output_dir / "preprocessing_sensitivity_summary.csv",
+        index=False,
     )
     classical.write_json(args.output_dir / "terminal_decision.json", gate)
     write_confusions_and_failures(args.output_dir, predictions)
@@ -1165,6 +1246,7 @@ def main() -> None:
         global_stage1,
         global_stage2,
         classical_champions,
+        preprocessing_summary,
     )
     write_hashes(args.output_dir)
     print(

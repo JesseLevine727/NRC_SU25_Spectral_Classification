@@ -1,0 +1,26 @@
+{
+  "best_epoch": 66,
+  "candidate_id": "preprocessing_sensitivity_arpls_minmax__arpls_minmax__legacy32__dadef9bb2bf4",
+  "parameters": {
+    "classifier_parameters": 231,
+    "encoder_parameters": 361152,
+    "total_parameters": 361383
+  },
+  "scenario": "outer_strict_core_o3_seed2718",
+  "seed": 1615709847,
+  "spec": {
+    "architecture": "legacy",
+    "classification_weight": 1.0,
+    "contrastive_temperature": 0.1,
+    "domain_aware_positives": true,
+    "domain_balanced_batches": true,
+    "embedding_dimension": 32,
+    "hard_negative_mining": true,
+    "name": "preprocessing_sensitivity_arpls_minmax",
+    "pair_margin": 0.2,
+    "pair_margin_weight": 0.25,
+    "representation": "arpls_minmax",
+    "supervised_contrastive_weight": 0.25
+  },
+  "state_sha256": "7e034ebfaf48b2e03345a7bdb2f34bad2925c9334269e7082a185d6dfcc34635"
+}

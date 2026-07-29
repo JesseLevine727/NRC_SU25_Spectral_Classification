@@ -1,0 +1,26 @@
+{
+  "best_epoch": 72,
+  "candidate_id": "cross_entropy_only__minimal_minmax__legacy32__17bbdb074a21",
+  "parameters": {
+    "classifier_parameters": 231,
+    "encoder_parameters": 361152,
+    "total_parameters": 361383
+  },
+  "scenario": "outer_strict_core_o2_seed3141",
+  "seed": 1076413636,
+  "spec": {
+    "architecture": "legacy",
+    "classification_weight": 1.0,
+    "contrastive_temperature": 0.1,
+    "domain_aware_positives": false,
+    "domain_balanced_batches": false,
+    "embedding_dimension": 32,
+    "hard_negative_mining": false,
+    "name": "cross_entropy_only",
+    "pair_margin": 0.2,
+    "pair_margin_weight": 0.0,
+    "representation": "minimal_minmax",
+    "supervised_contrastive_weight": 0.0
+  },
+  "state_sha256": "67057ee94e646013e405948deeee8a7c83c9d9ef3c65023442c3626a8f5f863d"
+}

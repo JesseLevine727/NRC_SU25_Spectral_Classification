@@ -1,0 +1,26 @@
+{
+  "best_epoch": 61,
+  "candidate_id": "full_domain_aware__derivative_1__legacy64__ea0223d19cfe",
+  "parameters": {
+    "classifier_parameters": 455,
+    "encoder_parameters": 719584,
+    "total_parameters": 720039
+  },
+  "scenario": "domain_strict_core_domain_only_instrument_Pendar-3_seed2718",
+  "seed": 1752131919,
+  "spec": {
+    "architecture": "legacy",
+    "classification_weight": 1.0,
+    "contrastive_temperature": 0.1,
+    "domain_aware_positives": true,
+    "domain_balanced_batches": true,
+    "embedding_dimension": 64,
+    "hard_negative_mining": true,
+    "name": "full_domain_aware",
+    "pair_margin": 0.2,
+    "pair_margin_weight": 0.25,
+    "representation": "derivative_1",
+    "supervised_contrastive_weight": 0.5
+  },
+  "state_sha256": "5909064c4da62c4b905920fa154a9d8a890f768d919585086e5146c3fa0e7ca9"
+}

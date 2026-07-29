@@ -103,6 +103,7 @@ def main() -> None:
         "final_training_histories.csv",
         "outer_uncertainty_summary.csv",
         "locked_model_comparison.csv",
+        "preprocessing_sensitivity_summary.csv",
         "terminal_decision.json",
         "successor_confusion_matrices.json",
         "successor_failure_cases.csv",
@@ -282,7 +283,34 @@ def main() -> None:
         "outer_metric_count", len(outer) == 3 * 5 * expected_variants * 3
     )
     audit.check(
-        "outer_variants", outer["variant"].nunique() == expected_variants
+        "outer_variants_per_training_scenario",
+        (
+            outer.groupby(
+                ["training_subset", "outer_fold", "declared_seed"]
+            )["variant"].nunique()
+            == expected_variants
+        ).all(),
+    )
+    preprocessing_rows = outer[
+        (outer["variant"] == "full_domain_aware")
+        | outer["variant"].str.startswith("preprocessing_sensitivity_")
+    ]
+    audit.check(
+        "preprocessing_sensitivity_complete_by_representation",
+        (
+            preprocessing_rows.groupby(
+                [
+                    "representation",
+                    "evaluation_subset",
+                    "outer_fold",
+                    "declared_seed",
+                ]
+            ).size()
+            == 1
+        ).all()
+        and preprocessing_rows.groupby(
+            ["representation", "evaluation_subset"]
+        )["outer_fold"].nunique().eq(5).all(),
     )
     audit.check(
         "outer_scenarios",

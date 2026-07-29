@@ -1,0 +1,26 @@
+{
+  "best_epoch": 61,
+  "candidate_id": "full_domain_aware__derivative_1__legacy64__ea0223d19cfe",
+  "parameters": {
+    "classifier_parameters": 260,
+    "encoder_parameters": 719584,
+    "total_parameters": 719844
+  },
+  "scenario": "domain_quality_pass_domain_and_sample_sensor_family_H_SERS_H_Kit_seed1729",
+  "seed": 1220598208,
+  "spec": {
+    "architecture": "legacy",
+    "classification_weight": 1.0,
+    "contrastive_temperature": 0.1,
+    "domain_aware_positives": true,
+    "domain_balanced_batches": true,
+    "embedding_dimension": 64,
+    "hard_negative_mining": true,
+    "name": "full_domain_aware",
+    "pair_margin": 0.2,
+    "pair_margin_weight": 0.25,
+    "representation": "derivative_1",
+    "supervised_contrastive_weight": 0.5
+  },
+  "state_sha256": "176715f2706453608aa480b14a71e94dbabeeb1dd84996b378348286cb22ffcc"
+}

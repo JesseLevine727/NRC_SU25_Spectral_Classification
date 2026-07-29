@@ -1,0 +1,1043 @@
+{
+  "checks": 207,
+  "details": [
+    {
+      "check": "protocol_copy_exists",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "protocol_copy_exact",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::input_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::environment.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::final_environment.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::final_input_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::stage1_candidate_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::stage1_inner_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::stage1_selection.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::stage2_candidate_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::stage2_inner_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::stage2_selection.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::outer_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::outer_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::outer_per_class_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::outer_selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::outer_temperatures.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::rejection_selection_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::rejection_decisions_at_80.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::outer_ood_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::outer_run_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::attribution_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::attribution_peaks.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::siamese_control_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::siamese_control_domain_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::siamese_control_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::siamese_control_diagnostics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::siamese_control_selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::siamese_control_failures.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::siamese_control_provenance.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::domain_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::domain_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::domain_run_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::negative_control_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::selection_training_histories.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::final_training_histories.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::outer_uncertainty_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::locked_model_comparison.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::preprocessing_sensitivity_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::terminal_decision.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::successor_confusion_matrices.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::successor_failure_cases.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::FINAL_REPORT.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::figures/model_comparison.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::figures/model_comparison.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::figures/training_diagnostics.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::figures/training_diagnostics.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "required::artifact_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::FINAL_REPORT.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::FINAL_REPORT.md",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::attribution_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::attribution_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::attribution_peaks.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::attribution_peaks.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::domain_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::domain_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::domain_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::domain_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::domain_run_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::domain_run_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::environment.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::environment.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::figures/model_comparison.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::figures/model_comparison.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::figures/model_comparison.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::figures/model_comparison.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::figures/training_diagnostics.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::figures/training_diagnostics.pdf",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::figures/training_diagnostics.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::figures/training_diagnostics.png",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::final_environment.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::final_environment.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::final_input_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::final_input_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::final_training_histories.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::final_training_histories.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::input_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::input_hashes.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::locked_model_comparison.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::locked_model_comparison.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::negative_control_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::negative_control_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::outer_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::outer_ood_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_ood_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::outer_per_class_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_per_class_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::outer_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::outer_run_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_run_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::outer_selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::outer_temperatures.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_temperatures.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::outer_uncertainty_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::outer_uncertainty_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::predeclared_protocol.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::predeclared_protocol.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::preprocessing_sensitivity_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::preprocessing_sensitivity_summary.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::rejection_decisions_at_80.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::rejection_decisions_at_80.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::rejection_selection_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::rejection_selection_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::selection_training_histories.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::selection_training_histories.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::siamese_control_diagnostics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::siamese_control_diagnostics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::siamese_control_domain_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::siamese_control_domain_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::siamese_control_failures.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::siamese_control_failures.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::siamese_control_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::siamese_control_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::siamese_control_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::siamese_control_predictions.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::siamese_control_provenance.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::siamese_control_provenance.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::siamese_control_selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::siamese_control_selective_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::stage1_candidate_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::stage1_candidate_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::stage1_inner_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::stage1_inner_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::stage1_selection.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::stage1_selection.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::stage2_candidate_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::stage2_candidate_registry.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::stage2_inner_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::stage2_inner_metrics.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::stage2_selection.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::stage2_selection.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::successor_confusion_matrices.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::successor_confusion_matrices.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::successor_failure_cases.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::successor_failure_cases.csv",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hashed_exists::terminal_decision.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "hash_exact::terminal_decision.json",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage1_candidate_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage1_candidate_unique",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage1_fit_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage1_run_unique",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage1_selection_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage1_selections_eligible",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage1_quality_only_partition_counts_exact",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage2_quality_only_partition_counts_exact",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage2_fit_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage2_run_unique",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage2_selection_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "stage2_selected_gates",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_registry_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_metric_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_variants_per_training_scenario",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "preprocessing_sensitivity_complete_by_representation",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_scenarios",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_finite::balanced_accuracy",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_finite::macro_f1",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_finite::accuracy",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_finite::different_minus_same_margin",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_finite::embedding_effective_rank",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_finite::analyte_probe_balanced_accuracy",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_prediction_count",
+      "detail": "observed=32292 expected=32292",
+      "passed": true
+    },
+    {
+      "check": "outer_confidence_bounds",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "selective_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "temperature_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "temperature_bounds",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "rejection_selection_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "rejection_selection_one_per_outer_subset",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "selected_rejection_applied_to_stress",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "rejection_decision_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "rejection_decision_selected_scores_match",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "rejection_decision_supported_coverage",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "ood_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "ood_one_selected_score_per_fold_seed",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "ood_scores",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "attribution_metric_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "attribution_peak_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "attribution_axis_bounds",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_control_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_domain_control_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_prediction_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_diagnostic_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_selective_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_failures_present",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_encoder_parameter_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_diagnostic_finite::different_minus_same_margin",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_diagnostic_finite::embedding_effective_rank",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_diagnostic_finite::correctness_negative_log_likelihood",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_diagnostic_finite::correctness_brier",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_diagnostic_finite::correctness_ece_10",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "siamese_analyte_probe_finite_when_supported",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_metric_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_registry_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_prediction_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_membership_exact",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "domain_metrics_finite_when_supported",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "negative_control_count",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "negative_controls",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "selection_history_all_runs_present",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "final_history_all_runs_present",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "outer_master_groups_disjoint",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "terminal_decision_boolean",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "terminal_primary_domain_pairs_present",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "terminal_primary_domain_siamese_comparison_finite",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "terminal_stress_selective_folds",
+      "detail": "",
+      "passed": true
+    }
+  ],
+  "failed": 0,
+  "passed": 207,
+  "status": "pass"
+}

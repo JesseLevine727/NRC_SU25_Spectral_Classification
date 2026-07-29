@@ -1,0 +1,26 @@
+{
+  "best_epoch": 66,
+  "candidate_id": "preprocessing_sensitivity_derivative_1__derivative_1__legacy64__40bcef6fdafb",
+  "parameters": {
+    "classifier_parameters": 455,
+    "encoder_parameters": 719584,
+    "total_parameters": 720039
+  },
+  "scenario": "outer_strict_core_o1_seed1729",
+  "seed": 1525551195,
+  "spec": {
+    "architecture": "legacy",
+    "classification_weight": 1.0,
+    "contrastive_temperature": 0.1,
+    "domain_aware_positives": true,
+    "domain_balanced_batches": true,
+    "embedding_dimension": 64,
+    "hard_negative_mining": true,
+    "name": "preprocessing_sensitivity_derivative_1",
+    "pair_margin": 0.2,
+    "pair_margin_weight": 0.25,
+    "representation": "derivative_1",
+    "supervised_contrastive_weight": 0.5
+  },
+  "state_sha256": "303afc7b0c35b1a43528a20323debb582dae2381cbc0af75f054d0c2ec29968e"
+}
