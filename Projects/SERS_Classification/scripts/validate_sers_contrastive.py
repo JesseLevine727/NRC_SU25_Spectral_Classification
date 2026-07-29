@@ -276,6 +276,43 @@ def main() -> None:
             > np.asarray([0.0, 4.0])
         ).all(),
     )
+    outer_stage2_selection = stage2_selection[
+        stage2_selection["scope"] == "outer"
+    ][["outer_fold", "total_parameters"]].copy()
+    full_outer_parameter_counts = (
+        outer.loc[outer["variant"] == "full_domain_aware"]
+        .groupby("outer_fold", as_index=False)["total_parameters"]
+        .nunique()
+    )
+    audit.check(
+        "full_outer_one_parameter_count_per_fold",
+        len(full_outer_parameter_counts) == 5
+        and full_outer_parameter_counts["total_parameters"].eq(1).all(),
+    )
+    full_outer_parameters = (
+        outer.loc[
+            outer["variant"] == "full_domain_aware",
+            ["outer_fold", "total_parameters"],
+        ]
+        .drop_duplicates()
+        .sort_values("outer_fold")
+        .reset_index(drop=True)
+    )
+    selected_outer_parameters = (
+        outer_stage2_selection.sort_values("outer_fold").reset_index(
+            drop=True
+        )
+    )
+    audit.check(
+        "full_outer_parameters_match_nested_selection",
+        full_outer_parameters.equals(selected_outer_parameters),
+    )
+    report_text = (args.output_dir / "FINAL_REPORT.md").read_text()
+    audit.check(
+        "report_distinguishes_nested_and_global_configurations",
+        "Global held-domain configuration:" in report_text
+        and "Nested outer configurations:" in report_text,
+    )
 
     expected_variants = 9
     audit.check("outer_registry_count", len(registry) == 2 * 5 * expected_variants * 3)

@@ -1,0 +1,26 @@
+{
+  "best_epoch": 72,
+  "candidate_id": "ce_plus_supervised_contrastive__minimal_minmax__legacy32__a4d74ad3e9a2",
+  "parameters": {
+    "classifier_parameters": 231,
+    "encoder_parameters": 361152,
+    "total_parameters": 361383
+  },
+  "scenario": "outer_quality_pass_o4_seed2718",
+  "seed": 1867258165,
+  "spec": {
+    "architecture": "legacy",
+    "classification_weight": 1.0,
+    "contrastive_temperature": 0.1,
+    "domain_aware_positives": false,
+    "domain_balanced_batches": false,
+    "embedding_dimension": 32,
+    "hard_negative_mining": false,
+    "name": "ce_plus_supervised_contrastive",
+    "pair_margin": 0.2,
+    "pair_margin_weight": 0.0,
+    "representation": "minimal_minmax",
+    "supervised_contrastive_weight": 0.5
+  },
+  "state_sha256": "b1d62ba1ff9da30b782ee80d7ee9c2a50f18b47c253d98445b1a08c8f106ef46"
+}

@@ -1001,6 +1001,46 @@ def write_report(
     preprocessing_summary: pd.DataFrame,
 ) -> None:
     status = "SUPPORTED" if gate["successor_supported"] else "NOT SUPPORTED"
+    full_outer = (
+        outer.loc[
+            outer["variant"] == "full_domain_aware",
+            [
+                "outer_fold",
+                "representation",
+                "architecture",
+                "embedding_dimension",
+                "total_parameters",
+            ],
+        ]
+        .drop_duplicates()
+        .sort_values("outer_fold")
+    )
+    outer_configuration_counts = (
+        full_outer.groupby(
+            [
+                "representation",
+                "architecture",
+                "embedding_dimension",
+                "total_parameters",
+            ],
+            as_index=False,
+        )["outer_fold"]
+        .nunique()
+        .sort_values(
+            ["outer_fold", "representation", "embedding_dimension"],
+            ascending=[False, True, True],
+        )
+    )
+    outer_configuration_text = "; ".join(
+        (
+            f"`{row.representation}` + "
+            f"`{row.architecture}{int(row.embedding_dimension)}` in "
+            f"{int(row.outer_fold)}/5 folds "
+            f"({int(row.total_parameters):,} total parameters)"
+        )
+        for row in outer_configuration_counts.itertuples()
+    )
+    global_configuration = stage2.iloc[0]
     lines = [
         "# Supervised-contrastive NATO SERS experiment",
         "",
@@ -1038,7 +1078,8 @@ def write_report(
             "",
             "## Selected model",
             "",
-            f"Stage 1 selected `{stage1.iloc[0]['representation']}` with supervised-contrastive weight {stage1.iloc[0]['supervised_contrastive_weight']} and pair-margin weight {stage1.iloc[0]['pair_margin_weight']}. Stage 2 selected `{stage2.iloc[0]['architecture']}` with {int(stage2.iloc[0]['embedding_dimension'])} embedding dimensions for the global domain evaluation.",
+            f"Global held-domain configuration: Stage 1 selected `{stage1.iloc[0]['representation']}` with supervised-contrastive weight {stage1.iloc[0]['supervised_contrastive_weight']} and pair-margin weight {stage1.iloc[0]['pair_margin_weight']}; Stage 2 selected `{global_configuration['architecture']}` with {int(global_configuration['embedding_dimension'])} embedding dimensions ({int(global_configuration['total_parameters']):,} total parameters).",
+            f"Nested outer configurations: {outer_configuration_text}. Each outer fold used only its own inner-fold selection.",
             "",
             "## Representation and Siamese-control diagnostics",
             "",
@@ -1046,7 +1087,7 @@ def write_report(
             f"- Successor embedding effective rank: {outer.loc[outer['variant'] == 'full_domain_aware', 'embedding_effective_rank'].mean():.2f}; historical Siamese: {siamese_diagnostics['embedding_effective_rank'].mean():.2f}.",
             f"- Historical Siamese leave-one-master-out analyte probe balanced accuracy: {siamese_diagnostics['analyte_heldout_master_probe_balanced_accuracy'].mean():.3f} where supported.",
             f"- Historical Siamese cross-fitted correctness-confidence ECE10: {siamese_diagnostics['correctness_ece_10'].mean():.3f}. This is correctness calibration from nearest-prototype distance, not multiclass probability calibration.",
-            f"- Historical Siamese encoder parameters: {int(siamese_diagnostics['encoder_parameters'].iloc[0]):,}; selected successor total parameters: {int(outer.loc[outer['variant'] == 'full_domain_aware', 'total_parameters'].iloc[0]):,}.",
+            f"- Historical Siamese encoder parameters: {int(siamese_diagnostics['encoder_parameters'].iloc[0]):,}. Successor parameter counts are reported per nested/global configuration above because architecture selection was fold-specific.",
             "",
             "## Frozen preprocessing sensitivity",
             "",

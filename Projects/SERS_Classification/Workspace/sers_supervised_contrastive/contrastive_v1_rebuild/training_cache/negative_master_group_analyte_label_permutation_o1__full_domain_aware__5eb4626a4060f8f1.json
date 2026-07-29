@@ -1,0 +1,26 @@
+{
+  "best_epoch": 66,
+  "candidate_id": "full_domain_aware__minimal_minmax__legacy64__051dfe345fd2",
+  "parameters": {
+    "classifier_parameters": 455,
+    "encoder_parameters": 719584,
+    "total_parameters": 720039
+  },
+  "scenario": "negative_master_group_analyte_label_permutation_o1",
+  "seed": 1849037372,
+  "spec": {
+    "architecture": "legacy",
+    "classification_weight": 1.0,
+    "contrastive_temperature": 0.1,
+    "domain_aware_positives": true,
+    "domain_balanced_batches": true,
+    "embedding_dimension": 64,
+    "hard_negative_mining": true,
+    "name": "full_domain_aware",
+    "pair_margin": 0.2,
+    "pair_margin_weight": 0.25,
+    "representation": "minimal_minmax",
+    "supervised_contrastive_weight": 0.5
+  },
+  "state_sha256": "1ad9c0bfc89c200d6489ba3959083d5c42431c2fe76c838537a7d0451c1a584c"
+}

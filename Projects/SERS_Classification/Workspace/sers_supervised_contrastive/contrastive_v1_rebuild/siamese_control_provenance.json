@@ -1,0 +1,7 @@
+{
+  "embedding_source_hash_catalog_sha256": "b52f19fafdeaaf3648399078601a4b7e3ccaa54e02d087313806b2f94b515345",
+  "interpretation": "Previously rebuilt deterministic Siamese control imported without reselection. Geometry and heldout-master probes were recomputed from its immutable outer-test embeddings. Its single nearest-prototype distance cannot support multiclass temperature scaling, so correctness confidence was Platt-calibrated using other outer folds and is reported explicitly as a different calibration target.",
+  "source": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_representation_baselines/baselines_v1/outer_fold_metrics.csv",
+  "source_sha256": "424285d9c5b65bb6ee17bb82e41e14974cff9aef294535f1d001ef9718f61ce8",
+  "source_validation_status": "pass"
+}

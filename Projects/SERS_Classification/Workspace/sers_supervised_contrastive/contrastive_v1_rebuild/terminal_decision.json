@@ -1,0 +1,134 @@
+{
+  "cohort_differences": {
+    "field_quality_stress": {
+      "classical_mean": 0.47785714285714287,
+      "siamese_mean": 0.3704497354497355,
+      "successor_mean": 0.43,
+      "successor_minus_classical": -0.04785714285714286,
+      "successor_minus_siamese": 0.059550264550264534
+    },
+    "quality_pass": {
+      "classical_mean": 0.7449411155115634,
+      "siamese_mean": 0.6766688629315305,
+      "successor_mean": 0.7306640034018261,
+      "successor_minus_classical": -0.01427711210973719,
+      "successor_minus_siamese": 0.0539951404702957
+    },
+    "strict_core": {
+      "classical_mean": 0.6854684585328588,
+      "siamese_mean": 0.6320941608547035,
+      "successor_mean": 0.7013728936664536,
+      "successor_minus_classical": 0.015904435133594963,
+      "successor_minus_siamese": 0.06927873281175012
+    }
+  },
+  "domain_advantages": [
+    {
+      "domain_type": "instrument",
+      "n_domains": 10,
+      "protocol": "domain_only",
+      "subset": "strict_core",
+      "successor_minus_classical": 0.0596402214204381
+    },
+    {
+      "domain_type": "instrument",
+      "n_domains": 10,
+      "protocol": "domain_only",
+      "subset": "quality_pass",
+      "successor_minus_classical": 0.01509561868845143
+    },
+    {
+      "domain_type": "sensor_family",
+      "n_domains": 4,
+      "protocol": "domain_only",
+      "subset": "strict_core",
+      "successor_minus_classical": 0.05341068730139657
+    },
+    {
+      "domain_type": "sensor_family",
+      "n_domains": 4,
+      "protocol": "domain_only",
+      "subset": "quality_pass",
+      "successor_minus_classical": 0.0087184639582817
+    },
+    {
+      "domain_type": "instrument",
+      "n_domains": 10,
+      "protocol": "domain_and_sample",
+      "subset": "strict_core",
+      "successor_minus_classical": 0.0017682407356484492
+    },
+    {
+      "domain_type": "instrument",
+      "n_domains": 10,
+      "protocol": "domain_and_sample",
+      "subset": "quality_pass",
+      "successor_minus_classical": 0.014987375279041948
+    },
+    {
+      "domain_type": "sensor_family",
+      "n_domains": 3,
+      "protocol": "domain_and_sample",
+      "subset": "strict_core",
+      "successor_minus_classical": -0.22557931356950967
+    },
+    {
+      "domain_type": "sensor_family",
+      "n_domains": 2,
+      "protocol": "domain_and_sample",
+      "subset": "quality_pass",
+      "successor_minus_classical": -0.0025641025641025272
+    }
+  ],
+  "field_stress_full_coverage_advantage": -0.04785714285714286,
+  "field_stress_selective_advantage_at_80_percent": -0.030008417508417505,
+  "field_stress_selective_pair_count": 5,
+  "gate_material_shift_advantage": false,
+  "gate_no_clean_degradation": true,
+  "gate_reproducibly_beats_siamese": true,
+  "maximum_clean_loss": 0.03,
+  "minimum_material_advantage": 0.02,
+  "positive_seed_count": 3,
+  "primary_domain_advantage": 0.008377808007345198,
+  "primary_domain_advantage_vs_siamese": 0.032999795562484606,
+  "primary_domain_pair_count": 20,
+  "primary_domain_seed_differences_vs_siamese": [
+    {
+      "difference": -0.0026457883591504442,
+      "n_domain_cohort_pairs": 20,
+      "seed": 1729
+    },
+    {
+      "difference": 0.07422149188278951,
+      "n_domain_cohort_pairs": 20,
+      "seed": 2718
+    },
+    {
+      "difference": 0.027423683163814754,
+      "n_domain_cohort_pairs": 20,
+      "seed": 3141
+    }
+  ],
+  "secondary_best_domain_advantage": 0.0596402214204381,
+  "seed_differences_vs_siamese": [
+    {
+      "difference": 0.07772049391892477,
+      "seed": 1729,
+      "siamese_mean_across_cohorts_and_folds": 0.571287799030362,
+      "successor_mean_across_cohorts_and_folds": 0.6490082929492867
+    },
+    {
+      "difference": 0.057382900743149334,
+      "seed": 2718,
+      "siamese_mean_across_cohorts_and_folds": 0.5440432571375688,
+      "successor_mean_across_cohorts_and_folds": 0.6014261578807182
+    },
+    {
+      "difference": 0.04772074317023656,
+      "seed": 3141,
+      "siamese_mean_across_cohorts_and_folds": 0.5638817030680384,
+      "successor_mean_across_cohorts_and_folds": 0.611602446238275
+    }
+  ],
+  "successor_supported": false
+}

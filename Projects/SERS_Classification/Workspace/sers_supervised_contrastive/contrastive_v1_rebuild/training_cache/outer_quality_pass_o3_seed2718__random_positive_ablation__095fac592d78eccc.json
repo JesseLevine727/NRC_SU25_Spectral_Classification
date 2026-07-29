@@ -1,0 +1,26 @@
+{
+  "best_epoch": 66,
+  "candidate_id": "random_positive_ablation__minimal_minmax__legacy32__f0b8e38757aa",
+  "parameters": {
+    "classifier_parameters": 231,
+    "encoder_parameters": 361152,
+    "total_parameters": 361383
+  },
+  "scenario": "outer_quality_pass_o3_seed2718",
+  "seed": 302132102,
+  "spec": {
+    "architecture": "legacy",
+    "classification_weight": 1.0,
+    "contrastive_temperature": 0.1,
+    "domain_aware_positives": false,
+    "domain_balanced_batches": true,
+    "embedding_dimension": 32,
+    "hard_negative_mining": true,
+    "name": "random_positive_ablation",
+    "pair_margin": 0.2,
+    "pair_margin_weight": 0.25,
+    "representation": "minimal_minmax",
+    "supervised_contrastive_weight": 0.25
+  },
+  "state_sha256": "d658133322604d804e479bc44ce225856ec7beef615ca41c6dbe1d57232974fa"
+}

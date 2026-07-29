@@ -1,0 +1,19 @@
+representation,evaluation_subset,metric,independent_unit,mean,sd,ci95_half_width,n_independent_units
+arpls_minmax,field_quality_stress,balanced_accuracy,outer master-group fold after averaging seeds,0.41690476190476183,0.10843384165090321,0.13463839736485433,5
+arpls_minmax,field_quality_stress,macro_f1,outer master-group fold after averaging seeds,0.35200677169680555,0.09691082014199724,0.12033067640671816,5
+arpls_minmax,quality_pass,balanced_accuracy,outer master-group fold after averaging seeds,0.7243269970255912,0.057009560957510017,0.0707867193943431,5
+arpls_minmax,quality_pass,macro_f1,outer master-group fold after averaging seeds,0.7071154779000981,0.05028501493492556,0.06243709269383567,5
+arpls_minmax,strict_core,balanced_accuracy,outer master-group fold after averaging seeds,0.7073546707188421,0.046932723366896016,0.05827467294233134,5
+arpls_minmax,strict_core,macro_f1,outer master-group fold after averaging seeds,0.6992204541929687,0.05041001748232449,0.06259230385662468,5
+derivative_1,field_quality_stress,balanced_accuracy,outer master-group fold after averaging seeds,0.4549470899470899,0.1228023976938996,0.15247931610961607,5
+derivative_1,field_quality_stress,macro_f1,outer master-group fold after averaging seeds,0.3640772455058169,0.0919610799720975,0.11418476223729068,5
+derivative_1,quality_pass,balanced_accuracy,outer master-group fold after averaging seeds,0.7230843030663232,0.07061504896133415,0.08768016402668473,5
+derivative_1,quality_pass,macro_f1,outer master-group fold after averaging seeds,0.7102380338305068,0.05914139259293356,0.07343373798628036,5
+derivative_1,strict_core,balanced_accuracy,outer master-group fold after averaging seeds,0.7020876954157438,0.04882862794864169,0.06062874940551451,5
+derivative_1,strict_core,macro_f1,outer master-group fold after averaging seeds,0.6934648326955531,0.04712915176501844,0.05851857101250478,5
+minimal_minmax,field_quality_stress,balanced_accuracy,outer master-group fold after averaging seeds,0.4494444444444444,0.11568443074652174,0.14364119281065266,5
+minimal_minmax,field_quality_stress,macro_f1,outer master-group fold after averaging seeds,0.38951025191221267,0.09764913458777948,0.12124741487339973,5
+minimal_minmax,quality_pass,balanced_accuracy,outer master-group fold after averaging seeds,0.7329070117162632,0.050779853239775366,0.06305151560189984,5
+minimal_minmax,quality_pass,macro_f1,outer master-group fold after averaging seeds,0.7148351699193586,0.049731855562541304,0.061750254615877145,5
+minimal_minmax,strict_core,balanced_accuracy,outer master-group fold after averaging seeds,0.7031189254124854,0.051935485813778215,0.06448642296419073,5
+minimal_minmax,strict_core,macro_f1,outer master-group fold after averaging seeds,0.6947708054262504,0.05844846851104084,0.07257335910030577,5
