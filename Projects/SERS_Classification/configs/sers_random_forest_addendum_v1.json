@@ -1,0 +1,118 @@
+{
+  "protocol_version": "sers-random-forest-addendum-v1",
+  "status_before_execution": "predeclared_before_random_forest_execution",
+  "created_date": "2026-07-30",
+  "scientific_claim": "Leakage-safe random-forest classification of chemical identity under master-sample, instrument, sensor-family, and field-quality shift; no denoising or disentanglement claim.",
+  "immutable_input": {
+    "bundle": "Workspace/nato_sers_field_trial/preprocessing_v2",
+    "strict_core_rows": 598,
+    "quality_pass_rows": 500,
+    "field_quality_stress_rows": 98,
+    "grouping_key": "master_sample_id",
+    "outer_fold_column": "grouped_sample_fold_5",
+    "representations": [
+      "arpls_minmax",
+      "minimal_minmax",
+      "derivative_1"
+    ]
+  },
+  "selection": {
+    "outer_folds": 5,
+    "inner_folds_per_outer": 4,
+    "selection_subsets": [
+      "strict_core",
+      "quality_pass"
+    ],
+    "primary_metric": "balanced_accuracy",
+    "secondary_metric": "macro_f1",
+    "final_tie_break": "declared_candidate_order",
+    "fit_on_training_partition_only": true,
+    "field_stress_used_for_selection": false,
+    "held_domain_used_for_selection": false
+  },
+  "random_forest": {
+    "n_estimators": 300,
+    "criterion": "gini",
+    "bootstrap": true,
+    "class_weight": "balanced_subsample",
+    "max_features": [
+      "sqrt",
+      0.1
+    ],
+    "max_depth": [
+      null,
+      12
+    ],
+    "min_samples_leaf": [
+      1,
+      2,
+      4
+    ],
+    "master_weighting": [
+      "uniform_rows",
+      "inverse_master_frequency"
+    ],
+    "estimator_jobs": 1
+  },
+  "locked_evaluation": {
+    "final_seeds": [
+      1729,
+      2718,
+      3141
+    ],
+    "metrics": [
+      "balanced_accuracy",
+      "macro_f1",
+      "accuracy",
+      "negative_log_likelihood",
+      "brier_multiclass",
+      "expected_calibration_error_10"
+    ],
+    "selective_coverages": [
+      1.0,
+      0.9,
+      0.8,
+      0.7,
+      0.5
+    ],
+    "domain_protocols": [
+      "domain_only",
+      "domain_and_sample"
+    ],
+    "domain_types": [
+      "instrument",
+      "sensor_family"
+    ],
+    "unsupported_test_classes_excluded_from_supported_metrics": true,
+    "unsupported_rows_retained_in_predictions": true
+  },
+  "calibration": {
+    "method": "single_temperature_on_log_forest_probabilities",
+    "temperature_bounds": [
+      0.05,
+      20.0
+    ],
+    "fit_source": "cross-fitted inner-validation predictions from the outer-development master groups only"
+  },
+  "interpretability": {
+    "impurity_importance": true,
+    "heldout_band_permutation_importance": true,
+    "band_width_cm1": 20,
+    "permutation_repeats": 5,
+    "permutation_seed": 24681357,
+    "interpretation_limit": "Correlated neighboring wavenumbers divide or exchange importance; band permutation is predictive reliance, not a chemical peak assignment."
+  },
+  "negative_control": {
+    "type": "master-group analyte-label permutation",
+    "seeds": [
+      1729,
+      2718,
+      3141
+    ],
+    "evaluation": "five grouped strict-core outer folds"
+  },
+  "locked_comparators": {
+    "classical_bundle": "Workspace/sers_classical_benchmark/classical_benchmark_v2",
+    "contrastive_bundle": "Workspace/sers_supervised_contrastive/contrastive_v1"
+  }
+}

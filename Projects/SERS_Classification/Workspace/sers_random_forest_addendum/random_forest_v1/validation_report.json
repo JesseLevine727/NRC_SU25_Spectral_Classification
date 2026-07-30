@@ -1,0 +1,96 @@
+{
+  "checks": [
+    {
+      "detail": "n=72",
+      "name": "candidate_count",
+      "pass": true
+    },
+    {
+      "detail": "n=2880",
+      "name": "inner_fit_count",
+      "pass": true
+    },
+    {
+      "detail": "failures=0",
+      "name": "all_inner_pass",
+      "pass": true
+    },
+    {
+      "detail": "n=10",
+      "name": "selection_count",
+      "pass": true
+    },
+    {
+      "detail": "n=45",
+      "name": "outer_metric_count",
+      "pass": true
+    },
+    {
+      "detail": "n=3588",
+      "name": "outer_prediction_count",
+      "pass": true
+    },
+    {
+      "detail": "n=168",
+      "name": "domain_metric_count",
+      "pass": true
+    },
+    {
+      "detail": "n=15",
+      "name": "negative_count",
+      "pass": true
+    },
+    {
+      "detail": "n=21015",
+      "name": "impurity_count",
+      "pass": true
+    },
+    {
+      "detail": "n=355",
+      "name": "band_count",
+      "pass": true
+    },
+    {
+      "detail": "classification metrics in [0,1]",
+      "name": "metrics_bounded",
+      "pass": true
+    },
+    {
+      "detail": "max labels per master checked",
+      "name": "one_label_per_master",
+      "pass": true
+    },
+    {
+      "detail": "all five frozen master folds",
+      "name": "outer_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "[('quality_pass', 'field_quality_stress'), ('quality_pass', 'quality_pass'), ('strict_core', 'strict_core')]",
+      "name": "locked_subsets_present",
+      "pass": true
+    },
+    {
+      "detail": "search subsets inspected",
+      "name": "stress_excluded_from_selection",
+      "pass": true
+    },
+    {
+      "detail": "search columns inspected",
+      "name": "domain_excluded_from_selection",
+      "pass": true
+    },
+    {
+      "detail": "range=3..3",
+      "name": "three_outer_seeds",
+      "pass": true
+    },
+    {
+      "detail": "mismatches=[]",
+      "name": "artifact_hashes",
+      "pass": true
+    }
+  ],
+  "protocol_version": "sers-random-forest-addendum-v1",
+  "status": "pass"
+}

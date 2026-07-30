@@ -1,0 +1,10 @@
+subset,representation,max_features,max_depth,min_samples_leaf,master_weighting,outer_folds_selected
+quality_pass,derivative_1,0.1,,4,inverse_master_frequency,1
+quality_pass,derivative_1,0.1,,4,uniform_rows,1
+quality_pass,derivative_1,sqrt,12.0,2,inverse_master_frequency,1
+quality_pass,derivative_1,sqrt,12.0,2,uniform_rows,1
+quality_pass,derivative_1,sqrt,,1,uniform_rows,1
+strict_core,derivative_1,0.1,,2,inverse_master_frequency,2
+strict_core,derivative_1,0.1,12.0,2,uniform_rows,1
+strict_core,derivative_1,0.1,12.0,4,uniform_rows,1
+strict_core,derivative_1,sqrt,,4,inverse_master_frequency,1

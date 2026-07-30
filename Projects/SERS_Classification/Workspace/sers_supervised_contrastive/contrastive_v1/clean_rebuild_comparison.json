@@ -1,6 +1,6 @@
 {
   "artifacts_compared": 37,
-  "artifacts_exact": 36,
+  "artifacts_exact": 37,
   "details": [
     {
       "artifact": "final_input_hashes.json",
@@ -230,9 +230,9 @@
       "artifact": "negative_control_metrics.csv",
       "canonical_exists": true,
       "canonical_sha256": "867abbdfdf9e9c0ce6e673071c1c7f88cbb464e1ad04eae2e2a2d1352cdb11ef",
-      "exact": false,
+      "exact": true,
       "rebuild_exists": true,
-      "rebuild_sha256": "9edf6a940c130796b8f99b11dab40b4544e940781268123553b6ba9b7e695b8c"
+      "rebuild_sha256": "867abbdfdf9e9c0ce6e673071c1c7f88cbb464e1ad04eae2e2a2d1352cdb11ef"
     },
     {
       "artifact": "selection_training_histories.csv",
@@ -299,5 +299,5 @@
       "rebuild_sha256": "71ea0423a71dc42edab1e15be474e058dec25483580387cf5ef8c4adb0abc672"
     }
   ],
-  "status": "mismatch"
+  "status": "exact_match"
 }

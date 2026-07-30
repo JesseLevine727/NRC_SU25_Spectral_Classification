@@ -1,23 +1,25 @@
 # Archived unpinned negative-control evaluation
 
-This directory preserves the one canonical artifact that failed the first
-clean-rebuild comparison on 2026-07-29, together with that mismatch report.
+This directory preserves the one canonical artifact involved in the first
+clean-rebuild mismatch on 2026-07-29, together with that mismatch report. The
+directory name records the initial hypothesis; subsequent diagnosis showed
+that thread pinning was not the deciding cause.
 
 The trained state hashes, training histories, seeds, balanced accuracies,
 macro-F1 values, and accuracies were identical. The mismatch was confined to
-derived probability/embedding diagnostics from a later cached regeneration
-performed outside the thread-pinned rebuild shell, plus the output order of
-the encoder/classifier parameter columns.
+derived probability/embedding diagnostics and the output order of the
+encoder/classifier parameter columns.
 
-The canonical `negative_control_metrics.csv` was subsequently regenerated
-from the same cached model states with the deterministic environment used by
-`scripts/rebuild_sers_contrastive.sh`:
+Element-wise comparison proved that the canonical and rebuild checkpoint
+tensors and their metadata were exactly identical. The actual distinction was
+evaluation from the just-trained in-memory CUDA module versus evaluation after
+serializing and reloading that same state. The canonical table reflected the
+checkpoint-reloaded evaluation; the first clean-rebuild table reflected the
+in-memory evaluation.
 
-- `OMP_NUM_THREADS=1`
-- `OPENBLAS_NUM_THREADS=1`
-- `MKL_NUM_THREADS=1`
-- `NUMEXPR_NUM_THREADS=1`
-- `CUBLAS_WORKSPACE_CONFIG=:4096:8`
-- `PYTHONHASHSEED=0`
+`scripts/rebuild_sers_contrastive.sh` now performs a cached negative-control
+evaluation after checkpoint reload. The serialized state is therefore the
+explicit reproducibility boundary.
 
-No model was retrained and no locked performance or promotion outcome changed.
+No model was retrained, no checkpoint changed, and no locked balanced
+accuracy, macro-F1, accuracy, or promotion outcome changed.

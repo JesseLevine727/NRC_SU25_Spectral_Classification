@@ -27,6 +27,16 @@ export PYTHONHASHSEED=0
   --output-dir "$rebuild_dir" \
   --stage all
 
+# Re-evaluate negative controls after a checkpoint round trip.  The serialized
+# state is the reproducibility boundary: CUDA inference from the just-trained
+# in-memory module can differ at low floating-point precision from inference
+# after loading the element-wise identical checkpoint.  This cached pass does
+# not retrain any model and makes the derived diagnostics independently
+# reproducible from the saved states.
+.venv/bin/python scripts/run_sers_contrastive_final.py \
+  --output-dir "$rebuild_dir" \
+  --stage negative
+
 .venv/bin/python scripts/finalize_sers_contrastive.py \
   --output-dir "$rebuild_dir"
 

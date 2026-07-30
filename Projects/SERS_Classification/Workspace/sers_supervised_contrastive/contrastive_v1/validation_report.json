@@ -1,5 +1,5 @@
 {
-  "checks": 210,
+  "checks": 212,
   "details": [
     {
       "check": "protocol_copy_exists",
@@ -1050,9 +1050,19 @@
       "check": "terminal_stress_selective_folds",
       "detail": "",
       "passed": true
+    },
+    {
+      "check": "clean_rebuild_exists",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "check": "clean_rebuild_exact",
+      "detail": "",
+      "passed": true
     }
   ],
   "failed": 0,
-  "passed": 210,
+  "passed": 212,
   "status": "pass"
 }
