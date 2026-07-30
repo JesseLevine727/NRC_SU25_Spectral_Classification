@@ -1,0 +1,161 @@
+{
+  "checks": [
+    {
+      "detail": "scenarios=30, row_range=598..598, uid_range=598..598",
+      "name": "outer_scenario_completeness",
+      "pass": true
+    },
+    {
+      "detail": "expected=17940, actual=17940",
+      "name": "outer_total_rows",
+      "pass": true
+    },
+    {
+      "detail": "expected=30, actual=30",
+      "name": "outer_scenario_count",
+      "pass": true
+    },
+    {
+      "detail": "scenarios=120, row_range=598..598, uid_range=598..598",
+      "name": "threshold_scenario_completeness",
+      "pass": true
+    },
+    {
+      "detail": "expected=71760, actual=71760",
+      "name": "threshold_total_rows",
+      "pass": true
+    },
+    {
+      "detail": "expected=120, actual=120",
+      "name": "threshold_scenario_count",
+      "pass": true
+    },
+    {
+      "detail": "scenarios=600, row_range=598..598, uid_range=598..598",
+      "name": "surrogate_scenario_completeness",
+      "pass": true
+    },
+    {
+      "detail": "expected=358800, actual=358800",
+      "name": "surrogate_total_rows",
+      "pass": true
+    },
+    {
+      "detail": "expected=600, actual=600",
+      "name": "surrogate_scenario_count",
+      "pass": true
+    },
+    {
+      "detail": "['4_ANPP', '4_nitrophenol', 'acetaminophen', 'benzyl_fentanyl', 'ethanol', 'ethyl_paraoxon']",
+      "name": "six_true_unknowns",
+      "pass": true
+    },
+    {
+      "detail": "held differs from surrogate and blank is never surrogate",
+      "name": "surrogate_unknown_validity",
+      "pass": true
+    },
+    {
+      "detail": "['known_development_quality', 'known_quality_test', 'known_stress', 'unknown_quality', 'unknown_stress']",
+      "name": "outer_partition_vocabulary",
+      "pass": true
+    },
+    {
+      "detail": "['calibration_known', 'excluded_outer_known_test', 'locked_held_unknown', 'locked_stress', 'train_known']",
+      "name": "threshold_partition_vocabulary",
+      "pass": true
+    },
+    {
+      "detail": "['excluded_outer_known_test', 'excluded_surrogate_training', 'locked_held_unknown', 'locked_stress', 'train_known', 'validation_known', 'validation_surrogate_unknown']",
+      "name": "surrogate_partition_vocabulary",
+      "pass": true
+    },
+    {
+      "detail": "overlapping_masters=0",
+      "name": "outer_known_development_quality_vs_known_quality_test_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "overlapping_masters=0",
+      "name": "outer_known_development_quality_vs_unknown_quality_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "overlapping_masters=0",
+      "name": "threshold_train_known_vs_calibration_known_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "overlapping_masters=0",
+      "name": "threshold_train_known_vs_excluded_outer_known_test_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "overlapping_masters=0",
+      "name": "threshold_calibration_known_vs_excluded_outer_known_test_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "overlapping_masters=0",
+      "name": "surrogate_train_known_vs_validation_known_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "overlapping_masters=0",
+      "name": "surrogate_train_known_vs_validation_surrogate_unknown_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "overlapping_masters=0",
+      "name": "surrogate_validation_known_vs_validation_surrogate_unknown_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "overlapping_masters=0",
+      "name": "surrogate_train_known_vs_excluded_outer_known_test_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "leaked_rows=0",
+      "name": "true_unknown_never_selection",
+      "pass": true
+    },
+    {
+      "detail": "leaked_rows=0",
+      "name": "surrogate_unknown_never_train",
+      "pass": true
+    },
+    {
+      "detail": "leaked_rows=0",
+      "name": "stress_never_selection_or_training",
+      "pass": true
+    },
+    {
+      "detail": "failed=[]",
+      "name": "threshold_crossfit_exact_coverage",
+      "pass": true
+    },
+    {
+      "detail": "failed=[]",
+      "name": "surrogate_unknown_exact_crossfit_coverage",
+      "pass": true
+    },
+    {
+      "detail": "failed=[]",
+      "name": "all_surrogate_scenarios_have_expected_known_classes",
+      "pass": true
+    },
+    {
+      "detail": "domain_evaluation_partitions_core.csv=True, domain_evaluation_partitions_quality.csv=True",
+      "name": "domain_partitions_byte_identical",
+      "pass": true
+    },
+    {
+      "detail": "mismatches=[]",
+      "name": "artifact_hashes",
+      "pass": true
+    }
+  ],
+  "protocol_version": "sers-open-world-shift-v1",
+  "status": "pass"
+}

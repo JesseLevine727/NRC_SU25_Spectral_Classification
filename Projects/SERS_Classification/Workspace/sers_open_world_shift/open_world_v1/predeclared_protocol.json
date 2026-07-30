@@ -1,0 +1,194 @@
+{
+  "protocol_version": "sers-open-world-shift-v1",
+  "status_before_execution": "predeclared_partitions_before_open_set_outcomes",
+  "created_date": "2026-07-30",
+  "title": "Open-world, shift-aware SERS identification across field instruments and sensor families",
+  "scientific_claim": "Chemical classification, unseen-chemical rejection, field-quality rejection, selective prediction, and domain robustness under physical-master grouping; no denoising, chemical-only recovery, causal nuisance-removal, or semantic-disentanglement claim.",
+  "immutable_input": {
+    "bundle": "Workspace/nato_sers_field_trial/preprocessing_v2",
+    "dataset_version": "nato-sers-preprocessing-v2",
+    "strict_core_rows": 598,
+    "quality_pass_rows": 500,
+    "field_quality_stress_rows": 98,
+    "master_samples": 69,
+    "grouping_key": "master_sample_id",
+    "outer_fold_column": "grouped_sample_fold_5",
+    "axis_start_cm1": 400,
+    "axis_stop_cm1": 1800,
+    "axis_step_cm1": 1,
+    "representations": [
+      "arpls_minmax",
+      "minimal_minmax",
+      "derivative_1"
+    ],
+    "domain_partition_files": [
+      "domain_evaluation_partitions_core.csv",
+      "domain_evaluation_partitions_quality.csv"
+    ]
+  },
+  "classes": {
+    "known_operational_blank": "blank",
+    "held_unknown_chemicals": [
+      "4_ANPP",
+      "4_nitrophenol",
+      "acetaminophen",
+      "benzyl_fentanyl",
+      "ethanol",
+      "ethyl_paraoxon"
+    ],
+    "blank_can_be_surrogate_unknown": false
+  },
+  "partition_design": {
+    "outer_folds": 5,
+    "inner_folds_per_outer": 4,
+    "true_held_unknown_never_used_for": [
+      "model_selection",
+      "representation_selection",
+      "epoch_selection",
+      "augmentation_selection",
+      "score_selection",
+      "score_direction_selection",
+      "temperature_calibration",
+      "rejection_threshold_selection"
+    ],
+    "field_stress_never_used_for_selection": true,
+    "held_domains_never_used_for_selection": true,
+    "outer_open_set_partitions": [
+      "known_development_quality",
+      "known_quality_test",
+      "unknown_quality",
+      "known_stress",
+      "unknown_stress"
+    ],
+    "threshold_crossfit_partitions": [
+      "train_known",
+      "calibration_known",
+      "excluded_outer_known_test",
+      "locked_held_unknown",
+      "locked_stress"
+    ],
+    "surrogate_inner_partitions": [
+      "train_known",
+      "validation_known",
+      "validation_surrogate_unknown",
+      "excluded_surrogate_training",
+      "excluded_outer_known_test",
+      "locked_held_unknown",
+      "locked_stress"
+    ]
+  },
+  "score_registry": [
+    {
+      "score": "one_minus_calibrated_max_probability",
+      "larger_means": "more_unknown",
+      "applicability": "all probabilistic classifiers"
+    },
+    {
+      "score": "predictive_entropy",
+      "larger_means": "more_unknown",
+      "applicability": "all probabilistic classifiers"
+    },
+    {
+      "score": "energy",
+      "larger_means": "more_unknown",
+      "applicability": "neural classifiers with frozen raw logits only"
+    },
+    {
+      "score": "minimum_class_mahalanobis_distance",
+      "larger_means": "more_unknown",
+      "applicability": "representations with development-fitted class centroids and regularized covariance"
+    },
+    {
+      "score": "negative_log_latent_density",
+      "larger_means": "more_unknown",
+      "applicability": "VAE or learned representations with development-fitted density"
+    },
+    {
+      "score": "reconstruction_error",
+      "larger_means": "more_unknown",
+      "applicability": "autoencoding models"
+    },
+    {
+      "score": "mc_dropout_mutual_information",
+      "larger_means": "more_unknown",
+      "applicability": "MC-dropout neural models"
+    },
+    {
+      "score": "ensemble_mutual_information",
+      "larger_means": "more_unknown",
+      "applicability": "deep ensembles"
+    }
+  ],
+  "threshold_policy": {
+    "source": "cross-fitted known-development scores only",
+    "known_retained_coverages": [
+      0.95,
+      0.9,
+      0.8,
+      0.7,
+      0.5
+    ],
+    "quantile_method": "higher",
+    "held_unknown_examples_used": false,
+    "stress_examples_used": false
+  },
+  "surrogate_selection": {
+    "unknown_source": "one remaining nonblank chemical removed inside each true-held-chemical outer-development partition",
+    "primary_metric": "oscr_auc",
+    "secondary_metric": "known_balanced_accuracy",
+    "tertiary_metric": "unknown_auroc",
+    "aggregation": "average validation rows within master, then average surrogate chemicals and grouped folds",
+    "true_held_unknown_used": false
+  },
+  "locked_metrics": {
+    "closed_set": [
+      "balanced_accuracy",
+      "macro_f1",
+      "accuracy",
+      "per_class_recall",
+      "negative_log_likelihood",
+      "brier_multiclass",
+      "expected_calibration_error_10"
+    ],
+    "open_set": [
+      "auroc",
+      "auprc",
+      "fpr_at_95_tpr",
+      "oscr_auc",
+      "known_balanced_accuracy_at_fixed_known_coverage",
+      "risk_coverage"
+    ],
+    "domain": [
+      "mean_held_domain_balanced_accuracy",
+      "worst_held_domain_balanced_accuracy",
+      "same_master_cross_instrument_prediction_agreement",
+      "target_adjusted_domain_probe"
+    ],
+    "independent_units": [
+      "master_sample_id",
+      "held_unknown_chemical",
+      "heldout_domain"
+    ]
+  },
+  "mandatory_controls": [
+    "sealed_classical",
+    "validated_random_forest",
+    "siamese",
+    "supervised_contrastive",
+    "standard_vae",
+    "structured_vae_negative_mechanistic_comparator"
+  ],
+  "negative_controls": [
+    "master_group_label_permutation",
+    "score_direction_inversion",
+    "known_only_threshold_coverage_check",
+    "split_overlap_check",
+    "unsupported_class_accounting"
+  ],
+  "claim_limits": {
+    "denoising": false,
+    "chemical_only_recovery": false,
+    "causal_nuisance_removal": false,
+    "semantic_disentanglement": false
+  }
+}
