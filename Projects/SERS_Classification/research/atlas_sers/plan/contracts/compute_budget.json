@@ -1,0 +1,28 @@
+{
+  "protocol_version": "atlas-sers-compute-budget-v1",
+  "policy": "Exact counts are generated from frozen run registries before launch; estimates do not authorize execution.",
+  "stages": [
+    {"stage": "data_and_split_validation", "fit_estimate_low": 0, "fit_estimate_high": 0, "gate": "G0"},
+    {"stage": "classical_nested", "fit_estimate_low": 5000, "fit_estimate_high": 15000, "gate": "G1"},
+    {"stage": "compact_D0_development", "fit_estimate_low": 100, "fit_estimate_high": 250, "gate": "G2"},
+    {"stage": "D1_to_D5_source_development", "fit_estimate_low": 300, "fit_estimate_high": 700, "gate": "G3"},
+    {"stage": "definitive_two_deep_models_initial", "fit_estimate_low": 624, "fit_estimate_high": 624, "gate": "stability_before_full_repeats"},
+    {"stage": "full_repeat_confirmation_additional", "fit_estimate_low": 0, "fit_estimate_high": 1560, "gate": "resource_and_stability_approval"},
+    {"stage": "adaptation_robustness_open_set", "fit_estimate_low": 0, "fit_estimate_high": null, "gate": "primary_complete_and_separate_budget"}
+  ],
+  "required_dry_run_outputs": [
+    "expected_run_registry.csv",
+    "fit_count_by_phase_model_task.csv",
+    "estimated_gpu_hours.csv",
+    "estimated_cpu_hours.csv",
+    "estimated_disk_bytes.json",
+    "shard_manifest.csv"
+  ],
+  "resource_rules": [
+    "primary work has priority over secondary work",
+    "secondary compute cannot delay primary completion",
+    "completed run IDs are immutable by code and configuration hash",
+    "test outcome cannot trigger budget expansion",
+    "failed runs remain visible"
+  ]
+}

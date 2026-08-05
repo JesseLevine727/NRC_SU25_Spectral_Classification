@@ -1,0 +1,13 @@
+task_id,scope,name,population,classes,independent_unit,split_design,information_regime,primary_use
+T0,E,Aggregate seven-class continuity,598 primary,7,master,master-grouped repeated four-fold,ordinary closed set,Historical continuity and confounding illustration only
+T1-CWA,S,CWA within-station chemistry,CWA primary,3,master,five-repeat four-fold stratified group CV,station-local closed set,Chemistry separability
+T1-PILLS,S,Pills within-station chemistry,Pills primary,3,master,five-repeat four-fold stratified group CV,station-local closed set,Chemistry separability
+T1-SURF,S,Surfaces within-station chemistry,Surfaces primary,3,master,five-repeat four-fold stratified group CV,station-local closed set,Chemistry separability
+T2-PS,S,Pills to surfaces binary transfer,4-ANPP and benzyl fentanyl,2,master,train pills test surfaces,station transfer,Directional transfer
+T2-SP,S,Surfaces to pills binary transfer,4-ANPP and benzyl fentanyl,2,master,train surfaces test pills,station transfer,Directional transfer
+T3-ZS,P,Unseen instrument and unseen master,13 eligible station-instrument domains,3,domain and master,five-repeat outer-master four-fold plus full held-instrument exclusion,zero-shot source-only,Primary endpoint
+T3-LOW,E,Low-support unseen instrument,4 low-support station-instrument domains,2 or 3,domain and master,same as T3-ZS,zero-shot source-only,Failure visibility only
+T3-UDA,S,Unlabeled target adaptation,eligible T3 domains,3,domain and master,disjoint adaptation and evaluation masters,unlabeled target intensities only,Adaptation learning curve
+T3-PC,S,Paired target calibration,eligible T3 domains,3,domain and master,disjoint paired calibration and evaluation masters,target-source pair IDs allowed,Operational paired calibration
+T3-FS,S,Supervised few-shot target calibration,eligible support-permitting domains,3,domain and master,frozen k-shot calibration draws and disjoint evaluation masters,k labelled target masters per class,Few-shot learning curve
+T4-OPEN,S,Within-station held-chemical rejection,8 station-held-chemical tasks,2 known plus 1 unknown,held task and master,held chemical absent from fitting and known-only cross-fit thresholding,open set,Narrow unknown-rejection stress test

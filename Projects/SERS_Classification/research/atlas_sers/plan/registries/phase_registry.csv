@@ -1,0 +1,14 @@
+phase_id,scope,title,depends_on,principal_input,principal_output,completion_gate,execution_status
+P00,primary,Governance and artifact contract,completed_restart,validated restart artifacts,"protocol registry; environment lock; hashes; deviations log",G0,planned
+P01,primary,Data and representation freeze,P00,598-row primary manifest,"tiered manifests; native registry; frozen representation bundles",G0,planned
+P02,primary,Split and information-regime freeze,P01,frozen manifests,"five-repeat master splits; T3 partitions; adaptation partitions; leakage audit",G0,planned
+P03,primary,Definitive classical benchmark,P02,frozen partitions,"nested selections; predictions; calibration; classical metrics",G1,planned
+P04,primary,Compact deep ERM baseline,P02,frozen partitions,"D0 histories; checkpoints; predictions; training audit",G2,planned
+P05,primary,Acquisition-aware source-only development,P04,validated D0 encoder,"D1-D5 development comparisons; frozen advancing candidate",G3,planned
+P06,primary,Definitive T1 T2 and T3-ZS evaluation,P03|P05,frozen classical and deep pipelines,"paired row/master/domain predictions; primary metrics",G4,planned
+P07,secondary,Target-instrument adaptation and calibration,P06,frozen zero-shot conclusions,"UDA; paired-calibration; few-shot learning curves",regime_separation_pass,planned
+P08,secondary,Robustness and preprocessing sensitivity,P06,frozen predictive pipelines,"perturbation curves; preprocessing and tier contrasts",robustness_registry_complete,planned
+P09,secondary,Narrow station-conditioned open set,P06,frozen encoders and known-only score policy,"held-chemical predictions; thresholds; AUROC AUPR OSCR",open_set_leakage_pass,planned
+P10,secondary,Representation explainability and error analysis,P06|P08|P09,frozen predictions and embeddings,"domain probes; pair diagnostics; attribution; error taxonomy",interpretation_audit_pass,planned
+P11,primary,Statistical inference and decision gates,P06|P10,complete metrics and predictions,"hierarchical intervals; paired contrasts; Route A B or C verdict",G4|G5|G6,planned
+P12,primary,Figures manuscript tables and reproducibility,P11,final evidence tables,"paired TikZ HTML figures; manuscript tables; validation; hashes",final_validation_pass,planned

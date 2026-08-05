@@ -1,0 +1,9 @@
+gate_id,scope,gate_name,inputs,pass_condition,failure_action
+G0,P,Integrity gate,"hashes; UIDs; axes; tiers; partitions",Every integrity and leakage check true,Block all outcome interpretation and repair provenance
+G1,P,Classical validity,"permutation; nested selections; calibrated predictions",Permutation near chance and complete leakage-free predictions,Repair harness before deep comparison
+G2,P,Deep training validity,"histories; failures; parameter and epoch logs",At least 95 percent planned runs finite with failures retained,Diagnose optimization without inspecting test-driven alternatives
+G3,P,Acquisition-aware advancement,Source-only pseudo-domain development,"mean gain >=0.02; worst loss <=0.02; T1 loss <=0.02; >=60 percent domains improve; collapse <=5 percent",Retain D3 as control and freeze D0 as deep comparator
+G4,P,Primary superiority,T3-ZS paired outcomes,"mean delta >=0.03; CI lower >0; >=8 of 13 improve; worst loss <=0.03; T1 noninferiority -0.02",Do not promote deep method; take Route B or C
+G5,S,Invariance interpretation,"domain probes; chemistry BA; T3 BA",Domain probe increment falls while chemistry noninferior and T3 improves,Describe residual domain information without invariance claim
+G6,P,Publication route,"G0-G5; robustness; limitations",Route A if G4 passes; Route B if classical stable; Route C if both unstable,Write claim set for selected route
+GF,P,Figure parity,"figure registry; data hashes; TeX logs; HTML audit",Every registered result has semantically matched native TikZ and standalone HTML,Block manuscript freeze

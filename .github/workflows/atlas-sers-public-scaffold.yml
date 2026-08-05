@@ -1,0 +1,40 @@
+name: ATLAS SERS public scaffold
+
+on:
+  pull_request:
+    paths:
+      - "Projects/SERS_Classification/research/atlas_sers/**"
+      - ".github/workflows/atlas-sers-public-scaffold.yml"
+  push:
+    paths:
+      - "Projects/SERS_Classification/research/atlas_sers/**"
+      - ".github/workflows/atlas-sers-public-scaffold.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Projects/SERS_Classification/research/atlas_sers
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: Projects/SERS_Classification/research/atlas_sers
+          sparse-checkout-cone-mode: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: Projects/SERS_Classification/research/atlas_sers/pyproject.toml
+      - name: Install project
+        run: python -m pip install -e ".[dev]"
+      - name: Validate public boundary and plan contracts
+        run: python scripts/validate_public_scaffold.py
+      - name: Lint Python sources
+        run: ruff check src scripts tests
+      - name: Run tests
+        run: pytest

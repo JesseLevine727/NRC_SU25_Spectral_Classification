@@ -2,6 +2,11 @@
 
 This directory groups the SERS-focused classification and exploration work.
 
+## ATLAS multi-instrument research
+
+- [research/atlas_sers](research/atlas_sers)
+  Public, data-free research scaffold for acquisition-aware SERS classification under instrument shift. It contains the frozen master plan, experiment contracts, registries, publication-figure specification, package layout, and validation tooling. Private spectra and derived row-level artifacts are intentionally excluded.
+
 ## Main area
 
 - [Workspace](Workspace)

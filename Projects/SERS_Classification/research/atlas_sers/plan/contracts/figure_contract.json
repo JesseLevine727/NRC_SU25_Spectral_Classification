@@ -1,0 +1,64 @@
+{
+  "protocol_version": "atlas-sers-figure-contract-v1",
+  "required_outputs_per_figure": {
+    "native_source": "figures/tikz/<figure_id>_<slug>.tex",
+    "compiled_vector": "figures/pdf/<figure_id>_<slug>.pdf",
+    "interactive_quick_view": "figures/html/<figure_id>_<slug>.html",
+    "frozen_data": "figures/data/<figure_id>_<slug>.csv or json",
+    "generation_metadata": "figure_manifest.csv row"
+  },
+  "native_tikz_rules": {
+    "permitted": ["TikZ primitives", "PGFPlots", "PGFPlotstable", "external frozen CSV or TSV data"],
+    "prohibited": ["includegraphics", "embedded PNG", "embedded JPEG", "embedded PDF plot", "embedded SVG plot", "screenshot"],
+    "must_compile": true,
+    "compiler": "pdflatex",
+    "vector_only": true
+  },
+  "html_rules": {
+    "full_html": true,
+    "self_contained": true,
+    "external_cdn": false,
+    "embedded_data": true,
+    "required_interactions": ["hover", "zoom or pan where meaningful", "trace toggle where meaningful", "browser export control where supported"],
+    "required_accessibility": ["title", "description or alt text", "keyboard-readable data table or downloadable data link where practical"]
+  },
+  "semantic_parity": [
+    "same data hash",
+    "same population and filters",
+    "same aggregation unit",
+    "same model and preprocessing labels",
+    "same point estimates and intervals",
+    "same axis transforms units and limits",
+    "same category-to-color mapping",
+    "same claim-scope caption"
+  ],
+  "style": {
+    "palette": {
+      "orange": "#E69F00",
+      "sky_blue": "#56B4E9",
+      "green": "#009E73",
+      "yellow": "#F0E442",
+      "blue": "#0072B2",
+      "vermillion": "#D55E00",
+      "purple": "#CC79A7",
+      "black": "#000000"
+    },
+    "redundant_encoding": true,
+    "grayscale_interpretable": true,
+    "minimum_text_pt": 8,
+    "minimum_line_pt": 0.5,
+    "target_width_inches": 7.16,
+    "panel_labels": "bold uppercase",
+    "rainbow_scale_prohibited": true
+  },
+  "caption_required_fields": [
+    "scope label P S or E",
+    "population",
+    "independent unit",
+    "sample size",
+    "aggregation",
+    "uncertainty definition",
+    "abbreviation expansion",
+    "limitations needed for interpretation"
+  ]
+}

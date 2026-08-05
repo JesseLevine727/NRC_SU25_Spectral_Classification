@@ -1,0 +1,97 @@
+{
+  "protocol_version": "atlas-sers-research-master-plan-v1",
+  "plan_date": "2026-08-05",
+  "status": "execution-ready analysis plan; not a prospective preregistration",
+  "primary_question": "Can an acquisition-aware representation identify station-supported chemicals on an unseen SERS instrument and unseen physical masters more reliably than a source-only development-selected classical pipeline?",
+  "primary_scope": "station-conditioned zero-shot unseen-instrument plus unseen-master chemical identification",
+  "secondary_scopes": [
+    "within-station master-grouped classification",
+    "bidirectional pills-surfaces binary transfer",
+    "calibration and selective prediction",
+    "unlabeled target adaptation",
+    "paired target calibration",
+    "supervised few-shot target calibration",
+    "station-conditioned held-chemical rejection"
+  ],
+  "independent_units": {
+    "prediction_uncertainty": "physical master_sample_id",
+    "primary_transfer_contrast": "station-instrument domain with master resampling inside domain",
+    "open_set": "held station-chemical task and physical master",
+    "not_independent": ["spectrum rows from one master", "outer fold repeats", "neural seeds"]
+  },
+  "authoritative_inputs": [
+    {
+      "path": "${ATLAS_PRIVATE_ROOT}/tables/tier_unique_attributable_sers.csv",
+      "sha256": "91176ac0df700a3ae1dd4c1407971bc0aaa15dbbf01c5cc2ccf0bf8c9b544ba6",
+      "expected_rows": 598
+    },
+    {
+      "path": "${ATLAS_PRIVATE_ROOT}/arrays/unique_attributable_common_support_raw.npz",
+      "sha256": "25c765231d15d75c7e0d274de3dd8108224966310ee9b974ae6673dbe8e893b9",
+      "expected_shape": [598, 1450]
+    },
+    {
+      "path": "${ATLAS_PRIVATE_ROOT}/preprocessing/preprocessing_candidates.npz",
+      "sha256": "019abf383ab6aa09aeebf96192e35589c70257324039f171d4f0ba263cd2c4b8"
+    },
+    {
+      "path": "${ATLAS_PRIVATE_ROOT}/FINAL_VALIDATION_REPORT.json",
+      "sha256": "fbcc073bfa78c39a8cd8909e373176339086bd86b0c1d7135011ced5ff8c2c97",
+      "required_status": "pass"
+    }
+  ],
+  "population_counts": {
+    "primary_spectra": 598,
+    "notes_clear_spectra": 500,
+    "mira1_excluded_spectra": 575,
+    "physical_masters": 69,
+    "targets": 7,
+    "instruments": 10,
+    "sensor_families": 4,
+    "stations": 3
+  },
+  "primary_representation": {
+    "id": "R_MIN_400_1800",
+    "axis_start_cm1": 400,
+    "axis_end_cm1": 1800,
+    "axis_step_cm1": 1,
+    "n_features": 1401,
+    "interpolation": "linear within measured effective support only",
+    "scaling": "per-spectrum min-max to [0,1]",
+    "universal_baseline_correction": false,
+    "universal_smoothing": false,
+    "universal_alignment": false
+  },
+  "primary_endpoint": {
+    "name": "unweighted mean domain-balanced accuracy",
+    "eligible_domains": 13,
+    "weighting": "one equal contribution per station-instrument domain",
+    "level": "single spectrum",
+    "reference_pilot": {
+      "method": "minimal-preprocessing RBF SVM",
+      "mean_balanced_accuracy": 0.686,
+      "median_balanced_accuracy": 0.734,
+      "worst_balanced_accuracy": 0.333,
+      "status": "observed pilot; not hidden confirmation data"
+    }
+  },
+  "primary_effect": "acquisition-aware deep endpoint minus development-selected classical endpoint",
+  "minimum_meaningful_effect": 0.03,
+  "primary_interval": "10000-replicate paired hierarchical bootstrap over domains and target-stratified physical masters",
+  "figure_contract": {
+    "native_publication_source": "TikZ/PGFPlots .tex",
+    "quick_view": "standalone self-contained .html",
+    "compiled_verification": "vector .pdf",
+    "raster_in_tikz_prohibited": true,
+    "semantic_parity_required": true
+  },
+  "prohibited_claims": [
+    "generic denoising",
+    "clean-spectrum recovery",
+    "causal chemical-nuisance disentanglement",
+    "arbitrary unseen-instrument generalization",
+    "arbitrary unseen-chemical generalization",
+    "independent spectrum rows",
+    "chemistry-only interpretation of aggregate seven-class accuracy"
+  ]
+}

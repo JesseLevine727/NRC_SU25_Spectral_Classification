@@ -1,0 +1,50 @@
+{
+  "protocol_version": "atlas-sers-hyperparameters-v1",
+  "classical": {
+    "nearest_centroid": {"metric": ["euclidean", "cosine"], "shrink_threshold": [null, 0.01, 0.1, 0.5]},
+    "pca_lda": {"pca_components": [5, 10, 20, 40, "0.95_variance"], "lda": ["svd", "lsqr_auto_shrinkage"]},
+    "pls_da": {"components": [2, 4, 8, 12, 16], "head": "class-balanced multinomial logistic"},
+    "elastic_net_logistic": {"C": [0.001, 0.01, 0.1, 1, 10, 100], "l1_ratio": [0, 0.25, 0.5, 0.75, 1]},
+    "rbf_svm": {"C": [0.01, 0.1, 1, 10, 100, 1000], "gamma": ["scale", 0.0001, 0.001, 0.01, 0.1, 1], "class_weight": "balanced"},
+    "random_forest": {"n_estimators": 1000, "max_features": ["sqrt", 0.1, 0.3, 0.5], "min_samples_leaf": [1, 2, 4, 8], "class_weight": "balanced"},
+    "extra_trees": {"n_estimators": 1000, "max_features": ["sqrt", 0.1, 0.3, 0.5], "min_samples_leaf": [1, 2, 4, 8], "class_weight": "balanced", "bootstrap": false}
+  },
+  "deep_architecture": {
+    "maximum_parameters": 250000,
+    "embedding_dimension": 64,
+    "projection_dimension": 64,
+    "dropout": 0.2,
+    "normalization": "GroupNorm",
+    "pooling": "adaptive average to 16 ordered bins"
+  },
+  "deep_optimization": {
+    "optimizer": "AdamW",
+    "learning_rate": [0.0003, 0.001],
+    "weight_decay": [0.00001, 0.0001, 0.001],
+    "batch_size_preference": [48, 64],
+    "maximum_epochs": 200,
+    "minimum_epochs": 30,
+    "patience": 20,
+    "gradient_clip_norm": 5,
+    "checkpoint_order": ["validation_balanced_accuracy_desc", "validation_nll_asc", "epoch_asc"]
+  },
+  "losses": {
+    "supcon_temperature": [0.05, 0.1, 0.2],
+    "lambda_supcon": [0.1, 0.3, 1.0],
+    "lambda_pair": [0.1, 0.3, 1.0],
+    "lambda_coral": [0.01, 0.1],
+    "lambda_domain": [0.01, 0.1]
+  },
+  "augmentation": {
+    "shift_cm1_primary": [-2, 2],
+    "intensity_scale": [0.9, 1.1],
+    "linear_baseline_max_fraction": 0.05,
+    "noise_source": "training-fold first-difference noise quantiles",
+    "prohibited": ["peak deletion", "arbitrary warping", "different-chemical mixup", "target-instrument-derived noise"]
+  },
+  "calibration": {
+    "method": "single scalar temperature on master-grouped cross-fitted known-development scores",
+    "probability_clip": [1e-07, 0.9999999],
+    "known_coverage_thresholds": [0.95, 0.9, 0.8, 0.7, 0.5]
+  }
+}

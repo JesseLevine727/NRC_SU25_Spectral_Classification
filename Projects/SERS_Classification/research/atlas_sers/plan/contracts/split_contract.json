@@ -1,0 +1,80 @@
+{
+  "protocol_version": "atlas-sers-split-contract-v1",
+  "outer_repeat_seeds": [20260805, 20260817, 20260829, 20260910, 20260922],
+  "neural_training_seeds": [20260805, 20260817, 20260829],
+  "outer_folds_per_station": 4,
+  "stratification_label": "target_analyte",
+  "group_label": "master_sample_id",
+  "canonical_algorithm": "StratifiedGroupKFold with shuffle true and repeat seed",
+  "tasks": {
+    "T1": {
+      "train": "outer folds other than test fold within station",
+      "test": "test fold within station",
+      "requirements": ["train and test masters disjoint", "all station classes in training", "all supported classes retained in output"]
+    },
+    "T3_ZS": {
+      "train_source": "outer-training masters within station and instrument not equal held instrument",
+      "test_target": "outer-test masters within station and instrument equal held instrument",
+      "excluded_train_target": "outer-training masters from held instrument",
+      "excluded_test_source": "outer-test masters from non-held instruments",
+      "requirements": [
+        "held instrument absent from all fitting roles",
+        "outer-test masters absent from all fitting roles",
+        "no target-instrument population statistic",
+        "test labels absent from selection calibration and stopping"
+      ]
+    },
+    "T2": {
+      "directions": ["pills_to_surfaces", "surfaces_to_pills"],
+      "targets": ["4_ANPP", "benzyl_fentanyl"],
+      "selection": "master-grouped within training station only"
+    },
+    "T4_OPEN": {
+      "held_tasks": [
+        "cwa:4_nitrophenol",
+        "cwa:ethanol",
+        "cwa:ethyl_paraoxon",
+        "pills:4_ANPP",
+        "pills:benzyl_fentanyl",
+        "surfaces:4_ANPP",
+        "surfaces:acetaminophen",
+        "surfaces:benzyl_fentanyl"
+      ],
+      "held_unknown_forbidden_roles": ["training", "preprocessing fitting", "candidate selection", "score selection", "calibration", "thresholding", "early stopping"],
+      "blank_policy": "blank remains a known operational class"
+    }
+  },
+  "primary_domain_eligibility": {
+    "requirements": {"test_classes": 3, "pooled_test_masters_minimum": 15},
+    "domains": [
+      "cwa:Mira-2", "cwa:Pendar-2", "cwa:RMX-1",
+      "pills:Agilent-1", "pills:Agilent-3", "pills:Mira-3", "pills:Pendar-1", "pills:Pendar-3",
+      "surfaces:Agilent-3", "surfaces:Mira-1", "surfaces:Pendar-2", "surfaces:Pendar-3", "surfaces:RMX-2"
+    ]
+  },
+  "exploratory_low_support_domains": [
+    {"domain": "cwa:Agilent-3", "classes": 3, "masters": 8},
+    {"domain": "cwa:Pendar-3", "classes": 3, "masters": 8},
+    {"domain": "pills:Pendar-2", "classes": 2, "masters": 4},
+    {"domain": "surfaces:Mira-2", "classes": 2, "masters": 2}
+  ],
+  "inner_selection": {
+    "T1": "stratified master-grouped inner CV",
+    "T3_ZS": "leave-one-supported-source-instrument-out pseudo-domain validation",
+    "lexicographic_objective": [
+      "mean pseudo-domain balanced accuracy descending",
+      "worst pseudo-domain balanced accuracy descending",
+      "macro F1 descending",
+      "model complexity ascending",
+      "declared candidate order ascending"
+    ],
+    "fallback": "master-grouped inner CV when fewer than two supported pseudo-domains exist"
+  },
+  "adaptation_regimes": {
+    "zero_shot": "no held-instrument observation",
+    "UDA": "unlabeled target intensities from disjoint adaptation masters; labels and pair IDs hidden",
+    "paired_calibration": "target-source pair IDs from disjoint calibration masters allowed",
+    "few_shot": "k labelled target masters per class from disjoint calibration masters"
+  },
+  "leakage_assertions_are_fatal": true
+}

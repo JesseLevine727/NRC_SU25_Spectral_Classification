@@ -1,0 +1,24 @@
+% Native TikZ style for ATLAS SERS plan figures. No raster assets.
+\definecolor{oiBlue}{HTML}{0072B2}
+\definecolor{oiSky}{HTML}{56B4E9}
+\definecolor{oiGreen}{HTML}{009E73}
+\definecolor{oiOrange}{HTML}{E69F00}
+\definecolor{oiVermillion}{HTML}{D55E00}
+\definecolor{oiPurple}{HTML}{CC79A7}
+\definecolor{oiYellow}{HTML}{F0E442}
+\definecolor{softGray}{HTML}{F3F5F7}
+\tikzset{
+  planbox/.style={draw=black!70, rounded corners=2pt, line width=.65pt,
+    align=center, minimum height=10mm, text width=34mm, font=\sffamily\footnotesize,
+    inner sep=4pt},
+  foundation/.style={planbox, fill=oiSky!20},
+  modeling/.style={planbox, fill=oiOrange!22},
+  evaluation/.style={planbox, fill=oiGreen!17},
+  synthesis/.style={planbox, fill=oiPurple!17},
+  gate/.style={diamond, aspect=2.15, draw=black!75, fill=oiYellow!45,
+    line width=.7pt, align=center, font=\sffamily\scriptsize, inner sep=2pt},
+  flow/.style={-{Latex[length=2.2mm]}, line width=.85pt, draw=black!75},
+  secondaryflow/.style={-{Latex[length=2mm]}, line width=.7pt, dashed, draw=black!65},
+  failflow/.style={-{Latex[length=2mm]}, line width=.8pt, dashed, draw=oiVermillion},
+  labeltext/.style={font=\sffamily\scriptsize, text=black!75}
+}
