@@ -21,6 +21,10 @@ jobs:
         working-directory: Projects/SERS_Classification/research/atlas_sers
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: Projects/SERS_Classification/research/atlas_sers
+          sparse-checkout-cone-mode: true
+          fetch-depth: 1
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
