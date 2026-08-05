@@ -1,0 +1,44 @@
+# Private data and local outputs
+data/*
+!data/README.md
+artifacts/*
+!artifacts/README.md
+private/
+reports/private/
+
+# Model and array artifacts
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.npy
+*.npz
+*.parquet
+*.feather
+*.h5
+*.hdf5
+
+# Instrument exports
+*.spc
+*.spa
+*.prb
+
+# Local configuration and caches
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# TeX build by-products; reviewed vector PDFs may be committed explicitly
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz

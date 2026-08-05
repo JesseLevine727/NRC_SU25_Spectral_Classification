@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="data-sha256" content="66730a1359751fd5b869713ce902fb5822268eae11fd24f136062ee1c2867006">
+<title>F00 — ATLAS SERS research workflow</title>
+<style>
+:root{--blue:#0072B2;--sky:#56B4E9;--green:#009E73;--orange:#E69F00;--purple:#CC79A7;--ink:#17212b;--muted:#536779;--paper:#f7f9fb}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);font-family:Arial,Helvetica,sans-serif;color:var(--ink)}main{max-width:1500px;margin:auto;padding:24px}h1{margin:0 0 5px;font-size:26px}p{line-height:1.45}.lede{margin-top:4px;color:var(--muted)}.panel{background:white;border:1px solid #ccd6df;border-radius:12px;padding:12px;box-shadow:0 2px 9px #0000000b;overflow:auto}svg{display:block;width:100%;min-width:1120px;height:auto}.stage{stroke:#394b59;stroke-width:1.4;rx:8}.node{stroke:#263744;stroke-width:1.1;rx:7;transition:filter .15s,stroke-width .15s;cursor:help}.node:hover,.node:focus{filter:drop-shadow(0 3px 4px #0004);stroke-width:2.8}.foundation{fill:#dff2fc}.modeling{fill:#fff0cf}.evaluation{fill:#dff4ec}.synthesis{fill:#f6e7f1}.primary{stroke:#243746;stroke-width:2.3;fill:none;marker-end:url(#arrow)}.secondary{stroke:#536779;stroke-width:1.9;stroke-dasharray:8 6;fill:none;marker-end:url(#arrow)}text{font-family:Arial,Helvetica,sans-serif;fill:#17212b}.phase{font-weight:700;font-size:15px}.label{font-size:13px}.group{font-weight:700;font-size:16px}.legend{font-size:14px}.meta{font-family:ui-monospace,monospace;font-size:12px;color:#607283;word-break:break-all}.caption{border-left:4px solid var(--blue);padding-left:12px}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+</head>
+<body><main>
+<h1>F00 — ATLAS field-trial SERS research workflow</h1>
+<p class="lede">Planning schematic. Solid arrows are required primary dependencies; dashed arrows are secondary analyses that begin only after the primary evaluation is frozen.</p>
+<div class="panel" role="img" aria-labelledby="figtitle figdesc">
+<span class="sr" id="figtitle">Research workflow from governance to publication</span>
+<span class="sr" id="figdesc">Thirteen phases are grouped into foundation, modeling, evaluation, and synthesis. Foundation precedes classical and deep model development. Definitive evaluation precedes adaptation, robustness, open set, and publication decisions.</span>
+<svg viewBox="0 0 1420 850" tabindex="0">
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#394b59"/></marker></defs>
+<rect class="stage" x="35" y="45" width="1350" height="150" fill="#56B4E90d" stroke="#0072B2"/><text class="group" x="55" y="72">Foundation — no model-outcome access</text>
+<rect class="stage" x="230" y="235" width="965" height="150" fill="#E69F000d" stroke="#E69F00"/><text class="group" x="250" y="262">Model development — source-only selection</text>
+<rect class="stage" x="35" y="425" width="1350" height="190" fill="#009E730d" stroke="#009E73"/><text class="group" x="55" y="452">Evaluation — primary first; information regimes remain separate</text>
+<rect class="stage" x="350" y="660" width="720" height="135" fill="#CC79A70d" stroke="#CC79A7"/><text class="group" x="370" y="687">Synthesis and publication freeze</text>
+
+<g tabindex="0"><title>P00. Governance, immutable registries, environment, hashes, and deviations.</title><rect class="node foundation" x="110" y="95" width="260" height="70"/><text text-anchor="middle" x="240" y="121"><tspan class="phase">P00</tspan><tspan class="label" x="240" dy="22">Governance and artifact contract</tspan></text></g>
+<g tabindex="0"><title>P01. Freeze primary and sensitivity populations, native sources, and representations.</title><rect class="node foundation" x="580" y="95" width="260" height="70"/><text text-anchor="middle" x="710" y="121"><tspan class="phase">P01</tspan><tspan class="label" x="710" dy="22">Data and representation freeze</tspan></text></g>
+<g tabindex="0"><title>P02. Freeze master folds, held-instrument roles, adaptation roles, and leakage assertions.</title><rect class="node foundation" x="1050" y="95" width="260" height="70"/><text text-anchor="middle" x="1180" y="121"><tspan class="phase">P02</tspan><tspan class="label" x="1180" dy="22">Split and information-regime freeze</tspan></text></g>
+
+<g tabindex="0"><title>P03. Fully nested classical models and calibrated predictions.</title><rect class="node modeling" x="280" y="285" width="250" height="70"/><text text-anchor="middle" x="405" y="311"><tspan class="phase">P03</tspan><tspan class="label" x="405" dy="22">Definitive classical benchmark</tspan></text></g>
+<g tabindex="0"><title>P04. Compact location-preserving residual ERM baseline.</title><rect class="node modeling" x="585" y="285" width="250" height="70"/><text text-anchor="middle" x="710" y="311"><tspan class="phase">P04</tspan><tspan class="label" x="710" dy="22">Compact deep ERM baseline</tspan></text></g>
+<g tabindex="0"><title>P05. Supervised contrastive, paired consistency, CORAL, and adversarial development using source-only pseudo-domains.</title><rect class="node modeling" x="890" y="285" width="250" height="70"/><text text-anchor="middle" x="1015" y="311"><tspan class="phase">P05</tspan><tspan class="label" x="1015" dy="22">Acquisition-aware development</tspan></text></g>
+
+<g tabindex="0"><title>P06. Definitive within-station, cross-station, and zero-shot held-instrument evaluation.</title><rect class="node evaluation" x="575" y="470" width="270" height="80"/><text text-anchor="middle" x="710" y="497"><tspan class="phase">P06</tspan><tspan class="label" x="710" dy="22">Definitive T1 / T2 / T3-ZS</tspan><tspan class="label" x="710" dy="18">paired evaluation</tspan></text></g>
+<g tabindex="0"><title>P07. Unlabeled, paired, and supervised target-instrument calibration as separate regimes.</title><rect class="node evaluation" x="65" y="535" width="230" height="60"/><text text-anchor="middle" x="180" y="559"><tspan class="phase">P07</tspan><tspan class="label" x="180" dy="20">Adaptation and calibration</tspan></text></g>
+<g tabindex="0"><title>P08. Registered perturbations, preprocessing branches, and quality tiers.</title><rect class="node evaluation" x="330" y="535" width="230" height="60"/><text text-anchor="middle" x="445" y="559"><tspan class="phase">P08</tspan><tspan class="label" x="445" dy="20">Robustness and preprocessing</tspan></text></g>
+<g tabindex="0"><title>P09. Narrow station-conditioned held-chemical rejection.</title><rect class="node evaluation" x="860" y="535" width="230" height="60"/><text text-anchor="middle" x="975" y="559"><tspan class="phase">P09</tspan><tspan class="label" x="975" dy="20">Narrow open-set evaluation</tspan></text></g>
+<g tabindex="0"><title>P10. Target-adjusted probes, pair consistency, attribution sanity, and error taxonomy.</title><rect class="node evaluation" x="1125" y="535" width="230" height="60"/><text text-anchor="middle" x="1240" y="559"><tspan class="phase">P10</tspan><tspan class="label" x="1240" dy="20">Representation and failures</tspan></text></g>
+
+<g tabindex="0"><title>P11. Hierarchical uncertainty, paired contrasts, and Route A/B/C decision.</title><rect class="node synthesis" x="390" y="710" width="285" height="62"/><text text-anchor="middle" x="532" y="735"><tspan class="phase">P11</tspan><tspan class="label" x="532" dy="20">Inference and decision gates</tspan></text></g>
+<g tabindex="0"><title>P12. Native TikZ, standalone HTML, manuscript tables, rebuild, and hash freeze.</title><rect class="node synthesis" x="745" y="710" width="285" height="62"/><text text-anchor="middle" x="887" y="735"><tspan class="phase">P12</tspan><tspan class="label" x="887" dy="20">Figures and reproducibility</tspan></text></g>
+
+<path class="primary" d="M370 130 H580"/><path class="primary" d="M840 130 H1050"/>
+<path class="primary" d="M1180 165 V215 H405 V285"/><path class="primary" d="M1180 165 V215 H710 V285"/>
+<path class="primary" d="M835 320 H890"/><path class="primary" d="M405 355 V405 H660 V470"/><path class="primary" d="M1015 355 V405 H760 V470"/>
+<path class="secondary" d="M640 550 V620 H180 V595"/><path class="secondary" d="M675 550 V625 H445 V595"/><path class="secondary" d="M745 550 V625 H975 V595"/><path class="primary" d="M845 510 H1240 V535"/>
+<path class="primary" d="M710 550 V640 H532 V710"/><path class="secondary" d="M445 595 V645 H500 V710"/><path class="secondary" d="M975 595 V640 H560 V710"/><path class="primary" d="M1240 595 V650 H600 V710"/><path class="primary" d="M675 741 H745"/>
+<text class="legend" x="55" y="825">Solid = required primary dependency</text><line x1="300" y1="820" x2="375" y2="820" class="primary"/>
+<text class="legend" x="440" y="825">Dashed = secondary after primary freeze</text><line x1="740" y1="820" x2="815" y2="820" class="secondary"/>
+</svg></div>
+<p class="caption"><strong>(P) Planning workflow.</strong> The primary analysis progresses from immutable data and split contracts through fair classical/deep development to zero-shot unseen-instrument evaluation. Adaptation, robustness, and open-set work are secondary and cannot select the primary model. No quantitative performance is shown.</p>
+<p class="meta">Data: figures/data/F00_research_workflow.csv · SHA-256: 66730a1359751fd5b869713ce902fb5822268eae11fd24f136062ee1c2867006 · Standalone HTML; no external resources.</p>
+</main></body></html>

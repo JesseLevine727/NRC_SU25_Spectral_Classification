@@ -1,0 +1,9 @@
+gate_id,title,pass_to,fail_to,criterion_short
+G0,Integrity,G1,STOP,Hashes axes tiers and splits all valid
+G1,Classical validity,G2,REPAIR,Permutation near chance and nested predictions complete
+G2,Deep training validity,G3,DIAGNOSE,At least 95 percent finite and all failures retained
+G3,Acquisition-aware advancement,G4,D0 plus D3 control,Source-only pseudo-domain improvement without chemistry loss
+G4,Primary superiority,G5,Route B or C,Delta at least 0.03 with interval and domain safety gates
+G5,Invariance interpretation,G6,No invariance claim,Domain information reduced while chemistry and transfer retained
+G6,Publication route,Route A B or C,No publication freeze,Claims selected from complete evidence
+GF,Figure parity,FREEZE,RENDER AGAIN,Every figure has matched native TikZ and standalone HTML

@@ -1,0 +1,44 @@
+% DATA_SHA256: f70fdf2d66bf01357b8e4a17d93e2383529dd487aca97d09bfd845fa619dc290
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc,shapes.geometric}
+\input{sers_plan_style.tex}
+\begin{document}
+\begin{tikzpicture}[node distance=8mm and 13mm]
+  \node[gate] (g0) {G0\\Integrity};
+  \node[gate, right=of g0] (g1) {G1\\Classical};
+  \node[gate, right=of g1] (g2) {G2\\Training};
+  \node[gate, right=of g2] (g3) {G3\\Advance};
+  \node[gate, right=of g3] (g4) {G4\\Superiority};
+  \node[gate, right=of g4] (g5) {G5\\Invariance};
+  \node[gate, right=of g5] (g6) {G6\\Route};
+
+  \foreach \a/\b in {g0/g1,g1/g2,g2/g3,g3/g4,g4/g5,g5/g6}{
+    \draw[flow] (\a) -- node[above,labeltext]{pass} (\b);
+  }
+
+  \node[planbox, fill=oiVermillion!12, below=15mm of g0] (stop) {Stop and repair\\provenance or splits};
+  \node[planbox, fill=oiOrange!18, below=15mm of g2] (d0) {Freeze D0 ERM; retain\\D3 as mechanistic control};
+  \node[planbox, fill=oiBlue!12, below=15mm of g4] (routeb) {Route B: classical benchmark\\or Route C: failure study};
+  \node[planbox, fill=oiGreen!17, below=15mm of g6] (routea) {Route A: acquisition-aware\\methods paper};
+
+  \draw[failflow] (g0) -- node[left,labeltext]{fail} (stop);
+  \draw[failflow] (g1) |- node[pos=.25,left,labeltext]{fail} (stop);
+  \draw[failflow] (g2) -- node[left,labeltext]{fail} (d0);
+  \draw[failflow] (g3) -- node[right,labeltext]{fail} (d0);
+  \draw[failflow] (g4) -- node[left,labeltext]{fail} (routeb);
+  \draw[failflow] (g5) |- node[pos=.25,right,labeltext]{fail: no invariance claim} (routeb);
+  \draw[flow] (g6) -- node[right,labeltext]{G4 passed} (routea);
+  \draw[secondaryflow] (g6) -- (routeb);
+
+  \node[gate, below=18mm of d0] (gf) {GF\\Figure parity};
+  \node[planbox, fill=oiPurple!16, right=15mm of gf] (freeze) {Publication freeze\\native TikZ + standalone HTML};
+  \draw[flow] (gf) -- node[above,labeltext]{pass} (freeze);
+  \draw[failflow, loop below] (gf) to node[below,labeltext]{fail: regenerate} (gf);
+
+  % Exact G4 thresholds remain in the caption and master plan so this diagram
+  % stays readable at final double-column size.
+\end{tikzpicture}
+\end{document}

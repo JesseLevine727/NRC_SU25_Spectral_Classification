@@ -1,0 +1,56 @@
+% DATA_SHA256: 66730a1359751fd5b869713ce902fb5822268eae11fd24f136062ee1c2867006
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc,shapes.geometric}
+\input{sers_plan_style.tex}
+\begin{document}
+\begin{tikzpicture}[node distance=7mm and 10mm]
+  \node[foundation] (p00) {\textbf{P00}\\Governance and\\artifact contract};
+  \node[foundation, right=of p00] (p01) {\textbf{P01}\\Data and representation\\freeze};
+  \node[foundation, right=of p01] (p02) {\textbf{P02}\\Split and information-\\regime freeze};
+
+  \node[modeling, below left=14mm and -2mm of p02] (p03) {\textbf{P03}\\Definitive classical\\benchmark};
+  \node[modeling, right=of p03] (p04) {\textbf{P04}\\Compact deep ERM\\baseline};
+  \node[modeling, right=of p04] (p05) {\textbf{P05}\\Acquisition-aware\\development};
+
+  \node[evaluation, below=14mm of p04, text width=39mm] (p06) {\textbf{P06}\\Definitive T1 / T2 / T3-ZS\\paired evaluation};
+  \node[evaluation, below left=12mm and 39mm of p06] (p07) {\textbf{P07}\\Adaptation and\\target calibration};
+  \node[evaluation, right=of p07] (p08) {\textbf{P08}\\Robustness and\\preprocessing};
+  \node[evaluation, right=of p08] (p09) {\textbf{P09}\\Narrow open-set\\evaluation};
+  \node[evaluation, right=of p09] (p10) {\textbf{P10}\\Representation and\\failure analysis};
+
+  \node[synthesis, below=15mm of p08, text width=42mm] (p11) {\textbf{P11}\\Statistical inference and\\Route A / B / C decision};
+  \node[synthesis, below=8mm of p11, text width=42mm] (p12) {\textbf{P12}\\Paired TikZ / HTML figures\\manuscript and validation};
+
+  \draw[flow] (p00) -- (p01);
+  \draw[flow] (p01) -- (p02);
+  \draw[flow] (p02.south) -- ++(0,-7mm) -| (p03.north);
+  \draw[flow] (p02.south) -- ++(0,-7mm) -| (p04.north);
+  \draw[flow] (p04) -- (p05);
+  \draw[flow] (p03.south) |- (p06.west);
+  \draw[flow] (p05.south) |- (p06.east);
+  \draw[secondaryflow] (p06) -- (p07);
+  \draw[secondaryflow] (p06) -- (p08);
+  \draw[secondaryflow] (p06) -- (p09);
+  \draw[flow] (p06.east) -| (p10.north);
+  \draw[secondaryflow] (p08.south) -- ++(0,-5mm) -| (p10.south west);
+  \draw[secondaryflow] (p09.south) -- ++(0,-5mm) -| (p10.south);
+  \draw[flow] (p10.south) -- ++(0,-8mm) -| (p11.east);
+  \draw[flow] (p11) -- (p12);
+
+  \begin{scope}[on background layer]
+    \node[draw=oiBlue!60, rounded corners=4pt, fill=oiSky!5, fit=(p00)(p01)(p02),
+      inner sep=7pt, label={[labeltext]above:Foundation --- no model outcome access}] {};
+    \node[draw=oiOrange!75, rounded corners=4pt, fill=oiOrange!4, fit=(p03)(p04)(p05),
+      inner sep=7pt, label={[labeltext]above:Model development --- source-only selection}] {};
+    \node[draw=oiGreen!75!black, rounded corners=4pt, fill=oiGreen!3, fit=(p06)(p07)(p08)(p09)(p10),
+      inner sep=7pt, label={[labeltext]above:Evaluation --- primary first; secondary regimes kept separate}] {};
+    \node[draw=oiPurple!75, rounded corners=4pt, fill=oiPurple!3, fit=(p11)(p12),
+      inner sep=7pt, label={[labeltext]below:Synthesis and publication freeze}] {};
+  \end{scope}
+
+  \node[labeltext, right=20mm of p12, align=left, text width=63mm] {Solid arrows: required primary dependency.\\Dashed arrows: secondary analysis after primary freeze.};
+\end{tikzpicture}
+\end{document}
