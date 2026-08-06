@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import numpy as np
+import pandas as pd
 
 from atlas_sers.data.native import (
+    build_native_registry,
     index_native_sources,
     load_native_spectrum,
     spectrum_diagnostics,
@@ -33,3 +35,30 @@ def test_non_increasing_axis_is_rejected_by_numeric_qc() -> None:
     )
     assert diagnostics["numeric_qc_status"] == "invalid_axis"
     assert diagnostics["axis_strictly_increasing"] is False
+
+
+def test_serialized_native_registry_excludes_source_paths_and_filenames(tmp_path) -> None:
+    directory = tmp_path / "Mira" / "Mira 1"
+    directory.mkdir(parents=True)
+    axis = np.arange(400, 410, dtype=float)
+    intensity = np.linspace(1, 3, len(axis)) ** 2
+    source_name = "Scan 7.csv"
+    np.savetxt(directory / source_name, np.column_stack([axis, intensity]), delimiter=",")
+    diagnostics = spectrum_diagnostics(axis, intensity)
+    manifest = pd.DataFrame(
+        {
+            "observation_uid": ["OBS-synthetic"],
+            "instrument": ["Mira-1"],
+            "source_scan_id": [7],
+            "axis_sha256": [diagnostics["axis_sha256"]],
+            "intensity_sha256": [diagnostics["intensity_sha256"]],
+        }
+    )
+    registry, spectra, report = build_native_registry(manifest, tmp_path)
+    assert len(spectra) == 1
+    assert report["axis_hash_failures"] == 0
+    assert report["intensity_hash_failures"] == 0
+    assert not any("path" in column for column in registry.columns)
+    assert source_name not in registry.to_csv(index=False)
+    assert registry.loc[0, "parser_version"] == "1"
+    assert registry.loc[0, "coordinate_unit"] == "cm^-1"

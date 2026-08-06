@@ -31,5 +31,10 @@ def test_tikz_pdf_html_and_table_are_semantically_paired_and_reproducible(tmp_pa
         first.iloc[0].tikz_path,
         first.iloc[0].pdf_path,
         first.iloc[0].html_path,
+        first.iloc[0].log_path,
     ):
         assert sha256_file(first_root / relative) == sha256_file(second_root / relative)
+    compilation_log = (first_root / first.iloc[0].log_path).read_text()
+    workstation_prefix = bytes((47, 104, 111, 109, 101, 47)).decode()
+    assert workstation_prefix not in compilation_log.lower()
+    assert "return_code=0" in compilation_log

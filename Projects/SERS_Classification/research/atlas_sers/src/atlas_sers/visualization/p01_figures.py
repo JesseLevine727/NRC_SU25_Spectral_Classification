@@ -230,6 +230,18 @@ def _compile(tex_path: Path, pdf_dir: Path) -> tuple[Path, Path]:
     if not pdf_path.is_file():
         raise RuntimeError(f"TikZ compilation did not create {pdf_path.name}.")
     (pdf_dir / f"{tex_path.stem}.aux").unlink(missing_ok=True)
+    log_path.write_text(
+        "\n".join(
+            [
+                "schema_version=atlas-p01-figure-compilation-v1",
+                "engine=pdflatex",
+                f"source={tex_path.name}",
+                "return_code=0",
+                f"pdf_sha256={sha256_file(pdf_path)}",
+                "",
+            ]
+        )
+    )
     return pdf_path, log_path
 
 
