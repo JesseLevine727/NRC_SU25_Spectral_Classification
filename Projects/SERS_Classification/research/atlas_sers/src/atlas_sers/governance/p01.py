@@ -49,6 +49,7 @@ SENSITIVE_PATTERNS = [
     b"ghp_",
     b"gho_",
 ]
+OPAQUE_GENERATED_SUFFIXES = {".npz", ".pdf"}
 PROHIBITED_MODULES = ("atlas_sers.models", "atlas_sers.splits", "torch")
 
 
@@ -103,17 +104,44 @@ def _prohibited_modules() -> list[str]:
     )
 
 
+def _bytes_are_sanitized(content: bytes) -> bool:
+    lowered = content.lower()
+    return not RESTRICTED_SOURCE_PATTERN.search(lowered) and not any(
+        pattern in lowered for pattern in SENSITIVE_PATTERNS
+    )
+
+
+def _npz_is_sanitized(path: Path) -> bool:
+    try:
+        with np.load(path, allow_pickle=False) as archive:
+            for name in archive.files:
+                if not _bytes_are_sanitized(name.encode()):
+                    return False
+                array = archive[name]
+                if array.dtype.kind in {"S", "U"}:
+                    serialized = "\n".join(array.astype(str).ravel()).encode()
+                    if not _bytes_are_sanitized(serialized):
+                        return False
+    except (OSError, ValueError, TypeError):
+        return False
+    return True
+
+
 def _artifact_tree_is_sanitized(root: Path) -> bool:
     for path in sorted(root.rglob("*")):
         if path.is_symlink():
             return False
         if not path.is_file():
             continue
-        relative = path.relative_to(root).as_posix().encode().lower()
-        content = path.read_bytes().lower()
-        if RESTRICTED_SOURCE_PATTERN.search(relative) or RESTRICTED_SOURCE_PATTERN.search(content):
+        relative = path.relative_to(root).as_posix().encode()
+        if not _bytes_are_sanitized(relative):
             return False
-        if any(pattern in content for pattern in SENSITIVE_PATTERNS):
+        if path.suffix.lower() == ".npz":
+            if not _npz_is_sanitized(path):
+                return False
+        elif path.suffix.lower() not in OPAQUE_GENERATED_SUFFIXES and not _bytes_are_sanitized(
+            path.read_bytes()
+        ):
             return False
     return True
 
