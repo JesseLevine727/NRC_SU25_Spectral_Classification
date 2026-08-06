@@ -1,14 +1,14 @@
 figure_id,scope,phase,title,aggregation_unit,data_source,tikz_path,html_path,manuscript_role,status
 F00,P,P00,Research workflow and phase dependencies,phase,phase_registry.csv,figures/tikz/F00_research_workflow.tex,figures/html/F00_research_workflow.html,Plan overview,complete
 F01,P,P11,Decision gates and publication routes,gate,decision_gate_registry.csv,figures/tikz/F01_decision_gates.tex,figures/html/F01_decision_gates.html,Plan overview,complete
-F02,P,P01,Archive observation and SERS tier flow,observation,primary and tier manifests,figures/tikz/F02_observation_flow.tex,figures/html/F02_observation_flow.html,Main data figure,planned
-F03,P,P01,Target by station by instrument support,master,frozen primary manifest,figures/tikz/F03_factor_support.tex,figures/html/F03_factor_support.html,Main design figure,planned
-F04,S,P01,Native and effective axis coverage by instrument,spectrum,native source registry,figures/tikz/F04_native_axis_coverage.tex,figures/html/F04_native_axis_coverage.html,Methods figure,planned
-F05,S,P01,All spectra and robust instrument summaries,spectrum,primary arrays and manifest,figures/tikz/F05_instrument_spectra.tex,figures/html/F05_instrument_spectra.html,Supplementary QC,planned
-F06,S,P01,Preprocessing preservation by instrument,spectrum pair,representation registry,figures/tikz/F06_preprocessing_preservation.tex,figures/html/F06_preprocessing_preservation.html,Methods evidence,planned
-F07,E,P01,PCA structure before and after row scaling,master and spectrum,representation arrays,figures/tikz/F07_pca_structure.tex,figures/html/F07_pca_structure.html,Exploratory structure,planned
-F08,E,P01,UMAP and t-SNE target-domain views,master,embedding tables,figures/tikz/F08_nonlinear_embeddings.tex,figures/html/F08_nonlinear_embeddings.html,Exploratory supplement,planned
-F09,E,P01,Clustering stability and metadata association,master,cluster stability tables,figures/tikz/F09_cluster_association.tex,figures/html/F09_cluster_association.html,Exploratory supplement,planned
+F02,P,P01,Archive observation and SERS tier flow,observation,primary and tier manifests,figures/tikz/F02_observation_flow.tex,figures/html/F02_observation_flow.html,Main data figure,complete
+F03,P,P01,Target by station by instrument support,master,frozen primary manifest,figures/tikz/F03_factor_support.tex,figures/html/F03_factor_support.html,Main design figure,complete
+F04,S,P01,Native and effective axis coverage by instrument,spectrum,native source registry,figures/tikz/F04_native_axis_coverage.tex,figures/html/F04_native_axis_coverage.html,Methods figure,complete
+F05,S,P01,All spectra and robust instrument summaries,spectrum,primary arrays and manifest,figures/tikz/F05_instrument_spectra.tex,figures/html/F05_instrument_spectra.html,Supplementary QC,complete
+F06,S,P01,Preprocessing preservation by instrument,spectrum pair,representation registry,figures/tikz/F06_preprocessing_preservation.tex,figures/html/F06_preprocessing_preservation.html,Methods evidence,complete
+F07,E,P01,PCA structure before and after row scaling,master and spectrum,representation arrays,figures/tikz/F07_pca_structure.tex,figures/html/F07_pca_structure.html,Exploratory structure,complete
+F08,E,P01,UMAP and t-SNE target-domain views,master,embedding tables,figures/tikz/F08_nonlinear_embeddings.tex,figures/html/F08_nonlinear_embeddings.html,Exploratory supplement,complete
+F09,E,P01,Clustering stability and metadata association,master,cluster stability tables,figures/tikz/F09_cluster_association.tex,figures/html/F09_cluster_association.html,Exploratory supplement,complete
 F10,P,P02,Master and instrument exclusion split schematic,partition,split contract,figures/tikz/F10_split_design.tex,figures/html/F10_split_design.html,Main methods figure,planned
 F11,S,P02,Primary and low-support domain registry,domain,domain support audit,figures/tikz/F11_domain_support.tex,figures/html/F11_domain_support.html,Methods support,planned
 F12,S,P03,Classical inner-selection frequency and stability,outer run,classical selection registry,figures/tikz/F12_classical_selection.tex,figures/html/F12_classical_selection.html,Supplementary model selection,planned

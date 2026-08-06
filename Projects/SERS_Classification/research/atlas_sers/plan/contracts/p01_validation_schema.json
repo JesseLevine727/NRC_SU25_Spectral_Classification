@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "atlas-sers-p01-validation-report-v1",
+  "title": "ATLAS P01 validation report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "protocol_version", "phase", "status", "run_id", "protected_state_sha256", "checks", "diagnostics", "fit_invocations", "descriptive_fit_invocations", "split_invocations", "representations", "figures"],
+  "properties": {
+    "schema_version": {"const": "p01-validation-report-v1"},
+    "protocol_version": {"const": "atlas-sers-research-master-plan-v1"},
+    "phase": {"const": "P01"},
+    "status": {"enum": ["pass", "blocked", "fail"]},
+    "run_id": {"type": "string", "pattern": "^P01-[0-9a-f]{24}$"},
+    "protected_state_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "checks": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "diagnostics": {"type": "object"},
+    "fit_invocations": {"const": 0},
+    "descriptive_fit_invocations": {"type": "integer", "minimum": 1},
+    "split_invocations": {"const": 0},
+    "representations": {"type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true, "items": {"type": "string"}},
+    "figures": {"type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true, "items": {"type": "string"}}
+  }
+}

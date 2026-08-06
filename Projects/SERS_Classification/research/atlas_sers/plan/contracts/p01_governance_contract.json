@@ -1,0 +1,100 @@
+{
+  "protocol_version": "atlas-sers-p01-data-freeze-v1",
+  "phase": "P01",
+  "prerequisite_phase": "P00",
+  "model_fitting_authorized": false,
+  "split_construction_authorized": false,
+  "private_roots": {
+    "derived_inputs_environment_variable": "ATLAS_PRIVATE_ROOT",
+    "native_sources_environment_variable": "ATLAS_NATIVE_ROOT",
+    "artifacts_environment_variable": "ATLAS_ARTIFACT_ROOT",
+    "serialized_resolved_paths_prohibited": true
+  },
+  "population_contract": {
+    "primary_rows": 598,
+    "notes_clear_rows": 500,
+    "mira1_excluded_rows": 575,
+    "physical_masters": 69,
+    "targets": 7,
+    "instruments": 10,
+    "sensor_families": 4,
+    "stations": 3,
+    "unique_source_key": ["instrument", "source_scan_id"]
+  },
+  "common_axis": {
+    "source_start_cm1": 400,
+    "source_end_cm1": 1849,
+    "step_cm1": 1,
+    "primary_end_cm1": 1800,
+    "interpolation": "linear within measured native and effective support only"
+  },
+  "transformation_parameters": {
+    "despike_window": 5,
+    "despike_mad_threshold": 10.0,
+    "despike_isolated_neighborhood": 3,
+    "savgol_window": 11,
+    "savgol_polynomial": 3,
+    "savgol_mode": "interp",
+    "arpls_lambda": 100000.0,
+    "arpls_iterations": 12,
+    "arpls_relative_weight_tolerance": 0.001,
+    "arpls_logistic_clip": 60.0,
+    "normalization_epsilon": "numpy float64 eps"
+  },
+  "representations": [
+    {"representation_id": "R_MIN_400_1800", "range_cm1": [400, 1800], "operations": ["linear_interpolation", "row_minmax"], "scope": "primary"},
+    {"representation_id": "R_MIN_400_1849", "range_cm1": [400, 1849], "operations": ["linear_interpolation", "row_minmax"], "scope": "sensitivity"},
+    {"representation_id": "R_SG_400_1800", "range_cm1": [400, 1800], "operations": ["linear_interpolation", "isolated_impulse_replacement", "savgol_11_3", "row_minmax"], "scope": "sensitivity"},
+    {"representation_id": "R_ARPLS_400_1800", "range_cm1": [400, 1800], "operations": ["linear_interpolation", "isolated_impulse_replacement", "arpls", "row_minmax"], "scope": "sensitivity"},
+    {"representation_id": "R_SNV_400_1800", "range_cm1": [400, 1800], "operations": ["linear_interpolation", "row_snv"], "scope": "sensitivity"},
+    {"representation_id": "R_VECTOR_400_1800", "range_cm1": [400, 1800], "operations": ["linear_interpolation", "row_l2_norm"], "scope": "sensitivity"},
+    {"representation_id": "R_AREA_400_1800", "range_cm1": [400, 1800], "operations": ["linear_interpolation", "shift_nonnegative", "integrated_area_norm"], "scope": "sensitivity"},
+    {"representation_id": "R_D1_400_1800", "range_cm1": [400, 1800], "operations": ["linear_interpolation", "isolated_impulse_replacement", "savgol_derivative_11_3", "row_snv"], "scope": "destructive_control"}
+  ],
+  "analysis_seeds": [20260805, 20260806, 20260807, 20260808, 20260809],
+  "exploration": {
+    "kmeans_k": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "kmeans_n_init": 50,
+    "hdbscan_min_cluster_size": [8, 12, 20],
+    "hdbscan_min_samples": [3, 5, 10],
+    "umap_neighbors": 15,
+    "umap_min_dist": 0.1,
+    "umap_metric": "cosine",
+    "tsne_perplexity": 30.0,
+    "tsne_init": "pca",
+    "tsne_learning_rate": "auto"
+  },
+  "required_figures": ["F02", "F03", "F04", "F05", "F06", "F07", "F08", "F09"],
+  "required_top_level_outputs": [
+    "environment_lock.json",
+    "input_verification.json",
+    "protected_state.json",
+    "deviations.csv",
+    "private_source_audit.json",
+    "primary_manifest.csv",
+    "notes_clear_manifest.csv",
+    "mira1_excluded_manifest.csv",
+    "native_source_registry.csv",
+    "representation_registry.csv",
+    "row_qc.csv",
+    "reversibility_audit.csv",
+    "candidate_reproduction.json",
+    "preservation_metrics.csv",
+    "preservation_by_instrument.csv",
+    "pca_diagnostics.csv",
+    "embedding_rows.csv",
+    "clustering_runs.csv",
+    "cluster_metadata_association.csv",
+    "cluster_stability.csv",
+    "figure_manifest.csv",
+    "P01_VALIDATION_REPORT.json",
+    "P01_ARTIFACT_HASHES.json"
+  ],
+  "validation_tolerances": {
+    "float_absolute": 1e-6,
+    "candidate_reproduction_max_absolute": 5e-6,
+    "normalization_absolute": 1e-6,
+    "native_reinterpolation_max_absolute": 0.0
+  },
+  "prohibited_claims": ["denoising", "clean-spectrum recovery", "causal chemical-nuisance disentanglement", "predictive generalization from visualization"]
+}

@@ -13,7 +13,7 @@ from atlas_sers.governance.canonical import sha256_file, sha256_value
 PRIVATE_PREFIX = "${ATLAS_PRIVATE_ROOT}/"
 
 
-def _resolve_private_path(private_root: Path, logical_path: str) -> Path:
+def resolve_private_path(private_root: Path, logical_path: str) -> Path:
     if not logical_path.startswith(PRIVATE_PREFIX):
         raise ValueError("Authoritative input is not rooted at ATLAS_PRIVATE_ROOT.")
     relative = logical_path.removeprefix(PRIVATE_PREFIX)
@@ -84,7 +84,7 @@ def verify_authoritative_inputs(
             "status": "fail",
         }
         try:
-            path = _resolve_private_path(private_root, logical)
+            path = resolve_private_path(private_root, logical)
         except ValueError as exc:
             record["diagnostics"]["error"] = str(exc)
             records.append(record)

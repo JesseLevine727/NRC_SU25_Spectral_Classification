@@ -49,6 +49,8 @@ REQUIRED_FILES = {
     "data/README.md",
     "artifacts/README.md",
     "plan/MASTER_PLAN.md",
+    "plan/P00_EXECUTION.md",
+    "plan/P01_EXECUTION.md",
     "plan/FIGURE_STYLE_AND_REGENERATION.md",
     "plan/index.html",
     "plan/contracts/research_contract.json",
@@ -59,10 +61,13 @@ REQUIRED_FILES = {
     "plan/contracts/compute_budget.json",
     "plan/contracts/p00_governance_contract.json",
     "plan/contracts/p00_validation_schema.json",
+    "plan/contracts/p01_governance_contract.json",
+    "plan/contracts/p01_validation_schema.json",
     "plan/registries/model_registry.csv",
     "plan/registries/artifact_registry.csv",
     "plan/registries/deviations.csv",
     "scripts/run_p00.py",
+    "scripts/run_p01.py",
 }
 
 REGISTRY_COUNTS = {

@@ -44,13 +44,14 @@ research/atlas_sers/
 ├── plan/
 │   ├── MASTER_PLAN.md             Research questions, phases, gates, claims
 │   ├── P00_EXECUTION.md           Governance procedure and phase boundary
+│   ├── P01_EXECUTION.md           Data/representation freeze and validation
 │   ├── FIGURE_STYLE_AND_REGENERATION.md
 │   ├── index.html                 Standalone plan dashboard
 │   ├── contracts/                 Machine-readable frozen protocols
 │   ├── registries/                Phase/task/metric/experiment/figure tables
 │   └── figures/                   Data-free TikZ, HTML, and vector plan figures
 ├── src/atlas_sers/
-│   ├── governance/                P00 registries, provenance, hashes, dry run
+│   ├── governance/                P00/P01 audit, provenance, hashes, restart
 │   ├── data/                      Private ingestion interfaces and QC
 │   ├── preprocessing/             Frozen and sensitivity representations
 │   ├── exploration/               PCA, clustering, UMAP, and t-SNE analyses
@@ -69,12 +70,14 @@ boundaries, artifact flow, and implementation order.
 ## Private data boundary
 
 Set `ATLAS_PRIVATE_ROOT` to the immutable input directory and
+`ATLAS_NATIVE_ROOT` to the immutable native vendor-export directory, and set
 `ATLAS_ARTIFACT_ROOT` to a separate private output directory outside this
-public project. The output root must not overlap either the input root or this
-project. Never copy source spectra into this directory.
+public project. The roots must not overlap one another or this project. Never
+copy source spectra into this directory.
 
 ```bash
 export ATLAS_PRIVATE_ROOT=/path/outside/the/repository/atlas_inputs
+export ATLAS_NATIVE_ROOT=/different/path/outside/the/repository/atlas_native_sources
 export ATLAS_ARTIFACT_ROOT=/different/path/outside/the/repository/atlas_artifacts
 ```
 
@@ -91,6 +94,8 @@ python3 -m pip install -e '.[dev]'
 python3 scripts/run_p00.py audit
 pytest -q
 python3 scripts/run_p00.py dry-run
+python3 scripts/run_p01.py audit
+python3 scripts/run_p01.py dry-run
 ```
 
 Install the `deep` extra only for neural experiments:
@@ -107,8 +112,12 @@ writes twelve private governance artifacts beneath
 return `verified_skip`. See [plan/P00_EXECUTION.md](plan/P00_EXECUTION.md) for
 the exact outputs, statuses, and failure behavior.
 
-P01 remains forbidden until the P00 validation report says `pass`, its hash
-manifest is complete, and the P00 phase registry row says `complete`.
+P01 then creates the source-reversible 598-row primary manifest, two frozen
+sensitivity populations, eight row-local representations, preservation and
+descriptive structure analyses, and paired F02–F09 TikZ/PDF/HTML figures. It
+performs no predictive fit and constructs no split. See
+[plan/P01_EXECUTION.md](plan/P01_EXECUTION.md) for the exact build, restart,
+validation, outputs, and failure behavior.
 
 ## Reproducibility rules
 
@@ -126,5 +135,6 @@ manifest is complete, and the P00 phase registry row says `complete`.
 ## Status
 
 The research plan is execution-ready but is not a prospective preregistration:
-pilot results informed its design. P00 governance is executable; representation,
-split, model, and result implementations remain outside the P00 boundary.
+pilot results informed its design. P00 governance and P01 data/representation
+freeze are executable. P02 split construction and all predictive model/result
+phases remain outside the current boundary.

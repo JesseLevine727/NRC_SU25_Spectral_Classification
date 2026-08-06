@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import numpy as np
 import pytest
 
 from atlas_sers.governance.canonical import canonical_json_bytes, sha256_value
@@ -31,6 +32,15 @@ def test_canonical_json_is_order_independent() -> None:
     right = {"a": {"y": None, "z": True}, "b": [2, 1]}
     assert canonical_json_bytes(left) == canonical_json_bytes(right)
     assert sha256_value(left) == sha256_value(right)
+
+
+def test_canonical_json_normalizes_numpy_scalars() -> None:
+    value = {
+        "boolean": np.bool_(True),
+        "float": np.float64(1.25),
+        "integer": np.int64(7),
+    }
+    assert canonical_json_bytes(value) == b'{"boolean":true,"float":1.25,"integer":7}'
 
 
 @pytest.mark.parametrize(

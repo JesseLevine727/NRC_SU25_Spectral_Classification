@@ -45,7 +45,7 @@ selection, calibration, thresholding, or early stopping in a source-only task.
 
 ### `atlas_sers.governance`
 
-Owns P00 registry validation, canonical serialization, deterministic run
+Owns P00/P01 registry validation, canonical serialization, deterministic run
 identities, streaming authoritative-input verification, sanitized provenance,
 the no-training dry-run registry, and atomic artifact commits. A matching
 successful protected state is verified and skipped. Incomplete, corrupt,
@@ -54,6 +54,9 @@ a structured reason; completed evidence is never overwritten.
 
 P00 may inspect metadata declared in contracts, but it may not construct
 representations, splits, predictions, embeddings, or fitted objects.
+P01 adds immutable-manifest, native-source, representation, descriptive-fit,
+figure, and restart validation while continuing to prohibit predictive models
+and split construction.
 
 ## Package boundaries
 
@@ -140,12 +143,17 @@ Real observations are never test fixtures in the public repository.
 P00 adds synthetic regression tests for every run-identity field, fail-closed
 hash/shape/status checks, private-path containment, Git tracking detection,
 byte-stable dry runs, atomic commits, quarantine, and verified restart skips.
+P01 adds synthetic vendor layouts, UID/mapping and support failures, transform
+invariants, independent recomputation, deterministic arrays, structure-analysis
+reproducibility, figure semantic parity, full P00→P01 integration, corruption
+handling, and verified restart skips.
 
 ## Implementation order
 
 1. Pass P00 governance, private input verification, and the no-training dry run.
-2. Rebuild the private inventory through package adapters and validate hashes.
-3. Freeze representations and master-grouped split registries.
+2. Rebuild the private inventory through package adapters, validate native
+   hashes/reversibility, and freeze representations and descriptive evidence.
+3. Freeze master-grouped split registries only after P01 passes.
 4. Implement the common estimator/evaluation interface.
 5. Run classical selection and lock the endpoint baseline.
 6. Develop the compact deep endpoint on source-development partitions only.

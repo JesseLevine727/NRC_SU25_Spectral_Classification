@@ -197,6 +197,7 @@ def execute_p00(
         **dry_outputs,
     }
     training_after = _training_modules()
+    newly_imported_training_modules = sorted(set(training_after) - set(training_before))
     p00_artifacts = {
         row["artifact_id"] for row in bundle.rows("artifact_registry.csv") if row["phase"] == "P00"
     }
@@ -230,7 +231,7 @@ def execute_p00(
         == len(bundle.rows("experiment_registry.csv")),
         "dry_run_authorizes_no_fits": _all_fit_flags_false(dry_outputs["expected_run_registry.csv"])
         and _all_fit_flags_false(dry_outputs["shard_manifest.csv"]),
-        "training_modules_not_imported": training_before == training_after == [],
+        "training_modules_not_imported": newly_imported_training_modules == [],
         "fit_invocation_count_is_zero": True,
         "p00_phase_marked_complete": _phase_status(bundle, "P00") == "complete",
         "required_payloads_complete": set(payloads)
@@ -260,6 +261,7 @@ def execute_p00(
             "unresolved_boundary": "P01/P02 remain unauthorized",
             "training_modules_before": training_before,
             "training_modules_after": training_after,
+            "newly_imported_training_modules": newly_imported_training_modules,
         },
         "fit_invocations": 0,
         "required_artifacts": required_files,

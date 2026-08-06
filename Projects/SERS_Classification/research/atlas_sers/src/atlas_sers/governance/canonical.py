@@ -3,17 +3,23 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import math
+import zipfile
 from collections.abc import Mapping, Sequence
 from dataclasses import asdict, is_dataclass
 from pathlib import Path
 from typing import Any
 
+import numpy as np
+
 
 def _normalize(value: Any) -> Any:
     if is_dataclass(value) and not isinstance(value, type):
         return _normalize(asdict(value))
+    if isinstance(value, np.generic):
+        return _normalize(value.item())
     if isinstance(value, Path):
         raise TypeError(
             "Filesystem paths must be converted to sanitized logical identifiers first."
@@ -72,6 +78,28 @@ def sha256_file(path: Path, *, block_size: int = 1024 * 1024) -> str:
         for block in iter(lambda: handle.read(block_size), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def deterministic_npz_bytes(arrays: Mapping[str, np.ndarray]) -> bytes:
+    """Create a compressed NumPy archive with stable member order and timestamps."""
+
+    output = io.BytesIO()
+    with zipfile.ZipFile(
+        output,
+        mode="w",
+        compression=zipfile.ZIP_DEFLATED,
+        compresslevel=9,
+    ) as archive:
+        for name in sorted(arrays):
+            if not name or "/" in name or "\\" in name:
+                raise ValueError("NPZ member names must be simple non-empty identifiers.")
+            member = io.BytesIO()
+            np.save(member, np.asarray(arrays[name]), allow_pickle=False)
+            info = zipfile.ZipInfo(f"{name}.npy", date_time=(1980, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o600 << 16
+            archive.writestr(info, member.getvalue(), compress_type=zipfile.ZIP_DEFLATED)
+    return output.getvalue()
 
 
 def hash_relative_files(base: Path, paths: Sequence[Path]) -> dict[str, dict[str, int | str]]:

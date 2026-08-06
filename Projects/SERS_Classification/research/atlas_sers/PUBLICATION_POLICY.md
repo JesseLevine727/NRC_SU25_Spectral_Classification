@@ -49,6 +49,11 @@ The P00 environment lock, input verification, dry-run registries, validation
 report, artifact hashes, run-state files, quarantine records, and latest-run
 pointer are also private. Public phase status may state that P00 passed, but
 must not reveal resolved roots, workstation metadata, or private inventory.
+The same rule covers P01 manifests, native registry, representation bundles,
+row QC, preservation rows, embeddings, cluster assignments, figure artifacts,
+validation evidence, protected state, and latest-run pointer. P01 aggregate
+figure tables remain private until a separate disclosure review authorizes a
+public release.
 
 ## Incident response
 

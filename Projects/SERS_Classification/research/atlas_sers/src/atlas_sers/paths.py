@@ -34,6 +34,12 @@ def private_data_root() -> Path:
     return _configured_root("ATLAS_PRIVATE_ROOT", must_exist=True)
 
 
+def native_data_root() -> Path:
+    """Return the immutable native instrument-export root required by P01."""
+
+    return _configured_root("ATLAS_NATIVE_ROOT", must_exist=True)
+
+
 def artifact_root() -> Path:
     """Return the configured private output root without creating it."""
 

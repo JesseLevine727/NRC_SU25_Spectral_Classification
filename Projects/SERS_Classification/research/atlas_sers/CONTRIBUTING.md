@@ -3,9 +3,9 @@
 ## Working sequence
 
 1. Read `PUBLICATION_POLICY.md` and the relevant plan phase.
-2. Create a narrowly scoped branch.
+2. Work on the branch authorized for the current repository workflow.
 3. Keep private inputs outside the checkout and access them through
-   `ATLAS_PRIVATE_ROOT`; write private outputs only through
+   `ATLAS_PRIVATE_ROOT` and `ATLAS_NATIVE_ROOT`; write private outputs only through
    `ATLAS_ARTIFACT_ROOT`.
 4. Add or update tests with each implementation slice.
 5. Run the public scaffold validator and the relevant scientific validation.
@@ -45,6 +45,20 @@ and `2` means an authoritative input is unavailable. Unset/unsafe roots stop
 execution before a definitive report. Record any post-lock change in
 `plan/registries/deviations.csv` before using outcomes to justify it.
 
+For P01, additionally run:
+
+```bash
+python3 scripts/run_p01.py audit
+python3 scripts/run_p01.py dry-run
+python3 scripts/run_p01.py build
+python3 scripts/run_p01.py build
+python3 scripts/run_p01.py validate
+```
+
+The first definitive build must pass, the identical build must report
+`verified_skip`, and validation must rehash the latest run. See
+`plan/P01_EXECUTION.md`. P01 authorizes no split or predictive model code.
+
 ## Figures
 
 Every registered figure requires a frozen aggregate data table, native TikZ or
@@ -59,5 +73,6 @@ wrappers are not valid native figure sources.
 - [ ] Split and preprocessing fitting roles remain leakage-safe.
 - [ ] Tests and validators pass.
 - [ ] P00 passes and repeats as `verified_skip` before any P01 work.
+- [ ] P01 passes, repeats as `verified_skip`, and validates before any P02 work.
 - [ ] Figure sources and HTML use the same frozen aggregate data.
 - [ ] Claim scope is labelled primary, secondary, exploratory, or prohibited.

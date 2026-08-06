@@ -1,4 +1,4 @@
-"""Atomic and idempotent private artifact transactions for P00."""
+"""Atomic and idempotent private artifact transactions for ATLAS phases."""
 
 from __future__ import annotations
 
@@ -30,6 +30,7 @@ class ArtifactStore:
         artifact_root: Path,
         input_root: Path,
         project_root: Path,
+        phase: str = "p00",
         clock: Callable[[], datetime] | None = None,
     ) -> None:
         validate_private_roots(
@@ -37,9 +38,13 @@ class ArtifactStore:
             output_root=artifact_root,
             public_project_root=project_root,
         )
+        if not phase or not phase.isascii() or not phase.isalnum():
+            raise ValueError("Artifact phase must be a non-empty ASCII alphanumeric value.")
         self.root = artifact_root.resolve()
-        self.runs = self.root / "p00" / "runs"
-        self.quarantine = self.root / "p00" / "quarantine"
+        self.phase = phase.lower()
+        self.phase_root = self.root / self.phase
+        self.runs = self.phase_root / "runs"
+        self.quarantine = self.phase_root / "quarantine"
         self.clock = clock or (lambda: datetime.now(UTC))
         self.runs.mkdir(parents=True, exist_ok=True)
         self.quarantine.mkdir(parents=True, exist_ok=True)
@@ -66,7 +71,8 @@ class ArtifactStore:
     ) -> None:
         destination = self._quarantine_path(source, run_id=run_id, reason=reason)
         record = {
-            "schema_version": "p00-quarantine-v1",
+            "schema_version": "atlas-artifact-quarantine-v1",
+            "phase": self.phase.upper(),
             "run_id": run_id,
             "reason": reason,
             "expected_protected_state_sha256": expected_hash,
@@ -132,7 +138,8 @@ class ArtifactStore:
             if path.is_file()
         }
         state = {
-            "schema_version": "p00-artifact-state-v1",
+            "schema_version": "atlas-artifact-state-v1",
+            "phase": self.phase.upper(),
             "run_id": lease.run_id,
             "protected_state_sha256": lease.protected_state_sha256,
             "execution_status": "complete",
@@ -148,7 +155,8 @@ class ArtifactStore:
             raise ValueError("Artifact lease has no active temporary directory.")
         destination = self._quarantine_path(lease.work_dir, run_id=lease.run_id, reason=reason)
         record = {
-            "schema_version": "p00-quarantine-v1",
+            "schema_version": "atlas-artifact-quarantine-v1",
+            "phase": self.phase.upper(),
             "run_id": lease.run_id,
             "reason": reason,
             "expected_protected_state_sha256": lease.protected_state_sha256,
