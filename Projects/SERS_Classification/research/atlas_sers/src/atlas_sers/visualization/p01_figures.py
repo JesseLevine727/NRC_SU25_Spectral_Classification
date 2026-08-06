@@ -28,6 +28,38 @@ COLORS = [
     "#A6CEE3",
     "#B2DF8A",
 ]
+PLOTLY_DASHES = ["solid", "dash", "dot", "dashdot", "longdash", "longdashdot"]
+PLOTLY_MARKERS = [
+    "circle",
+    "square",
+    "diamond",
+    "triangle-up",
+    "triangle-down",
+    "cross",
+    "x",
+    "star",
+]
+TIKZ_LINE_STYLES = [
+    "solid",
+    "densely dashed",
+    "densely dotted",
+    "dashdotted",
+    "loosely dashed",
+    "loosely dotted",
+]
+TIKZ_MARKERS = ["*", "square*", "diamond*", "triangle*", "triangle", "+", "x", "pentagon*"]
+REPRESENTATION_LABELS = {
+    "R_NATIVE_COMMON_400_1849": "Native",
+    "R_MIN_400_1800": "Min-max",
+    "R_MIN_400_1849": "Min-max 1849",
+    "R_SG_400_1800": "SG",
+    "R_ARPLS_400_1800": "arPLS",
+    "R_SNV_400_1800": "SNV",
+    "R_VECTOR_400_1800": "L2",
+    "R_AREA_400_1800": "Area",
+    "R_D1_400_1800": "D1",
+}
+REPRESENTATION_ORDER = {identifier: index for index, identifier in enumerate(REPRESENTATION_LABELS)}
 
 
 @dataclass(frozen=True)
@@ -40,6 +72,8 @@ class Panel:
     y_label: str
     mode: str
     data_filter: tuple[str, str] | None = None
+    trace_group: str | None = None
+    y_tick_labels: str | None = None
 
 
 FIGURE_SLUGS = {
@@ -89,8 +123,13 @@ def _plotly_figure(title: str, frame: pd.DataFrame, panels: list[Panel]) -> go.F
     legend_seen: set[str] = set()
     for column, panel in enumerate(panels, start=1):
         data = _filtered(frame, panel)
-        for series, group in data.groupby(panel.series, sort=True, dropna=False):
+        series_order = sorted(data[panel.series].fillna("<missing>").astype(str).unique())
+        grouping = [panel.series, panel.trace_group] if panel.trace_group else panel.series
+        for key, group in data.groupby(grouping, sort=True, dropna=False):
+            series = key[0] if isinstance(key, tuple) else key
             name = str(series)
+            style_index = series_order.index(name)
+            color = COLORS[style_index % len(COLORS)]
             common = {
                 "x": group[panel.x],
                 "y": group[panel.y],
@@ -99,14 +138,35 @@ def _plotly_figure(title: str, frame: pd.DataFrame, panels: list[Panel]) -> go.F
                 "showlegend": name not in legend_seen,
             }
             if panel.mode == "bar":
-                trace = go.Bar(**common)
+                trace = go.Bar(**common, marker={"color": color})
             else:
                 mode = "lines" if panel.mode == "line" else "markers"
-                trace = go.Scatter(**common, mode=mode)
+                trace = go.Scatter(
+                    **common,
+                    mode=mode,
+                    line={"color": color, "dash": PLOTLY_DASHES[style_index % len(PLOTLY_DASHES)]},
+                    marker={
+                        "color": color,
+                        "symbol": PLOTLY_MARKERS[style_index % len(PLOTLY_MARKERS)],
+                    },
+                )
             figure.add_trace(trace, row=1, col=column)
             legend_seen.add(name)
         figure.update_xaxes(title_text=panel.x_label, row=1, col=column)
         figure.update_yaxes(title_text=panel.y_label, row=1, col=column)
+        if panel.y_tick_labels:
+            ticks = (
+                data[[panel.y, panel.y_tick_labels]]
+                .drop_duplicates()
+                .sort_values(panel.y)
+            )
+            figure.update_yaxes(
+                tickmode="array",
+                tickvals=ticks[panel.y],
+                ticktext=ticks[panel.y_tick_labels],
+                row=1,
+                col=column,
+            )
     figure.update_layout(
         title=title,
         template="plotly_white",
@@ -170,26 +230,47 @@ def _tikz_source(
                     "x tick label style={rotate=55,anchor=east,font=\\tiny}",
                 ]
             )
+        if panel.y_tick_labels:
+            ticks = (
+                data[[panel.y, panel.y_tick_labels]]
+                .drop_duplicates()
+                .sort_values(panel.y)
+            )
+            options.extend(
+                [
+                    "ytick={" + ",".join(f"{value:.8g}" for value in ticks[panel.y]) + "}",
+                    "yticklabels={"
+                    + ",".join(_tex(value) for value in ticks[panel.y_tick_labels])
+                    + "}",
+                ]
+            )
         lines.append(r"\nextgroupplot[" + ",".join(options) + "]")
-        for series_index, (series, group) in enumerate(
-            data.groupby(panel.series, sort=True, dropna=False)
-        ):
+        series_order = sorted(data[panel.series].fillna("<missing>").astype(str).unique())
+        grouping = [panel.series, panel.trace_group] if panel.trace_group else panel.series
+        legend_written: set[str] = set()
+        for key, group in data.groupby(grouping, sort=True, dropna=False):
+            series = key[0] if isinstance(key, tuple) else key
+            series_name = str(series)
+            series_index = series_order.index(series_name)
             color = f"atlas{series_index % len(COLORS)}"
             plot_options = f"color={color}"
             if panel.mode == "bar":
                 plot_options += ",ybar,fill opacity=0.55"
             elif panel.mode == "scatter":
-                plot_options += ",only marks,mark=*,mark size=1.2pt"
+                marker = TIKZ_MARKERS[series_index % len(TIKZ_MARKERS)]
+                plot_options += f",only marks,mark={marker},mark size=1.5pt"
             else:
-                plot_options += ",mark=none,line width=0.7pt"
+                line_style = TIKZ_LINE_STYLES[series_index % len(TIKZ_LINE_STYLES)]
+                plot_options += f",{line_style},mark=none,line width=0.8pt"
             coordinates = " ".join(
                 f"({float(x_value):.8g},{float(y_value):.8g})"
                 for x_value, y_value in zip(group["_plot_x"], group[panel.y], strict=True)
-                if np.isfinite(float(y_value))
+                if np.isfinite(float(x_value)) and np.isfinite(float(y_value))
             )
             lines.append(f"\\addplot+[{plot_options}] coordinates {{{coordinates}}};")
-            if panel_index == 0:
+            if panel_index == 0 and series_name not in legend_written:
                 lines.append(f"\\addlegendentry{{{_tex(series)}}}")
+                legend_written.add(series_name)
     lines.extend(
         [
             r"\end{groupplot}",
@@ -291,7 +372,8 @@ def build_figure_tables(
                         "instrument": instrument,
                         "instrument_index": instrument_index,
                         "support_type": support_type,
-                        "series": f"{instrument} {support_type}",
+                        "series": support_type,
+                        "trace_group": instrument,
                         "endpoint": endpoint,
                         "axis_cm1": value,
                     }
@@ -301,17 +383,23 @@ def build_figure_tables(
     spectral_rows: list[pd.DataFrame] = []
     for instrument, indices in primary.groupby("instrument", sort=True).indices.items():
         values = raw[np.asarray(indices)]
-        spectral_rows.append(
-            pd.DataFrame(
-                {
-                    "axis_cm1": raw_axis,
-                    "instrument": instrument,
-                    "q10": np.quantile(values, 0.1, axis=0),
-                    "median": np.median(values, axis=0),
-                    "q90": np.quantile(values, 0.9, axis=0),
-                }
-            )
+        ranges = np.ptp(values, axis=1, keepdims=True)
+        scaled = (values - values.min(axis=1, keepdims=True)) / np.maximum(
+            ranges, np.finfo(float).eps
         )
+        for view, matrix in (("native intensity", values), ("row min-max", scaled)):
+            spectral_rows.append(
+                pd.DataFrame(
+                    {
+                        "axis_cm1": raw_axis,
+                        "instrument": instrument,
+                        "view": view,
+                        "q10": np.quantile(matrix, 0.1, axis=0),
+                        "median": np.median(matrix, axis=0),
+                        "q90": np.quantile(matrix, 0.9, axis=0),
+                    }
+                )
+            )
     spectra = pd.concat(spectral_rows, ignore_index=True)
 
     preservation = preservation_by_instrument.rename(
@@ -320,7 +408,17 @@ def build_figure_tables(
             "median_top_peak_recall_pm5cm1": "peak_recall",
         }
     )
+    preservation["representation_label"] = preservation.representation_id.map(
+        REPRESENTATION_LABELS
+    )
+    preservation["representation_order"] = preservation.representation_id.map(
+        REPRESENTATION_ORDER
+    )
+    preservation = preservation.sort_values(["representation_order", "instrument"])
     pca = exploration["pca_diagnostics.csv"].copy()
+    pca["representation_label"] = pca.representation_id.map(REPRESENTATION_LABELS)
+    pca["representation_order"] = pca.representation_id.map(REPRESENTATION_ORDER)
+    pca = pca.sort_values(["representation_order", "level"])
     embeddings = exploration["embedding_rows.csv"]
     embedding = embeddings[
         (embeddings.representation_id == "R_MIN_400_1800") & (embeddings.level == "master")
@@ -344,6 +442,15 @@ def build_figure_tables(
         value=stability.median_stability,
     )[["representation_id", "row_type", "metric", "value"]]
     association_and_stability = pd.concat([association, stability], ignore_index=True)
+    association_and_stability["representation_label"] = (
+        association_and_stability.representation_id.map(REPRESENTATION_LABELS)
+    )
+    association_and_stability["representation_order"] = (
+        association_and_stability.representation_id.map(REPRESENTATION_ORDER)
+    )
+    association_and_stability = association_and_stability.sort_values(
+        ["row_type", "representation_order", "metric"]
+    )
 
     return {
         "F02": (
@@ -376,8 +483,10 @@ def build_figure_tables(
                     "instrument_index",
                     "series",
                     "Raman shift (cm-1)",
-                    "Instrument index",
+                    "Instrument",
                     "line",
+                    trace_group="trace_group",
+                    y_tick_labels="instrument",
                 )
             ],
         ),
@@ -386,14 +495,25 @@ def build_figure_tables(
             spectra,
             [
                 Panel(
-                    "Median native-common spectra",
+                    "Native-intensity median",
                     "axis_cm1",
                     "median",
                     "instrument",
                     "Raman shift (cm-1)",
-                    "Median intensity",
+                    "Median intensity (AU)",
                     "line",
-                )
+                    ("view", "native intensity"),
+                ),
+                Panel(
+                    "Row-scaled median",
+                    "axis_cm1",
+                    "median",
+                    "instrument",
+                    "Raman shift (cm-1)",
+                    "Median scaled intensity",
+                    "line",
+                    ("view", "row min-max"),
+                ),
             ],
         ),
         "F06": (
@@ -402,7 +522,7 @@ def build_figure_tables(
             [
                 Panel(
                     "Shape correlation",
-                    "representation_id",
+                    "representation_label",
                     "shape_correlation",
                     "instrument",
                     "Representation",
@@ -411,7 +531,7 @@ def build_figure_tables(
                 ),
                 Panel(
                     "Peak recall",
-                    "representation_id",
+                    "representation_label",
                     "peak_recall",
                     "instrument",
                     "Representation",
@@ -426,7 +546,7 @@ def build_figure_tables(
             [
                 Panel(
                     "PC1 variance",
-                    "representation_id",
+                    "representation_label",
                     "pc1_explained_variance",
                     "level",
                     "Representation",
@@ -435,7 +555,7 @@ def build_figure_tables(
                 ),
                 Panel(
                     "Components to 95%",
-                    "representation_id",
+                    "representation_label",
                     "pca_components_to_95pct",
                     "level",
                     "Representation",
@@ -474,7 +594,7 @@ def build_figure_tables(
             [
                 Panel(
                     "K-means association",
-                    "representation_id",
+                    "representation_label",
                     "value",
                     "metric",
                     "Representation",
@@ -484,7 +604,7 @@ def build_figure_tables(
                 ),
                 Panel(
                     "Seed and parameter stability",
-                    "representation_id",
+                    "representation_label",
                     "value",
                     "metric",
                     "Representation",
