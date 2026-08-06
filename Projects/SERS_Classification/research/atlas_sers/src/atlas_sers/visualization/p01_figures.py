@@ -565,9 +565,18 @@ def build_figure_tables(
             ],
         ),
         "F08": (
-            "UMAP and t-SNE physical-master views",
+            "PCA, UMAP, and t-SNE physical-master views",
             embedding,
             [
+                Panel(
+                    "PCA",
+                    "pca_1",
+                    "pca_2",
+                    "target_analyte",
+                    "PC1",
+                    "PC2",
+                    "scatter",
+                ),
                 Panel(
                     "UMAP",
                     "umap_1",

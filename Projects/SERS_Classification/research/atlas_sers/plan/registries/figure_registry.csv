@@ -7,7 +7,7 @@ F04,S,P01,Native and effective axis coverage by instrument,spectrum,native sourc
 F05,S,P01,All spectra and robust instrument summaries,spectrum,primary arrays and manifest,figures/tikz/F05_instrument_spectra.tex,figures/html/F05_instrument_spectra.html,Supplementary QC,complete
 F06,S,P01,Preprocessing preservation by instrument,spectrum pair,representation registry,figures/tikz/F06_preprocessing_preservation.tex,figures/html/F06_preprocessing_preservation.html,Methods evidence,complete
 F07,E,P01,PCA structure before and after row scaling,master and spectrum,representation arrays,figures/tikz/F07_pca_structure.tex,figures/html/F07_pca_structure.html,Exploratory structure,complete
-F08,E,P01,UMAP and t-SNE target-domain views,master,embedding tables,figures/tikz/F08_nonlinear_embeddings.tex,figures/html/F08_nonlinear_embeddings.html,Exploratory supplement,complete
+F08,E,P01,PCA UMAP and t-SNE target-domain views,master,embedding tables,figures/tikz/F08_nonlinear_embeddings.tex,figures/html/F08_nonlinear_embeddings.html,Exploratory supplement,complete
 F09,E,P01,Clustering stability and metadata association,master,cluster stability tables,figures/tikz/F09_cluster_association.tex,figures/html/F09_cluster_association.html,Exploratory supplement,complete
 F10,P,P02,Master and instrument exclusion split schematic,partition,split contract,figures/tikz/F10_split_design.tex,figures/html/F10_split_design.html,Main methods figure,planned
 F11,S,P02,Primary and low-support domain registry,domain,domain support audit,figures/tikz/F11_domain_support.tex,figures/html/F11_domain_support.html,Methods support,planned

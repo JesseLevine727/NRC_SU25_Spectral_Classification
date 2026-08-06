@@ -247,3 +247,8 @@ def test_synthetic_p00_to_p01_build_validates_and_verified_skips(tmp_path: Path)
     assert len(report["representations"]) == 8
     assert len(report["figures"]) == 8
     assert all(report["checks"].values())
+    f08_tikz = (run_dir / "figures" / "tikz" / "F08_nonlinear_embeddings.tex").read_text()
+    f08_html = (run_dir / "figures" / "html" / "F08_nonlinear_embeddings.html").read_text()
+    assert f08_tikz.count(r"\nextgroupplot") == 3
+    assert all(label in f08_tikz for label in ("PCA", "PC1", "PC2", "UMAP", "t-SNE"))
+    assert all(label in f08_html for label in ("PCA", "PC1", "PC2", "UMAP", "t-SNE"))

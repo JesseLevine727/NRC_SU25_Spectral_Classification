@@ -135,8 +135,8 @@ forms:
 The aggregate table SHA-256 is embedded in both TikZ and HTML. The figure
 manifest verifies semantic parity, successful compilation, native TikZ (no
 raster wrapper), and standalone HTML. F02–F09 cover population flow, factor
-support, native-axis coverage, instrument spectra, preservation, PCA,
-nonlinear embeddings, and clustering association/stability.
+support, native-axis coverage, instrument spectra, preservation, PCA diagnostics,
+matched PCA/UMAP/t-SNE master views, and clustering association/stability.
 
 ## Commands
 
