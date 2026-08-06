@@ -487,7 +487,7 @@ For anchor \(i\), positives share station and target. Positive weights are:
 - 2.0 for same-master/different-instrument pairs;
 - an additional factor 1.25 for different-sensor pairs, capped at total weight 2.5.
 
-Different-target spectra within the same station are negatives. Same-target different-master rows are never negatives. Cross-station pairs are excluded from the primary contrastive denomiatlasr because station and chemistry support are not factorially crossed.
+Different-target spectra within the same station are negatives. Same-target different-master rows are never negatives. Cross-station pairs are excluded from the primary contrastive denominator because station and chemistry support are not factorially crossed.
 
 Candidate temperatures are `{0.05,0.1,0.2}`. The contrastive projection head is used only for the loss; classification uses the pre-projection 64-dimensional embedding.
 
@@ -760,7 +760,7 @@ Permutation performance is near chance; all primary candidates produce complete 
 
 ### G2 — deep training validity
 
-At least 95% of planned runs finish without NaN/Inf; all failed/collapsed runs remain in denomiatlasrs; parameter and epoch budgets are obeyed; learning curves are archived.
+At least 95% of planned runs finish without NaN/Inf; all failed/collapsed runs remain in denominators; parameter and epoch budgets are obeyed; learning curves are archived.
 
 ### G3 — acquisition-aware development advancement
 

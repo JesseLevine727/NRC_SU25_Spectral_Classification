@@ -9,6 +9,7 @@ description = "Data-free research scaffold for acquisition-aware SERS classifica
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+  "jsonschema>=4.21",
   "numpy>=1.26",
   "pandas>=2.1",
   "scipy>=1.11",
@@ -23,7 +24,6 @@ viz = [
 ]
 deep = ["torch>=2.2"]
 dev = [
-  "jsonschema>=4.21",
   "pytest>=8",
   "ruff>=0.5",
 ]

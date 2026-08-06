@@ -45,6 +45,11 @@ git diff --cached --check
 Review every staged path. Generated artifacts are private by default; an
 aggregate result becomes public only after a deliberate disclosure review.
 
+The P00 environment lock, input verification, dry-run registries, validation
+report, artifact hashes, run-state files, quarantine records, and latest-run
+pointer are also private. Public phase status may state that P00 passed, but
+must not reveal resolved roots, workstation metadata, or private inventory.
+
 ## Incident response
 
 If restricted content is committed, stop pushing immediately. If it has

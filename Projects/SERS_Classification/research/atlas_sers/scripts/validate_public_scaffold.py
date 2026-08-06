@@ -12,13 +12,14 @@ from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[1]
 PLAN = PROJECT / "plan"
+sys.path.insert(0, str(PROJECT / "src"))
+
+from atlas_sers.governance.registries import load_governance, validate_governance  # noqa: E402
 
 # Kept as code points so the restricted source name is not reproduced in the
 # public repository. Matching is case-insensitive and covers paths and content.
 RESTRICTED_SOURCE_TOKEN = bytes((110, 97, 116, 111))
-RESTRICTED_SOURCE_PATTERN = re.compile(
-    rb"(?<![a-z])" + RESTRICTED_SOURCE_TOKEN + rb"(?![a-z])"
-)
+RESTRICTED_SOURCE_PATTERN = re.compile(rb"(?<![a-z])" + RESTRICTED_SOURCE_TOKEN + rb"(?![a-z])")
 POSIX_USER_PREFIX = bytes((47, 104, 111, 109, 101, 47))
 WINDOWS_USER_PREFIX = bytes((92, 117, 115, 101, 114, 115, 92))
 
@@ -56,6 +57,12 @@ REQUIRED_FILES = {
     "plan/contracts/result_schema.json",
     "plan/contracts/figure_contract.json",
     "plan/contracts/compute_budget.json",
+    "plan/contracts/p00_governance_contract.json",
+    "plan/contracts/p00_validation_schema.json",
+    "plan/registries/model_registry.csv",
+    "plan/registries/artifact_registry.csv",
+    "plan/registries/deviations.csv",
+    "scripts/run_p00.py",
 }
 
 REGISTRY_COUNTS = {
@@ -64,7 +71,10 @@ REGISTRY_COUNTS = {
     "metric_registry.csv": 25,
     "experiment_registry.csv": 39,
     "figure_registry.csv": 35,
-    "decision_gate_registry.csv": 8,
+    "model_registry.csv": 36,
+    "artifact_registry.csv": 37,
+    "decision_gate_registry.csv": 13,
+    "deviations.csv": 0,
 }
 
 
@@ -108,9 +118,7 @@ def validate_publication_boundary(errors: list[str]) -> None:
 
     for guarded_dir in (PROJECT / "data", PROJECT / "artifacts"):
         unexpected = [
-            path
-            for path in guarded_dir.rglob("*")
-            if path.is_file() and path.name != "README.md"
+            path for path in guarded_dir.rglob("*") if path.is_file() and path.name != "README.md"
         ]
         errors.extend(
             f"guarded directory contains content: {relative(path)}" for path in unexpected
@@ -151,6 +159,14 @@ def validate_registries(errors: list[str]) -> None:
             rows = list(csv.DictReader(handle))
         if len(rows) != expected:
             errors.append(f"{name} has {len(rows)} rows; expected {expected}")
+
+    try:
+        report = validate_governance(load_governance(PLAN))
+    except (KeyError, OSError, ValueError, json.JSONDecodeError) as exc:
+        errors.append(f"governance validation could not run: {type(exc).__name__}: {exc}")
+        return
+    if report["status"] != "pass":
+        errors.extend(f"governance: {message}" for message in report["errors"])
 
 
 def validate_figures(errors: list[str]) -> None:

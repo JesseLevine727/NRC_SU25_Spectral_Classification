@@ -43,12 +43,14 @@ research/atlas_sers/
 ├── artifacts/README.md            Local output contract; no outputs
 ├── plan/
 │   ├── MASTER_PLAN.md             Research questions, phases, gates, claims
+│   ├── P00_EXECUTION.md           Governance procedure and phase boundary
 │   ├── FIGURE_STYLE_AND_REGENERATION.md
 │   ├── index.html                 Standalone plan dashboard
 │   ├── contracts/                 Machine-readable frozen protocols
 │   ├── registries/                Phase/task/metric/experiment/figure tables
 │   └── figures/                   Data-free TikZ, HTML, and vector plan figures
 ├── src/atlas_sers/
+│   ├── governance/                P00 registries, provenance, hashes, dry run
 │   ├── data/                      Private ingestion interfaces and QC
 │   ├── preprocessing/             Frozen and sensitivity representations
 │   ├── exploration/               PCA, clustering, UMAP, and t-SNE analyses
@@ -56,6 +58,7 @@ research/atlas_sers/
 │   ├── models/                    Classical and deep model families
 │   ├── evaluation/                Metrics, calibration, bootstrap, robustness
 │   └── visualization/             Paired TikZ/HTML figure generation
+├── scripts/run_p00.py             No-training governance audit/dry run
 ├── scripts/validate_public_scaffold.py
 └── tests/                         Contract and privacy regression tests
 ```
@@ -65,12 +68,14 @@ boundaries, artifact flow, and implementation order.
 
 ## Private data boundary
 
-Set `ATLAS_PRIVATE_ROOT` to a directory outside the Git checkout. Code must
-read immutable inputs from that location and write generated outputs under an
-ignored local artifact root. Never copy source spectra into this directory.
+Set `ATLAS_PRIVATE_ROOT` to the immutable input directory and
+`ATLAS_ARTIFACT_ROOT` to a separate private output directory outside this
+public project. The output root must not overlap either the input root or this
+project. Never copy source spectra into this directory.
 
 ```bash
 export ATLAS_PRIVATE_ROOT=/path/outside/the/repository/atlas_inputs
+export ATLAS_ARTIFACT_ROOT=/different/path/outside/the/repository/atlas_artifacts
 ```
 
 The expected private files and their frozen checksums are identified in
@@ -82,8 +87,10 @@ From this directory:
 
 ```bash
 python3 scripts/validate_public_scaffold.py
-python3 -m pip install -e '.[dev,viz]'
-pytest
+python3 -m pip install -e '.[dev]'
+python3 scripts/run_p00.py audit
+pytest -q
+python3 scripts/run_p00.py dry-run
 ```
 
 Install the `deep` extra only for neural experiments:
@@ -92,9 +99,16 @@ Install the `deep` extra only for neural experiments:
 python3 -m pip install -e '.[deep]'
 ```
 
-The scaffold deliberately does not launch experiments yet. Implement phases
-in the order recorded by `plan/registries/phase_registry.csv`, and do not begin
-confirmatory evaluation until the corresponding decision gate is satisfied.
+The P00 dry run verifies the private inputs and governance state but imports no
+training modules, authorizes no fit, and materializes no representation. It
+writes twelve private governance artifacts beneath
+`${ATLAS_ARTIFACT_ROOT}/p00/runs/<run_id>/` and updates a sanitized private
+`p00/LATEST.json` pointer. A repeated, unchanged successful invocation must
+return `verified_skip`. See [plan/P00_EXECUTION.md](plan/P00_EXECUTION.md) for
+the exact outputs, statuses, and failure behavior.
+
+P01 remains forbidden until the P00 validation report says `pass`, its hash
+manifest is complete, and the P00 phase registry row says `complete`.
 
 ## Reproducibility rules
 
@@ -112,5 +126,5 @@ confirmatory evaluation until the corresponding decision gate is satisfied.
 ## Status
 
 The research plan is execution-ready but is not a prospective preregistration:
-pilot results informed its design. Definitive model implementations and result
-artifacts are intentionally absent from this initial scaffold.
+pilot results informed its design. P00 governance is executable; representation,
+split, model, and result implementations remain outside the P00 boundary.

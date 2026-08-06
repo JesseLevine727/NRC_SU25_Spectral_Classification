@@ -1,0 +1,38 @@
+artifact_id,scope,phase,title,producer_experiments,logical_path,format,privacy,schema_or_contract,completion_rule,retention
+ART-P00-ENV,P,P00,Sanitized environment lock,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/environment_lock.json,json,private,p00-environment-v1,Required fields present and path scan clean,retain
+ART-P00-INPUTS,P,P00,Authoritative input verification,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/input_verification.json,json,private,p00-input-verification-v1,Every declared input check passes,retain
+ART-P00-STATE,P,P00,Protected scientific state,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/protected_state.json,json,private,p00-protected-state-v1,Canonical hash reproduces run ID,retain
+ART-P00-DEVIATIONS,P,P00,Deviation log,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/deviations.csv,csv,private,deviations-v1,Schema exists even when zero rows,retain
+ART-P00-RUNS,P,P00,Provisional expected run registry,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/expected_run_registry.csv,csv,private,p00-run-registry-v1,Every registered experiment represented,retain
+ART-P00-FIT-COUNTS,P,P00,Fit count estimate,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/fit_count_by_phase_model_task.csv,csv,private,p00-fit-count-v1,Unresolved exact counts reason-coded,retain
+ART-P00-GPU-HOURS,P,P00,GPU hour estimate,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/estimated_gpu_hours.csv,csv,private,p00-compute-estimate-v1,Unknown hours never fabricated,retain
+ART-P00-CPU-HOURS,P,P00,CPU hour estimate,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/estimated_cpu_hours.csv,csv,private,p00-compute-estimate-v1,Unknown hours never fabricated,retain
+ART-P00-DISK,P,P00,Disk estimate and capacity,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/estimated_disk_bytes.json,json,private,p00-disk-estimate-v1,Capacity captured and estimate status explicit,retain
+ART-P00-SHARDS,P,P00,Provisional shard manifest,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/shard_manifest.csv,csv,private,p00-shard-manifest-v1,No shard authorized before P02,retain
+ART-P00-REPORT,P,P00,P00 validation report,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/P00_VALIDATION_REPORT.json,json,private,p00-validation-report-v1,Status pass before P01 authorization,retain
+ART-P00-HASHES,P,P00,P00 artifact hash manifest,P00,${ATLAS_ARTIFACT_ROOT}/p00/runs/{run_id}/P00_ARTIFACT_HASHES.json,json,private,p00-artifact-hashes-v1,Every run artifact except manifest hashed,retain
+ART-P01-REPRESENTATIONS,P,P01,Frozen manifests and representation bundles,EXP-P01-001,${ATLAS_ARTIFACT_ROOT}/p01/{representation_id}/,mixed,private,research_contract.json,All P01 invariants pass,retain
+ART-P02-MASTER-SPLITS,P,P02,Master-grouped outer split registry,EXP-P02-001,${ATLAS_ARTIFACT_ROOT}/p02/master_split_registry.csv,csv,private,split_contract.json,Every master appears once per repeat,retain
+ART-P02-T3-PARTITIONS,P,P02,T3 domain partition registry,EXP-P02-002,${ATLAS_ARTIFACT_ROOT}/p02/t3_partition_registry.csv,csv,private,split_contract.json,Thirteen primary domains reconstructed without leakage,retain
+ART-P03-PREDICTIONS,P,P03,Classical row and master predictions,EXP-C00-T1|EXP-C01-T1|EXP-C02-T1|EXP-C03-T1|EXP-C04-T1|EXP-C05-T1|EXP-C06-T1|EXP-C07-T1|EXP-C08-T1|EXP-C09-T3|EXP-C10-T3|EXP-C11-T2|EXP-C12-CORAL,${ATLAS_ARTIFACT_ROOT}/p03/predictions/{run_id}.parquet,parquet,private,result_schema.json,Every planned fold complete or terminal,retain
+ART-P03-METRICS,P,P03,Classical aggregate metrics,EXP-C00-T1|EXP-C01-T1|EXP-C02-T1|EXP-C03-T1|EXP-C04-T1|EXP-C05-T1|EXP-C06-T1|EXP-C07-T1|EXP-C08-T1|EXP-C09-T3|EXP-C10-T3|EXP-C11-T2|EXP-C12-CORAL,${ATLAS_ARTIFACT_ROOT}/p03/metrics/,csv,private,metric_registry.csv,Metrics recompute from predictions,retain
+ART-P03-CALIBRATION,S,P03,Classical calibration records,EXP-C09-T3|EXP-C10-T3|EXP-C11-T2|EXP-C12-CORAL,${ATLAS_ARTIFACT_ROOT}/p03/calibration/,json,private,hyperparameter_registry.json,No test data enters calibration,retain
+ART-P04-HISTORIES,P,P04,D0 training histories,EXP-N00-DEV|EXP-N00-T3,${ATLAS_ARTIFACT_ROOT}/p04/histories/{run_id}.json,json,private,p00-run-registry-v1,G2 fields complete,retain
+ART-P04-CHECKPOINTS,P,P04,D0 checkpoints,EXP-N00-DEV|EXP-N00-T3,${ATLAS_ARTIFACT_ROOT}/p04/checkpoints/{run_id}.pt,pt,private,model_registry.csv,Protected hash agrees,retain
+ART-P04-PREDICTIONS,P,P04,D0 predictions,EXP-N00-T3,${ATLAS_ARTIFACT_ROOT}/p04/predictions/{run_id}.parquet,parquet,private,result_schema.json,Every fold complete or terminal,retain
+ART-P05-DEVELOPMENT,P,P05,Acquisition-aware development results,EXP-N01-DEV|EXP-N02-DEV|EXP-N03-DEV|EXP-N04-DEV|EXP-N05-DEV,${ATLAS_ARTIFACT_ROOT}/p05/development/,mixed,private,model_registry.csv,G3 fields complete,retain
+ART-P05-FROZEN,P,P05,Frozen advancing candidate,EXP-N01-DEV|EXP-N02-DEV|EXP-N03-DEV|EXP-N04-DEV|EXP-N05-DEV,${ATLAS_ARTIFACT_ROOT}/p05/frozen_candidate.json,json,private,model_registry.csv,Source-only advancement decision recorded,retain
+ART-P06-PREDICTIONS,P,P06,Definitive deep predictions,EXP-NSEL-T1|EXP-NSEL-T2|EXP-NSEL-T3,${ATLAS_ARTIFACT_ROOT}/p06/predictions/{run_id}.parquet,parquet,private,result_schema.json,Complete paired prediction set,retain
+ART-P06-METRICS,P,P06,Definitive paired metrics,EXP-NSEL-T1|EXP-NSEL-T2|EXP-NSEL-T3,${ATLAS_ARTIFACT_ROOT}/p06/metrics/,csv,private,metric_registry.csv,Metrics recompute from predictions,retain
+ART-P07-ADAPTATION,S,P07,Adaptation and calibration curves,EXP-UDA-001|EXP-PC-001|EXP-FS-001,${ATLAS_ARTIFACT_ROOT}/p07/,mixed,private,split_contract.json,Information regimes remain separate,retain
+ART-P08-ROBUSTNESS,S,P08,Robustness and preprocessing sensitivities,EXP-RB-001|EXP-RB-002|EXP-RB-003,${ATLAS_ARTIFACT_ROOT}/p08/,mixed,private,metric_registry.csv,All registered branches complete,retain
+ART-P09-OPENSET,S,P09,Open-set predictions thresholds and metrics,EXP-OS-001|EXP-OS-002,${ATLAS_ARTIFACT_ROOT}/p09/,mixed,private,result_schema.json,Known-only threshold audit passes,retain
+ART-P10-PROBES,S,P10,Target-adjusted probe results,EXP-PR-001,${ATLAS_ARTIFACT_ROOT}/p10/probes/,mixed,private,metric_registry.csv,Chemistry nulls and increments reported,retain
+ART-P10-PAIRS,S,P10,Same-master pair diagnostics,EXP-PAIR-001,${ATLAS_ARTIFACT_ROOT}/p10/pairs/,mixed,private,metric_registry.csv,Correctness-conditioned outputs complete,retain
+ART-P10-ATTRIBUTION,E,P10,Attribution and sanity controls,EXP-ATTR-001,${ATLAS_ARTIFACT_ROOT}/p10/attribution/,mixed,private,model_registry.csv,Randomization sanity checks pass,retain
+ART-P11-INFERENCE,P,P11,Hierarchical inference and route verdict,EXP-STAT-001,${ATLAS_ARTIFACT_ROOT}/p11/,mixed,private,decision_gate_registry.csv,G4 through G6 verdicts determined,retain
+ART-P12-FIGURE-DATA,P,P12,Disclosure-reviewed aggregate figure data,EXP-FIG-001,${ATLAS_ARTIFACT_ROOT}/p12/figures/data/,csv,public_after_review,figure_contract.json,Independent unit and aggregation declared,retain
+ART-P12-TIKZ,P,P12,Native TikZ figure sources,EXP-FIG-001,${ATLAS_ARTIFACT_ROOT}/p12/figures/tikz/,tex,public_after_review,figure_contract.json,No raster wrappers and compilation passes,retain
+ART-P12-HTML,P,P12,Standalone HTML figures,EXP-FIG-001,${ATLAS_ARTIFACT_ROOT}/p12/figures/html/,html,public_after_review,figure_contract.json,Self-contained and semantic parity passes,retain
+ART-P12-PDF,P,P12,Compiled vector figures,EXP-FIG-001,${ATLAS_ARTIFACT_ROOT}/p12/figures/pdf/,pdf,public_after_review,figure_contract.json,Vector-only audit passes,retain
+ART-P12-FINAL,P,P12,Final validation and artifact hashes,EXP-FIG-001,${ATLAS_ARTIFACT_ROOT}/p12/final/,json,private,figure_contract.json,Final clean rebuild passes,retain

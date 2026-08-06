@@ -1,0 +1,37 @@
+model_id,scope,kind,title,phase_introduced,trainable,parameter_budget,epoch_budget,selection_boundary,status
+SYS-REP-BUILDER,P,system,Frozen representation builder,P01,false,not_applicable,not_applicable,no model outcomes,planned
+SYS-OUTER-SPLIT,P,system,Five-repeat outer split builder,P02,false,not_applicable,not_applicable,metadata support only,planned
+SYS-T3-PARTITION,P,system,T3 partition derivation,P02,false,not_applicable,not_applicable,metadata support only,planned
+C-PRIOR,P,classical,Prior dummy,P03,false,not_applicable,not_applicable,fixed,planned
+C-SPECTRAL-MATCH,P,classical,Correlation and spectral-angle matching,P03,false,not_applicable,not_applicable,inner master CV,planned
+C-NEAREST-CENTROID,P,classical,Nearest centroid,P03,true,registry_defined,not_applicable,inner master CV,planned
+C-PCA-LDA,P,classical,PCA-LDA,P03,true,registry_defined,not_applicable,inner master CV,planned
+C-PLS-DA,P,classical,PLS-DA,P03,true,registry_defined,not_applicable,inner master CV,planned
+C-LOGREG-EN,P,classical,Elastic-net multinomial logistic,P03,true,registry_defined,not_applicable,inner master CV,planned
+C-RBF-SVM,P,classical,RBF SVM,P03,true,registry_defined,not_applicable,inner master CV,planned
+C-RANDOM-FOREST,P,classical,Random Forest,P03,true,registry_defined,not_applicable,inner master CV,planned
+C-EXTRA-TREES,P,classical,Extra Trees,P03,true,registry_defined,not_applicable,inner master CV,planned
+C-SELECTED,P,classical,Development-selected classical suite,P03,true,registry_defined,not_applicable,source-only pseudo-domain CV,planned
+C-FIXED-SUITE,S,classical,Fixed PCA-LDA SVM RF ExtraTrees,P03,true,registry_defined,not_applicable,fixed or inner hyperparameters,planned
+C-CANDIDATE-SUITE,S,classical,Classical candidate suite,P03,true,registry_defined,not_applicable,training-station inner master CV,planned
+C-SOURCE-CORAL,S,classical,Source-only CORAL plus PCA-LDA or SVM,P03,true,registry_defined,not_applicable,source pseudo-domain CV,planned
+D0-ERM,P,deep,Compact D0 ERM encoder,P04,true,250000,200,source-only development,planned
+D1-ERM-SUPCON,P,deep,D1 ERM plus supervised contrastive,P05,true,250000,200,source-only development,planned
+D2-ERM-PAIR,P,deep,D2 ERM plus paired consistency,P05,true,250000,200,source-only development,planned
+D3-ERM-SUPCON-PAIR,P,deep,D3 ERM plus SupCon plus paired consistency,P05,true,250000,200,source-only development,planned
+D4-D3-CCORAL,S,deep,D4 D3 plus conditional CORAL,P05,true,250000,200,source-only development,planned
+D5-D3-CDANN,S,deep,D5 D3 plus conditional domain adversary,P05,true,250000,200,source-only development,planned
+D-SELECTED,P,deep,Frozen advancing deep pipeline,P06,true,250000,200,frozen before definitive aggregation,planned
+D0-DSELECTED,P,deep,Frozen D0 and advancing deep pipeline,P06,true,250000,200,frozen source-only development,planned
+A-UDA,S,adaptation,CORAL entropy and feature-statistic adaptation,P07,true,250000,200,no evaluation-master outcomes,planned
+A-PAIRED-CAL,S,adaptation,Prototype PDS paired consistency and low-rank adapter,P07,true,250000,200,no evaluation-master outcomes,planned
+A-FEWSHOT,S,adaptation,Head-only full and low-rank tuning,P07,true,250000,200,calibration-master validation only,planned
+E-PERTURBATION,S,evaluation,Test-time physical perturbation grid,P08,false,not_applicable,not_applicable,no perturbation outcome selects model,planned
+E-FIXED-PIPELINES,S,evaluation,Fixed classical and frozen deep pipelines,P08,false,frozen,not_applicable,no test-based selection,planned
+OS-CLASSICAL,S,open_set,Frozen selected classical scores,P09,false,frozen,not_applicable,known-only calibration,planned
+OS-DEEP,S,open_set,Frozen D0 and selected deep scores,P09,false,frozen,not_applicable,known-only calibration,planned
+PR-LINEAR,S,probe,Target-adjusted linear probes,P10,true,probe_only,not_applicable,training-only probe fitting,planned
+PR-PAIR,S,diagnostic,Same-master cross-domain diagnostics,P10,false,not_applicable,not_applicable,no selection,planned
+PR-ATTR,E,attribution,Integrated gradients and 10 cm occlusion,P10,false,frozen,not_applicable,frozen model only,planned
+SYS-STAT,P,statistics,Hierarchical bootstrap and leave-one-domain analyses,P11,false,not_applicable,not_applicable,frozen outputs,planned
+SYS-FIGURE,P,reporting,Paired TikZ PGFPlots and standalone HTML generator,P12,false,not_applicable,not_applicable,frozen evidence tables,planned

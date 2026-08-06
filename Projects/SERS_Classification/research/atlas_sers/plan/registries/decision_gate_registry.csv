@@ -7,3 +7,8 @@ G4,P,Primary superiority,T3-ZS paired outcomes,"mean delta >=0.03; CI lower >0; 
 G5,S,Invariance interpretation,"domain probes; chemistry BA; T3 BA",Domain probe increment falls while chemistry noninferior and T3 improves,Describe residual domain information without invariance claim
 G6,P,Publication route,"G0-G5; robustness; limitations",Route A if G4 passes; Route B if classical stable; Route C if both unstable,Write claim set for selected route
 GF,P,Figure parity,"figure registry; data hashes; TeX logs; HTML audit",Every registered result has semantically matched native TikZ and standalone HTML,Block manuscript freeze
+regime_separation_pass,S,Information-regime separation,"adaptation; calibration; evaluation master registries",Every adaptation calibration and evaluation master role is disjoint,Repair partitions before interpreting secondary regimes
+robustness_registry_complete,S,Robustness registry completeness,"perturbations; preprocessing branches; tier branches",Every registered robustness branch is complete or reason-coded,Do not summarize robustness selectively
+open_set_leakage_pass,S,Open-set leakage,"held chemicals; known-only calibration; thresholds",Held chemicals are absent from all fitting and threshold roles,Repair open-set harness before interpretation
+interpretation_audit_pass,S,Interpretation audit,"probes; paired diagnostics; attribution sanity; errors",All interpretation controls and limitations are complete,Restrict claims to directly supported prediction results
+final_validation_pass,P,Final reproducibility,"clean rebuild; hashes; figure parity; manuscript claims",Every final validator and clean-rebuild check passes,Block publication freeze

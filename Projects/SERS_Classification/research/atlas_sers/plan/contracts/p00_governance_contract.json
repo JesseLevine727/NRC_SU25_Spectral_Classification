@@ -1,0 +1,93 @@
+{
+  "protocol_version": "atlas-sers-p00-governance-v1",
+  "phase": "P00",
+  "model_fitting_authorized": false,
+  "private_roots": {
+    "inputs_environment_variable": "ATLAS_PRIVATE_ROOT",
+    "artifacts_environment_variable": "ATLAS_ARTIFACT_ROOT",
+    "artifact_root_must_be_outside_repository": true,
+    "artifact_root_must_not_overlap_input_root": true,
+    "private_inputs_must_not_be_git_tracked": true
+  },
+  "required_registries": {
+    "phase_registry.csv": "phase_id",
+    "task_registry.csv": "task_id",
+    "experiment_registry.csv": "experiment_id",
+    "metric_registry.csv": "metric_id",
+    "model_registry.csv": "model_id",
+    "figure_registry.csv": "figure_id",
+    "decision_gate_registry.csv": "gate_id",
+    "artifact_registry.csv": "artifact_id",
+    "deviations.csv": "deviation_id"
+  },
+  "run_identity_fields": [
+    "protocol_version",
+    "experiment_id",
+    "task_id",
+    "information_regime",
+    "outer_repeat",
+    "outer_fold",
+    "held_domain",
+    "population_id",
+    "representation_id",
+    "model_id",
+    "hyperparameter_sha256",
+    "seed",
+    "code_sha256",
+    "config_sha256",
+    "input_sha256"
+  ],
+  "deviation_fields": [
+    "deviation_id",
+    "timestamp_utc",
+    "rationale",
+    "affected_experiment_ids",
+    "affected_run_ids",
+    "outcome_access_timing",
+    "approval_status",
+    "approved_by",
+    "resolution",
+    "status"
+  ],
+  "required_dry_run_outputs": [
+    "expected_run_registry.csv",
+    "fit_count_by_phase_model_task.csv",
+    "estimated_gpu_hours.csv",
+    "estimated_cpu_hours.csv",
+    "estimated_disk_bytes.json",
+    "shard_manifest.csv"
+  ],
+  "required_p00_outputs": [
+    "environment_lock.json",
+    "input_verification.json",
+    "protected_state.json",
+    "deviations.csv",
+    "expected_run_registry.csv",
+    "fit_count_by_phase_model_task.csv",
+    "estimated_gpu_hours.csv",
+    "estimated_cpu_hours.csv",
+    "estimated_disk_bytes.json",
+    "shard_manifest.csv",
+    "P00_VALIDATION_REPORT.json",
+    "P00_ARTIFACT_HASHES.json"
+  ],
+  "artifact_states": [
+    "new",
+    "verified_skip",
+    "complete",
+    "quarantined"
+  ],
+  "validation_statuses": [
+    "pass",
+    "blocked",
+    "fail"
+  ],
+  "prohibited_operations": [
+    "representation materialization",
+    "split construction",
+    "model fitting",
+    "model selection",
+    "prediction",
+    "outcome interpretation"
+  ]
+}
