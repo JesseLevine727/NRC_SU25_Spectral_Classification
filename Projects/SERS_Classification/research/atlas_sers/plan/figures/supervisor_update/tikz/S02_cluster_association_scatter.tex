@@ -1,0 +1,37 @@
+\documentclass[tikz,border=5pt]{standalone}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=-1
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\definecolor{supervisor0}{HTML}{0072B2}
+\definecolor{supervisor1}{HTML}{E69F00}
+\definecolor{supervisor2}{HTML}{009E73}
+\definecolor{supervisor3}{HTML}{CC79A7}
+\definecolor{supervisor4}{HTML}{D55E00}
+\definecolor{supervisor5}{HTML}{56B4E9}
+\definecolor{supervisor6}{HTML}{000000}
+\definecolor{supervisor7}{HTML}{6A3D9A}
+\definecolor{supervisor8}{HTML}{A6CEE3}
+\definecolor{supervisor9}{HTML}{B2DF8A}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[width=11.5cm,height=10cm,xmin=0,xmax=0.60,ymin=0,ymax=0.60,
+axis equal image,grid=both,xlabel={Strength of grouping by instrument (NMI)},
+ylabel={Strength of grouping by chemical (NMI)},tick label style={font=\small},
+label style={font=\small},title={Do the natural spectral groups follow instrument or chemical?},title style={font=\bfseries}]
+\addplot[densely dashed,color=gray,domain=0:0.60,samples=2] {x};
+\node[font=\scriptsize,rotate=45,text=gray] at (axis cs:0.43,0.47) {equal association};
+\addplot[only marks,mark=*,mark size=2.6pt,draw=white,fill=supervisor0] coordinates {(0.37224223,0.063571817)} node[pos=0,above left,font=\scriptsize] {Native};
+\addplot[only marks,mark=*,mark size=2.6pt,draw=white,fill=supervisor1] coordinates {(0.48216828,0.2868491)} node[pos=0,above right,font=\scriptsize] {Min-max};
+\addplot[only marks,mark=*,mark size=2.6pt,draw=white,fill=supervisor2] coordinates {(0.48235324,0.25561595)} node[pos=0,below left,font=\scriptsize] {Min-max 1849};
+\addplot[only marks,mark=*,mark size=2.6pt,draw=white,fill=supervisor3] coordinates {(0.47655859,0.26035517)} node[pos=0,above left,font=\scriptsize] {SG};
+\addplot[only marks,mark=*,mark size=2.6pt,draw=white,fill=supervisor4] coordinates {(0.093547719,0.064930557)} node[pos=0,right,font=\scriptsize] {arPLS};
+\addplot[only marks,mark=*,mark size=2.6pt,draw=white,fill=supervisor5] coordinates {(0.51123293,0.32643517)} node[pos=0,above left,font=\scriptsize] {SNV};
+\addplot[only marks,mark=*,mark size=2.6pt,draw=white,fill=supervisor6] coordinates {(0.29723622,0.25484851)} node[pos=0,above left,font=\scriptsize] {L2};
+\addplot[only marks,mark=*,mark size=2.6pt,draw=white,fill=supervisor7] coordinates {(0.35930572,0.23482902)} node[pos=0,below left,font=\scriptsize] {Area};
+\addplot[only marks,mark=*,mark size=2.6pt,draw=white,fill=supervisor8] coordinates {(0.33240662,0.38036059)} node[pos=0,above right,font=\scriptsize] {D1};
+\end{axis}
+\end{tikzpicture}
+\end{document}

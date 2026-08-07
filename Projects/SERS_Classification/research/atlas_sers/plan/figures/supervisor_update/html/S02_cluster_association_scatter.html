@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Do the natural spectral groups follow instrument or chemical?</title>
+<style>
+  :root { color-scheme: light; --ink:#17212b; --muted:#5f6b76; --grid:#d8dee4; }
+  body { margin:0; background:#fff; color:var(--ink); font:14px/1.4 Arial,sans-serif; }
+  main { max-width:1420px; margin:0 auto; padding:24px; }
+  h1 { margin:0 0 8px; font-size:24px; }
+  .takeaway { margin:0 0 18px; color:var(--muted); font-size:15px; }
+  .panels { display:grid; grid-template-columns:repeat(2,minmax(480px,1fr)); gap:24px; }
+  .panel { min-width:0; }
+  .panel h2 { margin:0 0 5px; font-size:17px; }
+  svg { width:100%; height:auto; overflow:visible; }
+  .legend { display:flex; flex-wrap:wrap; gap:7px 14px; margin-top:4px; font-size:12px; }
+  .legend span { display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
+  .swatch { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .tooltip { position:fixed; z-index:10; display:none; pointer-events:none; padding:7px 9px;
+    border:1px solid #aeb7c0; border-radius:5px; background:rgba(255,255,255,.97);
+    box-shadow:0 2px 8px rgba(0,0,0,.12); font-size:12px; }
+  .note { margin-top:18px; color:var(--muted); font-size:12px; }
+  @media (max-width:1050px) { .panels { grid-template-columns:1fr; } }
+</style>
+</head>
+<body><main>
+<h1>Do the natural spectral groups follow instrument or chemical?</h1>
+<p class="takeaway">Most preprocessing choices leave the groups more strongly related to instrument than chemical.</p>
+
+<section class="panel" style="max-width:800px"><svg id="association" viewBox="0 0 760 630"></svg><div id="association-legend" class="legend"></div></section>
+<p class="note">NMI measures how strongly the natural spectral groups correspond to a known label: 0 means little correspondence and larger values mean stronger correspondence. Points below the diagonal follow instrument more strongly; points above it follow chemical more strongly. This is exploratory evidence, not classification performance.</p>
+
+<div id="tooltip" class="tooltip"></div>
+</main>
+<script>
+const data=[{"representation":"Native","instrument_nmi":0.3722422349536533,"analyte_nmi":0.06357181670581201},{"representation":"Min-max","instrument_nmi":0.48216828139346907,"analyte_nmi":0.2868491030031802},{"representation":"Min-max 1849","instrument_nmi":0.48235323716585937,"analyte_nmi":0.2556159490515401},{"representation":"SG","instrument_nmi":0.4765585929759939,"analyte_nmi":0.2603551703792624},{"representation":"arPLS","instrument_nmi":0.09354771880621686,"analyte_nmi":0.06493055662608915},{"representation":"SNV","instrument_nmi":0.5112329318641964,"analyte_nmi":0.3264351732203721},{"representation":"L2","instrument_nmi":0.2972362157769241,"analyte_nmi":0.2548485140367756},{"representation":"Area","instrument_nmi":0.35930572404740563,"analyte_nmi":0.2348290179462393},{"representation":"D1","instrument_nmi":0.3324066231018032,"analyte_nmi":0.3803605948487175}],colors=["#0072B2", "#E69F00", "#009E73", "#CC79A7", "#D55E00", "#56B4E9", "#000000", "#6A3D9A", "#A6CEE3", "#B2DF8A"],tooltip=document.getElementById('tooltip');
+const svg=document.getElementById('association'),NS='http://www.w3.org/2000/svg';
+const W=760,H=630,m={l:78,r:36,t:25,b:72},pw=W-m.l-m.r,ph=H-m.t-m.b,max=.60;
+const X=x=>m.l+x/max*pw,Y=y=>m.t+ph-y/max*ph;
+const add=(name,attrs,parent=svg)=>{const e=document.createElementNS(NS,name);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);parent.appendChild(e);return e;};
+for(let i=0;i<=6;i++){const v=.10*i;add('line',{x1:X(v),x2:X(v),y1:m.t,y2:m.t+ph,stroke:'#d8dee4'});add('line',{x1:m.l,x2:m.l+pw,y1:Y(v),y2:Y(v),stroke:'#d8dee4'});let a=add('text',{x:X(v),y:H-42,'text-anchor':'middle',fill:'#49545e','font-size':12});a.textContent=v.toFixed(1);let b=add('text',{x:m.l-10,y:Y(v)+4,'text-anchor':'end',fill:'#49545e','font-size':12});b.textContent=v.toFixed(1);}
+add('line',{x1:X(0),y1:Y(0),x2:X(max),y2:Y(max),stroke:'#65717c','stroke-width':1.5,'stroke-dasharray':'7 6'});
+let diag=add('text',{x:X(.405),y:Y(.44),'text-anchor':'start',fill:'#65717c','font-size':12,transform:`rotate(-40 ${X(.405)} ${Y(.44)})`});diag.textContent='equal association';
+add('line',{x1:m.l,x2:m.l+pw,y1:m.t+ph,y2:m.t+ph,stroke:'#17212b','stroke-width':1.2});add('line',{x1:m.l,x2:m.l,y1:m.t,y2:m.t+ph,stroke:'#17212b','stroke-width':1.2});
+let tx=add('text',{x:m.l+pw/2,y:H-7,'text-anchor':'middle',fill:'#17212b','font-size':15});tx.textContent='Strength of grouping by instrument (NMI)';
+let ty=add('text',{x:18,y:m.t+ph/2,'text-anchor':'middle',fill:'#17212b','font-size':15,transform:`rotate(-90 18 ${m.t+ph/2})`});ty.textContent='Strength of grouping by chemical (NMI)';
+data.forEach((d,i)=>{const c=add('circle',{cx:X(d.instrument_nmi),cy:Y(d.analyte_nmi),r:7,fill:colors[i%colors.length],stroke:'#fff','stroke-width':1.2});c.addEventListener('mousemove',e=>{tooltip.style.display='block';tooltip.style.left=(e.clientX+12)+'px';tooltip.style.top=(e.clientY+12)+'px';tooltip.innerHTML=`<b>${d.representation}</b><br>instrument NMI ${d.instrument_nmi.toFixed(3)}<br>analyte NMI ${d.analyte_nmi.toFixed(3)}`;});c.addEventListener('mouseleave',()=>tooltip.style.display='none');const t=add('text',{x:X(d.instrument_nmi)+9,y:Y(d.analyte_nmi)-8,fill:'#17212b','font-size':11});t.textContent=d.representation;});
+const legend=document.getElementById('association-legend');data.forEach((d,i)=>{const item=document.createElement('span');item.innerHTML=`<i class="swatch" style="background:${colors[i%colors.length]}"></i>${d.representation}`;legend.appendChild(item);});
+</script>
+</body></html>
