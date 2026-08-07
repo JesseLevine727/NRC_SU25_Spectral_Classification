@@ -17,6 +17,8 @@ STAGE_PHASES = {
     "D1_to_D5_source_development": "P05",
     "definitive_two_deep_models_initial": "P06",
     "full_repeat_confirmation_additional": "P06",
+    "preprocessing_policy_source_development": "P08",
+    "preprocessing_policy_factorial_evaluation": "P08",
     "adaptation_robustness_open_set": "P07|P08|P09",
 }
 
@@ -79,8 +81,13 @@ def build_dry_run_outputs(
         identity = RunIdentity(
             protocol_version=protocol_version,
             experiment_id=experiment["experiment_id"],
+            research_question_id=experiment["research_question_ids"],
             task_id=experiment["task_id"],
             information_regime=experiment["information_regime"],
+            preprocessing_information_regime=experiment[
+                "preprocessing_information_regime"
+            ],
+            preprocessing_policy_id=experiment["preprocessing_policy_ids"],
             outer_repeat=provisional["outer_repeat"],
             outer_fold=provisional["outer_fold"],
             held_domain=provisional["held_domain"],
@@ -100,10 +107,15 @@ def build_dry_run_outputs(
                 "resolution_status": f"awaiting_{experiment['phase']}",
                 "unresolved_fields": provisional["unresolved_fields"],
                 "experiment_id": experiment["experiment_id"],
+                "research_question_id": experiment["research_question_ids"],
                 "scope": experiment["scope"],
                 "phase": experiment["phase"],
                 "task_id": experiment["task_id"],
                 "information_regime": experiment["information_regime"],
+                "preprocessing_information_regime": experiment[
+                    "preprocessing_information_regime"
+                ],
+                "preprocessing_policy_id": experiment["preprocessing_policy_ids"],
                 "population_id": experiment["population"],
                 "representation_id": experiment["representation"],
                 "model_id": experiment["model_id"],
@@ -126,10 +138,13 @@ def build_dry_run_outputs(
         "resolution_status",
         "unresolved_fields",
         "experiment_id",
+        "research_question_id",
         "scope",
         "phase",
         "task_id",
         "information_regime",
+        "preprocessing_information_regime",
+        "preprocessing_policy_id",
         "population_id",
         "representation_id",
         "model_id",
@@ -173,7 +188,9 @@ def build_dry_run_outputs(
             "hours_high": "not_estimated",
             "status": "runtime_benchmark_and_P02_registry_required",
         }
-        if any(phase in base["phases"] for phase in ("P04", "P05", "P06", "P07")):
+        if any(
+            phase in base["phases"] for phase in ("P04", "P05", "P06", "P07", "P08")
+        ):
             gpu_rows.append(estimate)
         else:
             cpu_rows.append(estimate)

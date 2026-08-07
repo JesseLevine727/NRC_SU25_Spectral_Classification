@@ -1,14 +1,14 @@
 phase_id,group,title,depends_on,gate
 P00,Foundation,Governance and artifact contract,Completed restart,G0
 P01,Foundation,Data and representation freeze,P00,G0
-P02,Foundation,Split and information-regime freeze,P01,G0
-P03,Modeling,Definitive classical benchmark,P02,G1
-P04,Modeling,Compact deep ERM baseline,P02,G2
+P02,Foundation,Split policy-support and regime freeze,P01,G0 and policy leakage
+P03,Modeling,Classical benchmark under PP-U-MIN,P02,G1
+P04,Modeling,Deep ERM under PP-U-MIN,P02,G2
 P05,Modeling,Acquisition-aware development,P04,G3
-P06,Evaluation,Definitive T1 T2 T3-ZS evaluation,P03 and P05,G4
-P07,Evaluation,Adaptation and calibration regimes,P06,Separate-regime gate
-P08,Evaluation,Robustness and preprocessing sensitivities,P06,Sensitivity complete
+P06,Evaluation,Definitive PP-U-MIN T1 T2 T3-ZS evaluation,P03 and P05,G4
+P07,Evaluation,Target-access adaptation and calibration,P06,Separate-regime gate
+P08,Evaluation,Preprocessing-policy factorial and robustness,P04 and P06,Policy support and sensitivity complete
 P09,Evaluation,Narrow station-conditioned open set,P06,Open-set leakage gate
-P10,Evaluation,Representation and failure analysis,P06 P08 P09,G5
-P11,Synthesis,Statistical inference and decision gates,P06 P10,G4 G5 G6
-P12,Synthesis,Figures manuscript and reproducibility,P11,GF
+P10,Evaluation,Representation policy and failure analysis,P06 P08 P09,G5
+P11,Synthesis,RQ-wise inference and decision gates,P06 P10,G4 G5 G6
+P12,Synthesis,RQ-mapped figures and reproducibility,P11,GF

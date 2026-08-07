@@ -11,6 +11,8 @@
   },
   "required_registries": {
     "phase_registry.csv": "phase_id",
+    "research_question_registry.csv": "research_question_id",
+    "preprocessing_policy_registry.csv": "policy_id",
     "task_registry.csv": "task_id",
     "experiment_registry.csv": "experiment_id",
     "metric_registry.csv": "metric_id",
@@ -23,8 +25,11 @@
   "run_identity_fields": [
     "protocol_version",
     "experiment_id",
+    "research_question_id",
     "task_id",
     "information_regime",
+    "preprocessing_information_regime",
+    "preprocessing_policy_id",
     "outer_repeat",
     "outer_fold",
     "held_domain",

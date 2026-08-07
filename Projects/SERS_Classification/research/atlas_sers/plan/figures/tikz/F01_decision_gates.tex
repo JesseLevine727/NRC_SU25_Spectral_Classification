@@ -1,4 +1,4 @@
-% DATA_SHA256: f70fdf2d66bf01357b8e4a17d93e2383529dd487aca97d09bfd845fa619dc290
+% DATA_SHA256: f8b2319e245f60439f4a47ebf2fc63d77cf12c4ed7e72c3c62a845b4a2ae7033
 \documentclass[tikz,border=6pt]{standalone}
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
@@ -21,7 +21,7 @@
 
   \node[planbox, fill=oiVermillion!12, below=15mm of g0] (stop) {Stop and repair\\provenance or splits};
   \node[planbox, fill=oiOrange!18, below=15mm of g2] (d0) {Freeze D0 ERM; retain\\D3 as mechanistic control};
-  \node[planbox, fill=oiBlue!12, below=15mm of g4] (routeb) {Route B: classical benchmark\\or Route C: failure study};
+  \node[planbox, fill=oiBlue!12, text width=46mm, below=15mm of g4] (routeb) {Route B: classical benchmark\\or Route C: failure study};
   \node[planbox, fill=oiGreen!17, below=15mm of g6] (routea) {Route A: acquisition-aware\\methods paper};
 
   \draw[failflow] (g0) -- node[left,labeltext]{fail} (stop);
@@ -33,12 +33,18 @@
   \draw[flow] (g6) -- node[right,labeltext]{G4 passed} (routea);
   \draw[secondaryflow] (g6) -- (routeb);
 
-  \node[gate, below=18mm of d0] (gf) {GF\\Figure parity};
-  \node[planbox, fill=oiPurple!16, right=15mm of gf] (freeze) {Publication freeze\\native TikZ + standalone HTML};
+  \node[gate, below=18mm of routeb] (gpp) {GPP\\Policy integrity};
+  \node[planbox, fill=oiVermillion!12, left=15mm of gpp] (ppfail) {Universal policies only\\no adaptive-policy claim};
+  \node[planbox, fill=oiGreen!17, text width=48mm, right=15mm of gpp] (pppass) {RQ-S01--S03 eligible\\effects + coverage + fallbacks};
+  \draw[failflow] (gpp) -- node[above,labeltext]{fail} (ppfail);
+  \draw[flow] (gpp) -- node[above,labeltext]{pass} (pppass);
+
+  \node[gate, below=25mm of gpp] (gf) {GF\\Figure parity};
+  \node[planbox, fill=oiPurple!16, text width=50mm, right=15mm of gf] (freeze) {Publication freeze\\native TikZ + standalone HTML};
   \draw[flow] (gf) -- node[above,labeltext]{pass} (freeze);
   \draw[failflow, loop below] (gf) to node[below,labeltext]{fail: regenerate} (gf);
 
-  % Exact G4 thresholds remain in the caption and master plan so this diagram
-  % stays readable at final double-column size.
+  % GPP is parallel to the primary G4 route: adaptive preprocessing can add a
+  % secondary claim but cannot change the primary publication route.
 \end{tikzpicture}
 \end{document}

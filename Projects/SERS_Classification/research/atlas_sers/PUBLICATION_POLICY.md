@@ -13,6 +13,8 @@ identify the source organization, partners, event, or archive location.
 - method descriptions and research hypotheses;
 - schemas, split rules, hyperparameter grids, experiment registries, and
   decision gates;
+- preprocessing policy definitions, source-only selection rules, and
+  disclosure-reviewed aggregate coverage/action summaries;
 - synthetic fixtures that cannot be mistaken for observations;
 - aggregate, disclosure-reviewed metrics and figures;
 - native TikZ/PGFPlots and standalone HTML generated from approved aggregates.
@@ -26,6 +28,8 @@ identify the source organization, partners, event, or archive location.
   or acquisition paths;
 - NumPy arrays, model checkpoints, embeddings, predictions, or fold membership
   that can be joined back to observations;
+- row-level preprocessing actions, QC gate values, family support assignments,
+  fallback reasons, or policy thresholds that can be joined to observations;
 - original reports, recording logs, PDFs, and source spreadsheets;
 - absolute workstation paths, usernames, credentials, tokens, or remote data
   locations;

@@ -1,5 +1,5 @@
 gate_id,scope,gate_name,inputs,pass_condition,failure_action
-G0,P,Integrity gate,"hashes; UIDs; axes; tiers; partitions",Every integrity and leakage check true,Block all outcome interpretation and repair provenance
+G0,P,Integrity gate,"hashes; UIDs; axes; tiers; partitions; RQ and policy identities",Every integrity and leakage check true,Block all outcome interpretation and repair provenance
 G1,P,Classical validity,"permutation; nested selections; calibrated predictions",Permutation near chance and complete leakage-free predictions,Repair harness before deep comparison
 G2,P,Deep training validity,"histories; failures; parameter and epoch logs",At least 95 percent planned runs finite with failures retained,Diagnose optimization without inspecting test-driven alternatives
 G3,P,Acquisition-aware advancement,Source-only pseudo-domain development,"mean gain >=0.02; worst loss <=0.02; T1 loss <=0.02; >=60 percent domains improve; collapse <=5 percent",Retain D3 as control and freeze D0 as deep comparator
@@ -9,6 +9,8 @@ G6,P,Publication route,"G0-G5; robustness; limitations",Route A if G4 passes; Ro
 GF,P,Figure parity,"figure registry; data hashes; TeX logs; HTML audit",Every registered result has semantically matched native TikZ and standalone HTML,Block manuscript freeze
 regime_separation_pass,S,Information-regime separation,"adaptation; calibration; evaluation master registries",Every adaptation calibration and evaluation master role is disjoint,Repair partitions before interpreting secondary regimes
 robustness_registry_complete,S,Robustness registry completeness,"perturbations; preprocessing branches; tier branches",Every registered robustness branch is complete or reason-coded,Do not summarize robustness selectively
+preprocessing_policy_leakage_pass,S,Preprocessing-policy leakage,"policy roles; source pseudo-domains; family metadata; QC features; target access",Every policy uses only its permitted information and policy and model hashes are distinct,Block all adaptive-preprocessing interpretation and repair roles
+preprocessing_policy_support_pass,S,Preprocessing-policy support and coverage,"family support; QC finite rows; fallbacks; action logs",Every domain and row is either validly routed or reason-coded fallback and all denominators reconcile,Report universal branches only and do not promote an adaptive policy
 open_set_leakage_pass,S,Open-set leakage,"held chemicals; known-only calibration; thresholds",Held chemicals are absent from all fitting and threshold roles,Repair open-set harness before interpretation
 interpretation_audit_pass,S,Interpretation audit,"probes; paired diagnostics; attribution sanity; errors",All interpretation controls and limitations are complete,Restrict claims to directly supported prediction results
 final_validation_pass,P,Final reproducibility,"clean rebuild; hashes; figure parity; manuscript claims",Every final validator and clean-rebuild check passes,Block publication freeze

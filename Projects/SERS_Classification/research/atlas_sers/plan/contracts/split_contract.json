@@ -5,6 +5,7 @@
   "outer_folds_per_station": 4,
   "stratification_label": "target_analyte",
   "group_label": "master_sample_id",
+  "instrument_family_label": "instrument_family derived from immutable acquisition-platform metadata and distinct from sensor_family",
   "canonical_algorithm": "StratifiedGroupKFold with shuffle true and repeat seed",
   "tasks": {
     "T1": {
@@ -22,7 +23,12 @@
         "outer-test masters absent from all fitting roles",
         "no target-instrument population statistic",
         "test labels absent from selection calibration and stopping"
-      ]
+      ],
+      "preprocessing_variants": {
+        "universal": "PP-U-MIN PP-U-SG or PP-U-ARPLS receives no held-unit metadata beyond exclusion",
+        "family_aware": "PP-FAMILY-SRC receives the held unit platform-family identifier but no held-unit spectra or statistics",
+        "qc_adaptive": "PP-QC-SRC receives only the current row permitted QC vector through a source-frozen gate"
+      }
     },
     "T2": {
       "directions": ["pills_to_surfaces", "surfaces_to_pills"],
@@ -70,11 +76,71 @@
     ],
     "fallback": "master-grouped inner CV when fewer than two supported pseudo-domains exist"
   },
+  "preprocessing_policy_selection": {
+    "shared_source_pseudo_domains": "The same leave-one-supported-source-instrument-out partitions used for model development are reused without access to outer-test rows.",
+    "policy_model_nesting": "Preprocessing-policy selection and estimator hyperparameter selection have separate hashes and roles. Both remain inside outer source training.",
+    "family_support_resolution": "Before P03 outcomes P02 applies the metadata-only support rule in preprocessing_policy_contract.json and writes supported unsupported and fallback rows for every outer domain.",
+    "qc_threshold_resolution": "For each outer source-training partition registered QC quantiles are computed from source-training rows only; gate ranking uses source pseudo-domain validation only.",
+    "evaluation_lock": "A policy mapping or QC gate is frozen before any prediction on its corresponding outer-test rows.",
+    "post_test_hybrid": "fatal prohibition"
+  },
   "adaptation_regimes": {
     "zero_shot": "no held-instrument observation",
     "UDA": "unlabeled target intensities from disjoint adaptation masters; labels and pair IDs hidden",
     "paired_calibration": "target-source pair IDs from disjoint calibration masters allowed",
     "few_shot": "k labelled target masters per class from disjoint calibration masters"
   },
+  "preprocessing_information_regimes": {
+    "fixed_source_only": {
+      "policy_ids": [
+        "PP-U-MIN",
+        "PP-U-SG",
+        "PP-U-ARPLS"
+      ],
+      "target_access": "current spectrum only for deterministic row-local transformation"
+    },
+    "family_metadata_source_only": {
+      "policy_ids": [
+        "PP-FAMILY-SRC"
+      ],
+      "target_access": "held unit platform-family identifier only"
+    },
+    "row_local_qc_source_only": {
+      "policy_ids": [
+        "PP-QC-SRC"
+      ],
+      "target_access": "permitted current-row QC only; no target batch summaries"
+    },
+    "unlabeled_target_adaptation": {
+      "policy_ids": [
+        "PP-U-MIN",
+        "PP-QC-SRC"
+      ],
+      "target_access": "disjoint unlabeled adaptation masters for registered model adaptation; preprocessing remains source-frozen in v1"
+    },
+    "paired_calibration": {
+      "policy_ids": [
+        "PP-U-MIN",
+        "PP-QC-SRC"
+      ],
+      "target_access": "disjoint paired calibration masters and pair IDs for registered model calibration; preprocessing remains source-frozen in v1"
+    },
+    "supervised_few_shot": {
+      "policy_ids": [
+        "PP-U-MIN",
+        "PP-QC-SRC"
+      ],
+      "target_access": "disjoint labelled calibration masters for registered model fitting; no v1 target-selected preprocessing"
+    }
+  },
+  "target_access_roles": [
+    "none",
+    "family_metadata_only",
+    "row_local_qc_only",
+    "unlabeled_adaptation_master",
+    "paired_calibration_master",
+    "labelled_calibration_master",
+    "evaluation_only"
+  ],
   "leakage_assertions_are_fatal": true
 }

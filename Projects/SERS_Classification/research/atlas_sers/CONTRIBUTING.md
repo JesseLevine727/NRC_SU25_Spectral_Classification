@@ -71,6 +71,9 @@ wrappers are not valid native figure sources.
 - [ ] No raw or row-level derived data is present.
 - [ ] No absolute source paths or workstation identifiers are present.
 - [ ] Split and preprocessing fitting roles remain leakage-safe.
+- [ ] Research-question, preprocessing-policy, actual-action, access-regime,
+      platform-family, fallback, and policy-hash fields are complete.
+- [ ] No held-test outcome or forbidden target-batch statistic selects a policy.
 - [ ] Tests and validators pass.
 - [ ] P00 passes and repeats as `verified_skip` before any P01 work.
 - [ ] P01 passes, repeats as `verified_skip`, and validates before any P02 work.

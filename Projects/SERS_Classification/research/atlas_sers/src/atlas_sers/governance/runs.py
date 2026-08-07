@@ -14,8 +14,11 @@ SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 class RunIdentity:
     protocol_version: str
     experiment_id: str
+    research_question_id: str
     task_id: str
     information_regime: str
+    preprocessing_information_regime: str
+    preprocessing_policy_id: str
     outer_repeat: int | str
     outer_fold: int | str
     held_domain: str

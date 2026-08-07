@@ -24,7 +24,7 @@ F21,S,P05,Loss component and source-development ablations,pseudo-domain,developm
 F22,S,P10,Embedding target-domain trade-off,domain probe,embedding and probe tables,figures/tikz/F22_embedding_tradeoff.tex,figures/html/F22_embedding_tradeoff.html,Representation evidence,planned
 F23,S,P10,Same-master consistency and retrieval,master pair,pair diagnostic tables,figures/tikz/F23_pair_consistency.tex,figures/html/F23_pair_consistency.html,Mechanistic evidence,planned
 F24,S,P08,Robustness degradation curves,domain and perturbation,robustness tables,figures/tikz/F24_robustness_curves.tex,figures/html/F24_robustness_curves.html,Robustness evidence,planned
-F25,S,P08,Preprocessing sensitivity paired differences,domain,preprocessing sensitivity metrics,figures/tikz/F25_preprocessing_sensitivity.tex,figures/html/F25_preprocessing_sensitivity.html,Sensitivity result,planned
+F25,S,P08,Universal preprocessing sensitivity paired differences,domain,universal preprocessing policy metrics,figures/tikz/F25_preprocessing_sensitivity.tex,figures/html/F25_preprocessing_sensitivity.html,Universal policy result,planned
 F26,S,P08,Quality-tier sensitivity paired differences,domain,quality sensitivity metrics,figures/tikz/F26_quality_sensitivity.tex,figures/html/F26_quality_sensitivity.html,Sensitivity result,planned
 F27,S,P06,Cross-station bidirectional transfer,direction,T2 metrics,figures/tikz/F27_cross_station.tex,figures/html/F27_cross_station.html,Secondary transfer result,planned
 F28,S,P07,Target adaptation and few-shot learning curves,domain and calibration size,adaptation metrics,figures/tikz/F28_adaptation_curves.tex,figures/html/F28_adaptation_curves.html,Secondary operational result,planned
@@ -34,3 +34,6 @@ F31,S,P09,Held-chemical open-set effect forest,held station-chemical task,open-s
 F32,E,P10,Attribution and native-spectrum correspondence,spectrum and window,attribution tables plus native sources,figures/tikz/F32_attribution.tex,figures/html/F32_attribution.html,Explainability supplement,planned
 F33,S,P10,Structured error taxonomy,domain and failure category,error audit,figures/tikz/F33_error_taxonomy.tex,figures/html/F33_error_taxonomy.html,Failure analysis,planned
 F34,P,P11,Promotion-gate evidence dashboard,gate,decision gate evidence,figures/tikz/F34_promotion_dashboard.tex,figures/html/F34_promotion_dashboard.html,Final evidence map,planned
+F35,S,P08,Platform-family preprocessing effect support and fallback,domain and platform family,family policy selections and paired metrics,figures/tikz/F35_family_preprocessing_policy.tex,figures/html/F35_family_preprocessing_policy.html,Family-aware policy result,planned
+F36,S,P08,Identity-blind QC routing effect and stability,domain and policy action,QC gates action logs and paired metrics,figures/tikz/F36_qc_preprocessing_policy.tex,figures/html/F36_qc_preprocessing_policy.html,QC-adaptive policy result,planned
+F37,S,P11,Preprocessing-by-model interaction contrasts,domain,paired factorial policy and model contrasts,figures/tikz/F37_policy_model_interaction.tex,figures/html/F37_policy_model_interaction.html,Factorial interaction result,planned

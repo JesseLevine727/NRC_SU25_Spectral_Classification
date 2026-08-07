@@ -1,10 +1,14 @@
 {
   "protocol_version": "atlas-sers-research-master-plan-v1",
   "plan_date": "2026-08-05",
+  "parallel_question_amendment_date": "2026-08-07",
   "status": "execution-ready analysis plan; not a prospective preregistration",
   "primary_question": "Can an acquisition-aware representation identify station-supported chemicals on an unseen SERS instrument and unseen physical masters more reliably than a source-only development-selected classical pipeline?",
   "primary_scope": "station-conditioned zero-shot unseen-instrument plus unseen-master chemical identification",
   "secondary_scopes": [
+    "universal preprocessing sensitivity",
+    "source-selected platform-family-aware preprocessing",
+    "source-selected identity-blind row-local QC preprocessing",
     "within-station master-grouped classification",
     "bidirectional pills-surfaces binary transfer",
     "calibration and selective prediction",
@@ -13,6 +17,31 @@
     "supervised few-shot target calibration",
     "station-conditioned held-chemical rejection"
   ],
+  "research_question_hierarchy": {
+    "registry": "../registries/research_question_registry.csv",
+    "primary": [
+      "RQ-P01"
+    ],
+    "secondary": [
+      "RQ-S01",
+      "RQ-S02",
+      "RQ-S03",
+      "RQ-S04",
+      "RQ-S05",
+      "RQ-S06"
+    ],
+    "exploratory": [
+      "RQ-E01"
+    ]
+  },
+  "orthogonal_experimental_axes": {
+    "learning_strategy": "classical versus ordinary deep versus acquisition-aware deep",
+    "preprocessing_policy": "universal fixed versus source-selected platform-family-aware versus source-selected identity-blind row-local QC",
+    "information_access": "zero-shot universal versus family metadata versus row-local QC versus unlabeled paired or labelled target calibration",
+    "fairness_rule": "Within a registered comparison cell methods use identical physical-master splits test UIDs policy information and metric aggregation.",
+    "primary_cell": "RQ-P01 under PP-U-MIN only",
+    "interaction_status": "secondary or exploratory; it cannot redefine the primary comparator"
+  },
   "independent_units": {
     "prediction_uncertainty": "physical master_sample_id",
     "primary_transfer_contrast": "station-instrument domain with master resampling inside domain",
@@ -62,6 +91,20 @@
     "universal_smoothing": false,
     "universal_alignment": false
   },
+  "preprocessing_policy_contract": {
+    "path": "preprocessing_policy_contract.json",
+    "primary_policy_id": "PP-U-MIN",
+    "universal_sensitivity_policy_ids": [
+      "PP-U-SG",
+      "PP-U-ARPLS"
+    ],
+    "source_selected_policy_ids": [
+      "PP-FAMILY-SRC",
+      "PP-QC-SRC"
+    ],
+    "post_test_hybrid_policy_id": "PP-POSTTEST-HYBRID",
+    "post_test_hybrid_status": "prohibited"
+  },
   "primary_endpoint": {
     "name": "unweighted mean domain-balanced accuracy",
     "eligible_domains": 13,
@@ -91,6 +134,9 @@
     "causal chemical-nuisance disentanglement",
     "arbitrary unseen-instrument generalization",
     "arbitrary unseen-chemical generalization",
+    "post-test selection of a transform for a named held instrument",
+    "calling family-aware or row-QC-adaptive preprocessing universal preprocessing",
+    "calling target-informed preprocessing or model adaptation zero-shot",
     "independent spectrum rows",
     "chemistry-only interpretation of aggregate seven-class accuracy"
   ]

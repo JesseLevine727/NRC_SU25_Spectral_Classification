@@ -7,10 +7,11 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-ALLOWED_SCOPES = {"P", "S", "E", "primary", "secondary", "exploratory"}
+ALLOWED_SCOPES = {"P", "S", "E", "X", "primary", "secondary", "exploratory"}
 ALLOWED_PHASE_STATUSES = {"planned", "executing", "complete"}
 ALLOWED_MODEL_STATUSES = {"planned", "frozen", "retired"}
 ALLOWED_ARTIFACT_PRIVACY = {"private", "public_after_review", "public"}
+ALLOWED_POLICY_STATUSES = {"planned", "prohibited"}
 
 
 @dataclass(frozen=True)
@@ -113,17 +114,24 @@ def validate_governance(bundle: GovernanceBundle) -> dict[str, object]:
 
     phases = bundle.rows("phase_registry.csv")
     tasks = bundle.rows("task_registry.csv")
+    questions = bundle.rows("research_question_registry.csv")
+    policies = bundle.rows("preprocessing_policy_registry.csv")
     experiments = bundle.rows("experiment_registry.csv")
+    metrics = bundle.rows("metric_registry.csv")
     models = bundle.rows("model_registry.csv")
     figures = bundle.rows("figure_registry.csv")
     gates = bundle.rows("decision_gate_registry.csv")
     artifacts = bundle.rows("artifact_registry.csv")
     phase_ids = _ids(phases, "phase_id")
     task_ids = _ids(tasks, "task_id")
+    question_ids = _ids(questions, "research_question_id")
+    policy_ids = _ids(policies, "policy_id")
     experiment_ids = _ids(experiments, "experiment_id")
+    metric_ids = _ids(metrics, "metric_id")
     model_ids = _ids(models, "model_id")
     gate_ids = _ids(gates, "gate_id")
     artifact_ids = _ids(artifacts, "artifact_id")
+    figure_ids = _ids(figures, "figure_id")
 
     phase_refs_valid = True
     for row in phases:
@@ -151,6 +159,18 @@ def validate_governance(bundle: GovernanceBundle) -> dict[str, object]:
             if task not in task_ids and task not in {"ALL", "T1"}:
                 errors.append(f"{row['experiment_id']} references unknown task {task}")
                 task_refs_valid = False
+        for question in _references(row["research_question_ids"]):
+            if question != "ALL" and question not in question_ids:
+                errors.append(
+                    f"{row['experiment_id']} references unknown research question {question}"
+                )
+                task_refs_valid = False
+        for policy in _references(row["preprocessing_policy_ids"]):
+            if policy != "ALL" and policy not in policy_ids:
+                errors.append(
+                    f"{row['experiment_id']} references unknown preprocessing policy {policy}"
+                )
+                task_refs_valid = False
         if row["model_id"] not in model_ids:
             errors.append(f"{row['experiment_id']} references unknown model {row['model_id']}")
             task_refs_valid = False
@@ -167,6 +187,67 @@ def validate_governance(bundle: GovernanceBundle) -> dict[str, object]:
                 errors.append(f"{artifact} does not declare producer {row['experiment_id']}")
                 task_refs_valid = False
     checks["experiment_phase_task_model_artifact_references_valid"] = task_refs_valid
+
+    question_refs_valid = True
+    for row in questions:
+        for policy in _references(row["preprocessing_policy_ids"]):
+            if policy not in policy_ids:
+                errors.append(
+                    f"{row['research_question_id']} references unknown preprocessing policy "
+                    f"{policy}"
+                )
+                question_refs_valid = False
+        for model in _references(row["model_ids"]):
+            if model not in model_ids:
+                errors.append(f"{row['research_question_id']} references unknown model {model}")
+                question_refs_valid = False
+        for metric in _references(row["metric_ids"]):
+            if metric not in metric_ids:
+                errors.append(f"{row['research_question_id']} references unknown metric {metric}")
+                question_refs_valid = False
+        for figure in _references(row["figure_ids"]):
+            if figure not in figure_ids:
+                errors.append(f"{row['research_question_id']} references unknown figure {figure}")
+                question_refs_valid = False
+    checks["research_question_references_valid"] = question_refs_valid
+
+    p01 = bundle.contracts["p01_governance_contract.json"]
+    representation_ids = {
+        item["representation_id"] for item in p01["representations"]
+    }
+    policy_refs_valid = True
+    for row in policies:
+        if row["status"] not in ALLOWED_POLICY_STATUSES:
+            errors.append(f"{row['policy_id']} has invalid policy status {row['status']}")
+            policy_refs_valid = False
+        if row["status"] == "prohibited":
+            if row["policy_id"] != "PP-POSTTEST-HYBRID":
+                errors.append(f"{row['policy_id']} is an unrecognized prohibited policy")
+                policy_refs_valid = False
+            continue
+        for action in _references(row["candidate_action_ids"]):
+            if action not in representation_ids:
+                errors.append(f"{row['policy_id']} references unknown action {action}")
+                policy_refs_valid = False
+        if row["fallback_policy_id"] not in policy_ids:
+            errors.append(
+                f"{row['policy_id']} references unknown fallback {row['fallback_policy_id']}"
+            )
+            policy_refs_valid = False
+    checks["preprocessing_policy_references_and_statuses_valid"] = policy_refs_valid
+
+    allowed_preprocessing_regimes = set(
+        bundle.contracts["split_contract.json"]["preprocessing_information_regimes"]
+    ) | {"not_applicable", "all_registered"}
+    preprocessing_regimes_valid = True
+    for row in experiments:
+        for regime in _references(row["preprocessing_information_regime"]):
+            if regime not in allowed_preprocessing_regimes:
+                errors.append(
+                    f"{row['experiment_id']} has unknown preprocessing regime {regime}"
+                )
+                preprocessing_regimes_valid = False
+    checks["preprocessing_information_regimes_valid"] = preprocessing_regimes_valid
 
     model_refs_valid = True
     for row in models:

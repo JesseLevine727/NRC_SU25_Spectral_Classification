@@ -1,4 +1,4 @@
-% DATA_SHA256: 66730a1359751fd5b869713ce902fb5822268eae11fd24f136062ee1c2867006
+% DATA_SHA256: e4c603d330b02057d47f3cdbaab23ca4c63081f3472ada615ca36b2699a7a316
 \documentclass[tikz,border=6pt]{standalone}
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
@@ -9,20 +9,20 @@
 \begin{tikzpicture}[node distance=7mm and 10mm]
   \node[foundation] (p00) {\textbf{P00}\\Governance and\\artifact contract};
   \node[foundation, right=of p00] (p01) {\textbf{P01}\\Data and representation\\freeze};
-  \node[foundation, right=of p01] (p02) {\textbf{P02}\\Split and information-\\regime freeze};
+  \node[foundation, right=of p01] (p02) {\textbf{P02}\\Split, policy support,\\and regime freeze};
 
-  \node[modeling, below left=14mm and -2mm of p02] (p03) {\textbf{P03}\\Definitive classical\\benchmark};
-  \node[modeling, right=of p03] (p04) {\textbf{P04}\\Compact deep ERM\\baseline};
+  \node[modeling, below left=14mm and -2mm of p02] (p03) {\textbf{P03}\\Classical benchmark\\under PP-U-MIN};
+  \node[modeling, right=of p03] (p04) {\textbf{P04}\\Deep ERM baseline\\under PP-U-MIN};
   \node[modeling, right=of p04] (p05) {\textbf{P05}\\Acquisition-aware\\development};
 
-  \node[evaluation, below=14mm of p04, text width=39mm] (p06) {\textbf{P06}\\Definitive T1 / T2 / T3-ZS\\paired evaluation};
-  \node[evaluation, below left=12mm and 39mm of p06] (p07) {\textbf{P07}\\Adaptation and\\target calibration};
-  \node[evaluation, right=of p07] (p08) {\textbf{P08}\\Robustness and\\preprocessing};
+  \node[evaluation, below=14mm of p04, text width=39mm] (p06) {\textbf{P06}\\Definitive PP-U-MIN\\paired evaluation};
+  \node[evaluation, below left=12mm and 39mm of p06] (p07) {\textbf{P07}\\Target-access\\adaptation};
+  \node[evaluation, right=of p07] (p08) {\textbf{P08}\\Policy factorial\\and robustness};
   \node[evaluation, right=of p08] (p09) {\textbf{P09}\\Narrow open-set\\evaluation};
-  \node[evaluation, right=of p09] (p10) {\textbf{P10}\\Representation and\\failure analysis};
+  \node[evaluation, right=of p09] (p10) {\textbf{P10}\\Representation, policy,\\and failures};
 
-  \node[synthesis, below=15mm of p08, text width=42mm] (p11) {\textbf{P11}\\Statistical inference and\\Route A / B / C decision};
-  \node[synthesis, below=8mm of p11, text width=42mm] (p12) {\textbf{P12}\\Paired TikZ / HTML figures\\manuscript and validation};
+  \node[synthesis, below=15mm of p08, text width=42mm] (p11) {\textbf{P11}\\RQ-wise inference and\\Route A / B / C decision};
+  \node[synthesis, below=8mm of p11, text width=42mm] (p12) {\textbf{P12}\\RQ-mapped TikZ / HTML\\manuscript and validation};
 
   \draw[flow] (p00) -- (p01);
   \draw[flow] (p01) -- (p02);
@@ -44,9 +44,9 @@
     \node[draw=oiBlue!60, rounded corners=4pt, fill=oiSky!5, fit=(p00)(p01)(p02),
       inner sep=7pt, label={[labeltext]above:Foundation --- no model outcome access}] {};
     \node[draw=oiOrange!75, rounded corners=4pt, fill=oiOrange!4, fit=(p03)(p04)(p05),
-      inner sep=7pt, label={[labeltext]above:Model development --- source-only selection}] {};
+      inner sep=7pt, label={[labeltext]above:Model development --- PP-U-MIN; source-only selection}] {};
     \node[draw=oiGreen!75!black, rounded corners=4pt, fill=oiGreen!3, fit=(p06)(p07)(p08)(p09)(p10),
-      inner sep=7pt, label={[labeltext]above:Evaluation --- primary first; secondary regimes kept separate}] {};
+      inner sep=7pt, label={[labeltext]above:Evaluation --- primary first; policy and target-access regimes separate}] {};
     \node[draw=oiPurple!75, rounded corners=4pt, fill=oiPurple!3, fit=(p11)(p12),
       inner sep=7pt, label={[labeltext]below:Synthesis and publication freeze}] {};
   \end{scope}

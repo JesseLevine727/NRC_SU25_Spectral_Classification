@@ -42,6 +42,22 @@
     "noise_source": "training-fold first-difference noise quantiles",
     "prohibited": ["peak deletion", "arbitrary warping", "different-chemical mixup", "target-instrument-derived noise"]
   },
+  "preprocessing_policy": {
+    "contract": "preprocessing_policy_contract.json",
+    "candidate_action_order": ["R_MIN_400_1800", "R_SG_400_1800", "R_ARPLS_400_1800"],
+    "development_panel": ["C-RBF-SVM", "D0-ERM"],
+    "family_minimum_distinct_supported_source_units": 2,
+    "family_minimum_masters_per_class": {
+      "status": "unresolved_until_P02_metadata_support_audit",
+      "candidate_values": [2, 3, 4],
+      "resolution_uses_outcomes": false
+    },
+    "qc_source_quantile_candidates": [0.5, 0.75, 0.9],
+    "qc_gate_max_triggers": 2,
+    "qc_dual_trigger_priority_orders": ["baseline_then_noise", "noise_then_baseline"],
+    "fixed_deep_rule": "Architecture loss identity optimizer grid and advancement outcome are frozen under PP-U-MIN before policy sensitivity retraining.",
+    "post_test_policy_selection": "prohibited"
+  },
   "calibration": {
     "method": "single scalar temperature on master-grouped cross-fitted known-development scores",
     "probability_clip": [1e-07, 0.9999999],

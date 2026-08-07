@@ -24,3 +24,8 @@ M22,E,Embedding silhouette,context-dependent,embedding,master,silhouette for dec
 M23,S,Training time,lower,run,run,wall-clock seconds,seed distribution,Compute efficiency
 M24,S,Inference latency,lower,spectrum,run,median and p95 milliseconds,run distribution,Deployment efficiency
 M25,S,Serialized model size,lower,model,run,bytes on disk,none,Complexity
+M26,S,Paired preprocessing-policy BA difference,higher,domain,domain,"candidate policy minus PP-U-MIN on identical test UIDs",paired hierarchical master/domain bootstrap,Policy effect without changing the independent unit
+M27,S,Preprocessing-by-model interaction contrast,context-dependent,domain,domain,"policy effect for deep minus policy effect for classical",paired hierarchical bootstrap and leave-one-domain-out,Whether preprocessing changes the learning-strategy conclusion
+M28,S,Preprocessing-policy coverage,context-dependent,policy decision,domain,"eligible nonfallback rows and domains divided by declared denominator",domain and master bootstrap,Applicability and fallback burden rather than predictive quality
+M29,S,Preprocessing-action selection stability,higher,policy decision,outer source partition,"agreement or entropy across repeats and source pseudo-domain perturbations",repeat distribution descriptive,Whether a selected family mapping or QC gate is reproducible
+M30,S,Preprocessing preservation-guardrail violation rate,lower,spectrum,master,"fraction below declared shape peak or validity guardrail with fallback retained",master bootstrap,Transformation harm audit not clean-signal recovery

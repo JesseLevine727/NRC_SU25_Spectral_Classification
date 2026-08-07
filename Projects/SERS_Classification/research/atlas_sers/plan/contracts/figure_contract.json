@@ -26,7 +26,9 @@
     "same data hash",
     "same population and filters",
     "same aggregation unit",
+    "same research-question ID and scope",
     "same model and preprocessing labels",
+    "same preprocessing-policy information regime fallback definition and coverage denominator",
     "same point estimates and intervals",
     "same axis transforms units and limits",
     "same category-to-color mapping",
@@ -53,11 +55,14 @@
   },
   "caption_required_fields": [
     "scope label P S or E",
+    "research-question ID",
     "population",
     "independent unit",
     "sample size",
     "aggregation",
     "uncertainty definition",
+    "preprocessing policy and information access",
+    "fallback and support denominator when a policy is adaptive",
     "abbreviation expansion",
     "limitations needed for interpretation"
   ]

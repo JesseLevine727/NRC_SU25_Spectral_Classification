@@ -52,6 +52,13 @@
     {"representation_id": "R_D1_400_1800", "range_cm1": [400, 1800], "operations": ["linear_interpolation", "isolated_impulse_replacement", "savgol_derivative_11_3", "row_snv"], "scope": "destructive_control"}
   ],
   "analysis_seeds": [20260805, 20260806, 20260807, 20260808, 20260809],
+  "downstream_preprocessing_policy_composition": {
+    "contract": "preprocessing_policy_contract.json",
+    "candidate_action_representation_ids": ["R_MIN_400_1800", "R_SG_400_1800", "R_ARPLS_400_1800"],
+    "permitted_qc_sources": ["first_difference_noise_mad", "intensity_range", "spike_fraction_proxy", "baseline_energy_fraction_proxy", "baseline_span_fraction_proxy", "negative_fraction"],
+    "composition_changes_P01_arrays": false,
+    "new_transform_requires_versioned_deviation_and_rebuild": true
+  },
   "exploration": {
     "kmeans_k": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     "kmeans_n_init": 50,

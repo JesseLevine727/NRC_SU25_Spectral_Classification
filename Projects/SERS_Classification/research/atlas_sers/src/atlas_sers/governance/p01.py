@@ -402,8 +402,11 @@ def execute_p01(
     identity = RunIdentity(
         protocol_version=research["protocol_version"],
         experiment_id="EXP-P01-001",
+        research_question_id="ALL",
         task_id="ALL",
         information_regime="none",
+        preprocessing_information_regime="not_applicable",
+        preprocessing_policy_id="ALL",
         outer_repeat="P02_unresolved",
         outer_fold="P02_unresolved",
         held_domain="not_applicable",

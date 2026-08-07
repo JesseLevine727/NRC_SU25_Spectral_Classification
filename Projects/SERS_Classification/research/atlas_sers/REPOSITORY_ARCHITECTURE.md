@@ -26,8 +26,9 @@ row-level private manifest + native/effective axis registry
         ▼
 frozen representations + master-grouped split registry
         │
-        ├──────────────► classical selection
-        ├──────────────► deep development
+        ├──────────────► preprocessing-policy support/access registry
+        ├──────────────► classical selection under primary policy
+        ├──────────────► deep development under primary policy
         └──────────────► registered diagnostics
                                │
                                ▼
@@ -42,6 +43,9 @@ disclosure-reviewed aggregate tables
 
 No arrow from test observations may feed preprocessing fitting, candidate
 selection, calibration, thresholding, or early stopping in a source-only task.
+Family metadata is a distinct declared input to the family-aware policy;
+current-row QC is a distinct declared input to the identity-blind gate. Neither
+may leak into the other policy or into the primary universal cell.
 
 ### `atlas_sers.governance`
 
@@ -70,8 +74,11 @@ must not perform model fitting.
 
 Owns interpolation within measured support, per-spectrum scaling, optional
 smoothing/baseline/alignment candidates, representation identifiers, and
-preservation diagnostics. Any learned transformation exposes explicit `fit`
-and `transform` roles so leakage tests can audit it.
+preservation diagnostics. It also owns immutable policy actions, source-only
+family mappings, finite row-QC gates, access/fallback logs, and policy hashes.
+Policy selection and estimator fitting expose separate roles and hashes. Any
+learned transformation exposes explicit `fit` and `transform` roles so leakage
+tests can audit it.
 
 ### `atlas_sers.exploration`
 
@@ -120,6 +127,7 @@ rules:
 ```text
 contracts/                 immutable scientific contract
 configs/representations/   preprocessing candidates
+configs/policies/          preprocessing access, action, support, and gate rules
 configs/tasks/             task and information regime
 configs/models/            model family and search space
 configs/runs/              seed, fold, compute target, output location
@@ -153,14 +161,14 @@ handling, and verified restart skips.
 1. Pass P00 governance, private input verification, and the no-training dry run.
 2. Rebuild the private inventory through package adapters, validate native
    hashes/reversibility, and freeze representations and descriptive evidence.
-3. Freeze master-grouped split registries only after P01 passes.
+3. Freeze master-grouped split registries and preprocessing-policy support/access roles only after P01 passes.
 4. Implement the common estimator/evaluation interface.
 5. Run classical selection and lock the endpoint baseline.
 6. Develop the compact deep endpoint on source-development partitions only.
 7. Freeze the deep candidate before primary held-domain evaluation.
-8. Execute primary comparison, calibration, robustness, and representation
-   diagnostics.
-9. Evaluate secondary adaptation/open-set questions without broadening claims.
+8. Execute and freeze the primary `PP-U-MIN` comparison.
+9. Evaluate secondary universal/family/QC preprocessing, adaptation,
+   robustness, and open-set questions without broadening claims.
 10. Generate paired figures and evaluate the publication decision gates.
 
 The phase registry remains authoritative if this summary and the master plan

@@ -143,8 +143,11 @@ def execute_p00(
     p00_identity = RunIdentity(
         protocol_version=research["protocol_version"],
         experiment_id="P00-GOVERNANCE",
+        research_question_id="not_applicable",
         task_id="P00",
         information_regime="governance_no_training",
+        preprocessing_information_regime="not_applicable",
+        preprocessing_policy_id="not_applicable",
         outer_repeat="not_applicable",
         outer_fold="not_applicable",
         held_domain="not_applicable",

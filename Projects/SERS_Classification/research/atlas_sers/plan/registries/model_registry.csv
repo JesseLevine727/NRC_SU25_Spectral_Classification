@@ -2,6 +2,7 @@ model_id,scope,kind,title,phase_introduced,trainable,parameter_budget,epoch_budg
 SYS-REP-BUILDER,P,system,Frozen representation builder,P01,false,not_applicable,not_applicable,no model outcomes,planned
 SYS-OUTER-SPLIT,P,system,Five-repeat outer split builder,P02,false,not_applicable,not_applicable,metadata support only,planned
 SYS-T3-PARTITION,P,system,T3 partition derivation,P02,false,not_applicable,not_applicable,metadata support only,planned
+SYS-PP-SUPPORT,S,system,Preprocessing policy support and role derivation,P02,false,not_applicable,not_applicable,metadata support and frozen rules only,planned
 C-PRIOR,P,classical,Prior dummy,P03,false,not_applicable,not_applicable,fixed,planned
 C-SPECTRAL-MATCH,P,classical,Correlation and spectral-angle matching,P03,false,not_applicable,not_applicable,inner master CV,planned
 C-NEAREST-CENTROID,P,classical,Nearest centroid,P03,true,registry_defined,not_applicable,inner master CV,planned
@@ -28,6 +29,8 @@ A-PAIRED-CAL,S,adaptation,Prototype PDS paired consistency and low-rank adapter,
 A-FEWSHOT,S,adaptation,Head-only full and low-rank tuning,P07,true,250000,200,calibration-master validation only,planned
 E-PERTURBATION,S,evaluation,Test-time physical perturbation grid,P08,false,not_applicable,not_applicable,no perturbation outcome selects model,planned
 E-FIXED-PIPELINES,S,evaluation,Fixed classical and frozen deep pipelines,P08,false,frozen,not_applicable,no test-based selection,planned
+E-FAMILY-POLICY,S,evaluation,Source-selected platform-family preprocessing policy,P08,false,frozen,not_applicable,source pseudo-domain selection only,planned
+E-QC-POLICY,S,evaluation,Source-selected row-local QC preprocessing policy,P08,false,frozen,not_applicable,source pseudo-domain selection only,planned
 OS-CLASSICAL,S,open_set,Frozen selected classical scores,P09,false,frozen,not_applicable,known-only calibration,planned
 OS-DEEP,S,open_set,Frozen D0 and selected deep scores,P09,false,frozen,not_applicable,known-only calibration,planned
 PR-LINEAR,S,probe,Target-adjusted linear probes,P10,true,probe_only,not_applicable,training-only probe fitting,planned

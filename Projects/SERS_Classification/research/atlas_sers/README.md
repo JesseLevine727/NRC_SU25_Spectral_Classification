@@ -3,7 +3,9 @@
 This directory is the public, data-free execution scaffold for the ATLAS
 multi-instrument SERS study. The study asks whether acquisition-aware deep
 representations improve chemical identification when the test instrument and
-physical samples are absent from model fitting.
+physical samples are absent from model fitting. Parallel questions test whether
+universal, acquisition-platform-family-aware, or identity-blind row-QC
+preprocessing changes that conclusion without leaking held-test outcomes.
 
 The repository contains methods, contracts, registries, tests, and figure
 specifications. It intentionally contains no spectra, row-level metadata,
@@ -23,12 +25,21 @@ source-only unseen-instrument evaluation:
 5. route the paper according to predefined evidence gates, including a valid
    classical-only or negative deep-learning result.
 
+Preprocessing policy and learning strategy are orthogonal axes. The primary
+classical/deep comparison remains fixed under universal minimal min–max.
+Secondary experiments cross the same model panel and splits with universal SG
+or arPLS, a source-selected platform-family rule, and a source-selected
+row-local QC gate. Target-data adaptation remains a separate information
+regime. Arbitrary post-test per-instrument preprocessing is prohibited.
+
 VAE and disentanglement analyses remain diagnostic. Without paired clean
 chemical spectra or factorial chemical/nuisance interventions, reconstruction
 must not be described as denoising and latent factors must not be interpreted
 as causal chemical/nuisance separation.
 
 The full locked analysis specification is in [plan/MASTER_PLAN.md](plan/MASTER_PLAN.md).
+The concise question-to-experiment map is in
+[plan/RESEARCH_QUESTION_MAP.md](plan/RESEARCH_QUESTION_MAP.md).
 For quick browsing, open [plan/index.html](plan/index.html) locally.
 
 ## Repository map
@@ -43,6 +54,7 @@ research/atlas_sers/
 ├── artifacts/README.md            Local output contract; no outputs
 ├── plan/
 │   ├── MASTER_PLAN.md             Research questions, phases, gates, claims
+│   ├── RESEARCH_QUESTION_MAP.md    Precise RQ comparisons and interpretations
 │   ├── P00_EXECUTION.md           Governance procedure and phase boundary
 │   ├── P01_EXECUTION.md           Data/representation freeze and validation
 │   ├── FIGURE_STYLE_AND_REGENERATION.md
@@ -126,6 +138,10 @@ validation, outputs, and failure behavior.
   permitted training roles only.
 - Keep zero-shot, unlabeled adaptation, paired calibration, and supervised
   few-shot regimes separate.
+- Record preprocessing policy, actual action, policy-access regime, platform
+  family, fallback, and policy hash independently from model identity.
+- Never select a transform from held-test labels, scores, or target-batch QC in
+  a zero-shot regime.
 - Preserve failed and collapsed neural runs in denominators.
 - Save row-level predictions privately and publish only disclosure-approved
   aggregate tables.
@@ -135,6 +151,7 @@ validation, outputs, and failure behavior.
 ## Status
 
 The research plan is execution-ready but is not a prospective preregistration:
-pilot results informed its design. P00 governance and P01 data/representation
-freeze are executable. P02 split construction and all predictive model/result
-phases remain outside the current boundary.
+pilot and P01 descriptive results informed its design. P00 governance and P01
+data/representation freeze are executable and protected. P02 will next freeze
+splits plus preprocessing-policy support/access roles; all predictive
+model/result phases remain outside the current boundary.

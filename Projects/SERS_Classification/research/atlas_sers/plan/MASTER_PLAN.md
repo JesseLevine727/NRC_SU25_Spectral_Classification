@@ -1,11 +1,12 @@
 # ATLAS field-trial SERS research master plan v1
 
 **Plan date:** 2026-08-05
+**Parallel-question amendment:** 2026-08-07, after P01 descriptive evidence and before P02 or any registered definitive predictive outcome
 **Plan status:** execution-ready analysis plan; no definitive experiments are authorized by this document itself
 **Primary data workspace:** private path supplied through `ATLAS_PRIVATE_ROOT`
 **Plan workspace:** `research/atlas_sers/plan`
 **Primary scientific theme:** chemical identification under unseen-instrument acquisition shift
-**Secondary scientific theme:** narrow, station-conditioned unknown-chemical rejection
+**Parallel secondary themes:** universal, platform-family-aware, and identity-blind QC-adaptive preprocessing; target-access value; calibrated robustness; narrow unknown-chemical rejection
 **Independent experimental unit:** physical `master_sample_id`
 
 ## 0. Master decision
@@ -27,6 +28,8 @@ Conditional CORAL and conditional domain-adversarial learning are controls, not 
 
 The strongest fallback study is a classical, station-conditioned acquisition-shift benchmark with calibrated uncertainty, instrument-balanced master aggregation, and a fully documented negative result if deep learning adds no reliable value.
 
+Preprocessing is a separate experimental axis, not a hidden component of the model comparison. The primary question remains fixed under universal minimal min–max (`PP-U-MIN`). Three parallel questions then ask whether universal smoothing/baseline correction, source-selected platform-family rules, or source-selected row-local QC routing improve the same held-instrument predictions. A fourth asks what becomes achievable when explicitly declared target-instrument data are available. None may redefine the primary comparator after test outcomes are seen.
+
 ## 1. Evidence already observed and its consequences
 
 ### 1.1 Fresh raw-data restart
@@ -44,9 +47,9 @@ The independently reconstructed archive contains:
 
 The archive has a strict measured all-instrument intersection of 400–1,849 cm⁻¹. The primary analysis range is 400–1,800 cm⁻¹ to avoid terminal-edge behavior. A lower bound of 100 cm⁻¹ is prohibited because it would require fabricated extrapolation for Mira and other systems.
 
-Raw spectral structure is acquisition dominated. Raw channel-standardized PCA places 93.68% of variance in PC1. After per-spectrum min–max scaling, PC1 falls to 42.31%, and 46 PCs are needed for 95% variance. Stable K-means structure remains more associated with instrument than chemistry: instrument NMI approximately 0.460 versus target NMI approximately 0.227.
+Raw spectral structure is acquisition dominated. Raw channel-standardized PCA places 93.6834% of variance in PC1. After per-spectrum min–max scaling, PC1 falls to 42.6787%, and 46 PCs are needed for 95% variance. Under the registered min–max K-means view, instrument association remains stronger than target association (NMI 0.482168 versus 0.286849 at the reported k=11 solution).
 
-Minimal min–max preprocessing is the primary protocol. Smoothing gives small and task-dependent gains, while baseline corrections reduce instrument association but can expose sensor association and alter peak structure. No preprocessing candidate establishes a chemistry-only representation.
+Minimal min–max preprocessing is the primary protocol. SG preserves shape strongly (median correlation 0.999387, 10th percentile 0.905585, peak recall 1.0). arPLS changes some systems much more than others (median correlation 0.858018, 10th percentile 0.219124, peak recall 1.0); it reduces both instrument and target cluster association rather than selectively proving nuisance removal. These findings motivate separate universal, platform-family-aware, and row-QC-adaptive predictive questions. They do not identify a retrospectively “best” transform and do not establish a chemistry-only representation.
 
 ### 1.2 Fresh predictive pilot
 
@@ -89,6 +92,9 @@ Station-conditioned, zero-shot unseen-instrument chemical identification with un
 - bidirectional pills/surfaces transfer for 4-ANPP versus benzyl fentanyl;
 - calibration, selective prediction, and instrument-balanced master aggregation;
 - explicitly declared target-instrument adaptation regimes;
+- universal smoothing and baseline-correction sensitivities;
+- source-selected platform-family-aware preprocessing;
+- source-selected identity-blind row-local QC preprocessing;
 - narrow within-station unknown-chemical rejection.
 
 ### E — exploratory
@@ -111,6 +117,9 @@ The study must not claim:
 - that station-confounded seven-class accuracy is chemistry-only evidence;
 - that master-aggregated performance is single-spectrum performance;
 - that a target instrument is unseen if any of its spectra informed training, normalization, selection, thresholding, or stopping;
+- that a transform chosen from held-test outcomes is a valid instrument-specific preprocessing policy;
+- that a family-aware policy applies to an unseen platform family without its declared fallback;
+- that target-informed adaptation or preprocessing is zero-shot;
 - that a station-held-out chemical is a valid general open-set test.
 
 ## 3. Immutable data contract
@@ -157,13 +166,59 @@ Every experiment must identify one immutable representation ID.
 
 Population-fitted operations—including PCA, learned standardization, feature selection, class centroids, calibration, and domain alignment—must be fit inside the training partition. Row-local interpolation and row-local scaling may be performed before splitting because they use no other observation.
 
-### 3.4 Native-axis preservation
+### 3.4 Preprocessing-policy contract
+
+The three permissible candidate actions are immutable P01 arrays: `R_MIN_400_1800`, `R_SG_400_1800`, and `R_ARPLS_400_1800`. All have the same 400–1,800 cm⁻¹ grid, 1,401 features, and final per-row `[0,1]` scale. A policy selects an existing action; it does not change a transform parameter or estimate a new spectrum.
+
+| Policy ID | Information allowed at deployment | Selection | Role |
+|---|---|---|---|
+| `PP-U-MIN` | current row | fixed minimal action | primary |
+| `PP-U-SG` | current row | fixed SG action | universal sensitivity |
+| `PP-U-ARPLS` | current row | fixed arPLS action | universal sensitivity |
+| `PP-FAMILY-SRC` | held unit platform-family ID, but no held spectra/statistics | source-only pseudo-instrument domains | known-family secondary |
+| `PP-QC-SRC` | permitted QC values for the current row only | source-only pseudo-instrument domains | identity-blind secondary |
+| `PP-POSTTEST-HYBRID` | held-test outcome | prohibited | never valid |
+
+`instrument_family` means acquisition-platform family and is distinct from SERS `sensor_family`. Family-aware and QC-adaptive rules, support thresholds, finite gate library, fallbacks, unresolved metadata-only thresholds, and required logs are frozen in `contracts/preprocessing_policy_contract.json`. Unknown or unsupported platform families and invalid QC/action rows fall back to `PP-U-MIN` and stay in the denominator.
+
+Any new transform, arPLS parameter, smoother, or combined SG+arPLS array requires a versioned deviation and a complete P01 rebuild before use. The policies in this amendment compose existing P01 arrays, so the protected P01 evidence is preserved.
+
+### 3.5 Native-axis preservation
 
 No common-axis array replaces the native source. Each prediction must be traceable to native coordinates and intensity hash. Peak-attribution figures must show both the common-grid model input and the corresponding native spectrum.
 
 ## 4. Scientific estimands and hypotheses
 
-### 4.1 Primary estimand
+### 4.1 Research-question hierarchy
+
+The authoritative question definitions and cross-references are in `registries/research_question_registry.csv`. They are parallel but not equal in claim priority.
+
+| RQ | Scope | Question | Principal comparison |
+|---|---|---|---|
+| `RQ-P01` | P | Does acquisition-aware deep learning beat classical selection under unseen-instrument/unseen-master shift? | selected deep minus selected classical under `PP-U-MIN` |
+| `RQ-S01` | S | Does one universal SG or arPLS rule help? | `PP-U-SG` and `PP-U-ARPLS` minus `PP-U-MIN` within model |
+| `RQ-S02` | S | Does a source-selected platform-family rule help a new unit from a represented family? | `PP-FAMILY-SRC` minus `PP-U-MIN` with fallbacks retained |
+| `RQ-S03` | S | Can an identity-blind source-frozen row-QC gate route preprocessing for a new unit? | `PP-QC-SRC` minus `PP-U-MIN` |
+| `RQ-S04` | S | What is the value of unlabeled, paired, or labelled target-instrument masters? | UDA/paired/few-shot curves versus zero-shot |
+| `RQ-S05` | S | Are frozen pipelines calibrated, selectively useful, and robust to declared stressors? | risk/coverage and degradation from the unperturbed pipeline |
+| `RQ-S06` | S | Can a station-conditioned model reject one held nonblank chemical? | known-only frozen scores over eight held tasks |
+| `RQ-E01` | E | What changes in cross-view consistency, residual domain information, and failure structure? | D0 versus selected deep probes and paired diagnostics |
+
+The primary route is determined only by `RQ-P01`. No secondary preprocessing, adaptation, master aggregation, or open-set result can rescue or redefine it.
+
+### 4.2 Factorial preprocessing × model design
+
+The experimental axes are orthogonal:
+
+1. **preprocessing policy:** universal fixed, source-selected platform-family-aware, or source-selected identity-blind row-QC;
+2. **learning strategy:** fixed classical, ordinary compact deep, or frozen acquisition-aware deep;
+3. **information access:** zero-shot universal, family metadata, current-row QC, unlabeled target masters, paired target masters, or labelled target masters.
+
+Every comparison cell uses identical master splits, test UIDs, action arrays, and metrics. Classical hyperparameters are selected by the same nested source-only procedure within each permitted policy. Deep architecture and loss identity are frozen from `PP-U-MIN`, then retrained under a sensitivity policy without outcome-driven retuning. The secondary fixed model panel is RBF SVM, Random Forest, D0, and the frozen acquisition-aware candidate; the policy-development panel is RBF SVM plus D0 with equal model-family weight.
+
+The primary cell is `PP-U-MIN × {selected classical, D0, selected acquisition-aware deep}`. Universal, family-aware, and QC-adaptive cells are secondary. Difference-in-differences between model families are interaction estimates, not a new primary endpoint. A cell invented after test inspection is prohibited.
+
+### 4.3 Primary estimand
 
 For method \(m\), station \(s\), and support-qualified held instrument \(d\), let \(BA_{m,s,d}\) be balanced accuracy after pooling the out-of-fold predictions in which the test spectrum belongs to a held master and instrument \(d\) is absent from training. The primary estimand is:
 
@@ -180,20 +235,39 @@ The primary comparison is:
 
 Domains receive equal weight. Row count may not weight the primary endpoint.
 
-### 4.2 Primary hypothesis H1
+### 4.4 Preprocessing-policy estimands
+
+For model (m), policy (p), reference policy (p_0=\texttt{PP-U-MIN}), and domain (d), define:
+
+\[
+\delta_{p,m}=\frac{1}{13}\sum_{d\in\mathcal D_{13}}
+\left(BA_{p,m,d}-BA_{p_0,m,d}\right).
+\]
+
+Rows and masters are paired within domain. For two model families (m_1,m_2), the interaction is:
+
+\[
+\Gamma_p=\delta_{p,m_1}-\delta_{p,m_2}.
+\]
+
+`RQ-S02` has two declared estimands: an all-domain policy effect that retains universal fallbacks (the operational intention-to-policy estimand) and a supported-family effect restricted by the P02 metadata-only rule. Both are mandatory; the supported subset may not replace the all-domain result. `RQ-S03` uses all 13 domains and reports fallback/invalid-QC coverage. `RQ-S01` compares fixed universal policies on all 13 domains. Policy coverage, selected-action distribution, stability, and preservation violations accompany predictive effects.
+
+### 4.5 Primary hypothesis H1
 
 The acquisition-aware deep pipeline improves mean domain-balanced accuracy by at least 0.03 over the classical selection pipeline while satisfying chemistry-retention and worst-domain safety gates.
 
 This is an estimation problem first. Report \(\Delta\), its interval, the 13 paired domain differences, and leave-one-domain-out sensitivity. A binary p-value does not replace these quantities.
 
-### 4.3 Supporting hypotheses
+### 4.6 Supporting hypotheses
 
 | ID | Hypothesis | Endpoint | Required interpretation |
 |---|---|---|---|
 | H2 | acquisition shift materially degrades ordinary validation | ordinary within-station BA minus T3 BA | quantifies the shift gap |
 | H3 | paired-view supervision improves cross-instrument consistency | paired master prediction agreement and embedding distance, conditioned on correctness | cannot be interpreted alone |
 | H4 | acquisition-aware learning reduces residual domain information without erasing chemistry | target-adjusted instrument/sensor probe increment and chemistry BA | both sides required |
-| H5 | aggressive preprocessing is not universally superior | paired T3 differences across preprocessing branches | primary preprocessing remains fixed |
+| H5a | smoothing or baseline correction is not universally superior | paired T3 policy differences and model interactions | primary preprocessing remains fixed |
+| H5b | a source-selected platform-family action can help only where family support is adequate | fallback-inclusive and supported-family policy effects, coverage, stability | never interpreted as arbitrary per-instrument tuning |
+| H5c | a source-frozen row-local QC gate can route without identity | all-domain policy effect, action stability, fallback and preservation violations | no target batch statistic or outcome enters the gate |
 | H6 | calibrated uncertainty supports useful abstention | risk–coverage curve, NLL, Brier, ECE | thresholds use development-known data only |
 | H7 | limited target-instrument data changes the achievable operating point | zero-shot versus UDA versus paired calibration versus supervised few-shot | information regimes never pooled |
 | H8 | unknown rejection remains fragile under field stress | station-conditioned open-set AUROC, AUPR, OSCR | secondary, narrow claim only |
@@ -222,17 +296,42 @@ Primary regime. For every outer master fold and held instrument:
 - no target-instrument spectrum is available during fitting;
 - all source-domain hyperparameter selection uses only training masters and training instruments.
 
+### T3-PP-UNIV — universal preprocessing sensitivity
+
+Uses the exact T3-ZS partitions. `PP-U-MIN`, `PP-U-SG`, and `PP-U-ARPLS` are each universal: the same action applies to every training and test row in a cell. Model fitting is repeated under the declared action. No held-unit identity, family, QC distribution, or outcome selects the policy.
+
+### T3-PP-FAM — platform-family-aware zero-shot preprocessing
+
+Uses the exact T3-ZS partitions. The held unit's immutable acquisition-platform family is allowed, but all of its spectra, QC summaries, labels, and outcomes remain unavailable during selection. Each outer source partition selects a family action from source leave-one-unit-out pseudo-domains only. A family needs at least two distinct supported source units and the P02 metadata-resolved class/master threshold. Unknown or unsupported families use `PP-U-MIN` with a reason code.
+
+### T3-PP-QC — identity-blind row-local zero-shot preprocessing
+
+Uses the exact T3-ZS partitions. Instrument identity, platform family, SERS sensor, station, master, label, and target-population statistics are forbidden gate inputs. A finite gate library uses only current-row normalized noise, spike, background, and negative-intensity proxies; thresholds are source-training quantiles and the gate is ranked on source pseudo-domains. Missing/nonfinite QC or an invalid action falls back to `R_MIN_400_1800`.
+
 ### T3-UDA — unlabeled target-instrument adaptation
 
-Secondary. A target-instrument adaptation-master set is disjoint from evaluation masters. Target labels, cross-instrument master links, and evaluation-master spectra remain hidden. Only target intensities and their instrument membership may be used. Results are explicitly labelled transductive/unsupervised adaptation and never compared as if zero-shot.
+Secondary. A target-instrument adaptation-master set is disjoint from evaluation masters. Target labels, cross-instrument master links, and evaluation-master spectra remain hidden. Only target intensities and their instrument membership may be used for registered model adaptation. Preprocessing remains `PP-U-MIN` primary and source-frozen `PP-QC-SRC` sensitivity in v1; unlabeled target QC distributions do not silently retune the gate. Results are explicitly labelled transductive/unsupervised adaptation and never compared as if zero-shot.
 
 ### T3-PC — paired calibration
 
-Secondary operational scenario. A disjoint calibration-master set supplies target-instrument spectra and their known links to labelled source-instrument views. Target-view chemical labels are not directly supplied, but the paired source view makes chemistry inferable. This is paired calibration, not UDA.
+Secondary operational scenario. A disjoint calibration-master set supplies target-instrument spectra and their known links to labelled source-instrument views. Target-view chemical labels are not directly supplied, but the paired source view makes chemistry inferable. Preprocessing remains source-frozen in v1. This is paired calibration, not UDA or zero-shot.
 
 ### T3-FS — supervised few-shot calibration
 
-Secondary learning curve at \(k\in\{1,2,3,5\}\) labelled target-instrument masters per class when support permits. Calibration and evaluation masters are disjoint. Repeated draws are frozen. Report performance versus labelled masters, not spectra.
+Secondary learning curve at \(k\in\{1,2,3,5\}\) labelled target-instrument masters per class when support permits. Calibration and evaluation masters are disjoint. Repeated draws are frozen. Preprocessing remains source-frozen in v1; a future labelled-target-selected transform would require a new policy ID and nested calibration-master validation. Report performance versus labelled masters, not spectra.
+
+### Information-access matrix
+
+| Regime | Unit/family metadata | Current-row QC | Target batch spectra | Pair IDs | Target labels | May select preprocessing? |
+|---|---:|---:|---:|---:|---:|---|
+| universal zero-shot | exclusion only | no gate | no | no | no | fixed universal action only |
+| family-aware zero-shot | platform family | no gate | no | no | no | source-selected family mapping |
+| QC-adaptive zero-shot | hidden | yes, row-local | no | no | no | source-frozen QC gate |
+| UDA | instrument membership | source-frozen gate only | disjoint unlabeled masters | no | no | no target retuning in v1 |
+| paired calibration | instrument membership | source-frozen gate only | disjoint calibration masters | yes | target-view hidden | no target retuning in v1 |
+| few-shot | instrument membership | source-frozen gate only | disjoint calibration masters | optional | yes | no target retuning in v1 |
+
+Held-test labels and held-test performance may never select a policy in any regime.
 
 ### T4 — station-conditioned unknown rejection
 
@@ -263,17 +362,17 @@ Eligibility is frozen from metadata/support, never from model performance.
 |---|---|---|---|
 | P00 | governance and artifact contract | completed restart | immutable registries and hashes |
 | P01 | data and representation freeze | P00 | exact UID, source, axis, tier validation |
-| P02 | split and information-regime freeze | P01 | zero leakage in reconstructed partitions |
-| P03 | classical nested benchmark | P02 | calibrated row/master/domain predictions for every candidate |
-| P04 | compact deep ERM baseline | P02 | stable training and fair classical comparison |
+| P02 | split, policy-support, and information-regime freeze | P01 | zero leakage; family/QC roles and fallbacks resolved without outcomes |
+| P03 | classical nested benchmark under `PP-U-MIN` | P02 | calibrated row/master/domain predictions and policy-panel records |
+| P04 | compact deep ERM baseline under `PP-U-MIN` | P02 | stable training, fair comparison, and policy-panel records |
 | P05 | acquisition-aware development | P04 | source-only development winner frozen |
-| P06 | definitive T1/T2/T3-ZS evaluation | P03–P05 | complete paired predictions and primary inference |
-| P07 | adaptation and calibration regimes | P06 | UDA/PC/FS labelled separately |
-| P08 | robustness and preprocessing sensitivities | P06 | registered perturbation and tier results |
+| P06 | definitive `PP-U-MIN` T1/T2/T3-ZS evaluation | P03–P05 | complete paired predictions and primary inference |
+| P07 | target-access adaptation and calibration regimes | P06 | UDA/PC/FS labelled separately under source-frozen preprocessing |
+| P08 | preprocessing-policy factorial and robustness | P04, P06 | universal/family/QC effects, interactions, coverage, perturbation, and tier results |
 | P09 | narrow open-set evaluation | P06 | fixed-score known-only thresholds and held-class results |
-| P10 | explainability, consistency, and error taxonomy | P06–P09 | attribution sanity and domain failure audit |
-| P11 | statistics and decision gates | P06–P10 | intervals, paired contrasts, promotion verdict |
-| P12 | figures, manuscript tables, and reproducibility | all | TikZ/HTML parity and final validation |
+| P10 | representation/policy explainability, consistency, and error taxonomy | P06–P09 | attribution sanity, action audit, and domain failure audit |
+| P11 | question-wise statistics and decision gates | P06–P10 | primary interval, policy effects/interactions, promotion verdict |
+| P12 | RQ-mapped figures, manuscript tables, and reproducibility | all | TikZ/HTML parity and final validation |
 
 No phase may consume locked outputs from a downstream phase.
 
@@ -287,8 +386,8 @@ Make every scientific choice machine-readable before new definitive fits.
 
 1. Record repository commit, environment lock, operating system, Python, CUDA, GPU, BLAS, and dependency versions.
 2. Hash authoritative manifests, arrays, configuration files, split registries, and source parser.
-3. Assign every experiment a stable `experiment_id` before execution.
-4. Assign every output row a `run_id` determined from experiment, outer split, held domain, representation, hyperparameters, seed, and code hash.
+3. Assign every scientific question, preprocessing policy, and experiment a stable registry ID before execution.
+4. Assign every output row a `run_id` determined from experiment, research question, preprocessing policy/access regime, outer split, held domain, representation, hyperparameters, seed, and code hash.
 5. Write protected-state hashes before model fitting.
 6. Make execution idempotent: an existing successful `run_id` is verified and skipped; an incomplete run is quarantined rather than silently overwritten.
 7. Store every deviation in `deviations.csv` with timestamp, rationale, affected runs, and whether it occurred before or after outcome access.
@@ -326,6 +425,8 @@ Create analysis bundles that are reversible to native source and cannot silently
 - Every common-grid coordinate lies inside every selected spectrum’s measured effective support.
 - Every normalized row satisfies its declared invariant within tolerance.
 - Candidate transformations reproduce the frozen preprocessing exploration within numeric tolerance.
+- Native row-local QC proxies needed by `PP-QC-SRC` are finite or explicitly reason-coded and remain traceable to the same observation UID.
+- `PP-FAMILY-SRC` and `PP-QC-SRC` select only among the three immutable P01 action arrays; they do not modify protected P01 evidence.
 
 No spectra are removed because a future model predicts them poorly.
 
@@ -360,7 +461,23 @@ Within `train_source`, construct master-grouped inner folds. For T3-ZS, candidat
 
 If fewer than two supported pseudo-domains exist, fall back to master-grouped inner balanced accuracy and record `selection_fallback=master_cv`.
 
-### 10.4 Leakage assertions
+### 10.4 Preprocessing-policy support and role freeze
+
+Before any P03 result, P02 writes `preprocessing_policy_roles.csv` for every outer domain. It must:
+
+1. derive acquisition-platform `instrument_family` from immutable metadata and verify that it is not SERS `sensor_family`;
+2. enumerate source leave-one-unit-out pseudo-domains shared by the policy-development panel;
+3. resolve the family minimum-masters-per-class threshold from `{2,3,4}` using the frozen metadata-only largest-viable rule;
+4. record distinct source-unit and pseudo-domain support by family;
+5. mark known-supported, known-unsupported, and unknown-family cases before outcomes;
+6. define source-training rows allowed to estimate each registered QC quantile;
+7. pre-enumerate every finite QC gate candidate and both dual-trigger priority orders;
+8. assign `PP-U-MIN` fallbacks with reason codes where support or QC is invalid; and
+9. preserve separate hashes for split, model-selection, family-policy, and QC-gate state.
+
+No numerical QC cut point is fabricated in P02. Cut points are deliberately unresolved until calculated within each future source-training partition. The field name, quantile, finite gate library, resolution algorithm, and fallback are already frozen.
+
+### 10.5 Leakage assertions
 
 For every run:
 
@@ -368,11 +485,17 @@ For every run:
 - the held instrument is absent from all T3-ZS fitting rows;
 - test labels never determine preprocessing, hyperparameters, epochs, scores, thresholds, or representation;
 - target-instrument rows are absent from T3-ZS population fitting;
+- platform-family metadata is accessible only to `PP-FAMILY-SRC` and never to `PP-QC-SRC`;
+- `PP-QC-SRC` consumes current-row QC only and never target-batch distributions;
+- held-test outcomes never choose a family action, QC gate, universal branch, or factorial cell;
+- policy selection hashes are distinct from estimator-selection hashes;
 - repetitions and neural seeds are technical repeats, not independent sample units.
 
 The split validator must reconstruct partitions from metadata and compare UID sets exactly.
 
 ## 11. Sub-plan P03 — definitive classical benchmark
+
+P03 answers the classical part of `RQ-P01` under `PP-U-MIN`. It does not search for a per-instrument transform. RBF SVM is additionally retained as the frozen classical member of the later preprocessing-policy development panel; its source pseudo-domain predictions are stored without consulting held-test policy outcomes.
 
 ### 11.1 Candidate families
 
@@ -410,6 +533,8 @@ Generate master-grouped cross-fitted training scores. Fit a single scalar temper
 - per-class, per-fold, per-station, and per-domain metrics;
 - calibration curves and scores;
 - training time, prediction time, peak memory, and serialized model size.
+- research-question, preprocessing-policy, actual action, policy-access regime, and policy hash for every prediction;
+- source pseudo-domain RBF SVM records required by the P08 policy selector.
 
 ### 11.5 Negative controls
 
@@ -419,6 +544,8 @@ Generate master-grouped cross-fitted training scores. Fit a single scalar temper
 - verify that target performance collapses toward chance under master permutation.
 
 ## 12. Sub-plan P04 — compact ordinary deep baseline
+
+P04 answers the ordinary-deep part of `RQ-P01` under `PP-U-MIN`. D0 is also the frozen deep member of the later preprocessing-policy development panel. Architecture and optimizer validity are established here before a family mapping or QC gate is ranked.
 
 ### 12.1 Architecture contract
 
@@ -466,6 +593,8 @@ Primary neural augmentation is restricted to physically modest training-only per
 Augmentation parameters are logged per example. ±5 cm⁻¹ shift is a robustness sensitivity, not the primary training policy. Peak deletion, arbitrary warping, mixup across different chemicals, and target-instrument-derived noise are prohibited.
 
 ## 13. Sub-plan P05 — acquisition-aware deep development
+
+All D1–D5 advancement occurs under `PP-U-MIN`. Preprocessing-policy outcomes cannot select the acquisition-aware loss, and acquisition-aware held-test outcomes cannot select a preprocessing policy.
 
 ### 13.1 Batch construction
 
@@ -544,6 +673,8 @@ If no candidate passes, D3 remains a named mechanistic control but is not descri
 
 ## 14. Sub-plan P06 — definitive T1/T2/T3-ZS evaluation
 
+P06 is the definitive `RQ-P01` evaluation and uses `PP-U-MIN` only. Its conclusions are frozen before P07–P09 secondary analyses. This makes a classical/deep difference attributable to learning strategy within the declared input contract rather than to different preprocessing.
+
 ### 14.1 Models carried forward
 
 - prior dummy;
@@ -555,6 +686,8 @@ If no candidate passes, D3 remains a named mechanistic control but is not descri
 - compact D0 ERM network;
 - one frozen acquisition-aware deep candidate;
 - D3 as a fixed mechanistic ablation if it is not the selected candidate.
+
+Every listed method receives the same `PP-U-MIN` rows. Family-aware or QC-adaptive results are not inserted into the primary method table.
 
 No additional model is added after inspecting primary paired domain differences.
 
@@ -586,11 +719,11 @@ Master aggregation may not let an instrument with more repeats dominate. Report 
 
 ## 15. Sub-plan P07 — adaptation and target-calibration regimes
 
-Zero-shot conclusions are frozen before adaptation work.
+Zero-shot conclusions are frozen before adaptation work. P07 answers `RQ-S04`: the x axis is target-information access, not a hidden preprocessing optimization. `PP-U-MIN` is the primary preprocessing policy and source-frozen `PP-QC-SRC` is a declared sensitivity; neither is reselected from target outcomes.
 
 ### 15.1 UDA
 
-Use disjoint target-instrument adaptation masters with labels and pair identities hidden. Compare source-only D0/D3 with CORAL, entropy minimization, and feature-statistic adaptation. Adaptation sample sizes are `{3,5,10}` masters when support permits. Evaluate on masters absent from adaptation.
+Use disjoint target-instrument adaptation masters with labels and pair identities hidden. Compare source-only D0/D3 with CORAL, entropy minimization, and feature-statistic adaptation. Adaptation sample sizes are `{3,5,10}` masters when support permits. Evaluate on masters absent from adaptation. Unlabeled target spectra may fit only registered model-adaptation components, not new preprocessing thresholds in v1.
 
 ### 15.2 Paired calibration
 
@@ -601,13 +734,46 @@ Permit target spectra from calibration masters and their paired source views. Co
 - piecewise direct standardization only if enough paired spectra and rank exist;
 - low-rank adapter modules attached to the frozen encoder.
 
+All paired selection uses calibration masters only. Evaluation-master spectra, pair IDs, and outcomes remain inaccessible.
+
 ### 15.3 Supervised few-shot
 
-Use `k={1,2,3,5}` labelled target masters per class. All draws are master-stratified, repeated, and frozen. Compare full fine-tuning, head-only tuning, and low-rank adapters. Never report few-shot results as zero-shot transfer.
+Use `k={1,2,3,5}` labelled target masters per class. All draws are master-stratified, repeated, and frozen. Compare full fine-tuning, head-only tuning, and low-rank adapters. Never report few-shot results as zero-shot transfer or pool them with UDA/paired results.
 
-## 16. Sub-plan P08 — robustness and preprocessing sensitivities
+## 16. Sub-plan P08 — preprocessing-policy factorial and robustness
 
-### 16.1 Prespecified input perturbations
+P08 begins only after the `RQ-P01` pipelines and conclusions are frozen. It answers `RQ-S01`, `RQ-S02`, `RQ-S03`, and the perturbation/quality part of `RQ-S05`. The same policy-development panel, gate library, support rules, split UIDs, and action arrays are used for all models.
+
+### 16.1 Universal preprocessing (`RQ-S01`)
+
+Cross `PP-U-MIN`, `PP-U-SG`, and `PP-U-ARPLS` with fixed RBF SVM, Random Forest, D0, and the frozen acquisition-aware candidate. Also retain `R_MIN_400_1849` as a range sensitivity, not a policy candidate. Classical hyperparameters are reselected within the same source-only inner procedure for each universal action. Deep architecture/loss identity stays frozen and is retrained without policy-specific architecture tuning.
+
+Report paired policy-minus-minimal domain effects, 13 domain values, hierarchical intervals, worst-domain change, policy × model interactions, and preservation violations. An attractive average cannot hide an instrument/system with destructive change.
+
+### 16.2 Platform-family-aware preprocessing (`RQ-S02`)
+
+For each outer source partition and platform family:
+
+1. retain only source pseudo-instrument domains passing the P02 metadata support rule;
+2. evaluate the three candidate actions with equal weight for RBF SVM and D0, then equal pseudo-domain weight;
+3. apply the frozen lexicographic objective: mean BA, worst BA, fraction improved versus minimal, fewer nonminimal actions, then declared order;
+4. freeze one action per supported platform family and its selection hash;
+5. use only the held unit's family ID at deployment; and
+6. fall back to `PP-U-MIN` for unknown/unsupported family or invalid action rows.
+
+Two analyses are mandatory: all-domain fallback-inclusive performance and supported-family-only performance. Report family support, selected actions, selection stability, fallback burden, preservation, and paired effect. The supported subset never replaces the operational all-domain result.
+
+### 16.3 Identity-blind row-QC-adaptive preprocessing (`RQ-S03`)
+
+Permitted features are row-local noise-to-range, spike fraction, baseline energy fraction, baseline span fraction, and negative fraction. The finite gate library contains minimal-only, one-trigger SG or arPLS gates, and two-trigger gates with both priority orders. Trigger cut points are source-training quantiles `{0.50,0.75,0.90}`. RBF SVM and D0 rank gates on source pseudo-instrument domains using the same lexicographic objective.
+
+Instrument/family/sensor/station/master/label fields, target-batch QC summaries, and evaluation-row model confidence are forbidden. The chosen gate is frozen before test prediction. Missing/nonfinite QC, inadequate pseudo-domain support, or invalid action rows fall back to minimal. Report every gate, cut point, action, fallback, coverage, stability, preservation violation, domain effect, and interaction.
+
+### 16.4 Factorial interpretation
+
+The fixed model panel is crossed with every permissible policy cell. For policy (p), report model-specific effects `candidate policy − PP-U-MIN` and paired difference-in-differences `deep policy effect − classical policy effect`. This determines whether a preprocessing conclusion is shared or model-dependent. It does not authorize selecting the best policy/model combination from held-test scores.
+
+### 16.5 Prespecified input perturbations
 
 Apply only at test time, without retraining:
 
@@ -620,15 +786,17 @@ Apply only at test time, without retraining:
 
 Robustness area under the degradation curve is reported. Perturbations are not claimed to reproduce a specific physical instrument unless supported by source measurements.
 
-### 16.2 Preprocessing branches
+### 16.6 Broader normalization controls
 
-Rerun the fixed classical and frozen neural pipelines under `R_SG_400_1800`, `R_ARPLS_400_1800`, and `R_MIN_400_1849`. Broader normalization branches are evaluated for the fixed classical champion only unless compute is explicitly expanded before results.
+`R_SNV_400_1800`, `R_VECTOR_400_1800`, and `R_AREA_400_1800` are fixed exploratory controls for the classical champion only unless compute is expanded before any outcome. `R_D1_400_1800` remains a destructive control and cannot be promoted from clustering or a favorable isolated test domain.
 
-### 16.3 Population branches
+### 16.7 Population branches
 
 Repeat primary comparisons on notes-clear and Mira-1-excluded tiers using regenerated master-group splits. Preserve the same eligibility logic; report domains that become unsupported.
 
 ## 17. Sub-plan P09 — narrow open-set evaluation
+
+P09 answers `RQ-S06` under `PP-U-MIN`. Preprocessing-policy selection is not reopened, and open-set results cannot choose an adaptive preprocessing rule.
 
 ### 17.1 Held-unknown tasks
 
@@ -672,6 +840,7 @@ Fit training-only linear probes on frozen embeddings for:
 
 - target;
 - instrument;
+- acquisition-platform family;
 - sensor family;
 - station;
 - master identity as an overfitting diagnostic;
@@ -690,7 +859,21 @@ For same-master pairs:
 - class-probability Jensen–Shannon divergence;
 - top-k retrieval of paired masters and same-target masters.
 
-### 18.3 Attribution
+### 18.3 Preprocessing-policy diagnostics
+
+For `PP-FAMILY-SRC` and `PP-QC-SRC`, summarize without reselecting:
+
+- action frequencies and entropy by outer source partition and domain;
+- family support and unknown/unsupported fallbacks;
+- QC gate thresholds, feature distributions, and missing/invalid fallbacks;
+- selection agreement across outer repeats;
+- policy/model difference-in-differences;
+- prediction changes conditional on action and correctness; and
+- P01 shape, peak, and validity guardrails for routed rows.
+
+These outputs explain where a policy operates. They cannot establish clean-signal recovery, causal nuisance removal, or a new best hybrid.
+
+### 18.4 Attribution
 
 Use at least two methods for the final neural model:
 
@@ -699,13 +882,14 @@ Use at least two methods for the final neural model:
 
 Perform attribution sanity tests by randomizing the classification head and, separately, all encoder weights. Attribution must materially change under randomization. Compare highlighted regions with peak-preservation diagnostics; do not assign chemical bonds without external references.
 
-### 18.4 Error taxonomy
+### 18.5 Error taxonomy
 
 Every persistent failure is categorized by:
 
 - station/target;
 - held instrument and serial;
 - sensor family/variant;
+- preprocessing policy, selected action, support status, and fallback reason;
 - master;
 - quality notes and system-suitability status;
 - baseline/noise/spike proxies;
@@ -721,6 +905,8 @@ Case studies are selected by prespecified rules—largest paired method disagree
 - physical masters for row/master performance uncertainty;
 - 13 instrument/station domains for the primary transfer contrast;
 - held station/chemical tasks for open-set summaries;
+- domains for preprocessing-policy effects and interactions, with masters resampled inside domain;
+- outer source partitions for policy-selection stability, treated as repeated technical realizations rather than new biological samples;
 - training seeds are averaged before inference;
 - fold repetitions are repeated measurements, not independent samples.
 
@@ -740,13 +926,29 @@ Report percentile and BCa intervals where numerically stable. Also report:
 - leave-one-instrument-identity-out estimates because Agilent-3 and other identities may occur in multiple stations;
 - exact or Monte Carlo paired sign-flip test as a descriptive sensitivity.
 
-### 19.3 Multiplicity
+### 19.3 Preprocessing-policy inference
 
-There is one primary comparison and no adjustment for that contrast. Apply Holm correction separately within each prespecified secondary family: T1 models, preprocessing branches, robustness perturbations, adaptation regimes, and open-set scores. Exploratory results receive intervals without confirmatory significance language.
+For `RQ-S01`–`RQ-S03`, reuse the paired hierarchical bootstrap while holding each row's method/policy predictions together. Report:
 
-### 19.4 Missing/undefined outcomes
+- model-specific policy effect `policy − PP-U-MIN`;
+- policy × model difference-in-differences;
+- all 13 domain effects and leave-one-domain-out estimates;
+- family-supported and fallback-inclusive estimates for `RQ-S02`;
+- coverage/fallback and action-stability intervals;
+- worst-domain and preservation-violation changes; and
+- sensitivity to leaving one platform-family identity out.
+
+Neural seeds are averaged before policy effects. Outer repeats do not multiply the domain sample size. A post-test maximum over policies is descriptive and receives no confirmatory interval or promotion language.
+
+### 19.4 Multiplicity
+
+There is one primary comparison and no adjustment for that contrast. Apply Holm correction separately within each prespecified secondary family: T1 models, universal preprocessing policies, platform-family policy endpoints, QC-adaptive policy endpoints, robustness perturbations, adaptation regimes, and open-set scores. Policy × model interactions are a separate family. Exploratory results receive intervals without confirmatory significance language.
+
+### 19.5 Missing/undefined outcomes
 
 Unsupported class/domain metrics remain explicit missing values with reason codes. They are never replaced with zero or omitted without count. Collapse to one predicted class remains a valid poor result.
+
+Unknown/unsupported family, invalid QC, and invalid action rows are not missing: they execute the registered minimal fallback and remain in operational denominators. Supported-family-only results are an additional estimand with an explicit denominator.
 
 ## 20. Promotion and publication decision gates
 
@@ -765,6 +967,14 @@ At least 95% of planned runs finish without NaN/Inf; all failed/collapsed runs r
 ### G3 — acquisition-aware development advancement
 
 The P05 source-only advancement rule passes. Otherwise the acquisition-aware model remains a mechanistic control.
+
+### GPP-L — preprocessing-policy leakage
+
+Every family action, QC threshold, gate, model, and fallback must reconstruct from its permitted source roles and metadata. Policy and model-selection hashes must be distinct; no held-test label, outcome, target-batch statistic, or forbidden identity field may enter. Failure blocks `RQ-S02`/`RQ-S03` interpretation but does not erase the `RQ-P01` primary result.
+
+### GPP-S — preprocessing-policy support and completeness
+
+Every primary domain and test row must have a valid action or reason-coded minimal fallback; family/QC support, coverage, action, preservation, stability, and paired prediction denominators must reconcile. Failure restricts reporting to fixed universal policies and prohibits adaptive-policy promotion.
 
 ### G4 — primary superiority
 
@@ -790,6 +1000,8 @@ A domain-invariance claim requires reduced target-adjusted instrument/sensor pro
 - **Route C:** both families are unstable; dataset/measurement and identifiability paper emphasizing failure modes and required future acquisition design.
 
 Open-set performance cannot rescue a failed acquisition-shift primary analysis.
+
+Preprocessing-policy results may add a secondary contribution only if GPP-L and GPP-S pass. They never change whether G4 passed and cannot convert Route B/C into Route A.
 
 ## 21. Figure and visualization contract
 
@@ -851,6 +1063,9 @@ The machine-readable figure registry defines the complete list. At minimum it co
 - paired-master consistency and retrieval;
 - robustness degradation curves;
 - preprocessing and quality-tier sensitivities;
+- platform-family support, action, fallback, and paired policy effects;
+- identity-blind QC gate/action stability, coverage, and paired effects;
+- preprocessing × model difference-in-differences;
 - cross-station transfer;
 - open-set ROC/OSCR and held-task forests;
 - decision gates and final evidence map.
@@ -869,6 +1084,8 @@ UMAP and t-SNE are exploratory visuals only. They are never quantitative proof o
 | D1–D5 source-only development | 300–700 neural fits | loss selection without held target |
 | definitive D0 + selected deep | about 624 neural fits | 13 domains × 4 folds × 3 seeds × 2 models × 2 representative repeat sets, with remaining repeats added after stability gate |
 | full five-repeat confirmation | up to about 1,560 additional fits | only after pipeline stability and resource audit |
+| source-only preprocessing-policy development | unresolved until P02 support registry and P04 panel complete | finite family mappings and QC gates; no test access |
+| preprocessing-policy factorial evaluation | unresolved and separately gated | universal/family/QC cells crossed with the fixed model panel |
 | sensitivities/adaptation/open set | gated, separately budgeted | cannot delay primary completion |
 
 Exact counts must be computed from the frozen registries before launch. A dry run lists run IDs, estimated wall time, disk, and GPU hours without fitting.
@@ -893,15 +1110,18 @@ Every row-level prediction must include:
 
 - protocol version and code/config/input hashes;
 - experiment/run IDs;
+- research-question ID;
 - task and information regime;
+- preprocessing policy ID, actual action representation, preprocessing-access regime, target-access role, and independent policy hash;
 - primary/secondary/exploratory scope;
-- station, held domain, outer repeat/fold, seed;
+- station, held domain, instrument platform family, outer repeat/fold, seed;
 - representation, model, hyperparameter hash, selected epoch;
 - observation UID, source ID, master ID, instrument, sensor, target, quality tier;
 - split role and every exclusion reason;
 - true label, predicted label, ordered class vocabulary and probabilities;
 - raw logits where defined;
 - anomaly scores where defined;
+- policy support status, selected gate/action, and fallback reason where defined;
 - inference time and failure status.
 
 Aggregate tables must always name their independent unit and aggregation function.
@@ -912,20 +1132,21 @@ The final execution validator must check:
 
 1. source and representation hashes;
 2. expected population/tier counts;
-3. master, held-instrument, held-chemical, calibration, and adaptation leakage;
+3. master, held-instrument, held-chemical, calibration, adaptation, family-policy, and QC-gate leakage;
 4. complete expected run IDs;
 5. unique prediction keys;
 6. probability simplex and finite metrics;
 7. recomputed metrics from row predictions;
 8. seed averaging before inference;
 9. undefined-support reason codes;
-10. paired TikZ/HTML/data artifacts for every registered figure;
-11. successful TikZ compilation without raster inclusion;
-12. HTML self-containment without CDN references;
-13. TikZ/HTML semantic-data hash parity;
-14. captions, units, independent sample counts, and scope labels;
-15. environment, runtime, and resource logs;
-16. final artifact hashes.
+10. valid RQ/policy/model/metric/figure cross-references and preprocessing-policy support/fallback denominators;
+11. paired TikZ/HTML/data artifacts for every registered figure;
+12. successful TikZ compilation without raster inclusion;
+13. HTML self-containment without CDN references;
+14. TikZ/HTML semantic-data hash parity;
+15. captions, RQ IDs, policy access/fallbacks, units, independent sample counts, and scope labels;
+16. environment, runtime, and resource logs;
+17. final artifact hashes.
 
 ## 25. Completion definition for the eventual research program
 
@@ -934,6 +1155,8 @@ The research program is complete only when:
 - all primary P00–P06 and P11–P12 gates pass;
 - every primary run is complete or has a transparent terminal failure;
 - classical and deep models share identical data/split/metric contracts;
+- preprocessing policy and model family remain separately identified and share identical test UIDs within each registered cell;
+- every adaptive policy selection is source-only, coverage/fallback complete, and reproducible from its policy hash;
 - all 13 domains and four low-support exploratory domains remain visible;
 - every primary claim is supported by row-level reproducible outputs;
 - every planned quantitative figure has native TikZ and standalone HTML counterparts;
@@ -945,10 +1168,10 @@ The research program is complete only when:
 
 Do not begin with another model. Begin by implementing P00–P02:
 
-1. freeze the experiment, metric, figure, and artifact registries;
+1. freeze the RQ, preprocessing-policy, experiment, metric, figure, and artifact registries;
 2. materialize the five-repeat master split registry;
-3. derive and validate the 13 T3-ZS domain partitions;
-4. build the dry-run run registry and compute estimate;
+3. derive and validate the 13 T3-ZS domain partitions plus family-policy support and QC-threshold source roles;
+4. build the expanded dry-run run registry and reason-coded compute estimate, leaving evidence-dependent policy counts unresolved;
 5. obtain explicit approval of the frozen evaluation contract;
 6. then execute the definitive classical benchmark before any new deep model.
 
@@ -961,6 +1184,7 @@ These are operational definitions of done. A phase does not advance because its 
 ### P00 acceptance
 
 - Protocol, phase, task, experiment, metric, model, figure, and artifact registries are mutually consistent.
+- All eight research questions and six preprocessing policies cross-reference valid experiments, models, metrics, figures, and claims.
 - Environment and repository state are recorded.
 - Protected input hashes match the completed restart.
 - The deviations log exists even when empty.
@@ -979,12 +1203,16 @@ These are operational definitions of done. A phase does not advance because its 
 - Every master appears exactly once as outer test per repeat and never crosses train/test within a fold.
 - Every T3-ZS training role excludes the held instrument.
 - Primary-domain eligibility reproduces 13 domains from metadata alone.
+- Platform-family identity is distinct from SERS sensor family and family support/fallback status is resolved by metadata only.
+- QC quantile source rows and finite gate candidates are enumerated without calculating from or viewing target rows.
+- Every zero-shot policy has an explicit permitted-target-information role and fatal leakage assertion.
 - Adaptation, paired-calibration, few-shot, and evaluation masters are disjoint according to regime.
 - All excluded rows remain in the registry with reason codes.
 
 ### P03 acceptance
 
 - Every classical candidate completes nested selection on the same folds.
+- Primary classical results use `PP-U-MIN`; RBF SVM source pseudo-domain records needed by the policy panel are complete.
 - Population-fitted transformations occur only inside training data.
 - Cross-fitted calibration contains no outer-test prediction.
 - Master permutation approaches chance and metadata-only confounding is reported.
@@ -993,6 +1221,7 @@ These are operational definitions of done. A phase does not advance because its 
 ### P04 acceptance
 
 - The implemented architecture matches the tensor and parameter contract.
+- Primary D0 results use `PP-U-MIN`; D0 source pseudo-domain records needed by the policy panel are complete.
 - Histories, checkpoints, selected epochs, failures, runtimes, and resource usage exist for every run ID.
 - No test metric selects architecture, optimizer, augmentation, or epoch.
 - Collapse and numerical-failure rates satisfy or transparently fail G2.
@@ -1004,10 +1233,12 @@ These are operational definitions of done. A phase does not advance because its 
 - D1–D5 are ranked only on source pseudo-domains.
 - The advancement decision and all failed candidates remain archived.
 - Exactly one advancing acquisition-aware configuration is frozen, or the declared no-advance outcome is recorded.
+- No preprocessing-policy outcome informed D1–D5 selection.
 
 ### P06 acceptance
 
 - Classical and deep predictions use identical test UIDs and aggregation rules.
+- Every primary prediction uses `PP-U-MIN`; adaptive-policy predictions are absent from the primary comparison.
 - All 13 primary and four exploratory domains are present.
 - Neural seeds are averaged before domain inference.
 - Single-spectrum and multi-view master results are labelled separately.
@@ -1016,12 +1247,18 @@ These are operational definitions of done. A phase does not advance because its 
 ### P07 acceptance
 
 - Every result is visibly labelled zero-shot, UDA, paired calibration, or supervised few-shot.
+- Every result states preprocessing policy and confirms that v1 target access did not retune preprocessing.
 - Calibration/adaptation and evaluation masters are disjoint.
 - Learning-curve x axes count physical masters per class, not spectra.
 - Target-information access is summarized beside every metric.
 
 ### P08 acceptance
 
+- Universal, family-aware, and QC-adaptive policies use identical T3 test UIDs and the fixed model panel.
+- Family selection uses at least two supported source units or executes the minimal fallback; all support and fallback denominators reconcile.
+- QC features contain no forbidden identity/label/batch fields; thresholds reproduce source-training quantiles and the frozen gate library.
+- Policy/model selection hashes are distinct and no test outcome chooses a policy, action, gate, threshold, cell, or compute expansion.
+- All-domain and supported-family effects, policy coverage, action stability, preservation violations, and policy × model interactions are present.
 - Every perturbation is generated from the frozen unperturbed test row.
 - No perturbed result changes a model or hyperparameter.
 - Degradation curves include zero perturbation and reconcile with primary metrics.
@@ -1037,6 +1274,7 @@ These are operational definitions of done. A phase does not advance because its 
 ### P10 acceptance
 
 - Domain probes include chemistry-only nulls.
+- Policy action/fallback analyses are descriptive and conditioned on correctness where relevant.
 - Pair agreement is conditioned on correctness.
 - Retrieval gives same-master and same-target results separately.
 - Attribution changes under randomized-head and randomized-encoder controls.
@@ -1048,11 +1286,14 @@ These are operational definitions of done. A phase does not advance because its 
 - Domain-weighted and row-weighted summaries are never confused.
 - Leave-one-domain and leave-one-instrument-identity sensitivities are complete.
 - G4 and G5 inputs are machine-generated from frozen evidence.
+- Each RQ-S01–RQ-S03 effect uses paired policies on identical UIDs; family-supported and fallback-inclusive estimands are not confused.
+- Policy × model interaction families and preprocessing multiplicity are computed as registered.
 - Route A, B, or C is selected without informal exception.
 
 ### P12 acceptance
 
 - Every completed figure has one frozen plot table, native TikZ, compiled vector PDF, and standalone HTML.
+- Every result figure names its RQ, preprocessing/access regime, action/fallback denominator, model, and independent unit.
 - TikZ and HTML point estimates, intervals, axes, and labels match.
 - Accessibility and final-size reviews pass.
 - Manuscript tables reconcile with machine metrics.

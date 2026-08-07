@@ -8,6 +8,8 @@
     {"stage": "D1_to_D5_source_development", "fit_estimate_low": 300, "fit_estimate_high": 700, "gate": "G3"},
     {"stage": "definitive_two_deep_models_initial", "fit_estimate_low": 624, "fit_estimate_high": 624, "gate": "stability_before_full_repeats"},
     {"stage": "full_repeat_confirmation_additional", "fit_estimate_low": 0, "fit_estimate_high": 1560, "gate": "resource_and_stability_approval"},
+    {"stage": "preprocessing_policy_source_development", "fit_estimate_low": 0, "fit_estimate_high": null, "gate": "P02_policy_support_registry_and_P04_panel_complete"},
+    {"stage": "preprocessing_policy_factorial_evaluation", "fit_estimate_low": 0, "fit_estimate_high": null, "gate": "primary_complete_and_separate_budget"},
     {"stage": "adaptation_robustness_open_set", "fit_estimate_low": 0, "fit_estimate_high": null, "gate": "primary_complete_and_separate_budget"}
   ],
   "required_dry_run_outputs": [
@@ -23,6 +25,8 @@
     "secondary compute cannot delay primary completion",
     "completed run IDs are immutable by code and configuration hash",
     "test outcome cannot trigger budget expansion",
+    "policy and model factorial cells must be enumerated before outcome access",
+    "unresolved preprocessing-policy fit counts remain unbounded pending P02 support and dry-run expansion",
     "failed runs remain visible"
   ]
 }

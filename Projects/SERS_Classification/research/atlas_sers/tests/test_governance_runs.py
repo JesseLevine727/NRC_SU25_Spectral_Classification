@@ -11,8 +11,11 @@ def identity() -> RunIdentity:
     return RunIdentity(
         protocol_version="atlas-sers-research-master-plan-v1",
         experiment_id="EXP-C09-T3",
+        research_question_id="RQ-P01",
         task_id="T3-ZS",
         information_regime="zero-shot source-only",
+        preprocessing_information_regime="fixed_source_only",
+        preprocessing_policy_id="PP-U-MIN",
         outer_repeat=0,
         outer_fold=0,
         held_domain="pills:instrument-1",
@@ -48,8 +51,11 @@ def test_canonical_json_normalizes_numpy_scalars() -> None:
     [
         ("protocol_version", "atlas-sers-research-master-plan-v2"),
         ("experiment_id", "EXP-C10-T3"),
+        ("research_question_id", "RQ-S01"),
         ("task_id", "T1-CWA"),
         ("information_regime", "closed set"),
+        ("preprocessing_information_regime", "row_local_qc_source_only"),
+        ("preprocessing_policy_id", "PP-QC-SRC"),
         ("outer_repeat", 1),
         ("outer_fold", 1),
         ("held_domain", "pills:instrument-2"),

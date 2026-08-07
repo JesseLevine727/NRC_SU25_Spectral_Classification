@@ -5,6 +5,8 @@ analysis-ready private dataset. It freezes row identity, population tiers,
 native-source provenance, eight row-local spectral representations,
 preservation evidence, descriptive structure analyses, and figures F02–F09.
 P01 performs no predictive model fit and constructs no train/test split.
+The later family-aware and QC-adaptive policies compose three of these frozen
+arrays; they do not alter P01 transforms or its protected evidence.
 
 ## Preconditions
 
@@ -81,6 +83,14 @@ relative-weight tolerance 0.001, and logistic clipping at 60. These values were
 recovered from the immutable preprocessing-candidate archive and are verified
 numerically rather than re-estimated from P01 outcomes.
 
+The downstream action set is exactly `R_MIN_400_1800`, `R_SG_400_1800`, and
+`R_ARPLS_400_1800`. Every action has 1,401 coordinates on 400–1,800 cm⁻¹ and a
+final per-row `[0,1]` scale. `PP-FAMILY-SRC` selects one existing action for a
+supported acquisition-platform family; `PP-QC-SRC` selects one existing action
+per row using source-frozen QC rules. Any new transform, combined SG+arPLS
+array, or changed parameter requires a versioned deviation and complete P01
+rebuild.
+
 Nonfinite, insufficient-support, flat, zero-range, zero-norm, and zero-area
 rows receive explicit reason codes. No invalid row is silently repaired. Each
 bundle hashes the axis, shape, observation order, source bundle, operations,
@@ -104,6 +114,12 @@ P01 quantifies what each transform changes for every row and instrument:
 
 These diagnostics characterize preservation; they do not prove denoising or
 clean-spectrum recovery.
+
+The permitted future QC-gate inputs are limited to normalized first-difference
+noise, spike fraction, baseline energy/span fractions, and negative fraction
+already reconstructable from the native registry. Instrument, platform family,
+SERS sensor, station, master, label, model confidence, and target-batch
+statistics are forbidden QC-gate features.
 
 Raw arrays and all eight representations are analyzed at spectrum and
 physical-master levels with frozen settings:
@@ -205,4 +221,6 @@ artifact rehashes, the identical build returns `verified_skip`, the latest-run
 validator passes, and the G0 evidence is reviewed. Only P02 may freeze
 physical-master-grouped partitions and information regimes. P01 results cannot
 be used to move representation thresholds or choose a representation based on
-future classifier outcomes.
+future classifier outcomes. P02 may only enumerate source roles, metadata-only
+family support, and the registered QC quantile procedure. It may not invent a
+new preprocessing array or use target outcomes to choose one.

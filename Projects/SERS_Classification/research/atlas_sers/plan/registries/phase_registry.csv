@@ -1,14 +1,14 @@
 phase_id,scope,title,depends_on,principal_input,principal_output,completion_gate,execution_status
 P00,primary,Governance and artifact contract,completed_restart,validated restart artifacts,"protocol registry; environment lock; hashes; deviations log",G0,complete
 P01,primary,Data and representation freeze,P00,598-row primary manifest,"tiered manifests; native registry; frozen representation bundles",G0,complete
-P02,primary,Split and information-regime freeze,P01,frozen manifests,"five-repeat master splits; T3 partitions; adaptation partitions; leakage audit",G0,planned
-P03,primary,Definitive classical benchmark,P02,frozen partitions,"nested selections; predictions; calibration; classical metrics",G1,planned
-P04,primary,Compact deep ERM baseline,P02,frozen partitions,"D0 histories; checkpoints; predictions; training audit",G2,planned
-P05,primary,Acquisition-aware source-only development,P04,validated D0 encoder,"D1-D5 development comparisons; frozen advancing candidate",G3,planned
-P06,primary,Definitive T1 T2 and T3-ZS evaluation,P03|P05,frozen classical and deep pipelines,"paired row/master/domain predictions; primary metrics",G4,planned
-P07,secondary,Target-instrument adaptation and calibration,P06,frozen zero-shot conclusions,"UDA; paired-calibration; few-shot learning curves",regime_separation_pass,planned
-P08,secondary,Robustness and preprocessing sensitivity,P06,frozen predictive pipelines,"perturbation curves; preprocessing and tier contrasts",robustness_registry_complete,planned
+P02,primary,Split policy-support and information-regime freeze,P01,frozen manifests,"five-repeat master splits; T3 partitions; adaptation partitions; instrument-family support; QC-policy roles; leakage audit",G0|preprocessing_policy_leakage_pass,planned
+P03,primary,Definitive classical benchmark,P02,frozen partitions and PP-U-MIN,"nested selections; predictions; calibration; classical metrics; policy-development panel records",G1,planned
+P04,primary,Compact deep ERM baseline,P02,frozen partitions and PP-U-MIN,"D0 histories; checkpoints; predictions; training audit; policy-development panel records",G2,planned
+P05,primary,Acquisition-aware source-only development,P04,validated PP-U-MIN D0 encoder,"D1-D5 development comparisons; frozen advancing candidate",G3,planned
+P06,primary,Definitive T1 T2 and T3-ZS evaluation,P03|P05,frozen PP-U-MIN classical and deep pipelines,"paired row/master/domain predictions; primary metrics; calibrated uncertainty",G4,planned
+P07,secondary,Target-instrument adaptation and calibration,P06,frozen zero-shot conclusions,"UDA; paired-calibration; few-shot curves under frozen preprocessing policies",regime_separation_pass,planned
+P08,secondary,Preprocessing policy and robustness evaluation,P04|P06,frozen primary conclusions and policy-development panel,"universal family-aware and QC-adaptive policy contrasts; interaction; perturbation and tier curves",robustness_registry_complete|preprocessing_policy_support_pass,planned
 P09,secondary,Narrow station-conditioned open set,P06,frozen encoders and known-only score policy,"held-chemical predictions; thresholds; AUROC AUPR OSCR",open_set_leakage_pass,planned
-P10,secondary,Representation explainability and error analysis,P06|P08|P09,frozen predictions and embeddings,"domain probes; pair diagnostics; attribution; error taxonomy",interpretation_audit_pass,planned
-P11,primary,Statistical inference and decision gates,P06|P10,complete metrics and predictions,"hierarchical intervals; paired contrasts; Route A B or C verdict",G4|G5|G6,planned
-P12,primary,Figures manuscript tables and reproducibility,P11,final evidence tables,"paired TikZ HTML figures; manuscript tables; validation; hashes",final_validation_pass,planned
+P10,secondary,Representation policy explainability and error analysis,P06|P08|P09,frozen predictions policies and embeddings,"domain probes; pair diagnostics; policy action audit; attribution; error taxonomy",interpretation_audit_pass,planned
+P11,primary,Question-wise statistical inference and decision gates,P06|P10,complete metrics predictions and policy records,"hierarchical intervals; preprocessing paired contrasts and interactions; Route A B or C verdict",G4|G5|G6,planned
+P12,primary,Question-mapped figures manuscript tables and reproducibility,P11,final evidence tables,"RQ-labelled paired TikZ HTML figures; manuscript tables; validation; hashes",final_validation_pass,planned

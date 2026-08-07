@@ -11,10 +11,12 @@ def test_full_governance_registry_cross_reference_passes() -> None:
     bundle = load_governance(PROJECT / "plan")
     report = validate_governance(bundle)
     assert report["status"] == "pass", report["errors"]
-    assert report["counts"]["experiment_registry.csv"] == 39
-    assert report["counts"]["model_registry.csv"] == 36
-    assert report["counts"]["artifact_registry.csv"] == 37
-    assert report["counts"]["deviations.csv"] == 0
+    assert report["counts"]["research_question_registry.csv"] == 8
+    assert report["counts"]["preprocessing_policy_registry.csv"] == 6
+    assert report["counts"]["experiment_registry.csv"] == 43
+    assert report["counts"]["model_registry.csv"] == 39
+    assert report["counts"]["artifact_registry.csv"] == 39
+    assert report["counts"]["deviations.csv"] == 1
 
 
 def test_every_experiment_has_registered_model_and_artifacts() -> None:

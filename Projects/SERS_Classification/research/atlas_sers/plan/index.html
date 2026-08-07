@@ -6,19 +6,20 @@
 </style></head><body><main>
 <span class="tag plan">PLANNING GOAL COMPLETE</span>
 <h1>ATLAS field-trial SERS research master plan v1</h1>
-<p class="lede">An execution-ready plan for comparing classical chemometrics and acquisition-aware deep learning under station-conditioned, unseen-instrument and unseen-master evaluation.</p>
+<p class="lede">An execution-ready factorial plan separating learning strategy, preprocessing policy, and target-information access under station-conditioned unseen-instrument and unseen-master evaluation.</p>
 <div class="notice"><strong>No new definitive model study is run by this plan.</strong> Its purpose is to remove scientific ambiguity before compute begins. Earlier results are disclosed as pilot knowledge; the next study is not misrepresented as prospectively preregistered.</div>
 
 <div class="grid">
   <div class="card"><div class="metric">598</div><strong>primary SERS spectra</strong><div class="small">69 physical masters · 10 instruments · 4 sensor families</div></div>
   <div class="card"><div class="metric">13</div><strong>primary acquisition domains</strong><div class="small">Three classes and at least 15 held-instrument test masters</div></div>
   <div class="card"><div class="metric">0.686</div><strong>current SVM pilot BA</strong><div class="small">Observed reference to beat; not hidden confirmation data</div></div>
-  <div class="card"><div class="metric">35</div><strong>planned paired figures</strong><div class="small">Native TikZ/PGFPlots plus standalone HTML for every figure</div></div>
+  <div class="card"><div class="metric">38</div><strong>planned paired figures</strong><div class="small">Native TikZ/PGFPlots plus standalone HTML for every figure</div></div>
 </div>
 
 <h2>Start here</h2>
 <div class="grid links">
   <a class="card" href="MASTER_PLAN.md"><span class="tag">MASTER</span><h3>Complete research plan</h3><p>Scientific questions, hypotheses, phases P00–P12, models, losses, statistics, gates, claims, compute, and completion rules.</p></a>
+  <a class="card" href="RESEARCH_QUESTION_MAP.md"><span class="tag">RQs</span><h3>Parallel question map</h3><p>Eight questions mapped to comparisons, units, access rules, policies, models, metrics, figures, and interpretations.</p></a>
   <a class="card" href="P00_EXECUTION.md"><span class="tag secondary">P00</span><h3>Governance execution</h3><p>Private-input verification, deterministic evidence, quarantine, and verified restart.</p></a>
   <a class="card" href="P01_EXECUTION.md"><span class="tag secondary">P01</span><h3>Data and representation freeze</h3><p>Source reversibility, eight representations, preservation, descriptive structure, and F02–F09.</p></a>
   <a class="card" href="FIGURE_STYLE_AND_REGENERATION.md"><span class="tag secondary">FIGURES</span><h3>TikZ and HTML contract</h3><p>Native-vector requirement, semantic parity, accessibility, captions, regeneration API, and validation.</p></a>
@@ -28,9 +29,11 @@
 
 <h2>Research direction</h2>
 <table><thead><tr><th>Layer</th><th>Question</th><th>Decision</th></tr></thead><tbody>
-<tr><td><strong>Primary</strong></td><td>Does acquisition-aware deep learning beat the source-only development-selected classical pipeline on an unseen instrument and unseen physical masters?</td><td>Unweighted mean balanced accuracy across 13 domains; paired hierarchical uncertainty.</td></tr>
-<tr><td><strong>Fallback</strong></td><td>Are rigorously tuned classical models the more reliable solution for this small heterogeneous field dataset?</td><td>Publish the leakage-controlled benchmark and negative deep result if the promotion gate fails.</td></tr>
-<tr><td><strong>Secondary</strong></td><td>How do UDA, paired calibration, few-shot labels, preprocessing, quality, and input perturbations change performance?</td><td>Keep information regimes separate from zero-shot results.</td></tr>
+<tr><td><strong>RQ-P01</strong></td><td>Does acquisition-aware deep learning beat the source-only development-selected classical pipeline on an unseen instrument and unseen physical masters?</td><td>Primary PP-U-MIN cell; unweighted mean balanced accuracy across 13 domains with paired hierarchical uncertainty.</td></tr>
+<tr><td><strong>RQ-S01</strong></td><td>Does one universal SG or arPLS policy improve over minimal min-max?</td><td>Paired policy effects within the same fixed model panel and splits.</td></tr>
+<tr><td><strong>RQ-S02</strong></td><td>Does a source-selected platform-family action help a held unit from a represented family?</td><td>Fallback-inclusive and supported-family effects; no held spectra or outcomes select the mapping.</td></tr>
+<tr><td><strong>RQ-S03</strong></td><td>Can an identity-blind row-local QC gate route minimal, SG, or arPLS for a new unit?</td><td>Source-frozen finite gate; no identity, target-batch statistic, or test outcome.</td></tr>
+<tr><td><strong>RQ-S04–S05</strong></td><td>What is target-data value, calibrated abstention, and robustness?</td><td>Keep zero-shot, UDA, paired, few-shot, perturbation, and quality regimes separate.</td></tr>
 <tr><td><strong>Open set</strong></td><td>Can a station-conditioned model reject one held nonblank chemical?</td><td>Narrow eight-task stress test only; no broad open-world claim.</td></tr>
 </tbody></table>
 
@@ -42,26 +45,29 @@
 
 <h2>Sub-plan sequence</h2>
 <table><thead><tr><th>Phase</th><th>Deliverable</th><th>Cannot begin until</th></tr></thead><tbody>
-<tr><td>P00–P02</td><td>Governance, frozen data/representations, five-repeat master splits, information-regime partitions</td><td>Completed restart evidence</td></tr>
-<tr><td>P03</td><td>Fully nested and calibrated classical benchmark</td><td>Integrity and leakage gate G0</td></tr>
+<tr><td>P00–P02</td><td>Governance, frozen data/actions, five-repeat splits, policy support/access, information-regime partitions</td><td>Completed restart evidence</td></tr>
+<tr><td>P03</td><td>Fully nested and calibrated classical benchmark under PP-U-MIN</td><td>Integrity and preprocessing-leakage gates</td></tr>
 <tr><td>P04–P05</td><td>Compact ERM and source-only acquisition-aware development</td><td>Exact same split contract as classical models</td></tr>
 <tr><td>P06</td><td>Definitive T1/T2/T3-ZS paired evaluation</td><td>Classical and deep pipelines frozen</td></tr>
-<tr><td>P07–P10</td><td>Adaptation, robustness, open set, representation, and failure analysis</td><td>Primary zero-shot conclusions frozen</td></tr>
+<tr><td>P07–P10</td><td>Target access, universal/family/QC policies, robustness, open set, representation, and failure analysis</td><td>Primary PP-U-MIN conclusions frozen</td></tr>
 <tr><td>P11–P12</td><td>Inference, promotion route, paired figures, validation, and hashes</td><td>All required primary evidence complete</td></tr>
 </tbody></table>
 
 <h2>Machine-readable registries and contracts</h2>
 <div class="grid links">
 <a class="card" href="registries/phase_registry.csv"><h3>Phases</h3><p>13 dependent work packages and terminal gates.</p></a>
-<a class="card" href="registries/task_registry.csv"><h3>Tasks</h3><p>T0–T4 including zero-shot, UDA, paired, few-shot, and open-set regimes.</p></a>
-<a class="card" href="registries/metric_registry.csv"><h3>Metrics</h3><p>25 metrics with levels, independent units, aggregation, and uncertainty.</p></a>
-<a class="card" href="registries/figure_registry.csv"><h3>Figures</h3><p>35 paired TikZ/HTML artifacts and their manuscript roles.</p></a>
+<a class="card" href="registries/research_question_registry.csv"><h3>Research questions</h3><p>Eight stable RQs with comparisons, policies, models, metrics, figures, and claim limits.</p></a>
+<a class="card" href="registries/preprocessing_policy_registry.csv"><h3>Preprocessing policies</h3><p>Five permissible policies and one machine-readable prohibited post-test hybrid.</p></a>
+<a class="card" href="registries/task_registry.csv"><h3>Tasks</h3><p>15 task/regime rows including three preprocessing-policy evaluations.</p></a>
+<a class="card" href="registries/metric_registry.csv"><h3>Metrics</h3><p>30 metrics with levels, independent units, aggregation, and uncertainty.</p></a>
+<a class="card" href="registries/figure_registry.csv"><h3>Figures</h3><p>38 paired TikZ/HTML artifacts and their manuscript roles.</p></a>
 <a class="card" href="registries/decision_gate_registry.csv"><h3>Decision gates</h3><p>Integrity through publication and figure parity.</p></a>
 <a class="card" href="contracts/split_contract.json"><h3>Split contract</h3><p>Exact seeds, roles, eligible domains, forbidden access, and adaptation semantics.</p></a>
 <a class="card" href="contracts/hyperparameter_registry.json"><h3>Hyperparameters</h3><p>Bounded classical grids, optimizer, losses, augmentation, and calibration.</p></a>
+<a class="card" href="contracts/preprocessing_policy_contract.json"><h3>Policy contract</h3><p>Actions, family support, finite QC gates, access rules, fallbacks, factorial cells, and prohibitions.</p></a>
 <a class="card" href="contracts/result_schema.json"><h3>Result schema</h3><p>Required row-level provenance, predictions, probabilities, scores, and failures.</p></a>
 <a class="card" href="contracts/compute_budget.json"><h3>Compute budget</h3><p>Staged fit estimates, dry-run requirements, and resource gates.</p></a>
 </div>
 
-<p class="small">Plan version: atlas-sers-research-master-plan-v1 · Date: 2026-08-05 · Primary preprocessing: measured-support interpolation 400–1,800 cm⁻¹ plus per-spectrum min–max.</p>
+<p class="small">Plan version: atlas-sers-research-master-plan-v1 · Parallel-question amendment: 2026-08-07 · Primary preprocessing: PP-U-MIN, measured-support interpolation 400–1,800 cm⁻¹ plus per-spectrum min–max.</p>
 </main></body></html>

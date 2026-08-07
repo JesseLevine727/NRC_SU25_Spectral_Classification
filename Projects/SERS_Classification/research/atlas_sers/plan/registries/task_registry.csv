@@ -7,6 +7,9 @@ T2-PS,S,Pills to surfaces binary transfer,4-ANPP and benzyl fentanyl,2,master,tr
 T2-SP,S,Surfaces to pills binary transfer,4-ANPP and benzyl fentanyl,2,master,train surfaces test pills,station transfer,Directional transfer
 T3-ZS,P,Unseen instrument and unseen master,13 eligible station-instrument domains,3,domain and master,five-repeat outer-master four-fold plus full held-instrument exclusion,zero-shot source-only,Primary endpoint
 T3-LOW,E,Low-support unseen instrument,4 low-support station-instrument domains,2 or 3,domain and master,same as T3-ZS,zero-shot source-only,Failure visibility only
+T3-PP-UNIV,S,Universal preprocessing sensitivity,13 eligible station-instrument domains,3,domain and master,identical T3-ZS folds crossed with three universal policies,zero-shot source-only,Universal smoothing and baseline sensitivity
+T3-PP-FAM,S,Platform-family-aware preprocessing,13 eligible domains with supported-family and fallback strata,3,domain and master,identical T3-ZS folds with source-only family mapping,zero-shot family metadata only,Known-family policy effect and coverage
+T3-PP-QC,S,Identity-blind QC-adaptive preprocessing,13 eligible station-instrument domains,3,domain and master,identical T3-ZS folds with source-frozen row-local QC gate,zero-shot current-row QC only,Unknown-family-capable policy effect and stability
 T3-UDA,S,Unlabeled target adaptation,eligible T3 domains,3,domain and master,disjoint adaptation and evaluation masters,unlabeled target intensities only,Adaptation learning curve
 T3-PC,S,Paired target calibration,eligible T3 domains,3,domain and master,disjoint paired calibration and evaluation masters,target-source pair IDs allowed,Operational paired calibration
 T3-FS,S,Supervised few-shot target calibration,eligible support-permitting domains,3,domain and master,frozen k-shot calibration draws and disjoint evaluation masters,k labelled target masters per class,Few-shot learning curve

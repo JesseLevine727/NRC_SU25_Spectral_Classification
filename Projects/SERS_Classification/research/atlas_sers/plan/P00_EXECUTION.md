@@ -12,7 +12,7 @@ split, and make no scientific interpretation.
 - `ATLAS_ARTIFACT_ROOT` is a different private directory outside this public
   project.
 - The authoritative inputs are untracked by Git.
-- Contracts and all nine registries parse and cross-reference successfully.
+- Contracts and all eleven registries—including research questions and preprocessing policies—parse and cross-reference successfully.
 
 ## Commands
 
@@ -51,8 +51,11 @@ The run directory `${ATLAS_ARTIFACT_ROOT}/p00/runs/<run_id>/` contains exactly:
 
 The artifact store adds `_STATE.json` as its atomic commit record and maintains
 `p00/LATEST.json`. The dry-run rows are provisional: every registered
-experiment is enumerated, but fields that depend on P01/P02 are explicitly
-unresolved and every `fit_authorized` value is `false`.
+experiment is enumerated with research-question, preprocessing-policy,
+preprocessing-access, and model identity, but fields that depend on P01/P02 are
+explicitly unresolved and every `fit_authorized` value is `false`.
+Policy-dependent counts remain reason-coded and unbounded until P02 support
+and source-development expansion rather than being fabricated.
 
 ## Status and failure contract
 
@@ -79,4 +82,7 @@ P01 is authorized only after all of the following are true:
 
 Only then may P01 build the canonical observation manifest, parse instrument
 metadata, determine measured support, or materialize preprocessing candidates.
-P00 never authorizes P02 split construction or any classical/deep model fit.
+P00 never authorizes P02 split/policy-role construction or any classical/deep
+model fit. The 2026-08-07 plan deviation records why the parallel policy
+questions were added after descriptive P01 evidence but before P02 and every
+registered definitive predictive outcome.

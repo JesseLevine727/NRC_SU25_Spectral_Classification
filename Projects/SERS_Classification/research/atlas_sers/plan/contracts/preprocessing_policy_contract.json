@@ -1,0 +1,172 @@
+{
+  "protocol_version": "atlas-sers-preprocessing-policy-v1",
+  "purpose": "Keep preprocessing policy and estimator family as separate experimental axes under explicit information-access rules.",
+  "candidate_actions": {
+    "R_MIN_400_1800": {
+      "title": "Minimal row-local scaling",
+      "operations": [
+        "linear interpolation on measured support",
+        "per-spectrum min-max to [0,1]"
+      ]
+    },
+    "R_SG_400_1800": {
+      "title": "Conservative smoothing",
+      "operations": [
+        "linear interpolation on measured support",
+        "isolated impulse replacement",
+        "Savitzky-Golay 11/3",
+        "per-spectrum min-max to [0,1]"
+      ]
+    },
+    "R_ARPLS_400_1800": {
+      "title": "Baseline correction",
+      "operations": [
+        "linear interpolation on measured support",
+        "isolated impulse replacement",
+        "arPLS lambda 100000",
+        "per-spectrum min-max to [0,1]"
+      ]
+    }
+  },
+  "common_output_contract": {
+    "axis_start_cm1": 400,
+    "axis_end_cm1": 1800,
+    "axis_step_cm1": 1,
+    "n_features": 1401,
+    "row_scale": "[0,1]",
+    "composition_rule": "Policies select only among immutable P01 arrays. They do not estimate a new transform.",
+    "new_transform_rule": "Any new transform or changed transform parameter requires a versioned P01 deviation and a complete P01 rebuild before P02 or model use."
+  },
+  "policy_development_panel": {
+    "model_ids": [
+      "C-RBF-SVM",
+      "D0-ERM"
+    ],
+    "reason": "One fixed strong classical model and the ordinary compact deep baseline prevent a policy from being optimized only for the eventual winner.",
+    "selection_data": "source-training masters and source pseudo-instrument validation domains only",
+    "aggregation": "equal model-family weight, then equal pseudo-domain weight",
+    "lexicographic_objective": [
+      "mean pseudo-domain balanced accuracy descending",
+      "worst pseudo-domain balanced accuracy descending",
+      "fraction of pseudo-domains improved versus PP-U-MIN descending",
+      "fraction routed away from R_MIN_400_1800 ascending",
+      "declared policy candidate order ascending"
+    ]
+  },
+  "family_aware_policy": {
+    "policy_id": "PP-FAMILY-SRC",
+    "deployment_question": "A held-out acquisition unit belongs to a platform family represented by other source units.",
+    "family_definition": "instrument platform family derived from immutable acquisition metadata; it is distinct from SERS sensor_family",
+    "permitted_target_information": [
+      "held acquisition-unit identifier for exclusion",
+      "held acquisition-unit platform-family identifier"
+    ],
+    "forbidden_target_information": [
+      "held-unit spectra during selection",
+      "held-unit QC distributions",
+      "held-unit labels",
+      "held-unit outcomes",
+      "evaluation-master membership beyond split assignment"
+    ],
+    "selection": "For each outer training partition and platform family, choose one frozen candidate action using supported source-only leave-one-source-unit-out pseudo-domains and the policy-development panel.",
+    "support_rule": {
+      "minimum_distinct_supported_source_units": 2,
+      "required_classes": "all classes of the station-local task",
+      "minimum_masters_per_class": {
+        "status": "unresolved_until_P02_metadata_support_audit",
+        "candidate_values": [
+          2,
+          3,
+          4
+        ],
+        "resolution_rule": "Choose the largest candidate that leaves at least two distinct supported pseudo-instrument domains for an eligible family; use metadata support only, before P03 outcomes. If no candidate qualifies, the family is unsupported."
+      }
+    },
+    "fallbacks": {
+      "unknown_family": "PP-U-MIN",
+      "known_but_unsupported_family": "PP-U-MIN",
+      "invalid_selected_action_for_row": "R_MIN_400_1800"
+    },
+    "required_logging": [
+      "instrument_family",
+      "family_known",
+      "source_unit_support_count",
+      "source_pseudo_domain_support_count",
+      "selected_action_representation_id",
+      "selection_objective_values",
+      "selection_sha256",
+      "fallback_reason"
+    ]
+  },
+  "qc_adaptive_policy": {
+    "policy_id": "PP-QC-SRC",
+    "deployment_question": "A new acquisition unit may have no recognized family, but each spectrum supplies row-local numeric QC evidence.",
+    "permitted_row_local_features": [
+      "first_difference_noise_mad divided by intensity_range",
+      "spike_fraction_proxy",
+      "baseline_energy_fraction_proxy",
+      "baseline_span_fraction_proxy",
+      "negative_fraction"
+    ],
+    "forbidden_features": [
+      "instrument or serial identity",
+      "instrument platform family",
+      "SERS sensor family or variant",
+      "station",
+      "target or predicted label",
+      "master identity",
+      "batch or target-population aggregates",
+      "model confidence on evaluation rows",
+      "test outcomes"
+    ],
+    "gate_library": {
+      "baseline": "R_MIN_400_1800 for every row",
+      "single_trigger": "Route to R_SG_400_1800 for one high noise/spike feature or R_ARPLS_400_1800 for one high baseline feature; otherwise use R_MIN_400_1800.",
+      "dual_trigger": "Use one noise/spike trigger and one baseline trigger with both priority orders declared; otherwise use R_MIN_400_1800.",
+      "source_quantile_candidates": [
+        0.5,
+        0.75,
+        0.9
+      ],
+      "threshold_status": "numerical cut points unresolved until each source-training partition",
+      "threshold_resolution_rule": "Calculate only the registered quantiles of permitted features on source-training rows, rank the finite gate library on source pseudo-instrument validation with the frozen panel, and freeze the winning gate before evaluation."
+    },
+    "fallbacks": {
+      "missing_or_nonfinite_qc": "R_MIN_400_1800",
+      "selected_action_invalid_for_row": "R_MIN_400_1800",
+      "insufficient_source_pseudo_domains": "PP-U-MIN"
+    },
+    "required_logging": [
+      "permitted_qc_feature_values",
+      "gate_candidate_id",
+      "source_quantile_cutpoints",
+      "selected_action_representation_id",
+      "selection_objective_values",
+      "selection_sha256",
+      "fallback_reason"
+    ]
+  },
+  "target_access_regimes": {
+    "zero_shot_universal": "No held-unit spectrum or statistic selects preprocessing; PP-U-MIN is primary.",
+    "zero_shot_family_aware": "Only the held unit's immutable platform-family identifier is available; PP-FAMILY-SRC was selected entirely on source pseudo-domains.",
+    "zero_shot_qc_adaptive": "Only the current evaluation row's permitted QC vector enters a source-frozen PP-QC-SRC gate; no cross-row target statistic is computed.",
+    "unlabeled_target_adaptation": "Disjoint unlabeled target adaptation masters may fit registered model-adaptation components, but preprocessing remains PP-U-MIN primary and source-frozen PP-QC-SRC sensitivity in v1.",
+    "paired_calibration": "Disjoint paired calibration masters and pair IDs may fit registered paired model calibration; target-view evaluation labels remain hidden and preprocessing is not reselected in v1.",
+    "supervised_few_shot": "Disjoint labelled target calibration masters may fit registered model components; any future target-selected preprocessing would require a new policy ID and nested calibration-master validation."
+  },
+  "factorial_evaluation": {
+    "primary_cell": "PP-U-MIN crossed with the development-selected classical pipeline, D0, and the frozen acquisition-aware deep candidate; the primary contrast remains deep minus classical.",
+    "secondary_universal_cells": "PP-U-MIN, PP-U-SG, and PP-U-ARPLS crossed with fixed RBF SVM, fixed Random Forest, D0, and the frozen acquisition-aware candidate.",
+    "secondary_adaptive_cells": "PP-FAMILY-SRC and PP-QC-SRC crossed with the same fixed model panel and compared with PP-U-MIN on identical test UIDs.",
+    "hyperparameter_rule": "Classical hyperparameters are reselected by the same source-only inner procedure within each policy. Deep architecture and loss identity are frozen from PP-U-MIN and retrained under each policy without outcome-driven retuning.",
+    "interaction_estimand": "Difference in policy effect between model families, reported as paired domain-level difference-in-differences.",
+    "prohibited_cell": "Any combination created after test outcomes are inspected, including selecting a different transform for a named held instrument from its evaluation score."
+  },
+  "fatal_leakage_rules": [
+    "Held-test labels or outcomes never choose a preprocessing action, family mapping, QC gate, threshold, model, or hyperparameter.",
+    "Target-population QC summaries are forbidden in zero-shot family-aware and QC-adaptive regimes.",
+    "Policy selection and estimator selection use nested source roles and write independent hashes.",
+    "All policy fallbacks remain in denominators and are reason-coded.",
+    "A post-test best-policy table may be descriptive only and can never define a promoted hybrid."
+  ]
+}

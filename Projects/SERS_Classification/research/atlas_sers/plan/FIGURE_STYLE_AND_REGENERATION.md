@@ -35,7 +35,8 @@ The HTML must:
 - contain no CDN or remote-script dependency;
 - provide hover details for quantitative marks;
 - provide zoom, pan, trace toggling, or filtering where meaningful;
-- state population, independent unit, and scope in visible text;
+- state research-question ID, preprocessing/access regime, population,
+  independent unit, and scope in visible text;
 - include a visible caption or description;
 - expose the frozen data hash.
 
@@ -50,9 +51,11 @@ TikZ and HTML are generated from one plot-level table. The figure manifest store
 Each plot-level table includes as applicable:
 
 - `figure_id`;
+- `research_question_id`;
 - `scope`;
 - population and representation IDs;
-- model and information regime;
+- preprocessing policy, actual action or action summary, policy access, support,
+  fallback denominator, model, and task information regime;
 - station/domain/target;
 - point estimate;
 - lower and upper interval;
@@ -109,7 +112,8 @@ Every figure must remain interpretable in grayscale.
 - Label x axis `Raman shift (cm⁻¹)`.
 - State whether intensity is raw, min–max, SNV, vector, area, or baseline corrected.
 - Do not vertically offset spectra without labelling the offset.
-- Interactive hover includes UID, master, target, instrument, sensor, and quality flag.
+- Private interactive hover may include UID/master fields. Public-after-review
+  HTML uses disclosure-approved aggregate domain/action/support fields only.
 - Dense all-spectrum TikZ figures use robust quantile ribbons plus prespecified representative rows; the HTML may expose all spectra.
 
 ### Performance comparisons
@@ -119,6 +123,18 @@ Every figure must remain interpretable in grayscale.
 - Display all 13 domain effects in the primary figure.
 - Do not hide failed or chance-level domains in an average.
 - Distinguish spectrum and master aggregation in both title and caption.
+
+### Preprocessing-policy comparisons
+
+- Show `PP-U-MIN` as the common paired reference.
+- Universal, family-aware, and QC-adaptive policies use distinct line/marker
+  encodings; never label all three simply `preprocessed`.
+- Family figures show all-domain fallback-inclusive and supported-family
+  estimands together, with support and fallback counts.
+- QC figures show selected gate/action distributions, missing/invalid fallback,
+  and stability in addition to accuracy.
+- Interaction figures show paired difference-in-differences with a zero line.
+- Preservation violations and worst-domain changes remain visible.
 
 ### Calibration and risk–coverage
 
@@ -155,14 +171,16 @@ Every figure must remain interpretable in grayscale.
 Every caption includes:
 
 1. scope `(P)`, `(S)`, or `(E)`;
-2. the question shown;
-3. population and representation;
-4. independent unit and sample size;
-5. aggregation rule;
-6. interval or error-bar definition;
-7. chance/null reference;
-8. explanation of colors, shapes, and abbreviations;
-9. interpretation limit.
+2. stable research-question ID and the question shown;
+3. preprocessing policy, actual-action meaning, and target-information access;
+4. population and representation;
+5. independent unit and sample size;
+6. adaptive-policy support, coverage, and fallback denominator where relevant;
+7. aggregation rule;
+8. interval or error-bar definition;
+9. chance/null reference;
+10. explanation of colors, shapes, and abbreviations;
+11. interpretation limit.
 
 Example:
 
@@ -203,7 +221,7 @@ The figure validator must:
 5. verify every HTML has `<html>` and closing `</html>`;
 6. reject `cdn.plot.ly`, external `<script src=http...>`, or other remote assets;
 7. compare the TikZ and HTML plot-data hash stored in both outputs;
-8. verify axis labels, units, scope, and independent-unit count;
+8. verify axis labels, units, RQ ID, policy/access/fallback labels, scope, and independent-unit count;
 9. verify registered colors and redundant marker/line styles;
 10. verify captions are nonempty;
 11. verify all output hashes.
