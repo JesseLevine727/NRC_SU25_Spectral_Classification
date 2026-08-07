@@ -72,6 +72,8 @@ research/atlas_sers/
 │   ├── evaluation/                Metrics, calibration, bootstrap, robustness
 │   └── visualization/             Paired TikZ/HTML figure generation
 ├── scripts/run_p00.py             No-training governance audit/dry run
+├── scripts/run_p01.py             Private data/representation freeze
+├── scripts/run_p02.py             Private evaluation-design freeze
 ├── scripts/validate_public_scaffold.py
 └── tests/                         Contract and privacy regression tests
 ```
@@ -108,6 +110,8 @@ pytest -q
 python3 scripts/run_p00.py dry-run
 python3 scripts/run_p01.py audit
 python3 scripts/run_p01.py dry-run
+python3 scripts/run_p02.py audit
+python3 scripts/run_p02.py dry-run
 ```
 
 Install the `deep` extra only for neural experiments:
@@ -131,6 +135,14 @@ performs no predictive fit and constructs no split. See
 [plan/P01_EXECUTION.md](plan/P01_EXECUTION.md) for the exact build, restart,
 validation, outputs, and failure behavior.
 
+P02 freezes five four-fold physical-master repeats, all 13 primary
+held-instrument domains, exact source/target/exclusion roles, source-only inner
+selection routes, platform-family support/fallback, the finite identity-blind
+QC gate library, target-access draws, and held-chemical roles. It performs zero
+predictive fits. See [plan/P02_EXECUTION.md](plan/P02_EXECUTION.md) for the
+validated design and [plan/P03_HANDOFF.md](plan/P03_HANDOFF.md) for the next
+phase's immutable consumer contract.
+
 ## Reproducibility rules
 
 - Split by physical `master_sample_id`; spectrum rows are not independent.
@@ -151,7 +163,7 @@ validation, outputs, and failure behavior.
 ## Status
 
 The research plan is execution-ready but is not a prospective preregistration:
-pilot and P01 descriptive results informed its design. P00 governance and P01
-data/representation freeze are executable and protected. P02 will next freeze
-splits plus preprocessing-policy support/access roles; all predictive
-model/result phases remain outside the current boundary.
+pilot and P01 descriptive results informed its design. P00 governance, P01
+data/representation freeze, and P02 evaluation-design freeze are executable and
+protected. P03 is the next phase and the first predictive boundary; no
+classical or deep result is implied by P02.

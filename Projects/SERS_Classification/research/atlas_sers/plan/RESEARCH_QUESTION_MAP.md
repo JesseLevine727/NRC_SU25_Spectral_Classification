@@ -135,4 +135,10 @@ The primary comparison is deliberately one cell: `PP-U-MIN × {selected classica
 
 ## Immediate next phase
 
-The next executable phase remains P02—not model training. P02 must materialize the five-repeat master splits, the 13 T3 partitions, adaptation/calibration roles, platform-family derivation/support, QC quantile source roles, finite gate candidates, and all fatal leakage assertions. It leaves numerical QC cut points unresolved until calculated inside future source-training partitions. Only after that registry and its dry-run compute expansion pass may P03 begin the definitive classical benchmark under `PP-U-MIN`.
+P02 has materialized the five-repeat master splits, 13 primary T3 partitions,
+adaptation/calibration roles, platform-family derivation/support, QC quantile
+source roles, 124 finite gate candidates, held-chemical roles, and fatal
+leakage assertions. Numerical QC cut points remain deliberately unresolved
+until calculated inside future source-training partitions. The next executable
+phase is P03: first perform its no-fit compute expansion, then run the
+definitive classical benchmark under `PP-U-MIN` using the immutable P02 bundle.

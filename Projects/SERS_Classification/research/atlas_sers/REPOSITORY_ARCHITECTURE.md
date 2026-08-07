@@ -49,7 +49,7 @@ may leak into the other policy or into the primary universal cell.
 
 ### `atlas_sers.governance`
 
-Owns P00/P01 registry validation, canonical serialization, deterministic run
+Owns P00/P01/P02 registry validation, canonical serialization, deterministic run
 identities, streaming authoritative-input verification, sanitized provenance,
 the no-training dry-run registry, and atomic artifact commits. A matching
 successful protected state is verified and skipped. Incomplete, corrupt,
@@ -61,6 +61,9 @@ representations, splits, predictions, embeddings, or fitted objects.
 P01 adds immutable-manifest, native-source, representation, descriptive-fit,
 figure, and restart validation while continuing to prohibit predictive models
 and split construction.
+P02 adds private split/access/support materialization, deterministic double
+builds, leakage reconstruction, figure/disclosure evidence, and restart
+validation while continuing to prohibit predictive model fitting.
 
 ## Package boundaries
 
@@ -155,13 +158,18 @@ P01 adds synthetic vendor layouts, UID/mapping and support failures, transform
 invariants, independent recomputation, deterministic arrays, structure-analysis
 reproducibility, figure semantic parity, full P00→P01 integration, corruption
 handling, and verified restart skips.
+P02 adds synthetic 598-row/69-master evaluation fixtures, exact T3 role
+reconstruction, source pseudo-domain and fallback routes, platform-family and
+QC access checks, target/open-role disjointness, 124-gate enumeration,
+byte-identical double builds, TikZ/PDF/PNG/HTML parity, and atomic
+`verified_skip` integration.
 
 ## Implementation order
 
 1. Pass P00 governance, private input verification, and the no-training dry run.
 2. Rebuild the private inventory through package adapters, validate native
    hashes/reversibility, and freeze representations and descriptive evidence.
-3. Freeze master-grouped split registries and preprocessing-policy support/access roles only after P01 passes.
+3. Freeze master-grouped split registries and preprocessing-policy support/access roles only after P01 passes. **Complete in P02.**
 4. Implement the common estimator/evaluation interface.
 5. Run classical selection and lock the endpoint baseline.
 6. Develop the compact deep endpoint on source-development partitions only.

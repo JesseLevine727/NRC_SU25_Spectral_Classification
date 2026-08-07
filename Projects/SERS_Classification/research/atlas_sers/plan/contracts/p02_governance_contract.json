@@ -1,0 +1,98 @@
+{
+  "protocol_version": "atlas-sers-p02-evaluation-freeze-v1",
+  "phase": "P02",
+  "predictive_model_fitting_authorized": false,
+  "source_phase": "P01",
+  "source_population": "primary_manifest.csv",
+  "expected_population": {
+    "rows": 598,
+    "physical_masters": 69,
+    "stations": 3,
+    "targets": 7,
+    "instruments": 10
+  },
+  "inner_master_folds": 3,
+  "instrument_family_derivation": {
+    "source_field": "instrument",
+    "algorithm": "remove the final hyphen-delimited acquisition-unit suffix",
+    "uses_spectral_values": false,
+    "uses_sensor_family": false
+  },
+  "pseudo_domain_support": {
+    "validation_unit": "one source acquisition instrument",
+    "validation_requires_all_station_classes": true,
+    "remaining_training_requires_all_station_classes": true,
+    "minimum_supported_pseudo_domains": 2,
+    "fallback": "three-fold stratified master-grouped inner CV"
+  },
+  "target_access_draws": {
+    "unlabeled_target_adaptation_total_masters": [3, 5, 10],
+    "paired_calibration_total_masters": [3, 5, 10],
+    "supervised_few_shot_masters_per_class": [1, 2, 3, 5],
+    "selection": "deterministic class-balanced master draw from outer-training masters with a held-instrument view",
+    "source_retention": "at least one unselected outer-training master from every station class",
+    "evaluation": "held-instrument views on the unchanged outer-test masters",
+    "unsupported_rule": "record the scenario and reason; do not shrink or replace the requested draw"
+  },
+  "qc_gate_enumeration": {
+    "normalized_noise_feature": "first_difference_noise_mad_over_intensity_range",
+    "noise_features": [
+      "first_difference_noise_mad_over_intensity_range",
+      "spike_fraction_proxy"
+    ],
+    "baseline_features": [
+      "baseline_energy_fraction_proxy",
+      "baseline_span_fraction_proxy",
+      "negative_fraction"
+    ],
+    "source_quantiles": [0.5, 0.75, 0.9],
+    "priority_orders": ["baseline_then_noise", "noise_then_baseline"],
+    "expected_candidates": 124,
+    "numeric_cutpoints_status": "unresolved_until_future_fold_local_source_training"
+  },
+  "protected_payloads": [
+    "master_split_registry.csv",
+    "t3_partition_registry.csv",
+    "inner_selection_registry.csv",
+    "inner_master_split_registry.csv",
+    "domain_registry.csv",
+    "family_support_registry.csv",
+    "preprocessing_policy_roles.csv",
+    "qc_gate_candidate_registry.csv",
+    "target_access_scenario_registry.csv",
+    "target_access_assignment_registry.csv",
+    "open_set_partition_registry.csv",
+    "unsupported_cells.csv",
+    "leakage_audit.csv"
+  ],
+  "required_top_level_outputs": [
+    "environment_lock.json",
+    "p01_prerequisite.json",
+    "protected_state.json",
+    "deviations.csv",
+    "master_split_registry.csv",
+    "t3_partition_registry.csv",
+    "inner_selection_registry.csv",
+    "inner_master_split_registry.csv",
+    "domain_registry.csv",
+    "family_support_registry.csv",
+    "preprocessing_policy_roles.csv",
+    "qc_gate_candidate_registry.csv",
+    "target_access_scenario_registry.csv",
+    "target_access_assignment_registry.csv",
+    "open_set_partition_registry.csv",
+    "unsupported_cells.csv",
+    "leakage_audit.csv",
+    "protected_payload_hashes.json",
+    "rebuild_evidence.json",
+    "figure_manifest.csv",
+    "P02_VALIDATION_REPORT.json",
+    "P02_ARTIFACT_HASHES.json"
+  ],
+  "required_figures": ["F10", "F11"],
+  "fold_level_class_policy": {
+    "split_construction": "station target stratification only; held-instrument availability is forbidden",
+    "sparse_held_instrument_fold": "retain and reason-code",
+    "definitive_domain_unit": "all four out-of-fold held-instrument slices pooled within domain and repeat"
+  }
+}

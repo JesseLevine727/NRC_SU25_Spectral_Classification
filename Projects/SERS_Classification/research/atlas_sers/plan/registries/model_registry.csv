@@ -1,8 +1,8 @@
 model_id,scope,kind,title,phase_introduced,trainable,parameter_budget,epoch_budget,selection_boundary,status
 SYS-REP-BUILDER,P,system,Frozen representation builder,P01,false,not_applicable,not_applicable,no model outcomes,planned
-SYS-OUTER-SPLIT,P,system,Five-repeat outer split builder,P02,false,not_applicable,not_applicable,metadata support only,planned
-SYS-T3-PARTITION,P,system,T3 partition derivation,P02,false,not_applicable,not_applicable,metadata support only,planned
-SYS-PP-SUPPORT,S,system,Preprocessing policy support and role derivation,P02,false,not_applicable,not_applicable,metadata support and frozen rules only,planned
+SYS-OUTER-SPLIT,P,system,Five-repeat outer split builder,P02,false,not_applicable,not_applicable,metadata support only,frozen
+SYS-T3-PARTITION,P,system,T3 partition derivation,P02,false,not_applicable,not_applicable,metadata support only,frozen
+SYS-PP-SUPPORT,S,system,Preprocessing policy support and role derivation,P02,false,not_applicable,not_applicable,metadata support and frozen rules only,frozen
 C-PRIOR,P,classical,Prior dummy,P03,false,not_applicable,not_applicable,fixed,planned
 C-SPECTRAL-MATCH,P,classical,Correlation and spectral-angle matching,P03,false,not_applicable,not_applicable,inner master CV,planned
 C-NEAREST-CENTROID,P,classical,Nearest centroid,P03,true,registry_defined,not_applicable,inner master CV,planned

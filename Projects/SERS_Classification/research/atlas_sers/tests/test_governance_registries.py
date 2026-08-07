@@ -15,7 +15,7 @@ def test_full_governance_registry_cross_reference_passes() -> None:
     assert report["counts"]["preprocessing_policy_registry.csv"] == 6
     assert report["counts"]["experiment_registry.csv"] == 43
     assert report["counts"]["model_registry.csv"] == 39
-    assert report["counts"]["artifact_registry.csv"] == 39
+    assert report["counts"]["artifact_registry.csv"] == 42
     assert report["counts"]["deviations.csv"] == 1
 
 

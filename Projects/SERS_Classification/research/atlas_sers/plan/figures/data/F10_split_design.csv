@@ -1,0 +1,37 @@
+figure_id,scope,research_question_id,independent_unit,information_regime,panel,x_fold,y_repeat,series,trace_group,x_role,y_view,x_stage,y_info,y_label
+F10,P,methods,physical master,zero-shot source-only,folds,0,1,Repeat 1,repeat-1,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,1,1,Repeat 1,repeat-1,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,2,1,Repeat 1,repeat-1,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,3,1,Repeat 1,repeat-1,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,0,2,Repeat 2,repeat-2,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,1,2,Repeat 2,repeat-2,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,2,2,Repeat 2,repeat-2,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,3,2,Repeat 2,repeat-2,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,0,3,Repeat 3,repeat-3,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,1,3,Repeat 3,repeat-3,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,2,3,Repeat 3,repeat-3,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,3,3,Repeat 3,repeat-3,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,0,4,Repeat 4,repeat-4,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,1,4,Repeat 4,repeat-4,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,2,4,Repeat 4,repeat-4,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,3,4,Repeat 4,repeat-4,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,0,5,Repeat 5,repeat-5,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,1,5,Repeat 5,repeat-5,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,2,5,Repeat 5,repeat-5,,,,,
+F10,P,methods,physical master,zero-shot source-only,folds,3,5,Repeat 5,repeat-5,,,,,
+F10,P,methods,physical master,zero-shot source-only,roles,,,source train,role,0,0,,,
+F10,P,methods,physical master,zero-shot source-only,roles,,,target excluded (train),role,0,1,,,
+F10,P,methods,physical master,zero-shot source-only,roles,,,source excluded (test),role,1,0,,,
+F10,P,methods,physical master,zero-shot source-only,roles,,,target test,role,1,1,,,
+F10,P,methods,physical master,zero-shot source-only,access,,,permitted,spectra,,,source fit,0,spectra
+F10,P,methods,physical master,zero-shot source-only,access,,,permitted,labels,,,source fit,1,labels
+F10,P,methods,physical master,zero-shot source-only,access,,,prohibited,test outcomes,,,source fit,2,test outcomes
+F10,P,methods,physical master,zero-shot source-only,access,,,permitted,spectra,,,source selection,0,spectra
+F10,P,methods,physical master,zero-shot source-only,access,,,permitted,labels,,,source selection,1,labels
+F10,P,methods,physical master,zero-shot source-only,access,,,prohibited,test outcomes,,,source selection,2,test outcomes
+F10,P,methods,physical master,zero-shot source-only,access,,,prohibited,spectra,,,target access,0,spectra
+F10,P,methods,physical master,zero-shot source-only,access,,,prohibited,labels,,,target access,1,labels
+F10,P,methods,physical master,zero-shot source-only,access,,,prohibited,test outcomes,,,target access,2,test outcomes
+F10,P,methods,physical master,zero-shot source-only,access,,,permitted,spectra,,,final test,0,spectra
+F10,P,methods,physical master,zero-shot source-only,access,,,prohibited,labels,,,final test,1,labels
+F10,P,methods,physical master,zero-shot source-only,access,,,prohibited,test outcomes,,,final test,2,test outcomes

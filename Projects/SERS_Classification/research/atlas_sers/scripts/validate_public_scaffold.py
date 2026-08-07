@@ -52,6 +52,8 @@ REQUIRED_FILES = {
     "plan/RESEARCH_QUESTION_MAP.md",
     "plan/P00_EXECUTION.md",
     "plan/P01_EXECUTION.md",
+    "plan/P02_EXECUTION.md",
+    "plan/P03_HANDOFF.md",
     "plan/FIGURE_STYLE_AND_REGENERATION.md",
     "plan/index.html",
     "plan/contracts/research_contract.json",
@@ -65,6 +67,8 @@ REQUIRED_FILES = {
     "plan/contracts/p00_validation_schema.json",
     "plan/contracts/p01_governance_contract.json",
     "plan/contracts/p01_validation_schema.json",
+    "plan/contracts/p02_governance_contract.json",
+    "plan/contracts/p02_validation_schema.json",
     "plan/registries/model_registry.csv",
     "plan/registries/research_question_registry.csv",
     "plan/registries/preprocessing_policy_registry.csv",
@@ -72,6 +76,8 @@ REQUIRED_FILES = {
     "plan/registries/deviations.csv",
     "scripts/run_p00.py",
     "scripts/run_p01.py",
+    "scripts/run_p02.py",
+    "scripts/publish_p02_figures.py",
 }
 
 REGISTRY_COUNTS = {
@@ -83,7 +89,7 @@ REGISTRY_COUNTS = {
     "experiment_registry.csv": 43,
     "figure_registry.csv": 38,
     "model_registry.csv": 39,
-    "artifact_registry.csv": 39,
+    "artifact_registry.csv": 42,
     "decision_gate_registry.csv": 15,
     "deviations.csv": 1,
 }
@@ -183,10 +189,12 @@ def validate_registries(errors: list[str]) -> None:
 def validate_figures(errors: list[str]) -> None:
     html_paths = sorted((PLAN / "figures" / "html").glob("*.html"))
     tikz_paths = sorted((PLAN / "figures" / "tikz").glob("*.tex"))
-    if len(html_paths) != 2:
-        errors.append(f"expected 2 completed HTML plan figures; found {len(html_paths)}")
-    if len(tikz_paths) != 3:
-        errors.append(f"expected 2 TikZ figures plus 1 shared style; found {len(tikz_paths)}")
+    if len(html_paths) != 4:
+        errors.append(f"expected 4 public HTML plan figures; found {len(html_paths)}")
+    if len(tikz_paths) != 5:
+        errors.append(
+            f"expected 4 public TikZ figures plus 1 shared style; found {len(tikz_paths)}"
+        )
 
     external_script = re.compile(r"<script[^>]+src\s*=\s*['\"]https?://", re.IGNORECASE)
     for path in [PLAN / "index.html", *html_paths]:
@@ -207,7 +215,10 @@ def validate_figures(errors: list[str]) -> None:
         data = PLAN / "figures" / "data" / f"{stem}.csv"
         html = PLAN / "figures" / "html" / f"{stem}.html"
         pdf = PLAN / "figures" / "pdf" / f"{stem}.pdf"
-        for expected in (data, html, pdf):
+        required = [data, html, pdf]
+        if stem in {"F10_split_design", "F11_domain_support"}:
+            required.append(PLAN / "figures" / "png" / f"{stem}.png")
+        for expected in required:
             if not expected.is_file():
                 errors.append(f"completed figure artifact missing: {relative(expected)}")
         if not data.is_file() or not html.is_file():

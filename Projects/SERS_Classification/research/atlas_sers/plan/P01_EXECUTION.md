@@ -214,13 +214,15 @@ disentanglement, or classification generalization. It establishes that later
 experiments use a complete, consistent, reversible, explicitly transformed
 dataset.
 
-## Boundary to P02
+## Historical boundary to P02
 
-P02 remains forbidden until the P01 report is schema-valid and `pass`, every
+P02 remained forbidden until the P01 report was schema-valid and `pass`, every
 artifact rehashes, the identical build returns `verified_skip`, the latest-run
 validator passes, and the G0 evidence is reviewed. Only P02 may freeze
 physical-master-grouped partitions and information regimes. P01 results cannot
 be used to move representation thresholds or choose a representation based on
 future classifier outcomes. P02 may only enumerate source roles, metadata-only
 family support, and the registered QC quantile procedure. It may not invent a
-new preprocessing array or use target outcomes to choose one.
+new preprocessing array or use target outcomes to choose one. Those gates
+passed before the separate P02 freeze began; its evidence is documented in
+`P02_EXECUTION.md`.

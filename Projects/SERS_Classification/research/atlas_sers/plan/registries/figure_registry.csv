@@ -9,8 +9,8 @@ F06,S,P01,Preprocessing preservation by instrument,spectrum pair,representation 
 F07,E,P01,PCA structure before and after row scaling,master and spectrum,representation arrays,figures/tikz/F07_pca_structure.tex,figures/html/F07_pca_structure.html,Exploratory structure,complete
 F08,E,P01,PCA UMAP and t-SNE target-domain views,master,embedding tables,figures/tikz/F08_nonlinear_embeddings.tex,figures/html/F08_nonlinear_embeddings.html,Exploratory supplement,complete
 F09,E,P01,Clustering stability and metadata association,master,cluster stability tables,figures/tikz/F09_cluster_association.tex,figures/html/F09_cluster_association.html,Exploratory supplement,complete
-F10,P,P02,Master and instrument exclusion split schematic,partition,split contract,figures/tikz/F10_split_design.tex,figures/html/F10_split_design.html,Main methods figure,planned
-F11,S,P02,Primary and low-support domain registry,domain,domain support audit,figures/tikz/F11_domain_support.tex,figures/html/F11_domain_support.html,Methods support,planned
+F10,P,P02,Master and instrument exclusion split schematic,partition,split contract,figures/tikz/F10_split_design.tex,figures/html/F10_split_design.html,Main methods figure,complete
+F11,S,P02,Primary and low-support domain registry,domain,domain support audit,figures/tikz/F11_domain_support.tex,figures/html/F11_domain_support.html,Methods support,complete
 F12,S,P03,Classical inner-selection frequency and stability,outer run,classical selection registry,figures/tikz/F12_classical_selection.tex,figures/html/F12_classical_selection.html,Supplementary model selection,planned
 F13,S,P03,Within-station classical performance,station fold,classical T1 metrics,figures/tikz/F13_classical_t1.tex,figures/html/F13_classical_t1.html,Main baseline result,planned
 F14,P,P06,Unseen-instrument performance heatmap,domain,primary T3 metrics,figures/tikz/F14_t3_domain_heatmap.tex,figures/html/F14_t3_domain_heatmap.html,Main result,planned

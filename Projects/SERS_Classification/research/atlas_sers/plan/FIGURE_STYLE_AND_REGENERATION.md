@@ -10,11 +10,14 @@ Every registered figure ID produces the same analysis twice:
 figures/data/Fxx_slug.csv or json       frozen plot-level data
 figures/tikz/Fxx_slug.tex               native editable TikZ/PGFPlots
 figures/pdf/Fxx_slug.pdf                compiled vector verification
+figures/png/Fxx_slug.png                300-DPI review/preview raster
 figures/html/Fxx_slug.html              standalone interactive quick view
 figures/logs/Fxx_slug.pdflatex.log      compilation log
 ```
 
 A figure is incomplete if either the native TikZ or standalone HTML counterpart is absent.
+P02 and later phases additionally require a 300-DPI PNG for rapid review; the
+PNG is never the editable publication source.
 
 ## 2. Meaning of native TikZ
 
