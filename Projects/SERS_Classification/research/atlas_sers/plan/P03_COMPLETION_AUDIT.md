@@ -44,7 +44,7 @@ claim.
 | Figures | F12, F13, F38–F43 from one hashed table each; native TikZ, vector PDF, 300-DPI PNG, self-contained HTML | All eight protected figures passed exact-ID, form, parity, vector, and DPI validation |
 | P03 report and P04 comparator | private report, limitations, model specs, exact 260-cell C09 mapping, endpoint and metric hashes | Validated report/handoff and machine-readable comparator freeze are present |
 | Privacy and publication boundary | no protected inputs, identifiers, paths, predictions, or unreviewed aggregates in Git | Protected bundle remains outside Git; public promotion still requires disclosure review |
-| Repository delivery | full P00–P03 tests, scoped main-only commit, pushed main, green CI | Pending final public test/privacy run, scoped commit, push, and CI verification |
+| Repository delivery | full P00–P03 tests, scoped main-only commit, pushed main, green CI | 159 tests, lint, and public privacy/scaffold validation passed; scoped commits were pushed to `main`; the ATLAS GitHub Actions workflow passed |
 
 ## Frozen execution and verification order
 
@@ -66,9 +66,8 @@ claim.
 
 ## Completion decision
 
-The protected scientific execution is complete and independently validated.
-Repository delivery is the sole remaining administrative item in this audit.
-After the scoped main commit is pushed and CI is green, P03 is fully closed and
-P04 becomes the active execution phase. Any unavailable model endpoint or
-unsupported method remains part of the frozen P03 outcome and denominator; it
-must not be replaced by a post-outcome rerun or fallback.
+The protected scientific execution and repository delivery are complete and
+independently validated. P03 is fully closed, and P04 is the next executable
+phase. Any unavailable model endpoint or unsupported method remains part of
+the frozen P03 outcome and denominator; it must not be replaced by a
+post-outcome rerun or fallback.
