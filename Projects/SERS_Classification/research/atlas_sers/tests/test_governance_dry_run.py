@@ -31,6 +31,6 @@ def test_dry_run_is_deterministic_complete_and_authorizes_no_fits() -> None:
     )
     assert set(first) == expected_files
     rows = list(csv.DictReader(io.StringIO(first["expected_run_registry.csv"].decode())))
-    assert len(rows) == 43
+    assert len(rows) == 46
     assert all(row["fit_authorized"] == "false" for row in rows)
     assert all(row["finalized"] == "false" for row in rows)

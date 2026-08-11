@@ -43,7 +43,7 @@ def test_figure_registry_has_complete_native_and_html_pairs() -> None:
     with (PLAN / "registries/figure_registry.csv").open(newline="") as handle:
         rows = list(csv.DictReader(handle))
 
-    assert len(rows) == 38
-    assert {row["figure_id"] for row in rows} == {f"F{index:02d}" for index in range(38)}
+    assert len(rows) == 44
+    assert {row["figure_id"] for row in rows} == {f"F{index:02d}" for index in range(44)}
     assert all(row["tikz_path"].endswith(".tex") for row in rows)
     assert all(row["html_path"].endswith(".html") for row in rows)

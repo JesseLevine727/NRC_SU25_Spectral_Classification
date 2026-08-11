@@ -57,6 +57,11 @@ research/atlas_sers/
 │   ├── RESEARCH_QUESTION_MAP.md    Precise RQ comparisons and interpretations
 │   ├── P00_EXECUTION.md           Governance procedure and phase boundary
 │   ├── P01_EXECUTION.md           Data/representation freeze and validation
+│   ├── P02_EXECUTION.md           Evaluation-design freeze and leakage audit
+│   ├── P03_HANDOFF.md             Immutable classical consumer contract
+│   ├── P03_EXECUTION.md           No-fit expansion and protected run boundary
+│   ├── P03_DECISION_MEMO.md       Pre-fit compute/control decisions
+│   ├── P03_COMPLETION_AUDIT.md    Requirement-to-evidence completion matrix
 │   ├── FIGURE_STYLE_AND_REGENERATION.md
 │   ├── index.html                 Standalone plan dashboard
 │   ├── contracts/                 Machine-readable frozen protocols
@@ -74,6 +79,7 @@ research/atlas_sers/
 ├── scripts/run_p00.py             No-training governance audit/dry run
 ├── scripts/run_p01.py             Private data/representation freeze
 ├── scripts/run_p02.py             Private evaluation-design freeze
+├── scripts/run_p03.py             Classical planning and gated shard runner
 ├── scripts/validate_public_scaffold.py
 └── tests/                         Contract and privacy regression tests
 ```
@@ -143,6 +149,21 @@ predictive fits. See [plan/P02_EXECUTION.md](plan/P02_EXECUTION.md) for the
 validated design and [plan/P03_HANDOFF.md](plan/P03_HANDOFF.md) for the next
 phase's immutable consumer contract.
 
+P03 has implemented and validated its outcome-blind estimator expansion,
+leakage-audited role reconstruction, deterministic resumable workers,
+calibration, schema-normalized predictions, complete endpoint accounting,
+diagnostic tables, publication-figure rendering, independent final validation,
+and an exact P04 comparator freeze. Its complete proposed no-fit plan contains
+260,356 terminal task rows and at most 247,924 activated fits, including 20
+master-level permutations, metadata-only selection, and prior controls. The
+three pre-fit decisions were explicitly approved on 2026-08-10: a 250,000-fit
+ceiling, source-to-source covariance augmentation without target statistics,
+and the frozen negative-control design. Protected execution may begin only
+after the amended no-fit plan regenerates and independently validates with
+authorization enabled.
+See [plan/P03_EXECUTION.md](plan/P03_EXECUTION.md) and
+[plan/P03_DECISION_MEMO.md](plan/P03_DECISION_MEMO.md).
+
 ## Reproducibility rules
 
 - Split by physical `master_sample_id`; spectrum rows are not independent.
@@ -165,5 +186,6 @@ phase's immutable consumer contract.
 The research plan is execution-ready but is not a prospective preregistration:
 pilot and P01 descriptive results informed its design. P00 governance, P01
 data/representation freeze, and P02 evaluation-design freeze are executable and
-protected. P03 is the next phase and the first predictive boundary; no
-classical or deep result is implied by P02.
+protected. P03 is executing its pre-fit gate and is the first predictive
+boundary; no classical or deep result exists until its authorization gate is
+explicitly resolved.

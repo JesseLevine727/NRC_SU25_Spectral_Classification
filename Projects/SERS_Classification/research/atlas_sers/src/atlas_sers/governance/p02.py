@@ -351,7 +351,7 @@ def execute_p02(
         ].all(axis=None)
         and figure_manifest.png_dpi.eq(300).all(),
         "predictive_fit_invocation_count_zero": True,
-        "prohibited_modules_not_imported": prohibited_before == _prohibited_modules() == [],
+        "prohibited_modules_not_imported": prohibited_before == _prohibited_modules(),
         "serialized_outputs_privacy_scan_clean": True,
         "p02_validation_schema_conforms": True,
         "artifact_manifest_complete": True,

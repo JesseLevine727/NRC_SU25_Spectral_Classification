@@ -45,8 +45,8 @@
     "held_instrument": {"type": ["string", "null"]},
     "held_sensor_family": {"type": ["string", "null"]},
     "held_chemical": {"type": ["string", "null"]},
-    "outer_repeat": {"type": "integer", "minimum": 0},
-    "outer_fold": {"type": "integer", "minimum": 0, "maximum": 3},
+    "outer_repeat": {"type": "integer", "minimum": -1},
+    "outer_fold": {"type": "integer", "minimum": -1, "maximum": 3},
     "seed": {"type": ["integer", "null"]},
     "split_role": {"enum": ["train", "inner_validation", "calibration", "adaptation", "test", "excluded"]},
     "exclusion_reason": {"type": ["string", "null"]},
@@ -63,11 +63,11 @@
     "true_label": {"type": "string"},
     "predicted_label": {"type": "string"},
     "class_vocabulary": {"type": "array", "items": {"type": "string"}, "minItems": 2},
-    "probabilities": {"type": "array", "items": {"type": "number", "minimum": 0, "maximum": 1}, "minItems": 2},
+    "probabilities": {"type": ["array", "null"], "items": {"type": "number", "minimum": 0, "maximum": 1}, "minItems": 2},
     "logits": {"type": ["array", "null"], "items": {"type": "number"}},
     "anomaly_scores": {"type": ["object", "null"], "additionalProperties": {"type": "number"}},
     "inference_time_ms": {"type": ["number", "null"], "minimum": 0},
-    "run_status": {"enum": ["complete", "collapsed", "nan_failure", "resource_failure", "data_failure", "excluded_by_protocol"]},
+    "run_status": {"enum": ["complete", "collapsed", "nan_failure", "unsupported_candidate", "rank_failure", "convergence_failure", "numerical_failure", "resource_failure", "data_failure", "fit_failure", "excluded_by_protocol"]},
     "failure_reason": {"type": ["string", "null"]}
   }
 }

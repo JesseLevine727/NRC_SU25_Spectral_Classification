@@ -1,0 +1,194 @@
+{
+  "protocol_version": "atlas-sers-p03-classical-benchmark-v2-approved",
+  "phase": "P03",
+  "source_phase": "P02",
+  "primary_population": "primary_598",
+  "primary_policy": "PP-U-MIN",
+  "primary_representation": "R_MIN_400_1800",
+  "class_vocabulary": {
+    "cwa": ["4_nitrophenol", "ethanol", "ethyl_paraoxon"],
+    "pills": ["4_ANPP", "benzyl_fentanyl", "blank"],
+    "surfaces": ["4_ANPP", "acetaminophen", "benzyl_fentanyl"],
+    "T2-PS": ["4_ANPP", "benzyl_fentanyl"],
+    "T2-SP": ["4_ANPP", "benzyl_fentanyl"]
+  },
+  "planning": {
+    "model_fitting_authorized": true,
+    "registered_fit_budget_low": 5000,
+    "registered_fit_budget_high": 250000,
+    "primary_domains": 13,
+    "outer_repeats": 5,
+    "outer_folds": 4,
+    "pseudo_domain_cells": 128,
+    "master_cv_fallback_cells": 132,
+    "required_outputs": [
+      "environment_lock.json",
+      "input_hashes.json",
+      "protected_state.json",
+      "candidate_registry.csv",
+      "coral_candidate_registry.csv",
+      "control_registry.csv",
+      "expected_run_registry.csv",
+      "fit_manifest.csv",
+      "fit_count_by_phase_model_task.csv",
+      "estimated_cpu_hours.csv",
+      "estimated_gpu_hours.csv",
+      "estimated_disk_bytes.json",
+      "shard_manifest.csv",
+      "selection_shard_manifest.csv",
+      "budget_gate.json",
+      "P03_PLAN_VALIDATION_REPORT.json",
+      "P03_PLAN_ARTIFACT_HASHES.json"
+    ]
+  },
+  "candidate_order": [
+    "C-PRIOR",
+    "C-SPECTRAL-MATCH",
+    "C-NEAREST-CENTROID",
+    "C-PCA-LDA",
+    "C-PLS-DA",
+    "C-LOGREG-EN",
+    "C-RBF-SVM",
+    "C-RANDOM-FOREST",
+    "C-EXTRA-TREES"
+  ],
+  "non_registry_candidates": {
+    "C-PRIOR": {
+      "prior": ["empirical", "uniform"]
+    },
+    "C-SPECTRAL-MATCH": {
+      "metric": ["cosine", "pearson", "spectral_angle"]
+    }
+  },
+  "stochastic_seeds": [20260805, 20260817, 20260829],
+  "selection": {
+    "t1_inner_folds": "the three non-test outer master folds from master_split_registry.csv",
+    "t3_pseudo_domain": "supported source-instrument rows from inner_selection_registry.csv",
+    "t3_fallback": "exact inner_master_split_registry.csv assignments",
+    "objective": [
+      "mean_balanced_accuracy_desc",
+      "worst_balanced_accuracy_desc",
+      "macro_f1_desc",
+      "complexity_asc",
+      "candidate_order_asc"
+    ],
+    "t2_development": "all five frozen P02 master-split repeats within the training station; target station is never used for selection"
+  },
+  "calibration": {
+    "method": "single scalar temperature",
+    "scores": "master-grouped cross-fitted known-development scores",
+    "fold_source": "P02 master_split_registry.csv",
+    "outer_test_access": false
+  },
+  "coral": {
+    "status": "resolved_source_to_source_covariance_augmentation_v1",
+    "held_target_covariance_allowed": false,
+    "permitted_statistics": "source-development and source-pseudo-domain covariance only",
+    "proposed_method": {
+      "method_id": "source_to_source_covariance_augmentation_v1",
+      "rank_cap": 20,
+      "ridge_fraction_of_mean_feature_variance": 0.001,
+      "covariance_unit": "source_instrument_master_view",
+      "training_rows": "one raw pooled view plus one transformed view per destination source instrument for every source master",
+      "unseen_row_action": "direct_classifier_inference_without_target_transform",
+      "base_models": ["C-PCA-LDA", "C-RBF-SVM"]
+    }
+  },
+  "negative_controls": {
+    "status": "resolved_p03_negative_controls_v1",
+    "required_controls": [
+      "master_label_permutation",
+      "acquisition_metadata_only",
+      "station_or_target_prior"
+    ],
+    "unresolved_fields": [
+      "permutation_count_and_seeds",
+      "whether_candidate_selection_is_repeated_or_frozen",
+      "tasks_and_domains",
+      "metadata_feature_allowlist",
+      "metadata_model_and_grid",
+      "control_fit_budget"
+    ],
+    "proposed_design": {
+      "method_id": "p03_negative_controls_v1",
+      "primary_parent_experiment": "EXP-C09-T3",
+      "tasks_and_domains": "all 260 primary T3 outer cells with identical source and held-target roles",
+      "permutation": {
+        "count": 20,
+        "seeds": [20261001, 20261013, 20261025, 20261106, 20261118, 20261130, 20261212, 20261224, 20261306, 20261318, 20261330, 20261411, 20261423, 20261505, 20261517, 20261529, 20261610, 20261622, 20261704, 20261716],
+        "unit": "physical_master",
+        "exchangeability_block": "current_outer_source_role_within_station",
+        "candidate_policy": "freeze_real_label_C09_selected_candidate_and_hyperparameters_without_reselection",
+        "technical_seed_policy": "reuse_the_selected_family_seed_policy",
+        "test_labels": "unchanged_real_labels",
+        "probability_metrics": "not_reported"
+      },
+      "metadata_only": {
+        "model_id": "C-METADATA-LOGREG",
+        "base_model_id": "C-LOGREG-EN",
+        "candidate_grid": "the_existing_30_candidate_elastic_net_logistic_grid",
+        "selection_and_calibration": "identical_C09_source_pseudo_domain_or_master_cv_selection_and_source_master_crossfit_calibration",
+        "categorical_features": ["instrument", "instrument_family", "sensor_family", "sensor_variant", "source_format", "team"],
+        "numeric_features": ["averages", "laser_power", "n_points", "axis_min_cm1", "axis_max_cm1", "axis_step_median_cm1", "leading_constant_points", "trailing_constant_points", "finite_fraction"],
+        "source_fitted_operations": ["missingness_indicators", "numeric_median_imputation", "numeric_standardization", "categorical_missing_token", "categorical_one_hot_ignore_unknown"],
+        "prohibited_features": "identifiers_row_numbers_timestamps_scenario_or_label_fields_target_detection_logs_and_intensity_derived_QC_summaries"
+      },
+      "priors": {
+        "candidates": ["empirical", "uniform"],
+        "fit_role": "current_outer_source_role",
+        "test_role": "unchanged_held_target_role"
+      },
+      "interpretation": "leakage_chance_and_acquisition_confounding_diagnostics_only",
+      "selection_use": "no_control_outcome_may_select_a_model_preprocessing_threshold_or_fallback",
+      "maximum_additional_activated_fits": 37194,
+      "combined_literal_fit_ceiling": 247924
+    },
+    "outer_test_selection_allowed": false
+  },
+  "authorization": {
+    "decision_id": "P03-AUTH-20260810",
+    "status": "approved",
+    "approved_on": "2026-08-10",
+    "authority": "study_owner_explicit_authorization",
+    "outcome_access_before_approval": false,
+    "approved_decisions": [
+      "maximum_activated_fit_ceiling_250000",
+      "source_to_source_covariance_augmentation_v1_without_target_statistics",
+      "p03_negative_controls_v1"
+    ]
+  },
+  "fit_accounting": {
+    "forest_seeds_apply_to_inner_and_final_fits": true,
+    "inner_candidate_results_are_reused_by_C09_and_C10": true,
+    "calibration_refits_are_counted_separately": true,
+    "unsupported_candidates_remain_in_denominator": true
+  },
+  "resource_estimation": {
+    "native_math_threads_per_worker": 1,
+    "estimator_n_jobs": 1,
+    "worker_partition": "task_identifier_modulo_worker_count",
+    "cpu_seconds_per_fit_bounds": {
+      "C-PRIOR": [0.001, 0.01],
+      "C-SPECTRAL-MATCH": [0.002, 0.02],
+      "C-NEAREST-CENTROID": [0.002, 0.03],
+      "C-PCA-LDA": [0.02, 0.5],
+      "C-PLS-DA": [0.05, 1.5],
+      "C-LOGREG-EN": [0.03, 2.0],
+      "C-RBF-SVM": [0.02, 1.0],
+      "C-RANDOM-FOREST": [0.5, 8.0],
+      "C-EXTRA-TREES": [0.4, 6.0],
+      "C-SOURCE-CORAL": [0.05, 1.5]
+    },
+    "prediction_record_bytes": 4096,
+    "checkpoint_overhead_fraction": 0.25,
+    "shard_target_fits": 1000
+  },
+  "fatal_prohibitions": [
+    "P03 role UIDs differ from P02",
+    "held-target row enters fitting selection calibration or stopping",
+    "outer-test outcome changes candidate preprocessing threshold or fallback",
+    "target-batch statistic is computed for zero-shot evaluation",
+    "failed or unsupported cell disappears",
+    "completed run is overwritten"
+  ]
+}

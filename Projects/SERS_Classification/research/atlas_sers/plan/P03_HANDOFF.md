@@ -22,6 +22,12 @@ reassigning a master, changing a draw, or deriving a new test role in P03 is
 prohibited. A P03 validator must compare consumed role UID sets with P02
 exactly.
 
+The protected execution is content-addressed and resumable at selection-shard
+and outer-cell granularity. Deterministic multi-worker partitioning may reduce
+elapsed time, but it may not change any scientific role, seed, candidate,
+control, endpoint, or denominator. Corrupt completed shards are quarantined;
+they are never overwritten in place.
+
 ## Primary data and preprocessing
 
 The population is the 598-observation/69-master P01 primary population. The
@@ -125,6 +131,15 @@ classical endpoint and complete out-of-fold evidence needed for the later
 paired comparison. Report station, repeat, fold, class, master, instrument
 view, and domain reconciliations, but treat physical masters and held domains—not
 spectra or technical seeds—as the inferential units.
+
+The final bundle must also contain schema-validated row predictions, complete
+and unavailable endpoint coverage, selection frequency/stability/margins,
+confusion, reliability, negative-control, spectrum-versus-master, T1-versus-T3,
+cost/latency/size tables, and F12/F13/F38–F43 in matching TikZ, PDF, PNG, and
+self-contained HTML forms. A machine-readable P04 freeze must map every one of
+the 260 primary C09 cells to the exact source-selected classical model
+specification and hash the mapping and held-test endpoint identities. P04 may
+not reselect the classical comparator using P03 test results.
 
 ## Prohibited access
 
