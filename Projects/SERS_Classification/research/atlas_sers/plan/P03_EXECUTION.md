@@ -198,6 +198,25 @@ coverage, prediction-schema coverage, figure form/parity flags, exact P04
 mapping, and report presence. A run is not complete merely because every fit
 process exited; this independent validation must pass.
 
+## Completed protected execution
+
+The approved no-fit plan regenerated deterministically (`new`, then
+`verified_skip`) and independently validated before fitting. The protected run
+then completed all 225 selection shards, froze all 2,302 source-development
+selections, and completed all 8,082 executable outer/control shards. Final
+aggregation reconciled every one of the 260,356 planned fit IDs to one terminal
+status, retained unavailable endpoints in their declared denominators, rendered
+F12, F13, and F38–F43 in all required forms, and froze the exact 260-cell P04
+classical comparator. The independent final validator passed all required
+bundle, endpoint, schema, figure, fit-ledger, report, and handoff checks.
+
+The protected metrics, predictions, selected specifications, figures, gate
+outcomes, validation report, and run identities remain outside Git. This
+public completion record is evidence that the protocol executed; it is not a
+disclosure review or permission to publish predictive values. P04 is now the
+next executable phase and may consume only the machine-frozen comparator—not
+P03 held-test outcomes for neural development choices.
+
 ## Privacy and claim boundary
 
 The public repository contains code, schemas, aggregate plan counts, and

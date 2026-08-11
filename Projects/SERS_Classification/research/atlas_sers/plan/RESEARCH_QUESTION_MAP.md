@@ -135,10 +135,9 @@ The primary comparison is deliberately one cell: `PP-U-MIN × {selected classica
 
 ## Immediate next phase
 
-P02 has materialized the five-repeat master splits, 13 primary T3 partitions,
-adaptation/calibration roles, platform-family derivation/support, QC quantile
-source roles, 124 finite gate candidates, held-chemical roles, and fatal
-leakage assertions. Numerical QC cut points remain deliberately unresolved
-until calculated inside future source-training partitions. The next executable
-phase is P03: first perform its no-fit compute expansion, then run the
-definitive classical benchmark under `PP-U-MIN` using the immutable P02 bundle.
+P03 has completed the protected classical benchmark and frozen the exact
+260-cell `C-SELECTED` comparator mapping without using held-target outcomes for
+selection. The next executable phase is P04: validate the compact D0 ERM
+architecture, epoch budget, and source-only learning curves under the immutable
+P02 roles. P03 held-test scores, errors, selected families, controls, and
+figures remain prohibited inputs to every P04 development decision.

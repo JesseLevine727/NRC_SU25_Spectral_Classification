@@ -84,3 +84,4 @@ def test_final_execution_validator_reconciles_every_required_artifact(
     report = _validate_final_aggregation_directory(tmp_path, context=context)
     assert report["status"] == "pass"
     assert all(report["checks"].values())
+    json.dumps(report)

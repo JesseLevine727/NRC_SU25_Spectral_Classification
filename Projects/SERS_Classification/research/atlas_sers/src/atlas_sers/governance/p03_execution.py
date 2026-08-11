@@ -1262,11 +1262,12 @@ def _validate_final_aggregation_directory(
         "reports_present": (path / "P03_REPORT.md").is_file()
         and (path / "P04_HANDOFF.md").is_file(),
     }
+    checks = {name: bool(value) for name, value in checks.items()}
     return {
         "schema_version": "p03-execution-validation-v1",
         "execution_run_id": context.execution_run_id,
         "protected_state_sha256": context.execution_protected_state_sha256,
-        "status": "pass" if all(bool(value) for value in checks.values()) else "fail",
+        "status": "pass" if all(checks.values()) else "fail",
         "checks": checks,
         "diagnostics": {
             "fit_manifest_rows": len(context.fit_manifest),

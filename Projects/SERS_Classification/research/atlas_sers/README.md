@@ -149,18 +149,15 @@ predictive fits. See [plan/P02_EXECUTION.md](plan/P02_EXECUTION.md) for the
 validated design and [plan/P03_HANDOFF.md](plan/P03_HANDOFF.md) for the next
 phase's immutable consumer contract.
 
-P03 has implemented and validated its outcome-blind estimator expansion,
-leakage-audited role reconstruction, deterministic resumable workers,
-calibration, schema-normalized predictions, complete endpoint accounting,
-diagnostic tables, publication-figure rendering, independent final validation,
-and an exact P04 comparator freeze. Its complete proposed no-fit plan contains
-260,356 terminal task rows and at most 247,924 activated fits, including 20
-master-level permutations, metadata-only selection, and prior controls. The
-three pre-fit decisions were explicitly approved on 2026-08-10: a 250,000-fit
-ceiling, source-to-source covariance augmentation without target statistics,
-and the frozen negative-control design. Protected execution may begin only
-after the amended no-fit plan regenerates and independently validates with
-authorization enabled.
+P03 completed its protected classical benchmark after a deterministic no-fit
+plan and explicit approval of the 250,000-fit ceiling, source-to-source
+covariance control, and frozen negative controls. All 225 selection shards and
+8,082 executable outer/control shards reached validated terminal states; the
+260,356-row fit ledger, expected endpoints, predictions, diagnostics, eight
+four-format figures, private report, and exact 260-cell P04 comparator freeze
+then passed independent final validation. Predictive values, row-level
+evidence, gate outcomes, and generated figures remain private pending a
+separate disclosure review.
 See [plan/P03_EXECUTION.md](plan/P03_EXECUTION.md) and
 [plan/P03_DECISION_MEMO.md](plan/P03_DECISION_MEMO.md).
 
@@ -185,7 +182,8 @@ See [plan/P03_EXECUTION.md](plan/P03_EXECUTION.md) and
 
 The research plan is execution-ready but is not a prospective preregistration:
 pilot and P01 descriptive results informed its design. P00 governance, P01
-data/representation freeze, and P02 evaluation-design freeze are executable and
-protected. P03 is executing its pre-fit gate and is the first predictive
-boundary; no classical or deep result exists until its authorization gate is
-explicitly resolved.
+data/representation freeze, P02 evaluation-design freeze, and P03 classical
+benchmark are complete and protected. P04 is the next executable phase: it
+must validate the compact D0 architecture and source-only learning curves
+without using P03 held-test outcomes for architecture, optimizer, epoch,
+preprocessing, threshold, or fallback selection.
