@@ -6,7 +6,6 @@ import csv
 import io
 import json
 import os
-import re
 import subprocess
 import sys
 from dataclasses import asdict
@@ -29,7 +28,6 @@ from atlas_sers.governance.provenance import capture_provenance
 from atlas_sers.governance.registries import load_governance, validate_governance
 from atlas_sers.governance.runs import RunIdentity, deterministic_run_id
 
-RESTRICTED_SOURCE_PATTERN = re.compile(rb"(?<![a-z])" + bytes((110, 97, 116, 111)) + rb"(?![a-z])")
 SENSITIVE_PATTERNS = [
     bytes((47, 104, 111, 109, 101, 47)),
     bytes((92, 117, 115, 101, 114, 115, 92)),
@@ -69,13 +67,8 @@ def _training_modules() -> list[str]:
 
 
 def _payloads_are_sanitized(payloads: dict[str, bytes]) -> bool:
-    for name, content in payloads.items():
-        lowered_name = name.encode().lower()
+    for content in payloads.values():
         lowered = content.lower()
-        if RESTRICTED_SOURCE_PATTERN.search(lowered_name) or RESTRICTED_SOURCE_PATTERN.search(
-            lowered
-        ):
-            return False
         if any(pattern in lowered for pattern in SENSITIVE_PATTERNS):
             return False
     return True

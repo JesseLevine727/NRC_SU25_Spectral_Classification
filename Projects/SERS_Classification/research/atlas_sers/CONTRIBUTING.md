@@ -4,9 +4,9 @@
 
 1. Read `PUBLICATION_POLICY.md` and the relevant plan phase.
 2. Work on the branch authorized for the current repository workflow.
-3. Keep private inputs outside the checkout and access them through
-   `ATLAS_PRIVATE_ROOT` and `ATLAS_NATIVE_ROOT`; write private outputs only through
-   `ATLAS_ARTIFACT_ROOT`.
+3. Use the frozen compatibility variables `ATLAS_PRIVATE_ROOT`,
+   `ATLAS_NATIVE_ROOT`, and `ATLAS_ARTIFACT_ROOT` for governed executions.
+   Do not hard-code workstation paths.
 4. Add or update tests with each implementation slice.
 5. Run the public scaffold validator and the relevant scientific validation.
 6. Inspect the staged file list and diff before committing.
@@ -67,8 +67,10 @@ wrappers are not valid native figure sources.
 
 ## Pull-request checklist
 
-- [ ] Only ATLAS is used as the public project identifier.
-- [ ] No raw or row-level derived data is present.
+- [ ] Public-facing text identifies the study as NATO SERS; legacy `ATLAS`
+      implementation identifiers are changed only through a versioned migration.
+- [ ] Every raw, row-level, or model artifact in the staged set is intentionally
+      approved for public release rather than swept in from a generated workspace.
 - [ ] No absolute source paths or workstation identifiers are present.
 - [ ] Split and preprocessing fitting roles remain leakage-safe.
 - [ ] Research-question, preprocessing-policy, actual-action, access-regime,

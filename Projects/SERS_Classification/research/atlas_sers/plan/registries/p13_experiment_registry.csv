@@ -1,0 +1,8 @@
+experiment_id,scope,track,title,information_regime,models,preprocessing,status
+EXP-P13-AUDIT,S,design,Sample substrate and instrument support audit,metadata_only,none,none,complete
+EXP-P13-C01,S,recoverability,Classical substrate-conditioned held-instrument recoverability,zero_shot_source_only,C-RBF-SVM|C-PCA-LDA|C-PLS-DA|C-LOGREG-EN|C-RANDOM-FOREST|C-EXTRA-TREES|C-SELECTED,PP-U-MIN,draft_pending_freeze
+EXP-P13-C02,S,crossover,Same-master substrate by instrument crossover analysis,paired_observed_views,frozen_classical_panel,PP-U-MIN,draft_pending_freeze
+EXP-P13-C03,S,field_log,Recorded target-detection corroboration,complete_case_secondary,frozen_classical_scores,PP-U-MIN,draft_pending_freeze
+EXP-P13-C04,S,preprocessing,Universal preprocessing sensitivity,zero_shot_source_only,frozen_classical_panel,PP-U-MIN|PP-U-SG|PP-U-ARPLS,draft_pending_freeze
+EXP-P13-D01,S,deep,Compact deep held-instrument comparison,zero_shot_source_only,D0-ERM,PP-U-MIN,draft_pending_p04
+EXP-P13-D02,S,comparison,Paired compact-deep versus classical comparison,zero_shot_source_only,D0-ERM|frozen_classical_panel,PP-U-MIN,draft_pending_p04

@@ -1,67 +1,61 @@
-# ATLAS publication and data-boundary policy
+# NATO SERS publication and repository-boundary policy
 
-## Public identifier
+## Public identity and data status
 
-`ATLAS` is the sole public project identifier. Public filenames, prose,
-configuration identifiers, branches, commits, issues, pull requests, figures,
-and release notes must use it consistently. Do not expand the code word or
-identify the source organization, partners, event, or archive location.
+This is a public research repository for the NATO field-trial SERS dataset.
+`NATO SERS` may be used directly in filenames, prose, figures, reports, commit
+messages, and release notes. The former `ATLAS` label is retained only where
+changing a frozen protocol ID, environment variable, Python import path, or
+artifact hash would break reproducibility.
 
-## Allowed public content
+The source archive under the repository's top-level `2026July21/` directory is
+public by project-owner decision. Do not duplicate that archive inside
+`research/atlas_sers/`. This research package contains maintained code,
+contracts, aggregate results, and publication figures; large caches and
+checkpoints remain local unless explicitly selected as release artifacts.
 
-- source code that operates on abstract data contracts;
-- method descriptions and research hypotheses;
-- schemas, split rules, hyperparameter grids, experiment registries, and
-  decision gates;
-- preprocessing policy definitions, source-only selection rules, and
-  disclosure-reviewed aggregate coverage/action summaries;
-- synthetic fixtures that cannot be mistaken for observations;
-- aggregate, disclosure-reviewed metrics and figures;
-- native TikZ/PGFPlots and standalone HTML generated from approved aggregates.
+## Content suitable for GitHub
 
-## Content that must remain private
+- source data already designated public by the project owner;
+- source code, schemas, split rules, hyperparameter grids, and decision gates;
+- aggregate metrics and figures that have a documented publication review;
+- native TikZ/PGFPlots, vector PDF, PNG review copies, and standalone HTML;
+- support matrices containing recorded master IDs when intentionally released;
+- compact reports that state denominators, missing endpoints, and limitations.
 
-- raw spectra or instrument export files;
-- interpolated, normalized, smoothed, baseline-corrected, or otherwise derived
-  row-level spectra;
-- row-level manifests, labels, notes, timestamps, serial numbers, filenames,
-  or acquisition paths;
-- NumPy arrays, model checkpoints, embeddings, predictions, or fold membership
-  that can be joined back to observations;
-- row-level preprocessing actions, QC gate values, family support assignments,
-  fallback reasons, or policy thresholds that can be joined to observations;
-- original reports, recording logs, PDFs, and source spreadsheets;
-- absolute workstation paths, usernames, credentials, tokens, or remote data
-  locations;
-- text that identifies the organization, partners, event, or archive behind
-  the code word.
+## Content excluded from routine commits
+
+- credentials, tokens, private keys, or access-controlled source locations;
+- absolute workstation paths and usernames;
+- temporary fit caches, incomplete shards, lock files, and quarantine content;
+- large model checkpoints unless they are a deliberate, documented release;
+- LaTeX build products such as `.aux`, `.log`, `.fls`, and `.synctex.gz`;
+- redundant clean-rebuild trees and orchestration logs;
+- exploratory outputs that have not been reconciled with an authoritative run.
+
+Row-level predictions and fold assignments may be published only when the
+commit explicitly identifies them as intended research data. Aggregate P03
+tables and F12/F13/F38–F43 are approved for publication; fit caches,
+checkpoints, and the full terminal ledger are not part of that release.
 
 ## Required pre-commit checks
 
-Run:
+Run from `research/atlas_sers/`:
 
 ```bash
 python3 scripts/validate_public_scaffold.py
-git diff --cached --name-only
+ruff check src scripts tests
+pytest
 git diff --cached --check
 ```
 
-Review every staged path. Generated artifacts are private by default; an
-aggregate result becomes public only after a deliberate disclosure review.
+Review every staged path. Never use `git add -A` from this repository while
+large generated workspaces are present.
 
-The P00 environment lock, input verification, dry-run registries, validation
-report, artifact hashes, run-state files, quarantine records, and latest-run
-pointer are also private. Public phase status may state that P00 passed, but
-must not reveal resolved roots, workstation metadata, or private inventory.
-The same rule covers P01 manifests, native registry, representation bundles,
-row QC, preservation rows, embeddings, cluster assignments, figure artifacts,
-validation evidence, protected state, and latest-run pointer. P01 aggregate
-figure tables remain private until a separate disclosure review authorizes a
-public release.
+## Historical compatibility
 
-## Incident response
-
-If restricted content is committed, stop pushing immediately. If it has
-already reached a remote, deleting it in a later commit is insufficient because
-Git history retains the object. Revoke exposed credentials, preserve a local
-backup, and coordinate a dedicated history-rewrite and clone-rotation process.
+Existing names such as `research/atlas_sers`, the `atlas_sers` Python package,
+`${ATLAS_PRIVATE_ROOT}`, `${ATLAS_NATIVE_ROOT}`, `${ATLAS_ARTIFACT_ROOT}`, and
+`atlas-sers-*` protocol identifiers are compatibility interfaces. Their
+continued presence does not imply anonymization. New public-facing titles and
+new protocol prose should use NATO SERS.

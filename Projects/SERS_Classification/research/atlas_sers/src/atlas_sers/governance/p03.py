@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import subprocess
 import sys
 from pathlib import Path
@@ -33,7 +32,6 @@ from atlas_sers.governance.registries import load_governance, validate_governanc
 from atlas_sers.governance.runs import RunIdentity, deterministic_run_id
 
 PROHIBITED_MODULES = ("atlas_sers.models", "torch")
-RESTRICTED_SOURCE_PATTERN = re.compile(rb"(?<![a-z])" + bytes((110, 97, 116, 111)) + rb"(?![a-z])")
 SENSITIVE_PATTERNS = (
     bytes((47, 104, 111, 109, 101, 47)),
     bytes((92, 117, 115, 101, 114, 115, 92)),
@@ -90,9 +88,7 @@ def _prohibited_modules() -> list[str]:
 
 def _bytes_are_sanitized(content: bytes) -> bool:
     lowered = content.lower()
-    return not RESTRICTED_SOURCE_PATTERN.search(lowered) and not any(
-        pattern in lowered for pattern in SENSITIVE_PATTERNS
-    )
+    return not any(pattern in lowered for pattern in SENSITIVE_PATTERNS)
 
 
 def _artifact_tree_is_sanitized(root: Path) -> bool:

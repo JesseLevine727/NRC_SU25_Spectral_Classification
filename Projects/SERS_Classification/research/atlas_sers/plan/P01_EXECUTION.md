@@ -1,6 +1,6 @@
 # P01 data and representation freeze
 
-P01 converts the verified ATLAS source archive into a source-reversible,
+P01 converts the verified NATO SERS source archive into a source-reversible,
 analysis-ready private dataset. It freezes row identity, population tiers,
 native-source provenance, eight row-local spectral representations,
 preservation evidence, descriptive structure analyses, and figures F02–F09.

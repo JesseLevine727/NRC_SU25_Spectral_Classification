@@ -1,6 +1,6 @@
 # P03 classical benchmark execution
 
-P03 is the first predictive ATLAS phase. It must establish a classical
+P03 is the first predictive NATO SERS phase. It must establish a classical
 reference under `PP-U-MIN` without changing the P01 representation or any P02
 role. `P03_HANDOFF.md`, the master plan, the P03 registries, and
 `p03_governance_contract.json` jointly define the executable contract.
@@ -186,7 +186,7 @@ stability, entropy, winner margins, endpoint coverage, fixed-family T1-versus-
 T3, spectrum-versus-master, confusion, reliability, controls, and cost tables.
 It creates F12, F13, and F38–F43 from one hashed table per figure in native
 TikZ/PGFPlots, vector PDF, 300-DPI PNG, and standalone self-contained Plotly
-HTML. The private report records denominators, failures, controls, limitations,
+HTML. The report records denominators, failures, controls, limitations,
 and artifact hashes. The P04 handoff freezes the exact 260 C09 classical
 comparator cells and their selected model specifications; P04 may consume that
 freeze but may not select a different classical comparator from P03 test
@@ -210,19 +210,17 @@ F12, F13, and F38–F43 in all required forms, and froze the exact 260-cell P04
 classical comparator. The independent final validator passed all required
 bundle, endpoint, schema, figure, fit-ledger, report, and handoff checks.
 
-The protected metrics, predictions, selected specifications, figures, gate
-outcomes, validation report, and run identities remain outside Git. This
-public completion record is evidence that the protocol executed; it is not a
-disclosure review or permission to publish predictive values. P04 is now the
-next executable phase and may consume only the machine-frozen comparator—not
-P03 held-test outcomes for neural development choices.
+The project owner approved the aggregate report, aggregate tables, and
+F12/F13/F38–F43 for public release on 2026-09-02. Row-level predictions,
+selected-specification files, fit caches, serialized models, and the complete
+terminal ledger remain outside the maintained package. P04 is now the next
+executable phase and may consume only the machine-frozen comparator—not P03
+held-test outcomes for neural development choices.
 
-## Privacy and claim boundary
+## Release and claim boundary
 
-The public repository contains code, schemas, aggregate plan counts, and
-methods only. Spectra, row/master identifiers, role assignments, fit/test
-hashes, predictions, QC values, source notes, local paths, and provenance stay
-under the private artifact root. Authorization itself is not a result: until
-the complete protected execution and independent final validation pass, P03
-supports no accuracy, calibration, model-ranking, or classical-versus-deep
-conclusion.
+The maintained P03 release contains code, schemas, aggregate metric tables, and
+publication figures. It excludes row predictions, role assignments, local
+paths, caches, and model binaries. Publication does not expand the claim: P03
+supports a classical benchmark and acquisition-shift diagnosis, not a
+classical-versus-deep conclusion or universal instrument independence.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the public ATLAS scaffold without accessing private inputs."""
+"""Validate the public NATO SERS research package without loading source data."""
 
 from __future__ import annotations
 
@@ -16,10 +16,6 @@ sys.path.insert(0, str(PROJECT / "src"))
 
 from atlas_sers.governance.registries import load_governance, validate_governance  # noqa: E402
 
-# Kept as code points so the restricted source name is not reproduced in the
-# public repository. Matching is case-insensitive and covers paths and content.
-RESTRICTED_SOURCE_TOKEN = bytes((110, 97, 116, 111))
-RESTRICTED_SOURCE_PATTERN = re.compile(rb"(?<![a-z])" + RESTRICTED_SOURCE_TOKEN + rb"(?![a-z])")
 POSIX_USER_PREFIX = bytes((47, 104, 111, 109, 101, 47))
 WINDOWS_USER_PREFIX = bytes((92, 117, 115, 101, 114, 115, 92))
 
@@ -57,6 +53,7 @@ REQUIRED_FILES = {
     "plan/P03_DECISION_MEMO.md",
     "plan/P03_EXECUTION.md",
     "plan/P03_COMPLETION_AUDIT.md",
+    "plan/P13_PROTOCOL.md",
     "plan/FIGURE_STYLE_AND_REGENERATION.md",
     "plan/index.html",
     "plan/contracts/research_contract.json",
@@ -78,6 +75,15 @@ REQUIRED_FILES = {
     "plan/registries/preprocessing_policy_registry.csv",
     "plan/registries/artifact_registry.csv",
     "plan/registries/deviations.csv",
+    "plan/registries/p13_decision_registry.csv",
+    "plan/registries/p13_experiment_registry.csv",
+    "plan/registries/p13_figure_registry.csv",
+    "plan/registries/p13_metric_registry.csv",
+    "plan/registries/p13_phase_registry.csv",
+    "plan/registries/p13_research_question_registry.csv",
+    "plan/registries/p13_split_registry.csv",
+    "plan/registries/p13_support_policy_registry.csv",
+    "plan/registries/public_release_registry.csv",
     "scripts/run_p00.py",
     "scripts/run_p01.py",
     "scripts/run_p02.py",
@@ -97,6 +103,7 @@ REGISTRY_COUNTS = {
     "artifact_registry.csv": 46,
     "decision_gate_registry.csv": 15,
     "deviations.csv": 1,
+    "public_release_registry.csv": 2,
 }
 
 
@@ -121,20 +128,18 @@ def validate_required_files(errors: list[str]) -> None:
 
 def validate_publication_boundary(errors: list[str]) -> None:
     for path in all_files():
-        name_bytes = relative(path).encode("utf-8", errors="ignore").lower()
         content = path.read_bytes().lower()
-        restricted_name = RESTRICTED_SOURCE_PATTERN.search(name_bytes)
-        restricted_content = RESTRICTED_SOURCE_PATTERN.search(content)
-        if restricted_name or restricted_content:
-            errors.append(f"restricted source identifier found: {relative(path)}")
         if POSIX_USER_PREFIX in content or WINDOWS_USER_PREFIX in content:
             errors.append(f"absolute workstation path found: {relative(path)}")
         if path.suffix.lower() in PROHIBITED_ARTIFACT_SUFFIXES:
             errors.append(f"private artifact format found: {relative(path)}")
         if any(path.name.lower().endswith(suffix) for suffix in BUILD_SUFFIXES):
             errors.append(f"build by-product found: {relative(path)}")
-        if path.stat().st_size > 5_000_000:
-            errors.append(f"unexpected file larger than 5 MB: {relative(path)}")
+        size_limit = 10_000_000 if path.suffix.lower() == ".html" else 5_000_000
+        if path.stat().st_size > size_limit:
+            errors.append(
+                f"unexpected file larger than {size_limit // 1_000_000} MB: {relative(path)}"
+            )
         if path.is_symlink():
             errors.append(f"symbolic links are prohibited: {relative(path)}")
 
@@ -159,15 +164,15 @@ def validate_contracts(errors: list[str]) -> None:
     if not isinstance(research, dict):
         return
     protocol = str(research.get("protocol_version", ""))
-    if not protocol.startswith("atlas-sers-"):
-        errors.append("research protocol does not use the ATLAS namespace")
+    if not protocol.startswith(("atlas-sers-", "nato-sers-")):
+        errors.append("research protocol does not use a recognized NATO SERS namespace")
     inputs = research.get("authoritative_inputs", [])
     if not isinstance(inputs, list) or not inputs:
         errors.append("research contract has no authoritative input declarations")
         return
     for item in inputs:
         path = item.get("path", "") if isinstance(item, dict) else ""
-        if not str(path).startswith("${ATLAS_PRIVATE_ROOT}/"):
+        if not str(path).startswith(("${ATLAS_PRIVATE_ROOT}/", "${NATO_SERS_PRIVATE_ROOT}/")):
             errors.append(f"authoritative input is not private-root relative: {path}")
 
 
@@ -193,13 +198,32 @@ def validate_registries(errors: list[str]) -> None:
 
 def validate_figures(errors: list[str]) -> None:
     html_paths = sorted((PLAN / "figures" / "html").glob("*.html"))
-    tikz_paths = sorted((PLAN / "figures" / "tikz").glob("*.tex"))
-    if len(html_paths) != 4:
-        errors.append(f"expected 4 public HTML plan figures; found {len(html_paths)}")
-    if len(tikz_paths) != 5:
-        errors.append(
-            f"expected 4 public TikZ figures plus 1 shared style; found {len(tikz_paths)}"
-        )
+    tikz_paths = sorted(
+        path
+        for path in (PLAN / "figures" / "tikz").glob("*.tex")
+        if path.name != "sers_plan_style.tex"
+    )
+
+    html_stems = {path.stem for path in html_paths}
+    tikz_stems = {path.stem for path in tikz_paths}
+    for stem in sorted(html_stems | tikz_stems):
+        required = [
+            PLAN / "figures" / "html" / f"{stem}.html",
+            PLAN / "figures" / "tikz" / f"{stem}.tex",
+            PLAN / "figures" / "pdf" / f"{stem}.pdf",
+        ]
+        data_candidates = [
+            PLAN / "figures" / "data" / f"{stem}.csv",
+            PLAN / "figures" / "data" / f"{stem}.json",
+        ]
+        for expected in required:
+            if not expected.is_file():
+                errors.append(f"published figure artifact missing: {relative(expected)}")
+        if not any(path.is_file() for path in data_candidates):
+            errors.append(
+                "published figure semantic data missing: "
+                + " or ".join(relative(path) for path in data_candidates)
+            )
 
     external_script = re.compile(r"<script[^>]+src\s*=\s*['\"]https?://", re.IGNORECASE)
     for path in [PLAN / "index.html", *html_paths]:
@@ -217,15 +241,12 @@ def validate_figures(errors: list[str]) -> None:
 
     for tikz in (path for path in tikz_paths if path.name.startswith("F")):
         stem = tikz.stem
-        data = PLAN / "figures" / "data" / f"{stem}.csv"
+        data_candidates = [
+            PLAN / "figures" / "data" / f"{stem}.csv",
+            PLAN / "figures" / "data" / f"{stem}.json",
+        ]
+        data = next((path for path in data_candidates if path.is_file()), data_candidates[0])
         html = PLAN / "figures" / "html" / f"{stem}.html"
-        pdf = PLAN / "figures" / "pdf" / f"{stem}.pdf"
-        required = [data, html, pdf]
-        if stem in {"F10_split_design", "F11_domain_support"}:
-            required.append(PLAN / "figures" / "png" / f"{stem}.png")
-        for expected in required:
-            if not expected.is_file():
-                errors.append(f"completed figure artifact missing: {relative(expected)}")
         if not data.is_file() or not html.is_file():
             continue
         data_hash = hashlib.sha256(data.read_bytes()).hexdigest()
@@ -244,12 +265,12 @@ def main() -> int:
     validate_figures(errors)
 
     if errors:
-        print("ATLAS public scaffold validation: FAIL", file=sys.stderr)
+        print("NATO SERS research validation: FAIL", file=sys.stderr)
         for error in errors:
             print(f"- {error}", file=sys.stderr)
         return 1
 
-    print(f"ATLAS public scaffold validation: PASS ({len(all_files())} files checked)")
+    print(f"NATO SERS research validation: PASS ({len(all_files())} files checked)")
     return 0
 
 

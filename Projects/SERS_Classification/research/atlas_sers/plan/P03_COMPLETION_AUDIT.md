@@ -18,10 +18,11 @@ classical comparator is frozen for P04.
 
 Execution completion does not by itself assert that decision gate G1 passed,
 that any deep method is better or worse, or that `PP-U-MIN` is universally
-superior. Predictive values, terminal-cell details, gate outcomes, figures,
-and row-level evidence remain private until disclosure review. The public
-phase status records completed protocol execution, not a released scientific
-claim.
+superior. On 2026-09-02 the project owner approved publication of the aggregate
+report, aggregate tables, and F12/F13/F38–F43. Row-level predictions, fold
+assignments, fit caches, serialized models, and the full terminal ledger remain
+outside the maintained release. Publication does not change the frozen
+execution or convert a descriptive result into a passed gate.
 
 ## Requirement-to-evidence matrix
 
@@ -41,10 +42,10 @@ claim.
 | Metrics and diagnostics | M01/M03–M09/M23–M25/M31, coverage, confusion, reliability, controls, T1–T3 and spectrum–master comparisons | Complete and unavailable metric rows reconcile with exact denominators |
 | Failure and recovery accounting | atomic shards, content verification, warning/exception digests, quarantine, one terminal row per fit ID | All 260,356 fit IDs reconcile exactly once; final shard audits found no partial, lock, or quarantine content |
 | Runtime resource integrity | deterministic task partitions, one native math thread and `n_jobs=1`, source-only resource pilot | Worker scope changed only from resource evidence; shard descriptors record the one-thread limit |
-| Figures | F12, F13, F38–F43 from one hashed table each; native TikZ, vector PDF, 300-DPI PNG, self-contained HTML | All eight protected figures passed exact-ID, form, parity, vector, and DPI validation |
-| P03 report and P04 comparator | private report, limitations, model specs, exact 260-cell C09 mapping, endpoint and metric hashes | Validated report/handoff and machine-readable comparator freeze are present |
-| Privacy and publication boundary | no protected inputs, identifiers, paths, predictions, or unreviewed aggregates in Git | Protected bundle remains outside Git; public promotion still requires disclosure review |
-| Repository delivery | full P00–P03 tests, scoped main-only commit, pushed main, green CI | 159 tests, lint, and public privacy/scaffold validation passed; scoped commits were pushed to `main`; the ATLAS GitHub Actions workflow passed |
+| Figures | F12, F13, F38–F43 from one hashed table each; native TikZ, vector PDF, 300-DPI PNG, self-contained HTML | All eight figures passed exact-ID, form, parity, vector, and DPI validation and their aggregate forms are published |
+| P03 report and P04 comparator | report, limitations, model specs, exact 260-cell C09 mapping, endpoint and metric hashes | Validated aggregate report is published; machine-readable comparator freeze remains governed separately |
+| Publication boundary | no credentials, workstation paths, caches, checkpoints, or unintended row-level artifacts in the curated release | Aggregate release is under `results/p03_classical`; complete governed run remains outside the maintained package |
+| Repository delivery | full P00–P03 tests, scoped main-only commit, pushed main, green CI | 159 tests, lint, and repository validation passed; scoped commits were pushed to `main`; the NATO SERS GitHub Actions workflow passed |
 
 ## Frozen execution and verification order
 

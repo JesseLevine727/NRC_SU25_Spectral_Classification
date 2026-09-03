@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import subprocess
 import sys
 from dataclasses import asdict
@@ -41,7 +40,6 @@ from atlas_sers.preprocessing.representations import (
 )
 from atlas_sers.visualization.p01_figures import build_figure_tables, generate_p01_figures
 
-RESTRICTED_SOURCE_PATTERN = re.compile(rb"(?<![a-z])" + bytes((110, 97, 116, 111)) + rb"(?![a-z])")
 SENSITIVE_PATTERNS = [
     bytes((47, 104, 111, 109, 101, 47)),
     bytes((92, 117, 115, 101, 114, 115, 92)),
@@ -106,9 +104,7 @@ def _prohibited_modules() -> list[str]:
 
 def _bytes_are_sanitized(content: bytes) -> bool:
     lowered = content.lower()
-    return not RESTRICTED_SOURCE_PATTERN.search(lowered) and not any(
-        pattern in lowered for pattern in SENSITIVE_PATTERNS
-    )
+    return not any(pattern in lowered for pattern in SENSITIVE_PATTERNS)
 
 
 def _npz_is_sanitized(path: Path) -> bool:

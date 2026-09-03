@@ -1,4 +1,4 @@
-# ATLAS SERS figure style and regeneration contract
+# NATO SERS figure style and regeneration contract
 
 This document is normative. It applies to every plot, schematic, diagnostic, manuscript figure, and supplementary figure produced by the research master plan.
 

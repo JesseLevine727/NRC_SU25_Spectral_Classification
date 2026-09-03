@@ -1,0 +1,5 @@
+figure_id,scope,phase,title,data_source,tikz_path,html_path,status
+F44,S,P13,Sample by substrate by instrument coverage,F44_sample_substrate_instrument_matrix.csv,figures/tikz/F44_sample_substrate_instrument_matrix.tex,figures/html/F44_sample_substrate_instrument_matrix.html,complete
+F45,S,P13,Held-instrument analyte recoverability by substrate,P13 held-instrument metric table,figures/tikz/F45_substrate_recoverability.tex,figures/html/F45_substrate_recoverability.html,planned
+F46,S,P13,Same-master substrate by instrument crossover effects,P13 crossover effect table,figures/tikz/F46_substrate_instrument_crossover.tex,figures/html/F46_substrate_instrument_crossover.html,planned
+F47,S,P13,Recorded field-trial detection completeness and agreement,P13 field-log completeness and agreement table,figures/tikz/F47_recorded_detection_agreement.tex,figures/html/F47_recorded_detection_agreement.html,planned

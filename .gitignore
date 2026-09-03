@@ -1,3 +1,13 @@
 .venv/
 venv/
 __pycache__/
+*.egg-info/
+
+# NATO SERS publication builds: retain source/data/PDF/PNG/HTML, not TeX by-products.
+Projects/SERS_Classification/research/atlas_sers/plan/figures/logs/
+Projects/SERS_Classification/research/atlas_sers/plan/figures/pdf/*.aux
+Projects/SERS_Classification/research/atlas_sers/plan/figures/pdf/*.log
+Projects/SERS_Classification/research/atlas_sers/plan/figures/pdf/*.out
+Projects/SERS_Classification/research/atlas_sers/plan/figures/pdf/*.fls
+Projects/SERS_Classification/research/atlas_sers/plan/figures/pdf/*.fdb_latexmk
+Projects/SERS_Classification/research/atlas_sers/plan/figures/pdf/*.synctex.gz

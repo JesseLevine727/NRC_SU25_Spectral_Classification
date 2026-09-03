@@ -1,15 +1,16 @@
-# ATLAS SERS research
+# NATO field-trial SERS research
 
-This directory is the public, data-free execution scaffold for the ATLAS
-multi-instrument SERS study. The study asks whether acquisition-aware deep
+This directory is the maintained execution and evidence package for the public
+NATO multi-instrument SERS field-trial dataset. The study asks whether acquisition-aware deep
 representations improve chemical identification when the test instrument and
 physical samples are absent from model fitting. Parallel questions test whether
 universal, acquisition-platform-family-aware, or identity-blind row-QC
 preprocessing changes that conclusion without leaking held-test outcomes.
 
-The repository contains methods, contracts, registries, tests, and figure
-specifications. It intentionally contains no spectra, row-level metadata,
-derived feature arrays, fitted models, or local source paths.
+The wider repository contains the source archive. This maintained research
+package contains methods, contracts, registries, curated aggregate results, and
+publication figures. It intentionally excludes temporary caches, unrestricted
+checkpoint sweeps, and local workstation paths.
 
 ## Scientific direction
 
@@ -87,13 +88,14 @@ research/atlas_sers/
 See [REPOSITORY_ARCHITECTURE.md](REPOSITORY_ARCHITECTURE.md) for module
 boundaries, artifact flow, and implementation order.
 
-## Private data boundary
+## Governed data and artifact locations
 
-Set `ATLAS_PRIVATE_ROOT` to the immutable input directory and
-`ATLAS_NATIVE_ROOT` to the immutable native vendor-export directory, and set
-`ATLAS_ARTIFACT_ROOT` to a separate private output directory outside this
-public project. The roots must not overlap one another or this project. Never
-copy source spectra into this directory.
+The existing execution code retains the original compatibility variables
+`ATLAS_PRIVATE_ROOT`, `ATLAS_NATIVE_ROOT`, and `ATLAS_ARTIFACT_ROOT` because
+renaming them would invalidate frozen commands and artifact identities. They
+identify immutable inputs and governed run outputs; they are not a public
+pseudonym. Keep generated run stores outside this maintained package even when
+the underlying source dataset is public.
 
 ```bash
 export ATLAS_PRIVATE_ROOT=/path/outside/the/repository/atlas_inputs
@@ -149,15 +151,17 @@ predictive fits. See [plan/P02_EXECUTION.md](plan/P02_EXECUTION.md) for the
 validated design and [plan/P03_HANDOFF.md](plan/P03_HANDOFF.md) for the next
 phase's immutable consumer contract.
 
-P03 completed its protected classical benchmark after a deterministic no-fit
+P03 completed its governed classical benchmark after a deterministic no-fit
 plan and explicit approval of the 250,000-fit ceiling, source-to-source
 covariance control, and frozen negative controls. All 225 selection shards and
 8,082 executable outer/control shards reached validated terminal states; the
 260,356-row fit ledger, expected endpoints, predictions, diagnostics, eight
-four-format figures, private report, and exact 260-cell P04 comparator freeze
-then passed independent final validation. Predictive values, row-level
-evidence, gate outcomes, and generated figures remain private pending a
-separate disclosure review.
+four-format figures, report, and exact 260-cell P04 comparator freeze then
+passed independent final validation. The disclosure-reviewed
+[aggregate P03 report](results/p03_classical/P03_CLASSICAL_RESULTS.md), tables,
+and F12/F13/F38–F43 figure set are published under `results/p03_classical/` and
+`plan/figures/`. Row predictions, fit caches, and the full terminal ledger
+remain outside the maintained publication package.
 See [plan/P03_EXECUTION.md](plan/P03_EXECUTION.md) and
 [plan/P03_DECISION_MEMO.md](plan/P03_DECISION_MEMO.md).
 
@@ -183,7 +187,9 @@ See [plan/P03_EXECUTION.md](plan/P03_EXECUTION.md) and
 The research plan is execution-ready but is not a prospective preregistration:
 pilot and P01 descriptive results informed its design. P00 governance, P01
 data/representation freeze, P02 evaluation-design freeze, and P03 classical
-benchmark are complete and protected. P04 is the next executable phase: it
+benchmark are complete. The post-P03 P13 substrate-portability amendment is
+recorded in versioned draft registries and awaits the pre-fit `tau`, `delta`,
+and support-threshold decisions. P04 remains the next deep-learning phase: it
 must validate the compact D0 architecture and source-only learning curves
 without using P03 held-test outcomes for architecture, optimizer, epoch,
 preprocessing, threshold, or fallback selection.

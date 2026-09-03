@@ -1,6 +1,6 @@
 # P00 governance execution
 
-P00 establishes the state from which ATLAS can begin data engineering. It is a
+P00 establishes the state from which the NATO SERS study can begin data engineering. It is a
 definitive governance and input-integrity check, not a model experiment. It
 must import no training package, invoke zero fits, create no representation or
 split, and make no scientific interpretation.

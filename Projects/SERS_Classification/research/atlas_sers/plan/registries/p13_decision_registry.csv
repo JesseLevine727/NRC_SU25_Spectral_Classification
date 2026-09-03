@@ -1,0 +1,7 @@
+decision_id,title,decision,approver,status,must_precede
+P13-D01,Minimum useful recoverability threshold tau,unresolved,Li-Lin and project owner,pending_approval,Any P13 predictive fit
+P13-D02,Maximum acceptable source-to-held loss delta,unresolved,Li-Lin and project owner,pending_approval,Any P13 predictive fit
+P13-D03,Minimum source masters per class,metadata-only viability audit then freeze,project owner,pending_audit,Any P13 predictive fit
+P13-D04,Minimum held masters per class,metadata-only viability audit then freeze,project owner,pending_audit,Any P13 predictive fit
+P13-D05,P03 incomplete endpoint handling,retain failures and predeclare common-endpoint paired rule,project owner,pending_gate_memo,P04 or P13 deep comparison
+P13-D06,Primary preprocessing,PP-U-MIN with universal SG and arPLS paired sensitivities,project owner,approved,Any P13 predictive fit

@@ -1,12 +1,13 @@
-# ATLAS field-trial SERS research master plan v1
+# NATO field-trial SERS research master plan v1
 
 **Plan date:** 2026-08-05
 **Parallel-question amendment:** 2026-08-07, after P01 descriptive evidence and before P02 or any registered definitive predictive outcome
+**Field-trial-purpose amendment:** 2026-09-01, after completion of P03; substrate-portability outcomes have not been used to select the question, support rules, models, or thresholds
 **Plan status:** execution-ready analysis plan; no definitive experiments are authorized by this document itself
-**Primary data workspace:** private path supplied through `ATLAS_PRIVATE_ROOT`
+**Primary governed-data workspace:** path supplied through the legacy-compatible `ATLAS_PRIVATE_ROOT`
 **Plan workspace:** `research/atlas_sers/plan`
 **Primary scientific theme:** chemical identification under unseen-instrument acquisition shift
-**Parallel secondary themes:** universal, platform-family-aware, and identity-blind QC-adaptive preprocessing; target-access value; calibrated robustness; narrow unknown-chemical rejection
+**Parallel secondary themes:** universal, platform-family-aware, and identity-blind QC-adaptive preprocessing; target-access value; calibrated robustness; narrow unknown-chemical rejection; substrate portability and analyte recoverability across observed instruments
 **Independent experimental unit:** physical `master_sample_id`
 
 ## 0. Master decision
@@ -29,6 +30,16 @@ Conditional CORAL and conditional domain-adversarial learning are controls, not 
 The strongest fallback study is a classical, station-conditioned acquisition-shift benchmark with calibrated uncertainty, instrument-balanced master aggregation, and a fully documented negative result if deep learning adds no reliable value.
 
 Preprocessing is a separate experimental axis, not a hidden component of the model comparison. The primary question remains fixed under universal minimal min–max (`PP-U-MIN`). Three parallel questions then ask whether universal smoothing/baseline correction, source-selected platform-family rules, or source-selected row-local QC routing improve the same held-instrument predictions. A fourth asks what becomes achievable when explicitly declared target-instrument data are available. None may redefine the primary comparator after test outcomes are seen.
+
+### 0.1 Field-trial-purpose amendment
+
+The 2026-09-01 meeting note records Li-Lin's clarification that the field trial was intended to determine whether the SERS substrates could recover the required sample/analyte signal independently of the Raman instrument. This motivates a new, field-trial-aligned secondary question:
+
+> **Within each support-qualified substrate-family, station, and analyte setting, is analyte-discriminative signal recoverable on multiple observed instruments, including an instrument excluded from model fitting, without a practically important instrument-specific loss?**
+
+This is `RQ-S07`, a bounded substrate-portability question. It complements `RQ-P01` but does not retroactively replace the frozen primary learning-strategy question or reuse P03 outcomes to define success. “Instrument independent” is an equivalence/noninferiority claim over supported observed instruments, not a conclusion obtained by failing to reject an instrument effect. A positive claim requires supervisor-approved practical margins frozen before `RQ-S07` outcome analysis. Until those margins and the P13 support registry are frozen, the valid wording is “cross-instrument analyte recoverability” rather than “instrument-independent substrate.”
+
+ML or DL can establish that a labelled analyte pattern is predictively recoverable from spectra produced by a substrate on a held instrument. It cannot by itself prove physical adsorption, enhancement chemistry, a unique clean spectrum, or universal compatibility with arbitrary instruments. Classical models are the principal substrate-portability estimators because the independent support is small; compact deep models test only whether learned representations add recoverability beyond the frozen classical panel.
 
 ## 1. Evidence already observed and its consequences
 
@@ -78,6 +89,26 @@ These results are disclosed pilot knowledge. The definitive study must not:
 
 The fresh study differs by conditioning chemistry tasks on station, defining 13 support-qualified acquisition domains, using the repeated-master structure directly, and comparing all methods under a single common evaluation harness.
 
+### 1.4 Substrate-portability support audit
+
+The primary manifest contains four normalized SERS substrate families: pSERS Metrohm silver (324 spectra), H-SERS H-Kit (153), NRC Canadian SERS (98), and GaN/polymer (23). Of 69 physical masters, 67 were observed on at least two instruments, 39 were observed with at least two substrate families, and 32 support at least one complete two-substrate-by-two-instrument comparison. This repeated structure permits bounded within-substrate held-instrument analysis and paired substrate comparisons.
+
+The design is not globally factorial. H-SERS is concentrated at CWA, pSERS is concentrated in pills/surfaces, GaN/polymer has only 23 spectra from five masters, and substrate variants are substantially sparser than families. Substrate-family is therefore the principal factor; variant-level results are exploratory. No global “best substrate” ranking may pool unsupported station/analyte cells or mistake station composition for a substrate effect.
+
+The recorded `target_detected_log` field contains definite `Y`/`N` values for 375/598 spectra, is missing for 218, and has five ambiguous `M` values. Among nonblank targets, 356 rows have definite `Y`/`N`. This field is an incomplete operator/instrument-reported trial outcome and may be used only as a separately labelled corroborating endpoint with missingness sensitivity. It is not ground truth that analyte signal is physically absent or present in the stored spectrum.
+
+### 1.5 Why 598 spectra are only 69 independent samples
+
+The experimental unit for chemical generalization is the distinct recorded physical master sample, not an exported spectrum. The 598 spectra are repeated views of 69 physical masters acquired across instruments, substrates, and occasional repeated scans. Two spectra from the same master share the same sample identity, preparation context, analyte identity, concentration context, and often the same local handling history. They are informative repeated measurements, but they are correlated and cannot be counted as independent chemical examples. “69 independent samples” therefore means 69 indivisible split and inference groups; it is not a claim that the 69 preparations are perfectly independent and identically distributed in every chemical or operational respect.
+
+This distinction has three direct consequences:
+
+1. **Splitting:** every train/validation/test split is grouped by `master_sample_id`. If spectra from one physical master were placed in both training and testing, the model could recognize master-specific preparation or background features and report an over-optimistic chemical score.
+2. **Uncertainty:** confidence intervals and statistical resampling use physical masters and held acquisition domains as independent units; they never treat all 598 rows as 598 independent replicates.
+3. **Model capacity:** deep learning has an effective chemical sample size of 69, not 598. Large networks have substantial opportunity to memorize master, substrate, or instrument signatures. The DL branch therefore uses compact one-dimensional architectures, strong source-only regularization, master-grouped validation, early stopping without target-domain access, and multiple seeds. Classical models are the required benchmark and remain scientifically valuable if compact DL does not improve on them.
+
+The repeated views are nevertheless a strength of this dataset. They make it possible to ask whether a prediction remains consistent when the same physical sample is observed through different instruments or substrates. Figure `F44` is the structural audit for that question: its 69 rows use the recorded physical-master IDs, its four panels are substrate families, its ten columns are instruments, and each cell records the number of stored spectra. Gray cells mean that combination was not measured; they are missing design cells, not failed detections. Of the full 69-by-4-by-10 grid, 374 combinations are observed and 2,386 are unobserved.
+
 ## 2. Claim hierarchy
 
 Every result and figure must carry one of these scope labels.
@@ -96,6 +127,9 @@ Station-conditioned, zero-shot unseen-instrument chemical identification with un
 - source-selected platform-family-aware preprocessing;
 - source-selected identity-blind row-local QC preprocessing;
 - narrow within-station unknown-chemical rejection.
+- substrate-family-conditioned analyte recoverability under held-instrument shift;
+- paired substrate and substrate-by-instrument effects within supported same-master crossover cells;
+- incomplete field-trial operator detection outcomes as corroborating, not primary, evidence.
 
 ### E — exploratory
 
@@ -121,6 +155,10 @@ The study must not claim:
 - that a family-aware policy applies to an unseen platform family without its declared fallback;
 - that target-informed adaptation or preprocessing is zero-shot;
 - that a station-held-out chemical is a valid general open-set test.
+- that failure to reject an instrument coefficient proves substrate independence;
+- that successful ML classification proves physical adsorption, enhancement, or detection by the original instrument software;
+- that substrate families can be globally ranked when station, analyte, concentration, or instrument support is not crossed;
+- that a held-instrument model result applies to arbitrary unobserved instruments or substrate variants.
 
 ## 3. Immutable data contract
 
@@ -187,11 +225,19 @@ Any new transform, arPLS parameter, smoother, or combined SG+arPLS array require
 
 No common-axis array replaces the native source. Each prediction must be traceable to native coordinates and intensity hash. Peak-attribution figures must show both the common-grid model input and the corresponding native spectrum.
 
+### 3.6 Substrate and field-trial outcome contract
+
+For `RQ-S07`, “substrate” means the normalized `sensor_family`; `sensor_variant` is retained for exploratory stratification and never silently substituted for family. Every analysis row must retain substrate family, variant, physical master, station, target analyte, instrument, and immutable observation UID. The primary endpoint is spectral analyte recoverability, not `instrument_result` or `target_detected_log`.
+
+P13 must freeze a substrate support registry before fitting. A cell is defined by station, target analyte, substrate family, and held instrument. It must record row count, distinct physical masters, source instruments, class coverage, substrate variant coverage, definite/missing/ambiguous operator outcomes, and whether a same-master crossover exists. Unsupported cells remain visible with reason codes. Support thresholds may use metadata only and may not depend on accuracy, separability, or operator Y/N rate.
+
+The primary substrate representation is `PP-U-MIN`. Universal SG and arPLS are paired sensitivities. A substrate-specific transform selected using held-instrument outcomes is prohibited because it would confound substrate portability with preprocessing optimization. Any source-only substrate-aware preprocessing rule is a future research question and requires a new policy ID.
+
 ## 4. Scientific estimands and hypotheses
 
 ### 4.1 Research-question hierarchy
 
-The authoritative question definitions and cross-references are in `registries/research_question_registry.csv`. They are parallel but not equal in claim priority.
+The original v1 question definitions and cross-references are authoritative in `registries/research_question_registry.csv`. They are parallel but not equal in claim priority. `RQ-S07` is a post-P03 amendment recorded in the separately versioned `p13_*` registries; it does not silently change the original registry hash and remains draft until the pending thresholds are approved.
 
 | RQ | Scope | Question | Principal comparison |
 |---|---|---|---|
@@ -202,9 +248,10 @@ The authoritative question definitions and cross-references are in `registries/r
 | `RQ-S04` | S | What is the value of unlabeled, paired, or labelled target-instrument masters? | UDA/paired/few-shot curves versus zero-shot |
 | `RQ-S05` | S | Are frozen pipelines calibrated, selectively useful, and robust to declared stressors? | risk/coverage and degradation from the unperturbed pipeline |
 | `RQ-S06` | S | Can a station-conditioned model reject one held nonblank chemical? | known-only frozen scores over eight held tasks |
+| `RQ-S07` | S | Within supported substrate families, is analyte signal predictively recoverable without a practically important held-instrument loss? | substrate-conditioned held-instrument performance, crossover interaction, and equivalence margins |
 | `RQ-E01` | E | What changes in cross-view consistency, residual domain information, and failure structure? | D0 versus selected deep probes and paired diagnostics |
 
-The primary route is determined only by `RQ-P01`. No secondary preprocessing, adaptation, master aggregation, or open-set result can rescue or redefine it.
+The primary route is determined only by `RQ-P01`. No secondary preprocessing, adaptation, master aggregation, open-set, or substrate-portability result can rescue or redefine it. `RQ-S07` was added after P03 and must be reported with that outcome-access timing; it cannot be described as part of the original prospective freeze.
 
 ### 4.2 Factorial preprocessing × model design
 
@@ -271,6 +318,21 @@ This is an estimation problem first. Report \(\Delta\), its interval, the 13 pai
 | H6 | calibrated uncertainty supports useful abstention | risk–coverage curve, NLL, Brier, ECE | thresholds use development-known data only |
 | H7 | limited target-instrument data changes the achievable operating point | zero-shot versus UDA versus paired calibration versus supervised few-shot | information regimes never pooled |
 | H8 | unknown rejection remains fragile under field stress | station-conditioned open-set AUROC, AUPR, OSCR | secondary, narrow claim only |
+| H9 | a supported substrate carries analyte-discriminative information across observed instruments | substrate-conditioned held-instrument BA, worst-instrument loss, crossover substrate×instrument interaction, and target-adjusted instrument probe | requires frozen practical equivalence margins; classification alone is not physical detection proof |
+
+### 4.7 Substrate-portability estimands
+
+Let (BA_{b,s,d,m}) denote balanced accuracy for substrate family (b), station task (s), held instrument (d), and frozen model (m), with the held instrument and evaluation masters absent from fitting. Only metadata-qualified cells enter confirmatory summaries. For each supported substrate-task pair, report:
+
+1. the equal-instrument mean held-instrument balanced accuracy;
+2. the minimum held-instrument balanced accuracy and per-analyte recall;
+3. each held-instrument loss relative to the same model's source-only pseudo-instrument reference;
+4. between-instrument heterogeneity with intervals rather than a pooled row-weighted score; and
+5. the paired classical-versus-deep difference on identical cells.
+
+A substrate may receive a bounded portability statement only if its confidence interval clears a supervisor-approved minimum recoverability threshold \(\tau_{b,s}\) and every supported held-instrument loss lies within a supervisor-approved noninferiority margin \(\delta_{b,s}\). These margins are deliberately unresolved in this amendment and must be justified chemically and frozen before outcome computation. A nonsignificant instrument term is insufficient.
+
+For same-master crossover cells, estimate substrate, instrument, and substrate-by-instrument interaction effects while conditioning on station/analyte and retaining the physical master as the paired unit. Report model correctness/probability and spectral-quality endpoints separately. The incomplete operator Y/N field receives a separate paired or hierarchical binary analysis with missingness patterns and sensitivity bounds; it may corroborate but never define the primary ML endpoint.
 
 ## 5. Task and information-access regimes
 
@@ -337,6 +399,18 @@ Held-test labels and held-test performance may never select a policy in any regi
 
 Hold one nonblank chemical out within a station. The unknown chemical is absent from classifier fitting, score selection, calibration, and thresholding. Scores and score-selection policy are fixed across held chemicals. This is a stress test because only two known classes remain in each station task.
 
+### T5-SUB-PORT — substrate-conditioned held-instrument analyte recoverability
+
+Within each metadata-qualified substrate-family and station task, exclude one instrument from every fitting, selection, calibration, and stopping role and exclude evaluation physical masters. Train and evaluate the frozen classical panel first. Reuse the compact D0 and frozen acquisition-aware architecture only in cells passing the predeclared deep-support rule; retrain them on the substrate-conditioned source rows without architecture search. Results are reported by substrate, station, analyte, and held instrument. Unsupported cells are not pooled into an apparent overall substrate ranking.
+
+### T5-SUB-PAIR — paired substrate crossover
+
+Use only same-master/same-instrument cells containing at least two substrate families, with the complete two-substrate-by-two-instrument subset reported separately. Compare prediction correctness, true-class probability, calibration, and declared spectral-quality diagnostics using paired master-level inference. This task estimates substrate and substrate×instrument heterogeneity within observed crossover support; it does not generalize to substrate/analyte combinations absent from the crossover.
+
+### T5-LOG — recorded field-trial detection outcome
+
+Analyze definite `Y`/`N` values separately from spectral classification. Exclude `M` from the primary binary analysis but retain it and all missing rows in the completeness table. Model station/analyte, substrate family, instrument, and supported interactions with master-aware uncertainty. Repeat under transparent missingness sensitivities. Because the field may reflect operator judgement, instrument library matching, or trial workflow, label the result “recorded target-detection outcome,” not “ground-truth SERS signal.”
+
 ## 6. Primary domain registry
 
 The 13 primary domains contain all three station targets and at least 15 held-instrument test masters across pooled outer folds:
@@ -373,6 +447,7 @@ Eligibility is frozen from metadata/support, never from model performance.
 | P10 | representation/policy explainability, consistency, and error taxonomy | P06–P09 | attribution sanity, action audit, and domain failure audit |
 | P11 | question-wise statistics and decision gates | P06–P10 | primary interval, policy effects/interactions, promotion verdict |
 | P12 | RQ-mapped figures, manuscript tables, and reproducibility | all | TikZ/HTML parity and final validation |
+| P13 | field-trial substrate portability amendment | P01–P03; deep comparison additionally P04–P06 | frozen substrate support; classical-first held-instrument and crossover evidence; bounded claim audit |
 
 No phase may consume locked outputs from a downstream phase.
 
@@ -1163,19 +1238,21 @@ The research program is complete only when:
 - promotion gates yield an unambiguous Route A, B, or C decision;
 - prohibited claims are absent from abstracts, captions, and conclusions;
 - validation and artifact hashes pass from a clean rebuild.
+- the post-P03 field-trial amendment is either completed under a separately frozen P13 contract or explicitly reported as future work; it may not be folded retrospectively into the original primary claim.
 
-## 26. Immediate next action after plan approval
+## 26. Immediate next action after the field-trial amendment
 
-Do not begin with another model. Begin by implementing P00–P02:
+P00–P03 are complete. The original route next enters P04, but P13 now requires a short design-freeze step before any substrate-portability outcome is calculated. Proceed on two contamination-separated tracks:
 
-1. freeze the RQ, preprocessing-policy, experiment, metric, figure, and artifact registries;
-2. materialize the five-repeat master split registry;
-3. derive and validate the 13 T3-ZS domain partitions plus family-policy support and QC-threshold source roles;
-4. build the expanded dry-run run registry and reason-coded compute estimate, leaving evidence-dependent policy counts unresolved;
-5. obtain explicit approval of the frozen evaluation contract;
-6. then execute the definitive classical benchmark before any new deep model.
+1. review F44 with Li-Lin and verify the meaning of substrate family, target-detection log, and physical master against the field-trial documentation;
+2. obtain chemical/operational definitions for the minimum useful recoverability threshold `tau` and acceptable held-instrument loss `delta`;
+3. review and approve the separately versioned draft P13 research-question, experiment, metric, support, split, decision, and figure registries without modifying the original P00–P03 hashes;
+4. freeze metadata-only substrate-cell eligibility and the same-master crossover registry;
+5. execute the P13 classical recoverability analysis first, reusing the protected P03 families but selecting only from source data within each P13 cell;
+6. continue P04 compact deep development under its original source-only contract; P13 outcomes cannot select P04 architecture or epoch policy;
+7. compare compact DL with the P13 classical estimators only after both pipelines and identical P13 test UIDs are frozen.
 
-This ordering establishes the strongest comparator and ensures the deep investigation answers a scientific question rather than becoming an unconstrained architecture search.
+The very next action is therefore P13 design and margin approval, not another model fit. This preserves the original study while making the supervisor's field-trial question directly testable.
 
 ## 27. Phase-specific acceptance checklist
 
@@ -1184,7 +1261,7 @@ These are operational definitions of done. A phase does not advance because its 
 ### P00 acceptance
 
 - Protocol, phase, task, experiment, metric, model, figure, and artifact registries are mutually consistent.
-- All eight research questions and six preprocessing policies cross-reference valid experiments, models, metrics, figures, and claims.
+- All eight original research questions and six preprocessing policies cross-reference valid experiments, models, metrics, figures, and claims; the later RQ-S07 amendment is governed separately by P13.
 - Environment and repository state are recorded.
 - Protected input hashes match the completed restart.
 - The deviations log exists even when empty.
@@ -1299,6 +1376,89 @@ These are operational definitions of done. A phase does not advance because its 
 - Manuscript tables reconcile with machine metrics.
 - Clean rebuild validation and artifact hashes pass.
 
+### P13 — field-trial substrate portability amendment
+
+P13 answers Li-Lin's field-trial question without changing the already frozen P00–P03 primary analysis. It is a separate, explicitly post-outcome amendment. Before any P13 model is fit, create versioned RQ, experiment, metric, split, support, and figure-registry rows for `RQ-S07`; record the amendment date and the previously viewed P00–P03 outcomes; and freeze every support rule, practical margin, estimator, and multiplicity family. Existing registry hashes remain immutable.
+
+#### P13.1 Design and support freeze
+
+1. Reproduce the privacy-safe sample-by-substrate-by-instrument audit from the immutable manifest.
+2. Use the recorded master sample IDs in F44 and related public support artifacts, as approved by the project owner. Continue excluding source paths, filenames, operator identifiers, and credentials unless separately approved.
+3. Define the primary support cell as station, analyte, substrate family, and held instrument. Record spectra, physical masters, classes, source instruments, variants, definite/missing/ambiguous recorded outcomes, and same-master crossover status.
+4. Freeze metadata-only eligibility thresholds before performance is calculated. Never drop a difficult cell because of its accuracy, separability, or recorded detection rate.
+5. Preserve every unsupported cell in the registry with a reason code. Missing cells are absence of measurement, not negative detections.
+6. Treat substrate variants only as exploratory strata unless their crossed master/instrument support is sufficient under a separately frozen threshold.
+
+The starting audit contains 598 spectra, 69 physical masters, four substrate families, and ten instruments. It has 374 observed and 2,386 missing cells in the full master-by-family-by-instrument grid; 67 masters have at least two instruments, 39 have at least two substrate families, and 32 have at least one complete two-substrate-by-two-instrument crossover. These counts justify a bounded portability analysis but not a universal substrate ranking.
+
+#### P13.2 Primary classical recoverability analysis
+
+The principal P13 estimators are the already frozen classical families, selected strictly inside source data. For each eligible station/analyte/substrate/held-instrument cell:
+
+1. exclude every spectrum from the held instrument during fitting, transformation fitting, hyperparameter selection, calibration, and stopping;
+2. group all folds and resampling by physical master;
+3. fit the frozen classical panel under `PP-U-MIN`, with RBF SVM, PCA–LDA, PLS–DA, and tree ensembles retained or rejected only by the versioned source-only rule;
+4. evaluate analyte classification on the held instrument using balanced accuracy, macro recall, per-analyte recall, log loss, and calibration where supported;
+5. report each substrate-family cell separately before any support-weighted or equal-cell summary;
+6. compare held-instrument performance with matched source-instrument performance using a predeclared practical noninferiority margin `delta` and a minimum scientifically useful recoverability threshold `tau` approved with Li-Lin before outcomes are viewed.
+
+The claim is not based on a nonsignificant instrument coefficient. A substrate is supported as *portable over the tested instruments and supported analytes* only if its interval satisfies both the recoverability threshold and the noninferiority margin. Failure can mean evidence of a practically important loss, an inconclusive interval, or insufficient crossed support; these outcomes remain distinct.
+
+#### P13.3 Paired same-master crossover analysis
+
+Use the 32 crossover-capable masters to reduce preparation confounding. For each support-qualified two-substrate-by-two-instrument block:
+
+1. hold chemical/master identity fixed and compare prediction margin, calibrated analyte probability, correctness, and spectral representation distance across instruments;
+2. estimate substrate, instrument, and substrate-by-instrument terms with master blocking or hierarchical partial pooling;
+3. report paired differences and intervals at the master level;
+4. test whether instrument effects are practically small and whether they depend on substrate;
+5. distinguish direct crossover evidence from extrapolative model evidence.
+
+This is the most direct ML-based evidence available for the field-trial purpose because it asks whether the same prepared sample remains analyte-informative when both substrate and instrument change. It still establishes predictive portability, not the physical mechanism of SERS enhancement.
+
+#### P13.4 Compact deep-learning comparison
+
+Deep learning is secondary in P13 because the chemical generalization unit is only 69 physical masters. Use the frozen compact one-dimensional architecture branch, not a large unrestricted network search. The DL comparison must:
+
+- use the identical eligible cells, master splits, preprocessing arrays, and test UIDs as the classical analysis;
+- keep the selected architecture within the P04 parameter and tensor contract;
+- use source-only early stopping, dropout/weight decay, augmentation controls, multiple seeds, and collapse checks;
+- exploit repeated views only through predeclared view-consistency or supervised-contrastive objectives;
+- report whether it improves the classical estimator's paired held-instrument prediction, worst-cell behavior, calibration, or representation consistency;
+- retain a transparent negative result if the compact model does not add value.
+
+No model may count repeated spectra as independent samples when constructing splits or uncertainty intervals. The point of compactness is not merely fewer layers: it is to restrict memorization capacity in relation to 69 independent preparations while testing whether repeated cross-instrument views provide useful structured supervision.
+
+#### P13.5 Preprocessing and recorded field-trial outcomes
+
+`PP-U-MIN` is the primary representation because it preserves the acquisition-shift challenge and does not choose a different transform after seeing the held instrument. Apply universal SG and arPLS as paired sensitivities on identical UIDs. Report whether the portability conclusion changes, but do not select a winning substrate-specific correction from held-instrument outcomes. A future source-only substrate-aware policy requires a separate policy ID and fallback contract.
+
+Analyze `target_detected_log` only as a corroborating endpoint. Report completeness and missingness by station, substrate, instrument, and analyte; exclude ambiguous `M` from the definite binary endpoint; and compare recorded `Y`/`N` with model confidence using complete-case and explicitly defined missingness sensitivities. Do not train the primary analyte classifier on this outcome and do not interpret `N` as proof that no analyte information exists in the spectrum.
+
+#### P13.6 Required evidence package
+
+- `F44`: sample-by-substrate-by-instrument coverage matrix, with 69 recorded physical-master IDs and missing cells visible;
+- `F45`: held-instrument analyte recoverability by substrate and eligible cell, with `tau`, `delta`, and uncertainty shown;
+- `F46`: paired same-master substrate-by-instrument crossover effects;
+- `F47`: recorded field-trial detection completeness and agreement with model evidence;
+- a support registry, split registry, row predictions, master-level estimates, multiplicity-adjusted interval table, and bounded claim table;
+- native TikZ, compiled vector PDF, a review PNG, and standalone HTML from one frozen semantic table for every quantitative figure.
+
+### P13 acceptance
+
+- RQ-S07 is versioned as a post-P03 amendment; original frozen hashes and primary claims remain unchanged.
+- Li-Lin-approved `tau` and `delta` are frozen before P13 outcomes are inspected.
+- Support eligibility is reproducible from metadata alone; all observed and missing cells remain auditable.
+- All train/validation/test roles are master-grouped and exclude the held instrument in zero-shot analysis.
+- Classical and compact-DL predictions use identical supported cells, preprocessing representations, and test UIDs.
+- Single-spectrum, instrument-view, and physical-master estimates are labelled separately.
+- Same-master crossover inference uses masters, not spectra, as independent units.
+- Universal SG/arPLS sensitivities are paired and cannot redefine the primary `PP-U-MIN` result.
+- Recorded `Y`/`N` results include missingness accounting and remain corroborating.
+- Positive, negative, inconclusive, and unsupported outcomes are reported separately.
+- Claims are limited to tested substrate families, supported analytes/stations, and observed instrument families.
+- F44–F47 and their registries pass privacy, hash-parity, accessibility, and clean-rebuild checks.
+
 ## 28. Intended manuscript evidence package
 
 The eventual main manuscript should remain compact even though the supplement is comprehensive.
@@ -1311,6 +1471,7 @@ The eventual main manuscript should remain compact even though the supplement is
 4. Paired primary effect forest with hierarchical interval and worst-domain behavior.
 5. Mechanistic evidence: paired-view consistency plus target-adjusted domain probes.
 6. Calibration/operating figure or robustness figure, selected by the declared publication route.
+7. If P13 is completed, a bounded field-trial panel showing substrate-conditioned held-instrument recoverability and same-master crossover evidence; unsupported cells remain visible.
 
 ### Supplementary evidence
 

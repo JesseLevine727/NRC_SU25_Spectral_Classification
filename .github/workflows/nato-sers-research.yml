@@ -1,14 +1,14 @@
-name: ATLAS SERS public scaffold
+name: NATO SERS research validation
 
 on:
   pull_request:
     paths:
       - "Projects/SERS_Classification/research/atlas_sers/**"
-      - ".github/workflows/atlas-sers-public-scaffold.yml"
+      - ".github/workflows/nato-sers-research.yml"
   push:
     paths:
       - "Projects/SERS_Classification/research/atlas_sers/**"
-      - ".github/workflows/atlas-sers-public-scaffold.yml"
+      - ".github/workflows/nato-sers-research.yml"
 
 permissions:
   contents: read

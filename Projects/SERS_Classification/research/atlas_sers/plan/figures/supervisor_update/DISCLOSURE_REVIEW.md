@@ -2,7 +2,7 @@
 
 **Review date:** 2026-08-07
 
-**Release scope:** four descriptive ATLAS figures supporting the supervisor update
+**Release scope:** four descriptive NATO SERS figures supporting the supervisor update
 
 ## Approved content
 

@@ -1,0 +1,8 @@
+support_rule_id,dimension,rule,reason,status
+P13-SUP01,population,Use exactly 598 spectra and 69 physical masters from the frozen primary population,Preserves P01 identity,complete
+P13-SUP02,cell,Define cells by station analyte substrate family and held instrument,Matches the field-trial portability question,complete
+P13-SUP03,class_source,Minimum independent source masters per class,Must be selected from metadata support before outcomes,pending_owner_approval
+P13-SUP04,class_held,Minimum independent held-instrument masters per class,Must support interpretable recall and intervals,pending_owner_approval
+P13-SUP05,variants,Treat substrate variants as exploratory unless separately qualified,Avoids unsupported fine-grained rankings,draft
+P13-SUP06,missingness,Retain all unobserved and unsupported combinations with reason codes,Missing measurement is not failed detection,complete
+P13-SUP07,crossover,Require at least two shared instruments across two substrates for a master crossover block,Defines direct paired evidence,complete

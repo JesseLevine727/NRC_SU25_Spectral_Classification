@@ -1,0 +1,4 @@
+split_policy_id,title,fit_role,validation_role,test_role,grouping,forbidden_access,status
+P13-SP01,Substrate-conditioned zero-shot held instrument,all eligible source instruments,source-only master folds,one complete held instrument,physical master,Held instrument spectra labels QC summaries calibration and thresholds,draft_pending_support
+P13-SP02,Same-master crossover block,not_applicable,not_applicable,observed two-substrate by two-instrument block,physical master,Counting spectra as independent pairs,draft_pending_support
+P13-SP03,Compact deep paired comparison,identical P13-SP01 source rows,source-only master folds,identical P13-SP01 test UIDs,physical master,P03 or P13 held outcomes selecting architecture or epochs,draft_pending_p04

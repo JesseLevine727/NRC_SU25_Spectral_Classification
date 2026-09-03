@@ -110,7 +110,7 @@ Consequently:
 - all 260 cells must use the declared `PP-U-MIN` family fallback.
 
 This means `RQ-S02` is not estimable as a supported adaptive family-policy
-comparison on ATLAS v1. The fallback-inclusive endpoint remains defined, but
+comparison on the NATO SERS v1 population. The fallback-inclusive endpoint remains defined, but
 it is identical to the universal primary action and must not be presented as
 evidence that family-aware preprocessing works or fails.
 

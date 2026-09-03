@@ -1,6 +1,6 @@
-# ATLAS SERS research update
+# NATO field-trial SERS research update
 
-I have been organizing and examining the ATLAS field-trial SERS dataset to determine which research questions it can reliably address. The working dataset has 598 spectra from 69 physical samples, collected using 10 instruments across 7 chemical classes. The main preliminary finding is that spectra still group strongly by instrument after common scaling, which could obscure chemical differences. Background correction helps in some cases but can also remove useful chemical structure.
+I have been organizing and examining the NATO field-trial SERS dataset to determine which research questions it can reliably address. The working dataset has 598 spectra from 69 physical samples, collected using 10 instruments across 7 chemical classes. The main preliminary finding is that spectra still group strongly by instrument after common scaling, which could obscure chemical differences. Background correction helps in some cases but can also remove useful chemical structure.
 
 I am therefore setting up a controlled comparison of preprocessing and classification methods aimed at identifying chemicals on instruments and samples not used during method development. The next step is to define the training and independent test groups in advance, benchmark classical machine-learning methods, and then compare them with deep-learning methods designed to handle instrument differences. Once this workflow is stable, I will begin examining the cell dataset in parallel.
 

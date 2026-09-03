@@ -1,0 +1,51 @@
+{
+  "data_sha256": "8ef4a78e08362d71d6e1381373733346d106d8dac1b04046177ef2577f04926f",
+  "figure_id": "F44",
+  "independent_samples": 69,
+  "independent_unit": "physical master group",
+  "instruments": 10,
+  "masters_with_complete_two_substrate_two_instrument_crossover": 32,
+  "masters_with_two_or_more_instruments": 67,
+  "masters_with_two_or_more_substrates": 39,
+  "matrix_cells": 2760,
+  "missing_cells": 2386,
+  "observed_cells": 374,
+  "population": "primary_598",
+  "privacy": "public project-owner-approved artifact with recorded master IDs; no source filenames, paths, observation IDs, or operator IDs",
+  "research_question_id": "RQ-S07",
+  "sample_label_mode": "master-id",
+  "scope": "S",
+  "spectra": 598,
+  "substrate_families": 4,
+  "substrate_summary": {
+    "GaN_polymer": {
+      "instruments": 5,
+      "missing_cells": 678,
+      "observed_cells": 12,
+      "physical_masters": 5,
+      "spectra": 23
+    },
+    "H_SERS_H_Kit": {
+      "instruments": 5,
+      "missing_cells": 611,
+      "observed_cells": 79,
+      "physical_masters": 25,
+      "spectra": 153
+    },
+    "NRC_Canadian_SERS": {
+      "instruments": 8,
+      "missing_cells": 605,
+      "observed_cells": 85,
+      "physical_masters": 38,
+      "spectra": 98
+    },
+    "pSERS_Metrohm_silver": {
+      "instruments": 9,
+      "missing_cells": 492,
+      "observed_cells": 198,
+      "physical_masters": 45,
+      "spectra": 324
+    }
+  },
+  "two_substrate_two_instrument_crossover_cycles": 61
+}

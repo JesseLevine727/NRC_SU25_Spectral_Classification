@@ -1,0 +1,139 @@
+\documentclass[tikz,border=5pt]{standalone}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=-1
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\pgfplotsset{colormap/viridis}
+\definecolor{atlas0}{HTML}{0072B2}
+\definecolor{atlas1}{HTML}{D55E00}
+\definecolor{atlas2}{HTML}{009E73}
+\definecolor{atlas3}{HTML}{E69F00}
+\definecolor{atlas4}{HTML}{56B4E9}
+\definecolor{atlas5}{HTML}{CC79A7}
+\definecolor{atlas6}{HTML}{000000}
+\definecolor{atlas7}{HTML}{F0E442}
+% NATO SERS figure F39; data_sha256=3f062a572214f2c48ed95719e9ef6abac39af444b1142aadfe95c5de7e2d2c53
+% caption=(S) RQ-P01 descriptive acquisition-shift contrast for the four fixed families present in both C01–C08 and C10. Lines connect the same procedure, aggregation level, station, and technical split repeat; the unseen-instrument value is an unweighted mean over eligible domains. This is not a causal or paired-master effect because the information regimes and test roles differ. The line at 1/3 is three-class chance. PP-U-MIN, source-only fitting.
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 1, horizontal sep=1.35cm, vertical sep=1.5cm}, width=5.30cm, height=5.2cm, grid=major, tick label style={font=\tiny}, label style={font=\scriptsize}, title style={font=\scriptsize\bfseries,align=center}, legend style={font=\tiny,draw=none,fill=white,fill opacity=0.9,text opacity=1}]
+\nextgroupplot[title={Cwa},xlabel={Evaluation regime},ylabel={Balanced accuracy},ymin=0,ymax=1.02,xtick={0,1},xticklabels={Within station,Unseen instrument},x tick label style={rotate=42,anchor=east,font=	iny}]
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.9047619) (1,0.70789242)};
+\addlegendentry{C-EXTRA-TREES / instrument\_balanced\_master}
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.86772487) (1,0.72839506)};
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.86309524) (1,0.70260141)};
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.86309524) (1,0.75507055)};
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.78902116) (1,0.71715168)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.61670822) (1,0.62212522)};
+\addlegendentry{C-EXTRA-TREES / spectrum}
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.6270237) (1,0.62117284)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.62543071) (1,0.609329)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.63431337) (1,0.68277698)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.58811663) (1,0.61539602)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,0.8260582) (1,0.56349206)};
+\addlegendentry{C-PCA-LDA / instrument\_balanced\_master}
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,0.8260582) (1,0.56988536)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,0.87367725) (1,0.67548501)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,0.91071429) (1,0.66909171)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,0.8260582) (1,0.58708113)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.67619864) (1,0.54783951)};
+\addlegendentry{C-PCA-LDA / spectrum}
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.65995273) (1,0.52642055)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.64195366) (1,0.57858025)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.67942791) (1,0.59789242)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.6509532) (1,0.52810887)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.77380952) (1,0.58708113)};
+\addlegendentry{C-RBF-SVM / instrument\_balanced\_master}
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.81547619) (1,0.52138448)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.87367725) (1,0.61111111)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.81547619) (1,0.59876543)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.78439153) (1,0.6313933)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.60508545) (1,0.53019801)};
+\addlegendentry{C-RBF-SVM / spectrum}
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.61579485) (1,0.53602293)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.61495507) (1,0.54149912)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.6183445) (1,0.57210678)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.61483819) (1,0.53225269)};
+\addplot[black,dashdotted,line width=0.7pt,forget plot] coordinates {(0,0.33333333) (1,0.33333333)};
+\nextgroupplot[title={Pills},xlabel={Evaluation regime},ylabel={Balanced accuracy},ymin=0,ymax=1.02,xtick={0,1},xticklabels={Within station,Unseen instrument},x tick label style={rotate=42,anchor=east,font=	iny}]
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,1) (1,0.85333333)};
+\addlegendentry{C-EXTRA-TREES / instrument\_balanced\_master}
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,1) (1,0.85333333)};
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,1) (1,0.85333333)};
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,1) (1,0.84)};
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,1) (1,0.85333333)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.80300779) (1,0.76664167)};
+\addlegendentry{C-EXTRA-TREES / spectrum}
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.82970391) (1,0.78165416)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.81964644) (1,0.76686628)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.82130477) (1,0.76879221)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.83491021) (1,0.78832083)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,1) (1,0.85333333)};
+\addlegendentry{C-PCA-LDA / instrument\_balanced\_master}
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,1) (1,0.85333333)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,1) (1,0.84)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,1) (1,0.85333333)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,1) (1,0.84)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.75836005) (1,0.7821039)};
+\addlegendentry{C-PCA-LDA / spectrum}
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.7808794) (1,0.7874531)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.77196549) (1,0.78164382)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.77653322) (1,0.80624098)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.76813407) (1,0.77633189)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,1) (1,0.83047619)};
+\addlegendentry{C-RBF-SVM / instrument\_balanced\_master}
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,1) (1,0.81714286)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,1) (1,0.81714286)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,1) (1,0.81333333)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,1) (1,0.84380952)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.75154104) (1,0.78247956)};
+\addlegendentry{C-RBF-SVM / spectrum}
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.74650416) (1,0.78247956)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.74336344) (1,0.76590308)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.76652136) (1,0.78247956)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.74062345) (1,0.77324435)};
+\addplot[black,dashdotted,line width=0.7pt,forget plot] coordinates {(0,0.33333333) (1,0.33333333)};
+\nextgroupplot[title={Surfaces},xlabel={Evaluation regime},ylabel={Balanced accuracy},ymin=0,ymax=1.02,xtick={0,1},xticklabels={Within station,Unseen instrument},x tick label style={rotate=42,anchor=east,font=	iny}]
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.96969697) (1,0.68004329)};
+\addlegendentry{C-EXTRA-TREES / instrument\_balanced\_master}
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.96969697) (1,0.68607504)};
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.96969697) (1,0.69819625)};
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.96969697) (1,0.67943723)};
+\addplot+[color=atlas0,mark=*,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.96969697) (1,0.66940837)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.72215267) (1,0.61806464)};
+\addlegendentry{C-EXTRA-TREES / spectrum}
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.74091462) (1,0.62522881)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.72914855) (1,0.64565723)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.70625398) (1,0.60795608)};
+\addplot+[color=atlas1,mark=square*,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.75969397) (1,0.64258571)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,0.96969697) (1,0.56763348)};
+\addlegendentry{C-PCA-LDA / instrument\_balanced\_master}
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,0.96969697) (1,0.5061039)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,0.96969697) (1,0.54832131)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,0.96969697) (1,0.54088985)};
+\addplot+[color=atlas2,mark=triangle*,mark size=1.8pt,line width=0.8pt,densely dotted] coordinates {(0,0.96969697) (1,0.50705147)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.80052744) (1,0.53795127)};
+\addlegendentry{C-PCA-LDA / spectrum}
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.78118588) (1,0.46398335)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.81115168) (1,0.49368471)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.82456384) (1,0.51632441)};
+\addplot+[color=atlas3,mark=diamond*,mark size=1.8pt,line width=0.8pt,dashdotted] coordinates {(0,0.79181012) (1,0.49671883)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.96969697) (1,0.63988456)};
+\addlegendentry{C-RBF-SVM / instrument\_balanced\_master}
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.96969697) (1,0.63178451)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.93636364) (1,0.64615681)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.93636364) (1,0.62248196)};
+\addplot+[color=atlas4,mark=x,mark size=1.8pt,line width=0.8pt,solid] coordinates {(0,0.96969697) (1,0.6288456)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.72090071) (1,0.57643678)};
+\addlegendentry{C-RBF-SVM / spectrum}
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.73202921) (1,0.60133577)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.74839738) (1,0.59764857)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.72090071) (1,0.57389196)};
+\addplot+[color=atlas5,mark=+,mark size=1.8pt,line width=0.8pt,densely dashed] coordinates {(0,0.75606561) (1,0.59731154)};
+\addplot[black,dashdotted,line width=0.7pt,forget plot] coordinates {(0,0.33333333) (1,0.33333333)};
+\end{groupplot}
+\node[font=\normalsize\bfseries,anchor=south] at (current bounding box.north) {Within-station versus unseen-instrument classical performance};
+\end{tikzpicture}
+\end{document}

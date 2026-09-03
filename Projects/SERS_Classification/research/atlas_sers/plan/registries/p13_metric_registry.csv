@@ -1,0 +1,13 @@
+metric_id,title,unit,aggregation,role,status
+P13-M01,Balanced accuracy,proportion,spectrum instrument-view and physical-master,primary,draft
+P13-M02,Source-to-held balanced-accuracy loss,absolute proportion point,eligible held-instrument cell,primary,draft
+P13-M03,Per-analyte recall,proportion,class within eligible cell,primary,draft
+P13-M04,Macro F1,proportion,eligible held-instrument cell,secondary,draft
+P13-M05,Negative log likelihood,nats,calibrated eligible cell,secondary,draft
+P13-M06,Multiclass Brier score,squared probability error,calibrated eligible cell,secondary,draft
+P13-M07,Expected calibration error,proportion,calibrated eligible cell,secondary,draft
+P13-M08,Paired correctness difference,proportion,physical-master crossover block,primary_crossover,draft
+P13-M09,Paired true-class probability difference,probability,physical-master crossover block,secondary_crossover,draft
+P13-M10,Representation distance,distance,physical-master crossover block,exploratory,draft
+P13-M11,Recorded detection agreement,proportion,complete-case field-log observation,corroborating,draft
+P13-M12,Support coverage,counts and fractions,design cell,design,complete
