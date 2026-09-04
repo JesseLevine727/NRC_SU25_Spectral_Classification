@@ -294,8 +294,8 @@ def validate_governance(bundle: GovernanceBundle) -> dict[str, object]:
             contracts_valid = False
             continue
         version = str(contract.get("protocol_version", contract.get("$id", "")))
-        if not version.startswith("atlas-sers-"):
-            errors.append(f"{name} does not use the ATLAS namespace")
+        if not version.startswith(("atlas-sers-", "nato-sers-")):
+            errors.append(f"{name} does not use a recognized NATO SERS namespace")
             contracts_valid = False
     checks["contracts_parse_and_use_atlas_namespace"] = contracts_valid
 

@@ -1242,29 +1242,35 @@ The research program is complete only when:
 - validation and artifact hashes pass from a clean rebuild.
 - the post-P03 field-trial amendment is either completed under a separately frozen P13 contract or explicitly reported as future work; it may not be folded retrospectively into the original primary claim.
 
-## 26. Immediate next action after the P13 design freeze
+## 26. Immediate next action after P13 classical completion
 
-P00–P03 are complete, and the P13 design freeze passed on 2026-09-04. The
-thresholds, support tiers, estimator roles, preprocessing comparisons, split
-roles, intervals, multiplicity rule, failure handling, and field-log semantics
-are now locked in `nato-sers-p13-v1-locked`. Proceed on two
-contamination-separated tracks:
+P00–P03 are complete. The P13 design freeze and classical experiments
+`EXP-P13-C01` through `EXP-P13-C04` completed on 2026-09-04 under
+`nato-sers-p13-v1-locked`. All 240 execution shards and 42,360 registered fits
+reconciled; F45–F47 and the aggregate evidence release are complete. The
+primary analysis did not support substrate-wide portability: pSERS silver was
+inferior in two confirmatory domains, H-SERS H-Kit remained unresolved because
+of primary endpoint failures, and the other families had no confirmatory
+domains. Fixed models showed recoverability in individual domains but retained
+strong condition dependence. The frozen protocol is not reopened by these
+results.
 
-1. build and validate the deterministic no-fit P13 classical execution
-   manifest from the 13 confirmatory, three exploratory, and 18 unsupported
-   observed domains;
-2. execute `EXP-P13-C01` through `EXP-P13-C04` without modifying eligibility or
-   decisions after outcome access;
-3. produce F45–F47 and the complete prediction, interval, failure, and bounded-
-   claim tables;
-4. continue P04 compact deep development under its original source-only
-   contract; P13 outcomes cannot select P04 architecture or epoch policy; and
-5. compare compact DL with the P13 classical estimators only after the P04
-   architecture and identical P13 test UIDs are frozen.
+The very next action is P04 compact D0 development under its original
+source-only contract:
 
-The very next action is therefore the P13 classical no-fit expansion and
-execution-contract validation. The completed design freeze is not reopened by
-later model outcomes.
+1. validate the compact architecture, parameter count, input tensor, optimizer,
+   regularization, epoch ceiling, and source-only early-stopping rule without
+   accessing P03/P13 held outcomes;
+2. freeze the P04 architecture and training policy after source-only learning-
+   curve and stability checks;
+3. execute the compact model on the identical P13 domains, policies, split
+   roles, and test views; and
+4. compare it with C-SELECTED, fixed RBF-SVM, Random Forest, and Extra Trees,
+   emphasizing worst-domain recovery, calibration, and failure coverage rather
+   than only a pooled mean.
+
+P13 may motivate the scientific comparison, but its outcomes cannot choose the
+P04 architecture, epoch policy, preprocessing, or regularization.
 
 ## 27. Phase-specific acceptance checklist
 

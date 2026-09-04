@@ -153,12 +153,18 @@ Figure F44 is the design audit: each row is one recorded physical-master ID, pan
 
 ## Immediate next phase
 
-P03 has completed the protected classical benchmark and frozen the exact
-260-cell `C-SELECTED` comparator mapping without using held-target outcomes for
-selection. P13's design, thresholds, support, and evaluation registries were
-locked on 2026-09-04 before any P13 outcome calculation. The immediate P13 task
-is to build and validate its no-fit classical execution manifest, then execute
-`EXP-P13-C01` through `EXP-P13-C04`. P04 compact D0 development may continue in
-parallel. The tracks remain contamination-separated: P03/P13 held outcomes
-cannot select P04 architecture or epoch policy, and P04 outcomes cannot
-redefine P13 support or equivalence margins.
+P03 and P13 classical execution are complete. P13 retained all 34 observed
+domains but found no substrate family that passed the locked portability rule
+across every confirmatory domain. The primary result contained zero supporting,
+five inconclusive, two inferior, and six terminally unavailable confirmatory
+domains. The fixed RBF-SVM completed all 13 domains but still produced only two
+supporting, three inferior, and eight inconclusive results. Same-master
+crossover evidence and the arPLS sensitivity both showed meaningful
+condition-dependence.
+
+The immediate next phase is P04 compact D0 development. Its architecture,
+parameter budget, optimizer, epoch/early-stopping policy, and regularization
+must be selected and frozen using source-only evidence; P13 held outcomes may
+not select them. After that freeze, the compact model can be evaluated on the
+identical P13 domains and test views against C-SELECTED and robust fixed
+classical comparators. P04 outcomes cannot redefine P13 support or margins.

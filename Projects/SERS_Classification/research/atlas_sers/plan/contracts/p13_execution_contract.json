@@ -1,0 +1,84 @@
+{
+  "schema_version": "nato-sers-p13-execution-contract-v1",
+  "protocol_version": "nato-sers-p13-v1-locked",
+  "frozen_on": "2026-09-04",
+  "outcome_access": "No P13 predictive, crossover-effect, or field-log outcome was accessed while resolving this execution contract.",
+  "population": {
+    "spectra": 598,
+    "physical_masters": 69,
+    "eligible_domain_tiers": [
+      "confirmatory",
+      "exploratory_low_support"
+    ]
+  },
+  "preprocessing": {
+    "PP-U-MIN": "R_MIN_400_1800",
+    "PP-U-SG": "R_SG_400_1800",
+    "PP-U-ARPLS": "R_ARPLS_400_1800"
+  },
+  "procedure_order": [
+    "C-SELECTED",
+    "C-RBF-SVM",
+    "C-PCA-LDA",
+    "C-PLS-DA",
+    "C-LOGREG-EN",
+    "C-RANDOM-FOREST",
+    "C-EXTRA-TREES"
+  ],
+  "candidate_resolution": {
+    "primary": "Reuse the exact P03 EXP-C09-T3 candidate selected from source-only evidence for the same station, held instrument, outer repeat, and outer fold.",
+    "fixed_families": "Within each named family, reuse the lexicographic winner from the same P03 EXP-C09-T3 source-only selection trace. Verify the four previously materialized C10 family winners exactly.",
+    "preprocessing_sensitivity": "Hold the resolved candidate fixed across PP-U-MIN, PP-U-SG, and PP-U-ARPLS so the paired sensitivity changes preprocessing rather than model selection.",
+    "unrepresented_exploratory_domain": "When no P03 source-only selection exists, C-SELECTED is unavailable with no substitution. Fixed secondary families use their first declared candidate and remain exploratory."
+  },
+  "roles": {
+    "outer_training": "Same station and substrate family, non-held instruments, physical masters outside the current P02 outer-test fold.",
+    "calibration": "Cross-fitted source-only predictions using the matching P02 inner-master registry; if that registry does not exist for the exploratory domain, use each non-test P02 outer fold as a validation fold.",
+    "held_test": "Same station, substrate family, and held instrument on current P02 outer-test masters.",
+    "matched_source_test": "Same station and substrate family, non-held instruments, restricted to current outer-test masters that also have a held-instrument view.",
+    "independent_unit": "physical master",
+    "primary_prediction_unit": "master-substrate-instrument view"
+  },
+  "calibration": {
+    "method": "single scalar temperature from source-only cross-fitted scores",
+    "technical_seed_rule": "Average score vectors over every declared candidate seed before temperature fitting and final prediction.",
+    "held_access": false
+  },
+  "sharding": {
+    "unit": "domain by preprocessing policy by outer repeat",
+    "atomic_commit": true,
+    "verified_skip": true,
+    "terminal_failure_retention": true
+  },
+  "primary_metric": "three-class balanced accuracy after technical-repeat probability averaging within master-substrate-instrument view",
+  "matched_loss": "source balanced accuracy minus held balanced accuracy on physical masters having both held and source views",
+  "repeated_outer_prediction": "Average each observation's calibrated out-of-fold probabilities over the five outer repeats before technical-repeat and instrument-view aggregation.",
+  "crossover": {
+    "predictive_scope": "PP-U-MIN for every frozen classical procedure; F46 emphasizes C-SELECTED and the fixed RBF sensitivity.",
+    "required_prediction_cells": "All four held-view cells for substrate A and B crossed with instrument A and B must have completed out-of-fold predictions; otherwise retain the block as unavailable for the predictive contrast.",
+    "correctness_contrast": "For each master, compute [(correct_B,instrument_B - correct_A,instrument_B) - (correct_B,instrument_A - correct_A,instrument_A)].",
+    "true_class_probability_contrast": "Use the same difference-in-differences orientation on calibrated true-class probability.",
+    "representation_distance": "On PP-U-MIN master-view mean spectra, compute cosine distance between instrument A and B within each substrate and report distance_B minus distance_A.",
+    "intervals": "Master bootstrap for blocks with at least two masters; descriptive point estimate only for singleton blocks."
+  },
+  "field_log": {
+    "unit": "master-substrate-instrument view",
+    "repeat_handling": "Agreeing nonmissing technical-repeat log values define the view value; conflicts are ambiguous.",
+    "success_definition": "Y is successful recorded detection for nonblank analytes and N is successful recorded specificity for blank analytes.",
+    "definite_endpoint": "Exclude M and conflicting views; retain truly missing views for best- and worst-case bounds.",
+    "model_agreement": "On definite field-log views, compare recorded success/failure with correct/incorrect PP-U-MIN out-of-fold analyte classification from the same view.",
+    "model_scope": "Report every frozen classical procedure; F47 emphasizes C-SELECTED."
+  },
+  "portability_rule": {
+    "tau": 0.6,
+    "delta": 0.1,
+    "held_condition": "LCB95(held balanced accuracy) >= tau",
+    "loss_condition": "UCB95(source minus held balanced accuracy) <= delta"
+  },
+  "prohibitions": [
+    "held spectra or labels in fitting, candidate resolution, calibration, or threshold selection",
+    "candidate substitution after a fit failure",
+    "changing the P13 support tier after outcome access",
+    "using P13 outcomes to select P04 architecture or optimization"
+  ]
+}

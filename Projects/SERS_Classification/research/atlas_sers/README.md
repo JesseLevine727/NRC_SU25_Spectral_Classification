@@ -63,6 +63,9 @@ research/atlas_sers/
 │   ├── P03_EXECUTION.md           No-fit expansion and protected run boundary
 │   ├── P03_DECISION_MEMO.md       Pre-fit compute/control decisions
 │   ├── P03_COMPLETION_AUDIT.md    Requirement-to-evidence completion matrix
+│   ├── P13_PROTOCOL.md            Locked substrate-portability amendment
+│   ├── P13_EXECUTION.md           Deterministic no-fit execution expansion
+│   ├── P13_COMPLETION_AUDIT.md    Classical portability completion evidence
 │   ├── FIGURE_STYLE_AND_REGENERATION.md
 │   ├── index.html                 Standalone plan dashboard
 │   ├── contracts/                 Machine-readable frozen protocols
@@ -188,10 +191,15 @@ The research plan is execution-ready but is not a prospective preregistration:
 pilot and P01 descriptive results informed its design. P00 governance, P01
 data/representation freeze, P02 evaluation-design freeze, and P03 classical
 benchmark are complete. The post-P03 P13 substrate-portability amendment was
-locked on 2026-09-04 before P13 outcome access: `tau = 0.60`, `delta = 0.10`,
-and the metadata-only support registries are frozen. P13 classical execution
-and P04 compact-model development are the next contamination-separated tracks. P04
-remains the next deep-learning phase: it
+locked and its classical experiments C01–C04 completed on 2026-09-04. No
+substrate family met the locked instrument-portability decision across every
+confirmatory domain; performance and the benefit of baseline correction were
+condition-dependent. See the
+[P13 results](results/p13_portability/P13_RESULTS.md) and
+[completion audit](plan/P13_COMPLETION_AUDIT.md).
+
+P04 remains the next deep-learning phase. It
 must validate the compact D0 architecture and source-only learning curves
-without using P03 held-test outcomes for architecture, optimizer, epoch,
-preprocessing, threshold, or fallback selection.
+without using P03 or P13 held-test outcomes for architecture, optimizer, epoch,
+preprocessing, threshold, or fallback selection. Only after that freeze may the
+compact model be evaluated on the identical P13 domains and test views.

@@ -1,0 +1,22 @@
+{
+  "aggregation_protected_state_sha256": "2733c5f6bbb656a871c49154e0722fa66ff122b1839b03bd874c4c162861884c",
+  "execution_protected_state_sha256": "3d21aa17c7d6cd750ca9d28604fa601768ab35eb22f73263ce13d121963254ed",
+  "privacy_boundary": "aggregate tables only; no observation or master identifiers",
+  "private_execution_validation_report_sha256": "d846ef57524ac45efc0df1b46f9e1a7a74373d39204d3ede1a164154c686d053",
+  "protocol_version": "nato-sers-p13-v1-locked",
+  "public_files": {
+    "p13_figure_manifest.csv": "0aac422a697cb6bf772828ed9cdbb07523c1014c0f1214713ebfbaef2885b0f3",
+    "tables/class_cell_claims.csv": "4512973daecb55552f4d058eca38c03a02f465ebb96ea51980157e86a4846a12",
+    "tables/crossover_effects.csv": "455c37e7642c982d1f804c33883f563baa41751f89a87c60d0fda9821cb7ef08",
+    "tables/domain_claims.csv": "ca4e573fb6075e3e884e90a68e5b594d815d3bb6ba9873db7ac825428a51ae79",
+    "tables/domain_metrics.csv": "9d05ac109834aa74a678088d862a666a69756bd6e26167325cbca6de8a4ce163",
+    "tables/failure_table.csv": "fd62aa1d84c96551c676f4e66c6dabdab58c9685ff479baec0deb46752b2f846",
+    "tables/field_log_results.csv": "efc210af3c98327045e51be6c5055aecf6bd8aea17e6d987ac3b96d93cd7fe6f",
+    "tables/interval_table.csv": "2867355dc5e4e672be0845a7feea702b94025619990f066a96f5ab460f863602",
+    "tables/preprocessing_sensitivity.csv": "a37b1608c7556b8f69a5febf984fa2fa929d6011d615d92e86981fd25e0a7856",
+    "tables/procedure_comparison.csv": "e2e9b603d33ba3d26af31a05e719867ff859c13e9cc55a96c9b977432a258e44",
+    "tables/substrate_claims.csv": "729f18016b616bde1bc352f82415e8cafb70ee89d42327bbf70404bdf1487afc"
+  },
+  "run_id": "P13-3d21aa17c7d6cd750ca9d286",
+  "schema_version": "nato-sers-p13-public-release-v1"
+}

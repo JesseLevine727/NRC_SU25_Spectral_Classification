@@ -55,6 +55,8 @@ REQUIRED_FILES = {
     "plan/P03_COMPLETION_AUDIT.md",
     "plan/P13_FREEZE_MEMO.md",
     "plan/P13_PROTOCOL.md",
+    "plan/P13_EXECUTION.md",
+    "plan/P13_COMPLETION_AUDIT.md",
     "plan/FIGURE_STYLE_AND_REGENERATION.md",
     "plan/index.html",
     "plan/contracts/research_contract.json",
@@ -87,6 +89,7 @@ REQUIRED_FILES = {
     "plan/registries/p13_crossover_support_registry.csv",
     "plan/registries/p13_support_freeze_summary.json",
     "plan/registries/p13_support_policy_registry.csv",
+    "plan/registries/p13_completion_registry.csv",
     "plan/registries/public_release_registry.csv",
     "scripts/run_p00.py",
     "scripts/run_p01.py",
@@ -94,6 +97,13 @@ REQUIRED_FILES = {
     "scripts/run_p03.py",
     "scripts/publish_p02_figures.py",
     "scripts/build_p13_support_freeze.py",
+    "scripts/run_p13.py",
+    "scripts/publish_p13_results.py",
+    "scripts/validate_p13_public_release.py",
+    "results/p13_portability/README.md",
+    "results/p13_portability/P13_RESULTS.md",
+    "results/p13_portability/release_manifest.json",
+    "results/p13_portability/p13_figure_manifest.csv",
 }
 
 REGISTRY_COUNTS = {
@@ -118,7 +128,8 @@ REGISTRY_COUNTS = {
     "p13_split_registry.csv": 3,
     "p13_crossover_support_registry.csv": 34,
     "p13_support_policy_registry.csv": 10,
-    "public_release_registry.csv": 2,
+    "p13_completion_registry.csv": 10,
+    "public_release_registry.csv": 3,
 }
 
 

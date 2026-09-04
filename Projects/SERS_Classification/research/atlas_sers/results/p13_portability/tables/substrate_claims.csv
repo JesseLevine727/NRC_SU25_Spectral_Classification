@@ -1,0 +1,5 @@
+substrate_family,confirmatory_domains,supporting_domains,inferior_domains,inconclusive_domains,unavailable_domains,intersection_union_state
+GaN_polymer,0,0,0,0,0,no_confirmatory_domains
+H_SERS_H_Kit,3,0,0,1,2,unavailable_terminal_failure
+NRC_Canadian_SERS,0,0,0,0,0,no_confirmatory_domains
+pSERS_Metrohm_silver,10,0,2,4,4,inferior_portability
