@@ -53,6 +53,8 @@ REQUIRED_FILES = {
     "plan/P03_DECISION_MEMO.md",
     "plan/P03_EXECUTION.md",
     "plan/P03_COMPLETION_AUDIT.md",
+    "plan/P04_EXECUTION.md",
+    "plan/P04_COMPLETION_AUDIT.md",
     "plan/P13_FREEZE_MEMO.md",
     "plan/P13_PROTOCOL.md",
     "plan/P13_EXECUTION.md",
@@ -73,6 +75,7 @@ REQUIRED_FILES = {
     "plan/contracts/p02_governance_contract.json",
     "plan/contracts/p02_validation_schema.json",
     "plan/contracts/p03_governance_contract.json",
+    "plan/contracts/p04_execution_contract.json",
     "plan/registries/model_registry.csv",
     "plan/registries/research_question_registry.csv",
     "plan/registries/preprocessing_policy_registry.csv",
@@ -95,6 +98,9 @@ REQUIRED_FILES = {
     "scripts/run_p01.py",
     "scripts/run_p02.py",
     "scripts/run_p03.py",
+    "scripts/run_p04.py",
+    "scripts/publish_p04_results.py",
+    "scripts/validate_p04_public_release.py",
     "scripts/publish_p02_figures.py",
     "scripts/build_p13_support_freeze.py",
     "scripts/run_p13.py",
@@ -104,6 +110,10 @@ REQUIRED_FILES = {
     "results/p13_portability/P13_RESULTS.md",
     "results/p13_portability/release_manifest.json",
     "results/p13_portability/p13_figure_manifest.csv",
+    "results/p04_deep/README.md",
+    "results/p04_deep/P04_RESULTS.md",
+    "results/p04_deep/release_manifest.json",
+    "results/p04_deep/p04_figure_manifest.csv",
 }
 
 REGISTRY_COUNTS = {
@@ -113,11 +123,11 @@ REGISTRY_COUNTS = {
     "task_registry.csv": 15,
     "metric_registry.csv": 31,
     "experiment_registry.csv": 46,
-    "figure_registry.csv": 44,
+    "figure_registry.csv": 45,
     "model_registry.csv": 41,
     "artifact_registry.csv": 46,
     "decision_gate_registry.csv": 15,
-    "deviations.csv": 1,
+    "deviations.csv": 4,
     "p13_decision_registry.csv": 16,
     "p13_domain_support_registry.csv": 34,
     "p13_experiment_registry.csv": 7,
@@ -129,7 +139,7 @@ REGISTRY_COUNTS = {
     "p13_crossover_support_registry.csv": 34,
     "p13_support_policy_registry.csv": 10,
     "p13_completion_registry.csv": 10,
-    "public_release_registry.csv": 3,
+    "public_release_registry.csv": 4,
 }
 
 

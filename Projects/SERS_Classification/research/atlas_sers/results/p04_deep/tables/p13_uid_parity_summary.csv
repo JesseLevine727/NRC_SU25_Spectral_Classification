@@ -1,0 +1,2 @@
+primary_p04_contexts,p13_subset_pass_contexts,p13_union_exact_contexts,interpretation
+260,260,139,"Every P13 substrate-stratified held-test set is an exact subset of its corresponding P04 held-instrument test set; union parity is reported separately. This verifies test-view parity only: P04 fits all source substrates, whereas P13 classical fits are substrate restricted."

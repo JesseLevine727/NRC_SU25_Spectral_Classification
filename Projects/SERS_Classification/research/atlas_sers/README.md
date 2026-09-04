@@ -63,6 +63,8 @@ research/atlas_sers/
 │   ├── P03_EXECUTION.md           No-fit expansion and protected run boundary
 │   ├── P03_DECISION_MEMO.md       Pre-fit compute/control decisions
 │   ├── P03_COMPLETION_AUDIT.md    Requirement-to-evidence completion matrix
+│   ├── P04_EXECUTION.md           Compact D0 architecture and source-only training
+│   ├── P04_COMPLETION_AUDIT.md    D0 reconciliation, comparison, and limitations
 │   ├── P13_PROTOCOL.md            Locked substrate-portability amendment
 │   ├── P13_EXECUTION.md           Deterministic no-fit execution expansion
 │   ├── P13_COMPLETION_AUDIT.md    Classical portability completion evidence
@@ -84,6 +86,8 @@ research/atlas_sers/
 ├── scripts/run_p01.py             Private data/representation freeze
 ├── scripts/run_p02.py             Private evaluation-design freeze
 ├── scripts/run_p03.py             Classical planning and gated shard runner
+├── scripts/run_p04.py             Compact D0 planning, training, and comparison
+├── scripts/publish_p04_results.py Aggregate D0 report and four-format figures
 ├── scripts/validate_public_scaffold.py
 └── tests/                         Contract and privacy regression tests
 ```
@@ -198,8 +202,19 @@ condition-dependent. See the
 [P13 results](results/p13_portability/P13_RESULTS.md) and
 [completion audit](plan/P13_COMPLETION_AUDIT.md).
 
-P04 remains the next deep-learning phase. It
-must validate the compact D0 architecture and source-only learning curves
-without using P03 or P13 held-test outcomes for architecture, optimizer, epoch,
-preprocessing, threshold, or fallback selection. Only after that freeze may the
-compact model be evaluated on the identical P13 domains and test views.
+P04 compact D0 execution is complete: 16,458 fits, 320 complete evaluation
+contexts, and 960 final checkpoints. The 208,691-parameter ordinary residual
+classifier achieved mean unseen-instrument spectrum balanced accuracy 0.711
+(worst domain 0.379). Its pooled paired gain over C-SELECTED was +0.050
+(conditional 95% interval +0.022 to +0.078), but it showed no clear advantage
+over fixed Random Forest or Extra Trees. Probability calibration remains a
+limitation. See the [P04 results](results/p04_deep/P04_RESULTS.md),
+[completion audit](plan/P04_COMPLETION_AUDIT.md), and
+[interactive comparison](plan/figures/html/F48_deep_classical_comparison.html).
+
+P05 is next: expand and audit the predeclared source-only supervised-contrastive
+and paired-consistency experiments before fitting. D0 is now their frozen
+control; no D1–D5 model has been trained. The P04 reuse of P13 held test views is
+descriptive only: a controlled P13 deep comparison still needs exact
+substrate-restricted source refits, matched-source loss, and preprocessing
+sensitivities. Neither P13 support nor its portability margins has changed.

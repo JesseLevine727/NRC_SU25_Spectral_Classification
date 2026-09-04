@@ -18,7 +18,7 @@ C-CANDIDATE-SUITE,S,classical,Classical candidate suite,P03,true,registry_define
 C-SOURCE-CORAL,S,classical,Source-only CORAL plus PCA-LDA or SVM,P03,true,registry_defined,not_applicable,source pseudo-domain CV,frozen
 C-PERMUTED-SELECTED,S,control,Master-label-permuted frozen C09 procedure,P03,true,frozen_C09_selected,not_applicable,no candidate reselection,frozen
 C-METADATA-LOGREG,S,control,Acquisition-metadata-only elastic-net logistic,P03,true,registry_defined,not_applicable,identical C09 source-only selection,frozen
-D0-ERM,P,deep,Compact D0 ERM encoder,P04,true,250000,200,source-only development,planned
+D0-ERM,P,deep,Compact D0 ERM encoder,P04,true,250000,200,source-only development,frozen
 D1-ERM-SUPCON,P,deep,D1 ERM plus supervised contrastive,P05,true,250000,200,source-only development,planned
 D2-ERM-PAIR,P,deep,D2 ERM plus paired consistency,P05,true,250000,200,source-only development,planned
 D3-ERM-SUPCON-PAIR,P,deep,D3 ERM plus SupCon plus paired consistency,P05,true,250000,200,source-only development,planned

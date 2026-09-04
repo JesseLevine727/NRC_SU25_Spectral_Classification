@@ -162,9 +162,24 @@ supporting, three inferior, and eight inconclusive results. Same-master
 crossover evidence and the arPLS sensitivity both showed meaningful
 condition-dependence.
 
-The immediate next phase is P04 compact D0 development. Its architecture,
-parameter budget, optimizer, epoch/early-stopping policy, and regularization
-must be selected and frozen using source-only evidence; P13 held outcomes may
-not select them. After that freeze, the compact model can be evaluated on the
-identical P13 domains and test views against C-SELECTED and robust fixed
-classical comparators. P04 outcomes cannot redefine P13 support or margins.
+P04 is now complete. Its 208,691-parameter ordinary D0 control achieved mean
+unseen-instrument spectrum BA 0.711 (worst domain 0.379), with 260/260 complete
+held endpoint cells. The pooled paired gain over C-SELECTED was +0.050
+(conditional 95% interval +0.022 to +0.078), but there was no clear gain over
+fixed Random Forest or Extra Trees. Spectrum log loss was 1.635, worse than
+the uniform-probability reference 1.099. Thus RQ-P01 has a useful ordinary-deep
+baseline, not a completed acquisition-aware claim or solved calibration.
+
+The immediate next phase is P05's no-fit pair/loss/role expansion, followed by
+source-only supervised-contrastive and paired-consistency development under
+G3. D0 is frozen; D1–D5 have not been trained. All earlier held outcomes remain
+excluded from loss, architecture, preprocessing, epoch, and advancement
+selection. This is procedural separation, not analyst blinding.
+
+For RQ-S07, P04 predictions were reused on 15 exact PP-U-MIN P13 test views,
+including all 13 confirmatory domains, with seven passing held recovery alone.
+This is not a controlled learner comparison: D0 trained across source
+substrates, unlike P13's substrate-restricted classical fits. Exact P13 deep
+source refits, matched-source loss, and preprocessing sensitivities remain
+outstanding. P13 support and margins are unchanged. See
+[P04 results](../results/p04_deep/P04_RESULTS.md) and F19/F20/F48.

@@ -1242,7 +1242,7 @@ The research program is complete only when:
 - validation and artifact hashes pass from a clean rebuild.
 - the post-P03 field-trial amendment is either completed under a separately frozen P13 contract or explicitly reported as future work; it may not be folded retrospectively into the original primary claim.
 
-## 26. Immediate next action after P13 classical completion
+## 26. Current evidence and immediate next action after P04
 
 P00–P03 are complete. The P13 design freeze and classical experiments
 `EXP-P13-C01` through `EXP-P13-C04` completed on 2026-09-04 under
@@ -1255,22 +1255,52 @@ domains. Fixed models showed recoverability in individual domains but retained
 strong condition dependence. The frozen protocol is not reopened by these
 results.
 
-The very next action is P04 compact D0 development under its original
-source-only contract:
+P04 completed on 2026-09-04 under `nato-sers-p04-v1-locked`. The exact
+208,691-parameter D0 architecture passed G2 using only development optimization
+records. All 16,458 fits and 320 endpoint contexts completed, retaining 960
+final checkpoints and all diagnostic outcomes. Source-selected checkpoint
+medians were 32 epochs in development and 23 in T3 selection; final-refit
+medians were 30 epochs under the frozen minimum and median-checkpoint rule.
+No fit reached the 200-epoch ceiling.
 
-1. validate the compact architecture, parameter count, input tensor, optimizer,
-   regularization, epoch ceiling, and source-only early-stopping rule without
-   accessing P03/P13 held outcomes;
-2. freeze the P04 architecture and training policy after source-only learning-
-   curve and stability checks;
-3. execute the compact model on the identical P13 domains, policies, split
-   roles, and test views; and
-4. compare it with C-SELECTED, fixed RBF-SVM, Random Forest, and Extra Trees,
-   emphasizing worst-domain recovery, calibration, and failure coverage rather
-   than only a pooled mean.
+Under PP-U-MIN, D0's mean unseen-instrument spectrum BA was 0.711, with worst
+domain 0.379; master aggregation gave 0.765, with worst domain 0.367. The pooled
+paired D0-minus-C-SELECTED spectrum effect was +0.050 (conditional 95% interval
++0.022 to +0.078). D0 also improved over fixed RBF-SVM, but no clear advantage
+over Random Forest or Extra Trees was established. Its spectrum log loss of
+1.635 was worse than uniform three-class probabilities (1.099), so predictive
+discrimination and probability calibration must be reported separately.
+The 5,000-draw master bootstrap conditions on the observed domains and retained
+three-class support; it is not P11's final hierarchical inference or a G4 pass.
+See [P04 results](../results/p04_deep/P04_RESULTS.md) and
+[completion audit](P04_COMPLETION_AUDIT.md).
 
-P13 may motivate the scientific comparison, but its outcomes cannot choose the
-P04 architecture, epoch policy, preprocessing, or regularization.
+The very next action is the **P05 no-fit expansion and source-only development
+audit**, not another architecture search against the now-observed test scores:
+
+1. enumerate the predeclared D1–D5 loss configurations, P02 source roles, seeds,
+   fit counts, storage, and compute before training;
+2. verify same-master/cross-instrument pair support, prohibit same-chemical
+   negatives, and test deterministic pair sampling and weighting;
+3. preserve the frozen D0 backbone, PP-U-MIN, master isolation, and source-only
+   checkpoint, calibration, and advancement boundaries;
+4. execute the authorized development ablations, retaining failure and collapse
+   outcomes, and apply the P05/G3 advancement rule without held-test selection;
+5. freeze one advancing candidate or the explicit no-advance outcome, then
+   proceed to P06 and ultimately P11's definitive comparison.
+
+No D1–D5 model has been trained. P03/P13/P04 test outcomes are already known to
+investigators: the separation is procedural and code-enforced, not analyst
+blinding. Those outcomes cannot choose new losses, augmentation, preprocessing,
+thresholds, or training schedules within the locked branch.
+
+The P04/P13 reuse supplies exact held-test-view recovery in 15 PP-U-MIN
+substrate domains, including all 13 confirmatory domains; seven satisfy the
+held-recovery lower-bound criterion. It does **not** complete P13 D01/D02:
+D0 fitting pooled source substrates, whereas P13 classical fitting was
+substrate restricted. Controlled P13 deep refits on the exact source roles,
+matched-source loss, and SG/arPLS sensitivities remain outstanding. No substrate
+independence verdict follows from this reuse, and no P13 margin is reopened.
 
 ## 27. Phase-specific acceptance checklist
 

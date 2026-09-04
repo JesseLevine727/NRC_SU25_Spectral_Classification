@@ -18,8 +18,8 @@ F15,P,P11,Paired acquisition-aware versus classical domain differences,domain,pr
 F16,S,P06,Domain and class confusion matrices,spectrum,primary predictions,figures/tikz/F16_confusion_matrices.tex,figures/html/F16_confusion_matrices.html,Failure analysis,planned
 F17,S,P06,Calibration reliability by method and regime,master,calibration tables,figures/tikz/F17_calibration.tex,figures/html/F17_calibration.html,Uncertainty figure,planned
 F18,S,P06,Risk versus retained coverage,master,selective prediction tables,figures/tikz/F18_risk_coverage.tex,figures/html/F18_risk_coverage.html,Operational uncertainty,planned
-F19,S,P04,Compact encoder architecture,component,architecture contract,figures/tikz/F19_deep_architecture.tex,figures/html/F19_deep_architecture.html,Methods schematic,planned
-F20,S,P04,Deep learning curves and selected epochs,run,training histories,figures/tikz/F20_learning_curves.tex,figures/html/F20_learning_curves.html,Training validity,planned
+F19,S,P04,Compact encoder architecture,component,architecture contract,figures/tikz/F19_deep_architecture.tex,figures/html/F19_deep_architecture.html,Methods schematic,complete
+F20,S,P04,Deep learning curves and selected epochs,run,training histories,figures/tikz/F20_learning_curves.tex,figures/html/F20_learning_curves.html,Training validity,complete
 F21,S,P05,Loss component and source-development ablations,pseudo-domain,development candidate metrics,figures/tikz/F21_loss_ablation.tex,figures/html/F21_loss_ablation.html,Method development,planned
 F22,S,P10,Embedding target-domain trade-off,domain probe,embedding and probe tables,figures/tikz/F22_embedding_tradeoff.tex,figures/html/F22_embedding_tradeoff.html,Representation evidence,planned
 F23,S,P10,Same-master consistency and retrieval,master pair,pair diagnostic tables,figures/tikz/F23_pair_consistency.tex,figures/html/F23_pair_consistency.html,Mechanistic evidence,planned
@@ -43,3 +43,4 @@ F40,S,P03,Spectrum versus instrument-balanced master performance,held domain,cla
 F41,S,P03,Classical unseen-instrument confusion matrices,class within held domain,classical C09 pooled confusion,figures/tikz/F41_classical_confusion.tex,figures/html/F41_classical_confusion.html,Classical error diagnostic,complete
 F42,S,P03,Classical unseen-instrument calibration reliability,confidence bin,classical C09 calibrated predictions,figures/tikz/F42_classical_calibration.tex,figures/html/F42_classical_calibration.html,Classical calibration diagnostic,complete
 F43,S,P03,Classical negative controls and acquisition confounding,held domain,classical C09 real permutation metadata and prior controls,figures/tikz/F43_classical_controls.tex,figures/html/F43_classical_controls.html,Validity control diagnostic,complete
+F48,P,P04,Compact D0 versus frozen classical domain effects,held domain,P04 pooled paired physical-master bootstrap,figures/tikz/F48_deep_classical_comparison.tex,figures/html/F48_deep_classical_comparison.html,Conditional baseline comparison not final P11 inference,complete

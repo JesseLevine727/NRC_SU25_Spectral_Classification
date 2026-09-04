@@ -1,0 +1,10 @@
+experiment_id,stage,diagnostic,fit_count
+EXP-N00-DEV,final_selected_refit,not_applicable_final_refit,180
+EXP-N00-DEV,inner_selection,none,2824
+EXP-N00-DEV,inner_selection,overfit,416
+EXP-N00-T3,final_selected_refit,not_applicable_final_refit,780
+EXP-N00-T3,inner_selection,collapse,176
+EXP-N00-T3,inner_selection,none,8092
+EXP-N00-T3,inner_selection,optimization_instability,33
+EXP-N00-T3,inner_selection,overfit,3927
+EXP-N00-T3,inner_selection,underfit,30

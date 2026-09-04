@@ -1,0 +1,118 @@
+{
+  "schema_version": "nato-sers-p04-execution-contract-v1",
+  "protocol_version": "nato-sers-p04-v1-locked",
+  "population": {
+    "rows": 598,
+    "physical_masters": 69,
+    "representation_id": "R_MIN_400_1800",
+    "preprocessing_policy_id": "PP-U-MIN",
+    "input_features": 1401,
+    "axis_start_cm1": 400,
+    "axis_end_cm1": 1800,
+    "outer_repeats": 5,
+    "outer_folds": 4,
+    "primary_t3_domains": 13
+  },
+  "architecture": {
+    "model_id": "D0-ERM",
+    "residual_unit_clarification": "Each registered residual block is one pre-activation GroupNorm-GELU-dilated-Conv1d branch plus an identity skip. This outcome-blind implementation clarification keeps the prescribed channel/kernel/dilation sequence below the frozen parameter ceiling; a two-convolution branch would exceed it.",
+    "input_shape": ["batch", 1, 1401],
+    "group_norm_groups": 8,
+    "stem": {"in_channels": 1, "out_channels": 24, "kernel": 11, "stride": 1, "padding": 5},
+    "stage_1": {"channels": 24, "blocks": 2, "kernel": 7, "dilations": [1, 2]},
+    "transition_1": {"in_channels": 24, "out_channels": 48, "kernel": 5, "stride": 2, "padding": 2},
+    "stage_2": {"channels": 48, "blocks": 2, "kernel": 7, "dilations": [1, 2]},
+    "transition_2": {"in_channels": 48, "out_channels": 64, "kernel": 5, "stride": 2, "padding": 2},
+    "stage_3": {"channels": 64, "blocks": 2, "kernel": 5, "dilations": [1, 2]},
+    "ordered_pool_bins": 16,
+    "ordered_pool_implementation": "The 16 adaptive-average bin boundaries are evaluated explicitly as means over floor(iL/16):ceil((i+1)L/16), because PyTorch 2.9 CUDA does not provide a deterministic backward kernel for AdaptiveAvgPool1d. This is mathematically the registered adaptive averaging operation and was locked after a terminal pre-outcome smoke-test failure.",
+    "projection_dimensions": [1024, 96, 64],
+    "projection_activation": "GELU",
+    "projection_dropout": 0.2,
+    "station_local_class_head": true,
+    "maximum_trainable_parameters": 250000,
+    "batch_normalization_prohibited": true
+  },
+  "optimization": {
+    "optimizer": "AdamW",
+    "learning_rates": [0.0003, 0.001],
+    "weight_decays": [0.00001, 0.0001, 0.001],
+    "candidate_order": [
+      "LR0.0003_WD0.00001",
+      "LR0.0003_WD0.0001",
+      "LR0.0003_WD0.001",
+      "LR0.001_WD0.00001",
+      "LR0.001_WD0.0001",
+      "LR0.001_WD0.001"
+    ],
+    "training_seeds": [20260805, 20260817, 20260829],
+    "batch_size": 48,
+    "deterministic_cuda_workspace": ":4096:8",
+    "loss": "inverse-training-spectrum-frequency class-balanced cross-entropy",
+    "maximum_epochs": 200,
+    "minimum_epochs": 30,
+    "patience": 20,
+    "validation_frequency_epochs": 1,
+    "gradient_clip_norm": 5.0,
+    "checkpoint_order": [
+      "validation_balanced_accuracy_desc",
+      "validation_negative_log_likelihood_asc",
+      "epoch_asc"
+    ],
+    "final_refit_epoch_rule": "For each selected candidate and seed, use the rounded median best epoch across that outer context's authorized inner selection units, clipped to [30,200]; train on all authorized outer-source rows for exactly that many epochs.",
+    "selection_objective": [
+      "mean selection-unit balanced accuracy descending after equal seed averaging",
+      "worst selection-unit balanced accuracy descending after equal seed averaging",
+      "mean selection-unit macro-F1 descending after equal seed averaging",
+      "lower fixed candidate complexity rank ascending",
+      "declared candidate order ascending"
+    ],
+    "t1_inner_units": "the three non-test outer master folds",
+    "t3_inner_units": "P02 supported leave-one-source-instrument-out pseudo-domains; exact P02 three-fold source-master-CV fallback when fewer than two are supported",
+    "temperature_calibration": "one scalar per outer context and neural seed fitted only to selected-candidate master-disjoint inner validation logits with equal total weight per physical master",
+    "seed_ensemble": "average calibrated probabilities across all complete registered neural seeds before endpoint scoring"
+  },
+  "augmentation": {
+    "scope": "training rows only",
+    "order": ["multiplicative intensity", "linear baseline", "Gaussian noise", "wavenumber translation", "row min-max rescaling"],
+    "translation_cm1": [-2.0, 2.0],
+    "intensity_scale": [0.9, 1.1],
+    "linear_baseline_span_fraction": [-0.05, 0.05],
+    "noise_ratio_field": "first_difference_noise_mad divided by intensity_range",
+    "noise_levels": ["zero", "training_q25", "training_q50", "training_q75"],
+    "noise_sigma_conversion": "selected first-difference MAD ratio divided by 0.9538725524",
+    "rng_derivation": "SHA-256 of fit ID, training seed, epoch, batch ordinal, and augmentation version",
+    "logging": "fit-level source-only quantiles plus deterministic draw digest/count/ranges provide exact replay without publishing row identities",
+    "prohibited": ["target-derived noise", "arbitrary warping", "peak deletion", "different-chemical mixup"]
+  },
+  "execution": {
+    "development_experiment": "EXP-N00-DEV",
+    "held_evaluation_experiment": "EXP-N00-T3",
+    "development_cells": 60,
+    "held_cells": 260,
+    "shard_unit": "one outer context",
+    "selection_checkpoint_retention": "best-state hash and complete history retained; interim selection weights are transient",
+    "final_checkpoint_retention": "one immutable final checkpoint per complete outer context and neural seed",
+    "row_predictions_private": true,
+    "test_outcome_selection_prohibited": true,
+    "p03_p13_outcome_selection_prohibited": true,
+    "silent_restart_prohibited": true,
+    "terminal_failure_retained": true
+  },
+  "gates": {
+    "g2_finite_fit_fraction_minimum": 0.95,
+    "collapse_definition": "best validation prediction contains fewer than two predicted classes",
+    "underfit_definition": "best training balanced accuracy is no more than station-local chance plus 0.05",
+    "overfit_definition": "best-epoch training minus validation balanced accuracy exceeds 0.20",
+    "instability_definition": "last-ten validation balanced-accuracy standard deviation exceeds 0.15 or more than half of optimizer steps are gradient-clipped",
+    "held_evaluation_authorization": "G2 is evaluated from EXP-N00-DEV optimization records only; no development outer-test metric and no P03/P13 held outcome participates. A failed G2 preserves the negative result and blocks EXP-N00-T3."
+  },
+  "comparison": {
+    "classical_models": ["C-SELECTED", "C-RBF-SVM", "C-RANDOM-FOREST", "C-EXTRA-TREES"],
+    "primary_metric": "M01",
+    "secondary_metric": "M06",
+    "common_and_failure_sensitive_denominators_required": true,
+    "paired_unit": "outer domain by repeat by fold",
+    "repeat_measurements_are_not_independent": true
+  }
+}

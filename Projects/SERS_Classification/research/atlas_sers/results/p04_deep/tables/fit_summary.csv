@@ -1,0 +1,5 @@
+experiment_id,stage,planned_or_terminal_fits,complete_fits,mean_epochs,median_epochs,mean_elapsed_seconds,total_elapsed_seconds,peak_cuda_megabytes,completion_fraction
+EXP-N00-DEV,final_selected_refit,180,180,38.4055555556,30,3.06079810031,550.943658055,234.8416,1
+EXP-N00-DEV,inner_selection,3240,3240,54.5515432099,51,3.33644535555,10810.082952,234.8416,1
+EXP-N00-T3,final_selected_refit,780,780,36.0692307692,30,6.4190236265,5006.83842867,234.8416,1
+EXP-N00-T3,inner_selection,12258,12258,48.8738782836,42,6.18645416459,75833.5551496,234.8416,1

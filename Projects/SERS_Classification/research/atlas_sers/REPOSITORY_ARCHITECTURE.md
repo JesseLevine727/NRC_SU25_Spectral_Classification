@@ -64,6 +64,11 @@ and split construction.
 P02 adds private split/access/support materialization, deterministic double
 builds, leakage reconstruction, figure/disclosure evidence, and restart
 validation while continuing to prohibit predictive model fitting.
+P04 adds a separate no-fit expansion, source-only G2 freeze, immutable
+context-shard execution, final reconciliation, and post-freeze comparison
+boundary. The fitting path has no dependency on P03 or P13 result tables; only
+the reporting path may load them. Earlier results were known to investigators,
+so this is procedural separation rather than analyst blinding.
 
 ## Package boundaries
 
@@ -163,6 +168,10 @@ reconstruction, source pseudo-domain and fallback routes, platform-family and
 QC access checks, target/open-role disjointness, 124-gate enumeration,
 byte-identical double builds, TikZ/PDF/PNG/HTML parity, and atomic
 `verified_skip` integration.
+P04 adds exact architecture/parameter assertions, deterministic pooling and
+augmentation tests, three-seed ensemble-before-scoring checks, exact-UID
+coverage reconciliation, master-clustered comparison tests, and an
+aggregate-only public-release validator.
 
 ## Implementation order
 

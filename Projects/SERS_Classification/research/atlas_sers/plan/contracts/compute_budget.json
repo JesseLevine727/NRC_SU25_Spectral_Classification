@@ -28,5 +28,17 @@
     "policy and model factorial cells must be enumerated before outcome access",
     "unresolved preprocessing-policy fit counts remain unbounded pending P02 support and dry-run expansion",
     "failed runs remain visible"
-  ]
+  ],
+  "p04_exact_no_fit_expansion": {
+    "status": "locked_before_successful_P04_outcome_access",
+    "outer_contexts": 320,
+    "development_contexts": 60,
+    "held_evaluation_contexts": 260,
+    "inner_selection_fits": 15498,
+    "conditional_final_refits": 960,
+    "total_planned_fits": 16458,
+    "development_planned_fits": 3420,
+    "held_evaluation_planned_fits": 13038,
+    "explanation": "The rough stage estimate was nonauthorizing. Exact leakage-safe expansion repeats six AdamW candidates and three neural seeds over every registered inner source-validation unit inside every outer context."
+  }
 }

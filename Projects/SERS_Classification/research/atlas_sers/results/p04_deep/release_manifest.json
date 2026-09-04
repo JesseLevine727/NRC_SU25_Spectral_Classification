@@ -1,0 +1,87 @@
+{
+  "files": {
+    "results/p04_deep/P04_RESULTS.md": {
+      "sha256": "a94e1128e78bd61a2c9fd4bd7e6c15c6f84887f1e1d08fd4dfc0b7250535613e",
+      "size_bytes": 11755
+    },
+    "results/p04_deep/README.md": {
+      "sha256": "87e8634a98fe7574af2d4893809f7b2e917bdd914b0c6211157133d2d6417974",
+      "size_bytes": 373
+    },
+    "results/p04_deep/p04_figure_manifest.csv": {
+      "sha256": "5c6310c4803a10891a8db2bee2a360f645923efce394ecdcabab30ded9ded6ae",
+      "size_bytes": 1367
+    },
+    "results/p04_deep/semantic/F19_deep_architecture.csv": {
+      "sha256": "e5716e59343d189b0db914ff58f05ee29a59d8067414da8e1061290811dc8121",
+      "size_bytes": 1387
+    },
+    "results/p04_deep/semantic/F20_learning_curves.csv": {
+      "sha256": "a98ddd7d7b708298a83bb3727f1ce7a372a46e167ab8b6ae12dc895ebbbcf10a",
+      "size_bytes": 55575
+    },
+    "results/p04_deep/semantic/F48_deep_classical_comparison.csv": {
+      "sha256": "095874841672de0891d3b093d2959593e75f644fec4db3f593d64570b646304a",
+      "size_bytes": 18773
+    },
+    "results/p04_deep/tables/candidate_summary.csv": {
+      "sha256": "17673d8d577136d00be947d72881ea7f2decdf0255be40acceeeef778506e430",
+      "size_bytes": 1146
+    },
+    "results/p04_deep/tables/comparison_domain_effects.csv": {
+      "sha256": "c39a2be41ea85be3b9af0582c84cdb3bbe40d02d55c2ddcf39442fd83e58665a",
+      "size_bytes": 10998
+    },
+    "results/p04_deep/tables/comparison_summary.csv": {
+      "sha256": "552f88cb2e8004d06c1caf75906134e4b616f6c1ffd76eb2c700e7847719c7f0",
+      "size_bytes": 1710
+    },
+    "results/p04_deep/tables/domain_performance.csv": {
+      "sha256": "6387f695b69d6dc13b53443235ab2e1a1bf9742b1f60fb7c8ae35eec78e59cd4",
+      "size_bytes": 4155
+    },
+    "results/p04_deep/tables/fit_summary.csv": {
+      "sha256": "0358410aa3a3030a4a449885fb12719efc019629fb3e34f8db167e88402939d9",
+      "size_bytes": 548
+    },
+    "results/p04_deep/tables/learning_curve_summary.csv": {
+      "sha256": "184e56b155cf4e6f474048dd4693e06a3523dc1afeaa875351aeddc538f37b31",
+      "size_bytes": 29814
+    },
+    "results/p04_deep/tables/overall_performance.csv": {
+      "sha256": "1b4900cc9b8c78e9923711cbe8d452ebbc6046b424f0762ad4ac745484e58402",
+      "size_bytes": 847
+    },
+    "results/p04_deep/tables/p13_d0_substrate_performance.csv": {
+      "sha256": "e89ef7283fecf3b9b0b8a37a1df90631561eeacac1deae004367dbbb1a7411b7",
+      "size_bytes": 6219
+    },
+    "results/p04_deep/tables/p13_uid_parity_summary.csv": {
+      "sha256": "340caea98adaa66540b4e09e057f32a3b6a176f2f9fabce1901febe184defc3b",
+      "size_bytes": 374
+    },
+    "results/p04_deep/tables/selected_candidate_frequency.csv": {
+      "sha256": "71a2a6e7677b87eb68465009ffe532f85d00c6c88bafcb22b57c1410b502c8d9",
+      "size_bytes": 609
+    },
+    "results/p04_deep/tables/selected_epoch_summary.csv": {
+      "sha256": "d831e33ea958d4b2af41c291c4a35de89ee2eebef3672f1928419b4d72d98397",
+      "size_bytes": 186
+    },
+    "results/p04_deep/tables/training_diagnostics.csv": {
+      "sha256": "987d8108d21bb37a6d62ae98e7c0b83fe6068342dc9a1c9128b7a646618e71f6",
+      "size_bytes": 457
+    }
+  },
+  "p04_aggregation_state_sha256": "85280d95620696993af0fc93afb61f86d66ce1f7bfb6e1205139dc2b80bf9793",
+  "p04_comparison_state_sha256": "7cbbf38486c0a90c6911e477f4339e6f6f722e28b42c8a6edec32c6dd7d03ca2",
+  "p04_execution_state_sha256": "e845290bb15d37882f29da6f843620846ae61c75bfca2231c6e6c7686d748d19",
+  "p04_run_id": "P04-e845290bb15d37882f29da6f",
+  "privacy": {
+    "checkpoints_published": false,
+    "fold_identities_published": false,
+    "master_ids_published": false,
+    "row_predictions_published": false
+  },
+  "schema_version": "nato-sers-p04-public-release-v1"
+}

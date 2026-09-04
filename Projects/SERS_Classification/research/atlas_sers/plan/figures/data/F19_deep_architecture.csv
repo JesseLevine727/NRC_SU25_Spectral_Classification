@@ -1,0 +1,11 @@
+display_order,component,input_shape,output_shape,kernel_or_pool,dilation,operation,figure_id,research_question_id,scope,model_id,preprocessing_policy_id,representation_id,trainable_parameters,maximum_parameters
+0,Input,1 x 1401,1 x 1401,-,-,-,F19,RQ-P01,S,D0-ERM,PP-U-MIN,R_MIN_400_1800,208691,250000
+1,Stem,1 x 1401,24 x 1401,11,1,GroupNorm + GELU,F19,RQ-P01,S,D0-ERM,PP-U-MIN,R_MIN_400_1800,208691,250000
+2,Residual stage 1,24 x 1401,24 x 1401,7,"1, 2",2 residual blocks,F19,RQ-P01,S,D0-ERM,PP-U-MIN,R_MIN_400_1800,208691,250000
+3,Transition 1,24 x 1401,48 x 701,5 / stride 2,1,GroupNorm + GELU,F19,RQ-P01,S,D0-ERM,PP-U-MIN,R_MIN_400_1800,208691,250000
+4,Residual stage 2,48 x 701,48 x 701,7,"1, 2",2 residual blocks,F19,RQ-P01,S,D0-ERM,PP-U-MIN,R_MIN_400_1800,208691,250000
+5,Transition 2,48 x 701,64 x 351,5 / stride 2,1,GroupNorm + GELU,F19,RQ-P01,S,D0-ERM,PP-U-MIN,R_MIN_400_1800,208691,250000
+6,Residual stage 3,64 x 351,64 x 351,5,"1, 2",2 residual blocks,F19,RQ-P01,S,D0-ERM,PP-U-MIN,R_MIN_400_1800,208691,250000
+7,Ordered adaptive mean,64 x 351,64 x 16,16 bins,-,deterministic means,F19,RQ-P01,S,D0-ERM,PP-U-MIN,R_MIN_400_1800,208691,250000
+8,Projection,1024,96 then 64,-,-,GELU + dropout 0.2,F19,RQ-P01,S,D0-ERM,PP-U-MIN,R_MIN_400_1800,208691,250000
+9,Station-local head,64,3 logits,linear,-,softmax after temperature,F19,RQ-P01,S,D0-ERM,PP-U-MIN,R_MIN_400_1800,208691,250000

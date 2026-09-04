@@ -40,12 +40,33 @@ def test_split_contract_keeps_information_regimes_separate() -> None:
     assert contract["leakage_assertions_are_fatal"] is True
 
 
+def test_p04_execution_contract_locks_compact_leakage_safe_d0() -> None:
+    contract = json.loads((PLAN / "contracts/p04_execution_contract.json").read_text())
+
+    assert contract["population"]["rows"] == 598
+    assert contract["population"]["physical_masters"] == 69
+    assert contract["population"]["input_features"] == 1401
+    assert contract["architecture"]["maximum_trainable_parameters"] == 250000
+    assert contract["architecture"]["batch_normalization_prohibited"] is True
+    assert contract["optimization"]["training_seeds"] == [20260805, 20260817, 20260829]
+    assert len(contract["optimization"]["candidate_order"]) == 6
+    assert contract["execution"]["test_outcome_selection_prohibited"] is True
+    assert contract["execution"]["p03_p13_outcome_selection_prohibited"] is True
+
+    compute = json.loads((PLAN / "contracts/compute_budget.json").read_text())
+    exact = compute["p04_exact_no_fit_expansion"]
+    assert exact["outer_contexts"] == 320
+    assert exact["inner_selection_fits"] == 15_498
+    assert exact["conditional_final_refits"] == 960
+    assert exact["total_planned_fits"] == 16_458
+
+
 def test_figure_registry_has_complete_native_and_html_pairs() -> None:
     with (PLAN / "registries/figure_registry.csv").open(newline="") as handle:
         rows = list(csv.DictReader(handle))
 
-    assert len(rows) == 44
-    assert {row["figure_id"] for row in rows} == {f"F{index:02d}" for index in range(44)}
+    assert len(rows) == 45
+    assert {row["figure_id"] for row in rows} == {f"F{index:02d}" for index in range(44)} | {"F48"}
     assert all(row["tikz_path"].endswith(".tex") for row in rows)
     assert all(row["html_path"].endswith(".html") for row in rows)
 
