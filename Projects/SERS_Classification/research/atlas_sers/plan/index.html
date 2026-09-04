@@ -27,7 +27,8 @@
   <a class="card" href="P03_EXECUTION.md"><span class="tag secondary">P03 GATE</span><h3>Classical execution boundary</h3><p>Outcome-blind expansion, exact role hashes, resource/storage audit, atomic shards, and the fit-authorization gate.</p></a>
   <a class="card" href="P03_COMPLETION_AUDIT.md"><span class="tag secondary">P03 AUDIT</span><h3>Completion evidence matrix</h3><p>Requirement-by-requirement evidence for the validated execution and frozen P04 comparator.</p></a>
   <a class="card" href="../results/p03_classical/P03_CLASSICAL_RESULTS.md"><span class="tag secondary">P03 RESULTS</span><h3>Classical benchmark results</h3><p>Published aggregate metrics, endpoint coverage, controls, calibration, costs, limitations, and figure hashes.</p></a>
-  <a class="card" href="P13_PROTOCOL.md"><span class="tag plan">P13</span><h3>Substrate portability protocol</h3><p>Post-P03 field-trial amendment covering held-instrument recoverability, same-master crossover evidence, preprocessing sensitivity, and compact DL comparison.</p></a>
+  <a class="card" href="P13_PROTOCOL.md"><span class="tag secondary">P13 LOCKED</span><h3>Substrate portability protocol</h3><p>Locked 2026-09-04: held-instrument recoverability, same-master crossover evidence, preprocessing sensitivity, and compact DL comparison.</p></a>
+  <a class="card" href="P13_FREEZE_MEMO.md"><span class="tag secondary">FREEZE</span><h3>P13 decision memo</h3><p>Approved thresholds, support tiers, estimator roles, inference rules, outcome timing, hashes, and the next authorized execution step.</p></a>
   <a class="card" href="P03_DECISION_MEMO.md"><span class="tag plan">DECISION</span><h3>P03 pre-fit decisions</h3><p>Recommended compute ceiling, source-only covariance definition, and publication-valid negative controls.</p></a>
   <a class="card" href="FIGURE_STYLE_AND_REGENERATION.md"><span class="tag secondary">FIGURES</span><h3>TikZ and HTML contract</h3><p>Native-vector requirement, semantic parity, accessibility, captions, regeneration API, and validation.</p></a>
   <a class="card" href="contracts/research_contract.json"><span class="tag">CONTRACT</span><h3>Frozen research contract</h3><p>Primary question, inputs, counts, representation, endpoint, uncertainty, and prohibited claims.</p></a>
@@ -61,6 +62,7 @@
 <div class="figure"><iframe src="figures/html/F38_classical_t3_domains.html" title="NATO SERS P03 unseen-instrument classical performance"></iframe><p class="links"><a href="figures/html/F38_classical_t3_domains.html">Open interactive F38</a><a href="figures/html/F13_classical_t1.html">Within-station F13</a><a href="figures/html/F40_classical_spectrum_master.html">Spectrum versus master F40</a><a href="figures/html/F43_classical_controls.html">Controls F43</a><a href="../results/p03_classical/P03_CLASSICAL_RESULTS.md">Read report</a></p></div>
 
 <h2>P13 sample, substrate, and instrument support</h2>
+<p><strong>Locked metadata-only audit:</strong> 34 observed evaluation domains yield 13 confirmatory, three exploratory low-support, and 18 unsupported-by-design domains. The crossover registry contains eight confirmatory, seven exploratory, and 19 descriptive singleton blocks.</p>
 <div class="figure"><iframe src="figures/html/F44_sample_substrate_instrument_matrix.html" title="NATO SERS sample substrate instrument support matrix"></iframe><p class="links"><a href="figures/html/F44_sample_substrate_instrument_matrix.html">Open interactive F44</a><a href="figures/tikz/F44_sample_substrate_instrument_matrix.tex">Open native TikZ</a><a href="figures/pdf/F44_sample_substrate_instrument_matrix.pdf">Open vector PDF</a><a href="figures/png/F44_sample_substrate_instrument_matrix.png">Open PNG</a></p></div>
 
 <h2>Sub-plan sequence</h2>
@@ -71,7 +73,7 @@
 <tr><td>P06</td><td>Definitive T1/T2/T3-ZS paired evaluation</td><td>Classical and deep pipelines frozen</td></tr>
 <tr><td>P07–P10</td><td>Target access, universal/family/QC policies, robustness, open set, representation, and failure analysis</td><td>Primary PP-U-MIN conclusions frozen</td></tr>
 <tr><td>P11–P12</td><td>Inference, promotion route, paired figures, validation, and hashes</td><td>All required primary evidence complete</td></tr>
-<tr><td>P13</td><td>Substrate-conditioned portability, crossover, field-log corroboration, and compact-DL comparison</td><td>Post-P03 thresholds, support rules, and comparator handling frozen</td></tr>
+<tr><td>P13</td><td>Substrate-conditioned portability, crossover, field-log corroboration, and compact-DL comparison</td><td>Freeze passed; build and validate the classical no-fit execution manifest</td></tr>
 </tbody></table>
 
 <h2>Machine-readable registries and contracts</h2>
@@ -82,7 +84,9 @@
 <a class="card" href="registries/task_registry.csv"><h3>Tasks</h3><p>15 task/regime rows including three preprocessing-policy evaluations.</p></a>
 <a class="card" href="registries/metric_registry.csv"><h3>Metrics</h3><p>30 metrics with levels, independent units, aggregation, and uncertainty.</p></a>
 <a class="card" href="registries/figure_registry.csv"><h3>Figures</h3><p>44 original-plan artifacts; the separate P13 registry adds F44–F47.</p></a>
-<a class="card" href="registries/p13_research_question_registry.csv"><h3>P13 amendment registries</h3><p>Versioned post-P03 question, phase, experiment, metric, split, support, decision, and figure records.</p></a>
+<a class="card" href="registries/p13_research_question_registry.csv"><h3>P13 amendment registries</h3><p>Locked post-P03 question, phase, experiment, metric, split, support, decision, and figure records.</p></a>
+<a class="card" href="registries/p13_domain_support_registry.csv"><h3>P13 domain support</h3><p>All 34 observed station × substrate-family × held-instrument domains with per-class support and eligibility reasons.</p></a>
+<a class="card" href="registries/p13_crossover_support_registry.csv"><h3>P13 crossover support</h3><p>All 34 observed analyte-specific two-substrate × two-instrument blocks with locked evidence tiers.</p></a>
 <a class="card" href="registries/decision_gate_registry.csv"><h3>Decision gates</h3><p>Integrity through publication and figure parity.</p></a>
 <a class="card" href="contracts/split_contract.json"><h3>Split contract</h3><p>Exact seeds, roles, eligible domains, forbidden access, and adaptation semantics.</p></a>
 <a class="card" href="contracts/hyperparameter_registry.json"><h3>Hyperparameters</h3><p>Bounded classical grids, optimizer, losses, augmentation, and calibration.</p></a>
@@ -91,5 +95,5 @@
 <a class="card" href="contracts/compute_budget.json"><h3>Compute budget</h3><p>Staged fit estimates, dry-run requirements, and resource gates.</p></a>
 </div>
 
-<p class="small">Plan version: atlas-sers-research-master-plan-v1 · Parallel-question amendment: 2026-08-07 · Primary preprocessing: PP-U-MIN, measured-support interpolation 400–1,800 cm⁻¹ plus per-spectrum min–max.</p>
+<p class="small">Plan version: atlas-sers-research-master-plan-v1 · P13 protocol: nato-sers-p13-v1-locked, 2026-09-04 · Primary preprocessing: PP-U-MIN, measured-support interpolation 400–1,800 cm⁻¹ plus per-spectrum min–max.</p>
 </main></body></html>

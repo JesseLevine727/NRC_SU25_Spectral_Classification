@@ -1,0 +1,36 @@
+{
+  "approval_authority": "project_owner",
+  "approval_date": "2026-09-04",
+  "crossover_block_counts": {
+    "confirmatory": 8,
+    "descriptive_singleton": 19,
+    "exploratory_low_support": 7
+  },
+  "domain_counts": {
+    "confirmatory": 13,
+    "exploratory_low_support": 3,
+    "unsupported_by_design": 18
+  },
+  "input_hashes": {
+    "p02_master_split_registry_sha256": "d92da67742dd74693da518395c06dd1f33c16145d5d786a557166c8a6cb05558",
+    "primary_manifest_sha256": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90"
+  },
+  "p03_outcome_access_disclosure": "P03 outcomes were known before P13 was proposed and locked.",
+  "p13_outcome_access_disclosure": "No P13 predictive, crossover-effect, or field-log outcome was calculated or used to choose these rules.",
+  "protocol_version": "nato-sers-p13-v1-locked",
+  "registry_hashes": {
+    "p13_crossover_support_registry_sha256": "ced0ac652651c4a85c9f596f825b0692ec300fda2c9b1769c585282125f5692c",
+    "p13_domain_support_registry_sha256": "07a4f017cb7caaee6f18007601738c4f6d183cea5d7cb30f6eab1a15f0022fd8"
+  },
+  "thresholds": {
+    "confirmatory_minimum_held_masters_per_class": 3,
+    "confirmatory_minimum_paired_source_held_masters_per_class": 3,
+    "confirmatory_minimum_source_instruments_per_class_per_outer_split": 2,
+    "confirmatory_minimum_training_masters_per_class_per_outer_split": 3,
+    "delta_maximum_source_to_held_loss": 0.1,
+    "exploratory_minimum_held_masters_per_class": 2,
+    "exploratory_minimum_training_masters_per_class_per_outer_split": 2,
+    "exploratory_source_instrument_and_pair_support": "reported but not used as an eligibility gate",
+    "tau_minimum_balanced_accuracy": 0.6
+  }
+}

@@ -1,8 +1,11 @@
 support_rule_id,dimension,rule,reason,status
-P13-SUP01,population,Use exactly 598 spectra and 69 physical masters from the frozen primary population,Preserves P01 identity,complete
-P13-SUP02,cell,Define cells by station analyte substrate family and held instrument,Matches the field-trial portability question,complete
-P13-SUP03,class_source,Minimum independent source masters per class,Must be selected from metadata support before outcomes,pending_owner_approval
-P13-SUP04,class_held,Minimum independent held-instrument masters per class,Must support interpretable recall and intervals,pending_owner_approval
-P13-SUP05,variants,Treat substrate variants as exploratory unless separately qualified,Avoids unsupported fine-grained rankings,draft
-P13-SUP06,missingness,Retain all unobserved and unsupported combinations with reason codes,Missing measurement is not failed detection,complete
-P13-SUP07,crossover,Require at least two shared instruments across two substrates for a master crossover block,Defines direct paired evidence,complete
+P13-SUP01,population,Use exactly 598 spectra and 69 physical masters from the frozen primary population,Preserves P01 identity,locked
+P13-SUP02,evaluation_domain,Define each evaluation domain by station substrate family and held instrument,Balanced accuracy requires all three analyte classes within a domain,locked
+P13-SUP03,class_support_cell,Define each class-support cell by evaluation domain and analyte,Separates per-class design support from the multiclass evaluation domain,locked
+P13-SUP04,confirmatory,Require at least 3 held masters and 3 training masters per class in every outer split plus 2 source instruments and 3 paired held/source masters per class,Supports minimally interpretable per-class recall loss and clustered intervals,locked
+P13-SUP05,exploratory,Require at least 2 held masters and 2 training masters per class; retain source-instrument and paired limitations explicitly,Allows transparent low-support exploration without weakening the confirmatory claim,locked
+P13-SUP06,variants,Treat substrate variants as exploratory unless separately qualified,Avoids unsupported fine-grained rankings,locked
+P13-SUP07,missingness,Retain all unobserved and unsupported combinations with reason codes,Missing measurement is not failed detection,locked
+P13-SUP08,crossover,Classify analyte-specific two-substrate by two-instrument blocks as confirmatory at 3 or more masters exploratory at 2 and descriptive at 1,Defines direct paired evidence tiers before outcomes,locked
+P13-SUP09,matched_reference,Estimate source performance only on outer-test masters having both the held view and at least one eligible source-instrument view,Prevents source-to-held loss from mixing different physical samples,locked
+P13-SUP10,eligibility_information,Determine support from metadata and split roles only without spectra outcomes separability or field-log Y/N rates,Prevents outcome-driven support selection,locked

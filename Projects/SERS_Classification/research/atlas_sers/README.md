@@ -187,9 +187,11 @@ See [plan/P03_EXECUTION.md](plan/P03_EXECUTION.md) and
 The research plan is execution-ready but is not a prospective preregistration:
 pilot and P01 descriptive results informed its design. P00 governance, P01
 data/representation freeze, P02 evaluation-design freeze, and P03 classical
-benchmark are complete. The post-P03 P13 substrate-portability amendment is
-recorded in versioned draft registries and awaits the pre-fit `tau`, `delta`,
-and support-threshold decisions. P04 remains the next deep-learning phase: it
+benchmark are complete. The post-P03 P13 substrate-portability amendment was
+locked on 2026-09-04 before P13 outcome access: `tau = 0.60`, `delta = 0.10`,
+and the metadata-only support registries are frozen. P13 classical execution
+and P04 compact-model development are the next contamination-separated tracks. P04
+remains the next deep-learning phase: it
 must validate the compact D0 architecture and source-only learning curves
 without using P03 held-test outcomes for architecture, optimizer, epoch,
 preprocessing, threshold, or fallback selection.

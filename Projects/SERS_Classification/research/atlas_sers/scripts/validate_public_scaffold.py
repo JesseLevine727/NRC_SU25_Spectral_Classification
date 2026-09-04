@@ -53,6 +53,7 @@ REQUIRED_FILES = {
     "plan/P03_DECISION_MEMO.md",
     "plan/P03_EXECUTION.md",
     "plan/P03_COMPLETION_AUDIT.md",
+    "plan/P13_FREEZE_MEMO.md",
     "plan/P13_PROTOCOL.md",
     "plan/FIGURE_STYLE_AND_REGENERATION.md",
     "plan/index.html",
@@ -76,12 +77,15 @@ REQUIRED_FILES = {
     "plan/registries/artifact_registry.csv",
     "plan/registries/deviations.csv",
     "plan/registries/p13_decision_registry.csv",
+    "plan/registries/p13_domain_support_registry.csv",
     "plan/registries/p13_experiment_registry.csv",
     "plan/registries/p13_figure_registry.csv",
     "plan/registries/p13_metric_registry.csv",
     "plan/registries/p13_phase_registry.csv",
     "plan/registries/p13_research_question_registry.csv",
     "plan/registries/p13_split_registry.csv",
+    "plan/registries/p13_crossover_support_registry.csv",
+    "plan/registries/p13_support_freeze_summary.json",
     "plan/registries/p13_support_policy_registry.csv",
     "plan/registries/public_release_registry.csv",
     "scripts/run_p00.py",
@@ -89,6 +93,7 @@ REQUIRED_FILES = {
     "scripts/run_p02.py",
     "scripts/run_p03.py",
     "scripts/publish_p02_figures.py",
+    "scripts/build_p13_support_freeze.py",
 }
 
 REGISTRY_COUNTS = {
@@ -103,6 +108,16 @@ REGISTRY_COUNTS = {
     "artifact_registry.csv": 46,
     "decision_gate_registry.csv": 15,
     "deviations.csv": 1,
+    "p13_decision_registry.csv": 16,
+    "p13_domain_support_registry.csv": 34,
+    "p13_experiment_registry.csv": 7,
+    "p13_figure_registry.csv": 4,
+    "p13_metric_registry.csv": 13,
+    "p13_phase_registry.csv": 1,
+    "p13_research_question_registry.csv": 1,
+    "p13_split_registry.csv": 3,
+    "p13_crossover_support_registry.csv": 34,
+    "p13_support_policy_registry.csv": 10,
     "public_release_registry.csv": 2,
 }
 
@@ -196,6 +211,67 @@ def validate_registries(errors: list[str]) -> None:
         errors.extend(f"governance: {message}" for message in report["errors"])
 
 
+def validate_p13_freeze(errors: list[str]) -> None:
+    registry_dir = PLAN / "registries"
+    try:
+        with (registry_dir / "p13_decision_registry.csv").open(newline="") as handle:
+            decisions = list(csv.DictReader(handle))
+        with (registry_dir / "p13_support_policy_registry.csv").open(newline="") as handle:
+            support_policies = list(csv.DictReader(handle))
+        domain_path = registry_dir / "p13_domain_support_registry.csv"
+        crossover_path = registry_dir / "p13_crossover_support_registry.csv"
+        with domain_path.open(newline="") as handle:
+            domains = list(csv.DictReader(handle))
+        with crossover_path.open(newline="") as handle:
+            crossovers = list(csv.DictReader(handle))
+        summary = json.loads(
+            (registry_dir / "p13_support_freeze_summary.json").read_text()
+        )
+    except (OSError, json.JSONDecodeError) as exc:
+        errors.append(f"P13 freeze validation could not run: {type(exc).__name__}: {exc}")
+        return
+
+    if {row["status"] for row in decisions} != {"locked"}:
+        errors.append("P13 decision registry contains an unlocked decision")
+    if {row["status"] for row in support_policies} != {"locked"}:
+        errors.append("P13 support-policy registry contains an unlocked rule")
+
+    expected_domain_counts = {
+        "confirmatory": 13,
+        "exploratory_low_support": 3,
+        "unsupported_by_design": 18,
+    }
+    expected_crossover_counts = {
+        "confirmatory": 8,
+        "exploratory_low_support": 7,
+        "descriptive_singleton": 19,
+    }
+    domain_counts = {
+        tier: sum(row["support_tier"] == tier for row in domains)
+        for tier in {row["support_tier"] for row in domains}
+    }
+    crossover_counts = {
+        tier: sum(row["support_tier"] == tier for row in crossovers)
+        for tier in {row["support_tier"] for row in crossovers}
+    }
+    if domain_counts != expected_domain_counts:
+        errors.append(f"P13 domain support tiers changed: {domain_counts}")
+    if crossover_counts != expected_crossover_counts:
+        errors.append(f"P13 crossover support tiers changed: {crossover_counts}")
+
+    hashes = summary.get("registry_hashes", {})
+    expected_hashes = {
+        "p13_domain_support_registry_sha256": hashlib.sha256(
+            domain_path.read_bytes()
+        ).hexdigest(),
+        "p13_crossover_support_registry_sha256": hashlib.sha256(
+            crossover_path.read_bytes()
+        ).hexdigest(),
+    }
+    if hashes != expected_hashes:
+        errors.append("P13 support registry hashes do not match the freeze summary")
+
+
 def validate_figures(errors: list[str]) -> None:
     html_paths = sorted((PLAN / "figures" / "html").glob("*.html"))
     tikz_paths = sorted(
@@ -262,6 +338,7 @@ def main() -> int:
     validate_publication_boundary(errors)
     validate_contracts(errors)
     validate_registries(errors)
+    validate_p13_freeze(errors)
     validate_figures(errors)
 
     if errors:

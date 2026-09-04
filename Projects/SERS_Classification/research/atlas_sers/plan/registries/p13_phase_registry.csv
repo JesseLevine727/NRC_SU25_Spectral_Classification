@@ -1,2 +1,2 @@
 phase_id,amendment_version,scope,title,depends_on,execution_status,freeze_gate,next_action
-P13,nato-sers-p13-v1-draft,S,NATO field-trial substrate portability amendment,P01|P02|P03,draft_pending_decisions,P13-FREEZE,Approve tau delta support thresholds and P03 comparator handling before fitting
+P13,nato-sers-p13-v1-locked,S,NATO field-trial substrate portability amendment,P01|P02|P03,locked_ready_for_classical_execution,P13-FREEZE-PASSED,Execute EXP-P13-C01 through C04 without changing locked decisions after outcome access

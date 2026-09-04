@@ -50,7 +50,7 @@ def test_figure_registry_has_complete_native_and_html_pairs() -> None:
     assert all(row["html_path"].endswith(".html") for row in rows)
 
 
-def test_p13_amendment_is_separate_and_outcome_blind() -> None:
+def test_p13_amendment_is_separate_locked_and_outcome_disclosed() -> None:
     registry_dir = PLAN / "registries"
     with (registry_dir / "p13_research_question_registry.csv").open(newline="") as handle:
         questions = list(csv.DictReader(handle))
@@ -58,12 +58,72 @@ def test_p13_amendment_is_separate_and_outcome_blind() -> None:
         decisions = {row["decision_id"]: row for row in csv.DictReader(handle)}
     with (registry_dir / "p13_figure_registry.csv").open(newline="") as handle:
         figures = {row["figure_id"]: row for row in csv.DictReader(handle)}
+    with (registry_dir / "p13_support_policy_registry.csv").open(newline="") as handle:
+        support = {row["support_rule_id"]: row for row in csv.DictReader(handle)}
+
+    phase = next(csv.DictReader((registry_dir / "p13_phase_registry.csv").open(newline="")))
 
     assert [row["research_question_id"] for row in questions] == ["RQ-S07"]
-    assert decisions["P13-D01"]["status"] == "pending_approval"
-    assert decisions["P13-D02"]["status"] == "pending_approval"
+    assert questions[0]["status"] == "locked_2026-09-04"
+    assert len(decisions) == 16
+    assert {row["status"] for row in decisions.values()} == {"locked"}
+    assert "0.60" in decisions["P13-D01"]["decision"]
+    assert "0.10" in decisions["P13-D02"]["decision"]
+    assert phase["amendment_version"] == "nato-sers-p13-v1-locked"
+    assert phase["freeze_gate"] == "P13-FREEZE-PASSED"
+    assert support["P13-SUP02"]["dimension"] == "evaluation_domain"
+    assert "station substrate family and held instrument" in support["P13-SUP02"]["rule"]
+    assert support["P13-SUP03"]["dimension"] == "class_support_cell"
+    assert {row["status"] for row in support.values()} == {"locked"}
     assert figures["F44"]["status"] == "complete"
-    assert {figures[key]["status"] for key in ("F45", "F46", "F47")} == {"planned"}
+    assert {figures[key]["status"] for key in ("F45", "F46", "F47")} == {
+        "locked_planned"
+    }
+
+
+def test_p13_support_registries_match_the_locked_metadata_audit() -> None:
+    registry_dir = PLAN / "registries"
+    domain_path = registry_dir / "p13_domain_support_registry.csv"
+    crossover_path = registry_dir / "p13_crossover_support_registry.csv"
+    with domain_path.open(newline="") as handle:
+        domains = list(csv.DictReader(handle))
+    with crossover_path.open(newline="") as handle:
+        crossovers = list(csv.DictReader(handle))
+    summary = json.loads((registry_dir / "p13_support_freeze_summary.json").read_text())
+
+    domain_tiers = {
+        tier: sum(row["support_tier"] == tier for row in domains)
+        for tier in {row["support_tier"] for row in domains}
+    }
+    crossover_tiers = {
+        tier: sum(row["support_tier"] == tier for row in crossovers)
+        for tier in {row["support_tier"] for row in crossovers}
+    }
+
+    assert len(domains) == 34
+    assert domain_tiers == {
+        "confirmatory": 13,
+        "exploratory_low_support": 3,
+        "unsupported_by_design": 18,
+    }
+    assert len(crossovers) == 34
+    assert crossover_tiers == {
+        "confirmatory": 8,
+        "exploratory_low_support": 7,
+        "descriptive_singleton": 19,
+    }
+    assert {row["protocol_version"] for row in domains + crossovers} == {
+        "nato-sers-p13-v1-locked"
+    }
+    assert summary["domain_counts"] == domain_tiers
+    assert summary["crossover_block_counts"] == crossover_tiers
+    assert summary["registry_hashes"]["p13_domain_support_registry_sha256"] == (
+        hashlib.sha256(domain_path.read_bytes()).hexdigest()
+    )
+    assert summary["registry_hashes"]["p13_crossover_support_registry_sha256"] == (
+        hashlib.sha256(crossover_path.read_bytes()).hexdigest()
+    )
+    assert "No P13" in summary["p13_outcome_access_disclosure"]
 
 
 def test_f44_is_one_canonical_master_id_publication_set() -> None:

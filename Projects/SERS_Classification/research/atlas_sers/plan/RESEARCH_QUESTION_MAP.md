@@ -2,13 +2,13 @@
 
 **Amendment date:** 2026-08-07
 
-**Field-trial-purpose amendment:** 2026-09-01, after P03; `RQ-S07` is recorded in separately versioned draft P13 registries and awaits threshold approval
+**Field-trial-purpose amendment:** proposed 2026-09-01 after P03 and locked 2026-09-04 before any P13 outcome calculation
 
 **Evidence timing:** after disclosed pilots and P01 descriptive preprocessing evidence; before P02 and every registered definitive predictive outcome
 
 **Independent scientific unit:** physical `master_sample_id`; the primary transfer contrast is summarized over 13 station–instrument domains
 
-This document is the concise human-readable map from scientific questions to the master plan. `registries/research_question_registry.csv` remains the machine-readable authority for the original v1 questions. `RQ-S07` is intentionally not inserted into that frozen file and is instead represented by the versioned `registries/p13_*` draft files. The questions run in parallel, but only `RQ-P01` determines whether acquisition-aware deep learning is promoted.
+This document is the concise human-readable map from scientific questions to the master plan. `registries/research_question_registry.csv` remains the machine-readable authority for the original v1 questions. `RQ-S07` is intentionally not inserted into that frozen file and is instead represented by the separately versioned and locked `registries/p13_*` files. The questions run in parallel, but only `RQ-P01` determines whether acquisition-aware deep learning is promoted.
 
 ## Shared design
 
@@ -138,13 +138,13 @@ The primary comparison is deliberately one cell: `PP-U-MIN × {selected classica
 ## RQ-S07 — field-trial substrate portability amendment
 
 - **Motivation:** Li-Lin clarified that the field trial was intended to ask whether the SERS substrates recover the required analyte signal independently of the acquisition instrument.
-- **Formal question:** Within each support-qualified substrate-family, station, and analyte setting, is analyte-discriminative signal recoverable on multiple observed instruments, including an instrument excluded from fitting, without a practically important instrument-specific loss?
-- **Comparison:** substrate-conditioned held-instrument recoverability, matched source-to-held loss, and same-master substrate-by-instrument crossover effects. Practical recoverability threshold `tau` and noninferiority margin `delta` require approval and freezing before P13 outcome analysis.
+- **Formal question:** Within each support-qualified station and substrate family, is three-class analyte-discriminative signal recoverable on an instrument excluded from fitting without a practically important instrument-specific loss?
+- **Comparison:** held-instrument recoverability and matched source-to-held loss within station × substrate-family × held-instrument domains, plus same-master substrate-by-instrument crossover effects. Portability requires `LCB95(held BA) >= 0.60` and `UCB95(source BA - held BA) <= 0.10`.
 - **Population/unit:** 598 spectra but only 69 independent physical masters; 67 masters have at least two instruments, 39 have at least two substrate families, and 32 support at least one complete two-substrate-by-two-instrument crossover.
 - **Information/split:** held instrument excluded from fitting, transformation fitting, selection, calibration, and stopping; every split and interval is master-grouped.
-- **Preprocessing/models:** `PP-U-MIN` primary, universal SG/arPLS paired sensitivities; frozen classical panel primary and compact deep models secondary on identical eligible cells.
+- **Preprocessing/models:** `PP-U-MIN` primary, universal SG/arPLS paired sensitivities; source-only `C-SELECTED` primary, fixed RBF SVM main sensitivity, other frozen classical models secondary, and compact deep models later on identical eligible cells.
 - **Metrics/figures:** held-instrument balanced accuracy and per-analyte recall, worst-instrument loss, calibration, crossover interactions; F44–F47.
-- **Plan coverage:** P13 freezes support and margins, executes classical recoverability first, evaluates paired crossover evidence, then compares compact DL where support permits.
+- **Plan coverage:** the P13 freeze found 13 confirmatory, three exploratory, and 18 unsupported observed domains plus eight confirmatory, seven exploratory, and 19 descriptive crossover blocks. Classical recoverability executes first; compact DL follows where support permits.
 - **Success:** a bounded statement that a named substrate family preserves practically useful analyte recoverability over the tested instruments and supported station/analyte cells.
 - **Failure:** evidence of a meaningful instrument loss, an inconclusive interval, or insufficient crossed support; these outcomes are not conflated.
 - **Prohibited claim:** universal instrument independence, global substrate ranking, physical adsorption/enhancement proof, or counting 598 correlated spectra as 598 independent chemical samples.
@@ -155,10 +155,10 @@ Figure F44 is the design audit: each row is one recorded physical-master ID, pan
 
 P03 has completed the protected classical benchmark and frozen the exact
 260-cell `C-SELECTED` comparator mapping without using held-target outcomes for
-selection. Before a substrate-portability model is fit, review F44 with Li-Lin,
-freeze practical thresholds `tau` and `delta`, and approve the separately
-versioned draft P13 support/evaluation registries. The original route may then continue into P04
-compact D0 development while P13 executes its classical-first analysis. The two
-tracks remain contamination-separated: P03/P13 held outcomes cannot select P04
-architecture or epoch policy, and P04 outcomes cannot redefine P13 support or
-equivalence margins.
+selection. P13's design, thresholds, support, and evaluation registries were
+locked on 2026-09-04 before any P13 outcome calculation. The immediate P13 task
+is to build and validate its no-fit classical execution manifest, then execute
+`EXP-P13-C01` through `EXP-P13-C04`. P04 compact D0 development may continue in
+parallel. The tracks remain contamination-separated: P03/P13 held outcomes
+cannot select P04 architecture or epoch policy, and P04 outcomes cannot
+redefine P13 support or equivalence margins.
