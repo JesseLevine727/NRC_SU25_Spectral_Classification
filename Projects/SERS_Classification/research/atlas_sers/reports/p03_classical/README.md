@@ -19,7 +19,7 @@ classical machine-learning benchmark.
 From this directory, run:
 
 ```bash
-/home/elfo/Documents/NRC/ATLAS_venv/bin/python build_report.py
+python3 build_report.py
 ```
 
 The builder reads only the validated aggregate tables under
