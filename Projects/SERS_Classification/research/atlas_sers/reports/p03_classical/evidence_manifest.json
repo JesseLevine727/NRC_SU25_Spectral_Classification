@@ -1,0 +1,83 @@
+{
+  "run_id": "P03-513a0f9686c37cbc0d682645",
+  "scope": "Supervisor report only; no training or frozen-release mutation",
+  "builder_sha256": "2904673063f149c8ff2e276d4af487403edd773334653bef91ef0c63f9beaba5",
+  "figures": [
+    {
+      "figure_id": "R1_within_station_random_forest",
+      "data_sha256": "e9d2a0731b838423e81f3b281eec33bf63364ddf6faebbcbce13969d5556a5cd",
+      "caption": "Random Forest on new physical samples, with instrument types represented in training. Circles are five-repeat means; open = one-spectrum predictions, filled = one final result per physical sample. Thin horizontal spans are minimum\u2013maximum scores across five repeated train/test partitions, not confidence intervals. The dashed vertical line is 33.3% chance. Sample counts total 69. All five repeats are complete. Classify each repeated spectrum, average its category probabilities within instrument, then weight instruments equally; raw spectra are not averaged. High combined scores do not imply chemical denoising or generalization to arbitrary instruments.",
+      "source_hashes": {
+        "plan/figures/data/F13_classical_t1.csv": "111961c37f2c4337c66bbe694743de691c3c285b05d1904fac6d1ec261ec333b"
+      },
+      "outputs": {
+        "figures/tikz/R1_within_station_random_forest_body.tex": "c3dcb8c0589e6b271ee5018460dc4b8fa6757bd3e95351d36d46b2fdcbaa530c",
+        "figures/tikz/R1_within_station_random_forest.tex": "bfa373b827739bd1e5a7e24d9c23bad9d23c639e5d4baeb22e181e0f3113d572",
+        "figures/pdf/R1_within_station_random_forest.pdf": "85dbc3338e5cfd98ce32a72579c9a83fa07ee452fed1e7347c07c89c72549016",
+        "figures/png/R1_within_station_random_forest.png": "aa46d3a769bd30ab15a62dbd6c852c1b454836b372899d2ad58c411ef9c259ae",
+        "figures/html/R1_within_station_random_forest.html": "8234c3ab6afdb7b8da3bbd0ee9623b548d15be4701135da62e830ea38f780a99"
+      },
+      "vector_only": true,
+      "all_pdf_text_black": true
+    },
+    {
+      "figure_id": "R2_unseen_instrument_domains",
+      "data_sha256": "c378386475a1dfbe87f833ba7f185dd0cd0adde1294499ff2aca8c4de9e2f8f2",
+      "caption": "Model selected using training data, evaluated on instruments and physical samples not used for training. All 13 eligible station/instrument combinations are shown. Symbols and ranges follow R1. Right-hand numbers: physical samples; completed repeats out of five. 57/65 station\u2013instrument/repeat results are complete; eight missing results are not scored as zero. Each station\u2013instrument mean uses its available repeats. For a sample-level result, classify each repeated spectrum and average its predicted category probabilities; raw spectra are not averaged. Combined predictions use only the test instrument. The figure cannot rank intrinsic instrument or substrate quality.",
+      "source_hashes": {
+        "results/p03_classical/tables/spectrum_master_comparison.csv": "5b677c7a05c516c654f14c4013b373933e298476998356e3931d383c70db5529",
+        "plan/figures/data/F38_classical_t3_domains.csv": "73081c5a2dd38a11f10eeaabae2b1cf27c0f93bff967c8e620bc0ffdc281803b"
+      },
+      "outputs": {
+        "figures/tikz/R2_unseen_instrument_domains_body.tex": "5a67aab276039a47d19956e152b194a7fa33875f0c11f44f21980b228fbe2581",
+        "figures/tikz/R2_unseen_instrument_domains.tex": "a1f8df8d00992c4a14d7db6eb6bcd0d0c91522263013c9665780016b42628df9",
+        "figures/pdf/R2_unseen_instrument_domains.pdf": "0b7bee06f19c02f702076c2d946200247a05d5492eb5edd6e170886dc4fc49d0",
+        "figures/png/R2_unseen_instrument_domains.png": "51477c5840a9aa44ce99df1a4fe411ffab953966fee073eae49f8329068fc692",
+        "figures/html/R2_unseen_instrument_domains.html": "c43c69c95412b7e524332416434078baf59028106ed14ca1416463ae1e1103bc"
+      },
+      "vector_only": true,
+      "all_pdf_text_black": true
+    },
+    {
+      "figure_id": "R3_spectrum_sample_scatter",
+      "data_sha256": "6cd6cc7034c8e26c51ccf8a717a2d70c1ce2f948e8073ff321c12561dce4c2db",
+      "caption": "The same test-instrument predictions, scored one spectrum at a time or combined into one result per physical sample. The combined result classifies each repeated spectrum, averages the predicted category probabilities, and selects the highest average; raw spectra are not averaged. Each of 57 plotted points is one completed station/instrument \u00d7 repeated-partition result, not one spectrum or sample. Eight missing results have no invented coordinates. Points above the diagonal improve when predictions are combined. Coincident points overlap; no jitter is applied. Blue circles = CWA; orange squares = pills; green triangles = surfaces. Both axes are numeric and equally scaled. These technical repeats are dependent; no confidence interval or significance claim is made.",
+      "source_hashes": {
+        "results/p03_classical/tables/spectrum_master_comparison.csv": "5b677c7a05c516c654f14c4013b373933e298476998356e3931d383c70db5529",
+        "plan/figures/data/F38_classical_t3_domains.csv": "73081c5a2dd38a11f10eeaabae2b1cf27c0f93bff967c8e620bc0ffdc281803b"
+      },
+      "outputs": {
+        "figures/tikz/R3_spectrum_sample_scatter_body.tex": "f3dad62b9551a294dd67defbf2e195d5238d9455902ef0db3064ae22e61d9030",
+        "figures/tikz/R3_spectrum_sample_scatter.tex": "783d6eb9268c8d60a595b8a71dad1c0355ddc27bc2a811591a340362e3813d78",
+        "figures/pdf/R3_spectrum_sample_scatter.pdf": "867b8f731f8a09c3e77e6f52904facb367ea0082b97af70b9c11999cb9aeae29",
+        "figures/png/R3_spectrum_sample_scatter.png": "61a826dca79f437f73564e94b57fe74648e1d9db8f10d8370aea1435c635d7d5",
+        "figures/html/R3_spectrum_sample_scatter.html": "9acb2609f4c84e71f60b80b265d5b1359e549e377b72edf06a2b50a5213a4307"
+      },
+      "vector_only": true,
+      "all_pdf_text_black": true
+    },
+    {
+      "figure_id": "R4_chemical_confusion",
+      "data_sha256": "091ebd51ef628b2fa0427d0bd9f18c676ea0cc06cfd0f7485b533799fc1df323",
+      "caption": "Individual-spectrum errors of the model selected using training data when tested on new instruments. Each cell is a percentage within its true chemical category, averaged over five repeats after pooling available station\u2013instrument combinations. Rows sum to 100% apart from rounding; the diagonal is correct identification. This pools spectra rather than weighting combinations equally. CWA/surfaces have incomplete combination coverage; pills has all five combinations. All nine cells per station are shown. Shading is 0\u2013100%; black numbers give exact displayed percentages. 4-NP = 4-nitrophenol; EtOH = ethanol; EP = ethyl paraoxon; BF = benzyl fentanyl; APAP = acetaminophen. Errors do not establish failed SERS detection or their chemical cause. Repeat ranges are in the source CSV; no inferential interval is asserted.",
+      "source_hashes": {
+        "results/p03_classical/tables/confusion_summary.csv": "72362928716f744c2153345a60303b903893d1032744bd117fd026776d89690c"
+      },
+      "outputs": {
+        "figures/tikz/R4_chemical_confusion_body.tex": "3176d43cf39af2760beabf7be2daa1f77d1dbbf33ea6c2ee91136155763b02be",
+        "figures/tikz/R4_chemical_confusion.tex": "fc6caaf975156dafa1413f0358ccc17c0c2d8661ba02084ff9f86c6787a0a4e0",
+        "figures/pdf/R4_chemical_confusion.pdf": "19a1bcd4eee5f633a9c71a4327e0888e3a6eeabf1073ef4ba93cb86f10abf8a6",
+        "figures/png/R4_chemical_confusion.png": "a6ecdabeaef499b3c2de39f6efa173d9e354e65d349ab9c134cc45105622276f",
+        "figures/html/R4_chemical_confusion.html": "de11be0a490bc6d1865d75b0603f386866010703fecc5f2636eee6696d6bd246"
+      },
+      "vector_only": true,
+      "all_pdf_text_black": true
+    }
+  ],
+  "additional_evidence": {
+    "results/p03_classical/tables/domain_summaries.csv": "712ee82317d1fd220f425ba4453bed4815216bd82cdc4573621efd26bd5d6497",
+    "results/p03_classical/tables/endpoint_coverage.csv": "5639ad18f499f94ffbf2c29103fc31a4dbaaa6744b32c0bf8f47bc727f30bfdd",
+    "results/p03_classical/tables/control_summary.csv": "f91f375a7cc1e05c5e5be0a59489fdc7549cb9b58da257af19010a8268c00cbd",
+    "results/p03_classical/tables/reliability_summary.csv": "eeb8d00ec90b7acc5cbfe08089dcb9222bd0db04108458101e37b7a6ae51c73b"
+  }
+}

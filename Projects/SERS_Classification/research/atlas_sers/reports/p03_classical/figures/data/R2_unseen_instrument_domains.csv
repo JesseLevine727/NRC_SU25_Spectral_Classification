@@ -1,0 +1,27 @@
+domain,station,aggregation_level,mean_percent,minimum_percent,maximum_percent,complete_repeats,n_masters,display_order,display_label,figure_id,research_question_id,scope,population_id,preprocessing_policy_id,representation_id
+cwa:Mira-2,cwa,spectrum,55.2380952381,51.626984127,59.2063492063,5,24,0,CWA / Mira-2,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+cwa:Mira-2,cwa,instrument_balanced_master,69.3518518519,63.6243386243,76.7195767196,5,24,0,CWA / Mira-2,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+cwa:Pendar-2,cwa,spectrum,53.5529100529,44.6031746032,59.7248677249,4,24,1,CWA / Pendar-2,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+cwa:Pendar-2,cwa,instrument_balanced_master,54.3816137566,51.5211640212,58.7962962963,4,24,1,CWA / Pendar-2,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+cwa:RMX-1,cwa,spectrum,59.1515151515,49.5757575758,66.0606060606,4,18,2,CWA / RMX-1,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+cwa:RMX-1,cwa,instrument_balanced_master,70.4861111111,58.3333333333,81.9444444444,4,18,2,CWA / RMX-1,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills:Agilent-1,pills,spectrum,72.7878787879,58.1818181818,85.6060606061,5,19,3,Pills / Agilent-1,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills:Agilent-1,pills,instrument_balanced_master,91.4444444444,86.1111111111,95.8333333333,5,19,3,Pills / Agilent-1,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills:Agilent-3,pills,spectrum,87.4592074592,76.4568764569,91.8414918415,5,20,4,Pills / Agilent-3,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills:Agilent-3,pills,instrument_balanced_master,91.7857142857,76.7857142857,95.8333333333,5,20,4,Pills / Agilent-3,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills:Mira-3,pills,spectrum,33.3333333333,33.3333333333,33.3333333333,5,19,5,Pills / Mira-3,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills:Mira-3,pills,instrument_balanced_master,33.3333333333,33.3333333333,33.3333333333,5,19,5,Pills / Mira-3,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills:Pendar-1,pills,spectrum,77.6256613757,76.8849206349,79.0013227513,5,20,6,Pills / Pendar-1,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills:Pendar-1,pills,instrument_balanced_master,86.6666666667,83.8095238095,88.5714285714,5,20,6,Pills / Pendar-1,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills:Pendar-3,pills,spectrum,87.619047619,86.9047619048,90.4761904762,5,19,7,Pills / Pendar-3,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills:Pendar-3,pills,instrument_balanced_master,87.619047619,86.9047619048,90.4761904762,5,19,7,Pills / Pendar-3,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces:Agilent-3,surfaces,spectrum,45.8553791887,34.3915343915,52.9100529101,3,17,8,Surfaces / Agilent-3,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces:Agilent-3,surfaces,instrument_balanced_master,47.619047619,38.0952380952,53.9682539683,3,17,8,Surfaces / Agilent-3,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces:Mira-1,surfaces,spectrum,42.962962963,35.0168350168,50.8417508418,5,17,9,Surfaces / Mira-1,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces:Mira-1,surfaces,instrument_balanced_master,46.6666666667,38.0952380952,57.1428571429,5,17,9,Surfaces / Mira-1,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces:Pendar-2,surfaces,spectrum,77.2727272727,74.2424242424,81.6666666667,3,25,10,Surfaces / Pendar-2,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces:Pendar-2,surfaces,instrument_balanced_master,79.5454545455,74.8484848485,82.5757575758,3,25,10,Surfaces / Pendar-2,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces:Pendar-3,surfaces,spectrum,66.4153439153,62.1031746032,71.0317460317,3,17,11,Surfaces / Pendar-3,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces:Pendar-3,surfaces,instrument_balanced_master,78.835978836,65.0793650794,90.4761904762,3,17,11,Surfaces / Pendar-3,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces:RMX-2,surfaces,spectrum,67.9980842912,57.183908046,75.5268199234,5,23,12,Surfaces / RMX-2,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces:RMX-2,surfaces,instrument_balanced_master,76.7037037037,63.3333333333,86.6666666667,5,23,12,Surfaces / RMX-2,R2_unseen_instrument_domains,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800

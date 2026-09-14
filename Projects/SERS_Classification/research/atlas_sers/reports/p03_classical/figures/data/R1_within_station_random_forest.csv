@@ -1,0 +1,7 @@
+station,aggregation_level,mean_percent,minimum_percent,maximum_percent,complete_repeats,n_masters,display_order,display_label,figure_id,research_question_id,scope,population_id,preprocessing_policy_id,representation_id
+cwa,instrument_balanced_master,86.3095238095,86.3095238095,86.3095238095,5,24,0,CWA,R1_within_station_random_forest,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+cwa,spectrum,62.3567606878,59.7116167126,64.0763250394,5,24,0,CWA,R1_within_station_random_forest,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills,instrument_balanced_master,100,100,100,5,20,1,Pills,R1_within_station_random_forest,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+pills,spectrum,82.6614017254,81.3863476425,84.7078869862,5,20,1,Pills,R1_within_station_random_forest,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces,instrument_balanced_master,96.9696969697,96.9696969697,96.9696969697,5,25,2,Surfaces,R1_within_station_random_forest,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800
+surfaces,spectrum,75.0431808961,74.0839274329,76.7831681447,5,25,2,Surfaces,R1_within_station_random_forest,RQ-P01,S,primary_598,PP-U-MIN,R_MIN_400_1800

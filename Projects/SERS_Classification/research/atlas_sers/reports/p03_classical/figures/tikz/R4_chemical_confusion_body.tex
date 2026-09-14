@@ -1,0 +1,205 @@
+% data_sha256=091ebd51ef628b2fa0427d0bd9f18c676ea0cc06cfd0f7485b533799fc1df323
+\pgfplotsset{briefaxis/.style={
+font=\fontsize{9}{11}\selectfont, tick label style={text=black},
+label style={text=black}, title style={text=black},
+axis line style={black,line width=0.6pt}, tick style={black},
+axis background/.style={fill=white}, grid style={black!12},
+legend style={text=black,font=\fontsize{9}{11}\selectfont,draw=none,fill=white},
+unbounded coords=discard}}
+\definecolor{briefblue}{HTML}{0072B2}
+\definecolor{brieforange}{HTML}{D55E00}
+\definecolor{briefgreen}{HTML}{009E73}
+
+\begin{tikzpicture}[font=\fontsize{8}{10}\selectfont]
+\begin{scope}[xshift=0.00cm]
+\node[font=\fontsize{10}{12}\selectfont\bfseries,text=black] at (1.5,0.8) {A\quad CWA};
+\filldraw[fill=briefblue!22.759168!white,draw=black!35,line width=0.5pt] (0,0) rectangle (1,-1);
+\node[text=black] at (0.5,-0.5) {71.1};
+\filldraw[fill=briefblue!4.113401!white,draw=black!35,line width=0.5pt] (1,0) rectangle (2,-1);
+\node[text=black] at (1.5,-0.5) {12.9};
+\filldraw[fill=briefblue!5.127431!white,draw=black!35,line width=0.5pt] (2,0) rectangle (3,-1);
+\node[text=black] at (2.5,-0.5) {16.0};
+\filldraw[fill=briefblue!3.568589!white,draw=black!35,line width=0.5pt] (0,-1) rectangle (1,-2);
+\node[text=black] at (0.5,-1.5) {11.2};
+\filldraw[fill=briefblue!18.995867!white,draw=black!35,line width=0.5pt] (1,-1) rectangle (2,-2);
+\node[text=black] at (1.5,-1.5) {59.4};
+\filldraw[fill=briefblue!9.435544!white,draw=black!35,line width=0.5pt] (2,-1) rectangle (3,-2);
+\node[text=black] at (2.5,-1.5) {29.5};
+\filldraw[fill=briefblue!7.694573!white,draw=black!35,line width=0.5pt] (0,-2) rectangle (1,-3);
+\node[text=black] at (0.5,-2.5) {24.0};
+\filldraw[fill=briefblue!11.894042!white,draw=black!35,line width=0.5pt] (1,-2) rectangle (2,-3);
+\node[text=black] at (1.5,-2.5) {37.2};
+\filldraw[fill=briefblue!12.411385!white,draw=black!35,line width=0.5pt] (2,-2) rectangle (3,-3);
+\node[text=black] at (2.5,-2.5) {38.8};
+\node[text=black,anchor=east] at (-.12,-0.5) {4-NP};
+\node[text=black] at (0.5,-3.3) {4-NP};
+\node[text=black,anchor=east] at (-.12,-1.5) {EtOH};
+\node[text=black] at (1.5,-3.3) {EtOH};
+\node[text=black,anchor=east] at (-.12,-2.5) {EP};
+\node[text=black] at (2.5,-3.3) {EP};
+\node[text=black] at (1.5,-3.8) {Predicted category};
+\node[text=black,rotate=90] at (-1.4,-1.5) {True category};
+\end{scope}
+\begin{scope}[xshift=5.70cm]
+\node[font=\fontsize{10}{12}\selectfont\bfseries,text=black] at (1.5,0.8) {B\quad Pills};
+\filldraw[fill=briefblue!15.644444!white,draw=black!35,line width=0.5pt] (0,0) rectangle (1,-1);
+\node[text=black] at (0.5,-0.5) {48.9};
+\filldraw[fill=briefblue!2.755556!white,draw=black!35,line width=0.5pt] (1,0) rectangle (2,-1);
+\node[text=black] at (1.5,-0.5) {8.6};
+\filldraw[fill=briefblue!13.600000!white,draw=black!35,line width=0.5pt] (2,0) rectangle (3,-1);
+\node[text=black] at (2.5,-0.5) {42.5};
+\filldraw[fill=briefblue!1.333333!white,draw=black!35,line width=0.5pt] (0,-1) rectangle (1,-2);
+\node[text=black] at (0.5,-1.5) {4.2};
+\filldraw[fill=briefblue!17.200000!white,draw=black!35,line width=0.5pt] (1,-1) rectangle (2,-2);
+\node[text=black] at (1.5,-1.5) {53.8};
+\filldraw[fill=briefblue!13.466667!white,draw=black!35,line width=0.5pt] (2,-1) rectangle (3,-2);
+\node[text=black] at (2.5,-1.5) {42.1};
+\filldraw[fill=briefblue!0.546341!white,draw=black!35,line width=0.5pt] (0,-2) rectangle (1,-3);
+\node[text=black] at (0.5,-2.5) {1.7};
+\filldraw[fill=briefblue!1.717073!white,draw=black!35,line width=0.5pt] (1,-2) rectangle (2,-3);
+\node[text=black] at (1.5,-2.5) {5.4};
+\filldraw[fill=briefblue!29.736585!white,draw=black!35,line width=0.5pt] (2,-2) rectangle (3,-3);
+\node[text=black] at (2.5,-2.5) {92.9};
+\node[text=black,anchor=east] at (-.12,-0.5) {4-ANPP};
+\node[text=black] at (0.5,-3.3) {4-ANPP};
+\node[text=black,anchor=east] at (-.12,-1.5) {BF};
+\node[text=black] at (1.5,-3.3) {BF};
+\node[text=black,anchor=east] at (-.12,-2.5) {Blank};
+\node[text=black] at (2.5,-3.3) {Blank};
+\node[text=black] at (1.5,-3.8) {Predicted category};
+\node[text=black,rotate=90] at (-1.4,-1.5) {True category};
+\end{scope}
+\begin{scope}[xshift=11.40cm]
+\node[font=\fontsize{10}{12}\selectfont\bfseries,text=black] at (1.5,0.8) {C\quad Surfaces};
+\filldraw[fill=briefblue!20.377261!white,draw=black!35,line width=0.5pt] (0,0) rectangle (1,-1);
+\node[text=black] at (0.5,-0.5) {63.7};
+\filldraw[fill=briefblue!8.899664!white,draw=black!35,line width=0.5pt] (1,0) rectangle (2,-1);
+\node[text=black] at (1.5,-0.5) {27.8};
+\filldraw[fill=briefblue!2.723075!white,draw=black!35,line width=0.5pt] (2,0) rectangle (3,-1);
+\node[text=black] at (2.5,-0.5) {8.5};
+\filldraw[fill=briefblue!4.762313!white,draw=black!35,line width=0.5pt] (0,-1) rectangle (1,-2);
+\node[text=black] at (0.5,-1.5) {14.9};
+\filldraw[fill=briefblue!23.234213!white,draw=black!35,line width=0.5pt] (1,-1) rectangle (2,-2);
+\node[text=black] at (1.5,-1.5) {72.6};
+\filldraw[fill=briefblue!4.003474!white,draw=black!35,line width=0.5pt] (2,-1) rectangle (3,-2);
+\node[text=black] at (2.5,-1.5) {12.5};
+\filldraw[fill=briefblue!4.193889!white,draw=black!35,line width=0.5pt] (0,-2) rectangle (1,-3);
+\node[text=black] at (0.5,-2.5) {13.1};
+\filldraw[fill=briefblue!9.935361!white,draw=black!35,line width=0.5pt] (1,-2) rectangle (2,-3);
+\node[text=black] at (1.5,-2.5) {31.0};
+\filldraw[fill=briefblue!17.870750!white,draw=black!35,line width=0.5pt] (2,-2) rectangle (3,-3);
+\node[text=black] at (2.5,-2.5) {55.8};
+\node[text=black,anchor=east] at (-.12,-0.5) {4-ANPP};
+\node[text=black] at (0.5,-3.3) {4-ANPP};
+\node[text=black,anchor=east] at (-.12,-1.5) {APAP};
+\node[text=black] at (1.5,-3.3) {APAP};
+\node[text=black,anchor=east] at (-.12,-2.5) {BF};
+\node[text=black] at (2.5,-3.3) {BF};
+\node[text=black] at (1.5,-3.8) {Predicted category};
+\node[text=black,rotate=90] at (-1.4,-1.5) {True category};
+\end{scope}
+\node[text=black,anchor=west] at (0,-4.65) {Percent of each true category};
+\fill[briefblue!0.000!white] (6.0000,-4.45) rectangle (6.0450,-4.75);
+\fill[briefblue!0.320!white] (6.0450,-4.45) rectangle (6.0900,-4.75);
+\fill[briefblue!0.640!white] (6.0900,-4.45) rectangle (6.1350,-4.75);
+\fill[briefblue!0.960!white] (6.1350,-4.45) rectangle (6.1800,-4.75);
+\fill[briefblue!1.280!white] (6.1800,-4.45) rectangle (6.2250,-4.75);
+\fill[briefblue!1.600!white] (6.2250,-4.45) rectangle (6.2700,-4.75);
+\fill[briefblue!1.920!white] (6.2700,-4.45) rectangle (6.3150,-4.75);
+\fill[briefblue!2.240!white] (6.3150,-4.45) rectangle (6.3600,-4.75);
+\fill[briefblue!2.560!white] (6.3600,-4.45) rectangle (6.4050,-4.75);
+\fill[briefblue!2.880!white] (6.4050,-4.45) rectangle (6.4500,-4.75);
+\fill[briefblue!3.200!white] (6.4500,-4.45) rectangle (6.4950,-4.75);
+\fill[briefblue!3.520!white] (6.4950,-4.45) rectangle (6.5400,-4.75);
+\fill[briefblue!3.840!white] (6.5400,-4.45) rectangle (6.5850,-4.75);
+\fill[briefblue!4.160!white] (6.5850,-4.45) rectangle (6.6300,-4.75);
+\fill[briefblue!4.480!white] (6.6300,-4.45) rectangle (6.6750,-4.75);
+\fill[briefblue!4.800!white] (6.6750,-4.45) rectangle (6.7200,-4.75);
+\fill[briefblue!5.120!white] (6.7200,-4.45) rectangle (6.7650,-4.75);
+\fill[briefblue!5.440!white] (6.7650,-4.45) rectangle (6.8100,-4.75);
+\fill[briefblue!5.760!white] (6.8100,-4.45) rectangle (6.8550,-4.75);
+\fill[briefblue!6.080!white] (6.8550,-4.45) rectangle (6.9000,-4.75);
+\fill[briefblue!6.400!white] (6.9000,-4.45) rectangle (6.9450,-4.75);
+\fill[briefblue!6.720!white] (6.9450,-4.45) rectangle (6.9900,-4.75);
+\fill[briefblue!7.040!white] (6.9900,-4.45) rectangle (7.0350,-4.75);
+\fill[briefblue!7.360!white] (7.0350,-4.45) rectangle (7.0800,-4.75);
+\fill[briefblue!7.680!white] (7.0800,-4.45) rectangle (7.1250,-4.75);
+\fill[briefblue!8.000!white] (7.1250,-4.45) rectangle (7.1700,-4.75);
+\fill[briefblue!8.320!white] (7.1700,-4.45) rectangle (7.2150,-4.75);
+\fill[briefblue!8.640!white] (7.2150,-4.45) rectangle (7.2600,-4.75);
+\fill[briefblue!8.960!white] (7.2600,-4.45) rectangle (7.3050,-4.75);
+\fill[briefblue!9.280!white] (7.3050,-4.45) rectangle (7.3500,-4.75);
+\fill[briefblue!9.600!white] (7.3500,-4.45) rectangle (7.3950,-4.75);
+\fill[briefblue!9.920!white] (7.3950,-4.45) rectangle (7.4400,-4.75);
+\fill[briefblue!10.240!white] (7.4400,-4.45) rectangle (7.4850,-4.75);
+\fill[briefblue!10.560!white] (7.4850,-4.45) rectangle (7.5300,-4.75);
+\fill[briefblue!10.880!white] (7.5300,-4.45) rectangle (7.5750,-4.75);
+\fill[briefblue!11.200!white] (7.5750,-4.45) rectangle (7.6200,-4.75);
+\fill[briefblue!11.520!white] (7.6200,-4.45) rectangle (7.6650,-4.75);
+\fill[briefblue!11.840!white] (7.6650,-4.45) rectangle (7.7100,-4.75);
+\fill[briefblue!12.160!white] (7.7100,-4.45) rectangle (7.7550,-4.75);
+\fill[briefblue!12.480!white] (7.7550,-4.45) rectangle (7.8000,-4.75);
+\fill[briefblue!12.800!white] (7.8000,-4.45) rectangle (7.8450,-4.75);
+\fill[briefblue!13.120!white] (7.8450,-4.45) rectangle (7.8900,-4.75);
+\fill[briefblue!13.440!white] (7.8900,-4.45) rectangle (7.9350,-4.75);
+\fill[briefblue!13.760!white] (7.9350,-4.45) rectangle (7.9800,-4.75);
+\fill[briefblue!14.080!white] (7.9800,-4.45) rectangle (8.0250,-4.75);
+\fill[briefblue!14.400!white] (8.0250,-4.45) rectangle (8.0700,-4.75);
+\fill[briefblue!14.720!white] (8.0700,-4.45) rectangle (8.1150,-4.75);
+\fill[briefblue!15.040!white] (8.1150,-4.45) rectangle (8.1600,-4.75);
+\fill[briefblue!15.360!white] (8.1600,-4.45) rectangle (8.2050,-4.75);
+\fill[briefblue!15.680!white] (8.2050,-4.45) rectangle (8.2500,-4.75);
+\fill[briefblue!16.000!white] (8.2500,-4.45) rectangle (8.2950,-4.75);
+\fill[briefblue!16.320!white] (8.2950,-4.45) rectangle (8.3400,-4.75);
+\fill[briefblue!16.640!white] (8.3400,-4.45) rectangle (8.3850,-4.75);
+\fill[briefblue!16.960!white] (8.3850,-4.45) rectangle (8.4300,-4.75);
+\fill[briefblue!17.280!white] (8.4300,-4.45) rectangle (8.4750,-4.75);
+\fill[briefblue!17.600!white] (8.4750,-4.45) rectangle (8.5200,-4.75);
+\fill[briefblue!17.920!white] (8.5200,-4.45) rectangle (8.5650,-4.75);
+\fill[briefblue!18.240!white] (8.5650,-4.45) rectangle (8.6100,-4.75);
+\fill[briefblue!18.560!white] (8.6100,-4.45) rectangle (8.6550,-4.75);
+\fill[briefblue!18.880!white] (8.6550,-4.45) rectangle (8.7000,-4.75);
+\fill[briefblue!19.200!white] (8.7000,-4.45) rectangle (8.7450,-4.75);
+\fill[briefblue!19.520!white] (8.7450,-4.45) rectangle (8.7900,-4.75);
+\fill[briefblue!19.840!white] (8.7900,-4.45) rectangle (8.8350,-4.75);
+\fill[briefblue!20.160!white] (8.8350,-4.45) rectangle (8.8800,-4.75);
+\fill[briefblue!20.480!white] (8.8800,-4.45) rectangle (8.9250,-4.75);
+\fill[briefblue!20.800!white] (8.9250,-4.45) rectangle (8.9700,-4.75);
+\fill[briefblue!21.120!white] (8.9700,-4.45) rectangle (9.0150,-4.75);
+\fill[briefblue!21.440!white] (9.0150,-4.45) rectangle (9.0600,-4.75);
+\fill[briefblue!21.760!white] (9.0600,-4.45) rectangle (9.1050,-4.75);
+\fill[briefblue!22.080!white] (9.1050,-4.45) rectangle (9.1500,-4.75);
+\fill[briefblue!22.400!white] (9.1500,-4.45) rectangle (9.1950,-4.75);
+\fill[briefblue!22.720!white] (9.1950,-4.45) rectangle (9.2400,-4.75);
+\fill[briefblue!23.040!white] (9.2400,-4.45) rectangle (9.2850,-4.75);
+\fill[briefblue!23.360!white] (9.2850,-4.45) rectangle (9.3300,-4.75);
+\fill[briefblue!23.680!white] (9.3300,-4.45) rectangle (9.3750,-4.75);
+\fill[briefblue!24.000!white] (9.3750,-4.45) rectangle (9.4200,-4.75);
+\fill[briefblue!24.320!white] (9.4200,-4.45) rectangle (9.4650,-4.75);
+\fill[briefblue!24.640!white] (9.4650,-4.45) rectangle (9.5100,-4.75);
+\fill[briefblue!24.960!white] (9.5100,-4.45) rectangle (9.5550,-4.75);
+\fill[briefblue!25.280!white] (9.5550,-4.45) rectangle (9.6000,-4.75);
+\fill[briefblue!25.600!white] (9.6000,-4.45) rectangle (9.6450,-4.75);
+\fill[briefblue!25.920!white] (9.6450,-4.45) rectangle (9.6900,-4.75);
+\fill[briefblue!26.240!white] (9.6900,-4.45) rectangle (9.7350,-4.75);
+\fill[briefblue!26.560!white] (9.7350,-4.45) rectangle (9.7800,-4.75);
+\fill[briefblue!26.880!white] (9.7800,-4.45) rectangle (9.8250,-4.75);
+\fill[briefblue!27.200!white] (9.8250,-4.45) rectangle (9.8700,-4.75);
+\fill[briefblue!27.520!white] (9.8700,-4.45) rectangle (9.9150,-4.75);
+\fill[briefblue!27.840!white] (9.9150,-4.45) rectangle (9.9600,-4.75);
+\fill[briefblue!28.160!white] (9.9600,-4.45) rectangle (10.0050,-4.75);
+\fill[briefblue!28.480!white] (10.0050,-4.45) rectangle (10.0500,-4.75);
+\fill[briefblue!28.800!white] (10.0500,-4.45) rectangle (10.0950,-4.75);
+\fill[briefblue!29.120!white] (10.0950,-4.45) rectangle (10.1400,-4.75);
+\fill[briefblue!29.440!white] (10.1400,-4.45) rectangle (10.1850,-4.75);
+\fill[briefblue!29.760!white] (10.1850,-4.45) rectangle (10.2300,-4.75);
+\fill[briefblue!30.080!white] (10.2300,-4.45) rectangle (10.2750,-4.75);
+\fill[briefblue!30.400!white] (10.2750,-4.45) rectangle (10.3200,-4.75);
+\fill[briefblue!30.720!white] (10.3200,-4.45) rectangle (10.3650,-4.75);
+\fill[briefblue!31.040!white] (10.3650,-4.45) rectangle (10.4100,-4.75);
+\fill[briefblue!31.360!white] (10.4100,-4.45) rectangle (10.4550,-4.75);
+\fill[briefblue!31.680!white] (10.4550,-4.45) rectangle (10.5000,-4.75);
+\fill[briefblue!32.000!white] (10.5000,-4.45) rectangle (10.5450,-4.75);
+\node[text=black,anchor=east] at (5.85,-4.6) {0};
+\node[text=black,anchor=west] at (10.75,-4.6) {100};
+\end{tikzpicture}

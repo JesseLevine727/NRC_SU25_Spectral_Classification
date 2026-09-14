@@ -1,0 +1,182 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=1.65cm,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{microtype}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{colorlinks=false,pdfborder={0 0 0}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=1pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=1pt,topsep=2pt}
+\renewcommand{\arraystretch}{1.12}
+\newcommand{\metric}[1]{\textbf{#1}}
+\newcommand{\captionline}[1]{\vspace{2pt}{\footnotesize\textbf{Figure.} #1}\par}
+\newcommand{\source}[1]{{\scriptsize Source: #1.}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\sectiontitle}[1]{\vspace{2pt}{\large\bfseries #1}\par\vspace{1pt}\hrule\vspace{3pt}}
+\begin{document}
+\color{black}
+
+% -------------------- title page --------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{2.3cm}
+\begin{center}
+{\fontsize{25}{30}\selectfont\bfseries NATO field-trial SERS dataset\par}
+\vspace{0.55cm}
+{\fontsize{18}{23}\selectfont Classical Machine-Learning Baseline Experiments\par}
+\vspace{1.2cm}
+{\large Supervisor briefing report\par}
+\vfill
+\begin{tabular}{rl}
+\textbf{Prepared for:} & Li-Lin\\
+\textbf{Analysis:} & Classical machine-learning benchmark\\
+\textbf{Population:} & 598 spectra from 69 physical samples\\
+\textbf{Primary representation:} & 400--1,800~cm$^{-1}$, per-spectrum min--max scaling\\
+\textbf{Date:} & 14 September 2026
+\end{tabular}
+\vfill
+\begin{minipage}{0.84\textwidth}
+\small
+\textbf{Purpose.} This report explains what was tested, what the results mean chemically, and where the evidence remains limited. It summarizes the completed benchmark analysis; no new model was trained for this report.
+\end{minipage}
+\vspace*{1.5cm}
+\end{center}
+\end{titlepage}
+
+% -------------------- page 1 --------------------
+\sectiontitle{1. What was tested}
+The field-trial bundle contains 598 stored SERS spectra from 69 physical samples. A physical sample can have several measurements from different instruments or substrates. The repeated spectra are useful views of the same sample; they are not 598 independent chemical examples.
+
+The three station-specific tasks each distinguish three recorded categories:
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Station & Categories & Physical samples\\
+\midrule
+CWA & 4-nitrophenol; ethanol; ethyl paraoxon & 24\\
+Pills & 4-ANPP; benzyl fentanyl; blank & 20\\
+Surfaces & 4-ANPP; acetaminophen; benzyl fentanyl & 25\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Before modelling, each spectrum was interpolated on its measured support to a common 1~cm$^{-1}$ grid from 400 to 1,800~cm$^{-1}$, then scaled independently to the interval [0,1]. This common preprocessing procedure puts all spectra on the same intensity scale without assuming that one baseline-correction method is valid for every instrument. No universal baseline subtraction or smoothing was applied in this initial comparison; those remain separate preprocessing questions.
+
+\textbf{How the test was kept fair.} All measurements from one physical sample were kept in the same training or test partition. Five repeated four-fold partitions were used. Model settings were chosen using training data only. For the unseen-instrument test, the test instrument was excluded from model fitting, model selection, calibration, and preprocessing-statistic estimation. The score is balanced accuracy: the average recall of the three categories, so chance is 33.3\% and a perfect result is 100\%.
+
+\sectiontitle{2. New samples measured with familiar instruments}
+The first question was whether a model can identify new physical samples when the types of instruments used at test time were represented during training. Random Forest is a useful reference because it performed well and its tree-based decision process is intuitive to explain.
+
+\begin{center}
+\small
+\begin{tabular}{lrr}
+\toprule
+Station & One spectrum at a time & One final result per physical sample\\
+\midrule
+CWA & 62.4\% & 86.3\%\\
+Pills & 82.7\% & 100.0\%\\
+Surfaces & 75.0\% & 97.0\%\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The two columns score the same predictions differently. The open points in Fig.~\ref{fig:r1} ask: ``If the model receives one measured spectrum, how often is it correct?'' Each spectrum is classified and counted separately. The filled points ask: ``If one physical sample was measured several times, how often is one final sample decision correct?'' The model still classifies every spectrum separately and returns one probability for each category. We average each category's probabilities across the repeats, then choose the category with the largest average (for example, 0.80, 0.60, and 0.30 give 0.57 for one category). The raw spectra are never averaged. If several instruments measured the sample, repeats are averaged within each instrument first and the available instruments receive equal weight. This is a consensus of repeated predictions, not extra independent chemistry. The improvement does not prove removal of substrate or instrument background; the 100\% Pills value applies only to these 20 physical samples and this split design.
+
+\begin{figure}[H]
+\centering
+\input{p03_classical/figures/tikz/R1_within_station_random_forest_body.tex}
+\caption{\label{fig:r1}Random Forest results for new physical samples measured with instrument types represented during training. Open circles are scores when each measured spectrum is classified separately. Filled circles are scores for one final prediction per physical sample: classify each repeated spectrum, average the predicted category probabilities, and select the category with the largest average (the raw spectra are not averaged). Horizontal ranges are the minimum and maximum of five repeated train/test partitions, not confidence intervals. The vertical dash-dot line is three-category chance. There are 69 physical samples in total.}
+\end{figure}
+\source{Validated aggregate results; the accompanying directory contains the plotted data and reproducibility hashes.}
+
+\newpage
+% -------------------- page 2 --------------------
+\sectiontitle{3. What changes for an instrument not used in training?}
+The more demanding test withheld both physical samples and the instrument used to measure them. Thirteen station--instrument combinations were evaluated. Measurements from the test instrument could not be used to calculate preprocessing settings, choose a model, or calibrate its probabilities. This is the strongest portability test in this analysis, although it remains limited to the tested instruments and three-category tasks.
+
+\begin{center}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Procedure & One spectrum at a time & One final result per physical sample & Completed runs (of 65)\\
+\midrule
+Extra Trees & 68.5\% & 75.6\% & 65/65\\
+Random Forest & 66.8\% & 75.7\% & 65/65\\
+RBF support-vector machine & 65.1\% & 69.7\% & 65/65\\
+PCA--LDA & 62.4\% & 67.3\% & 65/65\\
+Training-selected procedure & 64.0\% & 70.9\% & 57/65\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The model selected using training data averaged \metric{64.0\%} when each measured spectrum was classified separately and \metric{70.9\%} when repeated predictions were combined into one result per physical sample. Here, 65 is not a number of spectra: it is 13 eligible station--instrument combinations, each evaluated in five repeated train/test runs (13 $\times$ 5 = 65). The selected procedure produced a usable result for 57 of those 65 planned runs. Eight results were missing from the stored analysis; missing means no score was available, not an incorrect prediction and not 0\% accuracy. Thus, 70.9\% is the average of the 57 completed runs, with incomplete coverage noted explicitly.
+
+The fully observed model comparisons show that tree ensembles were strongest: Extra Trees reached 68.5\% when classifying one spectrum at a time and 75.6\% for one result per sample; Random Forest reached 66.8\% and 75.7\%, respectively. PCA--LDA and the RBF support-vector machine were lower. These averages hide variation among station--instrument combinations. For example, the training-selected model reached 87.5\% on Pills / Agilent-3 one-spectrum predictions but only 33.3\% on Pills / Mira-3, which is chance for three categories.
+
+\begin{figure}[H]
+\centering
+\input{p03_classical/figures/tikz/R2_unseen_instrument_domains_body.tex}
+\caption{\label{fig:r2}Performance when the instrument and physical samples were not used for training. Each row is one station--instrument combination; open circles show one-spectrum predictions, while filled circles show one final sample prediction obtained by averaging the repeated spectra's predicted category probabilities (not the raw spectra). Ranges are minimum--maximum across available repeated train/test partitions. Numbers at right give physical-sample count and complete repeats out of five. All 13 combinations are shown; missing combination/repeat results are not assigned coordinates. Chance is 33.3\%.}
+\end{figure}
+\source{Validated station--instrument aggregate results. Each combination contributes equally; results are not weighted by spectrum count.}
+
+\textbf{Interpretation.} The result supports useful signal beyond a purely instrument-local rule, but not arbitrary instrument independence. A test instrument can alter baseline, peak visibility, intensity response, or noise. This comparison therefore establishes a classical reference point for later preprocessing and representation studies; it does not identify a universally best instrument, substrate, or correction.
+
+\newpage
+% -------------------- page 3 --------------------
+\sectiontitle{4. Why repeated measurements help}
+Figure~\ref{fig:r3} shows the same results in a direct scatter plot. Each point is one completed station--instrument combination and repeated train/test partition. Points above the diagonal improved when several predictions were combined into one sample result. Points near or below the line show that combining predictions is not guaranteed to help for every combination.
+
+\begin{figure}[H]
+\centering
+\input{p03_classical/figures/tikz/R3_spectrum_sample_scatter_body.tex}
+\caption{\label{fig:r3}One-spectrum-at-a-time versus one-result-per-sample scores for the same test-instrument predictions. The sample-level result is formed by classifying each repeated spectrum, averaging its predicted category probabilities, and selecting the highest average; raw spectra are not averaged. Each of the 57 plotted points is one completed station--instrument combination and repeated train/test partition; eight missing results have no fabricated coordinate. Points above the dash-dot equality line improve after combining predictions. Blue circles, orange squares, and green triangles denote CWA, Pills, and Surfaces.}
+\end{figure}
+
+\sectiontitle{5. Which chemical categories are confused?}
+For the model selected using training data, blank spectra in the Pills task were correctly identified 92.9\% of the time. In contrast, 42.5\% of 4-ANPP spectra and 42.1\% of benzyl-fentanyl spectra were classified as blank. CWA also showed substantial confusion between ethanol and ethyl paraoxon. These patterns are more informative than one overall accuracy: they identify the failure mode that matters operationally.
+
+The confusion matrices in Fig.~\ref{fig:r4} show all three categories for each station. Each row is normalized within the true category, so a row sums to 100\% (apart from rounding). The table does not tell us whether an error arose from weak analyte response, substrate variation, instrument background, or model limitations. The current benchmark cannot distinguish these causes; the planned controlled preprocessing and acquisition-shift experiments will investigate them explicitly.
+
+\newpage
+% -------------------- page 4 --------------------
+\sectiontitle{6. Controls and confidence}
+Two negative controls were close to the three-category chance level. A classifier given acquisition metadata rather than spectra reached \metric{32.2\%}; twenty controls in which sample labels were randomly shuffled averaged \metric{33.6\%}. These controls support the interpretation that the spectral models use label-related information beyond this metadata and do not simply reproduce random labels. They do not eliminate all possible chemical, substrate, or instrument confounding.
+
+Confidence requires caution. In the Pills individual-spectrum reliability analysis, predictions in the highest stated-confidence bin averaged about \metric{95.8\% confidence} but only \metric{59.0\% empirical accuracy}. A high probability from the uncalibrated or imperfectly calibrated model should therefore not be treated as a confirmed chemical identification.
+
+\begin{figure}[H]
+\centering
+\input{p03_classical/figures/tikz/R4_chemical_confusion_body.tex}
+\caption{\label{fig:r4}Chemical confusion for the model selected using training data when the instrument was not used for training, scored at the individual-spectrum level. Cell values are percentages within each true category. The diagonal is correct identification. Abbreviations: 4-NP, 4-nitrophenol; EtOH, ethanol; EP, ethyl paraoxon; BF, benzyl fentanyl; APAP, acetaminophen.}
+\end{figure}
+
+\sectiontitle{7. What the analysis establishes—and what it does not}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{0.29\textwidth}Y@{}}
+\toprule
+Supported by the analysis & Not established by the analysis\\
+\midrule
+Classical models extract predictive information from the spectra; performance is well above chance for many tasks. & The model has not been shown to recover a pure chemical spectrum or causally remove noise, substrate, or instrument background.\\
+Combining repeated views often improves physical-sample identification. & Repeated measurements are not independent samples, and this does not prove generalization to arbitrary new instruments.\\
+Performance varies across station--instrument combinations; tree ensembles provide a strong classical comparator. & One substrate or instrument cannot be declared intrinsically superior from these observational results.\\
+The metadata and shuffled-label controls are near chance. & This analysis does not choose a universal baseline correction, smoothing method, or adaptive preprocessing policy.\\
+\bottomrule
+\end{tabularx}
+
+\sectiontitle{8. Where this leaves the project}
+The classical benchmark is now the reference. We will first train an ordinary compact one-dimensional neural classifier, then acquisition-aware versions that make repeated views of one sample agree while separating chemical categories. All will use the same preprocessing and physical-sample partitions for a direct learning comparison; improved transfer will not prove removal of noise, substrate variation, or background.
+
+Separately, we will compare minimal scaling, smoothing, baseline correction, source-selected platform-family processing, and spectrum-quality routing under identical splits and training-only decisions. We will audit whether gains preserve chemistry rather than instrument or substrate cues. No substrate family passed all classical instrument-independence criteria, so neural results will be limited to supported station--substrate--instrument cells. We will report spectrum-level and per-sample results, coverage, and instrument-specific performance. The question is whether learning or preprocessing helps weak acquisition combinations without sacrificing chemical separation.
+
+\textbf{Bottom line.} The spectra contain usable category information, but performance varies by instrument and analytes can be mistaken for blanks. Classical machine learning is the fair reference for the compact neural and preprocessing studies. The goal is bounded analyte recoverability under the tested conditions---not clean-spectrum recovery or universal instrument independence.
+
+\end{document}
