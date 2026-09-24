@@ -56,3 +56,7 @@ The full suite reused the temporary validation-only `pyarrow` dependency describ
 The [support findings](../P05_SOURCE_SUPPORT_AUDIT.md) and [design handoff](../P05_DESIGN_HANDOFF.md) distinguish availability from feasibility, repeated pairs from independent specimens, source-selection metadata from held predictive outcomes, and illustrative cost arithmetic from an approved budget.
 
 Even after this slice passes, full P05 Gate B remains open: exact P05 executable registries, loss/sampler choices, source-only G3 denominators, and an approved finite compute schedule are still required. No D1–D5 model is fitted, no G3 outcome is claimed, and the old P04 training authorization is not inherited.
+
+## Post-push CI follow-up
+
+The first remote run passed all 85 support-audit tests but failed an older P01 repeat-build assertion. This does not invalidate the metadata counts or establish the cause of the reuse mismatch. [T004's review](P05_TASK_004_REVIEW.md) records the independent reproduction attempts and test-only diagnostic follow-up; the runtime reuse requirement remains unchanged.
