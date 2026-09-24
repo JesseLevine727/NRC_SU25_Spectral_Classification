@@ -682,6 +682,8 @@ Augmentation parameters are logged per example. ±5 cm⁻¹ shift is a robustnes
 
 All D1–D5 advancement occurs under `PP-U-MIN`. Preprocessing-policy outcomes cannot select the acquisition-aware loss, and acquisition-aware held-test outcomes cannot select a preprocessing policy.
 
+**Implementation checkpoint, 2026-09-24:** the [inherited-role source-support audit](P05_SOURCE_SUPPORT_AUDIT.md) covers 320 outer contexts, 861 inner-selection units, and 1,181 fitting roles. Of 255 surface inner fitting roles for unseen-instrument evaluation, 87 contain only one instrument and 36 cannot support two chemicals with at least two distinct masters each. The [design handoff](P05_DESIGN_HANDOFF.md) therefore requires explicit unavailable-loss/sampling rules and a finite staged compute proposal before training. These are metadata findings, not new predictive results or an amendment of the frozen losses. The [T003 review](delegation/P05_TASK_003_REVIEW.md) records implementation acceptance separately from scientific authorization.
+
 ### 13.1 Batch construction
 
 Each batch is sampled at the master level and must contain:

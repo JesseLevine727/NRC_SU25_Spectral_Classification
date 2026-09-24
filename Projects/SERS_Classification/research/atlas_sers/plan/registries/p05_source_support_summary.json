@@ -1,0 +1,398 @@
+{
+  "additional_support_counts": {
+    "all_fitting_roles_have_three_classes": true,
+    "surface_t3_inner_roles": 255,
+    "surface_t3_inner_roles_lacking_all_class_two_master_support": 177,
+    "surface_t3_inner_single_instrument_roles": 87
+  },
+  "audit_module_sha256": "c5a822a2fed3065f37cafc0d36f9db5e7c7f9a0e695a8cfa9b3ac1af342b5087",
+  "audit_status": "pass",
+  "claim_boundary": "Metadata-only audit of inherited P04 source-fitting roles. Pair counts are availability counts, not sampled training pairs or independent replicates, and are not a held performance evaluation. P05 training remains unauthorized.",
+  "cost_scenario": {
+    "assumption": "Illustrative Cartesian expansion of every enumerated loss and optimizer candidate and neural seed across each inherited source selection unit.",
+    "authorizing": false,
+    "crossing_per_selection_unit": 2646,
+    "crossing_source": "readiness_report",
+    "exclusions": [
+      "final refits",
+      "temperature calibration",
+      "D0 controls",
+      "retries"
+    ],
+    "illustrative_fits": {
+      "development": 476280,
+      "held_evaluation": 1801926,
+      "overall": 2278206
+    },
+    "label": "illustrative full-grid Cartesian scenario",
+    "note": "Not an approved P05 plan, total required fits, or compute-time estimate. Selection units are counted from selection_fit roles only. Training remains unauthorized regardless of the inherited P04 flags.",
+    "source_contexts": {
+      "development": 60,
+      "held_evaluation": 260,
+      "overall": 320
+    },
+    "source_selection_units": {
+      "development": 180,
+      "held_evaluation": 681,
+      "overall": 861
+    }
+  },
+  "counts": {
+    "contexts": 320,
+    "development_contexts": 60,
+    "fitting_role_ids": 1181,
+    "held_evaluation_contexts": 260,
+    "manifest_rows": 598,
+    "master_samples": 69,
+    "role_ids": 2362,
+    "role_rows": 132392,
+    "roles_by_name": {
+      "outer_fit": 320,
+      "outer_test": 320,
+      "selection_fit": 861,
+      "selection_validation": 861
+    },
+    "selection_units": 861,
+    "selection_units_development": 180,
+    "selection_units_held_evaluation": 681
+  },
+  "full_audit_report_sha256": "507349cc4324f7a9e0b4830da761f28dd8a75fb2d5705c9d998021db26d014e5",
+  "input_hashes": {
+    "caller_pinned": {
+      "contexts": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+      "manifest": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+      "roles": "224891579d5df84c42a1c3c827590b6515ec83a13bfe4f07d48f249432f38d91"
+    },
+    "readiness_contracts": {
+      "plan/contracts/compute_budget.json": "7edb66b17120eeabe2b1bbe31e2038dfe339cd0e17971d9ca12f9bc98d0d2174",
+      "plan/contracts/hyperparameter_registry.json": "e1f966b10c135d83698ad67d1869ce84f9808e6d37b1800cf093b9b7aba807ee",
+      "plan/contracts/p04_execution_contract.json": "fa09c2bdf30155dd0f533601a876ab1190a0e0e654469fc92ff1a9e2b492e9a5"
+    }
+  },
+  "integrity_note": "The required SHA-256 digests are a caller-pinned integrity check against a supervisor-verified prerequisite state, not independent authentication of a forged upstream registry. Hashes are reported under logical keys only.",
+  "publication_scope": "Aggregate metadata audit only; per-role records and local session logs excluded.",
+  "schema_version": "nato-sers-p05-support-public-summary-v1",
+  "scientific_execution_authorized": false,
+  "scientific_fits_performed": 0,
+  "scope": "inherited_role_metadata_only",
+  "summaries": [
+    {
+      "masters": {
+        "max": 19,
+        "median": 18.0,
+        "min": 17
+      },
+      "observations": {
+        "max": 189,
+        "median": 152.5,
+        "min": 127
+      },
+      "phase_gate": "development",
+      "role": "outer_fit",
+      "role_count": 20,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 915,
+        "median": 685.5,
+        "min": 520
+      },
+      "station": "cwa"
+    },
+    {
+      "masters": {
+        "max": 13,
+        "median": 12.0,
+        "min": 11
+      },
+      "observations": {
+        "max": 147,
+        "median": 104.0,
+        "min": 61
+      },
+      "phase_gate": "development",
+      "role": "selection_fit",
+      "role_count": 60,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 729,
+        "median": 471.0,
+        "min": 213
+      },
+      "station": "cwa"
+    },
+    {
+      "masters": {
+        "max": 19,
+        "median": 18.0,
+        "min": 17
+      },
+      "observations": {
+        "max": 146,
+        "median": 110.0,
+        "min": 84
+      },
+      "phase_gate": "held_evaluation",
+      "role": "outer_fit",
+      "role_count": 60,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 465,
+        "median": 325.0,
+        "min": 216
+      },
+      "station": "cwa"
+    },
+    {
+      "masters": {
+        "max": 14,
+        "median": 12.0,
+        "min": 10
+      },
+      "observations": {
+        "max": 81,
+        "median": 53.5,
+        "min": 35
+      },
+      "phase_gate": "held_evaluation",
+      "role": "selection_fit",
+      "role_count": 126,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 244,
+        "median": 117.0,
+        "min": 49
+      },
+      "station": "cwa"
+    },
+    {
+      "masters": {
+        "max": 16,
+        "median": 15.0,
+        "min": 14
+      },
+      "observations": {
+        "max": 174,
+        "median": 155.0,
+        "min": 145
+      },
+      "phase_gate": "development",
+      "role": "outer_fit",
+      "role_count": 20,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 732,
+        "median": 638.0,
+        "min": 549
+      },
+      "station": "pills"
+    },
+    {
+      "masters": {
+        "max": 11,
+        "median": 10.0,
+        "min": 9
+      },
+      "observations": {
+        "max": 122,
+        "median": 104.0,
+        "min": 86
+      },
+      "phase_gate": "development",
+      "role": "selection_fit",
+      "role_count": 60,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 562,
+        "median": 427.0,
+        "min": 292
+      },
+      "station": "pills"
+    },
+    {
+      "masters": {
+        "max": 16,
+        "median": 15.0,
+        "min": 14
+      },
+      "observations": {
+        "max": 157,
+        "median": 128.0,
+        "min": 93
+      },
+      "phase_gate": "held_evaluation",
+      "role": "outer_fit",
+      "role_count": 100,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 566,
+        "median": 403.5,
+        "min": 211
+      },
+      "station": "pills"
+    },
+    {
+      "masters": {
+        "max": 11,
+        "median": 10.0,
+        "min": 9
+      },
+      "observations": {
+        "max": 114,
+        "median": 85.0,
+        "min": 58
+      },
+      "phase_gate": "held_evaluation",
+      "role": "selection_fit",
+      "role_count": 300,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 426,
+        "median": 270.0,
+        "min": 135
+      },
+      "station": "pills"
+    },
+    {
+      "masters": {
+        "max": 19,
+        "median": 19.0,
+        "min": 18
+      },
+      "observations": {
+        "max": 152,
+        "median": 137.0,
+        "min": 121
+      },
+      "phase_gate": "development",
+      "role": "outer_fit",
+      "role_count": 20,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 601,
+        "median": 512.5,
+        "min": 383
+      },
+      "station": "surfaces"
+    },
+    {
+      "masters": {
+        "max": 13,
+        "median": 12.5,
+        "min": 12
+      },
+      "observations": {
+        "max": 118,
+        "median": 91.0,
+        "min": 64
+      },
+      "phase_gate": "development",
+      "role": "selection_fit",
+      "role_count": 60,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 509,
+        "median": 338.5,
+        "min": 168
+      },
+      "station": "surfaces"
+    },
+    {
+      "masters": {
+        "max": 19,
+        "median": 19.0,
+        "min": 16
+      },
+      "observations": {
+        "max": 136,
+        "median": 111.0,
+        "min": 76
+      },
+      "phase_gate": "held_evaluation",
+      "role": "outer_fit",
+      "role_count": 100,
+      "roles_containing_zero_positive_anchors": 0,
+      "roles_lacking_different_master_cross_instrument_positives": 0,
+      "roles_lacking_same_master_cross_instrument_positives": 0,
+      "roles_lacking_two_chemical_two_master_support": 0,
+      "same_master_cross_instrument_pairs": {
+        "max": 445,
+        "median": 318.5,
+        "min": 142
+      },
+      "station": "surfaces"
+    },
+    {
+      "masters": {
+        "max": 13,
+        "median": 6,
+        "min": 4
+      },
+      "observations": {
+        "max": 101,
+        "median": 13,
+        "min": 4
+      },
+      "phase_gate": "held_evaluation",
+      "role": "selection_fit",
+      "role_count": 255,
+      "roles_containing_zero_positive_anchors": 87,
+      "roles_lacking_different_master_cross_instrument_positives": 87,
+      "roles_lacking_same_master_cross_instrument_positives": 87,
+      "roles_lacking_two_chemical_two_master_support": 36,
+      "same_master_cross_instrument_pairs": {
+        "max": 373,
+        "median": 6,
+        "min": 0
+      },
+      "station": "surfaces"
+    }
+  ],
+  "total_required_fits": null,
+  "unresolved_decision_ids": [
+    "P05-U01",
+    "P05-U02",
+    "P05-U03",
+    "P05-U04",
+    "P05-U05",
+    "P05-U06",
+    "P05-U07",
+    "P05-U08",
+    "P05-U09",
+    "P05-U10",
+    "P05-U11",
+    "P05-U12",
+    "P05-U13",
+    "P05-U14"
+  ],
+  "unresolved_decisions_resolved": false
+}

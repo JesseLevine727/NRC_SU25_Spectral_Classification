@@ -55,9 +55,12 @@ Implementation follows the [supervised OpenCode workflow](plan/ORCHESTRATION_PRO
 DeepSeek v4.1 Flash implements bounded tasks; the supervising assistant plans,
 reviews, verifies, and controls advancement. The first P05 readiness audit and
 [contract-only inventory implementation](plan/delegation/P05_TASK_002_REVIEW.md)
-are documented. The inventory does not authorize scientific training; exact
-source-role/pair expansion, design decisions, and the execution budget remain
-to be completed. Reviewed and validated substantive milestones are pushed to
+are documented. The [source-support audit](plan/P05_SOURCE_SUPPORT_AUDIT.md)
+checks all 1,181 inherited fitting roles and identifies sparse surface-training
+groups. The [design handoff](plan/P05_DESIGN_HANDOFF.md) records the remaining
+loss/sampling, source-only advancement, and finite-budget decisions. These
+audits do not authorize training or constitute executable P05 registries.
+Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 
 ## Repository map
@@ -231,8 +234,8 @@ limitation. See the [P04 results](results/p04_deep/P04_RESULTS.md),
 [completion audit](plan/P04_COMPLETION_AUDIT.md), and
 [interactive comparison](plan/figures/html/F48_deep_classical_comparison.html).
 
-P05 is next: expand and audit the predeclared source-only supervised-contrastive
-and paired-consistency experiments before fitting. D0 is now their frozen
+P05 is in no-fit design/audit: inherited source-support counts are available;
+the exact loss/sampler and executable budget remain to be frozen. D0 is their frozen
 control; no D1–D5 model has been trained. The P04 reuse of P13 held test views is
 descriptive only: a controlled P13 deep comparison still needs exact
 substrate-restricted source refits, matched-source loss, and preprocessing

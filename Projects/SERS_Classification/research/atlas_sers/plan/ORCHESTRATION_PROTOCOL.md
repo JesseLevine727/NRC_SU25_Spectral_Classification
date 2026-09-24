@@ -62,3 +62,5 @@ OpenCode's documented [CLI](https://opencode.ai/docs/cli/) and [per-agent permis
 ## Current handoff
 
 The [T001 review](delegation/P05_TASK_001_REVIEW.md) records accepted findings and corrected worker assumptions. [T002](delegation/P05_TASK_002_READINESS_IMPLEMENTATION.md) then authorized only a contract-only readiness inventory; its [review record](delegation/P05_TASK_002_REVIEW.md) lists code, tests, corrections, and the remaining boundary. Passing this small implementation slice does not pass the full Gate B role/support/budget audit or authorize Gate D/E training.
+
+[T003](delegation/P05_TASK_003_SOURCE_SUPPORT.md) adds the metadata-only inherited-role support audit. Its [review](delegation/P05_TASK_003_REVIEW.md), [aggregate findings](P05_SOURCE_SUPPORT_AUDIT.md), and [design handoff](P05_DESIGN_HANDOFF.md) are the current continuation points. Read-only metadata access is explicitly supervisor-controlled; the worker implements against synthetic fixtures without access to the actual scientific dataset. Audited P04 role provenance is not authorization to run a new P05 experiment.
