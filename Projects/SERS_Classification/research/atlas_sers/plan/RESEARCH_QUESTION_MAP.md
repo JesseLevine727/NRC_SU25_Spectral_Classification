@@ -4,11 +4,13 @@
 
 **Field-trial-purpose amendment:** proposed 2026-09-01 after P03 and locked 2026-09-04 before any P13 outcome calculation
 
-**Evidence timing:** after disclosed pilots and P01 descriptive preprocessing evidence; before P02 and every registered definitive predictive outcome
+**Original-v1 evidence timing:** after disclosed pilots and P01 descriptive preprocessing evidence; before P02 and every registered definitive predictive outcome
+
+**Prototype-extension timing:** P14 planned 2026-09-24 after P03, P13-classical, and P04 outcomes; secondary/exploratory and not execution-locked
 
 **Independent scientific unit:** physical `master_sample_id`; the primary transfer contrast is summarized over 13 station–instrument domains
 
-This document is the concise human-readable map from scientific questions to the master plan. `registries/research_question_registry.csv` remains the machine-readable authority for the original v1 questions. `RQ-S07` is intentionally not inserted into that frozen file and is instead represented by the separately versioned and locked `registries/p13_*` files. The questions run in parallel, but only `RQ-P01` determines whether acquisition-aware deep learning is promoted.
+This document is the concise human-readable map from scientific questions to the master plan. `registries/research_question_registry.csv` remains the machine-readable authority for the original v1 questions. `RQ-S07` is intentionally not inserted into that frozen file and is instead represented by the separately versioned and locked `registries/p13_*` files. The planned RBF/SOM extension uses [its own registry](registries/p14_extension_registry.json). The questions run in parallel, but only `RQ-P01` determines whether acquisition-aware deep learning is promoted.
 
 ## Shared design
 
@@ -183,3 +185,21 @@ substrates, unlike P13's substrate-restricted classical fits. Exact P13 deep
 source refits, matched-source loss, and preprocessing sensitivities remain
 outstanding. P13 support and margins are unchanged. See
 [P04 results](../results/p04_deep/P04_RESULTS.md) and F19/F20/F48.
+
+## P14 — planned RBF-network and SOM extensions
+
+The [P14 protocol](P14_RBF_SOM_EXTENSION.md) adds the questions below without changing the original primary contrast. The [publication strategy](P14_PUBLICATION_STRATEGY.md) explains their literature basis, manuscript role, and limits. RBF networks and SOMs have not been trained in this phase. Listed figures are planned outputs, not evidence already obtained.
+
+| Question | Plain-language purpose | Experiments | Principal planned figures |
+|---|---|---|---|
+| RQ-P14-01 — compact RBF transfer | Can a small prototype classifier identify chemicals on a new instrument competitively with forests, SVM, and D0? | EXP-P14-02 | F-P14-04, 07: paired domain performance and cost/capacity |
+| RQ-P14-02 — SOM organization | Does the spectral map follow chemistry or acquisition conditions, and is it stable? | EXP-P14-01 | F-P14-01, 02, 08: recoloured maps/PCA, spectral prototypes, stability |
+| RQ-P14-03 — repeat consistency | Does the same sample remain recognizable across instruments while different chemicals stay distinguishable? | EXP-P14-03 | F-P14-03: connected repeated measurements, distances, correctness |
+| RQ-P14-04 — preprocessing | Do smoothing or baseline correction help prediction and preserve chemical contrast? | EXP-P14-04 | F-P14-05: paired preprocessing effects and measured spectra |
+| RQ-P14-05 — sample efficiency | How do independent sample count and number of prototypes affect performance? | EXP-P14-05 | F-P14-06, 07: master-level learning and prototype-budget curves |
+| RQ-P14-06 — reliability, conditional | Can prototype distance flag likely errors better than confidence alone? | EXP-P14-06 | F-P14-09: error scatter and risk–coverage curves |
+| RQ-P14-07 — hybrid mechanism, conditional | Does SOM organization improve RBF centres, or does an RBF head improve a fixed neural representation? | EXP-P14-07, 08 | F-P14-10: matched centre/head effects |
+
+EXP-P14-00 is the metadata-only prerequisite. EXP-P14-09 is a conditional application to the unchanged P13 substrate-restricted design, with F-P14-11. EXP-P14-10 synthesizes the core and records optional work as complete, unsupported, or deferred. F-P14-12 explains the workflow and evidence boundaries.
+
+The core is RQ-P14-01–05. Reliability and hybrids cannot expand into an indefinite search for a winning model. The first publication should integrate classification, spectral structure, preprocessing, and repeated-view evidence; it need not wait for every optional model. P05 remains the separate next step for the original acquisition-aware question, while P14 begins with its own no-fit support/role/compute audit.

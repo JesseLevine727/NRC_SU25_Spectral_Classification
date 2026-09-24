@@ -1,0 +1,916 @@
+{
+  "protocol_version": "nato-sers-p14-plan-v1",
+  "amendment_date": "2026-09-24",
+  "status": "planned_not_execution_locked",
+  "scientific_execution_status": "not_started",
+  "evidence_timing": "Post-outcome extension after P03, P13 classical, and P04; not prospectively blinded.",
+  "documents": {
+    "protocol": "plan/P14_RBF_SOM_EXTENSION.md",
+    "publication": "plan/P14_PUBLICATION_STRATEGY.md",
+    "master": "plan/MASTER_PLAN.md",
+    "question_map": "plan/RESEARCH_QUESTION_MAP.md"
+  },
+  "scope": "secondary_exploratory",
+  "original_primary_contrast_unchanged": true,
+  "original_registries_unchanged": true,
+  "new_scientific_fits_completed": 0,
+  "data": {
+    "population": "P01_primary",
+    "spectra": 598,
+    "physical_masters": 69,
+    "instruments": 10,
+    "substrate_families": 4,
+    "stations": 3,
+    "eligible_primary_domains": 13,
+    "split_source": "P02",
+    "axis_cm1": [
+      400,
+      1800
+    ],
+    "channels": 1401,
+    "actions": [
+      "PP-U-MIN",
+      "PP-U-SG",
+      "PP-U-ARPLS"
+    ],
+    "independent_unit": "physical_master",
+    "source_only_unsupervised_fit": true,
+    "full_dataset_maps": "descriptive_only_after_recipe_freeze"
+  },
+  "inherit_metrics": [
+    "M01",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M23",
+    "M24",
+    "M25"
+  ],
+  "research_questions": [
+    {
+      "id": "RQ-P14-01",
+      "scope": "core",
+      "title": "Compact RBF transfer",
+      "question": "Can a small RBF classifier identify supported chemicals on excluded instruments and unseen physical masters competitively with established baselines?",
+      "related_original_questions": [
+        "RQ-P01"
+      ],
+      "experiment_ids": [
+        "EXP-P14-02"
+      ],
+      "figure_ids": [
+        "F-P14-04",
+        "F-P14-07"
+      ],
+      "metric_ids": [
+        "M01",
+        "M05",
+        "M06",
+        "M07"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "RQ-P14-02",
+      "scope": "core",
+      "title": "SOM organization",
+      "question": "Do SOM neighbourhoods organize by chemistry or acquisition conditions and how stable is this organization?",
+      "related_original_questions": [
+        "RQ-E01"
+      ],
+      "experiment_ids": [
+        "EXP-P14-01"
+      ],
+      "figure_ids": [
+        "F-P14-01",
+        "F-P14-02",
+        "F-P14-08"
+      ],
+      "metric_ids": [
+        "PM01",
+        "PM02",
+        "PM03",
+        "PM04",
+        "PM05"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "RQ-P14-03",
+      "scope": "core",
+      "title": "Repeated-view consistency",
+      "question": "Are same-master cross-instrument views more consistent while chemical distinctions and correctness are retained?",
+      "related_original_questions": [
+        "RQ-E01",
+        "RQ-S07"
+      ],
+      "experiment_ids": [
+        "EXP-P14-03"
+      ],
+      "figure_ids": [
+        "F-P14-03"
+      ],
+      "metric_ids": [
+        "PM06",
+        "PM07",
+        "M01"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "RQ-P14-04",
+      "scope": "core",
+      "title": "Preprocessing effects",
+      "question": "Does universal smoothing or baseline correction improve prototype-based transfer without losing chemical distinctions?",
+      "related_original_questions": [
+        "RQ-S01",
+        "RQ-S02",
+        "RQ-S03"
+      ],
+      "experiment_ids": [
+        "EXP-P14-04"
+      ],
+      "figure_ids": [
+        "F-P14-05"
+      ],
+      "metric_ids": [
+        "M01",
+        "M05",
+        "PM03",
+        "PM06"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "RQ-P14-05",
+      "scope": "core",
+      "title": "Independent sample efficiency",
+      "question": "How do independent master counts and prototype budgets affect performance and cost?",
+      "related_original_questions": [
+        "RQ-P01"
+      ],
+      "experiment_ids": [
+        "EXP-P14-05"
+      ],
+      "figure_ids": [
+        "F-P14-06",
+        "F-P14-07"
+      ],
+      "metric_ids": [
+        "M01",
+        "M07",
+        "M23",
+        "PM09"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "RQ-P14-06",
+      "scope": "conditional",
+      "title": "Applicability and error detection",
+      "question": "Does distance from prototypes flag held-instrument errors better than confidence alone?",
+      "related_original_questions": [
+        "RQ-S05",
+        "RQ-S06"
+      ],
+      "experiment_ids": [
+        "EXP-P14-06"
+      ],
+      "figure_ids": [
+        "F-P14-09"
+      ],
+      "metric_ids": [
+        "M07",
+        "M08",
+        "M09",
+        "PM08"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "RQ-P14-07",
+      "scope": "conditional",
+      "title": "Prototype mechanism ablations",
+      "question": "Does SOM centre organization or an RBF head improve an otherwise matched pipeline?",
+      "related_original_questions": [
+        "RQ-P01",
+        "RQ-E01"
+      ],
+      "experiment_ids": [
+        "EXP-P14-07",
+        "EXP-P14-08"
+      ],
+      "figure_ids": [
+        "F-P14-10"
+      ],
+      "metric_ids": [
+        "M01",
+        "M07",
+        "PM09"
+      ],
+      "status": "planned"
+    }
+  ],
+  "models": [
+    {
+      "id": "P14-RBF-KM",
+      "scope": "core",
+      "description": "Weighted K-means Gaussian RBF with regularized multinomial output",
+      "status": "not_implemented"
+    },
+    {
+      "id": "P14-SOM",
+      "scope": "core",
+      "description": "Ordinary batch SOM; source-labelled node distributions for classification",
+      "status": "not_implemented"
+    },
+    {
+      "id": "P14-KMEANS",
+      "scope": "core_control",
+      "description": "Equal-node-count weighted K-means geometry control",
+      "status": "not_implemented"
+    },
+    {
+      "id": "P14-LINEAR",
+      "scope": "core_control",
+      "description": "Same-feature L2 multinomial linear classifier",
+      "status": "not_implemented"
+    },
+    {
+      "id": "P14-SVM-MATCHED",
+      "scope": "core_control",
+      "description": "Same-feature RBF-SVM diagnostic control",
+      "status": "not_implemented"
+    },
+    {
+      "id": "P14-FOREST-SUBSET",
+      "scope": "core_control",
+      "description": "Fresh Random Forest and Extra Trees fits on matching learning subsets",
+      "status": "not_implemented"
+    },
+    {
+      "id": "P14-RBF-SOM",
+      "scope": "conditional",
+      "description": "SOM centres versus matched K-means centres at K 4 and 9",
+      "status": "not_implemented"
+    },
+    {
+      "id": "P14-ENCODER-HEAD",
+      "scope": "conditional",
+      "description": "RBF versus linear head on identical role-correct frozen neural features",
+      "status": "not_implemented"
+    },
+    {
+      "id": "P14-SUBSTRATE",
+      "scope": "conditional",
+      "description": "Exact P13 source-restricted prototype fits",
+      "status": "not_implemented"
+    }
+  ],
+  "frozen_comparators": [
+    "C-SELECTED",
+    "C-RANDOM-FOREST",
+    "C-EXTRA-TREES",
+    "C-RBF-SVM",
+    "D0-ERM"
+  ],
+  "defaults": {
+    "feature_spaces": [
+      "FULL",
+      "PCA5",
+      "PCA10"
+    ],
+    "pca": {
+      "weighted": true,
+      "whiten": false,
+      "channel_standardization": false,
+      "fit_role": "source_training",
+      "dimension_cap": "min(numerical_training_rank,source_master_count-1)",
+      "no_fit_audit": "metadata_upper_bounds_only; numeric_rank_checked_in_later_source_fit"
+    },
+    "rbf": {
+      "centres": [
+        3,
+        6,
+        9
+      ],
+      "width_multipliers": [
+        0.5,
+        1,
+        2
+      ],
+      "output_C": [
+        0.1,
+        1,
+        10
+      ],
+      "max_recipes_before_feasibility": 81,
+      "centres_supervised_finetuning": false,
+      "kmeans_max_iter": 300,
+      "kmeans_tolerance": 0.000001,
+      "output_solver": "L-BFGS",
+      "output_max_iter": 10000,
+      "output_tolerance": 0.000001,
+      "output_loss": "weighted mean cross-entropy plus ||W||^2/(2C); unpenalized intercept"
+    },
+    "som": {
+      "grids": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "max_feature_grid_recipes": 6,
+      "topology": "rectangular_non_toroidal_four_neighbours",
+      "training": "weighted_batch",
+      "epochs": 100,
+      "neighbourhood": "Gaussian",
+      "initial_sigma": "max(width,height)/2",
+      "final_sigma": 0.5,
+      "decay": "geometric",
+      "empty_node": "nearest_occupied_node_in_feature_space_logged"
+    },
+    "matched_controls": {
+      "linear": {
+        "C": [0.1, 1, 10],
+        "max_recipes_before_feasibility": 9,
+        "loss_solver_and_weights": "same_as_RBF_output_layer"
+      },
+      "rbf_svm": {
+        "C": [0.1, 1, 10],
+        "gamma_multipliers": [0.1, 1, 10],
+        "base_gamma": "1/(2*weighted_source_squared_RMS_radius)",
+        "max_recipes_before_feasibility": 27,
+        "fit": "one_vs_one_C_SVC; supervised_row_weights_sum_one; no_extra_class_weight",
+        "tolerance": 0.000001,
+        "max_iterations": 100000,
+        "probability_fit": "disabled; source_role_temperature_on_three_class_decision_scores",
+        "nonconvergence": "terminal_failure"
+      },
+      "forest_subset_search": "original family-specific hyperparameter grids; fit and select only within the allowed subset"
+    },
+    "map_stability": {
+      "source_master_resampling_refits_per_configuration": 100,
+      "carry_all_master_views": true,
+      "refit_pca_and_codebooks": true,
+      "reference": "common original source views; not independent predictive accuracy"
+    },
+    "seeds": [
+      20260805,
+      20260817,
+      20260829
+    ],
+    "selection": [
+      "mean_source_pseudo_domain_pooled_three_class_BA_desc",
+      "worst_source_domain_BA_desc",
+      "prototype_count_asc",
+      "feature_dimension_asc",
+      "regularization_strength_desc_if_applicable",
+      "registry_order_asc"
+    ],
+    "unsupervised_row_weight": "1/(M*J_m*R_mj)",
+    "supervised_row_weight": "1/(C*M_y*J_m*R_mj)",
+    "learning_curves": {
+      "masters_per_class": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "subset_draws": 5,
+      "nested_within_seed": true,
+      "shared_subsets_across_models": true,
+      "refit_every_component_on_subset": true
+    },
+    "uncertainty": {
+      "draws": 10000,
+      "method": "paired_domain_and_master_bootstrap",
+      "carry_master_views_together": true,
+      "seeds_and_repeats_not_independent": true
+    },
+    "calibration": "selected-recipe cross-fitted source-only logits; master-balanced temperature; failures retained",
+    "universal_policy_effect": "freeze MIN-selected recipe then refit numeric components under each immutable action",
+    "hyperparameter_status": "specified_defaults_pending_no_fit_support_and_implementation_audit"
+  },
+  "metrics": [
+    {
+      "id": "PM01",
+      "name": "Quantization error",
+      "definition": "Weighted nearest-prototype distance and source-radius-normalized companion; qualified across feature spaces"
+    },
+    {
+      "id": "PM02",
+      "name": "Topographic error",
+      "definition": "Fraction whose two best nodes are not four-neighbours"
+    },
+    {
+      "id": "PM03",
+      "name": "Conditional organization",
+      "definition": "Adjusted mutual information within station and supported factor views"
+    },
+    {
+      "id": "PM04",
+      "name": "Occupancy",
+      "definition": "Spectra and distinct master/instrument/target support per node"
+    },
+    {
+      "id": "PM05",
+      "name": "Map stability",
+      "definition": "Seed and master-refit co-assignment/neighbour stability"
+    },
+    {
+      "id": "PM06",
+      "name": "Pair geometry",
+      "definition": "Master-balanced feature/prototype/map distances and reference-pair contrasts"
+    },
+    {
+      "id": "PM07",
+      "name": "Correct consistency",
+      "definition": "Both-correct fraction and prediction divergence with agreement"
+    },
+    {
+      "id": "PM08",
+      "name": "Error detection",
+      "definition": "Error AUROC/AUPRC and realized risk-coverage; source-chosen thresholds"
+    },
+    {
+      "id": "PM09",
+      "name": "Complete capacity accounting",
+      "definition": "PCA and codebook fitted state; supervised parameters; storage and runtime"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "EXP-P14-00",
+      "scope": "core",
+      "title": "No-fit support and resource audit",
+      "depends_on": [],
+      "research_question_ids": [],
+      "figure_ids": [
+        "F-P14-12"
+      ],
+      "finish_condition": "No new scientific fit; exact source roles and budget enumerated",
+      "status": "not_started"
+    },
+    {
+      "id": "EXP-P14-01",
+      "scope": "core",
+      "title": "Maps and geometry",
+      "depends_on": [
+        "EXP-P14-00"
+      ],
+      "research_question_ids": [
+        "RQ-P14-02"
+      ],
+      "figure_ids": [
+        "F-P14-01",
+        "F-P14-02",
+        "F-P14-08"
+      ],
+      "finish_condition": "Source maps and held projections; all planned configurations reconciled",
+      "status": "not_started"
+    },
+    {
+      "id": "EXP-P14-02",
+      "scope": "core",
+      "title": "Prototype classification",
+      "depends_on": [
+        "EXP-P14-00"
+      ],
+      "research_question_ids": [
+        "RQ-P14-01"
+      ],
+      "figure_ids": [
+        "F-P14-04",
+        "F-P14-07"
+      ],
+      "finish_condition": "Source selection freeze; complete or reason-coded predictions",
+      "status": "not_started"
+    },
+    {
+      "id": "EXP-P14-03",
+      "scope": "core",
+      "title": "Repeated-view diagnostics",
+      "depends_on": [
+        "EXP-P14-01",
+        "EXP-P14-02"
+      ],
+      "research_question_ids": [
+        "RQ-P14-03"
+      ],
+      "figure_ids": [
+        "F-P14-03"
+      ],
+      "finish_condition": "Same-master and chemistry reference pairs with support and correctness",
+      "status": "not_started"
+    },
+    {
+      "id": "EXP-P14-04",
+      "scope": "core",
+      "title": "Universal preprocessing",
+      "depends_on": [
+        "EXP-P14-01",
+        "EXP-P14-02",
+        "EXP-P14-03"
+      ],
+      "research_question_ids": [
+        "RQ-P14-04"
+      ],
+      "figure_ids": [
+        "F-P14-05"
+      ],
+      "finish_condition": "Paired frozen-recipe MIN/SG/arPLS effects",
+      "status": "not_started"
+    },
+    {
+      "id": "EXP-P14-05",
+      "scope": "core",
+      "title": "Sample and capacity curves",
+      "depends_on": [
+        "EXP-P14-02"
+      ],
+      "research_question_ids": [
+        "RQ-P14-05"
+      ],
+      "figure_ids": [
+        "F-P14-06",
+        "F-P14-07"
+      ],
+      "finish_condition": "Identical subsets and subset-only fitting across controls",
+      "status": "not_started"
+    },
+    {
+      "id": "EXP-P14-06",
+      "scope": "conditional",
+      "title": "Distance-based error detection",
+      "depends_on": [
+        "EXP-P14-02"
+      ],
+      "research_question_ids": [
+        "RQ-P14-06"
+      ],
+      "figure_ids": [
+        "F-P14-09"
+      ],
+      "finish_condition": "Independent source threshold roles; held error and coverage evaluation",
+      "status": "not_started"
+    },
+    {
+      "id": "EXP-P14-07",
+      "scope": "conditional",
+      "title": "SOM versus K-means RBF centres",
+      "depends_on": [
+        "EXP-P14-04",
+        "EXP-P14-05"
+      ],
+      "research_question_ids": [
+        "RQ-P14-07"
+      ],
+      "figure_ids": [
+        "F-P14-10"
+      ],
+      "finish_condition": "Equal K and feature/head rules; separate budget passed",
+      "status": "not_started"
+    },
+    {
+      "id": "EXP-P14-08",
+      "scope": "conditional",
+      "title": "RBF versus linear neural head",
+      "depends_on": [
+        "EXP-P14-04",
+        "EXP-P14-05"
+      ],
+      "research_question_ids": [
+        "RQ-P14-07"
+      ],
+      "figure_ids": [
+        "F-P14-10"
+      ],
+      "finish_condition": "Outer and inner encoder provenance; separate refit budget",
+      "status": "not_started"
+    },
+    {
+      "id": "EXP-P14-09",
+      "scope": "conditional",
+      "title": "P13 substrate-restricted refits",
+      "depends_on": [
+        "EXP-P14-02"
+      ],
+      "research_question_ids": [
+        "RQ-P14-01",
+        "RQ-P14-03",
+        "RQ-P14-04"
+      ],
+      "figure_ids": [
+        "F-P14-11"
+      ],
+      "finish_condition": "P13 exact support; both recovery and matched-source loss endpoints",
+      "status": "not_started"
+    },
+    {
+      "id": "EXP-P14-10",
+      "scope": "core",
+      "title": "Synthesis and publication package",
+      "depends_on": [
+        "EXP-P14-00",
+        "EXP-P14-01",
+        "EXP-P14-02",
+        "EXP-P14-03",
+        "EXP-P14-04",
+        "EXP-P14-05"
+      ],
+      "research_question_ids": [
+        "RQ-P14-01",
+        "RQ-P14-02",
+        "RQ-P14-03",
+        "RQ-P14-04",
+        "RQ-P14-05"
+      ],
+      "figure_ids": [
+        "F-P14-12"
+      ],
+      "finish_condition": "Core complete; each conditional branch explicit complete/deferred/unsupported",
+      "status": "not_started"
+    }
+  ],
+  "figures": [
+    {
+      "id": "F-P14-01",
+      "scope": "core",
+      "title": "SOM atlas and PC1-PC2 reference",
+      "visual": "Same coordinates recoloured by target instrument substrate; source and held markers",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-02",
+      "scope": "core",
+      "title": "Prototype spectra",
+      "visual": "Prototype and actual source spectra; master support and preprocessing labels",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-03",
+      "scope": "core",
+      "title": "Repeated-view movement",
+      "visual": "Connected points; matched acquisition changes; distance and correctness",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-04",
+      "scope": "core",
+      "title": "Held-instrument classification",
+      "visual": "All-domain paired dots and named-comparator effect intervals",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-05",
+      "scope": "core",
+      "title": "Preprocessing and chemical retention",
+      "visual": "Paired policy effects; chemical versus acquisition structure and spectral examples",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-06",
+      "scope": "core",
+      "title": "Master-count learning curves",
+      "visual": "BA and log loss against actual independent training-master counts",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-07",
+      "scope": "core",
+      "title": "Prototype and resource budget",
+      "visual": "BA against K storage and runtime; all fitted state accounted for",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-08",
+      "scope": "core",
+      "title": "Map stability and occupancy",
+      "visual": "Seed/master-refit stability; conditional associations; empty nodes visible",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-09",
+      "scope": "conditional",
+      "title": "Reliability and abstention",
+      "visual": "Distance-error scatter; risk-coverage and reliability curves",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-10",
+      "scope": "conditional",
+      "title": "Matched prototype/head ablations",
+      "visual": "Equal-budget paired effects for declared hybrids",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-11",
+      "scope": "conditional",
+      "title": "Bounded substrate portability",
+      "visual": "P13 support and held-recovery/matched-loss views",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    },
+    {
+      "id": "F-P14-12",
+      "scope": "core",
+      "title": "Workflow and evidence map",
+      "visual": "Planning schematic linking questions experiments and claims",
+      "status": "planned_not_generated",
+      "outputs": [
+        "tikz",
+        "pdf",
+        "png",
+        "html",
+        "semantic_table"
+      ],
+      "native_tikz": true,
+      "offline_html": true,
+      "shared_data_hash": true
+    }
+  ],
+  "gates": [
+    {
+      "id": "P14-G0",
+      "title": "Inherited dataset and split integrity",
+      "pass_condition": "P01/P02 hashes support and role identities match",
+      "status": "not_run"
+    },
+    {
+      "id": "P14-G1",
+      "title": "No-fit expansion",
+      "pass_condition": "Candidate/role/seed/action/subset counts and resource budget explicit; zero scientific fits",
+      "status": "not_run"
+    },
+    {
+      "id": "P14-G2",
+      "title": "Implementation validity",
+      "pass_condition": "Weighted transforms and prototypes; grouping; deterministic ties; failure handling verified on synthetic/source-authorized tests",
+      "status": "not_run"
+    },
+    {
+      "id": "P14-G3",
+      "title": "Source-only recipe freeze",
+      "pass_condition": "Selection calibration and figure exemplars frozen before new held outcomes",
+      "status": "not_run"
+    },
+    {
+      "id": "P14-G4",
+      "title": "Endpoint reconciliation",
+      "pass_condition": "Complete missing and failed outcomes paired with comparators; aggregation definitions match",
+      "status": "not_run"
+    },
+    {
+      "id": "P14-G5",
+      "title": "Figure parity",
+      "pass_condition": "Native TikZ vector PDF PNG offline HTML and shared data/axes/captions verified",
+      "status": "not_run"
+    },
+    {
+      "id": "P14-G6",
+      "title": "Bounded interpretation",
+      "pass_condition": "Post-outcome status and original primary hypothesis preserved; no unsupported equivalence/denoising claim",
+      "status": "not_run"
+    }
+  ],
+  "execution_authorization": "Planning only. Complete EXP-P14-00 and implementation validity before scientific execution. No current fit or freeze asserted.",
+  "optional_gating": "Support/resources/scientific distinctness assessed before held outcomes; core publication does not wait for optional extensions.",
+  "publication": {
+    "strategy": "one_integrated_paper_initially",
+    "original_routes_unchanged": true,
+    "minimum_extension_experiments": [
+      "EXP-P14-00",
+      "EXP-P14-01",
+      "EXP-P14-02",
+      "EXP-P14-03",
+      "EXP-P14-04",
+      "EXP-P14-05",
+      "EXP-P14-10"
+    ],
+    "first_scope_candidates": [
+      "Journal of Chemometrics",
+      "Analyst",
+      "Analytical Methods"
+    ],
+    "no_acceptance_guarantee": true
+  }
+}

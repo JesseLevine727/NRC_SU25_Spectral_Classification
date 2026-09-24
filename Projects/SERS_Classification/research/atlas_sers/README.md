@@ -38,10 +38,27 @@ chemical spectra or factorial chemical/nuisance interventions, reconstruction
 must not be described as denoising and latent factors must not be interpreted
 as causal chemical/nuisance separation.
 
-The full locked analysis specification is in [plan/MASTER_PLAN.md](plan/MASTER_PLAN.md).
+The planned [P14 RBF-network and self-organizing-map extension](plan/P14_RBF_SOM_EXTENSION.md)
+adds compact prototype classification, acquisition-structure maps, repeated-view
+diagnostics, preprocessing comparisons, and physical-master learning curves.
+It is a dated post-outcome secondary/exploratory branch, not a replacement for
+the original primary question. No P14 models or result figures exist yet.
+Its [publication strategy](plan/P14_PUBLICATION_STRATEGY.md) separates the core
+study from optional reliability and hybrid-model experiments.
+
+The master analysis specification and dated amendments are in [plan/MASTER_PLAN.md](plan/MASTER_PLAN.md).
 The concise question-to-experiment map is in
 [plan/RESEARCH_QUESTION_MAP.md](plan/RESEARCH_QUESTION_MAP.md).
 For quick browsing, open [plan/index.html](plan/index.html) locally.
+
+Implementation follows the [supervised OpenCode workflow](plan/ORCHESTRATION_PROTOCOL.md):
+DeepSeek v4.1 Flash implements bounded tasks; the supervising assistant plans,
+reviews, verifies, and controls advancement. The first P05 readiness audit and
+[contract-only inventory implementation](plan/delegation/P05_TASK_002_REVIEW.md)
+are documented. The inventory does not authorize scientific training; exact
+source-role/pair expansion, design decisions, and the execution budget remain
+to be completed. Reviewed and validated substantive milestones are pushed to
+`main` under the project owner's authorization.
 
 ## Repository map
 
@@ -68,6 +85,8 @@ research/atlas_sers/
 │   ├── P13_PROTOCOL.md            Locked substrate-portability amendment
 │   ├── P13_EXECUTION.md           Deterministic no-fit execution expansion
 │   ├── P13_COMPLETION_AUDIT.md    Classical portability completion evidence
+│   ├── P14_RBF_SOM_EXTENSION.md  Planned prototype methods, questions, and figures
+│   ├── P14_PUBLICATION_STRATEGY.md Literature basis and evidence-to-paper routes
 │   ├── FIGURE_STYLE_AND_REGENERATION.md
 │   ├── index.html                 Standalone plan dashboard
 │   ├── contracts/                 Machine-readable frozen protocols

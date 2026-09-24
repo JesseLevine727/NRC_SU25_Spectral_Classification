@@ -3,6 +3,7 @@
 **Plan date:** 2026-08-05
 **Parallel-question amendment:** 2026-08-07, after P01 descriptive evidence and before P02 or any registered definitive predictive outcome
 **Field-trial-purpose amendment:** proposed 2026-09-01 after completion of P03 and locked 2026-09-04 before any P13 outcome calculation
+**Prototype-method extension:** P14 planned 2026-09-24 after P03, P13-classical, and P04 outcomes; secondary/exploratory, not execution-locked
 **Plan status:** execution-ready analysis plan; no definitive experiments are authorized by this document itself
 **Primary governed-data workspace:** path supplied through the legacy-compatible `ATLAS_PRIVATE_ROOT`
 **Plan workspace:** `research/atlas_sers/plan`
@@ -40,6 +41,14 @@ The 2026-09-01 meeting note records Li-Lin's clarification that the field trial 
 This is `RQ-S07`, a bounded substrate-portability question. It complements `RQ-P01` but does not retroactively replace the frozen primary learning-strategy question or reuse P03 outcomes to define success. “Instrument independent” is an equivalence/noninferiority claim over supported observed instruments, not a conclusion obtained by failing to reject an instrument effect. The project owner locked the practical margins and P13 support registries on 2026-09-04, before any P13 outcomes were calculated. The protocol still uses the bounded wording “substrate portability over tested instruments,” not universal instrument independence.
 
 ML or DL can establish that a labelled analyte pattern is predictively recoverable from spectra produced by a substrate on a held instrument. It cannot by itself prove physical adsorption, enhancement chemistry, a unique clean spectrum, or universal compatibility with arbitrary instruments. Classical models are the principal substrate-portability estimators because the independent support is small; compact deep models test only whether learned representations add recoverability beyond the frozen classical panel.
+
+### 0.2 RBF-network and self-organizing-map extension
+
+The 2026-09-24 P14 extension asks whether a small collection of spectral prototypes can support chemical identification, expose acquisition dependence, and identify unreliable predictions. A shallow radial basis function network tests local-similarity classification; a self-organizing map (SOM, or Kohonen map) provides a topology-constrained prototype representation. The existing RBF-kernel SVM is not an RBF neural network.
+
+P14 is a separately dated secondary/exploratory branch because earlier predictive outcomes are known. It does not replace RQ-P01, reopen P13 margins, or alter frozen v1 registries. P05 remains the acquisition-aware deep-learning branch. P14 can develop alongside it under its own source-only role and budget audit; neither branch may use the other's held-test results to select its method.
+
+The [P14 protocol](P14_RBF_SOM_EXTENSION.md) specifies questions, finite model grids, access rules, controls, statistics, and twelve planned figures. The [publication strategy](P14_PUBLICATION_STRATEGY.md) links these analyses to spectroscopy literature and an integrated manuscript. Section 29 summarizes the extension. No P14 model has been implemented or trained, and no P14 result figure exists yet.
 
 ## 1. Evidence already observed and its consequences
 
@@ -1278,6 +1287,10 @@ See [P04 results](../results/p04_deep/P04_RESULTS.md) and
 The very next action is the **P05 no-fit expansion and source-only development
 audit**, not another architecture search against the now-observed test scores:
 
+Implementation follows the project owner's 2026-09-24 [supervised workflow](ORCHESTRATION_PROTOCOL.md): OpenCode Go / DeepSeek v4.1 Flash implements bounded assignments, while the supervising assistant directs the science, reviews diffs and results, and independently checks acceptance. The first assignment is a read-only readiness audit; it does not authorize scientific training.
+
+The initial readiness audit and a contract-only inventory are now documented in the [P05-T002 review](delegation/P05_TASK_002_REVIEW.md). The CLI reports 147 declared loss combinations and an illustrative 2646 fits per source-selection unit if all six optimizer settings and three seeds are crossed. Neither number is an approved total execution budget. Fourteen unresolved implementation/design topics remain visible; exact role/pair/support expansion and scientific fitting have not begun. A successful `readiness` command does not pass the full no-fit authorization gate.
+
 1. enumerate the predeclared D1–D5 loss configurations, P02 source roles, seeds,
    fit counts, storage, and compute before training;
 2. verify same-master/cross-instrument pair support, prohibit same-chemical
@@ -1289,7 +1302,12 @@ audit**, not another architecture search against the now-observed test scores:
 5. freeze one advancing candidate or the explicit no-advance outcome, then
    proceed to P06 and ultimately P11's definitive comparison.
 
-No D1–D5 model has been trained. P03/P13/P04 test outcomes are already known to
+The parallel P14 extension now has a detailed planning specification. Its next
+task is **EXP-P14-00: a no-fit support, source-role, and compute manifest**.
+This does not require D1–D5 and does not replace the P05 path above. See
+[P14 ordered sub-plans](P14_RBF_SOM_EXTENSION.md#5-ordered-sub-plans-and-stopping-points).
+
+No D1–D5 or P14 model has been trained. P03/P13/P04 test outcomes are already known to
 investigators: the separation is procedural and code-enforced, not analyst
 blinding. Those outcomes cannot choose new losses, augmentation, preprocessing,
 thresholds, or training schedules within the locked branch.
@@ -1548,3 +1566,41 @@ The eventual main manuscript should remain compact even though the supplement is
 ### Abstract-level claim template
 
 The abstract must state the number of physical masters, instruments, eligible domains, split independence, and whether the primary deep promotion gate passed. It reports the paired effect and uncertainty rather than only the winning score. If Route B or C is selected, the negative result is stated directly; it is not buried behind the best isolated task or master-aggregated number.
+
+## 29. Sub-plan P14 — compact prototypes and acquisition structure
+
+**Status:** planning complete; support audit, implementation, scientific execution, and figure generation not started. This post-outcome extension is governed by [p14_extension_registry.json](registries/p14_extension_registry.json), not by changes to original frozen registries. Detailed numerical defaults have one human-readable authority: [P14_RBF_SOM_EXTENSION.md](P14_RBF_SOM_EXTENSION.md).
+
+### 29.1 Questions and scope
+
+| Extension question | Purpose | Relationship to the original plan |
+|---|---|---|
+| RQ-P14-01 | Test shallow RBF classification on unseen instruments and physical masters | Secondary comparator for RQ-P01; does not replace its primary contrast |
+| RQ-P14-02 | Determine whether SOM structure follows chemistry, instrument, or substrate | Extends P01/P10 representation analysis with prototype and stability controls |
+| RQ-P14-03 | Measure repeated-sample consistency without sacrificing chemical distinctions | Extends paired-view diagnostics; agreement alone is insufficient |
+| RQ-P14-04 | Test MIN, SG, and arPLS effects on prototype geometry and transfer | Connects to RQ-S01; later family/QC policies must come from P08 |
+| RQ-P14-05 | Measure dependence on independent training-master count and prototype budget | Tests the small-data rationale directly rather than inferring it from parameter count |
+| RQ-P14-06 | Test prototype distance as an error/abstention indicator | Conditional extension of RQ-S05; not proof of unknown-chemical detection |
+| RQ-P14-07 | Isolate benefits of SOM centres or a neural-embedding RBF head | Conditional matched ablations, not unrestricted hybrid architecture search |
+
+### 29.2 Work packages and publication boundary
+
+The core comprises EXP-P14-00–05 and synthesis EXP-P14-10: metadata-only audit; source-fitted SOM/K-means/PCA maps; RBF/SOM classification and matched controls; repeated-view diagnostics; universal preprocessing contrasts; and master-level learning curves. All core outcomes are retained whether positive, negative, or inconclusive. No-fit expansion and implementation tests precede any scientific fitting.
+
+EXP-P14-06–09 are conditional: reliability, SOM-centred RBF, fold-specific neural-embedding heads, and exact substrate-restricted refits. Each requires a separate support/resource check. Unsupported or deferred optional work does not prevent core completion. P13 support, source-role definitions, and portability margins remain unchanged.
+
+The figure package F-P14-01–12 prioritizes spectra, map/scatter views, connected repeat measurements, paired domain effects, and learning/reliability curves. Every generated figure must have native TikZ, vector PDF, PNG, offline HTML, and a shared hashed semantic table. These are twelve specifications, not twelve completed figures; F00–F48 are not overwritten.
+
+The recommended first publication is one integrated acquisition-shift study, not one paper per algorithm. The [publication strategy](P14_PUBLICATION_STRATEGY.md) defines a six-figure main-text package, supplementary evidence, literature distinctions, and routes for positive or negative neural results. Original acquisition-aware superiority still requires P05/P06/P11 and G4. A manuscript submitted earlier must explicitly limit itself to completed benchmark/prototype evidence.
+
+### 29.3 Acceptance and next action
+
+- Original input, split, preprocessing, and registry hashes remain unchanged.
+- Source-only PCA, maps, centres, widths, selection, and calibration exclude held instruments and masters.
+- Same-feature and same-size controls distinguish prototype construction from other pipeline changes.
+- Frozen comparator predictions are rescored with one common endpoint definition; incompatible published headline means are not subtracted.
+- Physical masters, not stored spectra or pairs, determine sample-size curves and resampling units.
+- Coverage, unsupported designs, failed fits, seed variability, calibration, and worst-domain results remain visible.
+- Core figures and conclusions reconcile to the extension registry; optional branches carry explicit completion/deferred statuses.
+
+The next extension task is EXP-P14-00 only: enumerate exact roles, metadata support, candidate feasibility bounds, and the complete fitting budget before implementing or running the proposed models.
