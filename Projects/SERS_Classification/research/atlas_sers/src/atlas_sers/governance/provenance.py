@@ -10,7 +10,12 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
-from atlas_sers.governance.canonical import hash_relative_files, sha256_bytes, sha256_value
+from atlas_sers.governance.canonical import (
+    canonical_json_bytes,
+    hash_relative_files,
+    sha256_bytes,
+    sha256_value,
+)
 
 IGNORED_PARTS = {".pytest_cache", ".ruff_cache", "__pycache__", "build", "dist"}
 
@@ -99,9 +104,11 @@ def _blas_inventory() -> list[dict[str, Any]]:
         "user_api",
         "version",
     }
-    return [
-        {key: item[key] for key in sorted(allowed) if key in item} for item in threadpool_info()
+    records = [
+        {key: item[key] for key in sorted(allowed) if key in item}
+        for item in threadpool_info()
     ]
+    return sorted(records, key=canonical_json_bytes)
 
 
 def capture_provenance(

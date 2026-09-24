@@ -1,6 +1,6 @@
 # Supervisor review — P05-T004 CI diagnostic follow-up
 
-**Date:** 2026-09-24. **Status:** test-only diagnostic patch accepted locally; remote root cause unresolved.
+**Date:** 2026-09-24. **Status:** diagnostic patch accepted; subsequent remote evidence identified an inventory-ordering defect. Repair is tracked in T005.
 
 ## Trigger and evidence
 
@@ -22,7 +22,7 @@ The diagnosis skill informed the reproducibility-first approach and the decision
 
 ## Acceptance boundary
 
-This is an observability improvement for a failing test, not a relaxation of its success condition and not a demonstrated fix for the remote failure. Passing a later run would show that that execution succeeded, not establish why the earlier run failed. Test-only `[DEBUG-p01-reuse]` evidence is intentionally retained while the cause remains unresolved. Scientific training remains unauthorized under the unchanged P05 gates.
+This was an observability improvement for a failing test, not a relaxation of its success condition or a runtime fix. Passing a later run alone would not establish why the earlier run failed. Test-only diagnostic evidence was retained while the cause was unresolved. Scientific training remains unauthorized under the unchanged P05 gates.
 
 ## Independent validation before publication
 
@@ -32,3 +32,11 @@ This is an observability improvement for a failing test, not a relaxation of its
 - Public-package validator on a clean scoped release copy: **passed, 423 files checked**.
 - No production module, dependency declaration, frozen scientific registry, or source dataset was changed by T004.
 - A subsequent GitHub run is required to check the remote environment. Its outcome must not be substituted for a demonstrated root cause.
+
+## Subsequent remote evidence
+
+[Run 36070875804](https://github.com/JesseLevine727/NRC_SU25_Spectral_Classification/actions/runs/36070875804) recorded **327 passed, one failed, one skipped**. The original P01 assertion failed again, and all eleven diagnostic tests passed. The before/after comparison identified exactly one protected-environment difference: the same three sanitized BLAS records were enumerated in a different order. The matching quarantined run retained all original payload hashes. Different hashes in the rebuilt metadata were consequences of the changed environment fingerprint, not evidence that the original files had been corrupted.
+
+This discriminates the leading hypothesis from repository/dependency changes and damaged payloads. [T005](P05_TASK_005_BLAS_CANONICALIZATION.md) authorizes a minimal canonical-ordering repair and permanent regression tests before removing the temporary diagnostic code. Genuine recorded library or thread-setting changes must continue to invalidate reuse. The temporary implementation remains recoverable from commit `21cc148b`.
+
+The [T005 review](P05_TASK_005_REVIEW.md) records the successful local red/green reproduction and retirement of T004's temporary code. This document is the historical diagnostic record, not a claim that the temporary instrumentation remains installed.

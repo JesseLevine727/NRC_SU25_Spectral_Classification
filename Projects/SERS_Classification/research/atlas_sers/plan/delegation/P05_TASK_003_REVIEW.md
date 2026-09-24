@@ -59,4 +59,4 @@ Even after this slice passes, full P05 Gate B remains open: exact P05 executable
 
 ## Post-push CI follow-up
 
-The first remote run passed all 85 support-audit tests but failed an older P01 repeat-build assertion. This does not invalidate the metadata counts or establish the cause of the reuse mismatch. [T004's review](P05_TASK_004_REVIEW.md) records the independent reproduction attempts and test-only diagnostic follow-up; the runtime reuse requirement remains unchanged.
+The first remote run passed all 85 support-audit tests but failed an older P01 repeat-build assertion. This did not invalidate the metadata counts or itself establish the cause of the reuse mismatch. [T004's review](P05_TASK_004_REVIEW.md) records the independent reproduction attempts and diagnostic evidence; [T005's review](P05_TASK_005_REVIEW.md) records the resulting inventory-ordering repair and permanent regressions. The strict reuse requirement remains unchanged.

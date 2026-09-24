@@ -22,17 +22,6 @@ from atlas_sers.preprocessing.representations import (
     row_vector,
 )
 
-try:  # importable as a top-level test module or as ``tests.<name>``
-    from test_p01_repeatability_diagnostics import (
-        reuse_mismatch_diagnostic,
-        snapshot_reuse_state,
-    )
-except ImportError:  # pragma: no cover - package-style test layout
-    from tests.test_p01_repeatability_diagnostics import (
-        reuse_mismatch_diagnostic,
-        snapshot_reuse_state,
-    )
-
 SOURCE_PROJECT = Path(__file__).resolve().parents[1]
 
 
@@ -247,14 +236,8 @@ def test_synthetic_p00_to_p01_build_validates_and_verified_skips(tmp_path: Path)
     assert first["status"] == "pass"
     assert first["action"] == "new"
     run_dir = artifacts / "p01" / "runs" / first["run_id"]
-    first_reuse_snapshot = snapshot_reuse_state(run_dir)
     repeated = _run(project, private, native, artifacts, "p01", "build")
-    assert repeated == {**first, "action": "verified_skip"}, reuse_mismatch_diagnostic(
-        snapshot=first_reuse_snapshot,
-        run_dir=run_dir,
-        observed=repeated,
-        expected={**first, "action": "verified_skip"},
-    )
+    assert repeated == {**first, "action": "verified_skip"}
     validation = _run(project, private, native, artifacts, "p01", "validate")
     assert validation["status"] == "pass"
     report = json.loads((run_dir / "P01_VALIDATION_REPORT.json").read_text())
