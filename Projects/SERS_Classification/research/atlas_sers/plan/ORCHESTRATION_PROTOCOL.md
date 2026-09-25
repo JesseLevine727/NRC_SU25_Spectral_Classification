@@ -2,7 +2,7 @@
 
 **Established:** 2026-09-24, at the project owner's request.
 
-**Current phase:** P05 readiness and no-fit planning after the completed P04 ordinary CNN.
+**Current phase:** P05 core implementation and owner-authorized bounded numerical smoke after the completed P04 ordinary CNN. Full development/evaluation remain gated.
 
 **Implementation worker:** OpenCode Go, `opencode-go/deepseek-v4.1-flash`.
 
@@ -38,7 +38,7 @@ Hold the entire protected package fixed during governed validation or execution.
 | B: no-fit implementation | Planning CLI, deterministic candidate/role/pair/support manifests, unit tests, budget ledger | No model optimization, validation scores, held predictions, or scientific fit |
 | C: loss/sampler implementation | Tested master-aware batches, contrastive/consistency losses, D0-compatible interfaces | Synthetic gradient, masking, determinism, support, and failure tests; no scientific training |
 | D: source-only smoke | Explicitly authorized minimal source-role smoke and diagnostics | Fixed resources, no held-test access, retain failures; reject numerical or leakage defects |
-| E: development | Authorized finite D1–D5 ladder and source-only G3 decision | Reconcile candidates, costs, source-only advancement, collapse and unavailable runs |
+| E: development | Separately authorized finite D0-M/D1/D2/D3 core and nested source-only G3 decisions | Reconcile candidates, costs, source-only advancement, collapse and unavailable runs; D4/D5 remain deferred |
 | F: evaluation/reporting | Frozen-candidate P06 implementation and later approved execution | Identical evaluation roles, correct aggregation/uncertainty, reviewed figures and bounded claims |
 
 Only Gate A is issued by the initial readiness task. Gate B and later tasks need a new explicit supervisor assignment within project-owner authority. Unspecified numerical choices must be resolved and versioned before use, not chosen from held-test results. Broader preprocessing remains P08; RBF/SOM remains the separate planned P14 extension.
@@ -64,3 +64,5 @@ OpenCode's documented [CLI](https://opencode.ai/docs/cli/) and [per-agent permis
 The [T001 review](delegation/P05_TASK_001_REVIEW.md) records accepted findings and corrected worker assumptions. [T002](delegation/P05_TASK_002_READINESS_IMPLEMENTATION.md) then authorized only a contract-only readiness inventory; its [review record](delegation/P05_TASK_002_REVIEW.md) lists code, tests, corrections, and the remaining boundary. Passing this small implementation slice does not pass the full Gate B role/support/budget audit or authorize Gate D/E training.
 
 [T003](delegation/P05_TASK_003_SOURCE_SUPPORT.md) adds the metadata-only inherited-role support audit. Its [review](delegation/P05_TASK_003_REVIEW.md), [aggregate findings](P05_SOURCE_SUPPORT_AUDIT.md), and [design handoff](P05_DESIGN_HANDOFF.md) are the current continuation points. Read-only metadata access is explicitly supervisor-controlled; the worker implements against synthetic fixtures without access to the actual scientific dataset. Audited P04 role provenance is not authorization to run a new P05 experiment.
+
+On 2026-09-25 the owner authorized the next bounded implementation/smoke and separately approved nested source-only selection per outer test split. The [core protocol](P05_CORE_PROTOCOL.md) and [contract](contracts/p05_core_contract.json) define the exact scope and ceilings. T006 covers synthetic-tested numerical primitives; T007 covers metadata-only registries. Worker sessions return patches from scoped source snapshots with tools denied, while the supervisor applies/reviews/tests them. Source snapshots are used because the client's intended exact-path read allowance was rejected; permissions were not broadened. Independent patch-authoring slices may run concurrently on disjoint allowed paths, but no worker directly edits files or executes scientific data. Full-package validation and actual smoke execution still require a fixed protected workspace and no concurrent edits.

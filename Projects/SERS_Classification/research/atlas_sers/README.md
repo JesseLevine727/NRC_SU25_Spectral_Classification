@@ -57,9 +57,11 @@ reviews, verifies, and controls advancement. The first P05 readiness audit and
 [contract-only inventory implementation](plan/delegation/P05_TASK_002_REVIEW.md)
 are documented. The [source-support audit](plan/P05_SOURCE_SUPPORT_AUDIT.md)
 checks all 1,181 inherited fitting roles and identifies sparse surface-training
-groups. The [design handoff](plan/P05_DESIGN_HANDOFF.md) records the remaining
-loss/sampling, source-only advancement, and finite-budget decisions. These
-audits do not authorize training or constitute executable P05 registries.
+groups. The dated [core protocol](plan/P05_CORE_PROTOCOL.md) and
+[contract](plan/contracts/p05_core_contract.json) now lock the sampler, losses,
+nested source-only selection and finite budgets. Only a reviewed 34-execution
+numerical smoke is authorized; full development and outer evaluation remain gated.
+The [core review](plan/delegation/P05_CORE_REVIEW.md) records implementation progress.
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 
@@ -234,9 +236,10 @@ limitation. See the [P04 results](results/p04_deep/P04_RESULTS.md),
 [completion audit](plan/P04_COMPLETION_AUDIT.md), and
 [interactive comparison](plan/figures/html/F48_deep_classical_comparison.html).
 
-P05 is in no-fit design/audit: inherited source-support counts are available;
-the exact loss/sampler and executable budget remain to be frozen. D0 is their frozen
-control; no D1–D5 model has been trained. The P04 reuse of P13 held test views is
+P05 core design is locked and implementation is under review before its bounded
+numerical smoke. The new matched D0-M control shares the all-master sampler with
+D1–D3; historical P04 D0 remains immutable. No P05 generalization result exists.
+D4/D5 are deferred with zero allocated fits. The P04 reuse of P13 held test views is
 descriptive only: a controlled P13 deep comparison still needs exact
 substrate-restricted source refits, matched-source loss, and preprocessing
 sensitivities. Neither P13 support nor its portability margins has changed.

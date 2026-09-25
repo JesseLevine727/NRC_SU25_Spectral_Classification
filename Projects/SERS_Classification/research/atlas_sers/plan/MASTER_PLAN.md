@@ -450,7 +450,7 @@ Eligibility is frozen from metadata/support, never from model performance.
 | P02 | split, policy-support, and information-regime freeze | P01 | zero leakage; family/QC roles and fallbacks resolved without outcomes |
 | P03 | classical nested benchmark under `PP-U-MIN` | P02 | calibrated row/master/domain predictions and policy-panel records |
 | P04 | compact deep ERM baseline under `PP-U-MIN` | P02 | stable training, fair comparison, and policy-panel records |
-| P05 | acquisition-aware development | P04 | source-only development winner frozen |
+| P05 | acquisition-aware development | P04 | nested per-context source-only selection procedure frozen |
 | P06 | definitive `PP-U-MIN` T1/T2/T3-ZS evaluation | P03–P05 | complete paired predictions and primary inference |
 | P07 | target-access adaptation and calibration regimes | P06 | UDA/PC/FS labelled separately under source-frozen preprocessing |
 | P08 | preprocessing-policy factorial and robustness | P04, P06 | universal/family/QC effects, interactions, coverage, perturbation, and tier results |
@@ -682,9 +682,13 @@ Augmentation parameters are logged per example. ±5 cm⁻¹ shift is a robustnes
 
 All D1–D5 advancement occurs under `PP-U-MIN`. Preprocessing-policy outcomes cannot select the acquisition-aware loss, and acquisition-aware held-test outcomes cannot select a preprocessing policy.
 
+**Dated core amendment, 2026-09-25:** the project owner approved locking the sparse-role/loss/sampling rules and a bounded numerical smoke, and explicitly approved **nested source-only selection independently within each outer context**. The [P05 core protocol](P05_CORE_PROTOCOL.md) and [machine-readable core contract](contracts/p05_core_contract.json) are authoritative for this new bounded scope where they refine the older proposal below. They fix four recipes (new matched D0-M, D1, D2, D3), an all-master/two-instrument-view sampler, exact loss equations, one fixed optimizer/temperature/weight setting, a 34-execution/1,088-step smoke ceiling, and an explicit later ceiling of 17,820 neural fit slots. The latter is **not** execution authorization. The full Cartesian grids, one global outcome-selected winner, and the old 300–700-fit estimate do not govern this core version. D4/D5 receive zero fits until a separate amendment. Historical P04 D0, existing contracts/results, preprocessing and split boundaries remain immutable.
+
 **Implementation checkpoint, 2026-09-24:** the [inherited-role source-support audit](P05_SOURCE_SUPPORT_AUDIT.md) covers 320 outer contexts, 861 inner-selection units, and 1,181 fitting roles. Of 255 surface inner fitting roles for unseen-instrument evaluation, 87 contain only one instrument and 36 cannot support two chemicals with at least two distinct masters each. The [design handoff](P05_DESIGN_HANDOFF.md) therefore requires explicit unavailable-loss/sampling rules and a finite staged compute proposal before training. These are metadata findings, not new predictive results or an amendment of the frozen losses. The [T003 review](delegation/P05_TASK_003_REVIEW.md) records implementation acceptance separately from scientific authorization.
 
 ### 13.1 Batch construction
+
+Sections 13.1–13.6 retain the original candidate rationale. For the dated core implementation, the exact sampler, fixed temperature/weights, D0-M control and zero D4/D5 slots in the core contract supersede the broader choices described here.
 
 Each batch is sampled at the master level and must contain:
 
@@ -749,7 +753,7 @@ Candidate development uses source-only inner pseudo-domain validation. D4 and D5
 
 ### 13.7 Deep advancement rule
 
-One acquisition-aware candidate is frozen before definitive outer aggregation. It advances over D0 only if, across source-only development tasks:
+Under the 2026-09-25 amendment, the **selection procedure** is frozen before definitive outer aggregation, not one winner chosen across overlapping source/test contexts. Each outer context may advance one candidate over the newly matched D0-M using only its own source pseudo-domains and separately registered source-master-CV guards. Unsupported master-CV-only contexts return D0-M, while fixed D3 remains a mechanistic control. See the core protocol for denominators, exclusions, tie-breaking and the independent 384 guard-unit slots. The original practical thresholds are retained:
 
 - mean pseudo-domain BA improves by at least 0.02;
 - worst pseudo-domain BA does not decrease by more than 0.02;
@@ -757,7 +761,7 @@ One acquisition-aware candidate is frozen before definitive outer aggregation. I
 - at least 60% of pseudo-domains improve;
 - no more than 5% of runs collapse to chance or a single predicted class.
 
-If no candidate passes, D3 remains a named mechanistic control but is not described as the expected winner.
+If no candidate passes within a context, the adaptive procedure returns D0-M. D3 remains a named mechanistic control but is not described as the expected winner. No held-context score or selection from another outer context may determine that fallback or candidate.
 
 ## 14. Sub-plan P06 — definitive T1/T2/T3-ZS evaluation
 
@@ -772,7 +776,8 @@ P06 is the definitive `RQ-P01` evaluation and uses `PP-U-MIN` only. Its conclusi
 - fixed Extra Trees;
 - development-selected classical pipeline;
 - compact D0 ERM network;
-- one frozen acquisition-aware deep candidate;
+- new sampler/objective-matched D0-M control;
+- the frozen nested source-only acquisition-aware selection procedure (with D0-M fallback);
 - D3 as a fixed mechanistic ablation if it is not the selected candidate.
 
 Every listed method receives the same `PP-U-MIN` rows. Family-aware or QC-adaptive results are not inserted into the primary method table.
@@ -1286,23 +1291,18 @@ three-class support; it is not P11's final hierarchical inference or a G4 pass.
 See [P04 results](../results/p04_deep/P04_RESULTS.md) and
 [completion audit](P04_COMPLETION_AUDIT.md).
 
-The very next action is the **P05 no-fit expansion and source-only development
-audit**, not another architecture search against the now-observed test scores:
+The current action is the **P05 locked-core implementation and bounded source-fitting smoke**. The metadata-only plan has been independently reconciled; full source-only development follows only after the smoke review and a separate execution/resource authorization.
 
-Implementation follows the project owner's 2026-09-24 [supervised workflow](ORCHESTRATION_PROTOCOL.md): OpenCode Go / DeepSeek v4.1 Flash implements bounded assignments, while the supervising assistant directs the science, reviews diffs and results, and independently checks acceptance. The first assignment is a read-only readiness audit; it does not authorize scientific training.
+Implementation follows the project owner's 2026-09-24 [supervised workflow](ORCHESTRATION_PROTOCOL.md): OpenCode Go / DeepSeek v4.1 Flash implements bounded assignments, while the supervising assistant directs the science, reviews diffs and results, and independently checks acceptance. The 2026-09-25 owner authorization extends only to the contract-pinned 34-execution numerical smoke.
 
-The initial readiness audit and a contract-only inventory are now documented in the [P05-T002 review](delegation/P05_TASK_002_REVIEW.md). The CLI reports 147 declared loss combinations and an illustrative 2646 fits per source-selection unit if all six optimizer settings and three seeds are crossed. Neither number is an approved total execution budget. Fourteen unresolved implementation/design topics remain visible; exact role/pair/support expansion and scientific fitting have not begun. A successful `readiness` command does not pass the full no-fit authorization gate.
+The [P05-T002 review](delegation/P05_TASK_002_REVIEW.md) records the historical broad-grid inventory, not current execution authority. The [core protocol](P05_CORE_PROTOCOL.md), [contract](contracts/p05_core_contract.json) and [supervisor review](delegation/P05_CORE_REVIEW.md) govern the current work. The no-fit core plan registers 32 primary smoke fits plus two replays, and a later ceiling of 14,940 inner fits plus at most 2,880 final refits. All 384 additional source-master guard folds have three-class support. These later slots are a ceiling, not permission to run them.
 
-1. enumerate the predeclared D1–D5 loss configurations, P02 source roles, seeds,
-   fit counts, storage, and compute before training;
-2. verify same-master/cross-instrument pair support, prohibit same-chemical
-   negatives, and test deterministic pair sampling and weighting;
-3. preserve the frozen D0 backbone, PP-U-MIN, master isolation, and source-only
-   checkpoint, calibration, and advancement boundaries;
-4. execute the authorized development ablations, retaining failure and collapse
-   outcomes, and apply the P05/G3 advancement rule without held-test selection;
-5. freeze one advancing candidate or the explicit no-advance outcome, then
-   proceed to P06 and ultimately P11's definitive comparison.
+1. Accept the deterministic metadata registries and synthetic-tested sampler/losses.
+2. Review the private runner, failure retention, replay checks and fixed budget.
+3. Complete the 34-execution, eight-epoch training-only smoke without held metrics; publish reviewed diagnostic figures, not a model-superiority claim.
+4. Separately authorize the later finite core development after measured cost/storage review; retain all failed or unavailable outcomes.
+5. Apply G3 independently using each context's own source pseudo-domains and source-master guard folds, with D0-M fallback. No global winner or cross-context outcome sharing is allowed.
+6. Proceed to separately authorized P06 outer evaluation and ultimately P11's definitive inference.
 
 The parallel P14 extension now has a detailed planning specification. Its next
 task is **EXP-P14-00: a no-fit support, source-role, and compute manifest**.

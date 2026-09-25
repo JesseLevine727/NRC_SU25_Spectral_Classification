@@ -1,0 +1,31 @@
+# P05-T007 — deterministic metadata-only core and smoke registries
+
+**Date:** 2026-09-25. **Worker:** OpenCode Go / DeepSeek v4.1 Flash. Source snapshots are supplied in the prompt; no tool access, reads, writes, shell, agents, data or scientific fits by the worker. Return only scoped apply_patch additions; supervisor applies/tests.
+
+Allowed files: `src/atlas_sers/evaluation/p05_core_plan.py` and `tests/test_p05_core_plan.py`. No CLI/filesystem writer in this slice. Do not edit older modules, contracts, P04 roles, or results.
+
+## API
+
+Standard library only. Reuse `SupportInputs`, `build_support_report`, `sha256_value`, `uid_set_hash` from `p05_support`, and `build_readiness_report` supplied by the caller. `build_core_plan(inputs, *, contract, readiness)` performs the existing full support validation, validates the new contract/pins/population, then returns a JSON-compatible dictionary. No output path, file writes, NumPy, torch, outcomes or intensity access. Provide small pure helper APIs for synthetic tests and later runtime use.
+
+`validate_core_contract(contract)` checks this version's fixed four recipes, population, all sampler/loss/optimization parameters, 8×4 smoke schedule, two seeds, 32 primary + 2 explicit replay reservations =34 executions/1088 steps, resource caps, later ledger arithmetic, disabled D4/D5/full-development/outer-evaluation, and nested no-cross-context selection. Reject missing/inconsistent/unknown recipe specifications or attempted budget expansion. It returns no authorization beyond the smoke. Hash the entire canonical contract into the report.
+
+`select_smoke_roles(audit_entries)` selects the four roles exactly by the protocol and returns records in declared role-label order. Fail if required support/categories are absent. Dense requires development/selection_fit, >=2 instruments AND a nonzero same-master/different-instrument pair count; sparse requires surfaces/selection_fit/one instrument, minimum (master_count,parent_role_id). Production build verifies exact expected population and selected-role row/master counts. Helpers permit small synthetic fixtures without weakening production `build_core_plan` validation.
+
+Return tables as lists of dictionaries under named keys:
+
+- `smoke_roles`: four records binding role label, parent role/context/unit, new contract-bound P05 role ID, station, role support counters, UID-set hash and sorted fitting UIDs. Include fitting observation metadata only under `smoke_observations`: role label/new role ID, UID/master/station/target/instrument/substrate, derived from validated manifest rows. No source paths or operator/session fields.
+- `smoke_fits`: 32 primary and two replay execution rows. Stable fit ID depends on protocol+contract SHA, pinned inputs, P05 role, recipe and seed. Replay has the SAME fit ID and explicit `replay_of` primary execution ID but a DIFFERENT execution ID. Record epoch/step counts and recipe weights. No timestamps/random UUIDs. Source-only shared RNG grouping is role+seed, not recipe/execution ID.
+- `smoke_pairs`: every eligible unordered same-chemical positive UID pair from selected fitting roles, excluding same-master/same-instrument pairs. Bind pair ID to contract/input pins/role/sorted constituent UIDs. Record `paired_consistency_eligible` for same-master/different-instrument pairs. Never expose a master/instrument aggregate as a unique observation pair. This is a private no-fit registry, not pair-independent sample evidence.
+- `development_slots`: every inherited selection_fit role × four recipes × three seeds (861×12), plus each of three new source-master-CV guard unit slots for 128 pseudo-domain T3 contexts ×4×3 (384×12). Total14940 slots. Bind context, fitting role, validation role, unit, recipe, seed, planned/excluded_by_protocol status and reason. No fitting. Inherited fit/validation pairing must be exact within context/unit; no source sharing across contexts.
+- `guard_roles`: fit and validation role definitions for each of three guard folds within each pseudo-domain context, using only original outer_fit masters/UIDs. Within each class, sort masters by SHA-256 of [guard version, context ID, master ID], round-robin indices modulo3; hold that fold out and use the rest for fitting. All observations of a master follow it. Guard support requires all three classes in BOTH roles; if not, retain role records and reason-code all associated slots excluded, not removed. Assert fit/validation master disjointness, outer-fit subset, and no outer-test master/held instrument. Do not add guards to master-CV fallback/T1 contexts.
+- `budget`: reconcile 320 contexts,861 inherited units,128 pseudo-domain T3 contexts,132 master-CV fallback T3 contexts,384 guard slots,14940 inner slots,2880 upper refit slots,2880 scalar calibrations,17820 later neural fits,17854 including current smoke. Report eligible/excluded slot counts separately. The future ceiling is not present execution permission or GPU-hour estimate.
+- `validation`: metadata/leakage/count/hash checks, `no_fits_performed=true`, `smoke_execution_requires_supervisor_gate=true`, `full_development_authorized=false`, `outer_evaluation_authorized=false`.
+
+All enumeration must be stable under shuffled input rows. Fail rather than silently drop inconsistent identifiers. Keep exceptions path-free and do not print data rows. Use contract's canonical digest and immutable input hashes in all new IDs. Keep data structures compact; no executable loss/training implementation in this module.
+
+## Tests
+
+Test contract tampering/budget expansion, deterministic recipe and primary/replay identities, disjoint/contained guard folds and unavailable classes, role-selection ordering, missing support, pair identity symmetry/role sensitivity/repeated observation distinction, ledger arithmetic and no fitting imports. Test real helpers with small synthetic metadata; do not fabricate an acceptance test that bypasses actual build validation. Reuse validated SupportInputs fixtures if convenient but do not read more source than provided. Actual full-registry reconciliation on the pinned 598-row metadata is the supervisor's independent acceptance step.
+
+Stop after code/test patch delivery. Runtime publication, private filesystem transactions, figures and fitting are separate tasks.

@@ -1,6 +1,6 @@
 # P05 design handoff: support before acquisition-aware training
 
-**Date:** 2026-09-24. **Status:** proposals for the next design gate, not an execution contract.
+**Date:** 2026-09-24. **Status:** historical design-gate questions, superseded for the bounded D0-M/D1–D3 core scope by the owner-approved [2026-09-25 core protocol](P05_CORE_PROTOCOL.md). D4/D5 remain deferred; full development/evaluation remain unauthorized.
 
 The next scientific question is whether the completed ordinary CNN can benefit from the repeated-master structure through supervised contrastive learning and paired consistency. Primary preprocessing remains frozen minimal min–max. P08 tests preprocessing separately after the primary method comparison; P14 retains the later RBF-network/SOM extension.
 
@@ -19,7 +19,7 @@ Counts of spectrum pairs are not counts of independent specimens. Multiple pairs
 5. **Resolve the source-only G3 selection boundary.** Master-grouped validation is not necessarily pseudo-instrument validation. The frozen roles contain both. Define which scores and supported pseudo-domains enter each G3 denominator; never relabel ordinary master-CV evidence as instrument-generalization evidence. A global choice aggregated over tasks must not introduce the current test instrument or test masters through another task's fitting/selection results. Specify the information boundary before generating any new scores.
 6. **Freeze runtime details and accounting.** Specify the auxiliary head and total parameter count, conditional alignment/adversary details, epoch inheritance, checkpoint selection, calibration, numerical failures, and immutable run identities. The backbone's parameter count alone is not the full acquisition-aware model's parameter count.
 
-The readiness IDs P05-U01 through P05-U14 remain the tracking vocabulary. A descriptive support audit informs these choices; it does not close them automatically or grant training authorization.
+The readiness IDs P05-U01 through P05-U14 remain the tracking vocabulary. A descriptive support audit did not close them automatically or grant training authorization. The subsequent core protocol records each decision's explicit closure or deferral and the separate bounded-smoke authority.
 
 ## Next bounded implementation sequence
 
