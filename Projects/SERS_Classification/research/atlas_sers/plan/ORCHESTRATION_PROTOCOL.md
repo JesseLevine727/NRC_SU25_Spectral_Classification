@@ -2,7 +2,7 @@
 
 **Established:** 2026-09-24, at the project owner's request.
 
-**Current phase:** P05 core implementation and bounded numerical smoke are accepted after the completed P04 ordinary CNN. The approved checkpoint recovery is exhausted at 35 total executions; [results and figures](../results/p05_smoke/P05_SMOKE_RESULTS.md) record the evidence. Full source-only development/evaluation require a separate reviewed runner and execution/resource authorization.
+**Current phase:** P05 core implementation and bounded numerical smoke are accepted after the completed P04 ordinary CNN. The approved checkpoint recovery is exhausted at 35 total executions; [results and figures](../results/p05_smoke/P05_SMOKE_RESULTS.md) record the evidence. The owner has separately approved the [36-fit source-validation pilot](contracts/p05_development_pilot.json), conditional on independent implementation acceptance. Full source-only development/evaluation remain unauthorized.
 
 **Implementation worker:** OpenCode Go, `opencode-go/deepseek-v4.1-flash`.
 

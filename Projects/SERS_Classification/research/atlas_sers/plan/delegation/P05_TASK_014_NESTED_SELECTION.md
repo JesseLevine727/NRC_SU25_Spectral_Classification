@@ -1,0 +1,23 @@
+# P05-T014 — context-local G3 selection
+
+Supervisor assignment, 2026-09-25. Implementation author: OpenCode Go / `opencode-go/deepseek-v4.1-flash`; all tools denied, public source snapshots supplied, no direct edits/data/Git/execution. Allowed new files: `src/atlas_sers/evaluation/p05_selection.py`, `tests/test_p05_selection.py`. Return module first, tests on request. This slice is a pure selection/accounting implementation, not permission to train or read any held outcomes.
+
+## Interface and evidence boundary
+
+Use standard-library-only pure functions. Implement `select_context(*, context_id, selection_mode, slots, results)` using the full planned slot schema supplied by `p05_core_plan`. One call accepts exactly one context; reject foreign-context rows rather than silently filtering them. `selection_mode` is `pseudo_domain`, `master_cv`, or the inherited development mode `inner_master_cv`; both master-only modes cannot support G3 transfer advancement. Each result must identify a registered slot and match its context/unit/role/recipe/seed/slot kind. Unknown slots, duplicates, contradictory identities and nonfinite/out-of-range completed metrics must raise. Missing, failed and explicitly excluded records must remain visible and block that candidate, never disappear from required denominators. No test scores, external winner, best-subset selection or cross-context aggregation is accepted.
+
+Required result fields: slot_id, context_id, selection_unit_id, slot_kind, fitting_role_id, validation_role_id, recipe_id, seed, status, best_epoch, best_validation_balanced_accuracy, best_validation_nll, best_validation_macro_f1, best_validation_predicted_class_count. Metrics for complete fits must be finite with BA/F1 in [0,1], NLL >=0, epoch integer 1..200, predicted-class count integer 1..3. Three seeds 20260805/20260817/20260829 and all four recipes D0-M/D1/D2/D3 must be planned for each unit. Validate unique (unit,recipe,seed) identities and consistent roles/slot-kind across its ladder. Protocol exclusions require explicit reasons and cannot supply successful scores.
+
+## Exact decision
+
+For pseudo-domain selection, require at least one inherited selection unit and exactly three distinct guard units. Average seed metrics within unit first. Mean pseudo-domain BA gain >=0.02; worst BA change is min(candidate unit BA) minus min(D0-M unit BA), >=-0.02; mean guard BA change >=-0.02; strictly positive paired unit BA gain in >=60% of pseudo-domains; collapsed fit fraction <=0.05 over all scheduled candidate pseudo-domain and guard seed-fits (collapsed means best-validation predicted-class count <2). Record all counts/denominators, support/exclusion/failure reasons and each threshold separately. Do not use a floating tolerance that weakens scientific margins. A missing/failed baseline blocks comparisons; do not present its fallback as a ready model.
+
+Rank passing D1/D2/D3 by mean pseudo-domain BA, worst pseudo-domain BA, mean pseudo-domain macro-F1, then D1,D2,D3 fixed order. Otherwise select D0-M. Master-CV-only contexts always return D0-M with an explicit unsupported-transfer-selection reason; never promote a candidate based on master-CV as if it were instrument validation. D3 remains the fixed mechanistic control. Return fallback policy identity separately from whether its own required fits are complete/usable. Do not silently mark an incomplete context ready for refit/evaluation.
+
+Add `inherit_refit_epochs(*, recipe_id, slots, results)` returning per-seed rounded median selected-recipe best epoch across that context's inherited (not guard) selection units, clipped to [30,200]. Require complete exact scheduled evidence; reject foreign/multiple contexts, unknown/missing/failed selected slots, duplicate/extra selected results and invalid metrics. Round with the existing Python/P04 convention. No guard epochs or other recipe/seed/context may influence the result. Calibration itself is outside this slice.
+
+## Tests
+
+All threshold boundaries, complete passes, no-pass fallback, tie ordering, seed-before-unit aggregation, different weakest baseline/candidate units, genuinely incomplete/excluded/failed denominators, sparse-unavailable auxiliary terms still counted, malformed/nonfinite values, duplicate/unknown/foreign rows, missing seed/recipe slots, wrong role identity, baseline failure, master-CV fallback, three-guard requirement and epoch inheritance bounds/ties/guard exclusion. Shuffle invariance and non-mutation. Confirm a foreign context's excellent metrics cannot influence selection. Module imports must not import torch or read files.
+
+This implements the existing policy, not new observed performance. Stop after reviewable code/tests; no prediction results exist for this phase yet.
