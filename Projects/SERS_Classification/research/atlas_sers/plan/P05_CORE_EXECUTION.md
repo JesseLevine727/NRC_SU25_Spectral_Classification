@@ -2,6 +2,8 @@
 
 The [core contract](contracts/p05_core_contract.json) and [protocol](P05_CORE_PROTOCOL.md) fix the science. This handoff describes the separate private runner. The older `run_p05.py readiness/check` commands inventory the historical broad grid; they do not authorize this core experiment.
 
+**Original run stopped:** its lease remains failed after one numerical fit and a checkpoint-write error. See [smoke status](P05_SMOKE_STATUS.md). Do not rerun the original command or remove its lease. The owner approved the separate [bounded recovery permit](contracts/p05_checkpoint_recovery.json): 34 new executions, 35 overall including the failed-save attempt. Recovery uses a new exclusive namespace after implementation review; it does not rewrite the original contract or numerical identities.
+
 ## Authority and frozen identities
 
 - Canonical contract SHA-256: `60e3a49753c59fb7038c83e50795614ad1cb4ca764dd487ac49692edcaf2ccae`.
@@ -25,6 +27,22 @@ python scripts/run_p05_core.py --project-root . \
 Only after the supervisor accepts the implementation and tests may the same command prefix use `smoke --plan-id a6334b2ed13a92fd953e4202bc2153e1aea4d12419d2a6f891f64f126136fe37`. This is not an instruction to launch a second run. One contract-level lease prevents re-execution even when code changes. Never delete or bypass that lease to retry a failure.
 
 Freeze package contents and Git state throughout the governed smoke. CUDA is selected only when at least 5 GiB is free; CPU is selected before fitting otherwise. No mid-fit device fallback is allowed. The kernel enforces 120 seconds per fit and 4 GiB peak allocated CUDA memory; the runner enforces 900 seconds overall. An external process timeout provides a final watchdog without authorizing a retry.
+
+## Separately approved persistence recovery
+
+The owner approved a single infrastructure recovery on 2026-09-25. Its permit SHA-256 is `01e0835d8a6ece2ee98cee654e9f707e894643788dc9daabc438527c1c19c058`. The original plan, contract and numerical source hashes remain pinned. The replacement execution has the same numerical fit specification and seed, but a distinct execution identifier and a recovery-of link.
+
+After implementation review, use this no-fit preflight:
+
+```bash
+python scripts/recover_p05_smoke.py --project-root . \
+  --artifact-root "$NATO_SERS_ARTIFACT_ROOT" \
+  --contract plan/contracts/p05_core_contract.json \
+  --contract-sha256 60e3a49753c59fb7038c83e50795614ad1cb4ca764dd487ac49692edcaf2ccae \
+  --plan-id a6334b2ed13a92fd953e4202bc2153e1aea4d12419d2a6f891f64f126136fe37 preflight
+```
+
+The same command ending in `recover` consumes the one approved recovery after the supervisor accepts all tests. It is not a resumption flag for the original runner. Artifacts live under `p05core/recovery/<permit-sha>/{lease,run}`; either an existing lease or an existing run prohibits another attempt. Never delete them to retry. The first replay must match the retained original state/stream digests and complete history before the 33 unstarted executions proceed. Every new checkpoint is reloaded and its state hash checked. The accepted set still contains 32 primary fits plus two planned replays; total optimization accounting includes the original failed-save execution: 35 executions and 1,120 updates. No full development is authorized.
 
 ## Evidence and interpretation
 

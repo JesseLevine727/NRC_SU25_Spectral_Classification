@@ -1,0 +1,11 @@
+# P05-T011 — checkpoint persistence defect
+
+Supervisor-issued 2026-09-25 to OpenCode Go / DeepSeek v4.1 Flash. Diagnostic skill: reproduce/minimize, falsifiable probes, regression before fix. The real smoke stopped after its first numerical fit completed because `torch.save` rejects the extensionless hidden temporary pathname `.ckpt-*`. Two direct `_save_state` reproductions fail. Ordinary basenames, a `.pt` suffix, and saving through an open binary handle succeed. No additional scientific fits are authorized by this task.
+
+Allowed files: `src/atlas_sers/evaluation/p05_core_run.py`, `tests/test_p05_core_run.py`. First deliver only real serialization regression tests so the supervisor can observe failure; then separately deliver the fix. Use `pytest.importorskip('torch')` before numerical imports. Exercise the actual `_save_state` and `_persist_execution` seams with synthetic CPU tensors, not mocked serialization and not training. Verify atomic destination creation, exact tensor roundtrip, result/history/checkpoint consistency, and no temporary-file residue on success or controlled serialization failure. Existing complete result records and all frozen numeric rules remain unchanged.
+
+Fix strategy: retain the `mkstemp` file descriptor, open it as a binary stream, call `torch.save` on that stream, flush and fsync before atomic replacement. Do not weaken checks or switch serialization semantics. Preserve errors and failed run evidence; never remove/reset the real failed lease. Add an actual tiny checkpoint roundtrip preflight before any scientific lease is acquired, using a private temporary directory and no optimization. Catch persistence failures at the execution boundary, retain a diagnostic digest and an explicit failed ledger event, then stop.
+
+Do not modify the contract, authorize a retry, train, touch actual private artifacts, or add recovery/resumption behavior. A possible 35-execution recovery amendment is awaiting the project owner's decision. Return patches only, all tools denied. The supervisor applies, reproduces and independently tests.
+
+Subsequent decision: the owner approved the bounded recovery on the same date. That separate authority is implemented under [T012](P05_TASK_012_BOUNDED_RECOVERY.md), not by expanding this serializer-fix assignment.

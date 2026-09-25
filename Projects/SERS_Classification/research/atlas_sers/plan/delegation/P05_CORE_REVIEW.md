@@ -1,6 +1,6 @@
 # Supervisor review — P05 core implementation and bounded smoke
 
-**Date:** 2026-09-25. **Status:** implementation accepted for the single bounded smoke; no scientific-data fits performed at this checkpoint.
+**Date:** 2026-09-25. **Status:** the original smoke stopped after one numerical fit and a persistence error. The owner approved a separately recorded 35-total-execution recovery. Its implementation is accepted: 523 full-suite tests pass; scientific recovery has not yet started at this code checkpoint.
 
 ## Authority and scope
 
@@ -34,8 +34,26 @@ The initial T009 runner patch was rejected before application: it invented impor
 
 ## Implementation acceptance before scientific execution
 
-The corrected boundary passes 22 tests; the figure exporter passes 29. All four actual source-fitting arrays, QC orderings and sampler capacities were independently validated without optimization. The immutable private plan was created with the same previously verified digest. The smoke lease does not yet exist. Both synthetic figure PDFs compile, and the native TikZ layout was visually inspected; the HTML regression preserves all four subplot labels and its sparse-support disclaimer.
+At the original implementation gate, the corrected boundary passed 22 tests and the figure exporter passed 29. All four actual source-fitting arrays, QC orderings and sampler capacities were independently validated without optimization. The immutable private plan was created with the same previously verified digest; no smoke lease existed at that gate. Both synthetic figure PDFs compile, and the native TikZ layout was visually inspected; the HTML regression preserves all four subplot labels and its sparse-support disclaimer.
 
 The final fixed-package suite passes **499 tests in 134.60 seconds**. Ruff passes, and the clean public-package audit passes. One preceding full run had 498 passes and one fixture-import failure after the supervisor incorrectly suggested changing the worker's package-qualified import. Inspection confirmed `tests/__init__.py` exists; restoring the worker's original import resolved it. This was a test-import defect, not a protocol or numerical change. Worker transcripts remain outside the repository and no worker process remains active.
 
 The accepted implementation is authorized only for the [bounded execution handoff](../P05_CORE_EXECUTION.md). Final scientific smoke acceptance still requires the actual 34 records, numerical/replay/control checks, protected-state verification, checkpoint audit and reviewed diagnostic figures. No claim of acquisition invariance or predictive improvement follows from this implementation gate.
+
+## First scientific attempt and serializer regression
+
+The immutable code checkpoint `5b44c193` was pushed to `main` before launch; its hosted CI passed (without torch). The first CWA D0-M fit completed 8 epochs/32 updates with finite gradients, then the checkpoint writer failed on its extensionless hidden temporary pathname. No second fit started. The scientific smoke did not pass. The [status record](../P05_SMOKE_STATUS.md) supplies exact counts and the now-approved separate recovery boundary.
+
+T011 applies the diagnose loop to actual serialization without further training: two independent reproductions, filename/file-handle controls, two failing regressions at `_save_state`/`_persist_execution`, then the DeepSeek-authored binary-handle fix and pre-lease roundtrip preflight. Five targeted persistence/preflight tests pass, and an independent tensor-hash roundtrip passes. No private failed lease or artifact has been deleted or modified. The absence of a real checkpoint test in the initial suite is the principal coverage gap; the corrective tests exercise the actual writer, not a mock.
+
+## Approved recovery review
+
+The owner approved one exact replay plus the 33 unstarted executions, capped at 35 overall. The separate permit leaves the original contract and all numerical source pins unchanged. An intermediate full suite reported 499 passes and five governance/integration failures because the supervisor's draft permit omitted the project's required protocol namespace. Adding that planning field fixed the direct governance checks; no scientific contract or computation changed. The permit hash was updated before any recovery launch.
+
+DeepSeek authored the recovery module and CLI. Supervisor review caught environment capture before numerical imports; it is now ordered after full stack loading, source-input validation and checkpoint preflight. The schedule now requires that only the original first execution is replaced, preserving the other 33 exactly. Other corrections add immediate failed-fit acceptance diagnostics, explicit 35/1,120 accounting, occupied-lease refusal, checkpoint reload verification and a no-fit refusal if the original CUDA run would silently change to CPU. A real-data no-fit preflight passes against the retained failed attempt and the identical original plan. No recovery optimization has started at this review stage.
+
+The corrected recovery tests pass **19 cases**, and the runner/persistence boundary passes **27** (46 focused passes). Tests exercise 34 synthetic result records through real serialization and aggregate acceptance; the original files and failed lease remain byte-for-byte unchanged. Separate state-only and history-only replay failures each stop after one started execution, preserving diagnostics. A real serialization failure also stops after one; a sparse-control mismatch fails final acceptance; a second invocation cannot acquire the occupied lease. These are synthetic orchestration tests, not additional field-trial fits.
+
+The supervisor returned eight initial fixture/API failures and incorrect assertions about failed-summary retention to the worker rather than changing production to accommodate them. The revised tests retain real protected-state, per-fit, replay and aggregate checks. One worker response emitted unusable tool-call text despite the denied-tool assignment; no such command executed, and the worker was redirected to patch-only output. Ruff and the public-package audit pass before the final full-suite gate.
+
+Final immutable-package regression gate: **523 passed in 143.26 seconds**, Ruff clean, public scaffold audit **455 files passed**. The final recovery preflight also passes against actual private inputs without acquiring a scientific lease. The implementation is accepted for the single approved recovery only; no full benchmark or new numerical tuning is authorized. The code checkpoint is committed before recovery starts and stays frozen throughout execution.

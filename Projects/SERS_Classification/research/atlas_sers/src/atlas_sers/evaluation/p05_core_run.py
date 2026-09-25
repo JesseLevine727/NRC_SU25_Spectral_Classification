@@ -685,17 +685,40 @@ def _reserve_row(rows_dir: Path, fit: Mapping[str, Any]) -> None:
 
 
 def _save_state(torch: Any, state: Any, path: Path) -> None:
-    handle, temporary = tempfile.mkstemp(prefix=".ckpt-", dir=path.parent)
-    os.close(handle)
+    handle, temporary = tempfile.mkstemp(prefix=".ckpt-", suffix=".pt", dir=path.parent)
     temporary_path = Path(temporary)
     try:
-        torch.save({"state_dict": state}, temporary_path)
-        with temporary_path.open("rb") as stream:
+        with os.fdopen(handle, "wb") as stream:
+            torch.save({"state_dict": state}, stream)
+            stream.flush()
             os.fsync(stream.fileno())
         os.replace(temporary_path, path)
     finally:
         if temporary_path.exists():
             temporary_path.unlink()
+
+
+def _checkpoint_preflight(torch: Any, artifact_root: Path) -> None:
+    directory = artifact_root / P05CORE_NAMESPACE / "preflight"
+    _reject_symlink_chain(directory)
+    directory.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="preflight-", dir=directory) as temporary:
+        scratch = Path(temporary)
+        state = {"probe": torch.zeros(4, dtype=torch.float32)}
+        target = scratch / "probe.pt"
+        try:
+            _save_state(torch, state, target)
+            loaded = torch.load(target, weights_only=True, map_location="cpu")
+        except P05CoreError:
+            raise
+        except Exception as error:
+            raise P05CoreError("checkpoint_preflight_failed") from error
+        payload = loaded.get("state_dict") if isinstance(loaded, Mapping) else None
+        if not isinstance(payload, Mapping) or set(payload) != set(state):
+            raise P05CoreError("checkpoint_preflight_mismatch")
+        for key, tensor in state.items():
+            if not bool(torch.equal(payload[key], tensor)):
+                raise P05CoreError("checkpoint_preflight_mismatch")
 
 
 def _persist_execution(run_dir: Path, fit: Mapping[str, Any], result: Any, torch: Any) -> None:
@@ -1061,7 +1084,6 @@ def run_smoke(
     numpy, pandas, torch, smoke = _import_stack()
     device = _select_device(torch)
     observation_type = importlib.import_module("atlas_sers.evaluation.p05_sampling").Observation
-    provenance_before = _capture_provenance(repository_root, project_root, artifact_root)
     intensity, labels = _load_representation(
         p01_run / REPRESENTATION_REL,
         contract["input_pins"]["representation_sha256"],
@@ -1075,6 +1097,8 @@ def run_smoke(
     )
     _validate_source_inputs(smoke, role_inputs)
     _validate_sample_capacity(smoke, role_inputs, contract)
+    _checkpoint_preflight(torch, artifact_root)
+    provenance_before = _capture_provenance(repository_root, project_root, artifact_root)
     _mkdir_exclusive(lease, "lease_exists")
     _atomic_write(
         lease / "lease.json",
@@ -1128,7 +1152,12 @@ def run_smoke(
                 _persist_error(run_dir, fit, error)
                 _ledger({"event": "failed", "execution_id": fit["execution_id"]})
                 raise
-            _persist_execution(run_dir, fit, result, torch)
+            try:
+                _persist_execution(run_dir, fit, result, torch)
+            except BaseException as error:
+                _persist_error(run_dir, fit, error)
+                _ledger({"event": "persistence_failed", "execution_id": fit["execution_id"]})
+                raise
             _ledger(
                 {"event": "completed", "execution_id": fit["execution_id"], "status": result.status}
             )
@@ -1166,6 +1195,7 @@ def run_smoke(
                 int(item["result"].peak_cuda_bytes) for item in executions
             ),
             "wall_seconds": wall_seconds,
+            "checkpoint_preflight": "pass",
             "checks": {"status": "pass"},
         }
         _atomic_write(

@@ -62,6 +62,10 @@ groups. The dated [core protocol](plan/P05_CORE_PROTOCOL.md) and
 nested source-only selection and finite budgets. Only a reviewed 34-execution
 numerical smoke is authorized; full development and outer evaluation remain gated.
 The [core review](plan/delegation/P05_CORE_REVIEW.md) records implementation progress.
+The [smoke status](plan/P05_SMOKE_STATUS.md) records an interrupted first attempt:
+one fit completed numerically, but checkpoint saving failed. The saver has been
+corrected and regression-tested. The owner approved one bounded recovery, capped at
+35 total executions including the failed-save attempt; implementation review precedes launch.
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 

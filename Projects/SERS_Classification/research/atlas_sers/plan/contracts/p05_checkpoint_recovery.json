@@ -1,0 +1,44 @@
+{
+  "schema_version": "nato-sers-p05-checkpoint-recovery-v1",
+  "protocol_version": "nato-sers-p05-checkpoint-recovery-20260925-v1",
+  "approval_date": "2026-09-25",
+  "authority": "Project owner approved bounded 35-execution recovery",
+  "original_contract_sha256": "60e3a49753c59fb7038c83e50795614ad1cb4ca764dd487ac49692edcaf2ccae",
+  "original_plan_id": "a6334b2ed13a92fd953e4202bc2153e1aea4d12419d2a6f891f64f126136fe37",
+  "original_execution_id": "P05EXEC-803eb9b2ab8954f72052d398",
+  "original_manifest_sha256": "d452ec375d7445a0b728f895ceec47f1ae266ee3c2b80b7f731ef65ff2aa7dbe",
+  "original_lease_sha256": "3bb40ae240725f1bf1d47c1934c4c3227196fbe11b8c0b1c256bb5462c143cc7",
+  "original_result_sha256": "4162cfd3a39a015463d21de456cb59f42b5f2a51cfb818af6c53fc02e7c5c440",
+  "original_history_sha256": "d8953b430bb235f82edc82207ab791fb43176ceaac4d0539634ab95459b54092",
+  "original_final_state_digest": "6a6c972b2d644ee6a8ba2d284268abdc9bc4a22a45698b33d5a7ed92fc99b87b",
+  "numerical_source_sha256": {
+    "src/atlas_sers/evaluation/p05_smoke.py": "44e1dd25fc2146702bb0d430f277a3c2c1725bfb69d91a036082528e093b4a4a",
+    "src/atlas_sers/evaluation/p05_sampling.py": "3bcdfadc757a681420922843457e0a232cdbb31ee69647c183a7e28bd7361a97",
+    "src/atlas_sers/evaluation/p05_objectives.py": "5a4006088a1c4198b141e8642bd53c287bfcf5feab8297338381fbbe2a8d0959",
+    "src/atlas_sers/evaluation/p04_runtime.py": "f14c80e2a0c8dae6e1c28b18ae6593f7659a10b4f2c8cce57ec1afa40c960ce1",
+    "src/atlas_sers/models/acquisition.py": "6957b1b1908bed89195a656197ee6a250ef81ad5a7a98225672a983db912a304",
+    "src/atlas_sers/models/deep.py": "1f6340dc54538feb28bc029f4a65dc096c042aced964b51c613faa01f914fd4d",
+    "src/atlas_sers/governance/canonical.py": "753f210399cba2c3e88473fc7d96eddea2d3de7f4c28b823cb3d01aa56383885"
+  },
+  "budget": {
+    "prior_executions": 1,
+    "new_executions": 34,
+    "total_executions": 35,
+    "prior_optimizer_steps": 32,
+    "new_optimizer_steps": 1088,
+    "total_optimizer_steps": 1120,
+    "maximum_fit_seconds": 120,
+    "maximum_recovery_seconds": 900,
+    "maximum_cuda_allocated_bytes": 4294967296,
+    "automatic_retries": 0
+  },
+  "constraints": [
+    "Preserve original failed run and lease unchanged",
+    "Same numerical fit IDs, role IDs, data, architecture, losses, sampler and seeds",
+    "New primary execution ID for the one authorized recovery replay; remaining 33 planned executions unchanged",
+    "Exact original versus recovered state, stream and semantic history comparison before any remaining execution",
+    "Two original deterministic replays remain in the 34 recovery executions",
+    "Source-fitting arrays only; no validation, held-test evaluation, selection or calibration",
+    "No full P05 development or P06 authority"
+  ]
+}

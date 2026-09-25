@@ -497,3 +497,102 @@ def test_source_preflight_rejects_missing_class():
     with pytest.raises(core.P05CoreError) as caught:
         core._validate_source_inputs(smoke, role_inputs)
     assert "fitting roles must contain exactly three chemicals" in str(caught.value.__cause__)
+
+
+def _persist_result_fixture(recipe_id: str) -> SimpleNamespace:
+    recipe_def = next(item for item in RECIPES if item["recipe_id"] == recipe_id)
+    return SimpleNamespace(
+        status="complete",
+        reason_code=None,
+        history=[
+            {"epoch": epoch, "chemical_ce": 1.0 + epoch * 0.01, "optimizer_steps": epoch * 4}
+            for epoch in range(1, core.EPOCHS + 1)
+        ],
+        parameter_count=212851 if recipe_def["projection"] else 208691,
+        optimizer_steps=core.OPTIMIZER_STEPS,
+        elapsed_seconds=1.0,
+        peak_cuda_bytes=0,
+        finite_gradient_batches=32,
+        nonzero_gradient_elements=10,
+        traceback_digest=None,
+        augmentation_digest=_digest("aug"),
+        sampling_digest=_digest("samp"),
+        pair_digest=_digest("pair"),
+        supcon_support={},
+        paired_support={},
+        initial_state_digest=_digest("s0"),
+        final_state_digest=_digest("s1"),
+        initial_backbone_digest=_digest("b0"),
+        final_backbone_digest=_digest("b1"),
+        initial_head_digest=_digest("h0"),
+        final_head_digest=_digest("h1"),
+        state_dict=None,
+    )
+
+
+def test_save_state_cpu_roundtrip(tmp_path):
+    torch = pytest.importorskip("torch")
+    path = tmp_path / "state.pt"
+    state = {"weight": torch.tensor([1.0, 2.0, 3.0]), "bias": torch.tensor([[0.5]])}
+    core._save_state(torch, state, path)
+    assert path.is_file() and not path.is_symlink()
+    loaded = torch.load(path, weights_only=True)
+    assert set(loaded["state_dict"]) == set(state)
+    for key, tensor in state.items():
+        assert torch.equal(loaded["state_dict"][key], tensor)
+    assert [entry.name for entry in tmp_path.iterdir()] == ["state.pt"]
+
+
+def test_save_state_failure_leaves_no_residue(tmp_path):
+    torch = pytest.importorskip("torch")
+    path = tmp_path / "state.pt"
+    with pytest.raises(AttributeError):
+        core._save_state(torch, {"bad": lambda: None}, path)
+    assert not path.exists()
+    assert list(tmp_path.iterdir()) == []
+
+
+def test_persist_execution_consistent_artifacts(tmp_path):
+    torch = pytest.importorskip("torch")
+    runtime = pytest.importorskip("atlas_sers.evaluation.p04_runtime")
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    fit = _fit("cwa_dense", "D1", SEEDS[0])
+    result = _persist_result_fixture("D1")
+    result.state_dict = {"weight": torch.tensor([1.0, 2.0])}
+    result.final_state_digest = runtime._state_hash(result.state_dict)
+    core._persist_execution(run_dir, fit, result, torch)
+    directory = run_dir / "executions" / fit["execution_id"]
+    record = json.loads((directory / "result.json").read_text())
+    history = json.loads((directory / "history.json").read_text())
+    assert record["status"] == "complete"
+    assert record["initial_state_digest"] == result.initial_state_digest
+    assert history == result.history
+    checkpoint = torch.load(directory / "state.pt", weights_only=True)
+    assert torch.equal(checkpoint["state_dict"]["weight"], result.state_dict["weight"])
+    assert runtime._state_hash(checkpoint["state_dict"]) == record["final_state_digest"]
+    assert record["initial_state_digest"] == result.initial_state_digest
+    assert sorted(entry.name for entry in directory.iterdir()) == [
+        "history.json",
+        "result.json",
+        "state.pt",
+    ]
+
+
+def test_checkpoint_preflight_passes(tmp_path):
+    torch = pytest.importorskip("torch")
+    core._checkpoint_preflight(torch, tmp_path)
+    preflight = tmp_path / core.P05CORE_NAMESPACE / "preflight"
+    assert preflight.is_dir()
+    assert list(preflight.iterdir()) == []
+
+
+def test_checkpoint_preflight_controlled_failure(tmp_path, monkeypatch):
+    torch = pytest.importorskip("torch")
+
+    def failing_save(_torch, _state, _path):
+        raise core.P05CoreError("checkpoint_preflight_failed")
+
+    monkeypatch.setattr(core, "_save_state", failing_save)
+    with pytest.raises(core.P05CoreError):
+        core._checkpoint_preflight(torch, tmp_path)

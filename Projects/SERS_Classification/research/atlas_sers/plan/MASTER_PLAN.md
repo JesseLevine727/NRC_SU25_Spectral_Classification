@@ -1293,13 +1293,15 @@ See [P04 results](../results/p04_deep/P04_RESULTS.md) and
 
 The current action is the **P05 locked-core implementation and bounded source-fitting smoke**. The metadata-only plan has been independently reconciled; full source-only development follows only after the smoke review and a separate execution/resource authorization.
 
-Implementation follows the project owner's 2026-09-24 [supervised workflow](ORCHESTRATION_PROTOCOL.md): OpenCode Go / DeepSeek v4.1 Flash implements bounded assignments, while the supervising assistant directs the science, reviews diffs and results, and independently checks acceptance. The 2026-09-25 owner authorization extends only to the contract-pinned 34-execution numerical smoke.
+**Execution update, 2026-09-25:** the first source-fitting D0-M completed eight epochs, but checkpoint persistence failed and the smoke stopped. The [smoke status](P05_SMOKE_STATUS.md) records the retained failed attempt and serializer correction. The owner approved a [separate one-replay recovery permit](contracts/p05_checkpoint_recovery.json): 34 new executions, including the exact recovery and 33 unstarted fits; total ceiling **35 executions / 1,120 updates**. Original numerical identities and failed evidence remain immutable. Recovery implementation is accepted after 523 passing tests and a no-fit real-input preflight; the scientific recovery is not yet complete at this code checkpoint. This is not a G3 decision or a predictive result.
+
+Implementation follows the project owner's 2026-09-24 [supervised workflow](ORCHESTRATION_PROTOCOL.md): OpenCode Go / DeepSeek v4.1 Flash implements bounded assignments, while the supervising assistant directs the science, reviews diffs and results, and independently checks acceptance. The 2026-09-25 authorization extends only to this numerical smoke and the explicitly bounded persistence recovery, not full development.
 
 The [P05-T002 review](delegation/P05_TASK_002_REVIEW.md) records the historical broad-grid inventory, not current execution authority. The [core protocol](P05_CORE_PROTOCOL.md), [contract](contracts/p05_core_contract.json) and [supervisor review](delegation/P05_CORE_REVIEW.md) govern the current work. The no-fit core plan registers 32 primary smoke fits plus two replays, and a later ceiling of 14,940 inner fits plus at most 2,880 final refits. All 384 additional source-master guard folds have three-class support. These later slots are a ceiling, not permission to run them.
 
 1. Accept the deterministic metadata registries and synthetic-tested sampler/losses.
 2. Review the private runner, failure retention, replay checks and fixed budget.
-3. Complete the 34-execution, eight-epoch training-only smoke without held metrics; publish reviewed diagnostic figures, not a model-superiority claim.
+3. Complete the accepted 34-record, eight-epoch training-only smoke under the separate 35-total-execution recovery ceiling, without held metrics; publish reviewed diagnostic figures, not a model-superiority claim.
 4. Separately authorize the later finite core development after measured cost/storage review; retain all failed or unavailable outcomes.
 5. Apply G3 independently using each context's own source pseudo-domains and source-master guard folds, with D0-M fallback. No global winner or cross-context outcome sharing is allowed.
 6. Proceed to separately authorized P06 outer evaluation and ultimately P11's definitive inference.
