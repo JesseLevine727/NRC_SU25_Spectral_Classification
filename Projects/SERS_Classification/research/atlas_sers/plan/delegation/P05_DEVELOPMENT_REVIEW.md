@@ -1,6 +1,6 @@
 # Supervisor review — source-validation implementation and bounded pilot
 
-**Date:** 2026-09-25. **Status:** implementation accepted for the approved 36-fit pilot; no dataset pilot fit has started at this implementation checkpoint. This record distinguishes synthetic tests, metadata checks, and scientific execution.
+**Date:** 2026-09-25. **Status:** implementation accepted, approved 36-fit pilot completed, independent post-run audit passed. No expansion is authorized. The implementation/preflight observations below precede the scientific execution recorded at the end.
 
 ## Execution authority
 
@@ -48,6 +48,18 @@ T017 passed 18 figure tests, including actual native TikZ compilation. The expor
 
 The final metadata/resource preflight passed with the same pilot-plan digest, more than 5 GiB free CUDA memory, a successful checkpoint probe, no arrays loaded and zero fits started. During execution, the representation container is authenticated in full, but only allowlisted source fitting/validation rows enter optimization or scoring. No outer-test prediction or metric is computed.
 
-## Remaining execution boundary
+## Execution boundary at the implementation checkpoint
 
 After accepted code is committed, the single approved pilot may run under an external timeout. Its records and native TikZ/offline HTML diagnostics require a separate post-run audit. Three initialization seeds on one split per station do not establish generalization or authorize a recipe change. Expansion requires a subsequent review and explicit execution decision.
+
+## Completed scientific pilot and independent review
+
+The supervisor committed and pushed accepted implementation `b82daec3c58671b45245243f60311f6063fc2729` before launch. The exact 36-slot plan ran once on CUDA under a 5,400-second external watchdog. All 36 fits completed, with 6,880 updates and no retries, in 141.664 seconds. Fits stopped after 30–122 epochs; no fit reached 200. Selected checkpoints occurred at epochs 1–102, including 21 before epoch 30. These are observations under the locked stopping rule, not a reason to shorten or alter it.
+
+An independent read-only audit reloaded and hash-checked all 72 saved states, reproduced all 36 saved source-validation logit arrays exactly from the on-disk models, recomputed BA/macro-F1/NLL, reconstructed earliest legal stopping and best-epoch choices, checked nine shared-stream groups, all 36 slot leases, the journal and all 185 run-manifest entries. Within-run protected provenance matched. A before/after file inventory confirmed all 187 original core-artifact files unchanged. Numerical success is distinct from predictive usefulness: one D1 and two D3 CWA selected checkpoints predict a single class.
+
+The native TikZ/vector PDF/PNG and offline HTML exports use 1,720 actual epoch records. Both native figures and both browser-rendered HTML files were inspected. The strict aggregate export excludes private spectra, sample/observation identities, row predictions and checkpoints. Source-validation results, resource use, caveats, all per-fit aggregates and immutable identities are in the [pilot report](../../results/p05_pilot/P05_PILOT_RESULTS.md).
+
+Post-run visual review found partially clipped HTML scatter markers at training BA = 1. The supervisor disabled marker clipping without changing coordinates or axis limits, added a regression test and reran all 19 figure tests successfully. Final exports retain the same semantic-data digest. This display-only correction occurred after the protected training run; model code, selected checkpoints and scientific results were unchanged. Hosted CI passed for the execution commit.
+
+**Acceptance:** the authorized pilot and its post-run review are complete. Source-validation effects differ by station; they do not establish global superiority, instrument independence or preprocessing adequacy. The pilot permit is exhausted, and 36 registered inner slots must be reused by any later runner. The next action is a separately reviewed scope/resource decision for wider nested source-only development, not an automatic full-ladder launch or G3 decision.

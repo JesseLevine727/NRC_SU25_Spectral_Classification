@@ -128,6 +128,16 @@ def test_native_coordinate_full_precision(records):
     assert "\\includegraphics" not in tex
 
 
+def test_boundary_scatter_markers_are_not_clipped(records):
+    frame = mod.build_semantic_data(records)
+    frame.loc[frame["is_best"], "train_balanced_accuracy"] = 1.0
+    figure = mod._best_checkpoints_figure(frame)
+    points = [trace for trace in figure.data if trace.mode == "markers"]
+    assert len(points) == 36
+    assert all(trace.cliponaxis is False for trace in points)
+    assert all(list(trace.x) == [1.0] for trace in points)
+
+
 def _stub_compile(monkeypatch):
     def _compile(tex_path, pdf_path, png_path, log_path):
         pdf_path.write_bytes(b"%PDF-1.4\n")

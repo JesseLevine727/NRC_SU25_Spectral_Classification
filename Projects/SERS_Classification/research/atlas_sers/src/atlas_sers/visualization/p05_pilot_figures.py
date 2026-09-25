@@ -427,6 +427,7 @@ def _best_checkpoints_figure(frame: pd.DataFrame) -> go.Figure:
                         x=point["train_balanced_accuracy"].tolist(),
                         y=point["validation_balanced_accuracy"].tolist(),
                         mode="markers",
+                        cliponaxis=False,
                         name=f"{RECIPE_DESCRIPTIONS[recipe]} [{SEED_INDEX_NAMES[seed_index]}]",
                         legendgroup=recipe,
                         marker={

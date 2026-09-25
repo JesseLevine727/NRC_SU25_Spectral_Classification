@@ -69,6 +69,15 @@ evaluation remain gated; these are training diagnostics, not a generalization re
 View the [actual loss curves](results/p05_smoke/figures/P05S01_training_ce.html)
 and [gradient curves](results/p05_smoke/figures/P05S02_gradient_norm.html)
 (offline HTML; native TikZ, PDF and PNG are alongside).
+The subsequent **[36-fit source-validation pilot](results/p05_pilot/P05_PILOT_RESULTS.md)**
+is also complete: 30–122 epochs, 6,880 updates, 72 audited checkpoints, and
+station-dependent results, including three single-class CWA checkpoints.
+Start with its [training–validation scatter](results/p05_pilot/figures/P05P02_best_checkpoints.html)
+and [learning curves](results/p05_pilot/figures/P05P01_learning_curves.html).
+The [development review](plan/delegation/P05_DEVELOPMENT_REVIEW.md) records
+718 passing local pre-launch tests and independent acceptance. No G3 selection
+or outer evaluation has run; the 36-fit permit is exhausted. Wider development
+needs a separate scope/resource decision and must reuse these 36 original slots.
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 
@@ -243,7 +252,8 @@ limitation. See the [P04 results](results/p04_deep/P04_RESULTS.md),
 [completion audit](plan/P04_COMPLETION_AUDIT.md), and
 [interactive comparison](plan/figures/html/F48_deep_classical_comparison.html).
 
-P05 core design is locked and its bounded numerical smoke is complete and accepted.
+P05 core design is locked; its numerical smoke and 36-fit source-validation pilot
+are complete and accepted for their bounded purposes.
 The new matched D0-M control shares the all-master sampler with
 D1–D3; historical P04 D0 remains immutable. No P05 generalization result exists.
 D4/D5 are deferred with zero allocated fits. The P04 reuse of P13 held test views is

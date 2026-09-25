@@ -1,0 +1,53 @@
+{
+  "status": "pass",
+  "fits": 36,
+  "checkpoint_hash_checks": 72,
+  "saved_prediction_reproductions": 36,
+  "independent_metric_checks": 36,
+  "shared_stream_groups": 9,
+  "original_registered_slot_leases": 36,
+  "full_manifest_entries": 185,
+  "private_manifest_sha256": "847245673400310422cffbdf8f470eb56c5796d9b17a6b43ba24b68149592de1",
+  "pilot_plan_id": "7c57ba72a98ee018b30973dc35003ef9232babee7d8965fcbfb77b10ada6ca9c",
+  "execution_commit": "b82daec3c58671b45245243f60311f6063fc2729",
+  "protected_identity_unchanged": true,
+  "held_test_predictions": 0,
+  "summary": {
+    "checkpoint_preflight": "pass",
+    "claim": "bounded_source_validation_pilot_not_definitive_generalization_or_recipe_selection",
+    "command": "run",
+    "completed": 36,
+    "core_contract_sha256": "60e3a49753c59fb7038c83e50795614ad1cb4ca764dd487ac49692edcaf2ccae",
+    "core_plan_id": "a6334b2ed13a92fd953e4202bc2153e1aea4d12419d2a6f891f64f126136fe37",
+    "device": "cuda",
+    "execution_authorized": false,
+    "failed": 0,
+    "ledger_id": "P05DEV-8bf60eeca36d4b4663441eda",
+    "maximum_peak_cuda_bytes": 147947520,
+    "optimizer_steps": 6880,
+    "outer_evaluation_authorized": false,
+    "permit_sha256": "652f5c07a1076a907778a9dd80394203ded9084298a95ce791cb5ee2814e576d",
+    "pilot_plan_id": "7c57ba72a98ee018b30973dc35003ef9232babee7d8965fcbfb77b10ada6ca9c",
+    "recipes": [
+      "D0-M",
+      "D1",
+      "D2",
+      "D3"
+    ],
+    "seeds": [
+      20260805,
+      20260817,
+      20260829
+    ],
+    "started": 36,
+    "stations": [
+      "cwa",
+      "pills",
+      "surfaces"
+    ],
+    "status": "complete",
+    "sum_elapsed_seconds": 132.5412635890243,
+    "unstarted": 0,
+    "wall_seconds": 141.66408184099419
+  }
+}
