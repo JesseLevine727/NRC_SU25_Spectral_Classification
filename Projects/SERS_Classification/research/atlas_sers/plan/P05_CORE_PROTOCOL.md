@@ -2,6 +2,8 @@
 
 **Locked:** 2026-09-25, before P05 outcome-bearing fitting. **Owner instruction:** lock the sparse-split, sampling/loss and budget rules, delegate implementation to DeepSeek, and run a small reviewed smoke. The owner separately approved nested source-only selection per outer test split. This is a dated P05 amendment, not a rewrite of P00–P04/P13.
 
+**Execution addendum, 2026-09-25:** the original 34-execution schedule below is retained unchanged. After one completed numerical fit failed at checkpoint saving, the owner approved the [separate recovery permit](contracts/p05_checkpoint_recovery.json). Recovery passed, consuming 35 total executions / 1,120 updates including the original failed-save attempt; see [actual results](../results/p05_smoke/P05_SMOKE_RESULTS.md). The original numerical contract/plan remain pinned. The later 17,820-fit ceiling is unchanged and remains unauthorized.
+
 ## 1. Scientific scope and information boundary
 
 The question is whether the compact CNN can use repeated physical samples to improve chemical classification across acquisition conditions. Inputs remain `PP-U-MIN` / `R_MIN_400_1800`, 400–1800 cm−1, 1,401 channels. Neither smoke outcomes nor subsequent acquisition-aware results select preprocessing. P08 and P14 remain separate.

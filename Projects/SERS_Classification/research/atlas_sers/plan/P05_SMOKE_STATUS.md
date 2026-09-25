@@ -1,8 +1,8 @@
-# P05 smoke status — interrupted checkpoint write
+# P05 smoke status — failed attempt preserved, recovery accepted
 
-**2026-09-25. Not a completed smoke or a predictive benchmark.** The core protocol, finite budget and per-outer-context nested source-only selection are locked. The implementation milestone was pushed as `5b44c193`. The first scientific attempt then stopped at checkpoint persistence.
+**2026-09-25. Recovery complete and numerically accepted; not a predictive benchmark.** See the [actual results and figures](../results/p05_smoke/P05_SMOKE_RESULTS.md). The original implementation milestone was pushed as `5b44c193`; its first scientific attempt stopped at checkpoint persistence. The corrected recovery ran at `bf8735cd` and passed. The original failed attempt remains recorded below.
 
-## What actually ran
+## What ran in the original failed attempt
 
 | Item | Retained evidence |
 |---|---|
@@ -29,4 +29,8 @@ The pre-run suite's 499 passing tests did not cover the actual serializer seam. 
 
 On 2026-09-25 the owner explicitly approved one recorded recovery replay of the first numerical fit plus the 33 unstarted executions, increasing the overall ceiling from 34 to **35 executions / 1,120 updates**. The [separate recovery permit](contracts/p05_checkpoint_recovery.json), canonical SHA-256 `01e0835d8a6ece2ee98cee654e9f707e894643788dc9daabc438527c1c19c058`, preserves the original contract and metadata plan because their identities enter random streams. Recovery must preserve the original failed attempt and keep all numerical fit identities/settings fixed. The replay must reproduce the retained original terminal-state and full semantic history before continuation.
 
-This is an approved infrastructure-recovery amendment, not a new scientific experiment or permission for automatic retries. [T012](delegation/P05_TASK_012_BOUNDED_RECOVERY.md) delegates its implementation and tests to DeepSeek. A new exclusive recovery lease records all 34 new executions and cannot be reused. The first fit is compared before any of the other 33 starts. Full P05 development, G3 advancement, P06 testing and a scientific training-curve export remain incomplete. Synthetic figure compilation is implementation evidence only and is not published as a field-trial result.
+This is an approved infrastructure-recovery amendment, not a new scientific experiment or permission for automatic retries. [T012](delegation/P05_TASK_012_BOUNDED_RECOVERY.md) delegated its implementation and tests to DeepSeek. The new exclusive recovery lease now records all 34 completed new executions and cannot be reused. The first fit matched the original state/stream digests and full history before any of the other 33 started.
+
+The accepted recovery produced 32 primary records plus two planned exact replays. All 34 checkpoints were independently reloaded and verified. Both planned replays, four sparse-control comparisons and protected-state checks passed. Recovery wall time was 21.907 seconds; peak allocated CUDA memory was 151.46 MiB. The retained original and accepted recovery total exactly **35 scientific executions / 1,120 updates**, exhausting this authority.
+
+The [public figures](../results/p05_smoke/P05_SMOKE_RESULTS.md#what-the-figures-show) now use actual primary-fit diagnostics, not the earlier synthetic rendering tests. Full P05 development, G3 advancement and P06 testing remain incomplete and unauthorized. Passing this smoke establishes numerical implementation behavior, not predictive improvement.

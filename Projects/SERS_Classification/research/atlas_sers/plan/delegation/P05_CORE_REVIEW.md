@@ -1,6 +1,6 @@
 # Supervisor review — P05 core implementation and bounded smoke
 
-**Date:** 2026-09-25. **Status:** the original smoke stopped after one numerical fit and a persistence error. The owner approved a separately recorded 35-total-execution recovery. Its implementation is accepted: 523 full-suite tests pass; scientific recovery has not yet started at this code checkpoint.
+**Date:** 2026-09-25. **Status:** bounded numerical smoke accepted. The original failed-save attempt is preserved; all 34 separately authorized recovery executions passed, reaching the exact 35-total-execution ceiling. The implementation passed 523 local tests; full development remains gated.
 
 ## Authority and scope
 
@@ -57,3 +57,13 @@ The corrected recovery tests pass **19 cases**, and the runner/persistence bound
 The supervisor returned eight initial fixture/API failures and incorrect assertions about failed-summary retention to the worker rather than changing production to accommodate them. The revised tests retain real protected-state, per-fit, replay and aggregate checks. One worker response emitted unusable tool-call text despite the denied-tool assignment; no such command executed, and the worker was redirected to patch-only output. Ruff and the public-package audit pass before the final full-suite gate.
 
 Final immutable-package regression gate: **523 passed in 143.26 seconds**, Ruff clean, public scaffold audit **455 files passed**. The final recovery preflight also passes against actual private inputs without acquiring a scientific lease. The implementation is accepted for the single approved recovery only; no full benchmark or new numerical tuning is authorized. The code checkpoint is committed before recovery starts and stays frozen throughout execution.
+
+## Actual recovery acceptance and figure review
+
+Recovery ran at committed/pushed `bf8735cd43e5a9e22f616b8fc6891fe3e36b276d`, with no package or Git changes during execution. The first replay reproduced all original state/stream digests and all eight history records before continuation. The 34 new executions completed in 21.907 seconds wall time, with maximum allocated CUDA memory 151.46 MiB. The original attempt plus recovery consumed exactly 35 executions and 1,120 updates. No validation or held-test metric was computed.
+
+An independent post-run audit verified all 34 checkpoint hashes and finite tensors, replay and sparse-control equivalence, exact started/completed ledger order, complete manifest inventories (six original entries and 141 recovery entries), unchanged original lease/failed artifacts, and matching protected provenance. All 32 primary classification losses were lower at epoch 8 than epoch 1; this is an optimization diagnostic, not a superiority criterion. The sparse four-spectrum group reached perfect training classification, which is not generalization evidence.
+
+The existing reviewed exporter generated actual primary-fit curves only, with matching 256-row semantic data in native TikZ and offline HTML plus PDF/PNG. Both compiled PNG previews were visually inspected: axes, legends, source-role labels, seed styles and sparse-overlap caveat are readable and correct. These aggregate curves are approved for public release; no spectra, sample identities, checkpoints or row-level predictions enter this export. See [results and limitations](../../results/p05_smoke/P05_SMOKE_RESULTS.md). This closes only the bounded implementation/smoke scope; G3 and full source-only development remain open.
+
+Post-export checks: **73 focused figure/governance/planner tests passed**, Ruff remained clean, and the complete public scaffold passed with **466 files**. Hosted CI for execution commit `bf8735cd` also passed (run `36173432327`); it omits torch and does not replace local numerical validation. Only the reviewed package documentation and aggregate exports are staged for the publication milestone; unrelated historical worktree changes are excluded.

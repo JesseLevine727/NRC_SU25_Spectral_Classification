@@ -2,6 +2,8 @@
 
 **Date:** 2026-09-24. **Status:** historical design-gate questions, superseded for the bounded D0-M/D1–D3 core scope by the owner-approved [2026-09-25 core protocol](P05_CORE_PROTOCOL.md). D4/D5 remain deferred; full development/evaluation remain unauthorized.
 
+**Execution update, 2026-09-25:** the bounded numerical smoke and approved checkpoint recovery passed; see [actual results](../results/p05_smoke/P05_SMOKE_RESULTS.md). The ordering below records the earlier design gate, not an instruction to repeat the completed smoke.
+
 The next scientific question is whether the completed ordinary CNN can benefit from the repeated-master structure through supervised contrastive learning and paired consistency. Primary preprocessing remains frozen minimal min–max. P08 tests preprocessing separately after the primary method comparison; P14 retains the later RBF-network/SOM extension.
 
 ## What the metadata audit can decide

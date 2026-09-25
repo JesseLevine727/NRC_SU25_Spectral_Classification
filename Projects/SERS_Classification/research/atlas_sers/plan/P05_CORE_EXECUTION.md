@@ -2,7 +2,7 @@
 
 The [core contract](contracts/p05_core_contract.json) and [protocol](P05_CORE_PROTOCOL.md) fix the science. This handoff describes the separate private runner. The older `run_p05.py readiness/check` commands inventory the historical broad grid; they do not authorize this core experiment.
 
-**Original run stopped:** its lease remains failed after one numerical fit and a checkpoint-write error. See [smoke status](P05_SMOKE_STATUS.md). Do not rerun the original command or remove its lease. The owner approved the separate [bounded recovery permit](contracts/p05_checkpoint_recovery.json): 34 new executions, 35 overall including the failed-save attempt. Recovery uses a new exclusive namespace after implementation review; it does not rewrite the original contract or numerical identities.
+**Execution complete:** the original run remains failed after one numerical fit and a checkpoint-write error; its separately approved recovery is complete and accepted. See [actual results](../results/p05_smoke/P05_SMOKE_RESULTS.md) and [smoke status](P05_SMOKE_STATUS.md). Do not rerun either command or remove either lease. The [recovery permit](contracts/p05_checkpoint_recovery.json) is exhausted: 34 new executions, 35 overall including the original failed-save attempt. Neither the original contract nor its numerical identities was rewritten.
 
 ## Authority and frozen identities
 

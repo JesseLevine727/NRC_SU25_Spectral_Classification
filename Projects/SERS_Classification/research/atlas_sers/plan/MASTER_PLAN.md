@@ -1291,27 +1291,27 @@ three-class support; it is not P11's final hierarchical inference or a G4 pass.
 See [P04 results](../results/p04_deep/P04_RESULTS.md) and
 [completion audit](P04_COMPLETION_AUDIT.md).
 
-The current action is the **P05 locked-core implementation and bounded source-fitting smoke**. The metadata-only plan has been independently reconciled; full source-only development follows only after the smoke review and a separate execution/resource authorization.
+The **P05 locked-core implementation and bounded source-fitting smoke are complete and accepted**. The next gate is a reviewed source-only development runner and a separate concrete time/storage/execution authorization. No full development or outer evaluation follows automatically from the smoke.
 
-**Execution update, 2026-09-25:** the first source-fitting D0-M completed eight epochs, but checkpoint persistence failed and the smoke stopped. The [smoke status](P05_SMOKE_STATUS.md) records the retained failed attempt and serializer correction. The owner approved a [separate one-replay recovery permit](contracts/p05_checkpoint_recovery.json): 34 new executions, including the exact recovery and 33 unstarted fits; total ceiling **35 executions / 1,120 updates**. Original numerical identities and failed evidence remain immutable. Recovery implementation is accepted after 523 passing tests and a no-fit real-input preflight; the scientific recovery is not yet complete at this code checkpoint. This is not a G3 decision or a predictive result.
+**Execution update, 2026-09-25:** the first source-fitting D0-M completed eight epochs, but checkpoint persistence failed and the smoke stopped. The [smoke status](P05_SMOKE_STATUS.md) preserves that failed attempt. The owner approved a [separate one-replay recovery permit](contracts/p05_checkpoint_recovery.json), now completed: 34 new executions, including the exact recovery and 33 originally unstarted fits, for **35 total executions / 1,120 updates**. All 32 primary fits, both planned replays, sparse-control equivalence and all 34 checkpoint reloads passed. The original numerical identities and failed evidence remain unchanged. The code passed 523 local tests; [actual results and native TikZ/offline-HTML figures](../results/p05_smoke/P05_SMOKE_RESULTS.md) are available. This is numerical acceptance, not a G3 decision or a predictive result.
 
 Implementation follows the project owner's 2026-09-24 [supervised workflow](ORCHESTRATION_PROTOCOL.md): OpenCode Go / DeepSeek v4.1 Flash implements bounded assignments, while the supervising assistant directs the science, reviews diffs and results, and independently checks acceptance. The 2026-09-25 authorization extends only to this numerical smoke and the explicitly bounded persistence recovery, not full development.
 
 The [P05-T002 review](delegation/P05_TASK_002_REVIEW.md) records the historical broad-grid inventory, not current execution authority. The [core protocol](P05_CORE_PROTOCOL.md), [contract](contracts/p05_core_contract.json) and [supervisor review](delegation/P05_CORE_REVIEW.md) govern the current work. The no-fit core plan registers 32 primary smoke fits plus two replays, and a later ceiling of 14,940 inner fits plus at most 2,880 final refits. All 384 additional source-master guard folds have three-class support. These later slots are a ceiling, not permission to run them.
 
-1. Accept the deterministic metadata registries and synthetic-tested sampler/losses.
-2. Review the private runner, failure retention, replay checks and fixed budget.
-3. Complete the accepted 34-record, eight-epoch training-only smoke under the separate 35-total-execution recovery ceiling, without held metrics; publish reviewed diagnostic figures, not a model-superiority claim.
-4. Separately authorize the later finite core development after measured cost/storage review; retain all failed or unavailable outcomes.
-5. Apply G3 independently using each context's own source pseudo-domains and source-master guard folds, with D0-M fallback. No global winner or cross-context outcome sharing is allowed.
-6. Proceed to separately authorized P06 outer evaluation and ultimately P11's definitive inference.
+Completed gates: deterministic metadata registries; reviewed sampler/loss/kernel/runner implementation; 523-test regression gate; accepted eight-epoch numerical smoke; independent checkpoint/manifest audit and actual diagnostic figures.
+
+1. Specify and review the source-only development runner, source-validation/epoch selection, finite-slot accounting, failure rules and artifact-retention policy. Do not reuse eight epochs as the definitive training budget.
+2. Separately authorize a concrete resource budget for the finite core development after measured cost/storage review; retain all failed or unavailable outcomes. The original 17,820 later-fit ceiling is unchanged; adding the 35 actually consumed smoke executions gives 17,855 only as a combined accounting ceiling, not permission to run.
+3. Apply G3 independently using each context's own source pseudo-domains and source-master guard folds, with D0-M fallback. No global winner or cross-context outcome sharing is allowed.
+4. Proceed to separately authorized P06 outer evaluation and ultimately P11's definitive inference.
 
 The parallel P14 extension now has a detailed planning specification. Its next
 task is **EXP-P14-00: a no-fit support, source-role, and compute manifest**.
 This does not require D1–D5 and does not replace the P05 path above. See
 [P14 ordered sub-plans](P14_RBF_SOM_EXTENSION.md#5-ordered-sub-plans-and-stopping-points).
 
-No D1–D5 or P14 model has been trained. P03/P13/P04 test outcomes are already known to
+D1–D3 have now been trained only in the bounded source-fitting numerical smoke; no definitive P05 development or held evaluation has run. D4/D5 and P14 models remain untrained. P03/P13/P04 test outcomes are already known to
 investigators: the separation is procedural and code-enforced, not analyst
 blinding. Those outcomes cannot choose new losses, augmentation, preprocessing,
 thresholds, or training schedules within the locked branch.

@@ -59,13 +59,16 @@ are documented. The [source-support audit](plan/P05_SOURCE_SUPPORT_AUDIT.md)
 checks all 1,181 inherited fitting roles and identifies sparse surface-training
 groups. The dated [core protocol](plan/P05_CORE_PROTOCOL.md) and
 [contract](plan/contracts/p05_core_contract.json) now lock the sampler, losses,
-nested source-only selection and finite budgets. Only a reviewed 34-execution
-numerical smoke is authorized; full development and outer evaluation remain gated.
-The [core review](plan/delegation/P05_CORE_REVIEW.md) records implementation progress.
-The [smoke status](plan/P05_SMOKE_STATUS.md) records an interrupted first attempt:
-one fit completed numerically, but checkpoint saving failed. The saver has been
-corrected and regression-tested. The owner approved one bounded recovery, capped at
-35 total executions including the failed-save attempt; implementation review precedes launch.
+nested source-only selection and finite budgets. The [numerical smoke passed](results/p05_smoke/P05_SMOKE_RESULTS.md):
+32 primary fits and two planned replays, eight epochs each, with all checkpoints
+verified. The [core review](plan/delegation/P05_CORE_REVIEW.md) records 523 passing
+local tests and independent acceptance checks. The [failure/recovery record](plan/P05_SMOKE_STATUS.md)
+preserves the original checkpoint-saving failure and the owner-approved recovery:
+35 total executions including that failed-save attempt. Full development and outer
+evaluation remain gated; these are training diagnostics, not a generalization result.
+View the [actual loss curves](results/p05_smoke/figures/P05S01_training_ce.html)
+and [gradient curves](results/p05_smoke/figures/P05S02_gradient_norm.html)
+(offline HTML; native TikZ, PDF and PNG are alongside).
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 
@@ -240,8 +243,8 @@ limitation. See the [P04 results](results/p04_deep/P04_RESULTS.md),
 [completion audit](plan/P04_COMPLETION_AUDIT.md), and
 [interactive comparison](plan/figures/html/F48_deep_classical_comparison.html).
 
-P05 core design is locked and implementation is under review before its bounded
-numerical smoke. The new matched D0-M control shares the all-master sampler with
+P05 core design is locked and its bounded numerical smoke is complete and accepted.
+The new matched D0-M control shares the all-master sampler with
 D1–D3; historical P04 D0 remains immutable. No P05 generalization result exists.
 D4/D5 are deferred with zero allocated fits. The P04 reuse of P13 held test views is
 descriptive only: a controlled P13 deep comparison still needs exact
