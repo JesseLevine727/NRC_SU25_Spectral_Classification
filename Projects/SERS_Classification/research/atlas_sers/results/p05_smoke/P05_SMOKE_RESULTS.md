@@ -37,7 +37,7 @@ Where enabled, supervised contrastive loss had support in all 32 batches of ever
 
 Start with [chemical training loss — interactive HTML](figures/P05S01_training_ce.html), or the [PDF](figures/P05S01_training_ce.pdf). Each dot is one epoch's mean weighted chemical cross-entropy over four training batches. Lower means the model assigned more probability to the recorded chemical label on those sampled training views. Colors identify recipes; solid/dashed lines are the two seeds. These are individual trajectories, not confidence intervals.
 
-All **32/32 primary fits** had lower chemical training loss at epoch 8 than epoch 1. Initial losses were approximately 1.03–1.10. The following are epoch-8 losses averaged over the two seeds:
+All **32/32 primary fits** had lower chemical training loss at epoch 8 than epoch 1. Initial two-seed mean losses across the role/recipe groups were approximately 1.03–1.10. The following are epoch-8 losses averaged over the two seeds:
 
 | Source-fitting group | D0-M | D1 | D2 | D3 |
 |---|---:|---:|---:|---:|
