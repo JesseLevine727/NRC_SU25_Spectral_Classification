@@ -1260,6 +1260,8 @@ The research program is complete only when:
 
 ## 26. Current evidence and immediate next action after P04
 
+**Current authority, 2026-09-26:** the owner approved the complete locked D0-M/D1/D2/D3 benchmark and requested a persistent goal through reviewed results and the main-branch push. The [comprehensive execution protocol](P05_COMPREHENSIVE_EXECUTION.md), [separate permit](contracts/p05_comprehensive.json) and [review log](delegation/P05_COMPREHENSIVE_REVIEW.md) govern the expansion: reuse the 36 accepted pilot fits, execute the remaining 14,904 registered inner fits, freeze all 320 source-only decisions and complete the required refits, calibration and held-out evaluation. Limits are 48 hours cumulative scientific execution, 100 GiB private artifacts and 4 GiB allocated CUDA; no automatic retries or extra recipes. Implementation review is in progress; no comprehensive scientific fit has started at this checkpoint. This dated authority supersedes the pre-approval next-action language retained below, not the frozen numerical contracts. P08 preprocessing, D4/D5, P14 and definitive P11 inference remain outside this permit.
+
 P00–P03 are complete. The P13 design freeze and classical experiments
 `EXP-P13-C01` through `EXP-P13-C04` completed on 2026-09-04 under
 `nato-sers-p13-v1-locked`. All 240 execution shards and 42,360 registered fits

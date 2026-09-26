@@ -2,7 +2,9 @@
 
 **Established:** 2026-09-24, at the project owner's request.
 
-**Current phase:** P05 numerical smoke/recovery and the separately approved 36-fit source-validation pilot are complete. [Pilot results and figures](../results/p05_pilot/P05_PILOT_RESULTS.md) and the [supervisor review](delegation/P05_DEVELOPMENT_REVIEW.md) record implementation acceptance, actual execution and independent audit. All 36 original development slots are consumed; reuse their accepted evidence. Smoke/recovery plus pilot total 71 scientific executions and 8,000 updates. Their permissions are exhausted. Full source-only development, G3 selection and outer evaluation remain unauthorized; next is a reviewed expansion scope and concrete resource decision.
+**Current phase, 2026-09-26:** the owner approved completion of the locked four-recipe benchmark under a separate [comprehensive execution protocol](P05_COMPREHENSIVE_EXECUTION.md) and [permit](contracts/p05_comprehensive.json): 48 hours cumulative scientific execution, 100 GiB private artifacts and 4 GiB allocated CUDA. The persistent goal covers full source-only development, context-local G3 selection, final refits, calibration, held-out evaluation, reviewed reporting and the main-branch push. No new scientific fit has started at this implementation checkpoint. The [comprehensive review log](delegation/P05_COMPREHENSIVE_REVIEW.md) records the current acceptance gates.
+
+The P05 numerical smoke/recovery and 36-fit source-validation pilot are complete. [Pilot results and figures](../results/p05_pilot/P05_PILOT_RESULTS.md) and the [pilot supervisor review](delegation/P05_DEVELOPMENT_REVIEW.md) record their bounded acceptance. Reuse all 36 original pilot slots; they are not rerun. Smoke/recovery plus pilot total 71 scientific executions and 8,000 updates. Their original permissions remain exhausted; only the separate comprehensive permit authorizes the expansion, without automatic retries or extra experimental recipes.
 
 **Implementation worker:** OpenCode Go, `opencode-go/deepseek-v4.1-flash`.
 
