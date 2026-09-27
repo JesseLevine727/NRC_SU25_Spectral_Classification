@@ -5,8 +5,9 @@
 metadata-only mode without importing torch.  ``develop`` lazily imports
 ``p05_comprehensive_development.run_development`` and executes ONLY the source
 stage, never the benchmark or outer evaluation.  ``status`` prints whitelisted
-aggregate progress counters.  Every command emits one canonical JSON object
-and exits non-zero on failure.
+aggregate progress counters.  ``freeze-selection``, ``refits`` and ``evaluate``
+lazily import their reviewed stage modules and never chain into another stage.
+Every command emits one canonical JSON object and exits non-zero on failure.
 """
 
 from __future__ import annotations
@@ -137,16 +138,50 @@ def _status(arguments: argparse.Namespace) -> dict[str, Any]:
     return report
 
 
+def _freeze_selection(arguments: argparse.Namespace) -> dict[str, Any]:
+    summary = _module("atlas_sers.evaluation.p05_comprehensive_freeze").freeze_selection(
+        project_root=arguments.project_root,
+        artifact_root=arguments.artifact_root,
+        contract_path=arguments.contract,
+        permit_path=arguments.permit,
+    )
+    return {**dict(summary), "command": "freeze-selection"}
+
+
+def _refits(arguments: argparse.Namespace) -> dict[str, Any]:
+    summary = _module("atlas_sers.evaluation.p05_comprehensive_refits").run_refits(
+        project_root=arguments.project_root,
+        artifact_root=arguments.artifact_root,
+        contract_path=arguments.contract,
+        permit_path=arguments.permit,
+        device=arguments.device,
+    )
+    return {**dict(summary), "command": "refits"}
+
+
+def _evaluate(arguments: argparse.Namespace) -> dict[str, Any]:
+    """Run ONLY the reviewed outer evaluation stage; no chaining or retries."""
+
+    summary = _module("atlas_sers.evaluation.p05_comprehensive_evaluation").run_evaluation(
+        project_root=arguments.project_root,
+        artifact_root=arguments.artifact_root,
+        contract_path=arguments.contract,
+        permit_path=arguments.permit,
+        device=arguments.device,
+    )
+    return {**dict(summary), "command": "evaluate"}
+
+
 def _build_parser() -> _Parser:
     parser = _Parser(prog="run_p05_comprehensive")
     subparsers = parser.add_subparsers(dest="command", required=True)
-    for name in ("inspect", "develop", "status"):
+    for name in ("inspect", "develop", "status", "freeze-selection", "refits", "evaluate"):
         subparser = subparsers.add_parser(name)
         subparser.add_argument("--project-root", required=True)
         subparser.add_argument("--artifact-root", required=True)
         subparser.add_argument("--contract", required=True)
         subparser.add_argument("--permit", required=True)
-        if name == "develop":
+        if name in ("develop", "refits", "evaluate"):
             subparser.add_argument("--device", default="cuda", choices=("cuda",))
     return parser
 
@@ -162,8 +197,14 @@ def main(argv: Sequence[str] | None = None) -> int:
             report = _inspect(arguments)
         elif command == "develop":
             report = _develop(arguments)
-        else:
+        elif command == "status":
             report = _status(arguments)
+        elif command == "freeze-selection":
+            report = _freeze_selection(arguments)
+        elif command == "refits":
+            report = _refits(arguments)
+        else:
+            report = _evaluate(arguments)
     except Exception as error:
         reason_code = getattr(error, "reason_code", None) or type(error).__name__
         return _failure(command, str(reason_code))

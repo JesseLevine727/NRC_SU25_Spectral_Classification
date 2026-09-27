@@ -115,6 +115,139 @@ def test_develop_forwards_kwargs_only_cuda(capsys):
     assert payload["status"] == "complete" and payload["command"] == "develop"
 
 
+def test_freeze_selection_forwards_kwargs_without_device(capsys):
+    cli = _cli()
+    captured = {}
+
+    class _Freeze:
+        @staticmethod
+        def freeze_selection(**kwargs):
+            captured.update(kwargs)
+            return {"status": "complete", "frozen_selections": 4}
+
+    def _module(name):
+        assert name == "atlas_sers.evaluation.p05_comprehensive_freeze", name
+        return _Freeze
+
+    cli._module = _module
+    code, payload = _run(cli, ["freeze-selection", *_BASE], capsys)
+    assert code == 0
+    assert captured == {
+        "project_root": "/proj",
+        "artifact_root": "/art",
+        "contract_path": "/c",
+        "permit_path": "/p",
+    }
+    assert "device" not in captured
+    assert payload == {
+        "status": "complete",
+        "frozen_selections": 4,
+        "command": "freeze-selection",
+    }
+
+
+def test_refits_forwards_kwargs_only_cuda(capsys):
+    cli = _cli()
+    captured = {}
+
+    class _Refits:
+        @staticmethod
+        def run_refits(**kwargs):
+            captured.update(kwargs)
+            return {"status": "complete", "refits_started": 4}
+
+    def _module(name):
+        assert name == "atlas_sers.evaluation.p05_comprehensive_refits", name
+        return _Refits
+
+    cli._module = _module
+    code, payload = _run(cli, ["refits", *_BASE], capsys)
+    assert code == 0
+    assert captured == {
+        "project_root": "/proj",
+        "artifact_root": "/art",
+        "contract_path": "/c",
+        "permit_path": "/p",
+        "device": "cuda",
+    }
+    assert payload == {
+        "status": "complete",
+        "refits_started": 4,
+        "command": "refits",
+    }
+
+
+def test_evaluate_forwards_kwargs_only_cuda(capsys):
+    cli = _cli()
+    captured = {}
+
+    class _Eval:
+        @staticmethod
+        def run_evaluation(**kwargs):
+            captured.update(kwargs)
+            return {"status": "complete", "evaluated": 4}
+
+    def _module(name):
+        assert name == "atlas_sers.evaluation.p05_comprehensive_evaluation", name
+        return _Eval
+
+    cli._module = _module
+    code, payload = _run(cli, ["evaluate", *_BASE], capsys)
+    assert code == 0
+    assert captured == {
+        "project_root": "/proj",
+        "artifact_root": "/art",
+        "contract_path": "/c",
+        "permit_path": "/p",
+        "device": "cuda",
+    }
+    assert payload == {"status": "complete", "evaluated": 4, "command": "evaluate"}
+
+
+def test_new_command_failures_are_sanitized(capsys):
+    class _Boom(Exception):
+        def __init__(self):
+            self.reason_code = "stage_failed"
+            super().__init__("/secret/implementation.py:42")
+
+    def _make_stage(attribute):
+        def _fail(**kwargs):
+            raise _Boom()
+
+        class _Stage:
+            pass
+
+        setattr(_Stage, attribute, staticmethod(_fail))
+        return _Stage
+
+    for command, module_name, attribute in (
+        (
+            "freeze-selection",
+            "atlas_sers.evaluation.p05_comprehensive_freeze",
+            "freeze_selection",
+        ),
+        ("refits", "atlas_sers.evaluation.p05_comprehensive_refits", "run_refits"),
+        (
+            "evaluate",
+            "atlas_sers.evaluation.p05_comprehensive_evaluation",
+            "run_evaluation",
+        ),
+    ):
+        cli = _cli()
+        stage = _make_stage(attribute)
+
+        def _module(name, _module_name=module_name, _stage=stage):
+            assert name == _module_name, name
+            return _stage
+
+        cli._module = _module
+        code, payload = _run(cli, [command, *_BASE], capsys)
+        assert code == 1
+        assert payload == {"status": "fail", "command": command, "reason_code": "stage_failed"}
+        assert "/secret" not in json.dumps(payload)
+        assert "Traceback" not in json.dumps(payload)
+
+
 def test_invalid_arguments_sanitized(capsys):
     cli = _cli()
     cases = (
@@ -122,6 +255,9 @@ def test_invalid_arguments_sanitized(capsys):
         ["develop", *_BASE, "--force"],
         ["inspect", *_BASE, "--resume"],
         ["inspect", "--project-root", "/proj"],
+        ["refits", *_BASE, "--device", "cpu"],
+        ["freeze-selection", *_BASE, "--device", "cuda"],
+        ["evaluate", *_BASE, "--device", "cpu"],
     )
     for argv in cases:
         code, payload = _run(cli, argv, capsys)
