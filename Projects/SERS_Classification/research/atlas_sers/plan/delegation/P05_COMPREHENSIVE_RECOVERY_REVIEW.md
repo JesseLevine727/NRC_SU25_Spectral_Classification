@@ -32,6 +32,16 @@ All 51 focused input-reader tests pass. The real read-only audit then authentica
 
 The immutable input-reader review snapshot passed the full regression: **2,077 tests passed, four CUDA-dependent tests skipped, 832 warnings, 406.73 seconds**. The 594-file public-boundary audit and CI-scope lint also passed. This gate authenticates files and scheduling evidence; saved-model prediction reproduction, recovery persistence and downstream integration remain required before launch. The model-evidence helper is a separate unaccepted draft and is not included in this regression result.
 
+## Third implementation gate: saved-model verification
+
+DeepSeek authored the per-unit saved-model verifier and a separate synthetic test draft. An initial test response contained unusable tool-call markup; no requested command was executed, and a corrected test-only response was obtained. Independent review exposed a root-manifest handling error, missing completed-prefix checks, insufficient digest validation and, importantly, sparse-equivalence comparisons that mixed different seeds in the partial unit. These were corrected. Further regression cases demonstrated that a supplied file inventory also needs explicit binding to the original interruption anchor, not merely hashes that agree with the files currently on disk. Both sealed and partial inventories now have that binding.
+
+The 29 focused tests pass. On an immutable snapshot, the complete P05 test subset passed: **1,908 tests passed, four CUDA-dependent tests skipped, 832 warnings, 274.64 seconds**. The 597-file publication-boundary audit and CI-scope lint passed. This is a P05-subset regression, not a claim that the entire package suite was rerun at this third gate.
+
+Two separate read-only GPU audits followed. The already reviewed pilot importer restored all **36 pilot models** and reproduced their saved validation predictions exactly; the audit, including renewed byte authentication, took 46.435213 seconds and peaked at 57,768,960 allocated CUDA bytes. The new per-unit helper then restored **12 models from one sealed unit and all eight completed models from the interrupted unit**, again reproducing the saved validation predictions exactly. That audit took 60.558705 seconds and peaked at 63,592,448 allocated CUDA bytes. Neither audit trained a model or wrote governed evidence. The partial unit's complete four-recipe checks remain explicitly deferred until its missing fits are completed.
+
+Thus 56 saved models have passed post-crash numerical reproduction: 36 pilot models and 20 of the 8,720 completed nonpilot models. This is not yet numerical re-authentication of every original completion and is not a new performance benchmark. These read-only checks remain within the existing prelaunch-audit reservation. The original source stage and slot leases are still unchanged; no recovery fit, replay lease or recovered source stage has been created. Copying/replay persistence and the integrated restart remain unaccepted drafts.
+
 ## Remaining recovery gates
 
 1. Complete saved-model authentication by restoring source-validation predictions; seal the already byte-authenticated private inventory and plan without fitting. Re-authenticate inputs at the actual recovery boundary rather than trusting an earlier in-memory audit.
