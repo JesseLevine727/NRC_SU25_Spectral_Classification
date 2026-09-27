@@ -23,6 +23,10 @@ from types import SimpleNamespace
 import pandas as pd
 import pytest
 
+# torch is an optional deep extra: skip collection where it is absent, while the
+# full regression CI installs the pinned deep extras so these tests always run.
+pytest.importorskip("torch")
+
 from atlas_sers.evaluation import p05_comprehensive_freeze as freeze
 from atlas_sers.evaluation import p05_comprehensive_inputs as comprehensive_inputs
 from atlas_sers.evaluation import p05_comprehensive_reporting as reporting

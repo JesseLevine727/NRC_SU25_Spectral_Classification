@@ -104,4 +104,14 @@ An isolated import-blocker harness reproduced the same three `ModuleNotFoundErro
 4. Update downstream selection/refit/evaluation/reporting/publication checks to authenticate the recovery receipt and carry its charged prior time and interrupted-update upper bound. Preserve legacy clean-run behavior. Do not fake zero failures, exact interrupted updates or a new time allowance.
 5. Independently test the integrated runner and downstream boundaries, publish reviewed code to `main`, launch from an immutable checkout with persistent non-temporary logs, and complete the full remaining benchmark under the approved cumulative limits.
 
-This review accepts no scientific restart merely because the planner and resource guards pass. Full recovery integration, scientific acceptance, comparisons and figure publication remain unfinished.
+The historical checklist above is superseded by the accepted integration gates and execution checkpoint below. Scientific acceptance, comparisons and figure publication remain unfinished.
+
+### Public-CI acceptance and actual recovery launch
+
+GitHub Actions run 36346593561 passed at commit `fc0ca7b2ad732e0fedf466ba2eadc8b1aac1aa53`: **2,472 passed, four CUDA-dependent skips, 848 warnings, 1,059.71 seconds**. Pinned CPU PyTorch installation, dependency preflight, public-boundary audit and lint also passed. The approved source recovery launched once from an unchanged immutable checkout of that commit at **2026-09-27 20:23:59 UTC**, after fresh resource and unoccupied-path checks. The service uses persistent private logs, `Restart=no` and a restrictive file-creation mask. Initial source progress shows completed evidence being verified and reused, not new training results. No final recovered receipt or comprehensive performance result is claimed here.
+
+### Optional-dependency compatibility follow-up
+
+The README's basic developer install deliberately omits the optional `deep` extra. The same three new test modules therefore also needed ordinary optional-dependency collection guards. DeepSeek authored three narrow `pytest.importorskip("torch")` additions before neural imports; the supervisor independently reproduced the three prior collection failures and reviewed the patch. With PyTorch unavailable, the focused check now reports **82 passed and three skipped**, and whole-suite collection succeeds with **1,685 tests collected** and 27 optional-neural module skips. With PyTorch installed, all **29 affected tests pass** with 16 expected classification warnings; CI-scope lint passes.
+
+These guards do not weaken full CI: its pinned CPU PyTorch installation and strict preflight remain mandatory, so the neural tests still run there. No production source, numerical file, training dependency or scientific setting changes. This test-only follow-up is separate from the immutable execution checkout and is not applied to the running recovery.

@@ -23,6 +23,10 @@ from collections.abc import Mapping
 
 import pytest
 
+# torch is an optional deep extra: skip collection where it is absent, while the
+# full regression CI installs the pinned deep extras so these tests always run.
+pytest.importorskip("torch")
+
 from atlas_sers.evaluation import p05_aggregation_authority as aggregation_authority
 from atlas_sers.evaluation import p05_comparison_authority as comparison_authority
 from atlas_sers.evaluation import p05_comprehensive_aggregation as aggregation
