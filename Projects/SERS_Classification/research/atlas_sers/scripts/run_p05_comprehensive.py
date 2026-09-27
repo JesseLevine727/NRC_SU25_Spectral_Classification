@@ -5,7 +5,7 @@
 metadata-only mode without importing torch.  ``develop`` lazily imports
 ``p05_comprehensive_development.run_development`` and executes ONLY the source
 stage, never the benchmark or outer evaluation.  ``status`` prints whitelisted
-aggregate progress counters.  ``freeze-selection``, ``refits`` and ``evaluate``
+aggregate progress counters. ``freeze-selection``, ``refits``, ``evaluate`` and ``aggregate``
 lazily import their reviewed stage modules and never chain into another stage.
 Every command emits one canonical JSON object and exits non-zero on failure.
 """
@@ -172,10 +172,30 @@ def _evaluate(arguments: argparse.Namespace) -> dict[str, Any]:
     return {**dict(summary), "command": "evaluate"}
 
 
+def _aggregate(arguments: argparse.Namespace) -> dict[str, Any]:
+    """Run ONLY the reviewed aggregation stage; no chaining or retries."""
+
+    summary = _module("atlas_sers.evaluation.p05_comprehensive_aggregation").run_aggregation(
+        project_root=arguments.project_root,
+        artifact_root=arguments.artifact_root,
+        contract_path=arguments.contract,
+        permit_path=arguments.permit,
+    )
+    return {**dict(summary), "command": "aggregate"}
+
+
 def _build_parser() -> _Parser:
     parser = _Parser(prog="run_p05_comprehensive")
     subparsers = parser.add_subparsers(dest="command", required=True)
-    for name in ("inspect", "develop", "status", "freeze-selection", "refits", "evaluate"):
+    for name in (
+        "inspect",
+        "develop",
+        "status",
+        "freeze-selection",
+        "refits",
+        "evaluate",
+        "aggregate",
+    ):
         subparser = subparsers.add_parser(name)
         subparser.add_argument("--project-root", required=True)
         subparser.add_argument("--artifact-root", required=True)
@@ -203,8 +223,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             report = _freeze_selection(arguments)
         elif command == "refits":
             report = _refits(arguments)
-        else:
+        elif command == "evaluate":
             report = _evaluate(arguments)
+        else:
+            report = _aggregate(arguments)
     except Exception as error:
         reason_code = getattr(error, "reason_code", None) or type(error).__name__
         return _failure(command, str(reason_code))

@@ -12,6 +12,7 @@ pytest.importorskip("torch")
 # Optional torch is needed by the checkpoint loader imported by the authority.
 # ruff: noqa: E402
 
+from atlas_sers.evaluation import p05_comprehensive_development as development
 from atlas_sers.evaluation import p05_comprehensive_freeze as freeze
 from atlas_sers.evaluation import p05_core_run as core
 from atlas_sers.evaluation import p05_evaluation_authority as module
@@ -174,8 +175,8 @@ def world(tmp_path, monkeypatch):
         status="complete",
         total_new_optimizer_steps=SOURCE_STEPS + STEPS * 2,
         prior_scientific_seconds_cumulative_bound=PRIOR,
-        prelaunch_audit_reserve_seconds=3600,
-        maximum_total_seconds=172800,
+        prelaunch_audit_reserve_seconds=development.PRELAUNCH_AUDIT_RESERVE_SECONDS,
+        maximum_total_seconds=development.MAXIMUM_TOTAL_SECONDS,
     )
     summary = dict(
         shared,

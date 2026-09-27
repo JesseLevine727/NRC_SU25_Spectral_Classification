@@ -204,6 +204,33 @@ def test_evaluate_forwards_kwargs_only_cuda(capsys):
     assert payload == {"status": "complete", "evaluated": 4, "command": "evaluate"}
 
 
+def test_aggregate_forwards_kwargs_without_device(capsys):
+    cli = _cli()
+    captured = {}
+
+    class _Agg:
+        @staticmethod
+        def run_aggregation(**kwargs):
+            captured.update(kwargs)
+            return {"status": "complete", "aggregated": 4}
+
+    def _module(name):
+        assert name == "atlas_sers.evaluation.p05_comprehensive_aggregation", name
+        return _Agg
+
+    cli._module = _module
+    code, payload = _run(cli, ["aggregate", *_BASE], capsys)
+    assert code == 0
+    assert captured == {
+        "project_root": "/proj",
+        "artifact_root": "/art",
+        "contract_path": "/c",
+        "permit_path": "/p",
+    }
+    assert "device" not in captured
+    assert payload == {"status": "complete", "aggregated": 4, "command": "aggregate"}
+
+
 def test_new_command_failures_are_sanitized(capsys):
     class _Boom(Exception):
         def __init__(self):
@@ -232,6 +259,11 @@ def test_new_command_failures_are_sanitized(capsys):
             "atlas_sers.evaluation.p05_comprehensive_evaluation",
             "run_evaluation",
         ),
+        (
+            "aggregate",
+            "atlas_sers.evaluation.p05_comprehensive_aggregation",
+            "run_aggregation",
+        ),
     ):
         cli = _cli()
         stage = _make_stage(attribute)
@@ -258,6 +290,7 @@ def test_invalid_arguments_sanitized(capsys):
         ["refits", *_BASE, "--device", "cpu"],
         ["freeze-selection", *_BASE, "--device", "cuda"],
         ["evaluate", *_BASE, "--device", "cpu"],
+        ["aggregate", *_BASE, "--device", "cuda"],
     )
     for argv in cases:
         code, payload = _run(cli, argv, capsys)

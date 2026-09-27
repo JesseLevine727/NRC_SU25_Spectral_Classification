@@ -323,12 +323,12 @@ def authenticate_refits(bundle: Any, *, deadline: Any) -> dict[str, Any]:
         _require(cumulative == prior_seconds + stage_seconds, f"{label}_cumulative_mismatch")
         _require(cumulative <= MAXIMUM_TOTAL_SECONDS, f"{label}_cumulative_exceeded")
         _require(
-            _integer(payload.get("prelaunch_audit_reserve_seconds"), f"{label}_reserve_malformed")
+            _finite(payload.get("prelaunch_audit_reserve_seconds"), f"{label}_reserve_malformed")
             == PRELAUNCH_AUDIT_RESERVE_SECONDS,
             f"{label}_reserve_mismatch",
         )
         _require(
-            _integer(payload.get("maximum_total_seconds"), f"{label}_maximum_malformed")
+            _finite(payload.get("maximum_total_seconds"), f"{label}_maximum_malformed")
             == MAXIMUM_TOTAL_SECONDS,
             f"{label}_maximum_mismatch",
         )
