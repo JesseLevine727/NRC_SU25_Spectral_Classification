@@ -1,0 +1,40 @@
+# Approved recovery of the comprehensive source benchmark
+
+## Owner authority and unchanged scientific scope
+
+On 2026-09-27 the owner approved the previously proposed bounded recovery and increased the allocated CUDA-memory ceiling from 4 GiB to **8 GiB**. The approval permits exactly one replay of the sole interrupted source fit, followed by the 6,183 originally unstarted fits. It does not authorize another retry, additional recipes, preprocessing changes or new hyperparameter exploration.
+
+The original [execution protocol](P05_COMPREHENSIVE_EXECUTION.md), core contract, comprehensive permit and seven numerical-file pins remain immutable. The separate [recovery permit](contracts/p05_comprehensive_recovery.json) records the new authority; its implementation still requires independent review before scientific execution. The global new-neural-attempt ceiling is 17,785; the optimizer-update upper ceiling is 14,228,000. The cumulative 48-hour scientific-execution and 100-GiB governed-artifact limits remain unchanged. The per-fit limit remains 120 seconds. Existing work is not charged again as new fitting, but its original attempt, update, time and storage consumption is retained.
+
+The 8-GiB value is an authorized overall ceiling, not a target allocation. The frozen source-training kernel retains its stricter 4-GiB per-fit check; recovery must not bypass or monkeypatch that check. This preserves every numerical-file pin and the replay implementation. Operational stages may use the newly authorized outer ceiling, but resource checks in historical components remain at least as strict as their original authority. Raising an inner numerical-kernel limit is not required for this recovery.
+
+DeepSeek V4.1 Flash remains the patch-authoring implementer, using explicitly supplied public source snapshots with tools denied. The supervisor independently reviews, corrects, tests, controls execution and publishes accepted changes to `main`. Private spectra, observation/sample identities, checkpoints and row predictions are not supplied to the external implementer or published.
+
+## Confirmed interruption and recoverable evidence
+
+The previous-boot kernel journal records a global system-memory OOM kill of the scientific Python process at 2026-09-27 05:47:16 EDT. System swap was exhausted. This establishes the immediate termination mechanism, not a numerical model failure or CUDA allocation failure. Raising the CUDA ceiling does not address host-RAM exhaustion.
+
+The durable event journal records 8,721 new attempts started and 8,720 completed. The 36 accepted pilot fits are additional reused evidence. Of the new completions, 8,712 belong to 726 sealed units; the remaining eight belong to the unsealed final unit. The interrupted attempt records 17 epochs and 68 optimizer updates, a lower bound rather than a guaranteed final count. There are 6,183 unstarted original slots. No completed development receipt or final stage manifest exists.
+
+Read-only recovery checks verified all 43,560 files in the 726 sealed-unit manifests (15,979,042,830 bytes). The eight additional completions passed checkpoint tensor-digest, saved-history, selector-identity, sparse-support and available-recipe shared-prefix checks. The complete-unit gate correctly rejects their incomplete recipe coverage. Pilot manifest, summary and original leases passed their checks. All seven frozen numerical pins and the rebuilt source ledger match. These checks are not a substitute for the recovery runner's complete scientific re-authentication, including restored source-validation logits.
+
+The permit binds a deterministic original-evidence anchor. Its canonical JSON contains `schema_version = nato-sers-p05-interruption-anchor-v1` and a `files` mapping from source-stage-relative paths to SHA-256 and byte size. The 774 entries are the seven top-level stage files, the 726 sealed-unit manifests, and every file in the unsealed unit. Each sealed-unit manifest must also be checked against its complete file inventory; the anchor alone does not authenticate its referenced bytes. The canonical anchor digest is `419e31c24ae4c2eae1d3de72697b124522928ddf18d211210646f4308116af3b`. Private path inventories remain private. The maximum recorded allocated CUDA memory across the 8,720 completed source-fit summaries is 166,337,536 bytes (158.632 MiB); the stricter frozen per-fit limit is not currently a capacity constraint.
+
+## Recovery invariants
+
+1. Preserve the original incomplete run, partial history and consumed leases. Never overwrite or relabel the interrupted attempt as a success. Authenticate original evidence before reuse and bind it to a separately sealed recovery inventory.
+2. Reuse each verified completed slot once. Replay only the one interrupted slot, from its original seed and unchanged fit specification, under an explicit additional attempt lease. Execute only the 6,183 unstarted original slots thereafter. No retry loop or device fallback is allowed.
+3. Keep successful-slot counts separate from execution attempts: the finished source view must contain 14,904 successful new slots plus 36 reused pilot slots, while the full new-source attempt history contains 14,905 attempts and one original interruption.
+4. Retain the 1,669,388 recorded updates from completed original fits. Record 68 as the interrupted attempt's observed lower bound and conservatively charge 800 against the approved update ceiling. Do not claim the interrupted count is exact.
+5. Conservatively charge 36,000 seconds for the original scientific process, in addition to the existing 3,600-second audit reservation. Time recovery authentication, persistence, fitting, acceptance and later scientific stages cumulatively. No new 48-hour clock is created.
+6. Count original evidence, any independent copies, pilot artifacts and all leases under the existing 100-GiB storage accounting. Avoid hard links and symbolic links; copied evidence must be byte-authenticated and accounted for.
+7. A completed recovery receipt must explicitly bind both authorities and both attempts. Downstream selection, refit, evaluation, reporting and publication checks must understand recovery accounting rather than accepting a fabricated clean-run receipt.
+8. Require at least 9 GiB free CUDA memory before an 8-GiB-cap numerical stage. Add host-memory checks: at least 16 GiB `MemAvailable` before numerical-stage launch and at least 8 GiB before each fit and after each epoch. A breach stops the stage, preserves evidence and does not authorize another retry. Do not terminate unrelated processes or modify global memory settings.
+9. Keep execution logs and supervision artifacts outside temporary directories. Use a reviewed persistent launch mechanism and an immutable execution checkout. Chat disconnection must not silently relaunch a scientific stage.
+10. Freeze all 320 context-local source-only decisions before any new outer prediction. All remaining final-evaluation, comparison, figure and publication obligations remain in scope. Source-fit completion alone does not complete the goal.
+
+## Acceptance sequence
+
+Implement and test the recovery planner and authority first; then authenticate and seal the original evidence without fitting. Review the recovery runner, resource safeguards and downstream receipt integration before launch. Use synthetic tests for malformed journals, unauthorized replays, occupied leases, partial persistence, tampered manifests, accounting/time resets and host/GPU limits. Preserve every frozen numerical hash and independently check recovered scientific evidence. Publish only independently reviewed milestones and final aggregate results, with native TikZ/offline HTML figures and matching semantic data.
+
+Status: owner authority is recorded; recovery implementation and scientific restart have not yet passed review.
