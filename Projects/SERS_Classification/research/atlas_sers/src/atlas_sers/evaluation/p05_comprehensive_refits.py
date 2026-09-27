@@ -20,6 +20,7 @@ from atlas_sers.evaluation import p05_comprehensive_freeze as freeze
 from atlas_sers.evaluation import p05_comprehensive_inputs as inputs
 from atlas_sers.evaluation import p05_core_run as core
 from atlas_sers.evaluation import p05_pilot as pilot
+from atlas_sers.evaluation import p05_recovery_source as source
 from atlas_sers.evaluation import p05_refit_authority as authority
 from atlas_sers.evaluation import p05_refit_evidence as evidence
 
@@ -70,6 +71,12 @@ def _integer(value: Any, code: str) -> int:
 
 def _run_root(artifact_root: Any, permit_sha256: Any) -> Path:
     return Path(artifact_root) / "p05comprehensive" / "runs" / str(permit_sha256)
+
+
+def _recovery_resources(torch: Any, phase: str) -> None:
+    from atlas_sers.evaluation import p05_recovery_authority as recovery_authority
+
+    recovery_authority.check_resources(torch, phase=phase)
 
 
 def _new_counters() -> dict[str, Any]:
@@ -221,6 +228,11 @@ def _run_refits(
         source_optimizer_steps = _integer(
             authenticated.get("source_optimizer_steps"), "source_optimizer_steps_malformed"
         )
+        try:
+            source_accounting = source.from_authenticated(authenticated)
+        except source.RecoverySourceError as error:
+            raise P05ComprehensiveRefitError("source_accounting_rejected") from error
+        recovered = source_accounting.get("mode") == source.RECOVERY_ACCOUNTING_MODE
         unique_refits = plan["unique_refits"]
         aliases = plan["strategy_aliases"]
         plan_id = str(plan["plan_id"])
@@ -238,7 +250,40 @@ def _run_refits(
         for alias in aliases:
             _require(isinstance(alias, Mapping), "alias_malformed")
             _require(str(alias["refit_id"]) in unique_refits, "alias_refit_unknown")
-        _require(0 <= source_optimizer_steps <= SOURCE_MAXIMUM_UPDATES, "source_updates_exceeded")
+        if recovered:
+            maximum_source_optimizer_steps = _integer(
+                source_accounting["maximum_source_optimizer_steps"], "source_maximum_malformed"
+            )
+            source_charged_upper_bound = _integer(
+                source_accounting["source_optimizer_steps_charged_upper_bound"],
+                "source_charged_upper_malformed",
+            )
+            maximum_combined_updates = _integer(
+                source_accounting["maximum_new_optimizer_steps"], "source_maximum_malformed"
+            )
+            maximum_new_neural_executions = _integer(
+                source_accounting["maximum_new_neural_executions"], "source_maximum_malformed"
+            )
+            source_attempts = _integer(
+                source_accounting["source_attempts"], "source_attempts_malformed"
+            )
+            _require(
+                0 <= source_optimizer_steps <= maximum_source_optimizer_steps,
+                "source_updates_exceeded",
+            )
+            _require(
+                source_charged_upper_bound <= maximum_source_optimizer_steps,
+                "source_charged_upper_exceeded",
+            )
+        else:
+            _require(
+                0 <= source_optimizer_steps <= SOURCE_MAXIMUM_UPDATES, "source_updates_exceeded"
+            )
+            source_charged_upper_bound = source_optimizer_steps
+            maximum_source_optimizer_steps = SOURCE_MAXIMUM_UPDATES
+            maximum_combined_updates = MAXIMUM_COMBINED_UPDATES
+            source_attempts = SOURCE_FIT_COUNT
+            maximum_new_neural_executions = SOURCE_FIT_COUNT + MAXIMUM_REFITS
 
         identity = {
             "schema_version": SCHEMA,
@@ -258,10 +303,13 @@ def _run_refits(
             "source_optimizer_steps": source_optimizer_steps,
             "outer_predictions_started": 0,
         }
+        if recovered:
+            identity["source_execution_accounting"] = dict(source_accounting)
 
         import torch
 
         from atlas_sers.evaluation import p05_calibration as calibration
+        from atlas_sers.evaluation import p05_recovery_unit as recovery_unit
         from atlas_sers.evaluation import p05_refit as refit
         from atlas_sers.evaluation import p05_refit_io as refit_io
 
@@ -271,6 +319,8 @@ def _run_refits(
             pilot._free_cuda_bytes(torch) >= MINIMUM_FREE_CUDA_BYTES, "insufficient_free_cuda_bytes"
         )
         pilot._enforce_cuda_cap(torch, device)
+        if recovered:
+            _recovery_resources(torch, "launch")
         pilot._checkpoint_preflight(torch, artifact_root)
         freeze._check_deadline(deadline)
 
@@ -309,6 +359,8 @@ def _run_refits(
 
         for spec in ordered:
             freeze._check_deadline(deadline)
+            if recovered:
+                _recovery_resources(torch, "fit")
             refit_id = str(spec["refit_id"])
             unit_dir = stage / "units" / refit_id
             _require_headroom(budget)
@@ -328,6 +380,8 @@ def _run_refits(
                 prepared = refit_io.prepare_refit_inputs(bundle, spec)
                 _require_headroom(budget)
                 freeze._check_deadline(deadline)
+                if recovered:
+                    _recovery_resources(torch, "fit")
                 _require(
                     counters["calibration_started"] < MAXIMUM_REFITS, "calibration_ceiling_exceeded"
                 )
@@ -350,17 +404,25 @@ def _run_refits(
                 _require_headroom(budget)
                 freeze._check_deadline(deadline)
                 _require(counters["neural_started"] < MAXIMUM_REFITS, "refit_ceiling_exceeded")
+                _require(
+                    source_attempts + counters["neural_started"] + 1
+                    <= maximum_new_neural_executions,
+                    "source_attempts_exceeded",
+                )
                 expected_steps = _integer(spec["epochs"], "spec_epochs_malformed") * 4
                 _require(
                     120 <= expected_steps <= MAXIMUM_UPDATES_PER_REFIT, "spec_epoch_budget_invalid"
                 )
                 _require(
-                    source_optimizer_steps + counters["optimizer_steps"] + expected_steps
-                    <= MAXIMUM_COMBINED_UPDATES,
+                    source_charged_upper_bound + counters["optimizer_steps"] + expected_steps
+                    <= maximum_combined_updates,
                     "combined_updates_exceeded",
                 )
                 recorder = pilot.open_history_recorder(unit_dir, refit_id)
-                guarded = development._GuardedRecorder(recorder, budget, deadline)
+                if recovered:
+                    guarded = recovery_unit._GuardedEpochRecorder(recorder, budget, deadline, torch)
+                else:
+                    guarded = development._GuardedRecorder(recorder, budget, deadline)
                 steps_accounted = False
                 try:
                     counters["neural_started"] += 1
@@ -398,8 +460,8 @@ def _run_refits(
                 _require(0 <= peak <= MAXIMUM_CUDA_ALLOCATED_BYTES, "peak_cuda_exceeded")
                 _require(steps <= expected_steps, "refit_updates_exceeded")
                 _require(
-                    source_optimizer_steps + counters["optimizer_steps"]
-                    <= MAXIMUM_COMBINED_UPDATES,
+                    source_charged_upper_bound + counters["optimizer_steps"]
+                    <= maximum_combined_updates,
                     "combined_updates_exceeded",
                 )
                 refit_io.check_completed_refit(torch, unit_dir, spec, result)
@@ -432,9 +494,17 @@ def _run_refits(
             else:
                 budget.close_unit()
             pilot._enforce_cuda_cap(torch, device)
+            if recovered:
+                _recovery_resources(torch, "fit")
             freeze._check_deadline(deadline)
 
         _require(completed_refits == set(unique_refits), "unique_coverage_incomplete")
+        if recovered:
+            _recovery_resources(torch, "fit")
+        _require(
+            source_attempts + counters["neural_started"] <= maximum_new_neural_executions,
+            "source_attempts_exceeded",
+        )
         _require(counters["calibration_started"] == unique_count, "calibration_started_mismatch")
         _require(
             counters["calibration_completed"] == unique_count, "calibration_completed_mismatch"
@@ -453,7 +523,7 @@ def _run_refits(
             "refit_updates_exceeded",
         )
         _require(
-            source_optimizer_steps + counters["optimizer_steps"] <= MAXIMUM_COMBINED_UPDATES,
+            source_charged_upper_bound + counters["optimizer_steps"] <= maximum_combined_updates,
             "combined_updates_exceeded",
         )
         _require(not groups, "recipe_groups_incomplete")
@@ -466,6 +536,11 @@ def _run_refits(
                 "total_new_optimizer_steps": source_optimizer_steps + counters["optimizer_steps"],
             }
         )
+        if recovered:
+            identity["total_new_optimizer_steps_charged_upper_bound"] = (
+                source_charged_upper_bound + counters["optimizer_steps"]
+            )
+            identity["total_new_optimizer_steps_all_attempts_exact"] = False
 
         provenance_after = pilot._post_run_reauth(
             artifact_root,

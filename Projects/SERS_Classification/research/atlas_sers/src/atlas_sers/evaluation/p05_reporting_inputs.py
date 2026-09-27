@@ -23,6 +23,7 @@ from atlas_sers.evaluation import p05_comprehensive_freeze as freeze
 from atlas_sers.evaluation import p05_core_run as core
 from atlas_sers.evaluation import p05_evaluation_authority as evaluation_authority
 from atlas_sers.evaluation import p05_pilot as pilot
+from atlas_sers.evaluation import p05_recovery_source as source
 from atlas_sers.evaluation import p05_refit_authority as refit_authority
 
 __all__ = [
@@ -36,11 +37,20 @@ REUSED_PILOT_FITS = 36
 SOURCE_EVIDENCE_FITS = 14940
 STRATEGY_ALIASES = 2880
 
+RECOVERY_SOURCE_ATTEMPTS = 14905
+RECOVERY_INTERRUPTED_SOURCE_ATTEMPTS = 1
+RECOVERY_REPLAYED_SOURCE_ATTEMPTS = 1
+RECOVERY_OBSERVED_STEP_OFFSET = 68
+RECOVERY_CHARGED_STEP_OFFSET = 800
+RECOVERY_PRIOR_SOURCE_SECONDS = 36000.0
+RECOVERY_MAXIMUM_NEW_OPTIMIZER_STEPS = 14228000
+
 DEVELOP_MANIFEST_NAME = "manifest.json"
 SOURCE_LEDGER_NAME = "source_ledger.json"
 SELECTOR_NAME = "selector.jsonl"
+SUMMARY_NAME = "summary.json"
 
-PUBLIC_COST_KEYS = frozenset(
+LEGACY_PUBLIC_COST_KEYS = frozenset(
     {
         "new_source_fits",
         "reused_pilot_fits",
@@ -59,7 +69,40 @@ PUBLIC_COST_KEYS = frozenset(
     }
 )
 
-REQUIRED_PUBLIC_COST_KEYS = PUBLIC_COST_KEYS - {"refit_peak_allocated_gpu_bytes"}
+REQUIRED_PUBLIC_COST_KEYS = LEGACY_PUBLIC_COST_KEYS - {"refit_peak_allocated_gpu_bytes"}
+
+RECOVERY_PUBLIC_COST_KEYS = frozenset(
+    {
+        "new_source_attempts",
+        "original_interrupted_source_attempts",
+        "replayed_source_attempts",
+        "new_neural_attempts_total",
+        "source_optimizer_updates_observed_lower_bound",
+        "source_optimizer_updates_charged_upper_bound",
+        "combined_optimizer_updates_observed_lower_bound",
+        "combined_optimizer_updates_charged_upper_bound",
+        "prior_source_scientific_seconds_charged_upper_bound",
+        "recovery_source_scientific_seconds_charged_upper_bound",
+    }
+)
+
+PUBLIC_COST_KEYS = LEGACY_PUBLIC_COST_KEYS | RECOVERY_PUBLIC_COST_KEYS
+
+_RECOVERY_INTEGRAL_COST_KEYS = (
+    "new_source_attempts",
+    "original_interrupted_source_attempts",
+    "replayed_source_attempts",
+    "new_neural_attempts_total",
+    "source_optimizer_updates_observed_lower_bound",
+    "source_optimizer_updates_charged_upper_bound",
+    "combined_optimizer_updates_observed_lower_bound",
+    "combined_optimizer_updates_charged_upper_bound",
+)
+
+_RECOVERY_SECONDS_COST_KEYS = (
+    "prior_source_scientific_seconds_charged_upper_bound",
+    "recovery_source_scientific_seconds_charged_upper_bound",
+)
 
 BINDING_KEYS = frozenset(
     {
@@ -125,6 +168,12 @@ def _run_root(bundle: Mapping[str, Any]) -> Path:
         / comparison_authority.RUNS_DIR
         / permit_sha256
     )
+
+
+def _selection_bundle(bundle: Mapping[str, Any], accounting: Mapping[str, Any]) -> dict[str, Any]:
+    local_bundle = dict(bundle)
+    local_bundle["source_execution_accounting"] = accounting
+    return local_bundle
 
 
 def _check_constants() -> None:
@@ -238,6 +287,8 @@ def _check_refit_receipt(
     alias_count: int,
     source_steps: int,
     refit_steps: int,
+    *,
+    source_accounting: Mapping[str, Any] | None = None,
 ) -> tuple[str, dict[str, Any]]:
     _require(
         str(receipt.get("schema_version")) == evaluation_authority.SCHEMA,
@@ -340,10 +391,60 @@ def _check_refit_receipt(
     _require(
         total_new == source_steps + refit_steps, "refit_receipt_total_new_optimizer_steps_mismatch"
     )
-    _require(
-        total_new <= evaluation_authority.MAXIMUM_COMBINED_UPDATES,
-        "refit_receipt_combined_updates_exceeded",
-    )
+    if source_accounting is None:
+        _require(
+            total_new <= evaluation_authority.MAXIMUM_COMBINED_UPDATES,
+            "refit_receipt_combined_updates_exceeded",
+        )
+        _require(
+            "source_execution_accounting" not in receipt,
+            "refit_receipt_source_execution_accounting_unexpected",
+        )
+        _require(
+            "total_new_optimizer_steps_charged_upper_bound" not in receipt,
+            "refit_receipt_total_new_optimizer_steps_charged_upper_bound_unexpected",
+        )
+        _require(
+            "total_new_optimizer_steps_all_attempts_exact" not in receipt,
+            "refit_receipt_total_new_optimizer_steps_all_attempts_exact_unexpected",
+        )
+    else:
+        source_accounting = source.validate_accounting(
+            source_accounting, source_optimizer_steps=source_steps
+        )
+        _require(source_accounting["mode"] == "recovered", "recovery_accounting_mode_invalid")
+        normalized = source.validate_accounting(
+            receipt.get("source_execution_accounting"),
+            source_optimizer_steps=source_steps,
+        )
+        _require(
+            dict(normalized) == dict(source_accounting),
+            "refit_receipt_source_execution_accounting_mismatch",
+        )
+        source_charged = _strict_int(
+            normalized.get("source_optimizer_steps_charged_upper_bound"),
+            "refit_receipt_source_charged_upper_bound_malformed",
+        )
+        combined_charged = _strict_int(
+            receipt.get("total_new_optimizer_steps_charged_upper_bound"),
+            "refit_receipt_total_new_optimizer_steps_charged_upper_bound_malformed",
+        )
+        _require(
+            combined_charged == source_charged + refit_steps,
+            "refit_receipt_total_new_optimizer_steps_charged_upper_bound_mismatch",
+        )
+        maximum_new_steps = _strict_int(
+            normalized.get("maximum_new_optimizer_steps"),
+            "refit_receipt_maximum_new_optimizer_steps_malformed",
+        )
+        _require(
+            combined_charged <= maximum_new_steps,
+            "refit_receipt_total_new_optimizer_steps_charged_upper_bound_exceeded",
+        )
+        _require(
+            receipt.get("total_new_optimizer_steps_all_attempts_exact") is False,
+            "refit_receipt_total_new_optimizer_steps_all_attempts_exact_not_false",
+        )
     manifest_path = run_root / evaluation_authority.STAGE_NAME / evaluation_authority.MANIFEST_NAME
     manifest_sha256 = _stable_file_sha256(manifest_path, "refit_manifest_missing")
     _require(
@@ -428,10 +529,33 @@ def _assemble_costs(
     unique_count: int,
     source_steps: int,
     refit_steps: int,
+    *,
+    source_accounting: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
-    source_seconds = _finite_seconds(
+    recovery = source_accounting is not None
+    development_stage_seconds = _finite_seconds(
         development_receipt.get("scientific_seconds_this_stage"), "development_seconds_malformed"
     )
+    if recovery:
+        source_accounting = source.validate_accounting(
+            source_accounting, source_optimizer_steps=source_steps
+        )
+        _require(source_accounting["mode"] == "recovered", "recovery_accounting_mode_invalid")
+        source_charged = _strict_int(
+            source_accounting.get("source_optimizer_steps_charged_upper_bound"),
+            "source_accounting_charged_upper_bound_malformed",
+        )
+        maximum_new_steps = _strict_int(
+            source_accounting.get("maximum_new_optimizer_steps"),
+            "source_accounting_maximum_new_optimizer_steps_malformed",
+        )
+        _require(
+            source_charged + refit_steps <= maximum_new_steps,
+            "source_accounting_charged_budget_exceeded",
+        )
+        source_seconds = RECOVERY_PRIOR_SOURCE_SECONDS + development_stage_seconds
+    else:
+        source_seconds = development_stage_seconds
     refit_seconds = _finite_seconds(
         refit_receipt.get("scientific_seconds_this_stage"), "refit_seconds_malformed"
     )
@@ -456,10 +580,11 @@ def _assemble_costs(
         "cumulative_seconds_inconsistent",
     )
     combined = source_steps + refit_steps
-    _require(
-        combined <= evaluation_authority.MAXIMUM_COMBINED_UPDATES,
-        "combined_updates_exceeded",
-    )
+    if not recovery:
+        _require(
+            combined <= evaluation_authority.MAXIMUM_COMBINED_UPDATES,
+            "combined_updates_exceeded",
+        )
     costs: dict[str, Any] = {
         "new_source_fits": NEW_SOURCE_FITS,
         "reused_pilot_fits": REUSED_PILOT_FITS,
@@ -483,6 +608,15 @@ def _assemble_costs(
             "refit_peak_cuda_out_of_range",
         )
         costs["refit_peak_allocated_gpu_bytes"] = peak_bytes
+    if recovery:
+        costs.update(
+            _recovery_cost_extras(
+                unique_count=unique_count,
+                source_steps=source_steps,
+                refit_steps=refit_steps,
+                recovery_source_seconds=development_stage_seconds,
+            )
+        )
     _check_public_costs(costs)
     return costs
 
@@ -500,12 +634,113 @@ def _check_public_costs(costs: Mapping[str, Any]) -> None:
             _require(value >= 0.0, f"public_cost_{name}_out_of_range")
         else:
             _require(value >= 0, f"public_cost_{name}_out_of_range")
+    if set(costs) & RECOVERY_PUBLIC_COST_KEYS:
+        _require(RECOVERY_PUBLIC_COST_KEYS <= set(costs), "recovery_public_cost_key_missing")
+        _check_recovery_public_costs(costs)
+
+
+def _check_recovery_public_costs(costs: Mapping[str, Any]) -> None:
+    for key in (
+        "new_source_fits",
+        "reused_pilot_fits",
+        "source_evidence_fits",
+        "unique_refitted_models",
+        "unique_scalar_calibrations",
+        "new_neural_fits_total",
+        "strategy_alias_count",
+        "new_source_optimizer_updates",
+        "refit_optimizer_updates",
+        "combined_new_optimizer_updates",
+    ):
+        _strict_int(costs[key], f"public_cost_{key}_malformed")
+    unique = costs["unique_refitted_models"]
+    _require(0 < unique <= 2880, "public_cost_refit_count_out_of_range")
+    for key, value in (
+        ("new_source_fits", NEW_SOURCE_FITS),
+        ("reused_pilot_fits", REUSED_PILOT_FITS),
+        ("source_evidence_fits", SOURCE_EVIDENCE_FITS),
+        ("unique_scalar_calibrations", unique),
+        ("new_neural_fits_total", NEW_SOURCE_FITS + unique),
+        ("strategy_alias_count", STRATEGY_ALIASES),
+        (
+            "combined_new_optimizer_updates",
+            costs["new_source_optimizer_updates"] + costs["refit_optimizer_updates"],
+        ),
+    ):
+        _require(costs[key] == value, f"public_cost_{key}_mismatch")
+    for name in _RECOVERY_INTEGRAL_COST_KEYS:
+        value = costs[name]
+        _require(
+            isinstance(value, int) and not isinstance(value, bool),
+            f"public_cost_{name}_malformed",
+        )
+    for name in _RECOVERY_SECONDS_COST_KEYS:
+        value = costs[name]
+        _require(
+            isinstance(value, (int, float)) and not isinstance(value, bool),
+            f"public_cost_{name}_malformed",
+        )
+        _require(math.isfinite(float(value)), f"public_cost_{name}_not_finite")
+        _require(float(value) >= 0.0, f"public_cost_{name}_out_of_range")
+    expected = _recovery_cost_extras(
+        unique_count=costs["unique_refitted_models"],
+        source_steps=costs["new_source_optimizer_updates"],
+        refit_steps=costs["refit_optimizer_updates"],
+        recovery_source_seconds=costs["recovery_source_scientific_seconds_charged_upper_bound"],
+    )
+    for name, value in expected.items():
+        _require(costs[name] == value, f"public_cost_{name}_mismatch")
+    _require(
+        costs["source_scientific_seconds"]
+        == RECOVERY_PRIOR_SOURCE_SECONDS
+        + costs["recovery_source_scientific_seconds_charged_upper_bound"],
+        "public_cost_source_scientific_seconds_mismatch",
+    )
+    _require(
+        costs["combined_optimizer_updates_charged_upper_bound"]
+        <= RECOVERY_MAXIMUM_NEW_OPTIMIZER_STEPS,
+        "public_cost_combined_charges_exceed_budget",
+    )
+    _require(costs["new_neural_attempts_total"] <= 17785, "public_cost_attempts_exceeded")
+    _require(
+        development.PRELAUNCH_AUDIT_RESERVE_SECONDS
+        + costs["source_scientific_seconds"]
+        + costs["refit_scientific_seconds"]
+        <= costs["scientific_seconds_cumulative_bound_through_comparison"]
+        <= development.MAXIMUM_TOTAL_SECONDS,
+        "public_cost_cumulative_seconds_inconsistent",
+    )
 
 
 def _check_bindings(bindings: Mapping[str, Any]) -> None:
     _require(set(bindings) == BINDING_KEYS, "binding_key_set_mismatch")
     for name, value in bindings.items():
         _hex64(value, f"binding_{name}_malformed")
+
+
+def _recovery_cost_extras(
+    *,
+    unique_count: int,
+    source_steps: int,
+    refit_steps: int,
+    recovery_source_seconds: float,
+) -> dict[str, Any]:
+    combined_steps = source_steps + refit_steps
+    return {
+        "new_source_attempts": RECOVERY_SOURCE_ATTEMPTS,
+        "original_interrupted_source_attempts": RECOVERY_INTERRUPTED_SOURCE_ATTEMPTS,
+        "replayed_source_attempts": RECOVERY_REPLAYED_SOURCE_ATTEMPTS,
+        "new_neural_attempts_total": RECOVERY_SOURCE_ATTEMPTS + unique_count,
+        "source_optimizer_updates_observed_lower_bound": source_steps
+        + RECOVERY_OBSERVED_STEP_OFFSET,
+        "source_optimizer_updates_charged_upper_bound": source_steps + RECOVERY_CHARGED_STEP_OFFSET,
+        "combined_optimizer_updates_observed_lower_bound": combined_steps
+        + RECOVERY_OBSERVED_STEP_OFFSET,
+        "combined_optimizer_updates_charged_upper_bound": combined_steps
+        + RECOVERY_CHARGED_STEP_OFFSET,
+        "prior_source_scientific_seconds_charged_upper_bound": RECOVERY_PRIOR_SOURCE_SECONDS,
+        "recovery_source_scientific_seconds_charged_upper_bound": recovery_source_seconds,
+    }
 
 
 def load_reporting_sources(
@@ -538,6 +773,10 @@ def load_reporting_sources(
     _require(source_steps >= 0, "authority_source_steps_out_of_range")
     _require(refit_steps >= 0, "authority_refit_steps_out_of_range")
 
+    accounting = source.from_authenticated(authenticated)
+    _require(isinstance(accounting, Mapping), "source_accounting_malformed")
+    recovered = accounting.get("mode") == "recovered"
+
     unique_refits, _aliases = _check_plan_shape(plan)
     unique_count = len(unique_refits)
     alias_count = len(_aliases)
@@ -555,6 +794,15 @@ def load_reporting_sources(
     )
     freeze._check_receipt(development_receipt, freeze._expected_new_units(bundle))
     _check_development_counts(development_receipt)
+    development_recovered = bool(source.is_recovered(development_receipt))
+    _require(development_recovered == recovered, "source_recovery_mode_mismatch")
+    if recovered:
+        summary = freeze._read_mapping(paths["develop"] / SUMMARY_NAME, "source_summary_missing")
+        recovered_accounting = source.accounting_from_recovered(summary, development_receipt)
+        _require(
+            dict(recovered_accounting) == dict(accounting),
+            "source_recovery_accounting_mismatch",
+        )
     _require(
         _strict_int(
             development_receipt.get("optimizer_steps"), "development_optimizer_steps_malformed"
@@ -582,6 +830,7 @@ def load_reporting_sources(
         alias_count,
         source_steps,
         refit_steps,
+        **({"source_accounting": accounting} if recovered else {}),
     )
     _require(
         core._canon().sha256_file(refit_receipt_path) == refit_receipt_sha256,
@@ -595,7 +844,7 @@ def load_reporting_sources(
     freeze._check_deadline(deadline)
 
     selection_receipt_sha256, selection_manifest_sha256, source_bindings_sha256 = _check_selection(
-        bundle, paths, plan, plan_id
+        _selection_bundle(bundle, accounting) if recovered else bundle, paths, plan, plan_id
     )
     freeze._check_deadline(deadline)
 
@@ -678,6 +927,7 @@ def load_reporting_sources(
         unique_count,
         source_steps,
         refit_steps,
+        **({"source_accounting": accounting} if recovered else {}),
     )
     bindings = {
         "development_receipt_sha256": development_receipt_sha256,

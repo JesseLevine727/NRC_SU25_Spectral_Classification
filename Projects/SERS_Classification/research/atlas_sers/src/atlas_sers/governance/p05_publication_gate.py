@@ -24,6 +24,7 @@ from atlas_sers.evaluation import p05_core_run as core
 from atlas_sers.evaluation import p05_evaluation_authority as evaluation_authority
 from atlas_sers.evaluation import p05_pilot as pilot
 from atlas_sers.evaluation import p05_public_metrics as public_metrics
+from atlas_sers.evaluation import p05_recovery_source as recovery_source
 from atlas_sers.evaluation import p05_reporting_inputs as reporting_inputs
 from atlas_sers.evaluation import p05_source_diagnostics as source_diagnostics
 from atlas_sers.governance.canonical import sha256_value
@@ -143,19 +144,54 @@ def _check_receipt_identity(receipt: Mapping[str, Any]) -> None:
         receipt.get("refit_optimizer_steps"), "receipt_refit_optimizer_steps_malformed"
     )
     _require(
-        0 <= source_steps <= evaluation_authority.SOURCE_MAXIMUM_UPDATES,
-        "receipt_source_optimizer_steps_out_of_range",
-    )
-    _require(
         0
         <= refit_steps
         <= evaluation_authority.MAXIMUM_REFITS * evaluation_authority.MAXIMUM_UPDATES_PER_REFIT,
         "receipt_refit_optimizer_steps_out_of_range",
     )
+    if "source_execution_accounting" not in receipt:
+        _require(
+            0 <= source_steps <= evaluation_authority.SOURCE_MAXIMUM_UPDATES,
+            "receipt_source_optimizer_steps_out_of_range",
+        )
+    try:
+        accounting = recovery_source.from_authenticated(receipt)
+    except recovery_source.RecoverySourceError as error:
+        raise P05PublicationGateError("receipt_source_accounting_malformed") from error
+    _require(isinstance(accounting, Mapping), "receipt_source_accounting_malformed")
+    recovery_source.validate_accounting(accounting, source_optimizer_steps=source_steps)
+    accounting_mode = str(accounting.get("mode"))
     _require(
-        source_steps + refit_steps <= evaluation_authority.MAXIMUM_COMBINED_UPDATES,
-        "receipt_combined_updates_exceeded",
+        accounting_mode in ("clean", "recovered"),
+        "receipt_source_accounting_mode_malformed",
     )
+    if accounting_mode == "recovered":
+        charged_source = _integer(
+            accounting.get("source_optimizer_steps_charged_upper_bound"),
+            "receipt_source_charged_malformed",
+        )
+        maximum_source = _integer(
+            accounting.get("maximum_source_optimizer_steps"),
+            "receipt_source_maximum_malformed",
+        )
+        maximum_new = _integer(
+            accounting.get("maximum_new_optimizer_steps"),
+            "receipt_maximum_new_optimizer_steps_malformed",
+        )
+        _require(charged_source <= maximum_source, "receipt_source_charged_exceeded")
+        _require(
+            charged_source + refit_steps <= maximum_new,
+            "receipt_combined_updates_exceeded",
+        )
+    else:
+        _require(
+            0 <= source_steps <= evaluation_authority.SOURCE_MAXIMUM_UPDATES,
+            "receipt_source_optimizer_steps_out_of_range",
+        )
+        _require(
+            source_steps + refit_steps <= evaluation_authority.MAXIMUM_COMBINED_UPDATES,
+            "receipt_combined_updates_exceeded",
+        )
 
 
 def _check_stage_manifest(run_root: Path, receipt: Mapping[str, Any]) -> tuple[Path, str]:
@@ -412,6 +448,22 @@ _TIME_COST_KEYS = (
 
 
 def _check_cost_agreement(costs: Mapping[str, Any], receipt: Mapping[str, Any]) -> None:
+    reporting_inputs._check_public_costs(dict(costs))
+    try:
+        accounting = recovery_source.from_authenticated(receipt)
+    except recovery_source.RecoverySourceError as error:
+        raise P05PublicationGateError("public_cost_source_accounting_malformed") from error
+    _require(isinstance(accounting, Mapping), "public_cost_source_accounting_malformed")
+    accounting_mode = str(accounting.get("mode"))
+    recovery_keys = frozenset(reporting_inputs.RECOVERY_PUBLIC_COST_KEYS)
+    present_recovery = frozenset(costs) & recovery_keys
+    if accounting_mode == "recovered":
+        _require(
+            present_recovery == recovery_keys,
+            "public_cost_recovery_keys_incomplete",
+        )
+    else:
+        _require(not present_recovery, "public_cost_recovery_keys_unexpected")
     for name in _INT_COST_KEYS:
         _integer(costs.get(name), f"public_cost_{name}_malformed")
     for name in _TIME_COST_KEYS:
@@ -473,6 +525,36 @@ def _check_cost_agreement(costs: Mapping[str, Any], receipt: Mapping[str, Any]) 
         costs["combined_new_optimizer_updates"] == source_steps + refit_steps,
         "public_cost_combined_updates_mismatch",
     )
+    if accounting_mode == "recovered":
+        _require(
+            costs["new_source_attempts"] == accounting["source_attempts"],
+            "public_cost_new_source_attempts_mismatch",
+        )
+        _require(
+            costs["new_neural_attempts_total"]
+            <= accounting["maximum_new_neural_executions"],
+            "public_cost_new_neural_attempts_exceeded",
+        )
+        _require(
+            costs["source_optimizer_updates_observed_lower_bound"]
+            == accounting["source_optimizer_steps_observed_lower_bound"],
+            "public_cost_source_updates_observed_mismatch",
+        )
+        _require(
+            costs["source_optimizer_updates_charged_upper_bound"]
+            == accounting["source_optimizer_steps_charged_upper_bound"],
+            "public_cost_source_updates_charged_mismatch",
+        )
+        _require(
+            costs["combined_optimizer_updates_observed_lower_bound"]
+            == accounting["source_optimizer_steps_observed_lower_bound"] + refit_steps,
+            "public_cost_combined_updates_observed_mismatch",
+        )
+        _require(
+            costs["combined_optimizer_updates_charged_upper_bound"]
+            == accounting["source_optimizer_steps_charged_upper_bound"] + refit_steps,
+            "public_cost_combined_updates_charged_mismatch",
+        )
     _require(
         refit_steps <= unique * evaluation_authority.MAXIMUM_UPDATES_PER_REFIT,
         "public_cost_refit_updates_exceeded",

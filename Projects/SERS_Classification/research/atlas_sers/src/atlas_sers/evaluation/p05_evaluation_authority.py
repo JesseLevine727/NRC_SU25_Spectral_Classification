@@ -24,6 +24,7 @@ from atlas_sers.evaluation import p05_comprehensive_freeze as freeze
 from atlas_sers.evaluation import p05_core_run as core
 from atlas_sers.evaluation import p05_pilot as pilot
 from atlas_sers.evaluation import p05_prediction as prediction
+from atlas_sers.evaluation import p05_recovery_source as source
 from atlas_sers.evaluation import p05_refit_authority as authority
 from atlas_sers.evaluation import p05_refit_evidence as evidence
 
@@ -125,6 +126,11 @@ def authenticate_refits(bundle: Any, *, deadline: Any) -> dict[str, Any]:
     source_optimizer_steps = _integer(
         authenticated.get("source_optimizer_steps"), "authority_source_steps_malformed"
     )
+    try:
+        source_accounting = source.from_authenticated(authenticated)
+    except source.RecoverySourceError as error:
+        raise P05EvaluationAuthorityError("source_accounting_rejected") from error
+    recovered = source_accounting.get("mode") == source.RECOVERY_ACCOUNTING_MODE
     selection_receipt = authenticated.get("selection_receipt")
     _require(isinstance(selection_receipt, Mapping), "selection_receipt_malformed")
 
@@ -144,7 +150,17 @@ def authenticate_refits(bundle: Any, *, deadline: Any) -> dict[str, Any]:
     for alias in aliases:
         _require(isinstance(alias, Mapping), "alias_malformed")
         _require(str(alias.get("refit_id")) in unique_refits, "alias_refit_unknown")
-    _require(0 <= source_optimizer_steps <= SOURCE_MAXIMUM_UPDATES, "source_updates_exceeded")
+    if recovered:
+        maximum_source_optimizer_steps = _integer(
+            source_accounting["maximum_source_optimizer_steps"],
+            "authority_source_maximum_malformed",
+        )
+        _require(
+            0 <= source_optimizer_steps <= maximum_source_optimizer_steps,
+            "source_updates_exceeded",
+        )
+    else:
+        _require(0 <= source_optimizer_steps <= SOURCE_MAXIMUM_UPDATES, "source_updates_exceeded")
 
     permit_sha256 = bundle.get("permit_sha256")
     contract_sha256 = bundle.get("contract_sha256")
@@ -200,6 +216,8 @@ def authenticate_refits(bundle: Any, *, deadline: Any) -> dict[str, Any]:
         "source_optimizer_steps": source_optimizer_steps,
         "outer_predictions_started": 0,
     }
+    if recovered:
+        identity["source_execution_accounting"] = dict(source_accounting)
     for name, value in identity.items():
         _require(refit_receipt.get(name) == value, f"receipt_{name}_mismatch")
     _require(refit_receipt.get("refits_complete") is True, "receipt_refits_incomplete")
@@ -216,6 +234,12 @@ def authenticate_refits(bundle: Any, *, deadline: Any) -> dict[str, Any]:
     _require(summary.get("refits_complete") is True, "summary_refits_incomplete")
     _require(summary.get("calibrations_complete") is True, "summary_calibrations_incomplete")
     _require(summary.get("status") == "complete", "summary_status_incomplete")
+    if not recovered:
+        for label, payload in (("receipt", refit_receipt), ("summary", summary)):
+            _require(
+                "source_execution_accounting" not in payload,
+                f"{label}_recovery_accounting_forbidden",
+            )
 
     receipt_counters = refit_receipt.get("counters")
     summary_counters = summary.get("counters")
@@ -280,12 +304,81 @@ def authenticate_refits(bundle: Any, *, deadline: Any) -> dict[str, Any]:
         total_new_optimizer_steps == source_optimizer_steps + refit_optimizer_steps,
         "total_new_optimizer_steps_mismatch",
     )
-    _require(total_new_optimizer_steps <= MAXIMUM_COMBINED_UPDATES, "combined_updates_exceeded")
+    if not recovered:
+        _require(total_new_optimizer_steps <= MAXIMUM_COMBINED_UPDATES, "combined_updates_exceeded")
     _require(
         _integer(summary.get("total_new_optimizer_steps"), "summary_total_updates_malformed")
         == total_new_optimizer_steps,
         "summary_total_updates_mismatch",
     )
+    if recovered:
+        for label, payload in (("receipt", refit_receipt), ("summary", summary)):
+            try:
+                checked_accounting = source.validate_accounting(
+                    payload.get("source_execution_accounting"),
+                    source_optimizer_steps=source_optimizer_steps,
+                )
+            except source.RecoverySourceError as error:
+                raise P05EvaluationAuthorityError(f"{label}_source_accounting_invalid") from error
+            _require(checked_accounting == source_accounting, f"{label}_source_accounting_mismatch")
+        charged_upper_bound = _integer(
+            refit_receipt.get("total_new_optimizer_steps_charged_upper_bound"),
+            "total_charged_upper_bound_malformed",
+        )
+        expected_charged_upper_bound = (
+            _integer(
+                source_accounting["source_optimizer_steps_charged_upper_bound"],
+                "authority_charged_upper_malformed",
+            )
+            + refit_optimizer_steps
+        )
+        _require(
+            charged_upper_bound == expected_charged_upper_bound,
+            "total_charged_upper_bound_mismatch",
+        )
+        _require(
+            refit_receipt.get("total_new_optimizer_steps_all_attempts_exact") is False,
+            "total_attempts_exact_mismatch",
+        )
+        _require(
+            _integer(
+                summary.get("total_new_optimizer_steps_charged_upper_bound"),
+                "summary_charged_upper_bound_malformed",
+            )
+            == charged_upper_bound,
+            "summary_total_charged_upper_bound_mismatch",
+        )
+        _require(
+            summary.get("total_new_optimizer_steps_all_attempts_exact") is False,
+            "summary_total_attempts_exact_mismatch",
+        )
+        _require(
+            charged_upper_bound
+            <= _integer(
+                source_accounting["maximum_new_optimizer_steps"],
+                "authority_maximum_updates_malformed",
+            ),
+            "combined_updates_exceeded",
+        )
+        _require(
+            _integer(source_accounting["source_attempts"], "authority_source_attempts_malformed")
+            + unique_count
+            <= _integer(
+                source_accounting["maximum_new_neural_executions"],
+                "authority_maximum_executions_malformed",
+            ),
+            "source_attempts_exceeded",
+        )
+    else:
+        for label, payload in (("receipt", refit_receipt), ("summary", summary)):
+            _require(
+                "total_new_optimizer_steps_charged_upper_bound" not in payload,
+                f"{label}_charged_upper_bound_forbidden",
+            )
+            _require(
+                "total_new_optimizer_steps_all_attempts_exact" not in payload,
+                f"{label}_attempts_exact_forbidden",
+            )
 
     _require(
         development.PRELAUNCH_AUDIT_RESERVE_SECONDS == PRELAUNCH_AUDIT_RESERVE_SECONDS,
@@ -434,7 +527,7 @@ def authenticate_refits(bundle: Any, *, deadline: Any) -> dict[str, Any]:
     _require(actual_peak == peak_cuda_bytes, "peak_cuda_mismatch")
     freeze._check_deadline(deadline)
 
-    return {
+    result = {
         "plan": plan,
         "prior_seconds": _finite(
             refit_receipt["scientific_seconds_cumulative_bound"], "receipt_cumulative_malformed"
@@ -444,3 +537,6 @@ def authenticate_refits(bundle: Any, *, deadline: Any) -> dict[str, Any]:
         "refit_receipt": refit_receipt,
         "selection_receipt": selection_receipt,
     }
+    if recovered:
+        result["source_execution_accounting"] = dict(source_accounting)
+    return result

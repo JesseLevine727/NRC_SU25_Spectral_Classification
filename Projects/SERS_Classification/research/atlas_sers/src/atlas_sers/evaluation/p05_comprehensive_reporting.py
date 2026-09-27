@@ -28,6 +28,7 @@ from atlas_sers.evaluation import p05_comprehensive_evaluation as evaluation
 from atlas_sers.evaluation import p05_comprehensive_freeze as freeze
 from atlas_sers.evaluation import p05_comprehensive_inputs as inputs
 from atlas_sers.evaluation import p05_core_run as core
+from atlas_sers.evaluation import p05_recovery_source as recovery_source
 from atlas_sers.governance.canonical import sha256_value
 
 __all__ = ["P05ComprehensiveReportingError", "run_reporting"]
@@ -229,6 +230,11 @@ def _check_public_costs(
         _require(number >= 0.0, "public_cost_value_negative")
         validated[key] = value
     _require(required <= set(validated), "public_cost_key_missing")
+    from atlas_sers.evaluation import p05_reporting_inputs as actual_reporting_inputs
+
+    recovery_keys = frozenset(actual_reporting_inputs.RECOVERY_PUBLIC_COST_KEYS)
+    if recovery_keys & set(validated):
+        actual_reporting_inputs._check_public_costs(validated)
     return validated
 
 
@@ -605,6 +611,14 @@ def run_reporting(
     )
     source_steps = _integer(auth.get("source_optimizer_steps"), "authority_source_steps_malformed")
     refit_steps = _integer(auth.get("refit_optimizer_steps"), "authority_refit_steps_malformed")
+    try:
+        source_accounting = recovery_source.from_authenticated(auth)
+    except recovery_source.RecoverySourceError as error:
+        raise P05ComprehensiveReportingError("source_accounting_malformed") from error
+    _require(isinstance(source_accounting, Mapping), "source_accounting_malformed")
+    recovery_source.validate_accounting(source_accounting, source_optimizer_steps=source_steps)
+    accounting_mode = source_accounting.get("mode")
+    _require(accounting_mode in ("clean", "recovered"), "source_accounting_mode_malformed")
     comparison_receipt_sha256 = core._canon().sha256_file(comparison_receipt_path)
     comparison_stage = run_root / COMPARISON_STAGE_NAME
     comparison_manifest_sha256 = core._canon().sha256_file(
@@ -635,6 +649,8 @@ def run_reporting(
         "refit_optimizer_steps": refit_steps,
         "reporting_complete": False,
     }
+    if accounting_mode == "recovered":
+        identity["source_execution_accounting"] = dict(source_accounting)
     counters: dict[str, Any] = {key: 0 for key in COUNTER_KEYS}
 
     stage = run_root / STAGE_NAME
@@ -657,6 +673,12 @@ def run_reporting(
         selector_records = sources.get("selector_records")
         _require(selector_records is not None, "selector_records_missing")
         public_costs = _check_public_costs(sources, reporting_inputs)
+        recovery_keys = frozenset(reporting_inputs.RECOVERY_PUBLIC_COST_KEYS)
+        present_recovery = frozenset(public_costs) & recovery_keys
+        if accounting_mode == "recovered":
+            _require(present_recovery == recovery_keys, "recovery_cost_keys_incomplete")
+        else:
+            _require(not present_recovery, "recovery_cost_keys_unexpected")
         binding_digest = sha256_value(dict(bindings))
         identity = {**identity, "reporting_binding_digest": binding_digest}
         freeze._budgeted_write(stage / BINDINGS_NAME, dict(bindings), budget)

@@ -30,6 +30,7 @@ from atlas_sers.evaluation import p05_core_run as core
 from atlas_sers.evaluation import p05_legacy_references as legacy_references
 from atlas_sers.evaluation import p05_outer_inputs as outer_inputs
 from atlas_sers.evaluation import p05_pilot as pilot
+from atlas_sers.evaluation import p05_recovery_source as recovery_source
 from atlas_sers.governance.canonical import sha256_value
 
 __all__ = ["P05ComparisonAuthorityError", "authenticate_comparison"]
@@ -113,6 +114,38 @@ def _frames_equal(saved: Any, recomputed: Any) -> bool:
     return True
 
 
+def _source_accounting(auth: Mapping[str, Any]) -> Mapping[str, Any]:
+    try:
+        return recovery_source.from_authenticated(auth)
+    except recovery_source.RecoverySourceError as error:
+        raise P05ComparisonAuthorityError("source_accounting_invalid") from error
+
+
+def _require_accounting(
+    payload: Mapping[str, Any],
+    *,
+    label: str,
+    source_steps: int,
+    expected: Mapping[str, Any] | None,
+) -> None:
+    present = "source_execution_accounting" in payload
+    if expected is None:
+        _require(not present, f"{label}_source_accounting_unexpected")
+        return
+    _require(present, f"{label}_source_accounting_missing")
+    try:
+        validated = recovery_source.validate_accounting(
+            payload["source_execution_accounting"], source_optimizer_steps=source_steps
+        )
+    except recovery_source.RecoverySourceError as error:
+        raise P05ComparisonAuthorityError(f"{label}_source_accounting_invalid") from error
+    _require(
+        core._canon().canonical_json_bytes(validated)
+        == core._canon().canonical_json_bytes(dict(expected)),
+        f"{label}_source_accounting_mismatch",
+    )
+
+
 def authenticate_comparison(bundle: Any, *, deadline: Any) -> dict[str, Any]:
     """Authenticate the completed comprehensive-comparison stage read-only."""
 
@@ -135,6 +168,9 @@ def authenticate_comparison(bundle: Any, *, deadline: Any) -> dict[str, Any]:
     _require(isinstance(evaluation_receipt, Mapping), "authority_evaluation_receipt_malformed")
     source_steps = _integer(auth.get("source_optimizer_steps"), "authority_source_steps_malformed")
     refit_steps = _integer(auth.get("refit_optimizer_steps"), "authority_refit_steps_malformed")
+    source_accounting = _source_accounting(auth)
+    recovered = source_accounting["mode"] == recovery_source.RECOVERY_ACCOUNTING_MODE
+    expected_accounting = dict(source_accounting) if recovered else None
     aggregation_prior_seconds = _finite_seconds(
         auth.get("prior_seconds"), "authority_prior_malformed"
     )
@@ -272,9 +308,16 @@ def authenticate_comparison(bundle: Any, *, deadline: Any) -> dict[str, Any]:
         "refit_optimizer_steps": refit_steps,
         "reference_binding_digest": reference_binding_digest,
     }
+    if recovered:
+        expected_identity["source_execution_accounting"] = dict(source_accounting)
     for label, payload in (("receipt", receipt), ("summary", summary)):
         for name, value in expected_identity.items():
+            if name == "source_execution_accounting":
+                continue
             _require(payload.get(name) == value, f"{label}_{name}_mismatch")
+        _require_accounting(
+            payload, label=label, source_steps=source_steps, expected=expected_accounting
+        )
         for name in ("source_optimizer_steps", "refit_optimizer_steps"):
             _integer(payload.get(name), f"{label}_{name}_invalid")
         _require(payload.get("status") == "complete", f"{label}_status_incomplete")

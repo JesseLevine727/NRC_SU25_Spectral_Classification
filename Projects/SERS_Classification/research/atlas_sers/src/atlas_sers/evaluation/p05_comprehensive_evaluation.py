@@ -17,6 +17,7 @@ from atlas_sers.evaluation import p05_comprehensive_development as development
 from atlas_sers.evaluation import p05_comprehensive_freeze as freeze
 from atlas_sers.evaluation import p05_comprehensive_inputs as inputs
 from atlas_sers.evaluation import p05_core_run as core
+from atlas_sers.evaluation import p05_recovery_source as recovery_source
 
 __all__ = ["P05ComprehensiveEvaluationError", "run_evaluation"]
 
@@ -53,6 +54,13 @@ def _finite_seconds(value: Any) -> bool:
         and not isinstance(value, bool)
         and math.isfinite(float(value))
     )
+
+
+def _source_accounting(auth: Mapping[str, Any]) -> Mapping[str, Any]:
+    try:
+        return recovery_source.from_authenticated(auth)
+    except recovery_source.RecoverySourceError as error:
+        raise P05ComprehensiveEvaluationError("source_accounting_invalid") from error
 
 
 def _import_runtime() -> dict[str, Any]:
@@ -154,6 +162,7 @@ def run_evaluation(
     _require(dict(auth["refit_receipt"]) == dict(refit_receipt), "refit_receipt_changed")
     _require(type(auth["source_optimizer_steps"]) is int, "authority_source_steps_invalid")
     _require(type(auth["refit_optimizer_steps"]) is int, "authority_refit_steps_invalid")
+    source_accounting = _source_accounting(auth)
 
     _configure_cuda(torch, pilot, device)
     provenance_before = core._capture_provenance(
@@ -190,6 +199,8 @@ def run_evaluation(
         "source_optimizer_steps": auth["source_optimizer_steps"],
         "refit_optimizer_steps": auth["refit_optimizer_steps"],
     }
+    if source_accounting["mode"] == recovery_source.RECOVERY_ACCOUNTING_MODE:
+        identity["source_execution_accounting"] = dict(source_accounting)
     counters: dict[str, Any] = {
         "started": 0,
         "completed": 0,

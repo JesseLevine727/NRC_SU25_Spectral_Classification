@@ -96,9 +96,14 @@ def make_logit_loader(bundle: Any) -> Any:
     inputs = _module("atlas_sers.evaluation.p05_comprehensive_inputs")
     pilot = _module("atlas_sers.evaluation.p05_pilot")
     numpy = _module("numpy")
+    source = _module("atlas_sers.evaluation.p05_recovery_source")
     pilot_slot_ids = set(inputs.pilot_slot_ids(bundle))
     pilot_root = Path(inputs._pilot_run_dir(artifact_root))
-    develop_root = artifact_root / "p05comprehensive" / "runs" / permit_sha256 / "develop" / "units"
+    try:
+        develop = source.resolve_paths(bundle)["develop"]
+    except source.RecoverySourceError as error:
+        raise P05RefitEvidenceError("source_resolution_failed") from error
+    develop_root = Path(develop) / "units"
 
     def load_logits(slot: Any) -> Any:
         _require(isinstance(slot, Mapping), "slot_malformed")

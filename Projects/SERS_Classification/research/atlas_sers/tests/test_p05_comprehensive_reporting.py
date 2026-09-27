@@ -135,6 +135,7 @@ def _setup(mp, base):
     reporting_inputs = SimpleNamespace(
         PUBLIC_COST_KEYS=p05_reporting_inputs.PUBLIC_COST_KEYS,
         REQUIRED_PUBLIC_COST_KEYS=p05_reporting_inputs.REQUIRED_PUBLIC_COST_KEYS,
+        RECOVERY_PUBLIC_COST_KEYS=p05_reporting_inputs.RECOVERY_PUBLIC_COST_KEYS,
         load_reporting_sources=_load_sources,
         verify_reporting_sources=_verify_sources,
     )

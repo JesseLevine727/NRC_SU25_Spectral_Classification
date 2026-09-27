@@ -23,6 +23,7 @@ from atlas_sers.evaluation import p05_comprehensive_evaluation as evaluation
 from atlas_sers.evaluation import p05_comprehensive_freeze as freeze
 from atlas_sers.evaluation import p05_comprehensive_inputs as inputs
 from atlas_sers.evaluation import p05_core_run as core
+from atlas_sers.evaluation import p05_recovery_source as recovery_source
 
 __all__ = ["P05ComprehensiveAggregationError", "run_aggregation"]
 
@@ -85,6 +86,13 @@ def _finite_seconds(value: Any, code: str) -> float:
 def _integer(value: Any, code: str) -> int:
     _require(isinstance(value, int) and not isinstance(value, bool), code)
     return int(value)
+
+
+def _source_accounting(auth: Mapping[str, Any]) -> Mapping[str, Any]:
+    try:
+        return recovery_source.from_authenticated(auth)
+    except recovery_source.RecoverySourceError as error:
+        raise P05ComprehensiveAggregationError("source_accounting_invalid") from error
 
 
 def _import_runtime() -> dict[str, Any]:
@@ -246,6 +254,7 @@ def run_aggregation(
     _require(isinstance(predictions, Mapping), "authority_predictions_malformed")
     source_steps = _integer(auth.get("source_optimizer_steps"), "authority_source_steps_malformed")
     refit_steps = _integer(auth.get("refit_optimizer_steps"), "authority_refit_steps_malformed")
+    source_accounting = _source_accounting(auth)
     evaluation_receipt_sha256 = core._canon().sha256_file(receipt_path)
 
     full_contexts = outer_inputs.load_context_rows(bundle)
@@ -271,6 +280,8 @@ def run_aggregation(
         "context_count": context_count,
         "aggregation_complete": False,
     }
+    if source_accounting["mode"] == recovery_source.RECOVERY_ACCOUNTING_MODE:
+        identity["source_execution_accounting"] = dict(source_accounting)
     counters: dict[str, Any] = {key: 0 for key in COUNTER_KEYS}
 
     stage = run_root / STAGE_NAME

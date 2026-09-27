@@ -80,7 +80,7 @@ def _bundle(root, slot_ids):
     slots = [{**unit, "slot_id": slot_id} for slot_id in slot_ids]
     return {
         "artifact_root": str(root),
-        "permit_sha256": "a" * 64,
+        "permit_sha256": "2251916421ca2e94aa5d6acc2883439e6ac29b6872a49461c150d21603f128d8",
         "ledger": {"units": [unit], "slots": slots},
     }
 
@@ -110,7 +110,7 @@ def test_logit_loader_uses_develop_base_with_unit(loader_env):
         loader_env
         / "p05comprehensive"
         / "runs"
-        / ("a" * 64)
+        / bundle["permit_sha256"]
         / "develop"
         / "units"
         / "u1"
