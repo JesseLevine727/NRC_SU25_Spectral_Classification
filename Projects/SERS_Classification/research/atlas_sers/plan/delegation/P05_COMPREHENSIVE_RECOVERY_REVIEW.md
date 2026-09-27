@@ -92,6 +92,12 @@ The immutable downstream snapshot passed the full package regression: **2,472 te
 
 ## Remaining recovery gates
 
+### Public-CI dependency correction
+
+The first downstream public-CI run failed during collection, before any test or scientific execution: three new recovery test modules imported PyTorch-dependent boundaries, but the workflow installed only the `dev` and `viz` extras. PyTorch is declared separately by the `deep` extra. Earlier CI runs skipped many neural test modules; the local full-suite environment already had PyTorch 2.11.0.
+
+An isolated import-blocker harness reproduced the same three `ModuleNotFoundError: torch` collection failures without changing any project file or installed package. Removing that one restriction collected all 29 affected tests successfully. DeepSeek then authored a CI-only correction: explicitly install PyTorch 2.11.0 from the official CPU-wheel index, include the declared `deep` extra, and assert the expected CPU build before testing. The workflow retains read-only permissions and the full `pytest` command, with one-thread CPU limits. No test skips were added and the frozen training environment was not modified. Independent YAML/order checks passed; a no-install resolver check for the CI platform selected `torch-2.11.0+cpu`. Successful public CI remains required before launch.
+
 1. Complete saved-model authentication by restoring source-validation predictions; seal the already byte-authenticated private inventory and plan without fitting. Re-authenticate inputs at the actual recovery boundary rather than trusting an earlier in-memory audit.
 2. Integrate the accepted copy helper into an additive recovered source stage below the original governed run root. Keep the original `develop` files unchanged; copy all needed completed evidence independently, with hash and storage accounting. Do not drop checkpoints or use links to evade accounting. A separately named recovery receipt and deterministic source resolver must distinguish the recovered source view from the original incomplete stage.
 3. Integrate the accepted one-shot replay lease with original unstarted-slot leases, host/CUDA/time/storage guards, immutable launch provenance and explicit successful-versus-interrupted attempt/update accounting. Reconstruct all 12 results before closing the partial unit's shared-prefix and sparse-equivalence checks.
