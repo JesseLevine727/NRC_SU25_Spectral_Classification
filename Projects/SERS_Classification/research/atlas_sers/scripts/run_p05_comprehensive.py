@@ -5,8 +5,9 @@
 metadata-only mode without importing torch.  ``develop`` lazily imports
 ``p05_comprehensive_development.run_development`` and executes ONLY the source
 stage, never the benchmark or outer evaluation.  ``status`` prints whitelisted
-aggregate progress counters. ``freeze-selection``, ``refits``, ``evaluate`` and ``aggregate``
-lazily import their reviewed stage modules and never chain into another stage.
+aggregate progress counters. ``freeze-selection``, ``refits``, ``evaluate``,
+``aggregate`` and ``compare`` lazily import their reviewed stage modules and
+never chain into another stage.
 Every command emits one canonical JSON object and exits non-zero on failure.
 """
 
@@ -184,6 +185,18 @@ def _aggregate(arguments: argparse.Namespace) -> dict[str, Any]:
     return {**dict(summary), "command": "aggregate"}
 
 
+def _compare(arguments: argparse.Namespace) -> dict[str, Any]:
+    """Run ONLY the reviewed comparison stage; no chaining or retries."""
+
+    summary = _module("atlas_sers.evaluation.p05_comprehensive_comparison").run_comparison(
+        project_root=arguments.project_root,
+        artifact_root=arguments.artifact_root,
+        contract_path=arguments.contract,
+        permit_path=arguments.permit,
+    )
+    return {**dict(summary), "command": "compare"}
+
+
 def _build_parser() -> _Parser:
     parser = _Parser(prog="run_p05_comprehensive")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -195,6 +208,7 @@ def _build_parser() -> _Parser:
         "refits",
         "evaluate",
         "aggregate",
+        "compare",
     ):
         subparser = subparsers.add_parser(name)
         subparser.add_argument("--project-root", required=True)
@@ -225,6 +239,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             report = _refits(arguments)
         elif command == "evaluate":
             report = _evaluate(arguments)
+        elif command == "compare":
+            report = _compare(arguments)
         else:
             report = _aggregate(arguments)
     except Exception as error:

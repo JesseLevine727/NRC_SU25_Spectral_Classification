@@ -231,6 +231,36 @@ def test_aggregate_forwards_kwargs_without_device(capsys):
     assert payload == {"status": "complete", "aggregated": 4, "command": "aggregate"}
 
 
+def test_compare_forwards_kwargs_without_device(capsys):
+    cli = _cli()
+    captured = {}
+    calls = []
+
+    class _Compare:
+        @staticmethod
+        def run_comparison(**kwargs):
+            captured.update(kwargs)
+            return {"status": "complete", "compared": 4}
+
+    def _module(name):
+        calls.append(name)
+        assert name == "atlas_sers.evaluation.p05_comprehensive_comparison", name
+        return _Compare
+
+    cli._module = _module
+    code, payload = _run(cli, ["compare", *_BASE], capsys)
+    assert code == 0
+    assert calls == ["atlas_sers.evaluation.p05_comprehensive_comparison"]
+    assert captured == {
+        "project_root": "/proj",
+        "artifact_root": "/art",
+        "contract_path": "/c",
+        "permit_path": "/p",
+    }
+    assert "device" not in captured
+    assert payload == {"status": "complete", "compared": 4, "command": "compare"}
+
+
 def test_new_command_failures_are_sanitized(capsys):
     class _Boom(Exception):
         def __init__(self):
@@ -264,6 +294,11 @@ def test_new_command_failures_are_sanitized(capsys):
             "atlas_sers.evaluation.p05_comprehensive_aggregation",
             "run_aggregation",
         ),
+        (
+            "compare",
+            "atlas_sers.evaluation.p05_comprehensive_comparison",
+            "run_comparison",
+        ),
     ):
         cli = _cli()
         stage = _make_stage(attribute)
@@ -291,6 +326,7 @@ def test_invalid_arguments_sanitized(capsys):
         ["freeze-selection", *_BASE, "--device", "cuda"],
         ["evaluate", *_BASE, "--device", "cpu"],
         ["aggregate", *_BASE, "--device", "cuda"],
+        ["compare", *_BASE, "--device", "cuda"],
     )
     for argv in cases:
         code, payload = _run(cli, argv, capsys)

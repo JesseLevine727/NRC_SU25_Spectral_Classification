@@ -252,6 +252,15 @@ limitation. See the [P04 results](results/p04_deep/P04_RESULTS.md),
 [completion audit](plan/P04_COMPLETION_AUDIT.md), and
 [interactive comparison](plan/figures/html/F48_deep_classical_comparison.html).
 
+**P05 execution update, 2026-09-26:** comprehensive source training is active
+under the [approved execution protocol](plan/P05_COMPREHENSIVE_EXECUTION.md).
+The 36 accepted pilot fits are reused; 14,904 additional source-validation fits
+must finish before all source-only decisions are frozen. Final refits,
+held-out evaluation and the gated classical/neural comparison follow only
+after their prerequisites pass. No new held-out performance result is available.
+The [completion-stage review](plan/delegation/P05_COMPLETION_STAGE_REVIEW.md)
+records the tested implementation and separates synthetic checks from results.
+
 P05 core design is locked; its numerical smoke and 36-fit source-validation pilot
 are complete and accepted for their bounded purposes.
 The new matched D0-M control shares the all-master sampler with
