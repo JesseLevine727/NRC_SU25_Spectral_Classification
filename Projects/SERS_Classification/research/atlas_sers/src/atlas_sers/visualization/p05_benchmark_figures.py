@@ -5,7 +5,7 @@ Builds one allowlisted semantic table from caller-supplied station-instrument
 domain aggregates and emits, per registered reference/aggregation pair, a
 three-panel paired scatter (CWA/Pills/Surfaces) as native pgfplots/TikZ source,
 a standalone offline Plotly HTML file, a vector PDF and a 300 dpi PNG through
-the unchanged P04 helpers. This module never reads scientific input files,
+the shared HTML writer and bounded P05 compiler. This module never reads scientific input files,
 fits or imputes; every point is an aggregate mean over common complete
 outer contexts, not an independent chemical sample.
 """
@@ -23,7 +23,8 @@ from plotly.subplots import make_subplots
 
 from atlas_sers.evaluation.p05_comparison import AGGREGATIONS, P05_MODELS, PAIRS
 from atlas_sers.governance.canonical import sha256_file
-from atlas_sers.visualization.p04_figures import _compile, _write_html
+from atlas_sers.visualization.p04_figures import _write_html
+from atlas_sers.visualization.p05_figure_runtime import _compile
 from atlas_sers.visualization.p05_smoke_figures import (
     _configure_deterministic_pdf,
     _guard_output_root,
@@ -523,7 +524,9 @@ def _manifest_files(root: Path) -> list[dict]:
     return files
 
 
-def generate_pair_figures(paired_domains: object, output_root: object) -> dict:
+def generate_pair_figures(
+    paired_domains: object, output_root: object, *, deadline: float | None = None
+) -> dict:
     frame = _build_semantic(paired_domains)
     specs = _figure_specs(frame)
     if not specs:
@@ -552,7 +555,10 @@ def generate_pair_figures(paired_domains: object, output_root: object) -> dict:
             description=_figure_title(spec) + " " + CAPTION_LINES[0],
         )
         tex_path.write_text(_tikz_source(rows, spec, digest), encoding="utf-8")
-        _compile(tex_path, pdf_path, png_path, log_path)
+        if deadline is None:
+            _compile(tex_path, pdf_path, png_path, log_path)
+        else:
+            _compile(tex_path, pdf_path, png_path, log_path, deadline=deadline)
         if digest not in tex_path.read_text(encoding="utf-8") or digest not in html_path.read_text(
             encoding="utf-8"
         ):

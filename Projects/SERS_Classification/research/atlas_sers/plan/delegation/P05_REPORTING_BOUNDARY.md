@@ -26,6 +26,8 @@ Both development and held-instrument results remain visible and separately label
 
 Every scientific figure has native TikZ, offline HTML and PDF/PNG previews with a shared semantic-data digest. Use black text, a conventional serif font, redundant colour/shape coding and readable support labels. Inspect compiled figures for clipped text, overlapping points, axis consistency and caption accuracy. HTML hover content must obey the same publication boundary as its static counterpart.
 
+Each P05 figure-compilation child process is limited to 120 seconds or the remaining cumulative execution time, whichever is smaller; compilation does not retry. Reporting rechecks stored tables, numeric costs, figure hashes and the exact public-file inventory before stage closure. Unexpected files, directories or symbolic links cannot enter an accepted public subtree. This subtree remains inside the private artifact root until publication review.
+
 The report must explain M01 as predictions on individual spectra and M06 as averaging model probabilities within each instrument, then equally across instruments for a physical sample. Neither endpoint averages the raw spectra before classification. Historical D0-ERM and the new matched D0-M control remain distinct.
 
 State descriptive differences with their denominators. Do not add outcome-selected confidence intervals, hypothesis tests, a new winning-model rule or a claim of definitive superiority. Formal uncertainty remains P11. These experiments test classification robustness under the fixed minimal preprocessing policy; they do not establish chemical–nuisance disentanglement or resolve the deferred preprocessing and substrate questions.

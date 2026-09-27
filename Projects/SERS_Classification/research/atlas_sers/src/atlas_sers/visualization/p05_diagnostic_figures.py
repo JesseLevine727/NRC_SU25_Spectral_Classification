@@ -45,7 +45,7 @@ from atlas_sers.evaluation.p05_selection import (
     SLOT_KINDS,
 )
 from atlas_sers.governance.canonical import sha256_file
-from atlas_sers.visualization.p04_figures import _compile, _write_html
+from atlas_sers.visualization.p04_figures import _write_html
 from atlas_sers.visualization.p05_benchmark_figures import (
     BenchmarkFigureError,
     _as_float,
@@ -55,6 +55,7 @@ from atlas_sers.visualization.p05_benchmark_figures import (
     _require_unit,
     _tex_literal,
 )
+from atlas_sers.visualization.p05_figure_runtime import _compile
 from atlas_sers.visualization.p05_smoke_figures import (
     _configure_deterministic_pdf,
     _guard_output_root,
@@ -1432,6 +1433,7 @@ def generate_diagnostic_figures(
     source_diagnostics: object,
     reliability: object,
     output_root: object,
+    deadline: float | None = None,
 ) -> dict:
     """Project authenticated aggregate tables and render all P05 diagnostic figures.
 
@@ -1472,7 +1474,10 @@ def generate_diagnostic_figures(
             description=spec["title"] + " " + _caption_lines(spec)[0],
         )
         tex_path.write_text(_tikz_figure(spec, points, digest), encoding="utf-8")
-        _compile(tex_path, pdf_path, png_path, log_path)
+        if deadline is None:
+            _compile(tex_path, pdf_path, png_path, log_path)
+        else:
+            _compile(tex_path, pdf_path, png_path, log_path, deadline=deadline)
         if digest not in tex_path.read_text(encoding="utf-8") or digest not in html_path.read_text(
             encoding="utf-8"
         ):
