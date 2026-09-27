@@ -27,7 +27,7 @@ from atlas_sers.evaluation import p05_refit_authority as refit_authority
 from atlas_sers.evaluation import p05_reporting_inputs as reporting
 
 PLAN_ID = "a" * 64
-PERMIT = "b" * 64
+PERMIT = "2251916421ca2e94aa5d6acc2883439e6ac29b6872a49461c150d21603f128d8"
 CONTRACT = "c" * 64
 CORE_PLAN = "d" * 64
 LEDGER_ID = "e" * 64

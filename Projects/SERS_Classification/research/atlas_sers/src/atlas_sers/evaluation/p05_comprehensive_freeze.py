@@ -26,6 +26,9 @@ from atlas_sers.evaluation import p05_comprehensive_development as development
 from atlas_sers.evaluation import p05_comprehensive_inputs as inputs
 from atlas_sers.evaluation import p05_core_run as core
 from atlas_sers.evaluation import p05_pilot as pilot
+from atlas_sers.evaluation import p05_recovery_acceptance as acceptance
+from atlas_sers.evaluation import p05_recovery_receipt as recovery_receipt
+from atlas_sers.evaluation import p05_recovery_source as source
 from atlas_sers.evaluation.p05_comprehensive_storage import (
     P05StorageError,
     StorageBudget,
@@ -59,6 +62,7 @@ UNIT_COUNT = development.UNIT_COUNT
 CONTEXT_COUNT = inputs.CONTEXT_COUNT
 STRATEGY_ALIAS_COUNT = MAXIMUM_STRATEGY_ALIAS_COUNT
 HEADROOM_BYTES = 8 * 1024 * 1024
+SOURCE_ACCOUNTING_KEY = "source_execution_accounting"
 SELECTION_ONLY_FLAGS = {
     "selection_only": True,
     "refit_authorized": False,
@@ -90,14 +94,10 @@ def _check_deadline(deadline: float) -> None:
 
 
 def _paths(bundle: Mapping[str, Any]) -> dict[str, Path]:
-    run_root = Path(bundle["artifact_root"]) / NAMESPACE / "runs" / str(bundle["permit_sha256"])
-    return {
-        "run_root": run_root,
-        "develop": run_root / DEVELOP_STAGE_NAME,
-        "receipt": run_root / RECEIPT_NAME,
-        "selection": run_root / SELECTION_STAGE_NAME,
-        "selection_receipt": run_root / SELECTION_RECEIPT_NAME,
-    }
+    try:
+        return source.resolve_paths(bundle)
+    except source.RecoverySourceError as error:
+        raise _err("source_paths_unresolved") from error
 
 
 def _identity_fields(bundle: Mapping[str, Any]) -> dict[str, Any]:
@@ -162,6 +162,12 @@ def _expected_new_units(bundle: Mapping[str, Any]) -> int:
 
 
 def _check_receipt(receipt: Mapping[str, Any], expected_units: int) -> None:
+    if source.is_recovered(receipt):
+        try:
+            recovery_receipt.validate_receipt(receipt, expected_units)
+        except Exception as error:
+            raise _err("receipt_recovery_invalid") from error
+        return
     if str(receipt.get("schema_version")) != development.SCHEMA_VERSION:
         raise _err("receipt_schema_mismatch")
     if str(receipt.get("stage")) != DEVELOP_STAGE_NAME:
@@ -183,6 +189,20 @@ def _check_receipt(receipt: Mapping[str, Any], expected_units: int) -> None:
 
 
 def _check_prior_bound(receipt: Mapping[str, Any]) -> float:
+    if source.is_recovered(receipt):
+        try:
+            validated = recovery_receipt.validate_receipt(receipt)
+        except Exception as error:
+            raise _err("receipt_recovery_invalid") from error
+        cumulative = validated["scientific_seconds_cumulative_bound"]
+        if isinstance(cumulative, bool) or not isinstance(cumulative, (int, float)):
+            raise _err("receipt_cumulative_seconds_malformed")
+        cumulative = float(cumulative)
+        if not math.isfinite(cumulative) or cumulative <= 0.0:
+            raise _err("receipt_cumulative_seconds_out_of_range")
+        if cumulative > MAXIMUM_TOTAL_SECONDS:
+            raise _err("receipt_cumulative_exceeds_total")
+        return cumulative
     this_stage = receipt.get("scientific_seconds_this_stage")
     cumulative = receipt.get("scientific_seconds_cumulative_bound")
     for value, code in (
@@ -208,6 +228,12 @@ def _check_prior_bound(receipt: Mapping[str, Any]) -> float:
 
 
 def _check_develop_summary(summary: Mapping[str, Any], expected_units: int) -> None:
+    if source.is_recovered(summary):
+        try:
+            recovery_receipt.validate_summary(summary, expected_units)
+        except Exception as error:
+            raise _err("develop_summary_recovery_invalid") from error
+        return
     if str(summary.get("status")) != "complete":
         raise _err("develop_not_complete")
     if str(summary.get("command")) != "run_development":
@@ -388,7 +414,7 @@ def _build_plan(bundle: Mapping[str, Any], records: Sequence[Mapping[str, Any]])
 
 
 def _base_payload(bundle: Mapping[str, Any]) -> dict[str, Any]:
-    return {
+    payload = {
         **_identity_fields(bundle),
         "schema_version": SCHEMA_VERSION,
         "protocol_version": PROTOCOL_VERSION,
@@ -404,6 +430,18 @@ def _base_payload(bundle: Mapping[str, Any]) -> dict[str, Any]:
         "claim": SELECTION_CLAIM,
         **SELECTION_ONLY_FLAGS,
     }
+    if SOURCE_ACCOUNTING_KEY in bundle:
+        accounting = bundle[SOURCE_ACCOUNTING_KEY]
+        if not isinstance(accounting, Mapping):
+            raise _err("source_accounting_malformed")
+        try:
+            payload[SOURCE_ACCOUNTING_KEY] = source.validate_accounting(
+                accounting,
+                source_optimizer_steps=accounting.get("source_optimizer_steps_successful_exact"),
+            )
+        except Exception as error:
+            raise _err("source_accounting_invalid") from error
+    return payload
 
 
 def _source_bindings(
@@ -510,6 +548,24 @@ def freeze_selection(
     prior = _check_prior_bound(develop_receipt)
     deadline = wall_start + (MAXIMUM_TOTAL_SECONDS - prior)
     _check_deadline(deadline)
+    recovered_receipt = source.is_recovered(develop_receipt)
+    recovered_summary = source.is_recovered(develop_summary)
+    if recovered_receipt != recovered_summary:
+        raise _err("source_flavor_mismatch")
+    if recovered_receipt:
+        try:
+            normalized = acceptance.authenticate_completed_source(
+                bundle,
+                paths=paths,
+                summary=develop_summary,
+                receipt_record=develop_receipt,
+                deadline=deadline,
+            )
+        except Exception as error:
+            raise _err("source_acceptance_failed") from error
+        if not isinstance(normalized, Mapping):
+            raise _err("source_accounting_malformed")
+        bundle = {**bundle, SOURCE_ACCOUNTING_KEY: dict(normalized)}
     stage = paths["selection"]
     _reject_preexisting(paths["selection_receipt"], "selection_receipt_exists")
     core._mkdir_exclusive(stage, "selection_stage_exists")

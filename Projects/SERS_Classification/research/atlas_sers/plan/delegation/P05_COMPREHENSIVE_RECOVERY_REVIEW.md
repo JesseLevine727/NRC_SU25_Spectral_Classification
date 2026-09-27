@@ -64,6 +64,18 @@ The separate recovered-receipt schema retains **14,905 source attempts, 14,904 s
 
 All **49 unit-runner tests and 112 receipt tests** pass. The immutable execution-helper snapshot passed the full package regression: **2,309 tests passed, four CUDA-dependent tests skipped, 832 warnings, 414.90 seconds**. The 606-file public-boundary audit and CI-scope lint passed. No real recovery directory, extra replay lease or fit was created. The outer runner and downstream recovered-source resolution/accounting remain unaccepted implementation work; this gate alone is not a launch approval.
 
+## Sixth implementation gate: recovered source stage and source-only selection
+
+DeepSeek authored the outer recovery runner, deterministic source resolver, completed-source acceptance proof and selection integration. The supervisor corrected interfaces, audited the file and lease boundaries, and added independent regressions. The runner authenticates original inputs at entry, processes the registered units in order, reconstructs selectors from accepted saved results and seals a separate recovered source stage. Original files are rehashed at closure. A nested-manifest inventory binds each completed unit, including manifests that the parent manifest does not itself cover. Failure leaves evidence and a failure marker; it cannot silently fall back to the interrupted original stage or retry consumed work.
+
+Selection now requires the recovered summary/receipt pair, exact original and new lease coverage, the anchored original evidence, complete unit coverage and the reconstructed recovery plan. It retains exact successful-fit update counts separately from the interrupted attempt's observed and charged bounds. Source-only selection bindings carry this explicit accounting. The finalization allowance is charged inside the existing cumulative time limit, not added to that limit. Legacy clean-run selection remains supported.
+
+Review corrected replay double-counting, invented helper arguments, incomplete file binding, treating every original file as a direct anchor entry, rejecting valid newly completed units, duplicate ledger entries and extra directories. Tests also cover failures during copying, closure and receipt creation, malformed recovered accounting, attempted fallback, and original-file preservation. The scaled synthetic outer-runner and acceptance tests use real temporary files, manifests and lease checks with mocked numerical workers and fixed-protocol seams; they do not constitute a real scientific recovery.
+
+All **105 new focused tests** pass. The first full regression had 2,399 passes and 15 setup errors because a legacy reporting fixture used an invented base-permit hash. The fixture was corrected to the approved hash without relaxing production validation; all 15 reporting tests then passed. The corrected immutable snapshot passed the full package regression: **2,414 tests passed, four CUDA-dependent tests skipped, 832 warnings, 418.97 seconds**. The 615-file public-boundary audit and CI-scope lint passed.
+
+No real recovery stage, replay lease, new training fit or selection decision was created by this gate. Downstream refit, reporting, publication and CLI integration remain separate unaccepted work and are excluded from this regression snapshot. Numerical file pins and the approved scientific settings remain unchanged.
+
 ## Remaining recovery gates
 
 1. Complete saved-model authentication by restoring source-validation predictions; seal the already byte-authenticated private inventory and plan without fitting. Re-authenticate inputs at the actual recovery boundary rather than trusting an earlier in-memory audit.

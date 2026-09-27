@@ -22,6 +22,8 @@ from atlas_sers.evaluation import p05_comprehensive_development as development
 from atlas_sers.evaluation import p05_comprehensive_freeze as freeze
 from atlas_sers.evaluation import p05_core_run as core
 from atlas_sers.evaluation import p05_pilot as pilot
+from atlas_sers.evaluation import p05_recovery_acceptance as acceptance
+from atlas_sers.evaluation import p05_recovery_source as source
 from atlas_sers.evaluation import p05_refit_plan as refit_plan
 
 __all__ = ["RefitAuthorityError", "authenticate_selection"]
@@ -84,6 +86,19 @@ def _check_base(bundle: Mapping[str, Any], record: Mapping[str, Any], code: str)
 
 
 def _check_source_optimizer_steps(summary: Mapping[str, Any], receipt: Mapping[str, Any]) -> int:
+    summary_recovered = source.is_recovered(summary)
+    receipt_recovered = source.is_recovered(receipt)
+    if summary_recovered != receipt_recovered:
+        raise _err("develop_recovery_flavor_mismatch")
+    if summary_recovered:
+        try:
+            accounting = source.accounting_from_recovered(summary, receipt)
+        except Exception as error:
+            raise _err("develop_recovery_pair_invalid") from error
+        steps = accounting.get("source_optimizer_steps_successful_exact")
+        if isinstance(steps, bool) or not isinstance(steps, int):
+            raise _err("develop_optimizer_steps_malformed")
+        return int(steps)
     steps = summary.get("optimizer_steps")
     if isinstance(steps, bool) or not isinstance(steps, int):
         raise _err("develop_optimizer_steps_malformed")
@@ -289,6 +304,26 @@ def authenticate_selection(bundle: Mapping[str, Any], *, deadline: float) -> dic
     freeze._check_develop_summary(develop_summary, expected_units)
     prior = freeze._check_prior_bound(development_receipt)
     source_optimizer_steps = _check_source_optimizer_steps(develop_summary, development_receipt)
+    recovered_receipt = source.is_recovered(development_receipt)
+    recovered_summary = source.is_recovered(develop_summary)
+    if recovered_receipt != recovered_summary:
+        raise _err("source_flavor_mismatch")
+    source_accounting: dict[str, Any] | None = None
+    if recovered_receipt:
+        try:
+            normalized = acceptance.authenticate_completed_source(
+                bundle,
+                paths=paths,
+                summary=develop_summary,
+                receipt_record=development_receipt,
+                deadline=deadline,
+            )
+        except Exception as error:
+            raise _err("source_acceptance_failed") from error
+        if not isinstance(normalized, Mapping):
+            raise _err("source_accounting_malformed")
+        source_accounting = dict(normalized)
+        bundle = {**bundle, "source_execution_accounting": dict(normalized)}
     stage = paths["selection"]
     selection_receipt = freeze._read_mapping(
         paths["selection_receipt"], "selection_receipt_missing"
@@ -323,10 +358,13 @@ def authenticate_selection(bundle: Mapping[str, Any], *, deadline: float) -> dic
     stored_plan = freeze._read_mapping(stage / SELECTION_PLAN_NAME, "selection_plan_missing")
     _check_plan(plan, stored_plan, receipt_plan_id, selection_summary)
     freeze._check_deadline(deadline)
-    return {
+    result = {
         "plan": plan,
         "prior_seconds": prior + receipt_seconds,
         "source_optimizer_steps": source_optimizer_steps,
         "development_receipt": development_receipt,
         "selection_receipt": selection_receipt,
     }
+    if source_accounting is not None:
+        result["source_execution_accounting"] = source_accounting
+    return result
