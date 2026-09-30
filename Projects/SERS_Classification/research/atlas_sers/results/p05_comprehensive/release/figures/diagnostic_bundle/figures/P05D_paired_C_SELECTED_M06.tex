@@ -1,0 +1,48 @@
+% P05 diagnostic figure paired_domains|C-SELECTED|M06; allowlisted public aggregate points.
+% Each point is an aggregate mean or bin over repeated contexts, not an independent sample.
+% data_sha256=7f60e425b5fe235c362c21442c3237e1521aad33df8bebdebfd5854e0cfadd4b
+\documentclass[tikz,border=5pt]{standalone}
+\ifdefined\pdfinfoomitdate\pdfinfoomitdate=1\fi
+\ifdefined\pdfsuppressptexinfo\pdfsuppressptexinfo=-1\fi
+\ifdefined\pdftrailerid\pdftrailerid{}\fi
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\definecolor{p05Blue}{HTML}{0072B2}
+\definecolor{p05Orange}{HTML}{E69F00}
+\definecolor{p05Green}{HTML}{009E73}
+\definecolor{p05Purple}{HTML}{CC79A7}
+\definecolor{p05Red}{HTML}{D55E00}
+\definecolor{p05Sky}{HTML}{56B4E9}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=3 by 1, horizontal sep=1.0cm, vertical sep=1.8cm},
+  width=4.8cm, height=4.8cm, scale only axis,
+  xmin=-1, xmax=1, ymin=0, ymax=1,
+  xtick={-1,-0.5,0,0.5,1}, ytick={0,0.5,1},
+  tick label style={font=\fontsize{8}{10}\selectfont, color=black},
+  label style={font=\fontsize{8}{10}\selectfont, color=black},
+  title style={font=\fontsize{8}{10}\selectfont\bfseries, color=black},
+]
+\nextgroupplot[title={(A) CWA}, xlabel={delta balanced accuracy (new - reference)}, ylabel={reference balanced accuracy}]
+\addplot[black, dotted, line width=0.8pt] coordinates {(0,0) (0,1)};
+\addplot[only marks, mark=*, mark size=1.6pt, color=p05Blue, mark options={fill=p05Blue, draw=p05Blue}] coordinates {(-0.17500000000000002,0.69999999999999996) (-0.039473684210526321,0.69736842105263153) (0.0087719298245613961,0.56140350877192979)};
+\addplot[only marks, mark=square, mark size=2.3pt, color=p05Orange, mark options={fill=none, draw=p05Orange}] coordinates {(-0.15833333333333335,0.69999999999999996) (-0.048245614035087724,0.69736842105263153) (0.0087719298245613961,0.56140350877192979)};
+\addplot[only marks, mark=triangle, mark size=2.3pt, color=p05Purple, mark options={fill=none, draw=p05Purple}] coordinates {(-0.14999999999999999,0.69999999999999996) (-0.07456140350877194,0.69736842105263153) (0.023391812865497071,0.56140350877192979)};
+\nextgroupplot[title={(B) Pills}, xlabel={delta balanced accuracy (new - reference)}]
+\addplot[black, dotted, line width=0.8pt] coordinates {(0,0) (0,1)};
+\addplot[only marks, mark=*, mark size=1.6pt, color=p05Blue, mark options={fill=p05Blue, draw=p05Blue}] coordinates {(-0.020833333333333343,0.91666666666666663) (0.01666666666666667,0.36666666666666659) (0.049999999999999996,0.91666666666666674) (0.099999999999999978,0.86666666666666681) (0.125,0.86666666666666681)};
+\addplot[only marks, mark=square, mark size=2.3pt, color=p05Orange, mark options={fill=none, draw=p05Orange}] coordinates {(-0.020833333333333343,0.91666666666666663) (0.01666666666666667,0.36666666666666659) (0.049999999999999996,0.91666666666666674) (0.099999999999999978,0.86666666666666681) (0.125,0.86666666666666681)};
+\addplot[only marks, mark=triangle, mark size=2.3pt, color=p05Purple, mark options={fill=none, draw=p05Purple}] coordinates {(0.016666666666666656,0.91666666666666663) (0.037499999999999999,0.36666666666666659) (0.049999999999999996,0.91666666666666674) (0.125,0.86666666666666681) (0.13333333333333333,0.86666666666666681)};
+\nextgroupplot[title={(C) Surfaces}, xlabel={delta balanced accuracy (new - reference)}]
+\addplot[black, dotted, line width=0.8pt] coordinates {(0,0) (0,1)};
+\addplot[only marks, mark=*, mark size=1.6pt, color=p05Blue, mark options={fill=p05Blue, draw=p05Blue}] coordinates {(-0.033950617283950608,0.52469135802469136) (0.01111111111111111,0.77500000000000002) (0.080246913580246923,0.7885802469135802) (0.14506172839506173,0.78703703703703687) (0.19583333333333333,0.48611111111111105)};
+\addplot[only marks, mark=square, mark size=2.3pt, color=p05Orange, mark options={fill=none, draw=p05Orange}] coordinates {(-0.033950617283950608,0.52469135802469136) (0,0.77500000000000002) (0.074074074074074084,0.7885802469135802) (0.16358024691358025,0.78703703703703687) (0.19305555555555556,0.48611111111111105)};
+\addplot[only marks, mark=triangle, mark size=2.3pt, color=p05Purple, mark options={fill=none, draw=p05Purple}] coordinates {(-0.027777777777777773,0.52469135802469136) (0.03888888888888889,0.77500000000000002) (0.055555555555555552,0.7885802469135802) (0.14197530864197533,0.78703703703703687) (0.28749999999999998,0.48611111111111105)};
+\end{groupplot}
+\node[anchor=south, font=\fontsize{8}{10}\selectfont\bfseries, color=black, align=center, text width=16.6cm] at (current bounding box.north) {Paired balanced accuracy: new strategies vs C-SELECTED (M06)};
+\node[anchor=north, font=\fontsize{8}{10}\selectfont, color=black, align=left, text width=16.6cm] (p05legend) at ([yshift=-2mm]current bounding box.south) {\tikz[baseline=-0.6ex]\fill[p05Blue](0,0)circle(1.4pt);\ Matched CNN (D0-M)\quad \tikz[baseline=-0.6ex]\draw[p05Orange](0,0)rectangle(2.8pt,2.8pt);\ Source-selected CNN\quad \tikz[baseline=-0.6ex]\draw[p05Purple](0,0)--(1.6pt,2.8pt)--(3.2pt,0)--cycle;\ Combined-loss CNN (D3)};
+\node[anchor=north, font=\fontsize{8}{10}\selectfont, color=black, align=left, text width=16.6cm] at ([yshift=-1mm]p05legend.south) {Each point is a station-instrument domain mean balanced accuracy over common complete outer contexts.\\Domains without a common complete outer context contribute no plotted point; missing values are not zero and are never imputed.\\The vertical dotted line marks zero change; repeated outer splits are not independent chemical samples.\\M01 scores individual spectra after three-seed probability averaging.\\M06 averages probabilities within each instrument, then equally across instruments for a sample; raw spectra are not averaged.};
+\end{tikzpicture}
+\end{document}

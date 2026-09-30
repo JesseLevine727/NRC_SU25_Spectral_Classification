@@ -64,8 +64,9 @@ nested source-only selection and finite budgets. The [numerical smoke passed](re
 verified. The [core review](plan/delegation/P05_CORE_REVIEW.md) records 523 passing
 local tests and independent acceptance checks. The [failure/recovery record](plan/P05_SMOKE_STATUS.md)
 preserves the original checkpoint-saving failure and the owner-approved recovery:
-35 total executions including that failed-save attempt. Full development and outer
-evaluation remain gated; these are training diagnostics, not a generalization result.
+35 total executions including that failed-save attempt. These historical smoke
+diagnostics are not generalization results; the completed comprehensive benchmark
+is linked below.
 View the [actual loss curves](results/p05_smoke/figures/P05S01_training_ce.html)
 and [gradient curves](results/p05_smoke/figures/P05S02_gradient_norm.html)
 (offline HTML; native TikZ, PDF and PNG are alongside).
@@ -75,9 +76,19 @@ station-dependent results, including three single-class CWA checkpoints.
 Start with its [training–validation scatter](results/p05_pilot/figures/P05P02_best_checkpoints.html)
 and [learning curves](results/p05_pilot/figures/P05P01_learning_curves.html).
 The [development review](plan/delegation/P05_DEVELOPMENT_REVIEW.md) records
-718 passing local pre-launch tests and independent acceptance. No G3 selection
-or outer evaluation has run; the 36-fit permit is exhausted. Wider development
-needs a separate scope/resource decision and must reuse these 36 original slots.
+718 passing local pre-launch tests and independent acceptance. The 36-fit pilot
+permit is exhausted; its original fits were subsequently reused in the separately
+approved comprehensive benchmark.
+
+The **[completed four-recipe core benchmark](results/p05_comprehensive/P05_RESULTS.md)**
+now includes 14,940 source-evidence fits, 320 frozen context-local decisions,
+1,995 distinct final refits/calibrations and complete held evaluation.
+The [35-figure browser](results/p05_comprehensive/index.html) includes native
+TikZ, offline HTML and PDF/PNG versions. Fixed D3 gained 1.68 percentage points
+over the matched CNN on individual spectra, but gains varied across domains;
+the source-selected procedure gained only 0.17 points. Classical tree ensembles
+remain strong comparators. See the [completion audit](plan/P05_COMPLETION_AUDIT.md)
+for coverage, recovery accounting and the remaining P06/P11 boundary.
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 
@@ -252,19 +263,20 @@ limitation. See the [P04 results](results/p04_deep/P04_RESULTS.md),
 [completion audit](plan/P04_COMPLETION_AUDIT.md), and
 [interactive comparison](plan/figures/html/F48_deep_classical_comparison.html).
 
-**P05 execution update, 2026-09-26:** comprehensive source training is active
-under the [approved execution protocol](plan/P05_COMPREHENSIVE_EXECUTION.md).
-The 36 accepted pilot fits are reused; 14,904 additional source-validation fits
-must finish before all source-only decisions are frozen. Final refits,
-held-out evaluation and the gated classical/neural comparison follow only
-after their prerequisites pass. No new held-out performance result is available.
-The [completion-stage review](plan/delegation/P05_COMPLETION_STAGE_REVIEW.md)
-records the tested implementation and separates synthetic checks from results.
+**P05 scientific completion, 2026-09-29:** the approved four-recipe core benchmark
+completed source training, nested selection, refits, calibration, held prediction,
+aggregation, frozen-reference comparison and reporting. Independent publication
+authentication passed for 159 public files, including 35 four-format figures.
+All three new strategies cover all 260 held contexts; eight historical selected-
+classical references remain incomplete/missing and are explicitly retained.
+The [results](results/p05_comprehensive/P05_RESULTS.md) are descriptive, not final
+P11 inference or completion of the wider P06 programme.
 
-P05 core design is locked; its numerical smoke and 36-fit source-validation pilot
-are complete and accepted for their bounded purposes.
-The new matched D0-M control shares the all-master sampler with
-D1–D3; historical P04 D0 remains immutable. No P05 generalization result exists.
+The matched D0-M control shares the all-master sampler with D1–D3; historical
+P04 D0 remains immutable. Fixed D3 has a small average gain over D0-M, but the
+source-selected procedure changes little and no universal deep superiority is
+established. Remaining synthesis/uncertainty must preserve these frozen outcomes;
+P08 preprocessing and P14 prototype experiments require separate bounded scope.
 D4/D5 are deferred with zero allocated fits. The P04 reuse of P13 held test views is
 descriptive only: a controlled P13 deep comparison still needs exact
 substrate-restricted source refits, matched-source loss, and preprocessing

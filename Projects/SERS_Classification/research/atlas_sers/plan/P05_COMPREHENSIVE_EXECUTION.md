@@ -1,5 +1,9 @@
 # Comprehensive four-recipe benchmark
 
+## Scientific closure — 2026-09-29
+
+The approved core execution is complete through independently authenticated reporting: 14,940 successful source-evidence fits, 320 frozen decisions, 1,995 distinct refits/calibrations, complete new held predictions, aggregation and historical comparison. The [completion audit](P05_COMPLETION_AUDIT.md) and [results](../results/p05_comprehensive/P05_RESULTS.md) record actual counts, coverage, costs and descriptive limits. The separate [recovery amendment](P05_COMPREHENSIVE_RECOVERY.md) governed one exact replay and raised the outer CUDA ceiling to 8 GiB while retaining the frozen 4-GiB inner guard. The original authority and numerical specification below remain unchanged. Do not restart completed stages or interpret this closure as authorization for P08, P14, D4/D5, adaptation or definitive P11 inference.
+
 ## Authority and unchanged science
 
 On 2026-09-26 the owner approved the comprehensive D0-M/D1/D2/D3 benchmark, including source-only selection and final held-out evaluation, within 48 hours total scientific execution, 100 GiB private artifacts and 4 GiB allocated CUDA. The [separate permit](contracts/p05_comprehensive.json) supplies this authority. The earlier smoke, recovery and pilot contracts remain unchanged and exhausted. Their false authorization flags describe their original scope, not this new permission.

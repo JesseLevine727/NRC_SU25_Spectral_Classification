@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NATO field-trial SERS: CNN benchmark figures</title>
+<style>
+  html { background:#fff; }
+  body {
+    background:#fff; color:#000;
+    font-family:"Times New Roman", Times, Georgia, serif;
+    margin:0 auto; max-width:62rem; padding:1.5rem 1.2rem 3rem;
+    line-height:1.45;
+  }
+  h1, h2, h3 { font-family:inherit; color:#000; }
+  h1 { font-size:1.7rem; margin:0 0 .5rem; padding-bottom:.45rem; border-bottom:2px solid #000; }
+  h2 { font-size:1.3rem; margin:2.4rem 0 .5rem; padding-bottom:.25rem; border-bottom:1px solid #000; }
+  h3 { font-size:1.05rem; margin:1.5rem 0 .3rem; }
+  p { margin:.5rem 0; }
+  a { color:#000; text-decoration:underline; }
+  a:visited { color:#000; }
+  a:hover, a:focus { background:#000; color:#fff; text-decoration:none; }
+  ul { margin:.4rem 0 .6rem 1.3rem; padding:0; }
+  li { margin:.22rem 0; }
+  code { font-family:"Courier New", Courier, monospace; font-size:.9rem; }
+  .small { font-size:.92rem; }
+  .note { border:1px solid #000; padding:.6rem .9rem 1rem; margin:1.4rem 0; }
+  .note h2 { margin-top:.4rem; border-bottom:1px solid #000; }
+  .links { margin:.15rem 0 .55rem; }
+  .links a { margin-right:.9rem; }
+  .fig { margin:0; padding:.2rem 0; }
+  .lbl { font-weight:bold; }
+  footer { margin-top:2.6rem; padding-top:.6rem; border-top:1px solid #000; }
+</style>
+</head>
+<body>
+
+<h1>NATO field-trial SERS: CNN benchmark figures</h1>
+<p class="small">
+Offline navigation index for the accepted P05 scientific bundle. 35 figures, each available as
+offline HTML, vector PDF, PNG and native TikZ (<code>.tex</code>). Black serif text; no remote
+dependencies; no scripts required. The data are unchanged from the accepted release.
+</p>
+<p class="small">
+Main report: <a href="P05_RESULTS.md"><code>P05_RESULTS.md</code></a> &middot;
+Release manifest: <a href="release_manifest.json"><code>release_manifest.json</code></a> &middot;
+Tables: <a href="release/tables/"><code>release/tables/</code></a> &middot;
+This page: <a href="index.html"><code>index.html</code></a>
+</p>
+
+<div class="note">
+<h2>How to read these figures</h2>
+<ul>
+  <li><b>Paired performance plots</b> (scatter dot) show station&ndash;instrument domain means over
+      common complete contexts; a point <b>above the equality line</b> means the new CNN is better.</li>
+  <li><b>Paired delta plots</b> use x = new &minus; reference (positive = better) and y = reference
+      balanced accuracy (BA).</li>
+  <li>Points in the paired plots average common complete contexts within each domain; they are <b>not independent
+      samples</b> and carry no confidence intervals or significance tests.</li>
+  <li><b>D0-M</b> is the matched control; <b>D0-ERM</b> is the historical CNN; <b>C_SELECTED</b> is
+      the source-selected classical procedure (8 references missing, 252/260 complete; all other
+      references are 260/260 complete).</li>
+  <li><b>M01</b> = individual spectra; <b>M06</b> = combined model probabilities per physical
+      sample (not averaged raw spectra).</li>
+  <li>In <b>source-versus-outer</b> plots each dot is a context/strategy, not a physical sample; the
+      source was used in selection and is a different estimator from the outer ensemble, so the
+      difference is <b>not</b> an unbiased transfer gap.</li>
+  <li><b>Best-epoch</b> points are the fraction of source fits choosing each best checkpoint, not
+      terminal training epochs or loss curves.</li>
+  <li><b>Reliability</b> bins are repeated context&ndash;spectrum/master appearances, not independent
+      samples; pooled ECE differs from the mean per-context ECE.</li>
+  <li>An <b>empty source-selection panel</b> means support was unavailable, not a failed measurement.</li>
+</ul>
+</div>
+
+<h2>Start with these five views</h2>
+<ol>
+  <li><a href="release/figures/paired_bundle/figures/P05B_D0_M_M01.html">Added losses versus matched CNN, individual spectra</a>.</li>
+  <li><a href="release/figures/paired_bundle/figures/P05B_C_RANDOM_FOREST_M01.html">CNN versus Random Forest, individual spectra</a>.</li>
+  <li><a href="release/figures/paired_bundle/figures/P05B_C_RANDOM_FOREST_M06.html">CNN versus Random Forest, combined predictions per sample</a>.</li>
+  <li><a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_held_evaluation_M01.html">Source validation versus held-instrument evaluation</a>.</li>
+  <li><a href="release/figures/diagnostic_bundle/figures/P05D_reliability_held_evaluation_M01.html">Confidence versus observed correctness</a>.</li>
+</ol>
+<p>GitHub may display HTML source instead of an interactive plot. Download this directory with
+<code>release/</code> alongside this page and open it locally. PDF and PNG links below also provide
+static previews. The figure HTML files are self-contained and work offline.</p>
+
+<section>
+<h2>1. Paired performance versus reference (12)</h2>
+<p class="small">Scatter dots: station&ndash;instrument domain mean over common complete contexts;
+above the equality line = new CNN better.</p>
+
+<h3>M01 &mdash; individual spectra</h3>
+
+<figure class="fig">
+  <span class="lbl">Extra Trees (classical) &mdash; M01 individual spectra</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_C_EXTRA_TREES_M01.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_EXTRA_TREES_M01.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_EXTRA_TREES_M01.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_EXTRA_TREES_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Random Forest (classical) &mdash; M01 individual spectra</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_C_RANDOM_FOREST_M01.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RANDOM_FOREST_M01.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RANDOM_FOREST_M01.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RANDOM_FOREST_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">RBF SVM (classical) &mdash; M01 individual spectra</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_C_RBF_SVM_M01.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RBF_SVM_M01.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RBF_SVM_M01.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RBF_SVM_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Source-selected classical procedure &mdash; M01 individual spectra</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_C_SELECTED_M01.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_SELECTED_M01.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_SELECTED_M01.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_SELECTED_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">D0-ERM historical CNN &mdash; M01 individual spectra</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_D0_ERM_M01.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_ERM_M01.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_ERM_M01.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_ERM_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">D0-M matched-control CNN &mdash; M01 individual spectra</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_D0_M_M01.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_M_M01.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_M_M01.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_M_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<h3>M06 &mdash; combined model probabilities per physical sample</h3>
+
+<figure class="fig">
+  <span class="lbl">Extra Trees (classical) &mdash; M06 combined probabilities per physical sample</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_C_EXTRA_TREES_M06.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_EXTRA_TREES_M06.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_EXTRA_TREES_M06.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_EXTRA_TREES_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Random Forest (classical) &mdash; M06 combined probabilities per physical sample</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_C_RANDOM_FOREST_M06.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RANDOM_FOREST_M06.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RANDOM_FOREST_M06.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RANDOM_FOREST_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">RBF SVM (classical) &mdash; M06 combined probabilities per physical sample</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_C_RBF_SVM_M06.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RBF_SVM_M06.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RBF_SVM_M06.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_RBF_SVM_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Source-selected classical procedure &mdash; M06 combined probabilities per physical sample</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_C_SELECTED_M06.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_SELECTED_M06.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_SELECTED_M06.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_C_SELECTED_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">D0-ERM historical CNN &mdash; M06 combined probabilities per physical sample</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_D0_ERM_M06.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_ERM_M06.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_ERM_M06.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_ERM_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">D0-M matched-control CNN &mdash; M06 combined probabilities per physical sample</span>
+  <div class="links">
+    <a href="release/figures/paired_bundle/figures/P05B_D0_M_M06.html">HTML</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_M_M06.pdf">PDF</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_M_M06.png">PNG</a>
+    <a href="release/figures/paired_bundle/figures/P05B_D0_M_M06.tex">TikZ</a>
+  </div>
+</figure>
+</section>
+
+<section>
+<h2>2. Paired deltas versus reference (12)</h2>
+<p class="small">x = new &minus; reference (positive = better); y = reference BA. Domain means, not
+independent samples.</p>
+
+<h3>M01 &mdash; individual spectra</h3>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus Extra Trees (classical) &mdash; M01</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_EXTRA_TREES_M01.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_EXTRA_TREES_M01.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_EXTRA_TREES_M01.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_EXTRA_TREES_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus Random Forest (classical) &mdash; M01</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RANDOM_FOREST_M01.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RANDOM_FOREST_M01.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RANDOM_FOREST_M01.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RANDOM_FOREST_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus RBF SVM (classical) &mdash; M01</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RBF_SVM_M01.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RBF_SVM_M01.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RBF_SVM_M01.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RBF_SVM_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus source-selected classical procedure &mdash; M01</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_SELECTED_M01.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_SELECTED_M01.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_SELECTED_M01.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_SELECTED_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus D0-ERM historical CNN &mdash; M01</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_ERM_M01.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_ERM_M01.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_ERM_M01.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_ERM_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus D0-M matched control &mdash; M01</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_M_M01.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_M_M01.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_M_M01.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_M_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<h3>M06 &mdash; combined model probabilities per physical sample</h3>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus Extra Trees (classical) &mdash; M06</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_EXTRA_TREES_M06.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_EXTRA_TREES_M06.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_EXTRA_TREES_M06.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_EXTRA_TREES_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus Random Forest (classical) &mdash; M06</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RANDOM_FOREST_M06.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RANDOM_FOREST_M06.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RANDOM_FOREST_M06.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RANDOM_FOREST_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus RBF SVM (classical) &mdash; M06</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RBF_SVM_M06.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RBF_SVM_M06.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RBF_SVM_M06.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_RBF_SVM_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus source-selected classical procedure &mdash; M06</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_SELECTED_M06.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_SELECTED_M06.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_SELECTED_M06.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_C_SELECTED_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus D0-ERM historical CNN &mdash; M06</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_ERM_M06.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_ERM_M06.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_ERM_M06.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_ERM_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">New CNN minus D0-M matched control &mdash; M06</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_M_M06.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_M_M06.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_M_M06.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_paired_D0_M_M06.tex">TikZ</a>
+  </div>
+</figure>
+</section>
+
+<section>
+<h2>3. Source validation versus outer evaluation (4)</h2>
+<p class="small">Each dot is a context/strategy, not a physical sample. The source was used in
+selection and is a different estimator from the outer ensemble, so the difference is not an
+unbiased transfer gap.</p>
+
+<figure class="fig">
+  <span class="lbl">Source vs outer held-out &mdash; development, M01</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_development_M01.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_development_M01.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_development_M01.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_development_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Source vs outer held-out &mdash; development, M06</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_development_M06.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_development_M06.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_development_M06.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_development_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Source vs outer held-out &mdash; held evaluation, M01</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_held_evaluation_M01.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_held_evaluation_M01.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_held_evaluation_M01.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_held_evaluation_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Source vs outer held-out &mdash; held evaluation, M06</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_held_evaluation_M06.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_held_evaluation_M06.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_held_evaluation_M06.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_source_vs_held_held_evaluation_M06.tex">TikZ</a>
+  </div>
+</figure>
+</section>
+
+<section>
+<h2>4. Best-epoch selection (3)</h2>
+<p class="small">Fraction of source fits choosing each best checkpoint; not terminal training epochs
+or loss curves.</p>
+
+<figure class="fig">
+  <span class="lbl">Best-epoch selection &mdash; development, inherited selection fit</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_development_inherited_selection_fit.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_development_inherited_selection_fit.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_development_inherited_selection_fit.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_development_inherited_selection_fit.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Best-epoch selection &mdash; held evaluation, guard selection fit</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_held_evaluation_guard_selection_fit.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_held_evaluation_guard_selection_fit.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_held_evaluation_guard_selection_fit.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_held_evaluation_guard_selection_fit.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Best-epoch selection &mdash; held evaluation, inherited selection fit</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_held_evaluation_inherited_selection_fit.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_held_evaluation_inherited_selection_fit.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_held_evaluation_inherited_selection_fit.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_best_epoch_held_evaluation_inherited_selection_fit.tex">TikZ</a>
+  </div>
+</figure>
+</section>
+
+<section>
+<h2>5. Reliability / calibration (4)</h2>
+<p class="small">Bins are repeated context&ndash;spectrum/master appearances, not independent samples;
+pooled ECE differs from the mean per-context ECE.</p>
+
+<figure class="fig">
+  <span class="lbl">Reliability &mdash; development, M01</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_development_M01.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_development_M01.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_development_M01.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_development_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Reliability &mdash; development, M06</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_development_M06.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_development_M06.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_development_M06.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_development_M06.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Reliability &mdash; held evaluation, M01</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_held_evaluation_M01.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_held_evaluation_M01.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_held_evaluation_M01.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_held_evaluation_M01.tex">TikZ</a>
+  </div>
+</figure>
+
+<figure class="fig">
+  <span class="lbl">Reliability &mdash; held evaluation, M06</span>
+  <div class="links">
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_held_evaluation_M06.html">HTML</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_held_evaluation_M06.pdf">PDF</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_held_evaluation_M06.png">PNG</a>
+    <a href="release/figures/diagnostic_bundle/figures/P05D_reliability_held_evaluation_M06.tex">TikZ</a>
+  </div>
+</figure>
+</section>
+
+<footer>
+<p class="small">
+35 figures: 12 paired performance + 12 paired deltas + 4 source-versus-outer + 3 best-epoch +
+4 reliability. Every figure has native TikZ, offline HTML, vector PDF and PNG; black serif text;
+data unchanged. All paths are relative. See <a href="P05_RESULTS.md"><code>P05_RESULTS.md</code></a>
+for interpretation and the key findings; see
+<a href="release_manifest.json"><code>release_manifest.json</code></a> and
+<a href="release/tables/"><code>release/tables/</code></a> for provenance and tabulated results.
+</p>
+</footer>
+
+</body>
+</html>

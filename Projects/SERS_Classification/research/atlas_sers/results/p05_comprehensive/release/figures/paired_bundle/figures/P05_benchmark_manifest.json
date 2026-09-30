@@ -1,0 +1,432 @@
+{
+  "data_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+  "figures": [
+    {
+      "aggregation_id": "M01",
+      "common_model_context_contributions": 756,
+      "figure_id": "P05B-C-SELECTED-M01",
+      "html_sha256": "cc9c10a336f4b071c699db7627b1b6a45b38236ba76f64ca83760179ac14239c",
+      "pdf_sha256": "2a5246ae495212ab229cf35c252417a07aeab0332a474af110ab71c7843d7a26",
+      "planned_model_context_contributions": 780,
+      "plotted_rows": 39,
+      "png_sha256": "6c76b3b76c26719c28d5282b39e318eac2cc824b634b0f5cc8af7538070b0f53",
+      "reference_model_id": "C-SELECTED",
+      "semantic_rows": 39,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 9,
+        "pills": 15,
+        "surfaces": 15
+      },
+      "tex_sha256": "ac1534c13f22f9fe985a655439dd335095c72838ea3c1dead1a7d17f039b6dc6"
+    },
+    {
+      "aggregation_id": "M06",
+      "common_model_context_contributions": 756,
+      "figure_id": "P05B-C-SELECTED-M06",
+      "html_sha256": "3761d12c143373d5fb9e291e9e770c51d2588ef14e2ccec7b98f198151e9a9fb",
+      "pdf_sha256": "3a16fb2db34f2ce1a20e750ef305515650d7d604dc05814ac299feae078b8c50",
+      "planned_model_context_contributions": 780,
+      "plotted_rows": 39,
+      "png_sha256": "7ff0e1f2aed4fde8c4bdc9540b8f1f3cc07e22217c33456e2daa5322be0ed6c1",
+      "reference_model_id": "C-SELECTED",
+      "semantic_rows": 39,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 9,
+        "pills": 15,
+        "surfaces": 15
+      },
+      "tex_sha256": "4c4247c56d9d4e9025f20ce947f19c337dae90aca7b3fa891d0c7552da5d29d7"
+    },
+    {
+      "aggregation_id": "M01",
+      "common_model_context_contributions": 780,
+      "figure_id": "P05B-C-RBF-SVM-M01",
+      "html_sha256": "ccc7979de6d182bfc6afeeb7139e22841c31323c99f5ed0b339f50d6c0475cf6",
+      "pdf_sha256": "70f880ddafe6eac1f04daf857b29876823c18d68641ec9536b8a636c244eaa8a",
+      "planned_model_context_contributions": 780,
+      "plotted_rows": 39,
+      "png_sha256": "6f9f7a79d69596bff672125e5d1a4451e287262732031f1f40847ec134f50680",
+      "reference_model_id": "C-RBF-SVM",
+      "semantic_rows": 39,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 9,
+        "pills": 15,
+        "surfaces": 15
+      },
+      "tex_sha256": "f3ac3b2cdd55b15010b48c28063123866a2e8456e3ee40799737e97a72874ab5"
+    },
+    {
+      "aggregation_id": "M06",
+      "common_model_context_contributions": 780,
+      "figure_id": "P05B-C-RBF-SVM-M06",
+      "html_sha256": "cdaf1f258bc07988765bff44393b4769f83cb7e1aad35926f6dfbf148a2eb76b",
+      "pdf_sha256": "7eb35dbceb23f67e0d69748f302ee1c6324b957f6151a860894b46373ded86b8",
+      "planned_model_context_contributions": 780,
+      "plotted_rows": 39,
+      "png_sha256": "761e3dfe3e30e98131395b3fe9f82a796262943c6f73a8f19a2983240759372d",
+      "reference_model_id": "C-RBF-SVM",
+      "semantic_rows": 39,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 9,
+        "pills": 15,
+        "surfaces": 15
+      },
+      "tex_sha256": "78e573202765524db413eefa636cdf679b5d08399200d141a41c640b69bc9de5"
+    },
+    {
+      "aggregation_id": "M01",
+      "common_model_context_contributions": 780,
+      "figure_id": "P05B-C-RANDOM-FOREST-M01",
+      "html_sha256": "cadbf80ed38daaf4e01d452591f2c77b909568edd574a318ac909e63a5d808ac",
+      "pdf_sha256": "292e8a1be6b9824ce0cce0d663f77330e0c1271c9ea3bee321fd7ec302807785",
+      "planned_model_context_contributions": 780,
+      "plotted_rows": 39,
+      "png_sha256": "1b4f9012f22513dd01ac89a7e8404e42515b857707c40f954e3c41ff21fbd84b",
+      "reference_model_id": "C-RANDOM-FOREST",
+      "semantic_rows": 39,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 9,
+        "pills": 15,
+        "surfaces": 15
+      },
+      "tex_sha256": "9218933402fa399ce8bfc435a443bc1f4bbc6db9dfc60853723742b3c4c65ddb"
+    },
+    {
+      "aggregation_id": "M06",
+      "common_model_context_contributions": 780,
+      "figure_id": "P05B-C-RANDOM-FOREST-M06",
+      "html_sha256": "a86d70e1a8d5a4fe0d787e307c8dbb9d03fb281682818ba2ec2fbfa215717875",
+      "pdf_sha256": "0c8b33f9df7e92b71929ccf97ce634b802d502ecea2bf640758f7f47e6cd2d87",
+      "planned_model_context_contributions": 780,
+      "plotted_rows": 39,
+      "png_sha256": "22af672ed4266ccd32126b84cf1bcbb80b5777682c4583798ccfcfaf5ee1c5b4",
+      "reference_model_id": "C-RANDOM-FOREST",
+      "semantic_rows": 39,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 9,
+        "pills": 15,
+        "surfaces": 15
+      },
+      "tex_sha256": "bc51a09ce834d4255c0c2869be290c9bb81f40a05411a2dbc89a44b2a5d44862"
+    },
+    {
+      "aggregation_id": "M01",
+      "common_model_context_contributions": 780,
+      "figure_id": "P05B-C-EXTRA-TREES-M01",
+      "html_sha256": "1c80619917b6ebb9a1fd34584d80596eddbea490ac31d579617a9091e0112f7c",
+      "pdf_sha256": "948dcea1872b8188af916392e88a62282c8d6e988f1a26223df27a324c2579b4",
+      "planned_model_context_contributions": 780,
+      "plotted_rows": 39,
+      "png_sha256": "54b7f17a97cb03c3a4eaec14a9251a82da8f544eee208b3acf325b1e13b86112",
+      "reference_model_id": "C-EXTRA-TREES",
+      "semantic_rows": 39,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 9,
+        "pills": 15,
+        "surfaces": 15
+      },
+      "tex_sha256": "902221c317cbeebe87fc25e7c0c204ad950be1b195baa066a3d79f4f224ab885"
+    },
+    {
+      "aggregation_id": "M06",
+      "common_model_context_contributions": 780,
+      "figure_id": "P05B-C-EXTRA-TREES-M06",
+      "html_sha256": "0d1ffb5639eb79bfca70e5b854b0867c7e785fed3a879058a519b5f9dbc3d3d2",
+      "pdf_sha256": "d297e11d5609c7a7d1aeb8f5a868a5aa7f87929be3a49faefb8e818159d89ac7",
+      "planned_model_context_contributions": 780,
+      "plotted_rows": 39,
+      "png_sha256": "5bd7751bc6138ac2c1bb86311bc52fc6445d221f7d93b0b1d5073cf7a726a7ed",
+      "reference_model_id": "C-EXTRA-TREES",
+      "semantic_rows": 39,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 9,
+        "pills": 15,
+        "surfaces": 15
+      },
+      "tex_sha256": "a0dc5135ac90eabc6b54ca80b47100aa3d6ea2d41797d96d0b71734f9c501566"
+    },
+    {
+      "aggregation_id": "M01",
+      "common_model_context_contributions": 780,
+      "figure_id": "P05B-D0-ERM-M01",
+      "html_sha256": "c1a6fac99ca6839cc53439fc7781679dbb5ec3ede99580d73b9494554973df24",
+      "pdf_sha256": "b3f27a9bfcd2aae6e2a749b053f909a2c3749ad795deb3eec3a886e7ac825bd9",
+      "planned_model_context_contributions": 780,
+      "plotted_rows": 39,
+      "png_sha256": "b7fce3ba2f6ce0ccff06e7ca01d6843fbb26fb2f0e5e1359bb8c2a1b57215f1d",
+      "reference_model_id": "D0-ERM",
+      "semantic_rows": 39,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 9,
+        "pills": 15,
+        "surfaces": 15
+      },
+      "tex_sha256": "3644a8dd2e93c4987e1a74447b8a4138a903102fbba0edefabcdebe374e49468"
+    },
+    {
+      "aggregation_id": "M06",
+      "common_model_context_contributions": 780,
+      "figure_id": "P05B-D0-ERM-M06",
+      "html_sha256": "42799a1f027dd335868174771b8477fd70ba454bb4f24313cac228321fa10dd1",
+      "pdf_sha256": "26cf1e343d4abec1d0b50680efa58d7b84ce3430f4f90f0a8eea22de39b30e8d",
+      "planned_model_context_contributions": 780,
+      "plotted_rows": 39,
+      "png_sha256": "ad1c93b1b738d3085c5d1f07b227e5de9ce1b96152b1f135e7cfa4a8ff14db7e",
+      "reference_model_id": "D0-ERM",
+      "semantic_rows": 39,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 9,
+        "pills": 15,
+        "surfaces": 15
+      },
+      "tex_sha256": "79fb250d8a4c681bf7365c7d6d96b29ae1f6a7a084035bcfd3e49cd286c8d06a"
+    },
+    {
+      "aggregation_id": "M01",
+      "common_model_context_contributions": 520,
+      "figure_id": "P05B-D0-M-M01",
+      "html_sha256": "69c7b9c9d2d935bae9daf80642f92d3ac28d813641f897ae96c7ff8b64eb5670",
+      "pdf_sha256": "a2fbc693790ef334f7b242e7ae9c61da1b70c3662197e12a9a36d3215149bf55",
+      "planned_model_context_contributions": 520,
+      "plotted_rows": 26,
+      "png_sha256": "de92ede333c27ece215b1be1706b9587508ddb5e60559bb427066999a2eacab0",
+      "reference_model_id": "D0-M",
+      "semantic_rows": 26,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 6,
+        "pills": 10,
+        "surfaces": 10
+      },
+      "tex_sha256": "0db24e32da66d4f610cd7394da7a3a21967a3142f56f2de346ba2bf180d267cd"
+    },
+    {
+      "aggregation_id": "M06",
+      "common_model_context_contributions": 520,
+      "figure_id": "P05B-D0-M-M06",
+      "html_sha256": "4279ba61279bcd94043f023add68af169d88843611e3d244169996b701e19df8",
+      "pdf_sha256": "253683aef6580cec6f25e9fc5936a931ac03d3ac21d09a791b2bdd3d73943952",
+      "planned_model_context_contributions": 520,
+      "plotted_rows": 26,
+      "png_sha256": "40eb4da8b8d8af8d58350f4955a8b886a2b399911dcc502094a36e03fb6e88d7",
+      "reference_model_id": "D0-M",
+      "semantic_rows": 26,
+      "semantic_sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67",
+      "station_plotted": {
+        "cwa": 6,
+        "pills": 10,
+        "surfaces": 10
+      },
+      "tex_sha256": "2b19028414a96949b08435c965b52b62fe2d58daa7aa991a382f791a8f273d3c"
+    }
+  ],
+  "files": [
+    {
+      "path": "P05B_C_EXTRA_TREES_M01.html",
+      "sha256": "1c80619917b6ebb9a1fd34584d80596eddbea490ac31d579617a9091e0112f7c"
+    },
+    {
+      "path": "P05B_C_EXTRA_TREES_M01.pdf",
+      "sha256": "948dcea1872b8188af916392e88a62282c8d6e988f1a26223df27a324c2579b4"
+    },
+    {
+      "path": "P05B_C_EXTRA_TREES_M01.png",
+      "sha256": "54b7f17a97cb03c3a4eaec14a9251a82da8f544eee208b3acf325b1e13b86112"
+    },
+    {
+      "path": "P05B_C_EXTRA_TREES_M01.tex",
+      "sha256": "902221c317cbeebe87fc25e7c0c204ad950be1b195baa066a3d79f4f224ab885"
+    },
+    {
+      "path": "P05B_C_EXTRA_TREES_M06.html",
+      "sha256": "0d1ffb5639eb79bfca70e5b854b0867c7e785fed3a879058a519b5f9dbc3d3d2"
+    },
+    {
+      "path": "P05B_C_EXTRA_TREES_M06.pdf",
+      "sha256": "d297e11d5609c7a7d1aeb8f5a868a5aa7f87929be3a49faefb8e818159d89ac7"
+    },
+    {
+      "path": "P05B_C_EXTRA_TREES_M06.png",
+      "sha256": "5bd7751bc6138ac2c1bb86311bc52fc6445d221f7d93b0b1d5073cf7a726a7ed"
+    },
+    {
+      "path": "P05B_C_EXTRA_TREES_M06.tex",
+      "sha256": "a0dc5135ac90eabc6b54ca80b47100aa3d6ea2d41797d96d0b71734f9c501566"
+    },
+    {
+      "path": "P05B_C_RANDOM_FOREST_M01.html",
+      "sha256": "cadbf80ed38daaf4e01d452591f2c77b909568edd574a318ac909e63a5d808ac"
+    },
+    {
+      "path": "P05B_C_RANDOM_FOREST_M01.pdf",
+      "sha256": "292e8a1be6b9824ce0cce0d663f77330e0c1271c9ea3bee321fd7ec302807785"
+    },
+    {
+      "path": "P05B_C_RANDOM_FOREST_M01.png",
+      "sha256": "1b4f9012f22513dd01ac89a7e8404e42515b857707c40f954e3c41ff21fbd84b"
+    },
+    {
+      "path": "P05B_C_RANDOM_FOREST_M01.tex",
+      "sha256": "9218933402fa399ce8bfc435a443bc1f4bbc6db9dfc60853723742b3c4c65ddb"
+    },
+    {
+      "path": "P05B_C_RANDOM_FOREST_M06.html",
+      "sha256": "a86d70e1a8d5a4fe0d787e307c8dbb9d03fb281682818ba2ec2fbfa215717875"
+    },
+    {
+      "path": "P05B_C_RANDOM_FOREST_M06.pdf",
+      "sha256": "0c8b33f9df7e92b71929ccf97ce634b802d502ecea2bf640758f7f47e6cd2d87"
+    },
+    {
+      "path": "P05B_C_RANDOM_FOREST_M06.png",
+      "sha256": "22af672ed4266ccd32126b84cf1bcbb80b5777682c4583798ccfcfaf5ee1c5b4"
+    },
+    {
+      "path": "P05B_C_RANDOM_FOREST_M06.tex",
+      "sha256": "bc51a09ce834d4255c0c2869be290c9bb81f40a05411a2dbc89a44b2a5d44862"
+    },
+    {
+      "path": "P05B_C_RBF_SVM_M01.html",
+      "sha256": "ccc7979de6d182bfc6afeeb7139e22841c31323c99f5ed0b339f50d6c0475cf6"
+    },
+    {
+      "path": "P05B_C_RBF_SVM_M01.pdf",
+      "sha256": "70f880ddafe6eac1f04daf857b29876823c18d68641ec9536b8a636c244eaa8a"
+    },
+    {
+      "path": "P05B_C_RBF_SVM_M01.png",
+      "sha256": "6f9f7a79d69596bff672125e5d1a4451e287262732031f1f40847ec134f50680"
+    },
+    {
+      "path": "P05B_C_RBF_SVM_M01.tex",
+      "sha256": "f3ac3b2cdd55b15010b48c28063123866a2e8456e3ee40799737e97a72874ab5"
+    },
+    {
+      "path": "P05B_C_RBF_SVM_M06.html",
+      "sha256": "cdaf1f258bc07988765bff44393b4769f83cb7e1aad35926f6dfbf148a2eb76b"
+    },
+    {
+      "path": "P05B_C_RBF_SVM_M06.pdf",
+      "sha256": "7eb35dbceb23f67e0d69748f302ee1c6324b957f6151a860894b46373ded86b8"
+    },
+    {
+      "path": "P05B_C_RBF_SVM_M06.png",
+      "sha256": "761e3dfe3e30e98131395b3fe9f82a796262943c6f73a8f19a2983240759372d"
+    },
+    {
+      "path": "P05B_C_RBF_SVM_M06.tex",
+      "sha256": "78e573202765524db413eefa636cdf679b5d08399200d141a41c640b69bc9de5"
+    },
+    {
+      "path": "P05B_C_SELECTED_M01.html",
+      "sha256": "cc9c10a336f4b071c699db7627b1b6a45b38236ba76f64ca83760179ac14239c"
+    },
+    {
+      "path": "P05B_C_SELECTED_M01.pdf",
+      "sha256": "2a5246ae495212ab229cf35c252417a07aeab0332a474af110ab71c7843d7a26"
+    },
+    {
+      "path": "P05B_C_SELECTED_M01.png",
+      "sha256": "6c76b3b76c26719c28d5282b39e318eac2cc824b634b0f5cc8af7538070b0f53"
+    },
+    {
+      "path": "P05B_C_SELECTED_M01.tex",
+      "sha256": "ac1534c13f22f9fe985a655439dd335095c72838ea3c1dead1a7d17f039b6dc6"
+    },
+    {
+      "path": "P05B_C_SELECTED_M06.html",
+      "sha256": "3761d12c143373d5fb9e291e9e770c51d2588ef14e2ccec7b98f198151e9a9fb"
+    },
+    {
+      "path": "P05B_C_SELECTED_M06.pdf",
+      "sha256": "3a16fb2db34f2ce1a20e750ef305515650d7d604dc05814ac299feae078b8c50"
+    },
+    {
+      "path": "P05B_C_SELECTED_M06.png",
+      "sha256": "7ff0e1f2aed4fde8c4bdc9540b8f1f3cc07e22217c33456e2daa5322be0ed6c1"
+    },
+    {
+      "path": "P05B_C_SELECTED_M06.tex",
+      "sha256": "4c4247c56d9d4e9025f20ce947f19c337dae90aca7b3fa891d0c7552da5d29d7"
+    },
+    {
+      "path": "P05B_D0_ERM_M01.html",
+      "sha256": "c1a6fac99ca6839cc53439fc7781679dbb5ec3ede99580d73b9494554973df24"
+    },
+    {
+      "path": "P05B_D0_ERM_M01.pdf",
+      "sha256": "b3f27a9bfcd2aae6e2a749b053f909a2c3749ad795deb3eec3a886e7ac825bd9"
+    },
+    {
+      "path": "P05B_D0_ERM_M01.png",
+      "sha256": "b7fce3ba2f6ce0ccff06e7ca01d6843fbb26fb2f0e5e1359bb8c2a1b57215f1d"
+    },
+    {
+      "path": "P05B_D0_ERM_M01.tex",
+      "sha256": "3644a8dd2e93c4987e1a74447b8a4138a903102fbba0edefabcdebe374e49468"
+    },
+    {
+      "path": "P05B_D0_ERM_M06.html",
+      "sha256": "42799a1f027dd335868174771b8477fd70ba454bb4f24313cac228321fa10dd1"
+    },
+    {
+      "path": "P05B_D0_ERM_M06.pdf",
+      "sha256": "26cf1e343d4abec1d0b50680efa58d7b84ce3430f4f90f0a8eea22de39b30e8d"
+    },
+    {
+      "path": "P05B_D0_ERM_M06.png",
+      "sha256": "ad1c93b1b738d3085c5d1f07b227e5de9ce1b96152b1f135e7cfa4a8ff14db7e"
+    },
+    {
+      "path": "P05B_D0_ERM_M06.tex",
+      "sha256": "79fb250d8a4c681bf7365c7d6d96b29ae1f6a7a084035bcfd3e49cd286c8d06a"
+    },
+    {
+      "path": "P05B_D0_M_M01.html",
+      "sha256": "69c7b9c9d2d935bae9daf80642f92d3ac28d813641f897ae96c7ff8b64eb5670"
+    },
+    {
+      "path": "P05B_D0_M_M01.pdf",
+      "sha256": "a2fbc693790ef334f7b242e7ae9c61da1b70c3662197e12a9a36d3215149bf55"
+    },
+    {
+      "path": "P05B_D0_M_M01.png",
+      "sha256": "de92ede333c27ece215b1be1706b9587508ddb5e60559bb427066999a2eacab0"
+    },
+    {
+      "path": "P05B_D0_M_M01.tex",
+      "sha256": "0db24e32da66d4f610cd7394da7a3a21967a3142f56f2de346ba2bf180d267cd"
+    },
+    {
+      "path": "P05B_D0_M_M06.html",
+      "sha256": "4279ba61279bcd94043f023add68af169d88843611e3d244169996b701e19df8"
+    },
+    {
+      "path": "P05B_D0_M_M06.pdf",
+      "sha256": "253683aef6580cec6f25e9fc5936a931ac03d3ac21d09a791b2bdd3d73943952"
+    },
+    {
+      "path": "P05B_D0_M_M06.png",
+      "sha256": "40eb4da8b8d8af8d58350f4955a8b886a2b399911dcc502094a36e03fb6e88d7"
+    },
+    {
+      "path": "P05B_D0_M_M06.tex",
+      "sha256": "2b19028414a96949b08435c965b52b62fe2d58daa7aa991a382f791a8f273d3c"
+    },
+    {
+      "path": "semantic_data.csv",
+      "sha256": "235e8a7e1a4b0fc17b736ee7db3dcb16eaac30e233bc9eeb9ab4d033958dcc67"
+    }
+  ],
+  "semantic_path": "semantic_data.csv"
+}

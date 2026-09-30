@@ -1,0 +1,15 @@
+station,phase,selection_mode,selected_recipe,selection_source,unsupported_transfer_selection,context_count
+cwa,development,inner_master_cv,D0-M,unsupported_transfer_selection,True,20
+cwa,held_evaluation,master_cv,D0-M,unsupported_transfer_selection,True,6
+cwa,held_evaluation,pseudo_domain,D0-M,fallback,False,40
+cwa,held_evaluation,pseudo_domain,D1,candidate,False,1
+cwa,held_evaluation,pseudo_domain,D2,candidate,False,7
+cwa,held_evaluation,pseudo_domain,D3,candidate,False,6
+pills,development,inner_master_cv,D0-M,unsupported_transfer_selection,True,20
+pills,held_evaluation,master_cv,D0-M,unsupported_transfer_selection,True,100
+surfaces,development,inner_master_cv,D0-M,unsupported_transfer_selection,True,20
+surfaces,held_evaluation,master_cv,D0-M,unsupported_transfer_selection,True,26
+surfaces,held_evaluation,pseudo_domain,D0-M,fallback,False,49
+surfaces,held_evaluation,pseudo_domain,D1,candidate,False,13
+surfaces,held_evaluation,pseudo_domain,D2,candidate,False,4
+surfaces,held_evaluation,pseudo_domain,D3,candidate,False,8
