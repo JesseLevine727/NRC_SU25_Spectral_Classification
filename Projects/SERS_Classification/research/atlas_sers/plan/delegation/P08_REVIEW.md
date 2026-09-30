@@ -141,3 +141,41 @@ All held-prediction files contain the technical-seed aggregate. The audit theref
 Lenarizer preservation checks for the master, readiness and review additions found added numeric tokens only; original numeric tokens and citations were retained. New values were checked against test outputs, the role/smoke audits and prospective arithmetic. The outer-audit JSON and these final notes are data/documentation-only additions after the full regression; final boundary, focused-contract and whitespace checks precede the scoped push. The complete P08 readiness goal and separate scientific execution gate remain open.
 
 Final twelve-file snapshot checks passed: the public-boundary validator checked **892 files**, CI-scope Ruff passed, and focused role/support/planning/preprocessing/input checks passed **98 tests and 15 subtests in 0.89 seconds**. The final release includes no private identifiers, source paths, observations or checkpoints. Exact remote SHA and the new commit's CI require verification after publication.
+
+## Complete MIN operation-evidence bridge
+
+The preceding concrete-role milestone was published on `main` as `0312f64fdf5aa7ef215656ca96dab5bfefe2c09d`. Its remote SHA matched, and GitHub Actions run `36754681261` completed successfully. That check does not validate the additions below.
+
+The supervisor's read-only operation audit binds all 202,407 MIN planning slots after rehashing 20,934 files. The second audit version adds fresh MIN file, intensity-array and axis-array verification; the first version remains preserved privately. The published aggregate and [reuse protocol](../P08_REUSE_PROTOCOL.md) distinguish completed fit records from persisted estimators, individual predictions from seed ensembles, and structural fallback aliases from empirical policy comparisons.
+
+The bridge contains 1,079 distinct complete model–context endpoints. It authenticates 1,040 family-policy and 824 unsupported-QC complete-pipeline aliases, requiring zero new fits or predictions. For 1,560 tree seed-level held slots, only the final ensemble was stored; no individual array is claimed. The private archive is 39,254,658 bytes, and its SHA-256 was independently rechecked against the public aggregate. Historical operation mapping is complete; runtime admission and future scientific execution remain separate gates.
+
+## T011–T014: compact QC block primitives
+
+The first full-catalog assignment exceeded the worker's output limit and returned a truncated patch. No part of that response was applied. The supervisor divided the work into bounded components. The next response supplied generic block primitives and tests but omitted the Add File line markers; only those patch markers and package-relative paths were restored mechanically.
+
+All 73 initial tests passed, but independent review found that Boolean counts could impersonate integer counts and that nonstring JSON keys could be silently converted. The initial stage summary also counted blocks rather than expanded operation slots. Those issues, static error handling and nine lint findings were returned to DeepSeek. Passing the initial tests was not treated as acceptance.
+
+The corrected implementation rejects malformed count types, authenticates the supplied catalog before rebuilding it, preserves strict JSON keys and provides separate block and expanded-slot counts. Its first corrected test run passed 99 tests and failed one: a mutation-isolation fixture bound its block to the global example object rather than its local binding object. DeepSeek corrected that fixture only; the production hash check was retained. The supervisor mechanically converted the worker's same-path delete/add response into full-file updates without changing its source content.
+
+All six P08 modules then passed **330 tests and 31 subtests in 1.80 seconds**. Ten independent negative checks also passed, covering Boolean/float count forgery, recomputed summary hashes, nonstring keys and forged execution authority. The new files passed Ruff. These primitives validate bookkeeping structure and stream operation descriptors; they do not establish scientific role separation, fit a threshold or authorize execution. Workflow-specific dependencies and final release validation remain separate.
+
+The supervisor also corrected the earlier full-catalog specification before implementation: final fitting must depend on source-only routing, while held-test routing must occur after final models freeze. A combined source/test routing block must not become an upstream dependency of final fitting. This change tightens the dependency representation without changing the registered splits, models or scientific fit counts.
+
+## T015/T016: source-only QC policy-selection subgraph
+
+DeepSeek authored the bounded policy-selection subgraph and its synthetic tests. The first run passed 23 tests and failed 20 because a seed constant was undefined. Review also rejected shortened model identifiers, an omitted neural early-stopping validation hash and tests that guessed the generic catalog API. The tests had also counted only one of two model ensembles. No part of this draft was accepted for scientific execution.
+
+The correction restores the registered model/seed identities, binds each D0-M fit to its actual inner validation role, and tests the catalog's exact dictionary schema and both block and expanded-slot counts. It records same-gate dependencies, equal classifier weights and source-only threshold roles. Tests now cover three-unit inputs, Unicode/error boundaries, quantile-role mismatches and selection/calibration ancestor chains. The response contained an abandoned malformed patch followed by a complete replacement; only the final complete patch was applied. The supervisor fixed one remaining import-order finding mechanically.
+
+The corrected subgraph passed 61 focused tests. All seven P08 modules then passed **391 tests and 31 subtests in 1.87 seconds**. The supervisor applied the builder to the previously authenticated private role registry, without spectral calculations, and verified 3,456 blocks representing 3,448,926 prospective operations. Their model-fit and scalar totals are 1,620,432 and 53,568 respectively. The full final-estimator stage is not part of this slice.
+
+An independent pass checked 756 actual stopping-role and selection/calibration ancestor cases. No held-test role enters this graph, and no parent policy-validation role enters the inner estimator-selection or calibration ancestry. The aggregate [audit](../../results/p08_readiness/qc_policy_subgraph_audit.json) binds the private 956,081-byte archive. The module cannot authenticate raw memberships on its own; it consumes the separately audited role registry and does not replace that audit.
+
+No QC cutpoint, routing decision, model fit, prediction, score or gate winner was computed. Full regression, public-boundary validation and the scoped publication check remain separate gates. The complete P08 readiness goal remains active.
+
+## Operation-reuse and policy-subgraph release checks
+
+The exact eleven-file-overlay, Git-backed publication snapshot passed the public-boundary validator with **899 files checked** and CI-scope Ruff. The full CPU regression passed **3,348 tests and 31 subtests**, with **four CUDA-only skips**, in **416.70 seconds**. The **2,026 warnings** come from inherited sparse-class metric fixtures. The protected package remained fixed during this run, and every overlaid file matched the reviewed working copy byte-for-byte.
+
+Lenarizer preservation checks passed unchanged numeric/citation content for the source/test routing clarification. The readiness and review additions contain new audit/test values only; no original number or citation was removed. Added values were checked against the authenticated evidence, operation arithmetic and test output. These final validation notes are documentation-only and receive repeated boundary, focused-test and whitespace checks before the exact-path push. The new remote revision and CI status must be checked separately.

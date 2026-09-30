@@ -1,0 +1,41 @@
+{
+  "actual_thresholds_routing_or_source_choices_computed": false,
+  "block_count": 3456,
+  "catalog_sha256": "8fd25a10d4766f72987cbdc62e68ca8c584bd1ef1ab4a0f279b9b61fb792903a",
+  "eligible_contexts": 54,
+  "execution_authorized": false,
+  "expanded_operation_slots": 3448926,
+  "held_test_dependency_present": false,
+  "model_fit_slots": 1620432,
+  "model_fit_slots_by_model": {
+    "C-RBF-SVM": 1459728,
+    "D0-M": 160704
+  },
+  "nested_estimator_folds": 324,
+  "nested_registry_sha256": "b1d48c58ab3b58c76c2b79c4391f41974089b32e4462ea55dd185f26743cc18f",
+  "new_scientific_operations": 0,
+  "policy_units": 108,
+  "private_archive_bytes": 956081,
+  "private_archive_sha256": "7a711bd72e63c14da1a0dca0f48f7a93e452c7c934be00927b3e1fb1d61c80b6",
+  "scalar_calibration_slots": 53568,
+  "schema_version": "nato-sers-p08-qc-policy-subgraph-audit-v1",
+  "scope": "Policy-selection subgraph only; final model development and fallback catalog assembly remain separate.",
+  "stage_counts": {
+    "gate_objective": 6696,
+    "gate_selection": 54,
+    "inner_quantile_fit": 324,
+    "inner_route_pair": 40176,
+    "inner_select_hyperparameters": 13392,
+    "inner_select_refit_epochs": 40176,
+    "inner_source_fit": 1566864,
+    "inner_source_prediction": 1566864,
+    "policy_panel_score": 13392,
+    "policy_refit": 53568,
+    "policy_refit_quantile_fit": 108,
+    "policy_route_pair": 13392,
+    "policy_scalar_calibration": 53568,
+    "policy_seed_ensemble_prediction": 26784,
+    "policy_validation_prediction": 53568
+  },
+  "status": "pass"
+}

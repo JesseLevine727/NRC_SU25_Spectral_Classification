@@ -49,6 +49,12 @@
     "nested_assignment_salt": 2026093004,
     "nested_registry_sha256": "b1d48c58ab3b58c76c2b79c4391f41974089b32e4462ea55dd185f26743cc18f",
     "numerical_quantiles_computed": false,
+    "policy_selection_subgraph_audited": true,
+    "policy_selection_subgraph_blocks": 3456,
+    "policy_selection_model_fit_slots": 1620432,
+    "policy_selection_scalar_calibration_slots": 53568,
+    "policy_selection_subgraph_sha256": "8fd25a10d4766f72987cbdc62e68ca8c584bd1ef1ab4a0f279b9b61fb792903a",
+    "complete_adaptive_catalog_locked": false,
     "protocol": "plan/P08_QC_NESTING.md"
   },
   "finite_execution_budget": "staged_proposal_documented_not_authorized",
@@ -60,5 +66,16 @@
     "execution_authorized": false
   },
   "smoke_authority": "separate_owner_permit_required",
-  "completion_gaps": ["complete_adaptive_operation_catalog", "complete_operation_to_artifact_reuse_bindings", "later_branch_numerical_specs_and_finite_budgets", "resource_feasibility_and_final_lock", "reviewed_admission_restart_guards", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
+  "historical_minimal_evidence": {
+    "operation_bindings": 202407,
+    "complete_distinct_model_context_endpoints": 1079,
+    "tree_seed_held_slots_without_individual_saved_arrays": 1560,
+    "family_complete_pipeline_aliases": 1040,
+    "qc_complete_pipeline_fallback_aliases": 824,
+    "private_archive_sha256": "7954181851586f24e648ddda98d2ba3380bdabfb50ec767ebb21a9ae07c5e74e",
+    "blanket_job_cache_authority": false,
+    "audit": "results/p08_readiness/minimal_operation_reuse_audit.json"
+  },
+  "pending_later_branch_choices": ["normalization_classical_selector_scope", "regenerated_tier_source_selection_scope", "perturbation_before_or_after_preprocessing"],
+  "completion_gaps": ["complete_adaptive_operation_catalog", "later_branch_numerical_specs_and_finite_budgets", "resource_feasibility_and_final_lock", "reviewed_admission_restart_guards", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
 }

@@ -68,6 +68,8 @@ In the 54 eligible contexts, the frozen selected recipe is D0-M in 40, D1 in one
 
 Each final model must receive a training matrix assembled by the frozen gate, not by applying the gate only to test inputs. Thresholds may differ across fitting roles because their source rows differ; the rule identity stays fixed. The resulting policy is a learned preprocessing-and-estimation procedure. Its effect cannot be attributed to a single transform, nor interpreted as chemical/nuisance disentanglement.
 
+The operation graph must separate final source routing from held-test routing. The source-routing block contains S only and precedes final fitting. After every required final model is frozen, a separate test-routing block applies the source-fitted thresholds to T. Neither final fitting nor any upstream selection or calibration operation may depend on that test-routing block, directly or transitively. This makes the access boundary explicit in the graph, not merely an instruction to ignore part of a combined source/test object.
+
 If the winning gate is minimal-only, the complete final procedure can reference the existing MIN evidence after exact specification and input matching. Other gate procedures may reuse artifacts only when the full relevant input/selection chain is identical. A row-wise hybrid of universal model predictions is not this experiment. All 206 unsupported contexts use the approved complete MIN pipeline independently of gate outcomes.
 
 ## 6. Literal compute ceiling before exact reuse
