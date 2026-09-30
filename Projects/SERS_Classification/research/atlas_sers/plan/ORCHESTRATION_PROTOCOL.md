@@ -2,6 +2,8 @@
 
 **Established:** 2026-09-24, at the project owner's request.
 
+**Latest analysis status, 2026-09-30:** the scoped P06/P11 saved-prediction analysis has completed numerical and figure review without retraining. See the [report](../reports/NATO_SERS_UNCERTAINTY_REPORT.md), [review record](delegation/P06P11_REVIEW.md) and [P08 planning handoff](P08_HANDOFF.md). DeepSeek V4.1 Flash authored bounded implementation slices; the supervisor rejected schema/validation defects, controlled execution and checked arithmetic independently. The original G4 gate remains unpassed. Publication checks are recorded separately; no next-phase training is authorized.
+
 **Latest scientific status, 2026-09-29:** the approved four-recipe core benchmark has completed source fitting, nested selection, final refits/calibration, held evaluation, comparison and reporting. The independent publication gate passed; see the [completion audit](P05_COMPLETION_AUDIT.md), [results](../results/p05_comprehensive/P05_RESULTS.md) and [figure browser](../results/p05_comprehensive/index.html). DeepSeek V4.1 Flash authored the implementation and result/figure-navigation drafts; the supervisor reviewed and corrected them. Publication still requires the reviewed main push and remote CI verification. No scientific process remains running, and no further fitting is authorized by completion. The 8-GiB recovery outer ceiling and unchanged 4-GiB inner guard supersede the original outer limit below.
 
 The implementation and pilot status paragraphs below are historical checkpoints, not a claim that the comprehensive benchmark is still unstarted.

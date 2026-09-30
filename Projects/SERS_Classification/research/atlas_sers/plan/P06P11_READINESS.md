@@ -4,6 +4,8 @@
 
 ## Scope
 
+**Update, 2026-09-30:** the approved analysis has now run once and passed independent numerical review. The [result report](../reports/NATO_SERS_UNCERTAINTY_REPORT.md) and [figure browser](../results/p06p11/index.html) supersede the unexecuted status in this historical readiness audit. The original hierarchy produced no defined draws; the added primary M01 interval is 0.68–7.79 percentage points around a +4.36-point difference. G4 remains unpassed, with two unassessable criteria. The [review record](delegation/P06P11_REVIEW.md) separates numerical acceptance from publication checks. No new training is authorized.
+
 The active goal covers the completed four-recipe benchmark's remaining P06 synthesis and P11 uncertainty analysis. It does not authorize fitting, calibration, new predictions, preprocessing changes, adaptation, or RBF/SOM experiments. The [master plan](MASTER_PLAN.md), [P05 completion audit](P05_COMPLETION_AUDIT.md), [frozen results](../results/p05_comprehensive/P05_RESULTS.md), and [supervised implementation protocol](ORCHESTRATION_PROTOCOL.md) remain authoritative.
 
 DeepSeek V4.1 Flash authors implementation patches from scoped, non-private inputs. The supervisor reviews the code, independently tests it, controls scientific execution, and reviews publication. The first slice is an outcome-blind support audit, not a confidence-interval calculation.
@@ -57,7 +59,7 @@ prediction/coverage files. It contains no master, observation or context IDs.
 
 The historical P04 bootstrap is not a drop-in solution: it pools repeated correctness before domain scoring, conditions on retained class support, and does not resample domains. Applying it unchanged would not reproduce the newly frozen equal-context point estimator.
 
-## Owner-approved analysis amendment — not yet executed
+## Historical owner-approved analysis amendment — before execution
 
 The owner approved this amendment on 2026-09-29. The primary comparison, published point estimator, model choices, test support and practical margins remain unchanged. The amendment adds an explicitly post-benchmark, support-preserving crossed-weight analysis alongside an audit of the originally planned hierarchical resampling. It must not be presented as the unmodified preregistered hierarchical interval.
 
@@ -74,6 +76,6 @@ The method is motivated by factor-wise reweighting for crossed data in [Owen and
 
 The original 10,000-draw hierarchical procedure is retained as a clearly labelled sensitivity/feasibility analysis with explicit undefined-cell accounting, not repeatedly redrawn until a favourable or computable interval appears. The [numerical analysis contract](P06P11_INFERENCE_PROTOCOL.md) fixes the zero-cell rule and gate interpretation before execution. G4 must not pass merely because an added post-benchmark interval excludes zero; all other criteria and the original uncertainty criterion still apply.
 
-## Next boundary
+## Historical next boundary at the readiness checkpoint
 
 Finish regression review of the support audit and implement the approved inference specification with synthetic tests and an independent numerical cross-check before real resampling. The audit is not the final research result, a G4 verdict, a preprocessing selection, or a completion claim for the active goal.

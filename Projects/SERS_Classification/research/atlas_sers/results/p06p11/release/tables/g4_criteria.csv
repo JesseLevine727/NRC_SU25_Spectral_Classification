@@ -1,0 +1,7 @@
+criterion,observed,threshold,operator,status,reason_code,source_scope
+mean_delta_at_least_0.03,0.04355730932485324,0.03,>=,supported,ok,primary_m01_summary
+hierarchical_interval_lower_gt_0,,0.0,>,unassessable,hierarchical_interval_unavailable,hierarchical_interval
+positive_domains_at_least_8,8.0,8,>=,supported,ok,primary_m01_summary
+worst_domain_difference_at_least_neg_0.03,0.03970238095238099,-0.03,>=,supported,ok,primary_m01_summary
+t1_difference_at_least_neg_0.02,,-0.02,>=,unassessable,t1_provenance_unverified,t1_provenance
+input_preservation_verified,True,True,is,supported,ok,input_preservation

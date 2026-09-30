@@ -89,12 +89,16 @@ over the matched CNN on individual spectra, but gains varied across domains;
 the source-selected procedure gained only 0.17 points. Classical tree ensembles
 remain strong comparators. See the [completion audit](plan/P05_COMPLETION_AUDIT.md)
 for coverage, recovery accounting and the remaining P06/P11 boundary.
-The active **[P06/P11 evidence and uncertainty audit](plan/P06P11_READINESS.md)**
-has reproduced the saved comparison tables and verified sample isolation and
-seed averaging. Sparse test-class cells and samples shared across instruments
-require an explicit resampling specification. The owner approved a documented
-support-preserving weighted-bootstrap addition; no new interval has yet been
-computed. This phase does not retrain models.
+The **[P06/P11 frozen-prediction analysis](reports/NATO_SERS_UNCERTAINTY_REPORT.md)**
+now includes the approved 10,000-draw weighted addition, the original hierarchical
+feasibility analysis, deletion checks and supplementary probability metrics.
+The selected CNN gains 4.36 percentage points over selected classical at M01
+(conditional interval 0.68–7.79), but added-loss and tree-ensemble comparisons
+remain inconclusive. The original G4 gate is unpassed: four criteria are supported
+and two unassessable. See the [four-figure browser](results/p06p11/index.html)
+and [review record](plan/delegation/P06P11_REVIEW.md).
+No models were retrained. The next boundary is the **[P08 no-fit preprocessing
+planning gate](plan/P08_HANDOFF.md)**, not an automatically authorized sweep.
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 

@@ -1,0 +1,25 @@
+figure_id,panel,label,series,x,y,lower,upper,domain,instrument,complete_contexts,remaining_domains,color,marker
+F_P06_deletion_stability,joint,cwa:Mira-2,removed_domain,5.189297334947925,5.234324236517217,,,cwa:Mira-2,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,cwa:Pendar-2,removed_domain,5.006000815028598,3.841780376868097,,,cwa:Pendar-2,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,cwa:RMX-1,removed_domain,5.07585136733529,4.3169265756985045,,,cwa:RMX-1,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,pills:Agilent-1,removed_domain,4.031208510192434,4.088490903183885,,,pills:Agilent-1,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,pills:Agilent-3,removed_domain,4.151578880562804,3.4982131254061084,,,pills:Agilent-3,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,pills:Mira-3,removed_domain,4.387855335589259,3.775990903183885,,,pills:Mira-3,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,pills:Pendar-1,removed_domain,4.4918566583405815,3.0815464587394428,,,pills:Pendar-1,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,pills:Pendar-3,removed_domain,3.6770418435257657,2.8732131254061057,,,pills:Pendar-3,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,surfaces:Agilent-3,removed_domain,4.9193257941430515,4.197801602772363,,,surfaces:Agilent-3,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,surfaces:Mira-1,removed_domain,3.3640458117797345,2.306083495776478,,,surfaces:Mira-1,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,surfaces:Pendar-2,removed_domain,3.305569180386436,2.5517110677929384,,,surfaces:Pendar-2,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,surfaces:Pendar-3,removed_domain,4.1425768229496365,3.2975958414554905,,,surfaces:Pendar-3,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,surfaces:RMX-2,removed_domain,4.88229376752769,3.9148797920727745,,,surfaces:RMX-2,,,12,#0072B2,circle
+F_P06_deletion_stability,joint,Agilent-1,removed_instrument,4.031208510192434,4.088490903183885,,,,Agilent-1,,12,#E69F00,diamond
+F_P06_deletion_stability,joint,Agilent-3,removed_instrument,4.7478503612873695,4.124874475751669,,,,Agilent-3,,11,#E69F00,diamond
+F_P06_deletion_stability,joint,Mira-1,removed_instrument,3.3640458117797345,2.306083495776478,,,,Mira-1,,12,#E69F00,diamond
+F_P06_deletion_stability,joint,Mira-2,removed_instrument,5.189297334947925,5.234324236517217,,,,Mira-2,,12,#E69F00,diamond
+F_P06_deletion_stability,joint,Mira-3,removed_instrument,4.387855335589259,3.775990903183885,,,,Mira-3,,12,#E69F00,diamond
+F_P06_deletion_stability,joint,Pendar-1,removed_instrument,4.4918566583405815,3.0815464587394428,,,,Pendar-1,,12,#E69F00,diamond
+F_P06_deletion_stability,joint,Pendar-2,removed_instrument,3.9194852566064724,2.70393998464174,,,,Pendar-2,,11,#E69F00,diamond
+F_P06_deletion_stability,joint,Pendar-3,removed_instrument,3.3828110795814186,2.4610136452241695,,,,Pendar-3,,11,#E69F00,diamond
+F_P06_deletion_stability,joint,RMX-1,removed_instrument,5.07585136733529,4.3169265756985045,,,,RMX-1,,12,#E69F00,diamond
+F_P06_deletion_stability,joint,RMX-2,removed_instrument,4.88229376752769,3.9148797920727745,,,,RMX-2,,12,#E69F00,diamond
+F_P06_deletion_stability,joint,Full paired support,full_reference,4.355730932485324,3.6137351926825607,,,,,,13,#000000,cross

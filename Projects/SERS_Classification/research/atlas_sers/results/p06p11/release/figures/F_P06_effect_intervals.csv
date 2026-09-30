@@ -1,0 +1,13 @@
+figure_id,panel,label,series,x,y,lower,upper,domain,instrument,complete_contexts,remaining_domains,color,marker
+F_P06_effect_intervals,M01,Selected CNN - selected classical,primary,4.355730932485318,6,0.6837324744767895,7.7947731869669825,,,,,#0072B2,circle
+F_P06_effect_intervals,M01,D3 - matched CNN,secondary,1.6836681836681837,5,-0.09171780029123583,4.132419588319751,,,,,#777777,diamond
+F_P06_effect_intervals,M01,Selected CNN - matched CNN,secondary,0.17348392348392347,4,-0.397623951002217,0.6885048694805406,,,,,#777777,diamond
+F_P06_effect_intervals,M01,Selected CNN - Random Forest,secondary,0.2851176601176604,3,-3.4800887289996223,3.4739504731030366,,,,,#777777,diamond
+F_P06_effect_intervals,M01,Selected CNN - Extra Trees,secondary,-1.1852360602360603,2,-5.18811316282539,2.3455362477762254,,,,,#777777,diamond
+F_P06_effect_intervals,M01,D3 - Random Forest,secondary,1.7953019203019207,1,-2.323774987011244,5.173573404388669,,,,,#777777,diamond
+F_P06_effect_intervals,M06,Selected CNN - selected classical,primary,3.6137351926825616,6,-1.8816042599806757,8.329017408179933,,,,,#0072B2,circle
+F_P06_effect_intervals,M06,D3 - matched CNN,secondary,1.324786324786325,5,-0.2616573540613733,3.503654750088107,,,,,#777777,diamond
+F_P06_effect_intervals,M06,Selected CNN - matched CNN,secondary,0.04273504273504272,4,-0.5479405911493448,0.5711022391719067,,,,,#777777,diamond
+F_P06_effect_intervals,M06,Selected CNN - Random Forest,secondary,-1.816239316239316,3,-7.883968265347997,1.9890484054175015,,,,,#777777,diamond
+F_P06_effect_intervals,M06,Selected CNN - Extra Trees,secondary,-1.7200854700854706,2,-8.362599140501437,3.8992110359301426,,,,,#777777,diamond
+F_P06_effect_intervals,M06,D3 - Random Forest,secondary,-0.5341880341880345,1,-6.5180696345612565,3.8393503854556714,,,,,#777777,diamond

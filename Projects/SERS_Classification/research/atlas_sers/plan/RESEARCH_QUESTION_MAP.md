@@ -155,14 +155,15 @@ Figure F44 is the design audit: each row is one recorded physical-master ID, pan
 
 ## Immediate next phase
 
-**Current status, 2026-09-29:** the P05 four-recipe core benchmark is complete
-through held evaluation and reviewed publication. Its [results](../results/p05_comprehensive/P05_RESULTS.md)
-are frozen. The active goal is [P06/P11 synthesis and uncertainty](P06P11_READINESS.md)
-using saved predictions, with no retraining. The evidence audit passed; sparse
-class cells and shared sample/instrument identities require a reviewed
-resampling specification. The owner approved the documented weighted-bootstrap
-addition; it has not yet been run. The original superiority gate is not rewritten.
-P08 preprocessing and P14 RBF/SOM experiments remain separate future phases.
+**Current status, 2026-09-30:** the P05 core and its saved-prediction uncertainty
+analysis are complete numerically. The [P06/P11 report](../reports/NATO_SERS_UNCERTAINTY_REPORT.md)
+records a +4.36-point M01 selected-pair effect with an added conditional interval
+of 0.68–7.79 points. The original hierarchical interval is unavailable; G4 has
+four supported and two unassessable criteria, so no promotion follows. Extra
+neural losses have not established an advantage over the matched CNN; tree
+ensembles remain competitive. The original superiority gate is unchanged.
+The [P08 handoff](P08_HANDOFF.md) defines the next no-fit policy/model/support
+lock. New preprocessing fits and P14 RBF/SOM remain separately authorized work.
 
 ### Historical post-P04 checkpoint
 
@@ -213,4 +214,4 @@ The [P14 protocol](P14_RBF_SOM_EXTENSION.md) adds the questions below without ch
 
 EXP-P14-00 is the metadata-only prerequisite. EXP-P14-09 is a conditional application to the unchanged P13 substrate-restricted design, with F-P14-11. EXP-P14-10 synthesizes the core and records optional work as complete, unsupported, or deferred. F-P14-12 explains the workflow and evidence boundaries.
 
-The core is RQ-P14-01–05. Reliability and hybrids cannot expand into an indefinite search for a winning model. The first publication should integrate classification, spectral structure, preprocessing, and repeated-view evidence; it need not wait for every optional model. P05's core acquisition-aware benchmark is complete; its remaining P06/P11 interpretation is the active phase. P14 still begins with its own no-fit support/role/compute audit.
+The core is RQ-P14-01–05. Reliability and hybrids cannot expand into an indefinite search for a winning model. The first publication should integrate classification, spectral structure, preprocessing, and repeated-view evidence; it need not wait for every optional model. P05's core acquisition-aware benchmark and the scoped saved-prediction interpretation are complete numerically; broader unsupported P06/P11 requirements remain gaps. P14 still begins with its own no-fit support/role/compute audit.

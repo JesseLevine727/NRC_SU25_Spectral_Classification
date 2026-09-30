@@ -1,0 +1,7 @@
+figure_id,panel,label,series,x,y,lower,upper,domain,instrument,complete_contexts,remaining_domains,color,marker
+F_P06_weight_sensitivity,M01,Shared sample + instrument,crossed_weight,4.355730932485318,3,0.6837324744767895,7.7947731869669825,,,,,#0072B2,circle
+F_P06_weight_sensitivity,M01,Shared sample only,master_weight,4.355730932485318,2,3.5130417726860896,5.1390464954939965,,,,,#009E73,square
+F_P06_weight_sensitivity,M01,Instrument only,instrument_weight,4.355730932485318,1,0.9993225713005042,7.605328211316614,,,,,#D55E00,diamond
+F_P06_weight_sensitivity,M06,Shared sample + instrument,crossed_weight,3.6137351926825616,3,-1.8816042599806757,8.329017408179933,,,,,#0072B2,circle
+F_P06_weight_sensitivity,M06,Shared sample only,master_weight,3.6137351926825616,2,2.5047383722465675,4.752103720985547,,,,,#009E73,square
+F_P06_weight_sensitivity,M06,Instrument only,instrument_weight,3.6137351926825616,1,-1.6473871105630367,8.051897648850357,,,,,#D55E00,diamond

@@ -1267,7 +1267,15 @@ The research program is complete only when:
 
 ## 26. Current evidence and immediate next action after P04
 
-### Latest scientific closure — 2026-09-29
+### Latest synthesis — 2026-09-30
+
+The scoped frozen-prediction P06/P11 analysis is complete numerically, without new fitting or preprocessing. The [report](../reports/NATO_SERS_UNCERTAINTY_REPORT.md), [four-figure browser](../results/p06p11/index.html) and [supervisor review](delegation/P06P11_REVIEW.md) record the evidence and release checks. The owner-approved addition uses 10,000 shared master/instrument weighted draws. For the primary selected-CNN minus selected-classical M01 comparison, the fixed difference is +4.36 percentage points and the conditional interval is 0.68–7.79 points. M06 is +3.61 points with an interval of −1.88–8.33 points. Extra-loss and fixed tree-ensemble comparisons do not establish an advantage.
+
+The retained original hierarchy has zero defined draws in all 34 contrast–endpoint combinations because resampling empties originally represented class groups. Its interval remains unavailable. G4 records four supported and two unassessable criteria (the original interval and selected-classical T1 retention); promotion is false. The added interval does not replace the original gate. Numerical tie-count corrections affect seven secondary summary rows only; scores, intervals, primary counts and G4 remain unchanged.
+
+**Next research boundary:** the [P08 handoff](P08_HANDOFF.md) calls for a no-fit audit and an explicit model/policy/support/uncertainty/compute lock before any preprocessing experiment. Universal minimal/SG/arPLS comparisons precede source-selected family/QC policies and robustness branches. Minimal scaling is a controlled reference, not an established optimum. The mapping of historical D0 to matched D0-M and of the acquisition-aware procedure to the frozen context-local selected recipe remains a recommendation requiring the next contract lock. No new fits, P13 refits, P14 RBF/SOM, adaptation or open-set execution follow automatically. Wider unsupported T1/T2/exploratory neural requirements remain gaps; this is not completion of the entire P06/P11 programme.
+
+### Core-benchmark closure — 2026-09-29
 
 The approved **P05 four-recipe core benchmark and its registered held evaluation are complete**, including recovery authentication, all 320 source-only decisions, 1,995 unique refits and source-only calibrations, frozen predictions, aligned historical comparisons, and reporting. The [result narrative](../results/p05_comprehensive/P05_RESULTS.md), [35-figure browser](../results/p05_comprehensive/index.html), and [completion audit](P05_COMPLETION_AUDIT.md) supersede the execution-status and next-action statements in the historical checkpoints below. The scientific release has 159 authenticated public files; no private spectra, identities, row predictions or checkpoints are exported.
 
@@ -1275,9 +1283,9 @@ The source view contains 14,940 successful evidence fits (14,904 new plus 36 reu
 
 Equal-domain held balanced accuracy for matched D0-M, source-selected CNN and fixed D3 was 70.21%, 70.39% and 71.90% per spectrum, and 74.88%, 74.93% and 76.21% per physical sample. Fixed D3 improved the per-spectrum domain mean in six domains, worsened it in six and tied in one. Random Forest and Extra Trees remain strong comparators. These descriptive effects do not pass definitive P11/G4 superiority, justify selecting D3 from held outcomes, or establish chemical–nuisance disentanglement.
 
-**Immediate next research boundary:** preserve this completed core evidence and scope the remaining P06 synthesis and P11 grouped/domain-aware uncertainty under their existing estimands. The wider P06/P11 programme is not complete. P08 preprocessing remains a separate matched-policy question, not a correction selected from these held results. P14 still begins with its metadata-only support/role/compute audit if chosen. D4/D5, adaptation, controlled P13 deep substrate-restricted refits and all new preprocessing/model experiments remain outside the completed permit; no further fits follow automatically.
+**Historical next boundary at core closure:** preserve this completed core evidence and scope the remaining P06 synthesis and P11 grouped/domain-aware uncertainty under their existing estimands. The wider P06/P11 programme is not complete. P08 preprocessing remains a separate matched-policy question, not a correction selected from these held results. P14 still begins with its metadata-only support/role/compute audit if chosen. D4/D5, adaptation, controlled P13 deep substrate-restricted refits and all new preprocessing/model experiments remain outside the completed permit; no further fits follow automatically.
 
-**Active P06/P11 goal, 2026-09-29:** the [readiness audit](P06P11_READINESS.md)
+**Historical P06/P11 readiness checkpoint, 2026-09-29:** the [readiness audit](P06P11_READINESS.md)
 reproduced all saved core comparison tables, verified master/instrument role
 separation, and checked exact three-seed probability averaging. It identified
 237 singleton test-context/class cells on full held support and 228 on primary
