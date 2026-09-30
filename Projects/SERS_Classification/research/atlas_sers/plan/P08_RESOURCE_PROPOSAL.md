@@ -72,7 +72,7 @@ Range, normalization, derivative-control, population-tier and test-time perturba
 
 ## 6. Current decision boundary
 
-The first possible execution request is **U0 only**, after the no-fit package and runtime review gates close. It is not being launched by publishing this proposal. Full scientific readiness still requires the complete operation-to-artifact reuse ledger, adaptive job catalog, later-branch budgets and reviewed admission/restart implementation. No planning approval is treated as a training permit.
+The first possible execution request is **U0 only**, after the no-fit package and runtime review gates close. It is not being launched by publishing this proposal. Historical operation-to-artifact evidence mapping and the metadata-only adaptive catalog are complete, as recorded in the [readiness audit](P08_READINESS.md). Later-branch choices and budgets, resource feasibility, live admission/restart integration and the final reviewed release remain open. No planning approval is treated as a training permit.
 
 ## 7. Resource snapshots and cumulative attempt accounting
 
@@ -85,3 +85,21 @@ The pure attempt-journal kernel reconstructs usage from hash-linked session even
 An open journal session is not proof of a crash or proof of a live owner. The kernel reports that a clean restart is unavailable, even if no job is currently marked in flight. Its elapsed-time total covers recorded intervals only; it cannot infer time after the last durable observation. The future runtime must authenticate the exact smoke-job mapping, journal records and head, preserve exclusive ownership, and obtain reviewed recovery evidence for an incomplete session. It may not assume the unobserved interval was a free pause.
 
 These numerical and state-machine checks use synthetic inputs. Their acceptance is recorded in the [review log](delegation/P08_REVIEW.md). They do not establish durable filesystem behavior, authorize a retry, prove a receipt file exists, or grant a scientific execution permit. The generic journal's bounded synthetic manifests do not replace the exact 78-fit and 78-prediction U0 manifest. Full admission/restart acceptance remains open until those integration and durability checks pass.
+
+## 8. Exact smoke-candidate checks
+
+The candidate adapter binds the published proposal and attempt-manifest digests, replays the supplied journal, and checks the proposed U0 resource limits. It accepts no caller-supplied usage summary or replacement manifest digest. Its worker counts must agree with the replayed in-flight attempts. Admission arithmetic includes the next candidate: a worker pool already at capacity cannot accept another worker of that class. A pending prediction does not consume another fitting slot.
+
+The proposed U0 controller stops new admissions after any failed or interrupted attempt and requires review. This rule does not classify a finite low score or a documented valid collapse as an implementation failure. Previously attempted jobs remain consumed and cannot be retried by opening another session. Successful dependencies, an open session and remaining time, memory, storage and worker capacity are necessary conditions, not execution authority.
+
+The pure adapter neither reserves a slot nor writes an attempt event. It cannot establish that a resource reading is fresh, that a receipt file exists, or that another controller is excluded. Its structural eligibility result remains separate from a permit; scientific execution is still unconditionally denied. Durable ownership, event/head persistence and interruption handling require subsequent integration tests before a real smoke request can be accepted.
+
+## 9. Local journal persistence and incomplete sessions
+
+The local store joins the exact candidate guard to a hash-linked journal under a single POSIX controller lease. Before writing an attempt-start event, it checks the existing history, candidate dependency and prospective resource limits. The event must use the time and artifact counters already present in the latest durable record. If either counter advances, a progress event must be written first. This ordering checks consistency; it does not establish that an observation is fresh or truthful.
+
+Each event is created exclusively and synchronized before the head is replaced. The head update uses a separate pending file and directory synchronization. Metadata reads reject symlinks, hardlinks, nonregular files, duplicate JSON keys, nonfinite values, oversized records and inconsistent inventories. Parser limits are 16,384 events, 1,048,576 bytes per manifest, 65,536 bytes per event and 4,096 bytes per head. These are defensive metadata bounds, not additional scientific allowances.
+
+A write failure disables further use of that store object and preserves partial files. Reopening requires an independently supplied expected head and a coherent, not-started or cleanly closed session. An open session cannot become a free pause merely because its process has exited. Inspection can report its recorded state but cannot authorize recovery, infer unobserved elapsed time or turn running attempts into completed ones. Closing the object releases descriptors and the lease; it does not invent a session-close event.
+
+The [review log](delegation/P08_REVIEW.md) records functional, fault-injection and cross-process acceptance separately. These tests use invented metadata and temporary files. They do not simulate physical power loss or authenticate model checkpoints, live hardware readings or scientific receipts. Runtime measurement, permit binding, receipt validation and any incomplete-session recovery remain separate gates. The implementation continues to deny scientific execution unconditionally.

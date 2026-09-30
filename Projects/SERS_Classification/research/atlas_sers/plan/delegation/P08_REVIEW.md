@@ -281,3 +281,61 @@ DeepSeek supplied the scoped workflow change; review confirmed that the two pyte
 The exact Git-backed publication snapshot passed the public-boundary validator with **915 files checked** and CI-scope Ruff. The protected source, workflow and documentation remained fixed throughout validation. Before this full run, all **992 P08-focused tests and 60 subtests** passed in **4.04 seconds**. Lenarizer preservation checks retained original numbers and citations; added audit and validation values were verified against tool output. Final documentation-only notes receive repeated boundary, focused-test, lint and whitespace checks before publication.
 
 This ten-file milestone contains the resource checker, pure journal replay, their tests, the exact smoke-manifest audit, planning/review updates and the CI process-isolation correction. It does not close the admission/restart gate or the full readiness goal. Later-branch decisions and budgets, resource feasibility, live-runtime integration and the separate scientific execution request remain open. No scientific model fitting, dataset QC calculation, prediction or resampling was performed. The exact remote revision and CI outcome must be verified after the scoped push.
+
+## T046/T047: exact smoke-candidate integration
+
+The guard milestone was published on `main` as `0bf4448a9cfcabab0703d2555e848c0cead9345a`; the remote SHA matched. Its CI outcome is checked separately from the new candidate adapter.
+
+GitHub Actions run `36777190064` subsequently completed successfully for that published revision. It does not validate the uncommitted adapter or persistence work below.
+
+DeepSeek authored the pure candidate adapter from the accepted journal and resource APIs. It binds the published proposal and manifest digests, reconstructs usage from events, rejects inconsistent worker counts and checks projected capacity. A failed or interrupted attempt blocks new admissions pending review; successful low-scoring fits are not treated as failures. The adapter continues to deny scientific execution unconditionally.
+
+The supervisor independently checked **six synthetic arithmetic cases**, including full CPU/GPU capacity and prediction eligibility after all **78 fitting slots** were consumed. A separate metadata-only check authenticated the private manifest and examined its **156 candidates** with an empty history and invented idle-resource values. All were rejected for the absent open session; predictions also lacked successful fitting dependencies. This verifies binding and empty-history behavior, not measured hardware availability or an execution event.
+
+Synthetic test acceptance, full regression and publication of this adapter remain separate gates. Durable storage, exclusive ownership, fresh resource observations and interruption recovery are not established by this pure component. Lenarizer guided the distinction between structural eligibility and execution authority in the planning notes.
+
+## T048/T049: candidate-test acceptance
+
+The first candidate suite passed **52 tests**. Review required explicit cumulative-time/storage and resource-hash assertions across a clean pause, plus six mechanical formatting corrections. The first strengthening patch used nonexistent output fields and an incorrect import; it was rejected before application. The corrected patch retained the actual adapter API. The supervisor removed an extra patch-encoding escape layer and applied formatting only; production semantics were unchanged.
+
+The final adapter suite passed **55 tests in 0.20 seconds**, without warnings, and Ruff passed. It checks fixed manifest binding, dependencies, retries, failed-attempt review, projected CPU/GPU capacity, strict resource boundaries, cumulative pause accounting, sealed outputs, mutation isolation and unconditional execution refusal. All **1,047 P08 tests and 60 subtests** passed together in **4.19 seconds**. Full fixed-snapshot regression and publication remain separate gates; durable persistence is the next implementation slice.
+
+## T050–T053: local persistence and functional review
+
+DeepSeek authored the POSIX journal store against the accepted candidate and replay APIs. The supervisor reviewed the complete source and returned corrections for potentially blocking FIFO reads, bounded-read consistency, directory inventory limits, lock synchronization, corruption handling and static public errors. A separate interruption diagnostic reproduced one leaked lock descriptor before the constructor could transfer ownership. The temporary descriptor was closed, and the evidence was retained outside the public package.
+
+The corrected cleanup paths close owned descriptors after interruption, attempt remaining closures before propagating a cleanup interruption, and reset closed-object descriptors in a finalization block. Repeated independent checks injected interrupts into lock-file inspection and synchronization; both reported **zero leaked descriptors**. These were synthetic temporary-file checks, not a scientific-run recovery.
+
+The functional suite passed **35 tests in 0.33 seconds**, and Ruff passed. Coverage includes exact manifest binding, private creation modes, journal round trips, cumulative pause accounting, same-process lease contention, incomplete-session refusal, stale heads, projected worker capacity, failed-attempt review, resource exhaustion, static errors and unconditional scientific denial. All **1,082 P08 tests and 60 subtests** passed in **4.51 seconds**. Filesystem-fault and true cross-process tests remain under separate review; this checkpoint is not full persistence or runtime acceptance.
+
+Lenarizer guided the planning additions toward explicit mechanisms and evidence boundaries. Numerical parser limits describe bounded metadata handling, not larger scientific budgets. No dataset threshold, route, model, calibration, prediction, resampling result or rebuilt spectrum was produced.
+
+## T054: test-assignment size limit
+
+The combined fault-test assignment returned no patch after exhausting its response budget. Its transcript records a length stop, **64,000 reasoning tokens** and **zero output tokens**; no code was applied or claimed as reviewed. The supervisor split the work into separate filesystem, process-ownership and descriptor-cleanup assignments. This was an implementation-authoring limit, not a scientific execution failure or a retry of a model fit.
+
+Independent synthetic process checks already confirmed live-lease exclusion and two post-termination cases. An empty journal reopened after its exact child process was killed and reaped. An open journal retained its running attempt and consumed fitting slot, remained inspectable, and refused automatic writer recovery. Committed regression coverage and full-suite acceptance are still required.
+
+## T055–T059: filesystem and cleanup test acceptance
+
+Review corrected guessed helper imports in the filesystem and descriptor-cleanup drafts. The accepted tests import the actual fixture module directly, without module searching or suppressed import failures. The cleanup correction also checks that the first interruption object is propagated after remaining owned descriptors are closed. The supervisor applied only the final complete correction patch and mechanically repaired its patch header; production code was unchanged.
+
+The filesystem suite checks malformed and oversized heads, pending/orphan/missing/truncated records, stale external heads, symlink and hardlink rejection, permanent write refusal after corruption, and input-manifest isolation. Fault injection covers partial event writes, event and directory synchronization, pending-head writes and synchronization, head replacement, final directory synchronization, and keyboard interruption. A successful trace checks the distinct descriptor roles in the required synchronization order. Failed writes preserve their observed bytes; an error at final directory synchronization can leave a coherent head and is not misreported as necessarily corrupt storage.
+
+The **25 filesystem tests**, **seven descriptor-cleanup tests** and **35 functional tests** passed together: **67 passed in 0.49 seconds**. These results cover process-visible filesystem behavior under injected faults, not physical power-loss guarantees. The process-ownership draft used incorrect APIs and was rejected before application. Its corrected replacement remains under review; neither worker output nor the earlier independent process check substitutes for accepted regression coverage.
+
+## T060/T061: process-boundary acceptance
+
+The replacement process suite required corrections before acceptance: store creation must use a new child directory, the child import path must identify the actual package, and every inspection/open call must supply the expected head. Parent and child now use the same invented manifest digest. Assertions check exact error reasons, running-attempt state and unchanged fixture bytes, rather than accepting matching words in a traceback. Children have bounded waits, explicit descriptor isolation and cleanup of only the exact spawned process.
+
+All **six process tests passed in 0.16 seconds**. They cover competing ownership, process termination with an empty journal, termination with an open fitting attempt, and nonblocking rejection of FIFO entries at the manifest, head and lock paths. The store's **73 tests** use synthetic metadata only. Together with the candidate adapter and earlier P08 components, **1,120 tests and 60 subtests passed in 4.81 seconds**. CI-scope Ruff and whitespace checks passed.
+
+The candidate and local persistence components are accepted for the documented synthetic scope, subject to fixed-snapshot full regression and publication. Live resource collection, permit binding, receipt/checkpoint authentication and reviewed incomplete-session recovery remain outside this acceptance. The readiness goal is incomplete, and scientific execution remains denied. The current resource-proposal summary was updated to acknowledge the already completed historical evidence mapping and metadata catalog without changing any experimental rule or budget.
+
+## Candidate/persistence full-regression gate
+
+The exact Git-backed publication snapshot passed the public-boundary validator with **923 files checked** and CI-scope Ruff. The isolated analysis-runner module passed **16 tests in 2.25 seconds**, with **205,640 KiB** peak RSS. The remaining suite passed **4,061 tests and 60 subtests in 402.32 seconds**, with **four CUDA-only skips**, **2,026 inherited sparse-class warnings** and **1,887,624 KiB** peak RSS. The two processes therefore passed **4,077 tests** without omitting the resource-sensitive module.
+
+The protected package and workflow remained fixed throughout validation. All **11 reviewed paths** matched the snapshot before and after the run. The only subsequent changes are these review notes; repeated public-boundary, lint, focused-test, whitespace and byte-comparison checks precede publication. Lenarizer preservation checks found no removed original numerical or citation tokens. Added parser bounds, section references and validation counts were checked against source and tool output.
+
+This milestone accepts exact candidate accounting and bounded local persistence under the stated synthetic tests. It does not close the full live-runtime gate or the P08 readiness goal, and contains no new scientific result. Publication requires the scoped main-branch push, exact remote-SHA verification and a separately reported CI outcome. Raw data, identities, checkpoints, worker transcripts and unrelated working-tree changes remain outside the release.
