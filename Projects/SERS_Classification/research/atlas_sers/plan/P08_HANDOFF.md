@@ -2,6 +2,8 @@
 
 **Prepared:** 2026-09-30. **Status:** planning handoff, not an execution permit.
 
+**Readiness has begun:** the [input/support audit and approved direction](P08_READINESS.md) now record the owner's model-mapping, Extra Trees, scoring/uncertainty and complete minimal-pipeline fallback decisions. Those dated decisions supersede pending recommendations below. The original specifications remain preserved; exact execution ledgers, numerical locks and a separate scientific permit are still required.
+
 The next experimental question is whether smoothing or baseline correction improves chemical identification on an unseen instrument, and whether its effect depends on the classifier. Minimal min–max scaling is the completed benchmark's controlled reference; it has not been established as the best preprocessing policy.
 
 This handoff implements the ordering in [Master Plan §16](MASTER_PLAN.md#16-sub-plan-p08--preprocessing-policy-factorial-and-robustness). The current frozen-prediction uncertainty analysis does not authorize new fitting, policy selection, calibration, perturbations, or predictions. Its release must be reviewed before P08 begins. The original plans and immutable registries remain unchanged.

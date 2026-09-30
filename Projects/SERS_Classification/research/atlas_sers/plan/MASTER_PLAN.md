@@ -835,6 +835,8 @@ Use `k={1,2,3,5}` labelled target masters per class. All draws are master-strati
 
 ## 16. Sub-plan P08 — preprocessing-policy factorial and robustness
 
+**Readiness update, 2026-09-30:** the owner approved the [P08 readiness decisions](P08_READINESS.md) and their [separate contract](contracts/p08_readiness_contract.json): D0 maps explicitly to D0-M, the acquisition-aware procedure uses the frozen context-local P05 recipe, and Extra Trees joins the universal panel. The scoring amendment retains equal-context/equal-domain scores, adds pooled-four-fold sensitivity and uses documented support-preserving weighted uncertainty with the original hierarchy retained as feasibility analysis. Unsupported held families use the complete minimal-trained/minimal-input pipeline. All current held-family contexts require that fallback; family-specific transfer is untestable here. Original contracts and the historical wording below remain intact. Numerical details, exact ledgers, finite resources and execution guards are still being locked; no new scientific run is authorized.
+
 P08 begins only after the `RQ-P01` pipelines and conclusions are frozen. It answers `RQ-S01`, `RQ-S02`, `RQ-S03`, and the perturbation/quality part of `RQ-S05`. The same policy-development panel, gate library, support rules, split UIDs, and action arrays are used for all models.
 
 ### 16.1 Universal preprocessing (`RQ-S01`)
@@ -1274,6 +1276,8 @@ The scoped frozen-prediction P06/P11 analysis is complete numerically, without n
 The retained original hierarchy has zero defined draws in all 34 contrast–endpoint combinations because resampling empties originally represented class groups. Its interval remains unavailable. G4 records four supported and two unassessable criteria (the original interval and selected-classical T1 retention); promotion is false. The added interval does not replace the original gate. Numerical tie-count corrections affect seven secondary summary rows only; scores, intervals, primary counts and G4 remain unchanged.
 
 **Next research boundary:** the [P08 handoff](P08_HANDOFF.md) calls for a no-fit audit and an explicit model/policy/support/uncertainty/compute lock before any preprocessing experiment. Universal minimal/SG/arPLS comparisons precede source-selected family/QC policies and robustness branches. Minimal scaling is a controlled reference, not an established optimum. The mapping of historical D0 to matched D0-M and of the acquisition-aware procedure to the frozen context-local selected recipe remains a recommendation requiring the next contract lock. No new fits, P13 refits, P14 RBF/SOM, adaptation or open-set execution follow automatically. Wider unsupported T1/T2/exploratory neural requirements remain gaps; this is not completion of the entire P06/P11 programme.
+
+**Subsequent owner decisions, 2026-09-30:** the mapping recommended above is now approved, together with Extra Trees in the universal panel, the documented P08 statistical amendment and the complete minimal-pipeline family fallback. The [readiness audit](P08_READINESS.md) supersedes the pending-decision status, not the no-execution boundary. Input and metadata checks passed; final job/reuse ledgers and resource/launch approval remain outstanding.
 
 ### Core-benchmark closure — 2026-09-29
 

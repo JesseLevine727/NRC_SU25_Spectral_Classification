@@ -99,6 +99,12 @@ and two unassessable. See the [four-figure browser](results/p06p11/index.html)
 and [review record](plan/delegation/P06P11_REVIEW.md).
 No models were retrained. The next boundary is the **[P08 no-fit preprocessing
 planning gate](plan/P08_HANDOFF.md)**, not an automatically authorized sweep.
+The **[P08 readiness audit](plan/P08_READINESS.md)** now verifies the three frozen
+input pipelines and their held-split support. The owner approved the matched-CNN
+mapping, explicit Extra Trees inclusion in the universal panel, the statistical
+amendment and the complete minimal-pipeline fallback for unsupported families.
+Exact execution ledgers, resource ceilings and a separate training permit remain
+outstanding. No new P08 models have been trained.
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 

@@ -1,0 +1,298 @@
+{
+  "all_policy_totals": {
+    "authorized_fits": 0,
+    "literal_fit_slot_ceiling": 301119,
+    "literal_prediction_job_ceiling": 301119,
+    "prospective_new_fit_slots_after_source_cache_match": 292803,
+    "prospective_prediction_jobs_after_source_cache_match": 292803,
+    "retry_slots": 0,
+    "same_context_same_recipe_alias_slots": 1989,
+    "scalar_calibration_operations": 5031,
+    "strategy_alias_refit_slots": 4680,
+    "unique_recipe_refit_slots": 2691
+  },
+  "authorized_for_execution": false,
+  "authorized_model_fits": 0,
+  "context_count": 260,
+  "context_counts_by_selection_mode": {
+    "master_cv": 132,
+    "pseudo_domain": 128
+  },
+  "incremental_nonminimal_totals": {
+    "authorized_fits": 0,
+    "literal_fit_slot_ceiling": 200746,
+    "literal_prediction_job_ceiling": 200746,
+    "prospective_new_fit_slots_after_source_cache_match": 195202,
+    "prospective_prediction_jobs_after_source_cache_match": 195202,
+    "retry_slots": 0,
+    "same_context_same_recipe_alias_slots": 1326,
+    "scalar_calibration_operations": 3354,
+    "strategy_alias_refit_slots": 3120,
+    "unique_recipe_refit_slots": 1794
+  },
+  "input_sha256": {
+    "contexts": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "p05_selection_plan": "6d54ebd7e106fd717e9f7fea9740b10d2c5287be0352173cf343eda492356ee7",
+    "roles": "224891579d5df84c42a1c3c827590b6515ec83a13bfe4f07d48f249432f38d91"
+  },
+  "limitations": [
+    "planning_slots_only_not_execution_authorization",
+    "min_evidence_reuse_unverified_and_not_authenticated",
+    "min_evidence_reuse_requires_complete_hashes_before_any_future_reuse",
+    "sg_and_arpls_new_policy_fitting_unapproved",
+    "source_cache_reuse_only_within_same_new_policy_candidate_context",
+    "p05_selected_counts_are_additional_unique_neural_refits_beyond_d0_m_not_total_cost_or_selected_strategy_coverage",
+    "no_family_qc_or_robustness_jobs_included",
+    "no_retries_no_timings_no_storage_estimates",
+    "does_not_complete_execution_ledger"
+  ],
+  "model_accounting_basis": "p05_selected_counts_are_additional_unique_neural_refits_beyond_d0_m_not_total_cost_or_selected_strategy_coverage",
+  "policy_reports": [
+    {
+      "evidence_status": "existing_evidence_reuse_unverified",
+      "models": [
+        {
+          "calibration_model_fit_slots": 780,
+          "calibration_source_validation_prediction_jobs": 780,
+          "final_refit_slots": 260,
+          "final_refit_test_prediction_jobs": 260,
+          "model_id": "C-RBF-SVM",
+          "new_calibration_model_fits_if_role_hashes_match": 384,
+          "potentially_reusable_calibration_slots": 396,
+          "scalar_calibration_operations": 260,
+          "source_fit_validation_prediction_jobs": 24516,
+          "source_selection_fit_slots": 24516
+        },
+        {
+          "calibration_model_fit_slots": 2340,
+          "calibration_source_validation_prediction_jobs": 2340,
+          "final_refit_slots": 780,
+          "final_refit_test_prediction_jobs": 780,
+          "model_id": "C-RANDOM-FOREST",
+          "new_calibration_model_fits_if_role_hashes_match": 1152,
+          "potentially_reusable_calibration_slots": 1188,
+          "scalar_calibration_operations": 260,
+          "source_fit_validation_prediction_jobs": 32688,
+          "source_selection_fit_slots": 32688
+        },
+        {
+          "calibration_model_fit_slots": 2340,
+          "calibration_source_validation_prediction_jobs": 2340,
+          "final_refit_slots": 780,
+          "final_refit_test_prediction_jobs": 780,
+          "model_id": "C-EXTRA-TREES",
+          "new_calibration_model_fits_if_role_hashes_match": 1152,
+          "potentially_reusable_calibration_slots": 1188,
+          "scalar_calibration_operations": 260,
+          "source_fit_validation_prediction_jobs": 32688,
+          "source_selection_fit_slots": 32688
+        },
+        {
+          "calibration_model_fit_slots": 0,
+          "calibration_source_validation_prediction_jobs": 0,
+          "final_refit_slots": 780,
+          "final_refit_test_prediction_jobs": 780,
+          "model_id": "D0-M",
+          "new_calibration_model_fits_if_role_hashes_match": 0,
+          "potentially_reusable_calibration_slots": 0,
+          "scalar_calibration_operations": 780,
+          "source_fit_validation_prediction_jobs": 2043,
+          "source_selection_fit_slots": 2043
+        },
+        {
+          "calibration_model_fit_slots": 0,
+          "calibration_source_validation_prediction_jobs": 0,
+          "final_refit_slots": 117,
+          "final_refit_test_prediction_jobs": 117,
+          "model_id": "P05-SELECTED",
+          "new_calibration_model_fits_if_role_hashes_match": 0,
+          "potentially_reusable_calibration_slots": 0,
+          "scalar_calibration_operations": 117,
+          "source_fit_validation_prediction_jobs": 261,
+          "source_selection_fit_slots": 261
+        }
+      ],
+      "policy_id": "PP-U-MIN",
+      "representation_id": "R_MIN_400_1800",
+      "totals": {
+        "authorized_fits": 0,
+        "literal_fit_slot_ceiling": 100373,
+        "literal_prediction_job_ceiling": 100373,
+        "prospective_new_fit_slots_after_source_cache_match": 97601,
+        "prospective_prediction_jobs_after_source_cache_match": 97601,
+        "retry_slots": 0,
+        "same_context_same_recipe_alias_slots": 663,
+        "scalar_calibration_operations": 1677,
+        "strategy_alias_refit_slots": 1560,
+        "unique_recipe_refit_slots": 897
+      }
+    },
+    {
+      "evidence_status": "new_policy_fitting_unapproved",
+      "models": [
+        {
+          "calibration_model_fit_slots": 780,
+          "calibration_source_validation_prediction_jobs": 780,
+          "final_refit_slots": 260,
+          "final_refit_test_prediction_jobs": 260,
+          "model_id": "C-RBF-SVM",
+          "new_calibration_model_fits_if_role_hashes_match": 384,
+          "potentially_reusable_calibration_slots": 396,
+          "scalar_calibration_operations": 260,
+          "source_fit_validation_prediction_jobs": 24516,
+          "source_selection_fit_slots": 24516
+        },
+        {
+          "calibration_model_fit_slots": 2340,
+          "calibration_source_validation_prediction_jobs": 2340,
+          "final_refit_slots": 780,
+          "final_refit_test_prediction_jobs": 780,
+          "model_id": "C-RANDOM-FOREST",
+          "new_calibration_model_fits_if_role_hashes_match": 1152,
+          "potentially_reusable_calibration_slots": 1188,
+          "scalar_calibration_operations": 260,
+          "source_fit_validation_prediction_jobs": 32688,
+          "source_selection_fit_slots": 32688
+        },
+        {
+          "calibration_model_fit_slots": 2340,
+          "calibration_source_validation_prediction_jobs": 2340,
+          "final_refit_slots": 780,
+          "final_refit_test_prediction_jobs": 780,
+          "model_id": "C-EXTRA-TREES",
+          "new_calibration_model_fits_if_role_hashes_match": 1152,
+          "potentially_reusable_calibration_slots": 1188,
+          "scalar_calibration_operations": 260,
+          "source_fit_validation_prediction_jobs": 32688,
+          "source_selection_fit_slots": 32688
+        },
+        {
+          "calibration_model_fit_slots": 0,
+          "calibration_source_validation_prediction_jobs": 0,
+          "final_refit_slots": 780,
+          "final_refit_test_prediction_jobs": 780,
+          "model_id": "D0-M",
+          "new_calibration_model_fits_if_role_hashes_match": 0,
+          "potentially_reusable_calibration_slots": 0,
+          "scalar_calibration_operations": 780,
+          "source_fit_validation_prediction_jobs": 2043,
+          "source_selection_fit_slots": 2043
+        },
+        {
+          "calibration_model_fit_slots": 0,
+          "calibration_source_validation_prediction_jobs": 0,
+          "final_refit_slots": 117,
+          "final_refit_test_prediction_jobs": 117,
+          "model_id": "P05-SELECTED",
+          "new_calibration_model_fits_if_role_hashes_match": 0,
+          "potentially_reusable_calibration_slots": 0,
+          "scalar_calibration_operations": 117,
+          "source_fit_validation_prediction_jobs": 261,
+          "source_selection_fit_slots": 261
+        }
+      ],
+      "policy_id": "PP-U-SG",
+      "representation_id": "R_SG_400_1800",
+      "totals": {
+        "authorized_fits": 0,
+        "literal_fit_slot_ceiling": 100373,
+        "literal_prediction_job_ceiling": 100373,
+        "prospective_new_fit_slots_after_source_cache_match": 97601,
+        "prospective_prediction_jobs_after_source_cache_match": 97601,
+        "retry_slots": 0,
+        "same_context_same_recipe_alias_slots": 663,
+        "scalar_calibration_operations": 1677,
+        "strategy_alias_refit_slots": 1560,
+        "unique_recipe_refit_slots": 897
+      }
+    },
+    {
+      "evidence_status": "new_policy_fitting_unapproved",
+      "models": [
+        {
+          "calibration_model_fit_slots": 780,
+          "calibration_source_validation_prediction_jobs": 780,
+          "final_refit_slots": 260,
+          "final_refit_test_prediction_jobs": 260,
+          "model_id": "C-RBF-SVM",
+          "new_calibration_model_fits_if_role_hashes_match": 384,
+          "potentially_reusable_calibration_slots": 396,
+          "scalar_calibration_operations": 260,
+          "source_fit_validation_prediction_jobs": 24516,
+          "source_selection_fit_slots": 24516
+        },
+        {
+          "calibration_model_fit_slots": 2340,
+          "calibration_source_validation_prediction_jobs": 2340,
+          "final_refit_slots": 780,
+          "final_refit_test_prediction_jobs": 780,
+          "model_id": "C-RANDOM-FOREST",
+          "new_calibration_model_fits_if_role_hashes_match": 1152,
+          "potentially_reusable_calibration_slots": 1188,
+          "scalar_calibration_operations": 260,
+          "source_fit_validation_prediction_jobs": 32688,
+          "source_selection_fit_slots": 32688
+        },
+        {
+          "calibration_model_fit_slots": 2340,
+          "calibration_source_validation_prediction_jobs": 2340,
+          "final_refit_slots": 780,
+          "final_refit_test_prediction_jobs": 780,
+          "model_id": "C-EXTRA-TREES",
+          "new_calibration_model_fits_if_role_hashes_match": 1152,
+          "potentially_reusable_calibration_slots": 1188,
+          "scalar_calibration_operations": 260,
+          "source_fit_validation_prediction_jobs": 32688,
+          "source_selection_fit_slots": 32688
+        },
+        {
+          "calibration_model_fit_slots": 0,
+          "calibration_source_validation_prediction_jobs": 0,
+          "final_refit_slots": 780,
+          "final_refit_test_prediction_jobs": 780,
+          "model_id": "D0-M",
+          "new_calibration_model_fits_if_role_hashes_match": 0,
+          "potentially_reusable_calibration_slots": 0,
+          "scalar_calibration_operations": 780,
+          "source_fit_validation_prediction_jobs": 2043,
+          "source_selection_fit_slots": 2043
+        },
+        {
+          "calibration_model_fit_slots": 0,
+          "calibration_source_validation_prediction_jobs": 0,
+          "final_refit_slots": 117,
+          "final_refit_test_prediction_jobs": 117,
+          "model_id": "P05-SELECTED",
+          "new_calibration_model_fits_if_role_hashes_match": 0,
+          "potentially_reusable_calibration_slots": 0,
+          "scalar_calibration_operations": 117,
+          "source_fit_validation_prediction_jobs": 261,
+          "source_selection_fit_slots": 261
+        }
+      ],
+      "policy_id": "PP-U-ARPLS",
+      "representation_id": "R_ARPLS_400_1800",
+      "totals": {
+        "authorized_fits": 0,
+        "literal_fit_slot_ceiling": 100373,
+        "literal_prediction_job_ceiling": 100373,
+        "prospective_new_fit_slots_after_source_cache_match": 97601,
+        "prospective_prediction_jobs_after_source_cache_match": 97601,
+        "retry_slots": 0,
+        "same_context_same_recipe_alias_slots": 663,
+        "scalar_calibration_operations": 1677,
+        "strategy_alias_refit_slots": 1560,
+        "unique_recipe_refit_slots": 897
+      }
+    }
+  ],
+  "schema_version": 1,
+  "scope": "universal_slot_accounting_not_execution_ledger",
+  "selected_recipe_counts": {
+    "D0-M": 221,
+    "D1": 14,
+    "D2": 11,
+    "D3": 14
+  },
+  "selection_unit_count": 681
+}
