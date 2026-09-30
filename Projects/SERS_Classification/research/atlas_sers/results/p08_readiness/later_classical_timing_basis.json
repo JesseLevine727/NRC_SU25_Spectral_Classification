@@ -1,0 +1,100 @@
+{
+  "schema_version": "nato-sers-p08-later-classical-timing-v1",
+  "scope": "historical_MIN_source_selection_only",
+  "execution_authorized": false,
+  "new_scientific_operations": 0,
+  "input_sha256": {
+    "fit_manifest": "3a8e22e50cb87c32ff26062d65d35dcd7ae6d339ef344bcedcde9123a33122a8",
+    "terminal_ledger": "b72956190cc57529fdbb61e7211cd94b2be26a534cf2c71f9bbfd4c869b86845"
+  },
+  "families": [
+    {
+      "model_id": "C-EXTRA-TREES",
+      "source_fit_slots": 32688,
+      "status_counts": {
+        "complete": 32688
+      },
+      "durations_recorded": 32688,
+      "historical_source_fit_seconds": 30833.56629148737
+    },
+    {
+      "model_id": "C-LOGREG-EN",
+      "source_fit_slots": 20430,
+      "status_counts": {
+        "complete": 19501,
+        "convergence_failure": 929
+      },
+      "durations_recorded": 20430,
+      "historical_source_fit_seconds": 36631.8532059213
+    },
+    {
+      "model_id": "C-NEAREST-CENTROID",
+      "source_fit_slots": 5448,
+      "status_counts": {
+        "complete": 5448
+      },
+      "durations_recorded": 5448,
+      "historical_source_fit_seconds": 58.76315962022609
+    },
+    {
+      "model_id": "C-PCA-LDA",
+      "source_fit_slots": 6810,
+      "status_counts": {
+        "complete": 5898,
+        "rank_failure": 912
+      },
+      "durations_recorded": 6810,
+      "historical_source_fit_seconds": 87.0730956111799
+    },
+    {
+      "model_id": "C-PLS-DA",
+      "source_fit_slots": 3405,
+      "status_counts": {
+        "complete": 3038,
+        "rank_failure": 366,
+        "convergence_failure": 1
+      },
+      "durations_recorded": 3405,
+      "historical_source_fit_seconds": 64.461689690186
+    },
+    {
+      "model_id": "C-PRIOR",
+      "source_fit_slots": 1362,
+      "status_counts": {
+        "complete": 1362
+      },
+      "durations_recorded": 1362,
+      "historical_source_fit_seconds": 13.438673603464782
+    },
+    {
+      "model_id": "C-RANDOM-FOREST",
+      "source_fit_slots": 32688,
+      "status_counts": {
+        "complete": 32688
+      },
+      "durations_recorded": 32688,
+      "historical_source_fit_seconds": 55918.86997434782
+    },
+    {
+      "model_id": "C-RBF-SVM",
+      "source_fit_slots": 24516,
+      "status_counts": {
+        "complete": 24516
+      },
+      "durations_recorded": 24516,
+      "historical_source_fit_seconds": 325.156635671911
+    },
+    {
+      "model_id": "C-SPECTRAL-MATCH",
+      "source_fit_slots": 2043,
+      "status_counts": {
+        "complete": 2043
+      },
+      "durations_recorded": 2043,
+      "historical_source_fit_seconds": 20.76906696817595
+    }
+  ],
+  "total_source_fit_seconds": 123953.95179292164,
+  "four_times_recorded_source_fit_hours": 137.72661310324625,
+  "caveat": "Not a runtime bound or measured new-policy cost. Historical noncomplete candidate attempts remain counted; durations are available for every selected slot. Excludes calibration, final fits, predictions, persistence and scheduling."
+}

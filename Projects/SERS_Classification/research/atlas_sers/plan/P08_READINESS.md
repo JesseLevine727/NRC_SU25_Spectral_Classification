@@ -200,4 +200,10 @@ The [later-branch design note](P08_LATER_BRANCH_DESIGN.md) records two constrain
 
 The [full-selector bound](../results/p08_readiness/later_classical_selector_bounds.json) authenticates nine classical families, 126 candidates and 190 candidate–seed pairs across 681 source-selection units. Repeating that selector for one new representation has a conditional ceiling of 131,322 model fits after authenticated within-representation calibration reuse. Applying it to three normalization controls and the derivative control would total 525,288 model fits. These are prospective limits for an unresolved design choice, not executed fits or an approved budget. The universal comparison and approved adaptive fallback are unchanged.
 
+The [conditional N1 resource proposal](P08_RESOURCE_PROPOSAL.md#conditional-n1-proposal-full-selector-normalization-controls) now adds finite wall-time, storage, RAM and worker ceilings for that full-selector interpretation. Its timing basis counts historical failed candidates as well as completed ones. The owner choice and exact later-branch operation ledger remain unresolved; no N1 resource or execution approval is inferred.
+
 Owner decisions on normalization selection, regenerated-population selection and perturbation placement remain pending. The note also identifies the unapproved shift-edge rule and separate range/population accounting requirements. Live runtime integration, finite later-branch resources, final readiness review and a separate scientific execution request remain open.
+
+## 17. Completion-evidence boundary
+
+The [terminal-receipt specification](P08_RESOURCE_PROPOSAL.md#10-terminal-receipt-and-artifact-byte-verification) requires a proposed completion event to match the running attempt and actual saved bytes. A journal entry containing a hash does not prove that its referenced file exists. The read-only check separates byte integrity from checkpoint loadability and source-prediction validity; it cannot append a completion event or grant execution. Synthetic implementation acceptance and the remaining runtime obligations are recorded in the [review log](delegation/P08_REVIEW.md).

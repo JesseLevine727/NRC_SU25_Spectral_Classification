@@ -103,8 +103,13 @@ The **[P08 readiness audit](plan/P08_READINESS.md)** now verifies the three froz
 input pipelines and their held-split support. The owner approved the matched-CNN
 mapping, explicit Extra Trees inclusion in the universal panel, the statistical
 amendment and the complete minimal-pipeline fallback for unsupported families.
-Exact execution ledgers, resource ceilings and a separate training permit remain
-outstanding. No new P08 models have been trained.
+The approved nested-support rule retains 54 QC-adaptive contexts, all at CWA,
+and 206 complete minimal-pipeline fallbacks. All 260 remain in operational
+results, with the supported subset reported separately. Universal and QC
+operation catalogs are audited; [resource ceilings](plan/P08_RESOURCE_PROPOSAL.md)
+remain proposals. [Later-branch choices](plan/P08_LATER_BRANCH_DESIGN.md), live
+runtime integration and a separate training permit remain outstanding.
+No new P08 models have been trained.
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 

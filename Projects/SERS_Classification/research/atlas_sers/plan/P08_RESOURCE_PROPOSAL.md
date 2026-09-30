@@ -70,6 +70,20 @@ The original P03 MIN run did not save fitted classical estimator objects. A futu
 
 Range, normalization, derivative-control, population-tier and test-time perturbation branches remain required planning items under master-plan Sections 16.1 and 16.5–16.7. They are not included in U0, U1 or Q1. Their exact role/model mappings, numerical perturbation definitions, reconstruction requirement and finite job budgets must be recorded separately. This proposal does not silently remove them or grant them U1's resources.
 
+### Conditional N1 proposal: full-selector normalization controls
+
+This separate proposal applies only if the owner chooses to repeat the full source-only classical selector for SNV, vector and area normalization and the derivative control. It does not settle that pending choice. The [conditional slot audit](../results/p08_readiness/later_classical_selector_bounds.json) gives a ceiling of **525,288 model fits and 1,040 scalar calibrations** across those four controls, after authenticated within-representation calibration-role reuse.
+
+| Proposed stage | Active wall time | New private artifacts | Process-tree RAM | Allocated GPU memory | CPU workers |
+|---|---:|---:|---:|---:|---:|
+| N1: four controls with the full classical selector | 96 hours | 80 GiB | 24 GiB | 0 | 4, single-threaded |
+
+The [authenticated timing basis](../results/p08_readiness/later_classical_timing_basis.json) covers all 129,390 historical source-selection slots across nine classical families. It retains 127,182 completed candidates, 1,278 rank failures and 930 convergence failures. Every slot has a recorded duration; failed candidates are not silently removed from the timing sum. The sum is **123,953.952 seconds**. Multiplying it by four gives **137.73 sequential CPU-hours** for source fitting alone, under unchanged historical durations. This is not a P08 measurement or an upper runtime bound.
+
+The 96-hour wall ceiling allows additional time beyond the idealized four-worker source-fitting duration for calibration, final fits, predictions, persistence and scheduling. It does not guarantee completion: new representations can change numerical cost and valid-candidate support. The artifact and RAM ceilings are explicit operational proposals, not measurements of future use. No GPU work or automatic retry is proposed. Existing failed-candidate rules and source-only selection remain unchanged.
+
+N1 requires its own approval, an exact operation ledger and a fresh storage check. Starting from zero N1 artifacts requires at least 110 GiB free under the 30-GiB reserve rule; earlier stages' retained artifacts still occupy disk. This allowance is separate from U1 and Q1 and cannot be borrowed automatically. The incomplete historical selected-classical reference is preserved; N1 does not authorize filling its missing cells. Range, regenerated-population and perturbation branches still need their own accounting.
+
 ## 6. Current decision boundary
 
 The first possible execution request is **U0 only**, after the no-fit package and runtime review gates close. It is not being launched by publishing this proposal. Historical operation-to-artifact evidence mapping and the metadata-only adaptive catalog are complete, as recorded in the [readiness audit](P08_READINESS.md). Later-branch choices and budgets, resource feasibility, live admission/restart integration and the final reviewed release remain open. No planning approval is treated as a training permit.
@@ -103,3 +117,13 @@ Each event is created exclusively and synchronized before the head is replaced. 
 A write failure disables further use of that store object and preserves partial files. Reopening requires an independently supplied expected head and a coherent, not-started or cleanly closed session. An open session cannot become a free pause merely because its process has exited. Inspection can report its recorded state but cannot authorize recovery, infer unobserved elapsed time or turn running attempts into completed ones. Closing the object releases descriptors and the lease; it does not invent a session-close event.
 
 The [review log](delegation/P08_REVIEW.md) records functional, fault-injection and cross-process acceptance separately. These tests use invented metadata and temporary files. They do not simulate physical power loss or authenticate model checkpoints, live hardware readings or scientific receipts. Runtime measurement, permit binding, receipt validation and any incomplete-session recovery remain separate gates. The implementation continues to deny scientific execution unconditionally.
+
+## 10. Terminal receipt and artifact-byte verification
+
+A proposed completion event must bind to the exact manifest, current journal head, running job and original attempt-start event. Its receipt must agree on the job, source-fit or source-validation stage, worker, session and terminal status. The existing replay kernel checks the proposed transition before any artifact is read. A digest-shaped receipt reference alone is insufficient.
+
+The receipt reader checks an independently specified list of required artifact names, each file's byte length and SHA-256 digest. It uses the accepted descriptor-relative readers and rejects duplicate JSON keys, nonfinite values, unknown fields, unsafe names, symlinks, hardlinks and nonregular files. Reader bounds are 65,536 bytes per receipt, eight artifacts and 64 MiB per artifact. These are defensive parsing limits, not new scientific resource allowances.
+
+This check is read-only: it neither appends the proposed event nor opens an execution session. Its report must distinguish verified byte integrity from unverified scientific semantics. Matching bytes do not establish that a checkpoint loads, that a model has the required architecture, or that predictions contain the expected source observations and valid values. Those semantic checks must use the authenticated job specification before a future controller accepts a successful attempt. Failure or interruption records do not grant a retry.
+
+The caller must derive required artifact names from the reviewed stage specification, not from the receipt it is checking. Verification describes the bytes read at that time; later consumers must preserve or reauthenticate them. Live ownership, resource freshness, the scientific permit and incomplete-session recovery remain separate requirements. Acceptance of the synthetic reader tests is recorded in the [review log](delegation/P08_REVIEW.md); this specification alone establishes none of those runtime properties.

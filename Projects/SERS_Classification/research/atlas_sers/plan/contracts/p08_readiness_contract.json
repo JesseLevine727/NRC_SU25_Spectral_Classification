@@ -93,6 +93,6 @@
     "blanket_job_cache_authority": false,
     "audit": "results/p08_readiness/minimal_operation_reuse_audit.json"
   },
-  "pending_later_branch_choices": ["normalization_classical_selector_scope", "regenerated_tier_source_selection_scope", "perturbation_before_or_after_preprocessing"],
+  "pending_later_branch_choices": ["normalization_classical_selector_scope", "regenerated_tier_source_selection_scope", "perturbation_before_or_after_preprocessing", "synthetic_rigid_shift_endpoint_extension"],
   "completion_gaps": ["later_branch_numerical_specs_and_finite_budgets", "resource_feasibility_and_final_lock", "reviewed_admission_restart_guards", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
 }

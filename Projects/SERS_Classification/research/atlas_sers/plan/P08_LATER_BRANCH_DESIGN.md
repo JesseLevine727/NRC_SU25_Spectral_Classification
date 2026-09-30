@@ -45,6 +45,8 @@ Exact within-representation role matching can reuse 396 calibration roles from s
 
 If the same full-selector procedure is approved for all three normalization controls and the derivative control, the combined ceiling is **525,288 model fits and 1,040 scalar temperatures**. This conditional bound is not an approved budget, exact executable job graph or prediction of runtime. It excludes the range and population branches. Full wall-time, memory, artifact and prediction accounting remains necessary before a launch request.
 
+The subsequent [N1 resource proposal](P08_RESOURCE_PROPOSAL.md#conditional-n1-proposal-full-selector-normalization-controls) adds finite, conditional ceilings without approving the selector choice. Its [timing basis](../results/p08_readiness/later_classical_timing_basis.json) preserves historical rank and convergence failures. The recorded source-fit durations sum to 123,953.952 seconds per historical selector; four copies give 137.73 sequential CPU-hours before calibration, final fitting, inference and persistence. These recorded costs do not guarantee new-representation runtimes or establish a launchable operation ledger.
+
 The alternative is to freeze the family chosen from MIN source data within each context and retune only its hyperparameters for each control. That answers a narrower question: how normalization affects a fixed source-selected family. Its cost requires an audit of the actual source-selection map. The eight missing historical selected-classical final references must not be imputed, but their absence does not by itself prove that source family selections are missing.
 
 ## 3. Rigid shifts need an explicit edge rule
@@ -61,6 +63,8 @@ Use the stated convention `y_shift(v) = y(v − delta)`. The model's primary inp
 These counts concern the registered arrays, not a claim that every original instrument lacks all lower-wavenumber measurements. The synthetic tests check only coordinate membership. They implement no shift, padding or extrapolation.
 
 The later perturbation lock must state how unsupported edges are handled. Endpoint extension would be a declared synthetic boundary assumption, not recovered measured signal. Returning to native measurements would require a separately governed input definition. Dropping channels would change the model input. None of these choices follows automatically from the approved shift range, and none has been implemented or approved here.
+
+The owner has now been asked whether to approve constant endpoint extension for this labelled synthetic stress test only. The recommendation retains the registered model width and leaves measured-data preprocessing unchanged. It remains pending, and cannot be described as measured spectral support or a physically validated instrument error model.
 
 Perturbation placement also remains pending. Corruption before the numerical preprocessing stages asks whether preprocessing protects identification; corruption after those stages asks about classifier-input sensitivity. The frozen common-support input is already interpolated, so “before preprocessing” must identify its starting array rather than imply a native irregular-axis experiment. The two questions cannot be silently interchanged.
 
