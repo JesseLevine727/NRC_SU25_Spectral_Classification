@@ -1,0 +1,61 @@
+{
+  "additional_recipe_roles": 3,
+  "by_model": {
+    "C-EXTRA-TREES": 18,
+    "C-RANDOM-FOREST": 18,
+    "C-RBF-SVM": 6,
+    "D0-M": 18,
+    "D1": 6,
+    "D2": 6,
+    "D3": 6
+  },
+  "by_policy": {
+    "PP-U-ARPLS": 39,
+    "PP-U-SG": 39
+  },
+  "choice_rule": "first_lexical_held_context_per_station_and_first_unit_plus_first_context_per_frozen_non_d0_recipe",
+  "classical_candidate_rule": "first_in_frozen_declared_candidate_order_per_family",
+  "execution_authorized": false,
+  "neural_epochs": {
+    "maximum": 200,
+    "minimum": 30,
+    "patience": 20
+  },
+  "new_scientific_operations": 0,
+  "outside_proposal": [
+    "held_predictions",
+    "scalar_calibration",
+    "hyperparameter_selection",
+    "new_policy_selection",
+    "QC_quantiles_or_routing",
+    "refits",
+    "resampling",
+    "perturbations",
+    "representation_rebuilds"
+  ],
+  "parent_plan_sha256": "179b95e8011a5f6cc02c65c7fab1acf0f6a6241ba1ef02378aac207b9e19cb03",
+  "private_archive_sha256": "3b556d39686e8bad330ac48a4c68c30660ce7ff3a1a4d28488bc8c0bdc4f773f",
+  "proposal_sha256": "6639a32c1dd930612ead6ae59adf9aff5831904e883081f16c3490721af5089a",
+  "proposed_limits": {
+    "allocated_gpu_bytes": 8589934592,
+    "automatic_retries": 0,
+    "cpu_threads_per_fit_worker": 1,
+    "maximum_cpu_fit_workers": 2,
+    "maximum_gpu_fit_workers": 1,
+    "new_private_artifact_bytes": 8589934592,
+    "process_tree_rss_bytes": 17179869184,
+    "wall_seconds": 5400
+  },
+  "prospective_source_fits": 78,
+  "prospective_source_validation_predictions": 78,
+  "reuse_rule": "Successful fully authenticated smoke slots count toward, not in addition to, the universal ceiling.",
+  "schema_version": "nato-sers-p08-universal-smoke-proposal-audit-v1",
+  "source_seeds": [
+    20260805,
+    20260817,
+    20260829
+  ],
+  "station_base_roles": 3,
+  "status": "metadata_verified_not_authorized",
+  "svm_seed": "deterministic"
+}

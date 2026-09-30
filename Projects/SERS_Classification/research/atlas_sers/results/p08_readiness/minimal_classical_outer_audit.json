@@ -1,0 +1,21 @@
+{
+  "boundary": "Saved held predictions are technical-seed aggregates. Pseudo-domain contexts persist raw per-seed calibration predictions; master-CV contexts persist their cached calibration aggregate, with raw predictions available in source-selection shards. Complete pipeline endpoints can be reused; nonexistent per-seed held arrays or fitted estimator objects cannot be presented as reusable artifacts.",
+  "counts": {
+    "calibration_ensemble_roles": 2340,
+    "calibration_model_fit_records": 5460,
+    "contexts_with_raw_per_seed_calibration_predictions": 384,
+    "contexts_with_seed_averaged_cached_calibration_predictions": 396,
+    "final_ensemble_prediction_artifacts": 780,
+    "final_model_fit_records": 1820,
+    "outer_context_model_cells": 780,
+    "prediction_appearances": 8355,
+    "scalar_calibration_states": 780,
+    "tree_contexts_with_only_seed_averaged_outer_predictions": 520
+  },
+  "execution_authorized": false,
+  "new_scientific_operations": 0,
+  "private_bridge_sha256": "fa49846fa46fea7acc21485c18b5ea074444240b504ac778b3dc6b629e64679b",
+  "rehashed_files": 3979,
+  "schema_version": "nato-sers-p08-classical-outer-audit-v1",
+  "status": "pass"
+}

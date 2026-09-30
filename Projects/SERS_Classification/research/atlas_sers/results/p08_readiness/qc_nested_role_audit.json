@@ -1,0 +1,66 @@
+{
+  "algorithm": "classwise_canonical_hash_rank_round_robin_3",
+  "execution_authorized": false,
+  "fold_size_ranges": {
+    "fitting_masters": {
+      "maximum": 11,
+      "minimum": 6
+    },
+    "fitting_spectra": {
+      "maximum": 59,
+      "minimum": 11
+    },
+    "validation_masters": {
+      "maximum": 6,
+      "minimum": 3
+    },
+    "validation_spectra": {
+      "maximum": 42,
+      "minimum": 5
+    }
+  },
+  "independent_checks": [
+    "canonical_hashes",
+    "exact_parent_partition",
+    "cross_fold_validation_coverage",
+    "no_master_or_instrument_leakage",
+    "class_support",
+    "literal_assignment",
+    "order_invariance",
+    "input_nonmutation",
+    "source_only_quantile_roles",
+    "execution_denied_even_if_forged"
+  ],
+  "input_hashes": {
+    "contexts": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "manifest": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "roles": "224891579d5df84c42a1c3c827590b6515ec83a13bfe4f07d48f249432f38d91"
+  },
+  "new_scientific_operations": 0,
+  "not_performed": [
+    "quantile_fitting",
+    "gate_selection",
+    "model_fitting",
+    "calibration",
+    "prediction",
+    "score_calculation",
+    "resampling"
+  ],
+  "owner_decision": "P08-A05",
+  "private_archive_sha256": "2ac6cd6c99bd33c55a6d715b59eb98a58bc864f509583dc55e77b7a2a4d42de5",
+  "registry_sha256": "b1d48c58ab3b58c76c2b79c4391f41974089b32e4462ea55dd185f26743cc18f",
+  "salt": 2026093004,
+  "schema_version": "nato-sers-p08-qc-nested-role-audit-v1",
+  "status": "pass",
+  "summary": {
+    "context_count": 260,
+    "eligible_contexts": 54,
+    "fallback_contexts": 206,
+    "minimum_fit_masters_per_class": 2,
+    "minimum_validation_masters_per_class": 1,
+    "nested_estimator_folds": 324,
+    "policy_validation_units": 108,
+    "unique_role_pair_ids": 324
+  },
+  "support_audit_sha256": "9413d2540282ffe305dedf653df6e1a1f4b1603aab52442bbc23a0bfcd4bc5a1"
+}

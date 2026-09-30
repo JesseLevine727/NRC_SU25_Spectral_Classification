@@ -1,0 +1,98 @@
+{
+  "classical": [
+    {
+      "cache_reuse_verified": 396,
+      "model": "C-RBF-SVM",
+      "seconds": 6.253840260615088,
+      "seconds_recorded": 384,
+      "serialized_model_size_bytes_sum": 281453505.0,
+      "size_recorded": 384,
+      "slots": 780,
+      "stage": "calibration_crossfit"
+    },
+    {
+      "cache_reuse_verified": 0,
+      "model": "C-RBF-SVM",
+      "seconds": 1.2545451443292999,
+      "seconds_recorded": 260,
+      "serialized_model_size_bytes_sum": 290413868.0,
+      "size_recorded": 260,
+      "slots": 260,
+      "stage": "final_family_refit"
+    },
+    {
+      "cache_reuse_verified": 0,
+      "model": "C-RBF-SVM",
+      "seconds": 325.156635671911,
+      "seconds_recorded": 24516,
+      "serialized_model_size_bytes_sum": 15801877966.0,
+      "size_recorded": 24516,
+      "slots": 24516,
+      "stage": "inner_selection"
+    },
+    {
+      "cache_reuse_verified": 1188,
+      "model": "C-RANDOM-FOREST",
+      "seconds": 1627.062683533004,
+      "seconds_recorded": 1152,
+      "serialized_model_size_bytes_sum": 1922277690.0,
+      "size_recorded": 1152,
+      "slots": 2340,
+      "stage": "calibration_crossfit"
+    },
+    {
+      "cache_reuse_verified": 0,
+      "model": "C-RANDOM-FOREST",
+      "seconds": 1209.0511821956025,
+      "seconds_recorded": 780,
+      "serialized_model_size_bytes_sum": 1892791935.0,
+      "size_recorded": 780,
+      "slots": 780,
+      "stage": "final_family_refit"
+    },
+    {
+      "cache_reuse_verified": 0,
+      "model": "C-RANDOM-FOREST",
+      "seconds": 55918.86997434782,
+      "seconds_recorded": 32688,
+      "serialized_model_size_bytes_sum": 38828307617.0,
+      "size_recorded": 32688,
+      "slots": 32688,
+      "stage": "inner_selection"
+    },
+    {
+      "cache_reuse_verified": 1188,
+      "model": "C-EXTRA-TREES",
+      "seconds": 836.7517693233676,
+      "seconds_recorded": 1152,
+      "serialized_model_size_bytes_sum": 3435973943.0,
+      "size_recorded": 1152,
+      "slots": 2340,
+      "stage": "calibration_crossfit"
+    },
+    {
+      "cache_reuse_verified": 0,
+      "model": "C-EXTRA-TREES",
+      "seconds": 576.3940132835996,
+      "seconds_recorded": 780,
+      "serialized_model_size_bytes_sum": 3959547105.0,
+      "size_recorded": 780,
+      "slots": 780,
+      "stage": "final_family_refit"
+    },
+    {
+      "cache_reuse_verified": 0,
+      "model": "C-EXTRA-TREES",
+      "seconds": 30833.56629148737,
+      "seconds_recorded": 32688,
+      "serialized_model_size_bytes_sum": 66761842694.0,
+      "size_recorded": 32688,
+      "slots": 32688,
+      "stage": "inner_selection"
+    }
+  ],
+  "measured_p08_timing": false,
+  "note": "Elapsed fitting times from completed MIN runs; not orchestration, I/O, parallel wall time or new-policy costs. Serialized size was measured in memory and is not evidence of persisted checkpoints. P03 run contains no serialized estimator checkpoint files; later classical MIN perturbations need a separately planned reconstruction fit, not prediction-file reuse.",
+  "schema_version": "nato-sers-p08-historical-timing-basis-v1",
+  "scientific_operations_started": 0
+}

@@ -42,9 +42,23 @@
     "additional_nested_support_fallback_contexts": 74,
     "no_pseudo_domain_fallback_contexts": 132,
     "complete_minimal_fallback_contexts": 206,
-    "actual_nested_fold_registry_locked": false
+    "actual_nested_fold_registry_locked": true,
+    "nested_policy_validation_units": 108,
+    "nested_estimator_folds": 324,
+    "nested_assignment_algorithm": "classwise_canonical_hash_rank_round_robin_3",
+    "nested_assignment_salt": 2026093004,
+    "nested_registry_sha256": "b1d48c58ab3b58c76c2b79c4391f41974089b32e4462ea55dd185f26743cc18f",
+    "numerical_quantiles_computed": false,
+    "protocol": "plan/P08_QC_NESTING.md"
   },
-  "finite_execution_budget": "not_yet_locked_or_authorized",
+  "finite_execution_budget": "staged_proposal_documented_not_authorized",
+  "resource_proposal": "plan/P08_RESOURCE_PROPOSAL.md",
+  "prospective_universal_smoke": {
+    "model_fit_slots": 78,
+    "source_validation_prediction_slots": 78,
+    "proposal_sha256": "6639a32c1dd930612ead6ae59adf9aff5831904e883081f16c3490721af5089a",
+    "execution_authorized": false
+  },
   "smoke_authority": "separate_owner_permit_required",
-  "completion_gaps": ["numerical_statistics_and_multiplicity_lock", "exact_role_and_job_ledgers", "hash_proven_reuse", "finite_resources_and_smoke_proposal", "reviewed_launch_guards", "final_reviewed_release_and_remote_ci"]
+  "completion_gaps": ["complete_adaptive_operation_catalog", "complete_operation_to_artifact_reuse_bindings", "later_branch_numerical_specs_and_finite_budgets", "resource_feasibility_and_final_lock", "reviewed_admission_restart_guards", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
 }
