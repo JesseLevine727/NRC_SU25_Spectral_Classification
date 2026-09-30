@@ -1,0 +1,19 @@
+{
+  "schema_version": "nato-sers-p08-classical-source-bridge-audit-v1",
+  "status": "pass",
+  "execution_authorized": false,
+  "new_scientific_operations": 0,
+  "source_fits": 89892,
+  "selection_shards": 131,
+  "rehashed_shard_files": 524,
+  "source_prediction_appearances": {
+    "C-RBF-SVM": 751104,
+    "C-RANDOM-FOREST": 1001472,
+    "C-EXTRA-TREES": 1001472
+  },
+  "private_bridge_sha256": "1674bdbb8caf1a9ab7785b16a9f160146622158cde683c0f6ac88542d0b513b7",
+  "fit_manifest_sha256": "3a8e22e50cb87c32ff26062d65d35dcd7ae6d339ef344bcedcde9123a33122a8",
+  "historical_protected_state_sha256": "513a0f9686c37cbc0d682645d62c9ef1e5268f6853a792cf66f18076ae47c501",
+  "scope": "Original MIN source-fit status, candidate/seed/role identities and exact saved validation observation sets. Does not reconstruct absent estimator checkpoints or recompute predictions or metrics.",
+  "interpretation": "Prediction appearances repeat observations across hyperparameter candidates, seeds and validation splits; they are not independent spectra or additional physical samples."
+}

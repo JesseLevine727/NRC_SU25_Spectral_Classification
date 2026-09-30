@@ -1,0 +1,32 @@
+{
+  "schema_version": "nato-sers-p08-neural-min-audit-v1",
+  "status": "pass",
+  "execution_authorized": false,
+  "new_scientific_operations": 0,
+  "held_contexts": 260,
+  "source_fits_authenticated": 2304,
+  "unique_refits_authenticated": 897,
+  "per_seed_calibrations_authenticated": 897,
+  "calibration_semantics_input_hashes_reproduced": 897,
+  "held_predictions_authenticated": 897,
+  "strategy_seed_aliases": 1560,
+  "ensemble_contexts": 520,
+  "prediction_appearances_per_strategy": 2785,
+  "verified_file_count": 16416,
+  "private_bridge_sha256": "cfd69f0471a3a5d5144155190ca5a782fde00cf2d436062b81e35a8c693e5910",
+  "historical_fit_seconds": {
+    "source": {"D0-M": 6160.748303044789, "D1": 227.785873426099, "D2": 179.98951826610573, "D3": 228.87141080498623},
+    "refit": {"D0-M": 1561.9613795899786, "D1": 103.61361086991383, "D2": 87.47331925187609, "D3": 145.1656498881057}
+  },
+  "frozen_input_sha256": {
+    "aggregation_receipt": "e00554ba017281eaef236dead29e57cc01a890d4e3c45e12204bf138faeaeedf",
+    "contexts": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "roles": "224891579d5df84c42a1c3c827590b6515ec83a13bfe4f07d48f249432f38d91",
+    "manifest": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "p05_ensemble": "d8b8d342e4249fd4953f8df9e73940b2468b36449c7f069738a607cbb1e4ff95",
+    "p05_seed": "dd85d5164d54ce7c534374c709f5dac36fe3e07c77c012ce814d1ae410b2f786"
+  },
+  "selection_plan_file_sha256": "6d54ebd7e106fd717e9f7fea9740b10d2c5287be0352173cf343eda492356ee7",
+  "source_develop_manifest_sha256": "a5cf3b85052b2c0dccc74989072accedb795d4e99b306ab7054cf0e5b45c1942",
+  "scope": "Relevant D0-M and frozen context-selected neural MIN pipeline evidence. Canonical source-logit calibration input bindings are authenticated without refitting temperatures. This is not a runtime reuse permit or a new selection, fit, calibration, prediction or score."
+}

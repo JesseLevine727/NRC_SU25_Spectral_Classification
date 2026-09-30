@@ -1,0 +1,36 @@
+{
+  "schema_version": "nato-sers-p08-qc-nested-support-audit-v1",
+  "status": "pass",
+  "owner_decision": "P08-A05",
+  "execution_authorized": false,
+  "new_scientific_operations": 0,
+  "input_hashes": {
+    "contexts": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "manifest": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "roles": "224891579d5df84c42a1c3c827590b6515ec83a13bfe4f07d48f249432f38d91"
+  },
+  "summary": {
+    "total_contexts": 260,
+    "pseudo_contexts": 128,
+    "mastercv_contexts": 132,
+    "eligible_contexts": 54,
+    "fallback_contexts": 206,
+    "reason_counts": {"nested_three_fold_supported": 54, "insufficient_nested_class_masters": 74, "no_source_pseudo_domains": 132},
+    "total_pseudo_units": 285,
+    "individually_supported_pseudo_units": 108,
+    "eligible_pseudo_units": 108,
+    "pseudo_unit_min_masters_histogram": {"1": 177, "3": 75, "4": 33}
+  },
+  "by_station": [
+    {"station": "cwa", "reason_code": "nested_three_fold_supported", "contexts": 54},
+    {"station": "cwa", "reason_code": "no_source_pseudo_domains", "contexts": 6},
+    {"station": "pills", "reason_code": "no_source_pseudo_domains", "contexts": 100},
+    {"station": "surfaces", "reason_code": "insufficient_nested_class_masters", "contexts": 74},
+    {"station": "surfaces", "reason_code": "no_source_pseudo_domains", "contexts": 26}
+  ],
+  "audit_sha256": "9413d2540282ffe305dedf653df6e1a1f4b1603aab52442bbc23a0bfcd4bc5a1",
+  "private_archive_sha256": "01201497d5c2934030713575f78eb0292cb10ef59989598503c2f1ee319af2a7",
+  "class_support_note": "Nested estimator fitting and validation retain every task class; held tests retain their original possibly incomplete class support.",
+  "interpretation": "All 54 eligible contexts are CWA. This support does not identify adaptive-policy effects at the pills or surfaces stations.",
+  "not_yet_performed": ["nested_fold_construction", "quantile_fitting", "gate_selection", "model_fitting", "calibration", "prediction", "score_calculation"]
+}

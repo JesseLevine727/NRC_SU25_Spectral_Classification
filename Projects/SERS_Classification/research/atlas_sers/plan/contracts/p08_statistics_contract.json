@@ -97,8 +97,13 @@
     "empirical_zero_effect_claim_allowed": false
   },
   "qc": {
-    "source_eligible_contexts": 128,
-    "complete_minimal_fallback_contexts": 132,
+    "support_amendment": "P08-A05",
+    "source_pseudo_eligible_contexts_before_nested_audit": 128,
+    "source_eligible_contexts": 54,
+    "complete_minimal_fallback_contexts": 206,
+    "fallback_reasons": {"no_source_pseudo_domains": 132, "insufficient_nested_class_masters": 74},
+    "eligible_stations": ["cwa"],
+    "unsupported_station_effects_identified": false,
     "operational_fallbacks_retained": true,
     "eligible_subset_defined_by_metadata_not_winning_action": true,
     "gate_relearning_uncertainty_included": false

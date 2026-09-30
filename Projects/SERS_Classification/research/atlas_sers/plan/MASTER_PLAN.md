@@ -860,6 +860,8 @@ Two analyses are mandatory: all-domain fallback-inclusive performance and suppor
 
 ### 16.3 Identity-blind row-QC-adaptive preprocessing (`RQ-S03`)
 
+**Nested-support amendment P08-A05, approved 2026-09-30:** independent inner estimator selection requires three-fold physical-master splits with all task classes retained. The [audited support](../results/p08_readiness/qc_nested_support_audit.json) leaves 54 eligible CWA contexts and 206 complete minimal-pipeline fallbacks. All 260 contexts remain in operational results; report the 54-context subset separately and do not generalize its effect to pills or surfaces. This supersedes initial pseudo-domain eligibility as the final adaptive-support criterion, not the frozen split metadata. Quantile roles, nested jobs and finite execution budgets still require the [readiness](P08_READINESS.md) lock; no new fitting is authorized.
+
 Permitted features are row-local noise-to-range, spike fraction, baseline energy fraction, baseline span fraction, and negative fraction. The finite gate library contains minimal-only, one-trigger SG or arPLS gates, and two-trigger gates with both priority orders. Trigger cut points are source-training quantiles `{0.50,0.75,0.90}`. RBF SVM and D0 rank gates on source pseudo-instrument domains using the same lexicographic objective.
 
 Instrument/family/sensor/station/master/label fields, target-batch QC summaries, and evaluation-row model confidence are forbidden. The chosen gate is frozen before test prediction. Missing/nonfinite QC, inadequate pseudo-domain support, or invalid action rows fall back to minimal. Report every gate, cut point, action, fallback, coverage, stability, preservation violation, domain effect, and interaction.
