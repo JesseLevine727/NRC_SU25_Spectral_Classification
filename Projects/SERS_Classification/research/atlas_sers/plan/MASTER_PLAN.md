@@ -874,6 +874,8 @@ The fixed model panel is crossed with every permissible policy cell. For policy 
 
 ### 16.5 Prespecified input perturbations
 
+**No-fit design audit:** the [later-branch note](P08_LATER_BRANCH_DESIGN.md) records shift-edge support, normalization invariants and conditional classical-selector costs. It does not change the ranges below or authorize computation. Perturbation placement and boundary handling still require an explicit numerical lock; approved ranges alone do not define missing-edge values.
+
 Apply only at test time, without retraining:
 
 - wavenumber shifts: −5 to +5 cm⁻¹ in 1 cm⁻¹ increments;

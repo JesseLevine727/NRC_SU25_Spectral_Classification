@@ -339,3 +339,21 @@ The exact Git-backed publication snapshot passed the public-boundary validator w
 The protected package and workflow remained fixed throughout validation. All **11 reviewed paths** matched the snapshot before and after the run. The only subsequent changes are these review notes; repeated public-boundary, lint, focused-test, whitespace and byte-comparison checks precede publication. Lenarizer preservation checks found no removed original numerical or citation tokens. Added parser bounds, section references and validation counts were checked against source and tool output.
 
 This milestone accepts exact candidate accounting and bounded local persistence under the stated synthetic tests. It does not close the full live-runtime gate or the P08 readiness goal, and contains no new scientific result. Publication requires the scoped main-branch push, exact remote-SHA verification and a separately reported CI outcome. Raw data, identities, checkpoints, worker transcripts and unrelated working-tree changes remain outside the release.
+
+## T062: later-branch design constraints
+
+DeepSeek V4.1 Flash authored a bounded test-only slice against the existing row-normalization functions and frozen public P01 contract. The supervisor read the complete response, applied the patch, formatted it mechanically and independently ran the tests. All **21 tests passed in 0.48 seconds**; Ruff passed. No production transform, scientific array or historical contract changed.
+
+The tests verify positive-affine min–max equivalence for invented valid rows, hand-calculated SNV/vector/area invariants, all-zero invalidity, the frozen control operation lists and five rigid-shift support cases. They establish arithmetic constraints, not improved chemical identification or physical realism of a perturbation. No edge-extension algorithm was implemented.
+
+The supervisor separately rehashed the original P03 fit manifest, candidate registry and contract, then counted metadata only. The full selector contains nine families, 126 candidates and 190 candidate–seed pairs. All family source-fit counts agree with 681 source units. The audit finds 396 reusable calibration roles, 384 fresh calibration roles and 260 final roles. Its conditional maximum respects mutually exclusive deterministic or three-seed selected families. The public aggregate contains no row identities or source paths.
+
+The resulting design note preserves native control scales and exposes unresolved selector, population and perturbation choices. It reports **131,322 model fits per new representation** after authenticated within-representation role reuse, or **525,288** if the full selector is approved for four controls. These are prospective arithmetic bounds, not permission, runtime measurements or completed experiments. Exact later-branch jobs and resource ceilings remain open. Full fixed-snapshot regression and publication are separate gates for this milestone.
+
+## Later-design full-regression gate
+
+The fixed Git-backed snapshot passed the public-boundary check with **926 files** and CI-scope Ruff. The isolated analysis-runner module passed **16 tests in 2.17 seconds**, with **206,008 KiB** peak RSS. The remaining suite passed **4,082 tests and 60 subtests in 398.96 seconds**, with **four CUDA-only skips**, **2,026 inherited sparse-class warnings** and **1,866,212 KiB** peak RSS. The complete run therefore passed **4,098 tests**.
+
+All six reviewed paths matched the snapshot before and after validation; the protected package and workflow were unchanged during the run. The only subsequent public change is this validation note. The public selector aggregate independently matched the authenticated metadata diagnostic. Lenarizer checks preserved original numerical and citation tokens; added values were checked against the audit and test output. The preceding commit `fe056e51720c4364f3d81f9551d8aaecfd033da4` also passed remote CI run `36783671829`.
+
+Final boundary, lint, focused-test, whitespace and byte-comparison checks precede the scoped main-branch push. This accepts the numerical design constraints and conditional accounting, not a completed readiness goal or scientific execution permit. No production implementation, frozen contract, scientific input, selected model or historical outcome changed.
