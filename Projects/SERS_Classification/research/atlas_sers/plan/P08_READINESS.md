@@ -207,3 +207,9 @@ Owner decisions on normalization selection, regenerated-population selection and
 ## 17. Completion-evidence boundary
 
 The [terminal-receipt specification](P08_RESOURCE_PROPOSAL.md#10-terminal-receipt-and-artifact-byte-verification) requires a proposed completion event to match the running attempt and actual saved bytes. A journal entry containing a hash does not prove that its referenced file exists. The read-only check separates byte integrity from checkpoint loadability and source-prediction validity; it cannot append a completion event or grant execution. Synthetic implementation acceptance and the remaining runtime obligations are recorded in the [review log](delegation/P08_REVIEW.md).
+
+## 18. Proposed serial smoke integration
+
+The [serial resource specification](P08_RESOURCE_PROPOSAL.md#11-serial-smoke-measurements) connects the exact candidate guard to process, filesystem, numerical-thread and CUDA measurements. The proposed smoke executes its existing 156 operations sequentially in one Python process. This stays within the existing worker ceilings; it neither changes the scientific comparison nor validates a later parallel benchmark.
+
+Synthetic validation uses invented process and CUDA readings. It does not run the 78 model fits, inspect scientific arrays or initialize a GPU. The adapter's freshness check establishes a bounded observation interval, not a reservation or an execution permit. Durable progress, stage-specific artifact semantics, complete runtime integration, unresolved later-branch choices and the separate scientific approval remain outstanding.
