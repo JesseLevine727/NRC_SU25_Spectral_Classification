@@ -73,3 +73,15 @@ Range, normalization, derivative-control, population-tier and test-time perturba
 ## 6. Current decision boundary
 
 The first possible execution request is **U0 only**, after the no-fit package and runtime review gates close. It is not being launched by publishing this proposal. Full scientific readiness still requires the complete operation-to-artifact reuse ledger, adaptive job catalog, later-branch budgets and reviewed admission/restart implementation. No planning approval is treated as a training permit.
+
+## 7. Resource snapshots and cumulative attempt accounting
+
+The pure resource checker compares caller-supplied usage and measurements with the proposed U0, U1 and Q1 ceilings. It does not query hardware or launch work. Fit counters include failed and unfinished attempts. Exhausted fit capacity prevents another fit, but does not itself forbid a pending prediction from an already completed fit. Exhausted active time or artifact headroom stops new work. Memory and worker counts may equal their ceilings but may not exceed them; model, BLAS and PyTorch thread settings must each equal one.
+
+The storage check requires the remaining artifact allowance plus the 30-GiB reserve. U0 therefore requires 38 GiB free before its first artifact. Retained-artifact usage is a cumulative high-water mark, not a sum that charges every overwrite as a new complete file. Usage cannot be reset by pausing, restarting or deleting evidence. Allocated CUDA memory is checked against its own limit; reserved and device-reported memory remain separate recorded measurements.
+
+The pure attempt-journal kernel reconstructs usage from hash-linked session events. An attempt is charged when it starts, before its outcome is known. A prediction requires its fitting dependency to have succeeded. A failed or interrupted job cannot be started again under the same no-retry authority. A session may close only when all its attempts are terminal; a later clean session starts its local clock at zero while retaining prior durations, attempts and artifact usage.
+
+An open journal session is not proof of a crash or proof of a live owner. The kernel reports that a clean restart is unavailable, even if no job is currently marked in flight. Its elapsed-time total covers recorded intervals only; it cannot infer time after the last durable observation. The future runtime must authenticate the exact smoke-job mapping, journal records and head, preserve exclusive ownership, and obtain reviewed recovery evidence for an incomplete session. It may not assume the unobserved interval was a free pause.
+
+These numerical and state-machine checks use synthetic inputs. Their acceptance is recorded in the [review log](delegation/P08_REVIEW.md). They do not establish durable filesystem behavior, authorize a retry, prove a receipt file exists, or grant a scientific execution permit. The generic journal's bounded synthetic manifests do not replace the exact 78-fit and 78-prediction U0 manifest. Full admission/restart acceptance remains open until those integration and durability checks pass.

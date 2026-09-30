@@ -76,6 +76,10 @@
     "model_fit_slots": 78,
     "source_validation_prediction_slots": 78,
     "proposal_sha256": "6639a32c1dd930612ead6ae59adf9aff5831904e883081f16c3490721af5089a",
+    "attempt_manifest_sha256": "aac8523a1614610cf99cf1ab548d8970b4f8054fe8821b5250c347376e30b28a",
+    "attempt_manifest_archive_sha256": "edf04d94f377ad143adcc0126d27e5d5dcb185dbc1aae0e8f0017eccfb8a654c",
+    "attempt_manifest_audit": "results/p08_readiness/smoke_attempt_manifest_audit.json",
+    "attempt_manifest_scope": "metadata_only_no_execution_events_or_durable_journal",
     "execution_authorized": false
   },
   "smoke_authority": "separate_owner_permit_required",
