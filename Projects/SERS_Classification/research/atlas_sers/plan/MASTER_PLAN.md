@@ -1005,6 +1005,13 @@ Case studies are selected by prespecified rules—largest paired method disagree
 
 ### 19.2 Primary interval
 
+**Post-benchmark addition, 2026-09-29:** the owner approved a support-preserving
+crossed-weight analysis because the audited design has sparse context/class
+cells and shared master/instrument identities. The [separate inference
+protocol](P06P11_INFERENCE_PROTOCOL.md) fixes its numerical rules and retains
+the original procedure below as a feasibility/sensitivity analysis. The added
+interval does not replace G4's original hierarchical criterion.
+
 Use a paired hierarchical bootstrap with 10,000 replicates:
 
 1. sample the 13 eligible domains with replacement;
@@ -1269,6 +1276,20 @@ The source view contains 14,940 successful evidence fits (14,904 new plus 36 reu
 Equal-domain held balanced accuracy for matched D0-M, source-selected CNN and fixed D3 was 70.21%, 70.39% and 71.90% per spectrum, and 74.88%, 74.93% and 76.21% per physical sample. Fixed D3 improved the per-spectrum domain mean in six domains, worsened it in six and tied in one. Random Forest and Extra Trees remain strong comparators. These descriptive effects do not pass definitive P11/G4 superiority, justify selecting D3 from held outcomes, or establish chemical–nuisance disentanglement.
 
 **Immediate next research boundary:** preserve this completed core evidence and scope the remaining P06 synthesis and P11 grouped/domain-aware uncertainty under their existing estimands. The wider P06/P11 programme is not complete. P08 preprocessing remains a separate matched-policy question, not a correction selected from these held results. P14 still begins with its metadata-only support/role/compute audit if chosen. D4/D5, adaptation, controlled P13 deep substrate-restricted refits and all new preprocessing/model experiments remain outside the completed permit; no further fits follow automatically.
+
+**Active P06/P11 goal, 2026-09-29:** the [readiness audit](P06P11_READINESS.md)
+reproduced all saved core comparison tables, verified master/instrument role
+separation, and checked exact three-seed probability averaging. It identified
+237 singleton test-context/class cells on full held support and 228 on primary
+paired support; 67 of 69 masters occur across multiple domains. An explicit
+resampling definition is required to handle empty resampled cells and crossed
+dependencies without silently changing the point estimator. The owner approved
+the post-benchmark weighted analysis addition, with the original hierarchical
+procedure retained as a sensitivity. The [inference protocol](P06P11_INFERENCE_PROTOCOL.md)
+fixes numerical rules before execution; no new interval has yet been computed.
+The active scope uses frozen
+predictions only; the original P11 specification and G4 criteria have not been
+rewritten. Wider unsupported P06 requirements remain explicit gaps.
 
 ### Historical checkpoints — retained for provenance
 

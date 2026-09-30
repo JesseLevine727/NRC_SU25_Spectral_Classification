@@ -155,6 +155,17 @@ Figure F44 is the design audit: each row is one recorded physical-master ID, pan
 
 ## Immediate next phase
 
+**Current status, 2026-09-29:** the P05 four-recipe core benchmark is complete
+through held evaluation and reviewed publication. Its [results](../results/p05_comprehensive/P05_RESULTS.md)
+are frozen. The active goal is [P06/P11 synthesis and uncertainty](P06P11_READINESS.md)
+using saved predictions, with no retraining. The evidence audit passed; sparse
+class cells and shared sample/instrument identities require a reviewed
+resampling specification. The owner approved the documented weighted-bootstrap
+addition; it has not yet been run. The original superiority gate is not rewritten.
+P08 preprocessing and P14 RBF/SOM experiments remain separate future phases.
+
+### Historical post-P04 checkpoint
+
 P03 and P13 classical execution are complete. P13 retained all 34 observed
 domains but found no substrate family that passed the locked portability rule
 across every confirmatory domain. The primary result contained zero supporting,
@@ -172,9 +183,9 @@ fixed Random Forest or Extra Trees. Spectrum log loss was 1.635, worse than
 the uniform-probability reference 1.099. Thus RQ-P01 has a useful ordinary-deep
 baseline, not a completed acquisition-aware claim or solved calibration.
 
-The immediate next phase is P05's no-fit pair/loss/role expansion, followed by
+At that checkpoint, the next phase was P05's no-fit pair/loss/role expansion, followed by
 source-only supervised-contrastive and paired-consistency development under
-G3. D0 is frozen; D1–D5 have not been trained. All earlier held outcomes remain
+G3. D0 was frozen; D1–D5 had not been trained. All earlier held outcomes remain
 excluded from loss, architecture, preprocessing, epoch, and advancement
 selection. This is procedural separation, not analyst blinding.
 
@@ -202,4 +213,4 @@ The [P14 protocol](P14_RBF_SOM_EXTENSION.md) adds the questions below without ch
 
 EXP-P14-00 is the metadata-only prerequisite. EXP-P14-09 is a conditional application to the unchanged P13 substrate-restricted design, with F-P14-11. EXP-P14-10 synthesizes the core and records optional work as complete, unsupported, or deferred. F-P14-12 explains the workflow and evidence boundaries.
 
-The core is RQ-P14-01–05. Reliability and hybrids cannot expand into an indefinite search for a winning model. The first publication should integrate classification, spectral structure, preprocessing, and repeated-view evidence; it need not wait for every optional model. P05 remains the separate next step for the original acquisition-aware question, while P14 begins with its own no-fit support/role/compute audit.
+The core is RQ-P14-01–05. Reliability and hybrids cannot expand into an indefinite search for a winning model. The first publication should integrate classification, spectral structure, preprocessing, and repeated-view evidence; it need not wait for every optional model. P05's core acquisition-aware benchmark is complete; its remaining P06/P11 interpretation is the active phase. P14 still begins with its own no-fit support/role/compute audit.

@@ -1,0 +1,743 @@
+{
+  "analyses": {
+    "full_held": {
+      "counts": {
+        "contexts": 260,
+        "distinct_spectra": 557,
+        "instrument_identities": 10,
+        "physical_master_units": 69,
+        "prediction_appearances": 2785,
+        "station_instrument_domains": 13
+      },
+      "expected_empty_class_cells_sum_over_observed_domains": 119.57596176815126,
+      "tables": {
+        "class_cell_histogram": [
+          {
+            "cells": 237,
+            "masters_in_cell": 1
+          },
+          {
+            "cells": 430,
+            "masters_in_cell": 2
+          },
+          {
+            "cells": 71,
+            "masters_in_cell": 3
+          }
+        ],
+        "domains": [
+          {
+            "class_cells": 60,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "cwa:Mira-2",
+            "instrument": "Mira-2",
+            "singleton_class_cells": 5,
+            "station": "cwa",
+            "unique_masters": 24,
+            "unique_spectra": 72
+          },
+          {
+            "class_cells": 60,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "cwa:Pendar-2",
+            "instrument": "Pendar-2",
+            "singleton_class_cells": 5,
+            "station": "cwa",
+            "unique_masters": 24,
+            "unique_spectra": 57
+          },
+          {
+            "class_cells": 54,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "cwa:RMX-1",
+            "instrument": "RMX-1",
+            "singleton_class_cells": 18,
+            "station": "cwa",
+            "unique_masters": 18,
+            "unique_spectra": 47
+          },
+          {
+            "class_cells": 59,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "pills:Agilent-1",
+            "instrument": "Agilent-1",
+            "singleton_class_cells": 23,
+            "station": "pills",
+            "unique_masters": 19,
+            "unique_spectra": 29
+          },
+          {
+            "class_cells": 60,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "pills:Agilent-3",
+            "instrument": "Agilent-3",
+            "singleton_class_cells": 20,
+            "station": "pills",
+            "unique_masters": 20,
+            "unique_spectra": 35
+          },
+          {
+            "class_cells": 56,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "pills:Mira-3",
+            "instrument": "Mira-3",
+            "singleton_class_cells": 17,
+            "station": "pills",
+            "unique_masters": 19,
+            "unique_spectra": 72
+          },
+          {
+            "class_cells": 60,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "pills:Pendar-1",
+            "instrument": "Pendar-1",
+            "singleton_class_cells": 20,
+            "station": "pills",
+            "unique_masters": 20,
+            "unique_spectra": 46
+          },
+          {
+            "class_cells": 56,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "pills:Pendar-3",
+            "instrument": "Pendar-3",
+            "singleton_class_cells": 17,
+            "station": "pills",
+            "unique_masters": 19,
+            "unique_spectra": 20
+          },
+          {
+            "class_cells": 51,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "surfaces:Agilent-3",
+            "instrument": "Agilent-3",
+            "singleton_class_cells": 23,
+            "station": "surfaces",
+            "unique_masters": 17,
+            "unique_spectra": 19
+          },
+          {
+            "class_cells": 51,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "surfaces:Mira-1",
+            "instrument": "Mira-1",
+            "singleton_class_cells": 23,
+            "station": "surfaces",
+            "unique_masters": 17,
+            "unique_spectra": 23
+          },
+          {
+            "class_cells": 60,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "surfaces:Pendar-2",
+            "instrument": "Pendar-2",
+            "singleton_class_cells": 20,
+            "station": "surfaces",
+            "unique_masters": 25,
+            "unique_spectra": 35
+          },
+          {
+            "class_cells": 51,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "surfaces:Pendar-3",
+            "instrument": "Pendar-3",
+            "singleton_class_cells": 23,
+            "station": "surfaces",
+            "unique_masters": 17,
+            "unique_spectra": 37
+          },
+          {
+            "class_cells": 60,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "surfaces:RMX-2",
+            "instrument": "RMX-2",
+            "singleton_class_cells": 23,
+            "station": "surfaces",
+            "unique_masters": 23,
+            "unique_spectra": 65
+          }
+        ],
+        "empty_class_risk": [
+          {
+            "class_cells": 60,
+            "domain": "cwa:Mira-2",
+            "expected_empty_class_cells": 6.817266450205379,
+            "instrument": "Mira-2",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.026012294873748946,
+            "station": "cwa"
+          },
+          {
+            "class_cells": 60,
+            "domain": "cwa:Pendar-2",
+            "expected_empty_class_cells": 6.817266450205379,
+            "instrument": "Pendar-2",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.026012294873748946,
+            "station": "cwa"
+          },
+          {
+            "class_cells": 54,
+            "domain": "cwa:RMX-1",
+            "expected_empty_class_cells": 9.123711061412253,
+            "instrument": "RMX-1",
+            "maximum_cell_empty_probability": 0.3348979766803842,
+            "minimum_cell_empty_probability": 0.0625,
+            "station": "cwa"
+          },
+          {
+            "class_cells": 59,
+            "domain": "pills:Agilent-1",
+            "expected_empty_class_cells": 10.951148561412253,
+            "instrument": "Agilent-1",
+            "maximum_cell_empty_probability": 0.3348979766803842,
+            "minimum_cell_empty_probability": 0.07775999999999998,
+            "station": "pills"
+          },
+          {
+            "class_cells": 60,
+            "domain": "pills:Agilent-3",
+            "expected_empty_class_cells": 10.428809278690117,
+            "instrument": "Agilent-3",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.07775999999999998,
+            "station": "pills"
+          },
+          {
+            "class_cells": 56,
+            "domain": "pills:Mira-3",
+            "expected_empty_class_cells": 9.171684278690115,
+            "instrument": "Mira-3",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.0625,
+            "station": "pills"
+          },
+          {
+            "class_cells": 60,
+            "domain": "pills:Pendar-1",
+            "expected_empty_class_cells": 10.428809278690117,
+            "instrument": "Pendar-1",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.07775999999999998,
+            "station": "pills"
+          },
+          {
+            "class_cells": 56,
+            "domain": "pills:Pendar-3",
+            "expected_empty_class_cells": 9.171684278690115,
+            "instrument": "Pendar-3",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.0625,
+            "station": "pills"
+          },
+          {
+            "class_cells": 51,
+            "domain": "surfaces:Agilent-3",
+            "expected_empty_class_cells": 9.370164170068975,
+            "instrument": "Agilent-3",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.019894528883130563,
+            "station": "surfaces"
+          },
+          {
+            "class_cells": 51,
+            "domain": "surfaces:Mira-1",
+            "expected_empty_class_cells": 9.370164170068975,
+            "instrument": "Mira-1",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.019894528883130563,
+            "station": "surfaces"
+          },
+          {
+            "class_cells": 60,
+            "domain": "surfaces:Pendar-2",
+            "expected_empty_class_cells": 8.68589352132685,
+            "instrument": "Pendar-2",
+            "maximum_cell_empty_probability": 0.31640625,
+            "minimum_cell_empty_probability": 0.02824752489999998,
+            "station": "surfaces"
+          },
+          {
+            "class_cells": 51,
+            "domain": "surfaces:Pendar-3",
+            "expected_empty_class_cells": 9.370164170068975,
+            "instrument": "Pendar-3",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.019894528883130563,
+            "station": "surfaces"
+          },
+          {
+            "class_cells": 60,
+            "domain": "surfaces:RMX-2",
+            "expected_empty_class_cells": 9.869196098621758,
+            "instrument": "RMX-2",
+            "maximum_cell_empty_probability": 0.34643941611461837,
+            "minimum_cell_empty_probability": 0.026012294873748946,
+            "station": "surfaces"
+          }
+        ],
+        "instrument_domains": [
+          {
+            "domains": 1,
+            "instrument": "Agilent-1",
+            "stations": 1
+          },
+          {
+            "domains": 2,
+            "instrument": "Agilent-3",
+            "stations": 2
+          },
+          {
+            "domains": 1,
+            "instrument": "Mira-1",
+            "stations": 1
+          },
+          {
+            "domains": 1,
+            "instrument": "Mira-2",
+            "stations": 1
+          },
+          {
+            "domains": 1,
+            "instrument": "Mira-3",
+            "stations": 1
+          },
+          {
+            "domains": 1,
+            "instrument": "Pendar-1",
+            "stations": 1
+          },
+          {
+            "domains": 2,
+            "instrument": "Pendar-2",
+            "stations": 2
+          },
+          {
+            "domains": 2,
+            "instrument": "Pendar-3",
+            "stations": 2
+          },
+          {
+            "domains": 1,
+            "instrument": "RMX-1",
+            "stations": 1
+          },
+          {
+            "domains": 1,
+            "instrument": "RMX-2",
+            "stations": 1
+          }
+        ],
+        "master_domain_histogram": [
+          {
+            "domains_per_master": 1,
+            "masters": 2
+          },
+          {
+            "domains_per_master": 2,
+            "masters": 12
+          },
+          {
+            "domains_per_master": 3,
+            "masters": 19
+          },
+          {
+            "domains_per_master": 4,
+            "masters": 1
+          },
+          {
+            "domains_per_master": 5,
+            "masters": 35
+          }
+        ]
+      }
+    },
+    "primary_common_complete": {
+      "counts": {
+        "contexts": 252,
+        "distinct_spectra": 557,
+        "instrument_identities": 10,
+        "physical_master_units": 69,
+        "prediction_appearances": 2714,
+        "station_instrument_domains": 13
+      },
+      "expected_empty_class_cells_sum_over_observed_domains": 115.50587140139439,
+      "tables": {
+        "class_cell_histogram": [
+          {
+            "cells": 228,
+            "masters_in_cell": 1
+          },
+          {
+            "cells": 418,
+            "masters_in_cell": 2
+          },
+          {
+            "cells": 68,
+            "masters_in_cell": 3
+          }
+        ],
+        "domains": [
+          {
+            "class_cells": 60,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "cwa:Mira-2",
+            "instrument": "Mira-2",
+            "singleton_class_cells": 5,
+            "station": "cwa",
+            "unique_masters": 24,
+            "unique_spectra": 72
+          },
+          {
+            "class_cells": 57,
+            "classes": 3,
+            "contexts": 19,
+            "domain": "cwa:Pendar-2",
+            "instrument": "Pendar-2",
+            "singleton_class_cells": 5,
+            "station": "cwa",
+            "unique_masters": 24,
+            "unique_spectra": 57
+          },
+          {
+            "class_cells": 51,
+            "classes": 3,
+            "contexts": 19,
+            "domain": "cwa:RMX-1",
+            "instrument": "RMX-1",
+            "singleton_class_cells": 16,
+            "station": "cwa",
+            "unique_masters": 18,
+            "unique_spectra": 47
+          },
+          {
+            "class_cells": 59,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "pills:Agilent-1",
+            "instrument": "Agilent-1",
+            "singleton_class_cells": 23,
+            "station": "pills",
+            "unique_masters": 19,
+            "unique_spectra": 29
+          },
+          {
+            "class_cells": 60,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "pills:Agilent-3",
+            "instrument": "Agilent-3",
+            "singleton_class_cells": 20,
+            "station": "pills",
+            "unique_masters": 20,
+            "unique_spectra": 35
+          },
+          {
+            "class_cells": 56,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "pills:Mira-3",
+            "instrument": "Mira-3",
+            "singleton_class_cells": 17,
+            "station": "pills",
+            "unique_masters": 19,
+            "unique_spectra": 72
+          },
+          {
+            "class_cells": 60,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "pills:Pendar-1",
+            "instrument": "Pendar-1",
+            "singleton_class_cells": 20,
+            "station": "pills",
+            "unique_masters": 20,
+            "unique_spectra": 46
+          },
+          {
+            "class_cells": 56,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "pills:Pendar-3",
+            "instrument": "Pendar-3",
+            "singleton_class_cells": 17,
+            "station": "pills",
+            "unique_masters": 19,
+            "unique_spectra": 20
+          },
+          {
+            "class_cells": 45,
+            "classes": 3,
+            "contexts": 18,
+            "domain": "surfaces:Agilent-3",
+            "instrument": "Agilent-3",
+            "singleton_class_cells": 20,
+            "station": "surfaces",
+            "unique_masters": 17,
+            "unique_spectra": 19
+          },
+          {
+            "class_cells": 51,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "surfaces:Mira-1",
+            "instrument": "Mira-1",
+            "singleton_class_cells": 23,
+            "station": "surfaces",
+            "unique_masters": 17,
+            "unique_spectra": 23
+          },
+          {
+            "class_cells": 54,
+            "classes": 3,
+            "contexts": 18,
+            "domain": "surfaces:Pendar-2",
+            "instrument": "Pendar-2",
+            "singleton_class_cells": 18,
+            "station": "surfaces",
+            "unique_masters": 25,
+            "unique_spectra": 35
+          },
+          {
+            "class_cells": 45,
+            "classes": 3,
+            "contexts": 18,
+            "domain": "surfaces:Pendar-3",
+            "instrument": "Pendar-3",
+            "singleton_class_cells": 21,
+            "station": "surfaces",
+            "unique_masters": 17,
+            "unique_spectra": 37
+          },
+          {
+            "class_cells": 60,
+            "classes": 3,
+            "contexts": 20,
+            "domain": "surfaces:RMX-2",
+            "instrument": "RMX-2",
+            "singleton_class_cells": 23,
+            "station": "surfaces",
+            "unique_masters": 23,
+            "unique_spectra": 65
+          }
+        ],
+        "empty_class_risk": [
+          {
+            "class_cells": 60,
+            "domain": "cwa:Mira-2",
+            "expected_empty_class_cells": 6.817266450205379,
+            "instrument": "Mira-2",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.026012294873748946,
+            "station": "cwa"
+          },
+          {
+            "class_cells": 57,
+            "domain": "cwa:Pendar-2",
+            "expected_empty_class_cells": 6.596276734128348,
+            "instrument": "Pendar-2",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.026012294873748946,
+            "station": "cwa"
+          },
+          {
+            "class_cells": 51,
+            "domain": "cwa:RMX-1",
+            "expected_empty_class_cells": 8.372293919692806,
+            "instrument": "RMX-1",
+            "maximum_cell_empty_probability": 0.3348979766803842,
+            "minimum_cell_empty_probability": 0.0625,
+            "station": "cwa"
+          },
+          {
+            "class_cells": 59,
+            "domain": "pills:Agilent-1",
+            "expected_empty_class_cells": 10.951148561412253,
+            "instrument": "Agilent-1",
+            "maximum_cell_empty_probability": 0.3348979766803842,
+            "minimum_cell_empty_probability": 0.07775999999999998,
+            "station": "pills"
+          },
+          {
+            "class_cells": 60,
+            "domain": "pills:Agilent-3",
+            "expected_empty_class_cells": 10.428809278690117,
+            "instrument": "Agilent-3",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.07775999999999998,
+            "station": "pills"
+          },
+          {
+            "class_cells": 56,
+            "domain": "pills:Mira-3",
+            "expected_empty_class_cells": 9.171684278690115,
+            "instrument": "Mira-3",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.0625,
+            "station": "pills"
+          },
+          {
+            "class_cells": 60,
+            "domain": "pills:Pendar-1",
+            "expected_empty_class_cells": 10.428809278690117,
+            "instrument": "Pendar-1",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.07775999999999998,
+            "station": "pills"
+          },
+          {
+            "class_cells": 56,
+            "domain": "pills:Pendar-3",
+            "expected_empty_class_cells": 9.171684278690115,
+            "instrument": "Pendar-3",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.0625,
+            "station": "pills"
+          },
+          {
+            "class_cells": 45,
+            "domain": "surfaces:Agilent-3",
+            "expected_empty_class_cells": 8.15306138189461,
+            "instrument": "Agilent-3",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.019894528883130563,
+            "station": "surfaces"
+          },
+          {
+            "class_cells": 51,
+            "domain": "surfaces:Mira-1",
+            "expected_empty_class_cells": 9.370164170068975,
+            "instrument": "Mira-1",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.019894528883130563,
+            "station": "surfaces"
+          },
+          {
+            "class_cells": 54,
+            "domain": "surfaces:Pendar-2",
+            "expected_empty_class_cells": 7.7773634177902835,
+            "instrument": "Pendar-2",
+            "maximum_cell_empty_probability": 0.31640625,
+            "minimum_cell_empty_probability": 0.02824752489999998,
+            "station": "surfaces"
+          },
+          {
+            "class_cells": 45,
+            "domain": "surfaces:Pendar-3",
+            "expected_empty_class_cells": 8.398113552819503,
+            "instrument": "Pendar-3",
+            "maximum_cell_empty_probability": 0.33991667708911394,
+            "minimum_cell_empty_probability": 0.019894528883130563,
+            "station": "surfaces"
+          },
+          {
+            "class_cells": 60,
+            "domain": "surfaces:RMX-2",
+            "expected_empty_class_cells": 9.869196098621758,
+            "instrument": "RMX-2",
+            "maximum_cell_empty_probability": 0.34643941611461837,
+            "minimum_cell_empty_probability": 0.026012294873748946,
+            "station": "surfaces"
+          }
+        ],
+        "instrument_domains": [
+          {
+            "domains": 1,
+            "instrument": "Agilent-1",
+            "stations": 1
+          },
+          {
+            "domains": 2,
+            "instrument": "Agilent-3",
+            "stations": 2
+          },
+          {
+            "domains": 1,
+            "instrument": "Mira-1",
+            "stations": 1
+          },
+          {
+            "domains": 1,
+            "instrument": "Mira-2",
+            "stations": 1
+          },
+          {
+            "domains": 1,
+            "instrument": "Mira-3",
+            "stations": 1
+          },
+          {
+            "domains": 1,
+            "instrument": "Pendar-1",
+            "stations": 1
+          },
+          {
+            "domains": 2,
+            "instrument": "Pendar-2",
+            "stations": 2
+          },
+          {
+            "domains": 2,
+            "instrument": "Pendar-3",
+            "stations": 2
+          },
+          {
+            "domains": 1,
+            "instrument": "RMX-1",
+            "stations": 1
+          },
+          {
+            "domains": 1,
+            "instrument": "RMX-2",
+            "stations": 1
+          }
+        ],
+        "master_domain_histogram": [
+          {
+            "domains_per_master": 1,
+            "masters": 2
+          },
+          {
+            "domains_per_master": 2,
+            "masters": 12
+          },
+          {
+            "domains_per_master": 3,
+            "masters": 19
+          },
+          {
+            "domains_per_master": 4,
+            "masters": 1
+          },
+          {
+            "domains_per_master": 5,
+            "masters": 35
+          }
+        ]
+      }
+    }
+  },
+  "input_sha256": {
+    "ensemble_predictions": "d8b8d342e4249fd4953f8df9e73940b2468b36449c7f069738a607cbb1e4ff95",
+    "reference_coverage": "7868c0d8801a110c3a5191ed40ba75e7b81f7a14e2dd37f7cd2185ac1f3fb3d7"
+  },
+  "new_model_fits": 0,
+  "new_predictions": 0,
+  "random_draws": 0,
+  "schema_version": "nato-sers-p06p11-support-audit-v1",
+  "status": "metadata_support_audit_only"
+}

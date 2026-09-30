@@ -89,6 +89,12 @@ over the matched CNN on individual spectra, but gains varied across domains;
 the source-selected procedure gained only 0.17 points. Classical tree ensembles
 remain strong comparators. See the [completion audit](plan/P05_COMPLETION_AUDIT.md)
 for coverage, recovery accounting and the remaining P06/P11 boundary.
+The active **[P06/P11 evidence and uncertainty audit](plan/P06P11_READINESS.md)**
+has reproduced the saved comparison tables and verified sample isolation and
+seed averaging. Sparse test-class cells and samples shared across instruments
+require an explicit resampling specification. The owner approved a documented
+support-preserving weighted-bootstrap addition; no new interval has yet been
+computed. This phase does not retrain models.
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 
