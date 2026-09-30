@@ -49,6 +49,9 @@
     "nested_assignment_salt": 2026093004,
     "nested_registry_sha256": "b1d48c58ab3b58c76c2b79c4391f41974089b32e4462ea55dd185f26743cc18f",
     "numerical_quantiles_computed": false,
+    "threshold_and_router_controls_reviewed": true,
+    "numerical_controls_review_scope": "invented_synthetic_inputs_only_no_dataset_application",
+    "threshold_and_router_scientific_execution_authorized": false,
     "policy_selection_subgraph_audited": true,
     "policy_selection_subgraph_blocks": 3456,
     "policy_selection_model_fit_slots": 1620432,
@@ -87,5 +90,5 @@
     "audit": "results/p08_readiness/minimal_operation_reuse_audit.json"
   },
   "pending_later_branch_choices": ["normalization_classical_selector_scope", "regenerated_tier_source_selection_scope", "perturbation_before_or_after_preprocessing"],
-  "completion_gaps": ["reviewed_qc_threshold_and_routing_controls", "later_branch_numerical_specs_and_finite_budgets", "resource_feasibility_and_final_lock", "reviewed_admission_restart_guards", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
+  "completion_gaps": ["later_branch_numerical_specs_and_finite_budgets", "resource_feasibility_and_final_lock", "reviewed_admission_restart_guards", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
 }

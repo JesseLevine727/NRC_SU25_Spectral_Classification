@@ -1,6 +1,6 @@
 # P08 QC policy: nested selection and finite accounting
 
-**Specified:** 2026-09-30. **State:** concrete nested roles audited; job catalog and resource authorization pending. **Authority:** P08-A01–P08-A05, not a scientific execution permit.
+**Specified:** 2026-09-30. **State:** concrete nested roles and complete metadata catalog audited; threshold/routing controls passed synthetic review, while resource authorization remains pending. **Authority:** P08-A01–P08-A05, not a scientific execution permit.
 
 This procedure asks whether row-local quality indicators can select preprocessing for an unseen instrument. It compares a learned routing rule with the complete minimal pipeline. A routing rule chooses an immutable MIN, SG or arPLS row; it does not combine predictions from separately trained universal models. Models must be trained on the routed inputs used by that procedure.
 
@@ -97,3 +97,15 @@ The [staged resource proposal](P08_RESOURCE_PROPOSAL.md) specifies universal-fir
 The implementation worker supplies pure role/ledger/routing guards against synthetic fixtures. The supervisor authenticates private inputs, checks exact roles and arithmetic, validates fail-closed behavior and controls publication. No scientific fitting, calibration, thresholds, gate selection, predictions or resampling occurs under this document's current authority.
 
 Report operational and eligible-subset outcomes, source-frozen gates, cutpoints, action fractions, reasons, selection stability and paired policy effects under the [statistical protocol](P08_STATISTICAL_PROTOCOL.md). Unsupported stations remain in operational denominators. A source-selected QC rule can be evaluated for predictive transfer; it does not identify physical background removal or restore a measured clean chemical spectrum.
+
+## 8. Numerical implementation and evidence boundaries
+
+The threshold kernel consumes the six frozen QC ingredients; it does not recompute them from processed spectra. It copies inputs to little-endian float64, sorts source rows with their identifiers and binds all recorded ingredients, including unavailable rows, to a content digest. Only complete finite vectors contribute to the specified linear quantiles. A nonfinite computed quantile is an error, not an empty-source fallback. Local numerical-error handling leaves the caller's NumPy settings unchanged; explicit validity checks still reject unavailable vectors.
+
+The threshold state records source membership and QC-input hashes, row counts, feature order, quantiles and cutpoints. State validation checks the original digest before interpretation and returns an independent copy. Neither a digest nor a self-consistent state proves source-only membership: the separately authenticated role registry and source-file bindings remain mandatory at the future runtime boundary.
+
+The row router uses one authenticated threshold state, one fixed P02 gate and the validity of the three immutable actions. It accepts no label, acquisition identity or target-batch summary. For deterministic reason logging, an empty source threshold takes precedence over unavailable row QC; either condition selects MIN. Otherwise strict threshold comparisons and the registered trigger priority choose the requested action. An invalid requested action falls back to MIN without trying another nonminimal action. An invalid MIN row always stops processing, including when another action would otherwise be selected.
+
+Each private route record binds the threshold state, exact gate definition, original normalized QC ingredients and action-validity flags. It records available features, trigger states, requested and selected actions, and the fallback reason. Actual row-level values and records remain private under the [figure protocol](P08_FIGURE_PROTOCOL.md). Hashes bind these inputs; they do not authenticate source files or grant execution authority.
+
+Current numerical tests use invented arrays only. The modules have no dataset loader, model executor or scientific permit, and their execution entry points always reject a launch. Passing these tests does not authorize applying thresholds or gates to the dataset, choosing a winning rule or reducing the literal execution budget through numerical deduplication. Independent review and validation results are recorded in the [review log](delegation/P08_REVIEW.md).

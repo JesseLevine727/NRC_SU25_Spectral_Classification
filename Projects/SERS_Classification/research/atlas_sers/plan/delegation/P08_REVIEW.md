@@ -215,3 +215,29 @@ Lenarizer preservation checks found only added audit and validation numbers; ori
 This milestone completes the adaptive metadata catalog, not the full P08 readiness goal. QC threshold/routing tests, admission/restart controls, later-branch decisions and budgets, and the separate scientific execution request remain open. No new model, temperature, QC threshold, route, prediction or classification score was computed.
 
 Final documentation-overlay checks passed: **906 public files**, CI-scope Ruff, whitespace validation, and **429 focused tests with 60 subtests in 3.37 seconds**. All eleven release paths matched the reviewed snapshot byte-for-byte. Only these reviewed paths are included in the milestone; unrelated work remains untouched.
+
+## T026–T029: synthetic source-threshold kernel
+
+The preceding catalog milestone was published on `main` as `f1480096d341d2f5ceaf99f1c4d07d16d5ca3935`; its remote SHA matched and GitHub Actions run `36767377475` completed successfully. That result does not validate the new numerical implementation.
+
+DeepSeek authored separate threshold and synthetic-test patches. The supervisor restored missing Add File markers mechanically and reviewed the entire implementation. Independent checks found an unhashable error argument escaping sanitization, integer cutpoint ordering lost by float conversion, and numerical handling dependent on the caller's error settings. The worker corrected those defects and replaced subtraction-based ordering checks with direct comparisons. No dataset QC value was used.
+
+The initial test run passed 98 tests and failed two fixtures: they attempted to encode NaN or infinity in strict canonical JSON before calling the validator. DeepSeek corrected those fixtures without weakening the canonical encoder, added large-integer and numerical-range regressions, and removed a test that swallowed the error it should detect. The corrected threshold suite passed **108 tests in 0.14 seconds**, without warnings; Ruff passed after mechanical formatting. Tests check hand-calculated linear quantiles, exact input binding, complete-row validity, sealed-state validation and unchanged caller numerical settings.
+
+The kernel is accepted for synthetic numerical testing, not real-data application. Source-file authentication, physical-master isolation and scientific authority remain caller/runtime responsibilities. Single-row routing review and the complete publication regression follow separately.
+
+## T030–T033: single-row routing and independent test corrections
+
+DeepSeek authored the router and its tests in separate assignments. Review rejected guessed alternatives to the exact threshold-state schema and conversion of validated integer cutpoints to float. The corrected router reads the sealed state fields directly, preserves exact comparison boundaries and maps incidental input errors to fixed reason codes. Seven independent supervisor checks passed for minimal/single/dual routing and large-integer boundaries.
+
+The first test draft failed during collection because its threshold fixtures omitted the required source-membership digest. DeepSeek corrected all fixture calls without changing the production signature. The correction also replaces an implementation-derived quantile oracle with known values, tests caller-input preservation directly, and checks both dual-trigger invalid-action fallbacks. Its response contained a superseded patch and commentary before a final complete replacement; only the final replacement was used. The supervisor converted its same-path delete/add operations into an update and applied mechanical formatting.
+
+The threshold/router suite passed **310 tests in 0.62 seconds**, with no warnings; CI-scope Ruff passed. The router tests exercise all 124 registered gates, all five feature mappings, equality and next-representable-value boundaries, both priority orders, source-empty/row-unavailable fallbacks, invalid minimal inputs, state tampering, hash binding and execution refusal. These are synthetic numerical tests, not 310 scientific experiments or an estimate of preprocessing benefit.
+
+The contract now records synthetic acceptance of the threshold/routing controls; real-data application remains unauthorized. Lenarizer guided the methods/review additions. Preservation checks retained original numbers and citations; added section references and test/CI values were checked against source and tool output. Full fixed-snapshot regression, public-boundary validation and the scoped push remain separate release gates.
+
+## Numerical-controls milestone release checks
+
+The exact eight-file-overlay, Git-backed publication snapshot passed the public-boundary validator with **910 files checked** and CI-scope Ruff. All eleven P08 modules passed **739 tests and 60 subtests in 3.94 seconds** before the full regression. The full CPU regression then passed **3,696 tests and 60 subtests**, with **four CUDA-only skips**, in **408.63 seconds**. The **2,026 warnings** are inherited sparse-class metric fixtures; the two new numerical suites produced no warnings in their focused run. The protected package remained fixed during full validation.
+
+All implementation workers and the full test process ended. No real-data QC threshold, route, fit, temperature, prediction, score or resampling calculation was performed. Final documentation-only notes receive repeated public-boundary, lint, focused-test and whitespace checks before the exact-path publication. Remote revision and CI status require separate verification after the push. The full readiness goal remains incomplete: admission/restart controls, later-branch decisions and budgets, resource feasibility, final readiness acceptance and the separate scientific execution request are still open.
