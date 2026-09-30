@@ -1,0 +1,72 @@
+{
+  "final_bundle_files_rehashed": 74,
+  "input_hashes": {
+    "calibrations": "75dfab7bff824b28d8e4fd7d76927c79d7e1be1c4303b18aa85a1d5b4c9a733b",
+    "predictions": "ddc1620ffb67335c63806e778abf13d830f5bd68a39b2ecc5fb05d87e898aa9a",
+    "selected_specs": "61570bf4bf837c420869a49d84855c15ee03a3a85f1fedbbdef5af352a0f8e1c",
+    "terminal_ledger": "b72956190cc57529fdbb61e7211cd94b2be26a534cf2c71f9bbfd4c869b86845"
+  },
+  "models": [
+    {
+      "calibration_and_status_counts": [
+        {
+          "count": 396,
+          "reason_code": "cache_reuse_verified",
+          "status": "complete"
+        },
+        {
+          "count": 25160,
+          "reason_code": "not_recorded",
+          "status": "complete"
+        }
+      ],
+      "completed_final_refits": 260,
+      "completed_source_fits": 24516,
+      "contexts": 260,
+      "model_id": "C-RBF-SVM",
+      "prediction_appearances": 2785
+    },
+    {
+      "calibration_and_status_counts": [
+        {
+          "count": 1188,
+          "reason_code": "cache_reuse_verified",
+          "status": "complete"
+        },
+        {
+          "count": 34620,
+          "reason_code": "not_recorded",
+          "status": "complete"
+        }
+      ],
+      "completed_final_refits": 780,
+      "completed_source_fits": 32688,
+      "contexts": 260,
+      "model_id": "C-RANDOM-FOREST",
+      "prediction_appearances": 2785
+    },
+    {
+      "calibration_and_status_counts": [
+        {
+          "count": 1188,
+          "reason_code": "cache_reuse_verified",
+          "status": "complete"
+        },
+        {
+          "count": 34620,
+          "reason_code": "not_recorded",
+          "status": "complete"
+        }
+      ],
+      "completed_final_refits": 780,
+      "completed_source_fits": 32688,
+      "contexts": 260,
+      "model_id": "C-EXTRA-TREES",
+      "prediction_appearances": 2785
+    }
+  ],
+  "new_scientific_operations": 0,
+  "scope": "existing_minimal_fixed_classical_endpoint_and_source_evidence",
+  "status": "pass",
+  "schema_version": "nato-sers-p08-readonly-audit-v1"
+}

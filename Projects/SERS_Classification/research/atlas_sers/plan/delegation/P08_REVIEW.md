@@ -49,3 +49,37 @@ The preservation checks for README and the handoff passed. Checks for the master
 The clean publication snapshot passed the public-boundary/plan validator with **872 files checked**, and full-package Ruff passed. The new readiness contract initially lacked the existing validator's required `protocol_version` field; that field was added in the recognized namespace before acceptance. No validator rule was weakened, and ignored local build logs were not included.
 
 The final snapshot's focused P08 and inherited planning/governance contract checks passed **143 tests in 5.02 seconds**. This supplements, rather than relabels, the earlier full regression. Publication must include only the reviewed P08 files and scoped navigation edits; unrelated working-tree changes remain excluded.
+
+## First milestone publication
+
+The initial input/accounting milestone was committed and pushed to `main` as `0ea4202406eb31280c6626f1ea23c4abf8932561`. The remote SHA matched. GitHub Actions run `36742925891` completed successfully. This verifies that milestone, not the later files described below or completion of the P08 readiness goal.
+
+## T005/T006: universal dependency planner
+
+DeepSeek authored the two scoped planner/test files. The first response contained an incomplete draft followed by one complete patch; only the complete patch was applied under review. The first test run passed 27 tests and failed the order-invariance test because its supposedly reordered fixture changed the selected recipe. Review also rejected an invented selection-mode identifier, shortened policy IDs, identifier-bearing error messages and the proposed classical calibration order. Twenty-nine lint findings remained. None of this code was used to fit or predict.
+
+The supervisor checked the inherited runtime and corrected the implementation specification: classical forest seed probabilities are averaged before applying one temperature, whereas neural probabilities are calibrated per seed before averaging. DeepSeek supplied the correction. Its response used delete/add operations for the same files, which the patch tool rejected without changing files. The supervisor mechanically converted that response to full-file update operations, preserving its source content, and corrected two remaining mechanical lint findings. No historical scientific result was rewritten.
+
+The corrected planner uses exact policy/representation/mode IDs, fixed data-free error codes, full-length content hashes, explicit dependencies and an unconditional execution-denial entry point. Tests check classical versus neural calibration order, source-only dynamic dependencies, candidate/seed counts, alias identity, malformed/private inputs, exact hashes, permutation invariance and nonmutation. The independent two-context fixture totals 725 model-fit slots per policy (660 classical source, 21 neural source, 21 calibration-model and 23 final fits). The supervisor's correction request accidentally wrote 765 while giving the correct addends; the worker retained the correct sum, which review confirmed.
+
+The three P08 modules passed **160 tests and 16 subtests in 1.52 seconds** before the two mechanical lint fixes. Full regression and release-boundary checks for this new slice remain separate. Both worker sessions ended; no training process was launched.
+
+## Extended evidence and numerical specification
+
+The read-only classical/neural role bridge passed on 1,721 distinct definitions, including 396 exact fitting/validation hash matches for master-CV calibration reuse. The initial audit assumed identical role labels and stopped; matching the actual role hashes resolved the historical prefix difference without changing any split.
+
+The classical minimal-evidence audit passed for all three fixed families and all 260 contexts each. It rehashed 74 final-bundle files and verified selected candidates, registered test rows, source/refit evidence, seed identities and calibration bindings. The aggregate calibration JSONL uses rounded floating-point serialization; exact calibration-state verification therefore used the original canonical per-outer-shard JSON, not recalculation from the rounded summary. A diagnostic master hash also needed the original string-ID convention rather than CSV-inferred integers. These were corrections to the new audit, not scientific reruns or alterations of saved evidence.
+
+The new [statistical protocol](../P08_STATISTICAL_PROTOCOL.md) and [contract](../contracts/p08_statistics_contract.json) specify prospective policy effects, interactions, 10,000 shared-weight draws, hierarchy feasibility, missing cells and conditional interpretation. No draws or new scores have been computed. Lenarizer guided the separation of measured support, prospective calculations and unsupported chemical claims. Continuous preservation diagnostics are not converted into an invented chemistry-preservation threshold.
+
+The supervisor expanded the corrected planner against authenticated metadata, independently checked counts, unique identities, dependency existence and context/policy isolation, and tested the execution-denial entry. It produced 607,221 slots, 1,560 strategy aliases and the expected two-action 195,202 model-fit/3,354 scalar-calibration counts. The compressed private graph is 152,004,617 bytes; no graph identities or raw observations enter its public aggregate audit. Historical MIN entries still require a per-artifact bridge; no executor consumes this graph.
+
+Preservation checks for the readiness and review additions found added numeric tokens only; original numeric tokens and citations were retained. Added counts and dates were checked against the read-only audits, tests and CI. An overly broad lint command also inspected the pre-existing report renderer and found 54 out-of-scope style errors. That renderer was not edited; the release uses the existing CI scope (`src`, `tests`, `scripts`) and records that scope explicitly.
+
+## Continuation release checks
+
+The exact clean publication snapshot passed the public-boundary/contract scan with **879 files checked**, and CI-scope Ruff passed. Its full regression produced **3,116 passed, four CUDA-only skips, 16 subtests passed and one failure in 385.80 seconds**. The failure occurred in the existing P02 integration test before any build: the exported Git archive had no repository metadata, and the test requires `git rev-parse --show-toplevel` for provenance. A targeted diagnostic reproduced that setup failure.
+
+After the full run ended, the supervisor initialized a Git repository and committed the public snapshot **only in the temporary validation directory**. No user-repository configuration, source or historical evidence changed. Rerunning the P02 integration test together with all P08 and selected planning/contract checks then passed **176 tests and 16 subtests in 26.43 seconds**. This resolves the identified environment failure; it is not relabelled as a second full-suite run. The 2,026 full-run warnings are inherited sparse-class metric warnings. Final review-log additions are documentation only and receive a repeated boundary/whitespace check before the exact-path push. Remote CI for the new commit remains a separate acceptance check.
+
+The continuation remains a no-fit milestone. Complete neural/historical job-to-artifact reuse, nested QC routing/selection roles, branch accounting, finite resources and a separately approved scientific smoke permit are still required. The full persistent readiness goal is not complete.

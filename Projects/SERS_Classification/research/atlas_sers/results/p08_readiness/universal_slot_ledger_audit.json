@@ -1,0 +1,260 @@
+{
+  "canonical_calibration_role_matches": 396,
+  "context_count": 260,
+  "execution_authorized": false,
+  "historical_reuse_status": "requires_separate_per_artifact_bridge",
+  "model_specification_sha256": {
+    "C-EXTRA-TREES": "0b0e87045266fc15e90cf717ede1c0417e6ac61212b100945f6042770304e443",
+    "C-RANDOM-FOREST": "6f3650de057c777606914c83669f2082cd3219c7d01e773cd708c72d7b8796a5",
+    "C-RBF-SVM": "004ad69fbef5e7bfee598ad92974a8389f356f299735bb0e9d4ef47304db5e1a",
+    "D0-M": "fd2264540fa7f459169a795cb95a91f2c6b0b30f06c75542ea8839ea55b04614",
+    "D1": "113f648d8bb0066c559e174d9b1c0bdab0156d6d954c7e57d56367f155199e1b",
+    "D2": "9695728d210e6e1e2b70755b141caf1aad7bc9f8e44dffb3c7e8967ff2e5d297",
+    "D3": "0a982deb0ccd172db0ba3cdcdf20f98a5734bae020baae9f33d9bbe184d7d62a"
+  },
+  "note": "Source selection and durations are unresolved slots, not outcomes; zero execution is authorized.",
+  "plan_sha256": "179b95e8011a5f6cc02c65c7fab1acf0f6a6241ba1ef02378aac207b9e19cb03",
+  "planner_sha256": "c346614dc729209bdc33529969b7c432df4144713871c6136e3fa80875587c5a",
+  "private_archive_bytes": 152004617,
+  "private_archive_sha256": "c636358211edf350e2d36e4de40531a27e6402c937d191a4ebdeba83f1a086e8",
+  "schema_version": "nato-sers-p08-universal-ledger-audit-v1",
+  "selection_units": 681,
+  "specification_inputs": {
+    "C-EXTRA-TREES": {
+      "inherited_sources": {
+        "plan/contracts/hyperparameter_registry.json": "e1f966b10c135d83698ad67d1869ce84f9808e6d37b1800cf093b9b7aba807ee",
+        "plan/contracts/p03_governance_contract.json": "08ec538bd1d45eed8f404430d6359315d7b0016b4b406e2e9d18c549b9a00207",
+        "src/atlas_sers/evaluation/classical.py": "0de8ca1a4ccbf30f02af4a647b29f8c9813b384861a96876b8dfc0b31100a399",
+        "src/atlas_sers/evaluation/p03_finalize.py": "27aff08585e550f56777c2e61d3990f246a53dd1cd6f0051a53db1c4ca499004",
+        "src/atlas_sers/evaluation/p03_runtime.py": "e3d7f7c7e89c9196d52e7e30c52ff8c03997f0e7e9fd523f71ad486c6086b135",
+        "src/atlas_sers/evaluation/p03_selection.py": "2381fcf409872a534c6c1ba7b1954f34bffd42dbfabcb8ab72de986089cffd3b",
+        "src/atlas_sers/models/classical.py": "ec8e42197e95fb96afc6c391343a7a8b94de0788b6301a24d0c4607fddf51ed4"
+      },
+      "model_id": "C-EXTRA-TREES"
+    },
+    "C-RANDOM-FOREST": {
+      "inherited_sources": {
+        "plan/contracts/hyperparameter_registry.json": "e1f966b10c135d83698ad67d1869ce84f9808e6d37b1800cf093b9b7aba807ee",
+        "plan/contracts/p03_governance_contract.json": "08ec538bd1d45eed8f404430d6359315d7b0016b4b406e2e9d18c549b9a00207",
+        "src/atlas_sers/evaluation/classical.py": "0de8ca1a4ccbf30f02af4a647b29f8c9813b384861a96876b8dfc0b31100a399",
+        "src/atlas_sers/evaluation/p03_finalize.py": "27aff08585e550f56777c2e61d3990f246a53dd1cd6f0051a53db1c4ca499004",
+        "src/atlas_sers/evaluation/p03_runtime.py": "e3d7f7c7e89c9196d52e7e30c52ff8c03997f0e7e9fd523f71ad486c6086b135",
+        "src/atlas_sers/evaluation/p03_selection.py": "2381fcf409872a534c6c1ba7b1954f34bffd42dbfabcb8ab72de986089cffd3b",
+        "src/atlas_sers/models/classical.py": "ec8e42197e95fb96afc6c391343a7a8b94de0788b6301a24d0c4607fddf51ed4"
+      },
+      "model_id": "C-RANDOM-FOREST"
+    },
+    "C-RBF-SVM": {
+      "inherited_sources": {
+        "plan/contracts/hyperparameter_registry.json": "e1f966b10c135d83698ad67d1869ce84f9808e6d37b1800cf093b9b7aba807ee",
+        "plan/contracts/p03_governance_contract.json": "08ec538bd1d45eed8f404430d6359315d7b0016b4b406e2e9d18c549b9a00207",
+        "src/atlas_sers/evaluation/classical.py": "0de8ca1a4ccbf30f02af4a647b29f8c9813b384861a96876b8dfc0b31100a399",
+        "src/atlas_sers/evaluation/p03_finalize.py": "27aff08585e550f56777c2e61d3990f246a53dd1cd6f0051a53db1c4ca499004",
+        "src/atlas_sers/evaluation/p03_runtime.py": "e3d7f7c7e89c9196d52e7e30c52ff8c03997f0e7e9fd523f71ad486c6086b135",
+        "src/atlas_sers/evaluation/p03_selection.py": "2381fcf409872a534c6c1ba7b1954f34bffd42dbfabcb8ab72de986089cffd3b",
+        "src/atlas_sers/models/classical.py": "ec8e42197e95fb96afc6c391343a7a8b94de0788b6301a24d0c4607fddf51ed4"
+      },
+      "model_id": "C-RBF-SVM"
+    },
+    "D0-M": {
+      "inherited_sources": {
+        "plan/contracts/p04_execution_contract.json": "fa09c2bdf30155dd0f533601a876ab1190a0e0e654469fc92ff1a9e2b492e9a5",
+        "plan/contracts/p05_core_contract.json": "f350ab8dd2be4ca72ddb8adcce4c36b6be63001b7c97d8f70c8d34ba8bbe45e4",
+        "src/atlas_sers/evaluation/p04_runtime.py": "f14c80e2a0c8dae6e1c28b18ae6593f7659a10b4f2c8cce57ec1afa40c960ce1",
+        "src/atlas_sers/evaluation/p05_development.py": "f5639ec28077a8c15f2e9210c43490b44d7100ffa08d1975211d9e41a1efc8b8",
+        "src/atlas_sers/evaluation/p05_objectives.py": "5a4006088a1c4198b141e8642bd53c287bfcf5feab8297338381fbbe2a8d0959",
+        "src/atlas_sers/evaluation/p05_refit.py": "811d4ae86f919028d2e7e44d843ccc113584d32b32071c305ed9afa2ecf3a659",
+        "src/atlas_sers/evaluation/p05_sampling.py": "3bcdfadc757a681420922843457e0a232cdbb31ee69647c183a7e28bd7361a97",
+        "src/atlas_sers/evaluation/p05_selection.py": "416f7fc82b612ea87290a511a02129679dd064db14509b9dfd4508ae4343b966",
+        "src/atlas_sers/evaluation/p05_smoke.py": "44e1dd25fc2146702bb0d430f277a3c2c1725bfb69d91a036082528e093b4a4a",
+        "src/atlas_sers/models/acquisition.py": "6957b1b1908bed89195a656197ee6a250ef81ad5a7a98225672a983db912a304",
+        "src/atlas_sers/models/deep.py": "1f6340dc54538feb28bc029f4a65dc096c042aced964b51c613faa01f914fd4d"
+      },
+      "model_id": "D0-M"
+    },
+    "D1": {
+      "inherited_sources": {
+        "plan/contracts/p04_execution_contract.json": "fa09c2bdf30155dd0f533601a876ab1190a0e0e654469fc92ff1a9e2b492e9a5",
+        "plan/contracts/p05_core_contract.json": "f350ab8dd2be4ca72ddb8adcce4c36b6be63001b7c97d8f70c8d34ba8bbe45e4",
+        "src/atlas_sers/evaluation/p04_runtime.py": "f14c80e2a0c8dae6e1c28b18ae6593f7659a10b4f2c8cce57ec1afa40c960ce1",
+        "src/atlas_sers/evaluation/p05_development.py": "f5639ec28077a8c15f2e9210c43490b44d7100ffa08d1975211d9e41a1efc8b8",
+        "src/atlas_sers/evaluation/p05_objectives.py": "5a4006088a1c4198b141e8642bd53c287bfcf5feab8297338381fbbe2a8d0959",
+        "src/atlas_sers/evaluation/p05_refit.py": "811d4ae86f919028d2e7e44d843ccc113584d32b32071c305ed9afa2ecf3a659",
+        "src/atlas_sers/evaluation/p05_sampling.py": "3bcdfadc757a681420922843457e0a232cdbb31ee69647c183a7e28bd7361a97",
+        "src/atlas_sers/evaluation/p05_selection.py": "416f7fc82b612ea87290a511a02129679dd064db14509b9dfd4508ae4343b966",
+        "src/atlas_sers/evaluation/p05_smoke.py": "44e1dd25fc2146702bb0d430f277a3c2c1725bfb69d91a036082528e093b4a4a",
+        "src/atlas_sers/models/acquisition.py": "6957b1b1908bed89195a656197ee6a250ef81ad5a7a98225672a983db912a304",
+        "src/atlas_sers/models/deep.py": "1f6340dc54538feb28bc029f4a65dc096c042aced964b51c613faa01f914fd4d"
+      },
+      "model_id": "D1"
+    },
+    "D2": {
+      "inherited_sources": {
+        "plan/contracts/p04_execution_contract.json": "fa09c2bdf30155dd0f533601a876ab1190a0e0e654469fc92ff1a9e2b492e9a5",
+        "plan/contracts/p05_core_contract.json": "f350ab8dd2be4ca72ddb8adcce4c36b6be63001b7c97d8f70c8d34ba8bbe45e4",
+        "src/atlas_sers/evaluation/p04_runtime.py": "f14c80e2a0c8dae6e1c28b18ae6593f7659a10b4f2c8cce57ec1afa40c960ce1",
+        "src/atlas_sers/evaluation/p05_development.py": "f5639ec28077a8c15f2e9210c43490b44d7100ffa08d1975211d9e41a1efc8b8",
+        "src/atlas_sers/evaluation/p05_objectives.py": "5a4006088a1c4198b141e8642bd53c287bfcf5feab8297338381fbbe2a8d0959",
+        "src/atlas_sers/evaluation/p05_refit.py": "811d4ae86f919028d2e7e44d843ccc113584d32b32071c305ed9afa2ecf3a659",
+        "src/atlas_sers/evaluation/p05_sampling.py": "3bcdfadc757a681420922843457e0a232cdbb31ee69647c183a7e28bd7361a97",
+        "src/atlas_sers/evaluation/p05_selection.py": "416f7fc82b612ea87290a511a02129679dd064db14509b9dfd4508ae4343b966",
+        "src/atlas_sers/evaluation/p05_smoke.py": "44e1dd25fc2146702bb0d430f277a3c2c1725bfb69d91a036082528e093b4a4a",
+        "src/atlas_sers/models/acquisition.py": "6957b1b1908bed89195a656197ee6a250ef81ad5a7a98225672a983db912a304",
+        "src/atlas_sers/models/deep.py": "1f6340dc54538feb28bc029f4a65dc096c042aced964b51c613faa01f914fd4d"
+      },
+      "model_id": "D2"
+    },
+    "D3": {
+      "inherited_sources": {
+        "plan/contracts/p04_execution_contract.json": "fa09c2bdf30155dd0f533601a876ab1190a0e0e654469fc92ff1a9e2b492e9a5",
+        "plan/contracts/p05_core_contract.json": "f350ab8dd2be4ca72ddb8adcce4c36b6be63001b7c97d8f70c8d34ba8bbe45e4",
+        "src/atlas_sers/evaluation/p04_runtime.py": "f14c80e2a0c8dae6e1c28b18ae6593f7659a10b4f2c8cce57ec1afa40c960ce1",
+        "src/atlas_sers/evaluation/p05_development.py": "f5639ec28077a8c15f2e9210c43490b44d7100ffa08d1975211d9e41a1efc8b8",
+        "src/atlas_sers/evaluation/p05_objectives.py": "5a4006088a1c4198b141e8642bd53c287bfcf5feab8297338381fbbe2a8d0959",
+        "src/atlas_sers/evaluation/p05_refit.py": "811d4ae86f919028d2e7e44d843ccc113584d32b32071c305ed9afa2ecf3a659",
+        "src/atlas_sers/evaluation/p05_sampling.py": "3bcdfadc757a681420922843457e0a232cdbb31ee69647c183a7e28bd7361a97",
+        "src/atlas_sers/evaluation/p05_selection.py": "416f7fc82b612ea87290a511a02129679dd064db14509b9dfd4508ae4343b966",
+        "src/atlas_sers/evaluation/p05_smoke.py": "44e1dd25fc2146702bb0d430f277a3c2c1725bfb69d91a036082528e093b4a4a",
+        "src/atlas_sers/models/acquisition.py": "6957b1b1908bed89195a656197ee6a250ef81ad5a7a98225672a983db912a304",
+        "src/atlas_sers/models/deep.py": "1f6340dc54538feb28bc029f4a65dc096c042aced964b51c613faa01f914fd4d"
+      },
+      "model_id": "D3"
+    }
+  },
+  "status": "pass",
+  "summary": {
+    "authorized_fit_slots": 0,
+    "by_policy": {
+      "PP-U-ARPLS": {
+        "aliases": 520,
+        "calibration_prediction_aliases": 2772,
+        "model_fit_slots": 97601,
+        "prediction_stage_counts": {
+          "calibration_validation_prediction": 2688,
+          "held_prediction": 2717,
+          "seed_ensemble_prediction": 1079,
+          "source_validation_prediction": 92196
+        },
+        "scalar_calibrations": 1677,
+        "stage_counts": {
+          "calibration_model_fit": 2688,
+          "calibration_prediction_alias": 2772,
+          "calibration_validation_prediction": 2688,
+          "final_refit": 2717,
+          "held_prediction": 2717,
+          "scalar_calibration": 1677,
+          "seed_ensemble_prediction": 1079,
+          "select_hyperparameters": 780,
+          "select_refit_epochs": 897,
+          "source_fit": 92196,
+          "source_validation_prediction": 92196
+        },
+        "total_jobs": 202407
+      },
+      "PP-U-MIN": {
+        "aliases": 520,
+        "calibration_prediction_aliases": 2772,
+        "model_fit_slots": 97601,
+        "prediction_stage_counts": {
+          "calibration_validation_prediction": 2688,
+          "held_prediction": 2717,
+          "seed_ensemble_prediction": 1079,
+          "source_validation_prediction": 92196
+        },
+        "scalar_calibrations": 1677,
+        "stage_counts": {
+          "calibration_model_fit": 2688,
+          "calibration_prediction_alias": 2772,
+          "calibration_validation_prediction": 2688,
+          "final_refit": 2717,
+          "held_prediction": 2717,
+          "scalar_calibration": 1677,
+          "seed_ensemble_prediction": 1079,
+          "select_hyperparameters": 780,
+          "select_refit_epochs": 897,
+          "source_fit": 92196,
+          "source_validation_prediction": 92196
+        },
+        "total_jobs": 202407
+      },
+      "PP-U-SG": {
+        "aliases": 520,
+        "calibration_prediction_aliases": 2772,
+        "model_fit_slots": 97601,
+        "prediction_stage_counts": {
+          "calibration_validation_prediction": 2688,
+          "held_prediction": 2717,
+          "seed_ensemble_prediction": 1079,
+          "source_validation_prediction": 92196
+        },
+        "scalar_calibrations": 1677,
+        "stage_counts": {
+          "calibration_model_fit": 2688,
+          "calibration_prediction_alias": 2772,
+          "calibration_validation_prediction": 2688,
+          "final_refit": 2717,
+          "held_prediction": 2717,
+          "scalar_calibration": 1677,
+          "seed_ensemble_prediction": 1079,
+          "select_hyperparameters": 780,
+          "select_refit_epochs": 897,
+          "source_fit": 92196,
+          "source_validation_prediction": 92196
+        },
+        "total_jobs": 202407
+      }
+    },
+    "nonminimal_totals": {
+      "aliases": 1040,
+      "calibration_prediction_aliases": 5544,
+      "model_fit_slots": 195202,
+      "prediction_stage_counts": {
+        "calibration_validation_prediction": 5376,
+        "held_prediction": 5434,
+        "seed_ensemble_prediction": 2158,
+        "source_validation_prediction": 184392
+      },
+      "scalar_calibrations": 3354,
+      "stage_counts": {
+        "calibration_model_fit": 5376,
+        "calibration_prediction_alias": 5544,
+        "calibration_validation_prediction": 5376,
+        "final_refit": 5434,
+        "held_prediction": 5434,
+        "scalar_calibration": 3354,
+        "seed_ensemble_prediction": 2158,
+        "select_hyperparameters": 1560,
+        "select_refit_epochs": 1794,
+        "source_fit": 184392,
+        "source_validation_prediction": 184392
+      },
+      "total_jobs": 404814
+    },
+    "totals": {
+      "aliases": 1560,
+      "calibration_prediction_aliases": 8316,
+      "model_fit_slots": 292803,
+      "prediction_stage_counts": {
+        "calibration_validation_prediction": 8064,
+        "held_prediction": 8151,
+        "seed_ensemble_prediction": 3237,
+        "source_validation_prediction": 276588
+      },
+      "scalar_calibrations": 5031,
+      "stage_counts": {
+        "calibration_model_fit": 8064,
+        "calibration_prediction_alias": 8316,
+        "calibration_validation_prediction": 8064,
+        "final_refit": 8151,
+        "held_prediction": 8151,
+        "scalar_calibration": 5031,
+        "seed_ensemble_prediction": 3237,
+        "select_hyperparameters": 2340,
+        "select_refit_epochs": 2691,
+        "source_fit": 276588,
+        "source_validation_prediction": 276588
+      },
+      "total_jobs": 607221
+    }
+  }
+}

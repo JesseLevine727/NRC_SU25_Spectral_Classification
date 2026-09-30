@@ -1,0 +1,92 @@
+{
+  "distinct_role_definitions": 1721,
+  "input_hashes": {
+    "p03_candidate_registry": "046ebfa9023591ba91f48b797fe3bb037f6e7e82cb4bfb34800a9aa12b468bba",
+    "p03_fit_manifest": "3a8e22e50cb87c32ff26062d65d35dcd7ae6d339ef344bcedcde9123a33122a8"
+  },
+  "logical_fit_rows": 97172,
+  "master_cv_calibration_role_matches": 396,
+  "model_stage_counts": [
+    {
+      "accounting": "cache_reuse",
+      "count": 1188,
+      "model_id": "C-EXTRA-TREES",
+      "stage": "calibration_crossfit"
+    },
+    {
+      "accounting": "new_fit",
+      "count": 1152,
+      "model_id": "C-EXTRA-TREES",
+      "stage": "calibration_crossfit"
+    },
+    {
+      "accounting": "new_fit",
+      "count": 780,
+      "model_id": "C-EXTRA-TREES",
+      "stage": "final_family_refit"
+    },
+    {
+      "accounting": "new_fit",
+      "count": 32688,
+      "model_id": "C-EXTRA-TREES",
+      "stage": "inner_selection"
+    },
+    {
+      "accounting": "cache_reuse",
+      "count": 1188,
+      "model_id": "C-RANDOM-FOREST",
+      "stage": "calibration_crossfit"
+    },
+    {
+      "accounting": "new_fit",
+      "count": 1152,
+      "model_id": "C-RANDOM-FOREST",
+      "stage": "calibration_crossfit"
+    },
+    {
+      "accounting": "new_fit",
+      "count": 780,
+      "model_id": "C-RANDOM-FOREST",
+      "stage": "final_family_refit"
+    },
+    {
+      "accounting": "new_fit",
+      "count": 32688,
+      "model_id": "C-RANDOM-FOREST",
+      "stage": "inner_selection"
+    },
+    {
+      "accounting": "cache_reuse",
+      "count": 396,
+      "model_id": "C-RBF-SVM",
+      "stage": "calibration_crossfit"
+    },
+    {
+      "accounting": "new_fit",
+      "count": 384,
+      "model_id": "C-RBF-SVM",
+      "stage": "calibration_crossfit"
+    },
+    {
+      "accounting": "new_fit",
+      "count": 260,
+      "model_id": "C-RBF-SVM",
+      "stage": "final_family_refit"
+    },
+    {
+      "accounting": "new_fit",
+      "count": 24516,
+      "model_id": "C-RBF-SVM",
+      "stage": "inner_selection"
+    }
+  ],
+  "p03_plan_files_rehashed": 17,
+  "role_counts": {
+    "calibration_crossfit": 780,
+    "final_family_refit": 260,
+    "inner_selection": 681
+  },
+  "scientific_execution": false,
+  "status": "pass",
+  "schema_version": "nato-sers-p08-readonly-audit-v1"
+}

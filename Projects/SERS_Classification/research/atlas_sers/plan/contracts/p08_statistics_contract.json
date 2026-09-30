@@ -1,0 +1,118 @@
+{
+  "schema_version": "nato-sers-p08-statistics-v1",
+  "protocol_version": "nato-sers-p08-statistics-20260930-v1",
+  "status": "prospective_specification_pending_readiness_release",
+  "date": "2026-09-30",
+  "authority": "P08-A02_planning_only",
+  "execution_authorized": false,
+  "authorized_resampling_draws": 0,
+  "authorized_model_fits": 0,
+  "prior_minimal_benchmark_outcomes_seen": true,
+  "protocol_document": "plan/P08_STATISTICAL_PROTOCOL.md",
+  "population": {
+    "primary_spectra": 598,
+    "held_distinct_spectra": 557,
+    "physical_masters": 69,
+    "instruments": 10,
+    "held_domains": 13,
+    "held_contexts": 260,
+    "development_contexts_excluded": 60
+  },
+  "endpoints": ["M01", "M06"],
+  "primary_metric": "balanced_accuracy",
+  "point_estimator": "equal_original_true_class_recall_then_equal_context_then_equal_domain",
+  "sensitivity_estimator": "pool_four_disjoint_test_folds_per_domain_repeat_then_equal_repeat_then_equal_domain",
+  "m06_aggregation": "mean_probabilities_within_master_instrument_then_equal_mean_across_instruments_within_context",
+  "classical_seed_calibration_order": "uncalibrated_seed_probability_average_then_single_temperature",
+  "neural_seed_calibration_order": "per_seed_temperature_then_calibrated_probability_average",
+  "policy_effect": "policy_minus_same_model_minimal",
+  "interaction": "deep_policy_effect_minus_classical_policy_effect_same_four_cell_support",
+  "contrast_families": {
+    "universal": {"planned_size": 20, "model_count": 5, "policy_count": 2, "endpoint_count": 2},
+    "qc": {"planned_size": 8, "model_count": 4, "policy_count": 1, "endpoint_count": 2},
+    "interactions": {"planned_size": 32, "universal": 24, "qc": 8},
+    "family": {"structural_alias_entries": 8, "empirical_transfer_tests": 0, "reason": "no_supported_held_family"}
+  },
+  "multiplicity": {
+    "method": "Holm",
+    "separate_sign_schemes": true,
+    "missing_planned_entry_adjustment_only_p": 1.0,
+    "missing_raw_p": null,
+    "intervals_are_simultaneous": false,
+    "descriptive_not_randomization_inference": true,
+    "bootstrap_tail_p_values_allowed": false
+  },
+  "weighted_uncertainty_proposed": {
+    "draws": 10000,
+    "generator": "PCG64",
+    "distribution": "Exponential_mean_1",
+    "master_seed": 2026093001,
+    "instrument_seed": 2026093002,
+    "identity_order": "lexicographic_global_lists",
+    "shared_across_models_policies_contrasts_endpoints": true,
+    "subset_rule": "index_global_weights_do_not_redraw",
+    "modes": ["crossed", "master_only", "instrument_only"],
+    "maximum_score_batch_draws": 128,
+    "percentiles": [0.025, 0.975],
+    "quantile_method": "linear",
+    "point_match_absolute_tolerance": 1e-12,
+    "nonfinite_or_nonpositive_weight": "fatal_no_retry",
+    "bca_status": "crossed_cluster_acceleration_not_specified",
+    "retraining_uncertainty_included": false,
+    "new_factor_combinations_identified": false
+  },
+  "hierarchy_proposed": {
+    "draws": 10000,
+    "generator": "PCG64",
+    "seed": 2026093003,
+    "reset_per_contrast_endpoint": true,
+    "draw_order": "P06P11_INFERENCE_PROTOCOL_section_4",
+    "empty_original_cell": "undefined_entire_draw_no_retry",
+    "unconditional_interval_requires_all_draws_defined": true,
+    "conditional_surviving_draw_interval_allowed": false,
+    "bca_status": "hierarchical_acceleration_not_specified"
+  },
+  "sign_sensitivity": {
+    "schemes": ["domain", "instrument_identity"],
+    "enumerate_all_assignments": true,
+    "two_sided_statistic": "absolute_equal_domain_mean_effect",
+    "tie_tolerance": 1e-12,
+    "observed_assignment_included": true,
+    "confirmatory_claim_allowed": false
+  },
+  "missing_cells": {
+    "full_support_headline": "unavailable_if_any_required_cell_missing",
+    "paired_complete_context_sensitivity": "separately_labelled_with_denominators",
+    "partial_seed_ensemble": "prohibited",
+    "failed_run_minimal_substitution": "prohibited_unless_registered_policy_fallback",
+    "collapse": "valid_poor_result_not_missing",
+    "historical_selected_classical_missing_contexts": 8,
+    "fixed_family_panel_expected_contexts": 260
+  },
+  "family": {
+    "fallback_pipeline": "complete_minimal_inputs_and_estimator",
+    "operational_alias_contexts_after_authentication": 260,
+    "supported_contexts": 0,
+    "supported_only_metric": null,
+    "empirical_zero_effect_claim_allowed": false
+  },
+  "qc": {
+    "source_eligible_contexts": 128,
+    "complete_minimal_fallback_contexts": 132,
+    "operational_fallbacks_retained": true,
+    "eligible_subset_defined_by_metadata_not_winning_action": true,
+    "gate_relearning_uncertainty_included": false
+  },
+  "preservation": {
+    "hard_checks": ["row_identity", "axis", "finite_values", "unit_range", "validity", "no_unauthorized_extrapolation"],
+    "diagnostic_source": "frozen_P01_definitions_and_saved_evidence",
+    "peak_match_tolerance_cm1": 5,
+    "chemical_ground_truth_available": false,
+    "invented_chemical_pass_threshold_allowed": false,
+    "numerical_chemical_acceptance_threshold": null
+  },
+  "g4_original_criterion_replaced": false,
+  "post_test_policy_promotion_allowed": false,
+  "robustness_or_exploratory_execution_authorized": false,
+  "scientific_permit": "separate_owner_approval_required_after_readiness_review"
+}
