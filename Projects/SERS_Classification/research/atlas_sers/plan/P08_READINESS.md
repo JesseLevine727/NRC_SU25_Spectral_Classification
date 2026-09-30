@@ -155,3 +155,23 @@ Three later-branch choices have been submitted to the owner: whether normalizati
 The [policy-subgraph audit](../results/p08_readiness/qc_policy_subgraph_audit.json) binds 3,456 compact operation blocks for the 54 eligible contexts, 108 policy-validation units and 324 nested estimator folds. The blocks represent 1,620,432 prospective model fits and 53,568 scalar calibrations for gate development. These are planning slots, not executed experiments or an approved compute budget. The full QC ceiling remains 1,630,980 model fits and 53,880 scalar calibrations after final estimator development is included.
 
 The reviewed implementation records inner-fold neural stopping roles, same-gate selection dependencies, per-seed calibration and equal SVM/D0-M gate-ranking weights. Independent checks found no held-test role in this subgraph and no policy-validation role upstream of inner model selection or calibration. It computes no threshold, route, prediction, score or winner. The final-estimator subgraph, complete fallback assembly and runtime admission controls remain unfinished; the complete adaptive catalog is not yet locked.
+
+## 11. Figure delivery boundary
+
+The [P08 figure protocol](P08_FIGURE_PROTOCOL.md) makes the requested black standard-LaTeX/Times-style typography explicit and separates public spectral aggregates from private individual examples. Public spectral curves average within physical masters and then across masters on matched action membership; cells containing only one master are unavailable for that display, not excluded from scientific analyses. The renderer must preserve the shared semantic table across native TikZ, offline HTML, vector PDF and PNG. No figure or new numerical summary has been produced at this readiness stage.
+
+## 12. Audited final-estimator subgraph
+
+The [final-subgraph audit](../results/p08_readiness/qc_final_subgraph_audit.json) now covers the additional 10,548 model fits and 312 scalar calibrations after gate selection in the 54 supported contexts. Together with gate development, the dependency graph represents 1,630,980 prospective model fits and 53,880 scalar calibrations. These counts confirm the existing literal ceiling; they are neither completed experiments nor an execution permit.
+
+The supervisor checked 1,784 exact unit-role bindings and 1,474 protected-stage ancestor chains. Final fitting uses source-only routing; held-test routing depends on every final refit. No held-test role appeared upstream of fitting, selection or calibration. The 176 distinct final endpoints share D0-M where the source-selected strategy has the same recipe. Extra Trees remains outside the adaptive panel.
+
+This internal constructor requires validated inputs. The whole-corpus input validator, complete fallback assembly and runtime admission controls are separate acceptance gates. No QC threshold, routing choice, model, prediction or score has been computed.
+
+## 13. Whole-corpus catalog and fallback evidence
+
+The [complete catalog audit](../results/p08_readiness/qc_complete_catalog_audit.json) now verifies 260 contexts and 1,040 model–context aliases. The 54 supported contexts contribute 216 future aliases; the 206 unsupported contexts contribute 824 complete MIN aliases and no new operation blocks. Every fallback matches the previously authenticated recipe, fitting/test roles, MIN input, model specification and support reason. No new fitting or prediction is needed for these aliases.
+
+The assembler rebuilds the nested role registry from raw membership metadata and checks exact alignment with the compact universal registry, including unsupported contexts. It then seals the combined policy/final graph and fallback aliases. The independent audit checked 5,876 ancestor chains without finding a held-test role upstream of source operations. Calibration-role memberships retain their separately authenticated universal provenance; different hash strings alone do not establish sample independence.
+
+This closes the metadata-construction and evidence-matching portion of the adaptive catalog. Synthetic rejection tests, full regression and publication acceptance are recorded in the [review](delegation/P08_REVIEW.md). Numerical QC routing, admission/restart controls, later-branch decisions and budgets, and a separate execution request remain outside this metadata result. No scientific run is authorized by the catalog.

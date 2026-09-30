@@ -1,5 +1,5 @@
 figure_id,stage,question,view,semantic_unit,formats,status,claim_boundary
-P08-F01,universal,RQ-S01;spectral_preservation,matched_before_after_spectral_overlays,predeclared_representative_spectrum_by_action,native_tikz;offline_html;vector_pdf;png,planned_no_new_results,Show complete pipelines and avoid choosing examples for favorable accuracy
+P08-F01,universal,RQ-S01;spectral_preservation,matched_minimal_vs_policy_spectral_aggregates,domain_analyte_master_equal_mean_curve,native_tikz;offline_html;vector_pdf;png,planned_no_new_results,Public cells need at least two masters; private individual examples stay private; follow P08_FIGURE_PROTOCOL.md
 P08-F02,universal,RQ-S01,paired_minimal_vs_policy_domain_scatter,domain_model_policy_endpoint,native_tikz;offline_html;vector_pdf;png,planned_no_new_results,Identical paired test support and all domains displayed
 P08-F03,universal,RQ-S01,policy_minus_minimal_interval_and_domain_dots,contrast_endpoint_and_domain,native_tikz;offline_html;vector_pdf;png,planned_no_new_results,Conditional uncertainty is not causal nuisance removal
 P08-F04,universal,RQ-S01,model_policy_difference_in_differences,locked_model_pair_policy_endpoint,native_tikz;offline_html;vector_pdf;png,planned_no_new_results,No held-out winner selection from interactions
