@@ -141,3 +141,30 @@ For an initialized CUDA context, the adapter records allocated, reserved, device
 The measured resources feed the existing prospective candidate check. A monotonic clock bounds the entire sampling and checking interval to one second. This defensive freshness threshold is not additional scientific execution time or a reservation of memory. The controller must capture readings under its live lease immediately before admission; a saved report cannot be reused as permanently fresh evidence.
 
 This read-only adapter neither records durable progress nor starts a job. It cannot reconstruct unrecorded elapsed time, measure cumulative artifact growth, validate a checkpoint, grant a permit or enforce memory peaks between observations. Those obligations remain with the reviewed runtime. Synthetic test acceptance is recorded separately in the [review log](delegation/P08_REVIEW.md); no scientific operation is authorized by this scheduling proposal.
+
+## 12. R1 proposal: frozen wider-range sensitivity
+
+The [range ledger audit](../results/p08_readiness/range_ledger_audit.json) binds **131,199 prospective operations** across the unchanged **260 contexts**. Its four-method panel is RBF-SVM, Random Forest, D0-M and the frozen context-local P05-selected recipe. Extra Trees is excluded. Source/test roles, seeds and classical candidate grids are inherited; range input and model-specification hashes are new. No historical MIN estimator or prediction is reused as wider-range evidence.
+
+| Fitting component | Prospective fits |
+|---|---:|
+| RBF-SVM | 25,160 |
+| Random Forest | 34,620 |
+| Distinct neural recipes, after identical-strategy sharing | 3,201 |
+| Total | **62,981** |
+
+The graph separately contains **1,417 scalar calibrations**, **59,508 source-validation prediction jobs**, **1,536 fresh calibration prediction jobs**, **1,937 held-prediction jobs** and **819 seed-ensemble jobs**. It also retains **1,584 within-range calibration aliases**, **520 classical selection jobs**, **897 epoch-selection jobs** and **520 neural strategy aliases**. These counts describe repeated roles and candidates, not additional independent samples. Structural aliases do not authorize cross-representation cache reuse.
+
+| Proposed stage | Active wall time | New private artifacts | Process-tree RAM | Allocated GPU memory | Fitting workers |
+|---|---:|---:|---:|---:|---|
+| R1, separate from U0/U1/Q1/N1 | 24 hours | 40 GiB | 24 GiB | 8 GiB | At most four single-thread CPU workers and one GPU worker |
+
+R1 proposes at most **62,981 model fits** and **1,417 scalar calibrations**, with no automatic retries. The same cumulative wall-time, failed-attempt and evidence-retention rules apply. Retain source prediction/status records, neural best/terminal source checkpoints and final refit checkpoints, and classical final estimators. Classical grid estimators need not be persisted when the inherited procedure requires only their predictions and fit records. No existing evidence may be deleted to meet the allowance.
+
+Authenticated MIN fitting durations for this panel sum to **59,087.649 seconds** for the classical models and **8,695.609 seconds** for the neural models: approximately **16.41 sequential CPU-hours** and **2.42 summed neural fitting hours**. These historical durations exclude new range-dependent changes, prediction, scalar calibration, serialization and orchestration. They are neither measured range timings nor an upper bound. The 24-hour ceiling is a finite proposal, not a completion guarantee.
+
+R1 requires at least **70 GiB free** initially under the existing **30-GiB reserve**. Earlier stages' retained artifacts still occupy disk; stage allowances cannot be borrowed automatically. Synthetic input-width compatibility does not validate a range executor. The historical primary-width guards remain fixed, and range-specific runtime acceptance and the numerical inference addendum are still required before a separate execution request.
+
+### Current storage feasibility, 2026-10-02
+
+A fresh filesystem check reported **8,824,156,160 bytes available**, approximately **8.2 GiB**. This supersedes the earlier capacity observation for present admission decisions; it is not reserved space. It is below the initial requirements for U0 (**38 GiB**), U1/N1 (**110 GiB**), R1 (**70 GiB**) and Q1 (**430 GiB**). None is currently storage-feasible under its proposed full allowance. Additional private capacity or an explicitly approved storage/retention amendment is required; no cleanup, evidence deletion or reduced reserve is inferred. Repeat the check before any future launch request.

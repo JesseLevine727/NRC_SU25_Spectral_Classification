@@ -1,0 +1,48 @@
+{
+  "architecture_sources_sha256": {
+    "src/atlas_sers/models/acquisition.py": "6957b1b1908bed89195a656197ee6a250ef81ad5a7a98225672a983db912a304",
+    "src/atlas_sers/models/deep.py": "1f6340dc54538feb28bc029f4a65dc096c042aced964b51c613faa01f914fd4d"
+  },
+  "arrays_rebuilt": false,
+  "execution_authorized": false,
+  "input_contract": {
+    "array_sha256": "3e92bd771a6ba7bd90080c73ecd1a4b65ab68cdf57a504b686c50d8b9c53ecc5",
+    "axis_end_cm1": 1849,
+    "axis_sha256": "ff90efddb474655ed1808cb4b995d510a46cefa4c5e0f96ffb408d5a24775c51",
+    "axis_start_cm1": 400,
+    "dtype": "float32",
+    "features": 1450,
+    "file_sha256": "60ce0205792f11689a3755b14d8d40c7002efdda970144a9ef09f2e6948d26b2",
+    "invalid_rows": 0,
+    "representation_id": "R_MIN_400_1849",
+    "row_order_sha256": "b0d9ef9ae34a87443d951742bf1b295df522dd12674d5ca4a9785953cee6a5a7",
+    "rows": 598
+  },
+  "input_contract_sha256": "50e8dfd0d94c8a18b6717bea048106ff1111b6656a9e75f2aa9a506b3ad4ac99",
+  "input_file_sha256": {
+    "primary_manifest.csv": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "protected_state.json": "84c8f7bae4749992bf7eac421b230c1d89ec0bf0dab97a4db606edb688c24491",
+    "representation_registry.csv": "8da99a29115e59129fab12e83ae7e33bf4b74a97c098786e0ab708c082c4f4dc",
+    "representations/R_MIN_400_1849.npz": "60ce0205792f11689a3755b14d8d40c7002efdda970144a9ef09f2e6948d26b2",
+    "row_qc.csv": "2ae3901b90c473010606468801608650d4372a9051f990a70a3838f5d0f0ea62"
+  },
+  "normalization_invariants_passed": true,
+  "note": "No new representation, model, score, perturbation or scientific prediction was calculated. Frozen row validity and hashes only; wider pooling support is not prediction parity.",
+  "p01_artifact_manifest_sha256": "4312448dd7e11176ea1cb79324881c464db51fb9d6f79a07fc6476c9032f202d",
+  "population": {
+    "instruments": 10,
+    "masters": 69,
+    "spectra": 598,
+    "stations": 3
+  },
+  "primary_width_guards_sha256": {
+    "src/atlas_sers/evaluation/p04_runtime.py": "f14c80e2a0c8dae6e1c28b18ae6593f7659a10b4f2c8cce57ec1afa40c960ce1",
+    "src/atlas_sers/evaluation/p05_development.py": "f5639ec28077a8c15f2e9210c43490b44d7100ffa08d1975211d9e41a1efc8b8"
+  },
+  "same_row_order_as_primary": true,
+  "schema_version": "nato-sers-p08-range-input-audit-v1",
+  "scientific_operations_started": 0,
+  "scope": "read_only_frozen_array_integrity_and_recorded_validity",
+  "status": "pass",
+  "validity_rows_checked": 598
+}

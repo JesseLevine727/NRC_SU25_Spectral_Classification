@@ -1,0 +1,179 @@
+{
+  "execution_authorized": false,
+  "extra_trees_included": false,
+  "historical_timing_basis": {
+    "classical_audit_sha256": "0978dbee3a1ccb0b414cf3015acd467fef393feb80f3d281d999af8c210d2cd9",
+    "classical_fit_seconds": 59087.648861153284,
+    "measured_range_timing": false,
+    "neural_audit_sha256": "ea28634f782de19a189816fbbb5d191f0cbd23b8bb37df9204b563df315694db",
+    "neural_fit_seconds": 8695.609065141854,
+    "note": "MIN fitting durations only, not a range runtime estimate, parallel wall time or completion guarantee."
+  },
+  "model_spec_sha256": {
+    "C-RANDOM-FOREST": "8eb942590a134f0099e3ff9bfb2867ccade07d58f568a81036e7ad1f9fa1528d",
+    "C-RBF-SVM": "2f00cddb07bc7be1eb479cc403da86eb33b6a3e7d65e36e1d00a5adcf283fe65",
+    "D0-M": "45e7d4d923b04a33c57a9246b4a44655b1471ffaefa71f84875bdcc13dfb9301",
+    "D1": "8b7f87112dc968f41406347da335645e249cdce0ceee7b42832dbcd9026370c3",
+    "D2": "0c56f1836c4ea019c34c975ce0f6acea00c20dd8f6d3fbdf5bff6f5ae2107c67",
+    "D3": "5b921494c05c0353c1a1ff3073cae9a2aedc223b403b7c403c5dbe49b2179a14"
+  },
+  "model_specifications": {
+    "C-RANDOM-FOREST": {
+      "base_model_spec_sha256": "6f3650de057c777606914c83669f2082cd3219c7d01e773cd708c72d7b8796a5",
+      "range_input_contract_sha256": "50e8dfd0d94c8a18b6717bea048106ff1111b6656a9e75f2aa9a506b3ad4ac99"
+    },
+    "C-RBF-SVM": {
+      "base_model_spec_sha256": "004ad69fbef5e7bfee598ad92974a8389f356f299735bb0e9d4ef47304db5e1a",
+      "range_input_contract_sha256": "50e8dfd0d94c8a18b6717bea048106ff1111b6656a9e75f2aa9a506b3ad4ac99"
+    },
+    "D0-M": {
+      "base_model_spec_sha256": "fd2264540fa7f459169a795cb95a91f2c6b0b30f06c75542ea8839ea55b04614",
+      "range_input_contract_sha256": "50e8dfd0d94c8a18b6717bea048106ff1111b6656a9e75f2aa9a506b3ad4ac99"
+    },
+    "D1": {
+      "base_model_spec_sha256": "113f648d8bb0066c559e174d9b1c0bdab0156d6d954c7e57d56367f155199e1b",
+      "range_input_contract_sha256": "50e8dfd0d94c8a18b6717bea048106ff1111b6656a9e75f2aa9a506b3ad4ac99"
+    },
+    "D2": {
+      "base_model_spec_sha256": "9695728d210e6e1e2b70755b141caf1aad7bc9f8e44dffb3c7e8967ff2e5d297",
+      "range_input_contract_sha256": "50e8dfd0d94c8a18b6717bea048106ff1111b6656a9e75f2aa9a506b3ad4ac99"
+    },
+    "D3": {
+      "base_model_spec_sha256": "0a982deb0ccd172db0ba3cdcdf20f98a5734bae020baae9f33d9bbe184d7d62a",
+      "range_input_contract_sha256": "50e8dfd0d94c8a18b6717bea048106ff1111b6656a9e75f2aa9a506b3ad4ac99"
+    }
+  },
+  "models": [
+    "C-RBF-SVM",
+    "C-RANDOM-FOREST",
+    "D0-M",
+    "P05-SELECTED"
+  ],
+  "neural_strategy_aliases_verified": 520,
+  "note": "All range slots remain future. Existing master-calibration and neural-strategy aliases are structural within-range reuse only. Data access, execution, runtime width interface and permit acceptance remain separate.",
+  "old_scientific_artifacts_reused": 0,
+  "plan_sha256": "fc34c1087979bd9275086a4fc469ad009ea374927fc4651d5f012335bb5b7f0c",
+  "planner_sha256": "1c325f83a67c5bebb526dbdc8c501e7d4b2db558a892b270d6223a853206b399",
+  "private_archive_bytes": 32183693,
+  "private_archive_sha256": "ec12353aff71a9414712cf76371e9de0b05bd890562b4ff8ea371b11d2d99c0b",
+  "range_input_contract_sha256": "50e8dfd0d94c8a18b6717bea048106ff1111b6656a9e75f2aa9a506b3ad4ac99",
+  "retained_role_and_dependency_bindings_verified": 131199,
+  "schema_version": "nato-sers-p08-range-ledger-audit-v1",
+  "scientific_operations_started": 0,
+  "source_primary_archive_sha256": "c636358211edf350e2d36e4de40531a27e6402c937d191a4ebdeba83f1a086e8",
+  "source_primary_plan_sha256": "179b95e8011a5f6cc02c65c7fab1acf0f6a6241ba1ef02378aac207b9e19cb03",
+  "status": "pass_metadata_only",
+  "summary": {
+    "aliases_count": 520,
+    "authorized_fit_slots": 0,
+    "by_model": {
+      "C-RANDOM-FOREST": {
+        "jobs_count": 71208,
+        "model_fit_slots": 34620,
+        "scalar_calibrations": 260,
+        "stage_counts": {
+          "calibration_model_fit": 1152,
+          "calibration_prediction_alias": 1188,
+          "calibration_validation_prediction": 1152,
+          "final_refit": 780,
+          "held_prediction": 780,
+          "scalar_calibration": 260,
+          "seed_ensemble_prediction": 260,
+          "select_hyperparameters": 260,
+          "source_fit": 32688,
+          "source_validation_prediction": 32688
+        }
+      },
+      "C-RBF-SVM": {
+        "jobs_count": 51496,
+        "model_fit_slots": 25160,
+        "scalar_calibrations": 260,
+        "stage_counts": {
+          "calibration_model_fit": 384,
+          "calibration_prediction_alias": 396,
+          "calibration_validation_prediction": 384,
+          "final_refit": 260,
+          "held_prediction": 260,
+          "scalar_calibration": 260,
+          "seed_ensemble_prediction": 260,
+          "select_hyperparameters": 260,
+          "source_fit": 24516,
+          "source_validation_prediction": 24516
+        }
+      },
+      "D0-M": {
+        "jobs_count": 7466,
+        "model_fit_slots": 2823,
+        "scalar_calibrations": 780,
+        "stage_counts": {
+          "final_refit": 780,
+          "held_prediction": 780,
+          "scalar_calibration": 780,
+          "seed_ensemble_prediction": 260,
+          "select_refit_epochs": 780,
+          "source_fit": 2043,
+          "source_validation_prediction": 2043
+        }
+      },
+      "D1": {
+        "jobs_count": 398,
+        "model_fit_slots": 150,
+        "scalar_calibrations": 42,
+        "stage_counts": {
+          "final_refit": 42,
+          "held_prediction": 42,
+          "scalar_calibration": 42,
+          "seed_ensemble_prediction": 14,
+          "select_refit_epochs": 42,
+          "source_fit": 108,
+          "source_validation_prediction": 108
+        }
+      },
+      "D2": {
+        "jobs_count": 275,
+        "model_fit_slots": 99,
+        "scalar_calibrations": 33,
+        "stage_counts": {
+          "final_refit": 33,
+          "held_prediction": 33,
+          "scalar_calibration": 33,
+          "seed_ensemble_prediction": 11,
+          "select_refit_epochs": 33,
+          "source_fit": 66,
+          "source_validation_prediction": 66
+        }
+      },
+      "D3": {
+        "jobs_count": 356,
+        "model_fit_slots": 129,
+        "scalar_calibrations": 42,
+        "stage_counts": {
+          "final_refit": 42,
+          "held_prediction": 42,
+          "scalar_calibration": 42,
+          "seed_ensemble_prediction": 14,
+          "select_refit_epochs": 42,
+          "source_fit": 87,
+          "source_validation_prediction": 87
+        }
+      }
+    },
+    "context_count": 260,
+    "jobs_count": 131199,
+    "model_fit_slots": 62981,
+    "scalar_calibrations": 1417,
+    "stage_counts": {
+      "calibration_model_fit": 1536,
+      "calibration_prediction_alias": 1584,
+      "calibration_validation_prediction": 1536,
+      "final_refit": 1937,
+      "held_prediction": 1937,
+      "scalar_calibration": 1417,
+      "seed_ensemble_prediction": 819,
+      "select_hyperparameters": 520,
+      "select_refit_epochs": 897,
+      "source_fit": 59508,
+      "source_validation_prediction": 59508
+    }
+  }
+}

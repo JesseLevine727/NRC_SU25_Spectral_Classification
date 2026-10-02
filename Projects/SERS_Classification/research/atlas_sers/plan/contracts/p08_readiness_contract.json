@@ -96,6 +96,47 @@
     "blanket_job_cache_authority": false,
     "audit": "results/p08_readiness/minimal_operation_reuse_audit.json"
   },
+  "range_sensitivity_readiness": {
+    "status": "input_and_operation_metadata_audited_execution_incomplete",
+    "representation_id": "R_MIN_400_1849",
+    "policy_id": "PP-RANGE-MIN",
+    "model_panel": ["C-RBF-SVM", "C-RANDOM-FOREST", "D0-M", "P05-SELECTED"],
+    "extra_trees_included": false,
+    "context_count": 260,
+    "operation_slots": 131199,
+    "model_fit_slots": 62981,
+    "scalar_calibrations": 1417,
+    "neural_strategy_aliases": 520,
+    "plan_sha256": "fc34c1087979bd9275086a4fc469ad009ea374927fc4651d5f012335bb5b7f0c",
+    "private_archive_sha256": "ec12353aff71a9414712cf76371e9de0b05bd890562b4ff8ea371b11d2d99c0b",
+    "input_audit": "results/p08_readiness/range_input_audit.json",
+    "ledger_audit": "results/p08_readiness/range_ledger_audit.json",
+    "primary_width_guards_changed": false,
+    "input_component_isolation_claim": false,
+    "numerical_inference_lock_complete": false,
+    "range_runtime_accepted": false,
+    "execution_authorized": false,
+    "resource_proposal": {
+      "stage_id": "R1",
+      "approved": false,
+      "active_wall_hours": 24,
+      "new_private_artifacts_gib": 40,
+      "process_tree_ram_gib": 24,
+      "allocated_gpu_gib": 8,
+      "cpu_workers": 4,
+      "gpu_workers": 1,
+      "model_threads_per_worker": 1,
+      "automatic_retries": 0,
+      "initial_required_free_gib": 70
+    }
+  },
+  "latest_storage_observation": {
+    "date": "2026-10-02",
+    "free_bytes": 8824156160,
+    "point_in_time_not_reserved": true,
+    "proposed_stages_initially_feasible": [],
+    "cleanup_authorized": false
+  },
   "pending_later_branch_choices": ["normalization_classical_selector_scope", "regenerated_tier_source_selection_scope", "perturbation_before_or_after_preprocessing", "synthetic_rigid_shift_endpoint_extension"],
   "completion_gaps": ["later_branch_numerical_specs_and_finite_budgets", "resource_feasibility_and_final_lock", "reviewed_admission_restart_guards", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
 }

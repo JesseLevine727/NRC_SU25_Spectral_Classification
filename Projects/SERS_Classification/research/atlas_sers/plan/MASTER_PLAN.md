@@ -845,6 +845,8 @@ Cross `PP-U-MIN`, `PP-U-SG`, and `PP-U-ARPLS` with fixed RBF SVM, Random Forest,
 
 Report paired policy-minus-minimal domain effects, 13 domain values, hierarchical intervals, worst-domain change, policy × model interactions, and preservation violations. An attractive average cannot hide an instrument/system with destructive change.
 
+**Range-readiness clarification:** the [later-branch design note](P08_LATER_BRANCH_DESIGN.md#4-range-and-population-controls-need-separate-role-accounting) records authenticated support for the existing 400–1,849 cm⁻¹ input. This sensitivity retains the four-model panel without Extra Trees. Wider min–max normalization and adaptive pooling can change responses inside the shared range; the comparison does not isolate the causal contribution of added channels. Its input/operation audit, finite resource proposal, numerical inference lock and runtime acceptance remain distinct from permission to execute.
+
 ### 16.2 Platform-family-aware preprocessing (`RQ-S02`)
 
 For each outer source partition and platform family:
