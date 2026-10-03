@@ -108,6 +108,6 @@ The owner has been asked whether these regenerated tiers should repeat source-on
 
 ## 5. Next decision boundary
 
-The three submitted decisions remain open: full versus fixed-family normalization selection, source selection for regenerated populations, and perturbation placement. A later perturbation specification must additionally resolve edge handling, discrete severity grids, impulse magnitude, random replicates, source-noise estimation, zero-dose parity and statistical contrast families. These details must be locked before new outcomes, not filled in after viewing degradation curves.
+The four submitted decisions remain open: full versus fixed-family normalization selection, source selection for regenerated populations, perturbation placement, and constant endpoint extension for synthetic shifts. Once those choices are resolved, a later perturbation specification must also lock discrete severity grids, impulse magnitude, random replicates, source-noise estimation, zero-dose parity and statistical contrast families. These details must be locked before new outcomes, not filled in after viewing degradation curves.
 
 The universal comparison remains the first proposed numerical stage. Later-branch uncertainty does not authorize narrowing their scientific scope or launching them. The [resource proposal](P08_RESOURCE_PROPOSAL.md) and [readiness record](P08_READINESS.md) retain the separate runtime-review and execution-approval gates. Native TikZ and offline HTML figures remain planned outputs; no new P08 outcome plot exists.
