@@ -22,6 +22,8 @@ Each control therefore retains its own common scaling rule within that experimen
 
 The [synthetic design tests](../tests/test_p08_later_design.py) check these identities, native invariants, zero-row rejection and the frozen operation lists. They contain invented arrays only. No scientific spectrum was transformed for this audit.
 
+The subsequent [frozen-input audit](../results/p08_readiness/normalization_input_audit.json) verifies the four stored controls without rebuilding them. Each retains **598 spectra**, **1,401 channels** over **400–1,800 cm⁻¹**, the primary row order and zero invalid rows. The audit authenticates the original files and registry, checks **2,392 recorded validity rows**, and independently verifies the expected normalization invariants at absolute tolerance **10⁻⁶** with zero relative tolerance. This confirms input consistency, not chemical-signal preservation or classification performance. It neither chooses the classical-selector scope nor authorizes an experiment.
+
 ## 2. A full classical selector is a substantial experiment
 
 The pending choice of a “classical champion” must be defined by source data, not by the best held-test score. Repeating the full historical selector means considering all nine families, not just the three classical families in the universal panel. The [metadata-only accounting audit](../results/p08_readiness/later_classical_selector_bounds.json) authenticates the original candidate registry and fit manifest.

@@ -1,0 +1,108 @@
+{
+  "arrays_rebuilt": false,
+  "execution_authorized": false,
+  "input_contracts": [
+    {
+      "array_sha256": "5af6a9aa245e5c1708885e37e6be1c14bc4cc07d68a822e78394ad89671f1a83",
+      "axis_end_cm1": 1800,
+      "axis_sha256": "5065a3af2dd37f3dd41780ac57f1da7c1bf24c07398f05f0082932d728cbf2d2",
+      "axis_start_cm1": 400,
+      "dtype": "float32",
+      "features": 1401,
+      "file_sha256": "fc1a7d872a9f754dcea20d6f1e0cec39fd59da20ba058ebf48a4e62382967a9e",
+      "invalid_rows": 0,
+      "invariant_check_atol": 1e-06,
+      "invariant_check_rtol": 0,
+      "normalization_invariants": {
+        "row_mean_zero": true,
+        "row_std_one": true
+      },
+      "representation_id": "R_SNV_400_1800",
+      "row_order_sha256": "b0d9ef9ae34a87443d951742bf1b295df522dd12674d5ca4a9785953cee6a5a7",
+      "rows": 598
+    },
+    {
+      "array_sha256": "643dc7ed8933d054dbc3aace49cc30a575bf8f8abac8339cd0597a1b7218050b",
+      "axis_end_cm1": 1800,
+      "axis_sha256": "5065a3af2dd37f3dd41780ac57f1da7c1bf24c07398f05f0082932d728cbf2d2",
+      "axis_start_cm1": 400,
+      "dtype": "float32",
+      "features": 1401,
+      "file_sha256": "567c70713ff9f3d91ee9540d404283da32fd3e92ca86c2b4dfa9de54d6f9cd63",
+      "invalid_rows": 0,
+      "invariant_check_atol": 1e-06,
+      "invariant_check_rtol": 0,
+      "normalization_invariants": {
+        "row_l2_one": true
+      },
+      "representation_id": "R_VECTOR_400_1800",
+      "row_order_sha256": "b0d9ef9ae34a87443d951742bf1b295df522dd12674d5ca4a9785953cee6a5a7",
+      "rows": 598
+    },
+    {
+      "array_sha256": "96f66f95c1abd26bfe8dfffb8f79b4896c747d6cff169a6709658f61b3d3f535",
+      "axis_end_cm1": 1800,
+      "axis_sha256": "5065a3af2dd37f3dd41780ac57f1da7c1bf24c07398f05f0082932d728cbf2d2",
+      "axis_start_cm1": 400,
+      "dtype": "float32",
+      "features": 1401,
+      "file_sha256": "fa77fb2b30bcacde8da4aa1c003e0a5d3f5620887618f0319ceafe391f7708fa",
+      "invalid_rows": 0,
+      "invariant_check_atol": 1e-06,
+      "invariant_check_rtol": 0,
+      "normalization_invariants": {
+        "row_area_one": true,
+        "row_nonnegative": true
+      },
+      "representation_id": "R_AREA_400_1800",
+      "row_order_sha256": "b0d9ef9ae34a87443d951742bf1b295df522dd12674d5ca4a9785953cee6a5a7",
+      "rows": 598
+    },
+    {
+      "array_sha256": "079bd9709348bc9531924c61ed053b41a7418c40f126c719af8b78cf8306fe3c",
+      "axis_end_cm1": 1800,
+      "axis_sha256": "5065a3af2dd37f3dd41780ac57f1da7c1bf24c07398f05f0082932d728cbf2d2",
+      "axis_start_cm1": 400,
+      "dtype": "float32",
+      "features": 1401,
+      "file_sha256": "5e94b75002a13b61beb8cb0be273aeb572ea47b766b37c2fcfb48cb258630a1d",
+      "invalid_rows": 0,
+      "invariant_check_atol": 1e-06,
+      "invariant_check_rtol": 0,
+      "normalization_invariants": {
+        "row_mean_zero": true,
+        "row_std_one": true
+      },
+      "representation_id": "R_D1_400_1800",
+      "row_order_sha256": "b0d9ef9ae34a87443d951742bf1b295df522dd12674d5ca4a9785953cee6a5a7",
+      "rows": 598
+    }
+  ],
+  "input_contracts_sha256": "81fd7b4a87b3fff63859393a3669ccbca2d3c07290badc446ebf5b0672958b3a",
+  "input_file_sha256": {
+    "primary_manifest.csv": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "protected_state.json": "84c8f7bae4749992bf7eac421b230c1d89ec0bf0dab97a4db606edb688c24491",
+    "representation_registry.csv": "8da99a29115e59129fab12e83ae7e33bf4b74a97c098786e0ab708c082c4f4dc",
+    "representations/R_AREA_400_1800.npz": "fa77fb2b30bcacde8da4aa1c003e0a5d3f5620887618f0319ceafe391f7708fa",
+    "representations/R_D1_400_1800.npz": "5e94b75002a13b61beb8cb0be273aeb572ea47b766b37c2fcfb48cb258630a1d",
+    "representations/R_SNV_400_1800.npz": "fc1a7d872a9f754dcea20d6f1e0cec39fd59da20ba058ebf48a4e62382967a9e",
+    "representations/R_VECTOR_400_1800.npz": "567c70713ff9f3d91ee9540d404283da32fd3e92ca86c2b4dfa9de54d6f9cd63",
+    "row_qc.csv": "2ae3901b90c473010606468801608650d4372a9051f990a70a3838f5d0f0ea62"
+  },
+  "normalization_invariants_passed": true,
+  "note": "Frozen input hashes, recorded validity and normalization invariants only. No new representation, classifier, calibration, predictive score, threshold or routing decision was computed. This does not select or authorize either classical-selector alternative.",
+  "p01_artifact_manifest_sha256": "4312448dd7e11176ea1cb79324881c464db51fb9d6f79a07fc6476c9032f202d",
+  "population": {
+    "instruments": 10,
+    "masters": 69,
+    "spectra": 598,
+    "stations": 3
+  },
+  "same_row_order_as_primary": true,
+  "schema_version": "nato-sers-p08-normalization-input-audit-v1",
+  "scientific_operations_started": 0,
+  "scope": "read_only_frozen_array_integrity_and_recorded_validity",
+  "selector_choice_approved": false,
+  "status": "pass",
+  "validity_rows_checked": 2392
+}

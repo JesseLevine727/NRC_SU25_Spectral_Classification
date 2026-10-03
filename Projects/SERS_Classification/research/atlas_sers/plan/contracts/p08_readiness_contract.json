@@ -92,6 +92,9 @@
     "neural_training_record_consistency_reviewed": true,
     "neural_training_record_review_scope": "synthetic_three_class_records_and_checkpoint_links_not_training_authenticity_or_prediction_parity",
     "neural_training_record_report_schema": "nato-sers-p08-neural-training-record-v1",
+    "neural_source_bundle_consistency_reviewed": true,
+    "neural_source_bundle_review_scope": "synthetic_three_class_artifacts_and_supplied_pins_not_external_authenticity_or_prediction_parity",
+    "neural_source_bundle_report_schema": "nato-sers-p08-neural-source-bundle-v1",
     "live_runtime_accepted": false,
     "scientific_artifact_semantics_accepted": false,
     "parallel_runtime_validated": false,
@@ -144,6 +147,19 @@
       "automatic_retries": 0,
       "initial_required_free_gib": 70
     }
+  },
+  "normalization_input_readiness": {
+    "status": "frozen_input_integrity_and_invariants_verified_no_execution",
+    "audit": "results/p08_readiness/normalization_input_audit.json",
+    "representation_ids": ["R_SNV_400_1800", "R_VECTOR_400_1800", "R_AREA_400_1800", "R_D1_400_1800"],
+    "rows_per_representation": 598,
+    "features_per_representation": 1401,
+    "recorded_validity_rows_checked": 2392,
+    "invalid_rows": 0,
+    "same_row_order_as_primary": true,
+    "input_contracts_sha256": "81fd7b4a87b3fff63859393a3669ccbca2d3c07290badc446ebf5b0672958b3a",
+    "selector_choice_approved": false,
+    "execution_authorized": false
   },
   "normalization_fixed_family_alternative": {
     "status": "audited_unapproved_alternative_to_full_selector",
