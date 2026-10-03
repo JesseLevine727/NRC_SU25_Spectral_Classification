@@ -345,3 +345,11 @@ The observed run did not read private scientific inputs, write files, fit models
 The [owned import scope](P08_SOURCE_STAGE_MAPPING.md#12-retained-import-scope-and-outer-composition) retains authenticated source loading for an entire controller block, rather than only startup inspection. An actual-source diagnostic verified captured-byte access without rereading files and refused use after closure. This extends code-identity evidence, not scientific authority.
 
 The [outer launch specification](P08_U0_LAUNCH_BOUNDARY.md) now records the full remaining composition. A separate permit must precede private-input reads and mutations; failed setup must retain its launch attempt; pre-session time and outer control-file bytes must enter cumulative accounting. The existing session cannot infer those external costs. No permit-bound launcher or automatic recovery is accepted by this specification. The original scientific scope, pending decisions and zero-execution limits remain unchanged.
+
+## 37. Outer-entry integration evidence
+
+The [default-denied launcher](P08_SOURCE_STAGE_MAPPING.md#13-default-denied-outer-entry-point) now composes the owned importer, fixed input adapters, existing session and outer accounting. Its permit pin remains unset. Tests on invented data completed one Random Forest fit and dependent saved-output verification, preserved an intentional interruption, and refused reuse of the same destination in a new process.
+
+The eight entry-point tests passed in **7.92 seconds**, with warnings treated as errors in the parent test process. Resource and CUDA observations were fixtures; no GPU kernel or real SERS training occurred. Separate accounting and fault tests cover control-file charges, setup time, altered files, bounded inventories, resource limits and exception preservation. The [review](delegation/P08_REVIEW.md#outer-launcher-and-accounting-review) records corrections and release checks.
+
+This evidence does not complete the original readiness goal. The **54** adaptive contexts and **206** complete MIN fallbacks remain fixed, all proposed budgets remain unapproved, and later-branch decisions remain open. No new chemical-identification result, preprocessing winner, held prediction, QC route or resampling result is reported here.

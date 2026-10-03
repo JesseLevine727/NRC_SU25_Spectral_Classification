@@ -1,6 +1,6 @@
 # P08 U0: outer launch boundary
 
-**Status:** implementation specification, not an execution permit. This document connects the existing source-input, session and import components. It does not replace the original [readiness requirements](P08_COMPLETION_AUDIT.md), resolve the outstanding scientific choices or authorize training.
+**Status:** default-denied implementation with invented-data integration evidence; not an execution permit. This document connects the source-input, session and import components. It does not replace the original [readiness requirements](P08_COMPLETION_AUDIT.md), resolve the outstanding scientific choices or authorize training.
 
 ## 1. Scope and authority
 
@@ -63,3 +63,13 @@ Acceptance requires a cohesive entry-point test, not only independent helper tes
 Additional fault cases must change the permit, input bytes, catalog, loaded module, finder, output parent and resource observations independently. Tests must demonstrate that earlier-stage failures cannot reach fitting. GPU-labelled fixtures must remain clearly distinguished from actual GPU execution. Existing tests of the internal session and standalone import audit are reused as component evidence, not represented as this end-to-end acceptance.
 
 The future scientific smoke must still obtain separate approval and repeat real capacity checks. Passing an invented-data entry test would establish tested orchestration behavior; it would not establish preprocessing benefit, cross-device numerical equivalence or completion of the full P08 benchmark.
+
+## 7. Implemented boundary and tested limits
+
+The [outer entry point](../scripts/run_p08_u0_smoke.py) implements this sequence with no accepted permit digest. Its production default refuses execution before opening a permit or scientific input. Command-line arguments cannot supply an authority hash, change the approved destination or request recovery.
+
+An isolated invented-data test traversed the actual importer, input binders, session, Random Forest kernel, saved-artifact checks and dependent prediction verification. It completed one CPU pair, deliberately raised an interrupt, retained the partial run and refused a second launch in a fresh process. All 78 registered pairs remained present; the test did not claim completion of the proposed smoke. Separate cases refused changed permit, catalog and input bytes, replaced runtime objects or finder, and excess resources.
+
+The session now accepts the outer monotonic start and includes the immutable launch record in its file accounting. Outer finalization separately charges its terminal record and cleanup interval. A terminal file written before cleanup is labelled pending finalization; it cannot retrospectively certify that cleanup succeeded. Directory inventories are bounded and rechecked, and cleanup preserves the original interruption.
+
+Capacity and CUDA observations in these tests are fixtures. No GPU kernel, real SERS input, held prediction or scientific preprocessing comparison was executed. Actual hardware limits, the independently approved deployment permit, final goal-wide readiness and the unresolved later-branch choices remain separate gates. See the [review](delegation/P08_REVIEW.md#outer-launcher-and-accounting-review) for corrections and regression evidence.

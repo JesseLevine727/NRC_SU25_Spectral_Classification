@@ -10,6 +10,11 @@ scientific semantics, freshness, a live owner or permission.  There is no
 retry, deletion, repair, truncation or hidden fit.  Scientific execution
 always denies.  POSIX/Linux only; roots are absolute, symlinks are never
 followed and metadata is size-bounded.
+
+Accounting covers all three roots (journal, artifact root, launch-control
+directory) only while ``launch.json`` is the sole fixed control file.  Any
+terminal record written after session close is owned and charged by the
+caller/outer controller; the byte pin is not a permit.
 """
 
 from __future__ import annotations
@@ -37,9 +42,13 @@ _RECEIPT_SCHEMA = "nato-sers-p08-terminal-receipt-v1"
 _MAX_ARTIFACTS = 8
 _MAX_ARTIFACT_BYTES = 64 * 1024 * 1024
 _MAX_RECEIPT_BYTES = 65536
+_MAX_LAUNCH_RECORD_BYTES = 65536
 _MAX_ARTIFACT_ENTRIES = 1024
 _FRESH_NS = 10**9
 _MAX_FIXED_POINT = 16
+
+_LAUNCH_RECORD_NAME = "launch.json"
+_HEX64_PATTERN = re.compile(r"[0-9a-f]{64}")
 
 _TERMINAL_STATUSES = frozenset({"succeeded", "failed", "interrupted"})
 
@@ -77,6 +86,7 @@ _REASON_CODES = frozenset(
         "receipt_error",
         "not_running",
         "artifact_mismatch",
+        "control_mismatch",
         "running_job",
         "closed",
         "poisoned",
@@ -141,14 +151,33 @@ def _build_event(
 
 
 class _SessionIO:
-    """One exclusive artifact root bound to one coherent store session."""
+    """One exclusive artifact root bound to one coherent store session.
 
-    def __init__(self, owner, artifact_root, *, started_monotonic_ns):
+    Observed bytes cover the journal, the artifact root and the launch-control
+    directory only while ``launch.json`` is that directory's sole fixed file.
+    A terminal record written after close belongs to the caller and is charged
+    separately; the byte pin is not a permit.
+    """
+
+    def __init__(
+        self,
+        owner,
+        artifact_root,
+        *,
+        started_monotonic_ns,
+        launch_control_root=None,
+        launch_record_sha256=None,
+    ):
         self._owner = None
         self.artifact_root = None
         self._root_name = None
         self._parent_fd = -1
         self._root_fd = -1
+        self._control_fd = -1
+        self._control_name = None
+        self._control_info = None
+        self._control_sha256 = None
+        self._control_bytes = 0
         self._started_ns = 0
         self._closed = False
         self._poisoned = False
@@ -156,14 +185,23 @@ class _SessionIO:
         self._pending = None
         self._running = None
         try:
-            self._initialize(owner, artifact_root, started_monotonic_ns)
+            self._initialize(
+                owner,
+                artifact_root,
+                started_monotonic_ns,
+                launch_control_root,
+                launch_record_sha256,
+            )
         except BaseException as exc:
             try:
-                store._close_fds(self._root_fd, self._parent_fd)
+                store._close_fds(
+                    self._root_fd, self._parent_fd, self._control_fd
+                )
             except BaseException:
                 pass
             self._root_fd = -1
             self._parent_fd = -1
+            self._control_fd = -1
             if isinstance(exc, (KeyboardInterrupt, SystemExit)):
                 raise
             if isinstance(exc, SessionIOError):
@@ -181,13 +219,30 @@ class _SessionIO:
     # Construction
     # ------------------------------------------------------------------
 
-    def _initialize(self, owner, artifact_root, started_monotonic_ns):
+    def _initialize(
+        self,
+        owner,
+        artifact_root,
+        started_monotonic_ns,
+        launch_control_root,
+        launch_record_sha256,
+    ):
         if type(owner) is not store.Store:
             _fail("not_owned")
         if type(started_monotonic_ns) is not int or started_monotonic_ns < 0:
             _fail("invalid_input")
         if started_monotonic_ns > time.monotonic_ns():
             _fail("invalid_input")
+        if (launch_control_root is None) != (launch_record_sha256 is None):
+            _fail("invalid_input")
+        if launch_control_root is not None:
+            if type(launch_control_root) is not str or launch_control_root == "":
+                _fail("invalid_path")
+            if (
+                type(launch_record_sha256) is not str
+                or _HEX64_PATTERN.fullmatch(launch_record_sha256) is None
+            ):
+                _fail("invalid_input")
         try:
             state = owner.snapshot()
         except store.StoreError:
@@ -222,6 +277,11 @@ class _SessionIO:
             _fail("parent_mismatch")
         if root_name == getattr(owner, "_root_name", None):
             _fail("artifact_exists")
+
+        if launch_control_root is not None:
+            self._initialize_control(
+                parent_fd, root_name, launch_control_root, launch_record_sha256
+            )
 
         try:
             os.mkdir(root_name, 0o700, dir_fd=parent_fd)
@@ -324,6 +384,21 @@ class _SessionIO:
         if (entry.st_dev, entry.st_ino) != (root_info.st_dev, root_info.st_ino):
             self._poison()
             _fail("identity_mismatch")
+        if self._control_fd >= 0:
+            try:
+                control_info = os.fstat(self._control_fd)
+                journal_info = os.fstat(self._owner._root_fd)
+            except OSError:
+                self._poison()
+                _fail("identity_mismatch")
+            control_id = (control_info.st_dev, control_info.st_ino)
+            if control_id == (journal_info.st_dev, journal_info.st_ino):
+                self._poison()
+                _fail("identity_mismatch")
+            if control_id == (root_info.st_dev, root_info.st_ino):
+                self._poison()
+                _fail("identity_mismatch")
+        self._check_control_identity()
 
     def _map_store_error(self, exc):
         code = getattr(exc, "reason_code", "")
@@ -430,11 +505,221 @@ class _SessionIO:
             _fail("io_error")
         return total
 
+    # ------------------------------------------------------------------
+    # Launch control directory (read-only, authenticated, never created)
+    # ------------------------------------------------------------------
+
+    def _initialize_control(self, parent_fd, root_name, control_root, expected_sha):
+        owner_root_name = getattr(self._owner, "_root_name", None)
+        try:
+            control_parent_fd, control_name = store._resolve_parent(control_root)
+        except store.StoreError as exc:
+            if getattr(exc, "reason_code", "") == "invalid_path":
+                _fail("invalid_path")
+            _fail("io_error")
+        except OSError:
+            _fail("io_error")
+        primary_error = None
+        try:
+            try:
+                theirs = os.fstat(control_parent_fd)
+                ours = os.fstat(parent_fd)
+            except OSError:
+                _fail("parent_mismatch")
+            if (theirs.st_dev, theirs.st_ino) != (ours.st_dev, ours.st_ino):
+                _fail("parent_mismatch")
+            if control_name == root_name or (
+                owner_root_name is not None and control_name == owner_root_name
+            ):
+                _fail("artifact_exists")
+            try:
+                self._control_fd = store._open_dir(parent_fd, control_name)
+            except store.StoreError as exc:
+                if getattr(exc, "reason_code", "") == "symlink_or_nonregular":
+                    _fail("symlink_or_nonregular")
+                _fail("io_error")
+            except OSError:
+                _fail("io_error")
+            self._control_name = control_name
+            payload, info = self._read_control_payload()
+            try:
+                digest = hashlib.sha256(payload).hexdigest()
+            except Exception:
+                self._poison()
+                _fail("control_mismatch")
+            if digest != expected_sha:
+                self._poison()
+                _fail("control_mismatch")
+            self._control_info = info
+            self._control_sha256 = expected_sha
+            self._control_bytes = len(payload)
+        except BaseException as exc:
+            primary_error = exc
+            raise
+        finally:
+            try:
+                os.close(control_parent_fd)
+            except OSError:
+                pass
+            except BaseException:
+                # Preserve the primary failure through cleanup: a close-time
+                # interruption must not mask an in-flight BaseException from
+                # the control read.  With no primary failure the close
+                # interruption is the failure and propagates unchanged.
+                if primary_error is None:
+                    raise
+
+    def _check_control_identity(self):
+        if self._control_fd < 0:
+            return
+        try:
+            info = os.fstat(self._control_fd)
+            entry = os.stat(
+                self._control_name,
+                dir_fd=self._parent_fd,
+                follow_symlinks=False,
+            )
+        except OSError:
+            self._poison()
+            _fail("identity_mismatch")
+        if not stat.S_ISDIR(entry.st_mode):
+            self._poison()
+            _fail("identity_mismatch")
+        if (entry.st_dev, entry.st_ino) != (info.st_dev, info.st_ino):
+            self._poison()
+            _fail("identity_mismatch")
+
+    def _read_control_payload(self):
+        # Immutable identity carries mtime/ctime alongside dev/ino/size so an
+        # equal-length in-place rewrite that lands during observation is caught
+        # as an accidental concurrent change.  This is not a defence against a
+        # malicious kernel or interpreter and does not claim to be one.
+        self._check_control_identity()
+        try:
+            before = store._list_dir_bounded(self._control_fd, 1)
+        except store.StoreError:
+            self._poison()
+            _fail("control_mismatch")
+        except (KeyboardInterrupt, SystemExit):
+            raise
+        except OSError:
+            self._poison()
+            _fail("io_error")
+        if before != {_LAUNCH_RECORD_NAME}:
+            self._poison()
+            _fail("control_mismatch")
+        try:
+            info = os.stat(
+                _LAUNCH_RECORD_NAME,
+                dir_fd=self._control_fd,
+                follow_symlinks=False,
+            )
+        except (KeyboardInterrupt, SystemExit):
+            raise
+        except OSError:
+            self._poison()
+            _fail("io_error")
+        if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
+            self._poison()
+            _fail("symlink_or_nonregular")
+        if info.st_size <= 0 or info.st_size > _MAX_LAUNCH_RECORD_BYTES:
+            self._poison()
+            _fail("control_mismatch")
+        info_identity = (
+            info.st_dev,
+            info.st_ino,
+            info.st_size,
+            info.st_mtime_ns,
+            info.st_ctime_ns,
+        )
+        recorded = self._control_info
+        if recorded is not None and info_identity != recorded:
+            self._poison()
+            _fail("control_mismatch")
+        try:
+            payload = store._read_file(
+                self._control_fd, _LAUNCH_RECORD_NAME, _MAX_LAUNCH_RECORD_BYTES
+            )
+        except store.StoreError as exc:
+            if getattr(exc, "reason_code", "") == "symlink_or_nonregular":
+                self._poison()
+                _fail("symlink_or_nonregular")
+            self._poison()
+            _fail("control_mismatch")
+        except (KeyboardInterrupt, SystemExit):
+            raise
+        except OSError:
+            self._poison()
+            _fail("io_error")
+        self._check_control_identity()
+        try:
+            after = store._list_dir_bounded(self._control_fd, 1)
+        except store.StoreError:
+            self._poison()
+            _fail("control_mismatch")
+        except (KeyboardInterrupt, SystemExit):
+            raise
+        except OSError:
+            self._poison()
+            _fail("io_error")
+        if after != {_LAUNCH_RECORD_NAME}:
+            self._poison()
+            _fail("control_mismatch")
+        try:
+            post = os.stat(
+                _LAUNCH_RECORD_NAME,
+                dir_fd=self._control_fd,
+                follow_symlinks=False,
+            )
+        except (KeyboardInterrupt, SystemExit):
+            raise
+        except OSError:
+            self._poison()
+            _fail("io_error")
+        if not stat.S_ISREG(post.st_mode) or post.st_nlink != 1:
+            self._poison()
+            _fail("symlink_or_nonregular")
+        post_identity = (
+            post.st_dev,
+            post.st_ino,
+            post.st_size,
+            post.st_mtime_ns,
+            post.st_ctime_ns,
+        )
+        if post_identity != info_identity:
+            self._poison()
+            _fail("control_mismatch")
+        if recorded is not None and post_identity != recorded:
+            self._poison()
+            _fail("control_mismatch")
+        if type(payload) is not bytes or len(payload) != post.st_size:
+            self._poison()
+            _fail("control_mismatch")
+        return payload, info_identity
+
+    def _scan_control(self):
+        if self._control_fd < 0:
+            return 0
+        payload, _ = self._read_control_payload()
+        try:
+            digest = hashlib.sha256(payload).hexdigest()
+        except Exception:
+            self._poison()
+            _fail("control_mismatch")
+        if digest != self._control_sha256:
+            self._poison()
+            _fail("control_mismatch")
+        return len(payload)
+
     def _observed(self):
         self._require_usable()
         self._check_identity()
         self._fresh_state()
-        return self._scan_journal() + self._scan_artifacts()
+        return (
+            self._scan_journal()
+            + self._scan_artifacts()
+            + self._scan_control()
+        )
 
     # ------------------------------------------------------------------
     # Storage ceiling gate (proposed, unapproved U0 guard values)
@@ -600,7 +885,12 @@ class _SessionIO:
         return now - self._started_ns
 
     def observed_bytes(self):
-        """Total logical bytes of regular files under journal plus artifact roots."""
+        """Total logical bytes under the journal, artifact and control roots.
+
+        The launch-control directory is counted only while ``launch.json`` is
+        its sole fixed file.  A terminal record written after session close is
+        charged by the caller; the byte pin is not a permit.
+        """
         return self._guard(self._observed)
 
     def open_session(self):
@@ -987,15 +1277,23 @@ class _SessionIO:
         return out
 
     def close(self):
-        """Release only this IO's artifact descriptors; idempotent."""
+        """Release this IO's three artifact descriptors; idempotent.
+
+        Accounting covers the journal, artifact and launch-control roots only
+        while ``launch.json`` is the sole fixed control file.  A terminal
+        record written after this close is owned and charged by the caller;
+        the byte pin is not a permit.
+        """
         if self._closed:
             return
         self._closed = True
         root_fd = self._root_fd
         parent_fd = self._parent_fd
+        control_fd = self._control_fd
         self._root_fd = -1
         self._parent_fd = -1
-        store._close_fds(root_fd, parent_fd)
+        self._control_fd = -1
+        store._close_fds(root_fd, parent_fd, control_fd)
 
 
 def require_scientific_execution(*args, **kwargs):

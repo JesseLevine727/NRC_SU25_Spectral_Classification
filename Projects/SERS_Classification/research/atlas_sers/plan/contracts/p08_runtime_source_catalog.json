@@ -13,7 +13,7 @@
   ],
   "namespace": "atlas_sers",
   "schema_version": "nato-sers-p08-runtime-source-catalog-v1",
-  "source_revision": "6255d481cbad74c6f9bb2928da090a52e7203d48",
+  "source_revision": "ba216dadad9b1ec02e67f7b4ac6be95cfceb3722",
   "sources": [
     {
       "is_package": true,
@@ -803,15 +803,15 @@
       "is_package": false,
       "module": "atlas_sers.evaluation.p08_u0_session",
       "relative_path": "src/atlas_sers/evaluation/p08_u0_session.py",
-      "sha256": "3ac29b8a99dfc51910aa8bb803b3c7a1acb42e09017b69c790f6e6ff2378f0f2",
-      "size_bytes": 32026
+      "sha256": "b175e98f80831d2d1a8fed99162b61184bc3515fbec0a1aa05d08beb6189fd2b",
+      "size_bytes": 32992
     },
     {
       "is_package": false,
       "module": "atlas_sers.evaluation.p08_u0_session_io",
       "relative_path": "src/atlas_sers/evaluation/p08_u0_session_io.py",
-      "sha256": "9a0978c57c3ec757d3be3f70a912eee0bf5a92eaeaecc5bfcef85c416f572a6d",
-      "size_bytes": 35487
+      "sha256": "426a0b777dffb713ea51fec0a1160441ab047749ee79b4c7ab9da7a98e737627",
+      "size_bytes": 46382
     },
     {
       "is_package": false,

@@ -56,6 +56,7 @@ _REASON_CODES = frozenset(
         "prediction_parity_failed",
         "artifact_readback_mismatch",
         "pair_binding_mismatch",
+        "control_mismatch",
         "invalid_fit_artifacts",
         "session_io_error",
         "storage_io_error",
@@ -195,10 +196,34 @@ def _artifact_members(fit_artifacts):
 
 
 class _SourceSession:
-    """Ordered serial U0 pair driver over one accepted journal."""
+    """Ordered serial U0 pair driver over one accepted journal.
 
-    def __init__(self, owner, runtime_inputs, *, artifact_root, torch_module):
-        self._started_ns = time.monotonic_ns()
+    ``started_monotonic_ns`` predating this session only absorbs outer setup
+    time; it grants no permission and is not a second allowance.  Observed
+    bytes cover the three roots only while ``launch.json`` is the sole fixed
+    control file, and a terminal record written after close is charged by the
+    caller.
+    """
+
+    def __init__(
+        self,
+        owner,
+        runtime_inputs,
+        *,
+        artifact_root,
+        torch_module,
+        started_monotonic_ns=None,
+        launch_control_root=None,
+        launch_record_sha256=None,
+    ):
+        if started_monotonic_ns is None:
+            self._started_ns = time.monotonic_ns()
+        else:
+            if type(started_monotonic_ns) is not int or started_monotonic_ns < 0:
+                _fail("invalid_session_input")
+            if started_monotonic_ns > time.monotonic_ns():
+                _fail("invalid_session_input")
+            self._started_ns = started_monotonic_ns
         if type(artifact_root) is not str or artifact_root == "":
             _fail("invalid_session_input")
         try:
@@ -261,6 +286,8 @@ class _SourceSession:
             owner,
             artifact_root,
             started_monotonic_ns=self._started_ns,
+            launch_control_root=launch_control_root,
+            launch_record_sha256=launch_record_sha256,
         )
         self._io = session
         try:

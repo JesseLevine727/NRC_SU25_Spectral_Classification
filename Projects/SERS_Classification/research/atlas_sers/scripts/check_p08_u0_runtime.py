@@ -36,7 +36,7 @@ import sys
 import threading
 import types
 
-EXPECTED_CATALOG_SHA256 = "6b7a04bcef77b012b07a5757df2e76e3cca336601e96caf73244ad85fbc18f1f"
+EXPECTED_CATALOG_SHA256 = "61ba13ac530541fe603b5b8232360bc820f56578c8ae7b732753953f4ad08f01"
 CATALOG_RELATIVE_PATH = "plan/contracts/p08_runtime_source_catalog.json"
 EXPECTED_CATALOG_SCHEMA = "nato-sers-p08-runtime-source-catalog-v1"
 REPORT_SCHEMA = "nato-sers-p08-u0-runtime-import-audit-v1"

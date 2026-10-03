@@ -141,6 +141,14 @@
     "retained_project_import_scope_schema": "nato-sers-p08-authenticated-runtime-scope-v1",
     "retained_project_import_scope_tests": "tests/test_p08_u0_runtime_scope.py",
     "outer_launch_boundary_specification": "plan/P08_U0_LAUNCH_BOUNDARY.md",
+    "outer_launcher_script": "scripts/run_p08_u0_smoke.py",
+    "outer_launcher_test_scope": "isolated_invented_data_cpu_pair_actual_persistence_interruption_and_relaunch_refusal_with_fixture_resources_not_scientific_or_GPU_acceptance",
+    "outer_launcher_tests": [
+      "tests/test_p08_u0_launcher.py",
+      "tests/test_p08_u0_launcher_faults.py",
+      "tests/test_p08_u0_outer_costs.py"
+    ],
+    "outer_launcher_permit_default": "unset_denies_before_permit_or_scientific_input_reads",
     "loaded_runtime_code_verified": false,
     "live_runtime_accepted": false,
     "scientific_artifact_semantics_accepted": false,
