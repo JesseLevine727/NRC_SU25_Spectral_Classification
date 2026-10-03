@@ -839,6 +839,8 @@ Use `k={1,2,3,5}` labelled target masters per class. All draws are master-strati
 
 P08 begins only after the `RQ-P01` pipelines and conclusions are frozen. It answers `RQ-S01`, `RQ-S02`, `RQ-S03`, and the perturbation/quality part of `RQ-S05`. The same policy-development panel, gate library, support rules, split UIDs, and action arrays are used for all models.
 
+The [readiness completion checkpoint](P08_COMPLETION_AUDIT.md) maps the original no-fit goal to its evidence and outstanding gates. The [source-stage mapping](P08_SOURCE_STAGE_MAPPING.md) preserves the inherited kernels' internal validation while separating logical fit and prediction acceptance. Passing artifact checks or synthetic integration does not establish a complete authorized runtime.
+
 ### 16.1 Universal preprocessing (`RQ-S01`)
 
 Cross `PP-U-MIN`, `PP-U-SG`, and `PP-U-ARPLS` with fixed RBF SVM, Random Forest, D0, and the frozen acquisition-aware candidate. Also retain `R_MIN_400_1849` as a range sensitivity, not a policy candidate. Classical hyperparameters are reselected within the same source-only inner procedure for each universal action. Deep architecture/loss identity stays frozen and is retrained without policy-specific architecture tuning.

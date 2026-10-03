@@ -8,6 +8,8 @@
 
 The next experimental question is whether smoothing or baseline correction improves chemical identification on an unseen instrument, and whether its effect depends on the classifier. Minimal min–max scaling is the completed benchmark's controlled reference; it has not been established as the best preprocessing policy.
 
+The [requirement-to-evidence checkpoint](P08_COMPLETION_AUDIT.md) separates completed readiness components from unresolved owner decisions and the incomplete runtime gate. The [source-stage mapping](P08_SOURCE_STAGE_MAPPING.md) records how inherited within-fit validation relates to the distinct fit and prediction jobs. Neither document authorizes a scientific run.
+
 This handoff implements the ordering in [Master Plan §16](MASTER_PLAN.md#16-sub-plan-p08--preprocessing-policy-factorial-and-robustness). The current frozen-prediction uncertainty analysis does not authorize new fitting, policy selection, calibration, perturbations, or predictions. Its release must be reviewed before P08 begins. The original plans and immutable registries remain unchanged.
 
 ## 1. Scientific questions and reading order

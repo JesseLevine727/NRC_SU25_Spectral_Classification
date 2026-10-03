@@ -95,12 +95,17 @@
     "neural_source_bundle_consistency_reviewed": true,
     "neural_source_bundle_review_scope": "synthetic_three_class_artifacts_and_supplied_pins_not_external_authenticity_or_prediction_parity",
     "neural_source_bundle_report_schema": "nato-sers-p08-neural-source-bundle-v1",
+    "source_stage_mapping_specification": "plan/P08_SOURCE_STAGE_MAPPING.md",
+    "inherited_source_kernel_integration_reviewed": true,
+    "inherited_source_kernel_integration_scope": "invented_cpu_data_existing_fit_save_verify_paths_only_not_live_controller_or_scientific_execution",
+    "inherited_source_kernel_integration_tests": "tests/test_p08_source_kernel_integration.py",
     "live_runtime_accepted": false,
     "scientific_artifact_semantics_accepted": false,
     "parallel_runtime_validated": false,
     "execution_authorized": false
   },
   "smoke_authority": "separate_owner_permit_required",
+  "completion_audit": "plan/P08_COMPLETION_AUDIT.md",
   "historical_minimal_evidence": {
     "operation_bindings": 202407,
     "complete_distinct_model_context_endpoints": 1079,

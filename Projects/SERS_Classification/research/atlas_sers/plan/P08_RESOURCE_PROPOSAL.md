@@ -52,6 +52,8 @@ Selection is fixed before any new outcome:
 
 Neural fits retain 30–200 epochs, patience 20 and the inherited checkpoint rule. The best epoch may precede the minimum stopping epoch, as in the accepted original procedure. Source validation is available for those inherited stopping rules; outer held rows are not. U0 contains no final refits, scalar temperature fitting, hyperparameter winner selection, QC cutpoints, held predictions, resampling or perturbations.
 
+The [source-stage mapping](P08_SOURCE_STAGE_MAPPING.md) distinguishes these logical jobs from individual model calls. Both inherited fitting kernels already calculate source-validation outputs; the dependent prediction stage authenticates and verifies them without another optimization. Internal validation and verification passes remain inside the proposed wall-time, memory and artifact ceilings. Lost in-memory classical estimators cannot be replaced through unrecorded fits. The mapping does not change job identities, dependencies or execution authority.
+
 Acceptance requires exact input and role hashes; complete candidate, recipe and seed accounting; no held access; finite outputs or a documented valid collapse; loadable checkpoints; terminal-state and source-prediction integrity; resource accounting; and successful synthetic restart/stop tests for the controller. A finite low-scoring classifier is not itself an implementation failure. Failed or incomplete slots are not silently replaced. Successful U0 artifacts can count toward U1 only after full input/specification matching; they are not 78 additional fits beyond U1.
 
 ## 4. Why the adaptive stage has a separate gate
