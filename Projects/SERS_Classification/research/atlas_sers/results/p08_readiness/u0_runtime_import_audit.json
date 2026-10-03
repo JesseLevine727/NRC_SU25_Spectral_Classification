@@ -1,0 +1,16 @@
+{
+  "schema_version": "nato-sers-p08-u0-runtime-import-audit-v1",
+  "execution_authorized": false,
+  "live_runtime_accepted": false,
+  "scientific_execution_performed": false,
+  "external_dependencies_authenticated": false,
+  "project_sources_verified": true,
+  "project_modules_loaded_from_authenticated_bytes": true,
+  "catalog_sha256": "6b7a04bcef77b012b07a5757df2e76e3cca336601e96caf73244ad85fbc18f1f",
+  "source_revision": "6255d481cbad74c6f9bb2928da090a52e7203d48",
+  "verified_source_count": 174,
+  "loaded_project_module_count": 41,
+  "required_import_count": 8,
+  "cuda_initialized": false,
+  "report_sha256": "113cbb11d9530af6d57ffee8e35852faadf14162807eacb4567931f410f07fdc"
+}

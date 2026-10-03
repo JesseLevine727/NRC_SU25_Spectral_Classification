@@ -133,6 +133,10 @@
       "tests/test_p08_u0_session_faults.py"
     ],
     "internal_source_session_report_schema": "nato-sers-p08-u0-session-report-v1",
+    "fresh_process_project_import_audit": "results/p08_readiness/u0_runtime_import_audit.json",
+    "fresh_process_project_import_script": "scripts/check_p08_u0_runtime.py",
+    "fresh_process_project_import_catalog": "plan/contracts/p08_runtime_source_catalog.json",
+    "fresh_process_project_import_scope": "single_isolated_audit_process_only_external_dependencies_trusted_not_a_scientific_launcher_or_transferable_permit",
     "loaded_runtime_code_verified": false,
     "live_runtime_accepted": false,
     "scientific_artifact_semantics_accepted": false,

@@ -1,0 +1,1237 @@
+{
+  "$id": "nato-sers-p08-runtime-source-catalog-v1",
+  "execution_authorized": false,
+  "import_roots": [
+    "atlas_sers.evaluation.p08_u0_runtime_inputs",
+    "atlas_sers.evaluation.p08_u0_session",
+    "atlas_sers.evaluation.p03_runtime",
+    "atlas_sers.evaluation.p05_development",
+    "atlas_sers.evaluation.p04_runtime",
+    "atlas_sers.models.classical",
+    "atlas_sers.models.deep",
+    "atlas_sers.models.acquisition"
+  ],
+  "namespace": "atlas_sers",
+  "schema_version": "nato-sers-p08-runtime-source-catalog-v1",
+  "source_revision": "6255d481cbad74c6f9bb2928da090a52e7203d48",
+  "sources": [
+    {
+      "is_package": true,
+      "module": "atlas_sers",
+      "relative_path": "src/atlas_sers/__init__.py",
+      "sha256": "cfa14da9c222d62789d529e69efee5c0d139cfaf15faaa9315431fe86e5f8443",
+      "size_bytes": 76
+    },
+    {
+      "is_package": true,
+      "module": "atlas_sers.data",
+      "relative_path": "src/atlas_sers/data/__init__.py",
+      "sha256": "6970cdd1dbd9784f89ccdb778c07a1d9ed081eebc16ae9c4830e3dab8d9e892c",
+      "size_bytes": 74
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.data.manifests",
+      "relative_path": "src/atlas_sers/data/manifests.py",
+      "sha256": "d358d6cef010396a4f174097efc113a4c9cbf6ad412a0da6a8f2650fc0625540",
+      "size_bytes": 4361
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.data.native",
+      "relative_path": "src/atlas_sers/data/native.py",
+      "sha256": "159b419c9e85b37b393d5f454a2bffdb92af18decaf8abe867139070b58b70b6",
+      "size_bytes": 14647
+    },
+    {
+      "is_package": true,
+      "module": "atlas_sers.evaluation",
+      "relative_path": "src/atlas_sers/evaluation/__init__.py",
+      "sha256": "0236b876640de1d0322a3c39eeb59fcd1ff122cbc8ed7f6d07b96b767e1f7937",
+      "size_bytes": 78
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.classical",
+      "relative_path": "src/atlas_sers/evaluation/classical.py",
+      "sha256": "0de8ca1a4ccbf30f02af4a647b29f8c9813b384861a96876b8dfc0b31100a399",
+      "size_bytes": 14014
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_analysis",
+      "relative_path": "src/atlas_sers/evaluation/p03_analysis.py",
+      "sha256": "3fdf36c50096986722b3ebdd96105018d0b90c22dac6643bdb9ca67f2e2249c9",
+      "size_bytes": 30608
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_collect",
+      "relative_path": "src/atlas_sers/evaluation/p03_collect.py",
+      "sha256": "9a6a9457751a1ae4319e4285dca78df14f52d30d738e0d87fd628771534174f4",
+      "size_bytes": 10383
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_controls",
+      "relative_path": "src/atlas_sers/evaluation/p03_controls.py",
+      "sha256": "85d06ed5073f4a04c2ed3f50cd9e412ca516489fd09438739caf3c506a127459",
+      "size_bytes": 11385
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_finalize",
+      "relative_path": "src/atlas_sers/evaluation/p03_finalize.py",
+      "sha256": "27aff08585e550f56777c2e61d3990f246a53dd1cd6f0051a53db1c4ca499004",
+      "size_bytes": 26097
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_metrics",
+      "relative_path": "src/atlas_sers/evaluation/p03_metrics.py",
+      "sha256": "d4a11394fe8cd6b1eab7ead534ed17762293d3282d166ce16b727bba2b823efa",
+      "size_bytes": 18439
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_outer",
+      "relative_path": "src/atlas_sers/evaluation/p03_outer.py",
+      "sha256": "1f0912204b57ece4621c99438e564585195f9a7b36050d690e0697874cbc4fb2",
+      "size_bytes": 11143
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_plan",
+      "relative_path": "src/atlas_sers/evaluation/p03_plan.py",
+      "sha256": "8eaa364cd72c726840bea92368c5fdf95a754947790efd65f08e438268c68c6c",
+      "size_bytes": 55265
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_reconcile",
+      "relative_path": "src/atlas_sers/evaluation/p03_reconcile.py",
+      "sha256": "7ee0be717778dfd546bc5a734b99354e113db0487c57a1a73fdbb8ce309a8f7e",
+      "size_bytes": 7606
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_reporting",
+      "relative_path": "src/atlas_sers/evaluation/p03_reporting.py",
+      "sha256": "f9ded05444d4470c3678e6f8141fc4e650d65cb13f16dcabf208a5bee7b91b56",
+      "size_bytes": 18532
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_results",
+      "relative_path": "src/atlas_sers/evaluation/p03_results.py",
+      "sha256": "cf9171515fd009bc9c749b32dadeb7f098f8c1824585aefd1ba4ce8e4fbf9e3a",
+      "size_bytes": 10127
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_roles",
+      "relative_path": "src/atlas_sers/evaluation/p03_roles.py",
+      "sha256": "1e802f38ede9932fb1a0e934b2a5e2b566ed06f9be7cf58a09e626fd011076a2",
+      "size_bytes": 10222
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_runtime",
+      "relative_path": "src/atlas_sers/evaluation/p03_runtime.py",
+      "sha256": "e3d7f7c7e89c9196d52e7e30c52ff8c03997f0e7e9fd523f71ad486c6086b135",
+      "size_bytes": 32435
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_selection",
+      "relative_path": "src/atlas_sers/evaluation/p03_selection.py",
+      "sha256": "2381fcf409872a534c6c1ba7b1954f34bffd42dbfabcb8ab72de986089cffd3b",
+      "size_bytes": 9049
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p03_worker",
+      "relative_path": "src/atlas_sers/evaluation/p03_worker.py",
+      "sha256": "5981e790cf33484083b28da522eb427cdfd5cf6318c34fe91ce0a676edd03534",
+      "size_bytes": 12824
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p04_comparison",
+      "relative_path": "src/atlas_sers/evaluation/p04_comparison.py",
+      "sha256": "1fc913004b8fa2d0140e2775cc63a878420eac01868d06127d806eb50b812e47",
+      "size_bytes": 19405
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p04_plan",
+      "relative_path": "src/atlas_sers/evaluation/p04_plan.py",
+      "sha256": "8a69b0761afaa6be495501ec86af699a0d0d2c6ae01c0ed24e479444d22f97c2",
+      "size_bytes": 18215
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p04_results",
+      "relative_path": "src/atlas_sers/evaluation/p04_results.py",
+      "sha256": "0102f1b4dd9c5fea84a28250e1491c2747a76be18bf9158570f43d9acf3c86a4",
+      "size_bytes": 17423
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p04_runtime",
+      "relative_path": "src/atlas_sers/evaluation/p04_runtime.py",
+      "sha256": "f14c80e2a0c8dae6e1c28b18ae6593f7659a10b4f2c8cce57ec1afa40c960ce1",
+      "size_bytes": 31468
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_aggregation_authority",
+      "relative_path": "src/atlas_sers/evaluation/p05_aggregation_authority.py",
+      "sha256": "e06944bee1a8887dee4c7d4214d295e9350bbd5982c59ac12141d252d4a9a173",
+      "size_bytes": 16089
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_calibration",
+      "relative_path": "src/atlas_sers/evaluation/p05_calibration.py",
+      "sha256": "fa871faeda45d3c1a5cc364432bb53c8475c8010f8d9a814e08dc679ef353253",
+      "size_bytes": 12845
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comparison",
+      "relative_path": "src/atlas_sers/evaluation/p05_comparison.py",
+      "sha256": "0f57dbc1d35ce04175c27cd5ad24d076d2cd54248e45ad83e5f66a94542da254",
+      "size_bytes": 28586
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comparison_authority",
+      "relative_path": "src/atlas_sers/evaluation/p05_comparison_authority.py",
+      "sha256": "cacdfd809c34e7372433b1982e391e29a97332a675c1b6f64785ca4fb43c7c27",
+      "size_bytes": 22000
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comprehensive_aggregation",
+      "relative_path": "src/atlas_sers/evaluation/p05_comprehensive_aggregation.py",
+      "sha256": "48009d2fcbb2acb473709dfc0a624e2568c00409ab9ec0a177828463909af4ee",
+      "size_bytes": 14935
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comprehensive_comparison",
+      "relative_path": "src/atlas_sers/evaluation/p05_comprehensive_comparison.py",
+      "sha256": "a76424d418adcd5999860fc8b8c60ebfdd0f18998e76064338555bf61614968b",
+      "size_bytes": 18790
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comprehensive_development",
+      "relative_path": "src/atlas_sers/evaluation/p05_comprehensive_development.py",
+      "sha256": "a3aabd0ec581e5e0b2b50f8ca4cf92dda3bfad3051bc0381f7b3eeea447515c0",
+      "size_bytes": 30052
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comprehensive_evaluation",
+      "relative_path": "src/atlas_sers/evaluation/p05_comprehensive_evaluation.py",
+      "sha256": "957bdfae07e7b66a22e0bf7f488dd4e89678f5b59b0e083ca094fecd274e16e6",
+      "size_bytes": 14093
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comprehensive_freeze",
+      "relative_path": "src/atlas_sers/evaluation/p05_comprehensive_freeze.py",
+      "sha256": "af9400b456a4c8e82474575f45d4e6ac8375e0f90e5dbc7f22b69c38b2b2be7c",
+      "size_bytes": 26248
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comprehensive_inputs",
+      "relative_path": "src/atlas_sers/evaluation/p05_comprehensive_inputs.py",
+      "sha256": "9a01a1ce1a1bd9827539cf7bdfa572891078ac6c1104b08358f312aa0c049005",
+      "size_bytes": 22845
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comprehensive_refits",
+      "relative_path": "src/atlas_sers/evaluation/p05_comprehensive_refits.py",
+      "sha256": "37cfa822d49a76b8ed5f27670a36429167c2eafaaf3a71812a0ce125132e0451",
+      "size_bytes": 24722
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comprehensive_reporting",
+      "relative_path": "src/atlas_sers/evaluation/p05_comprehensive_reporting.py",
+      "sha256": "014dd13a4d006142e1a781353e6362f69f2e753fa0af8a84b1bc102eb55ca5a2",
+      "size_bytes": 37132
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_comprehensive_storage",
+      "relative_path": "src/atlas_sers/evaluation/p05_comprehensive_storage.py",
+      "sha256": "616666eb5af276d66fbc9158a738c729d4c4c7a6b31ccea8b2fa81aa9fb11017",
+      "size_bytes": 9345
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_core_plan",
+      "relative_path": "src/atlas_sers/evaluation/p05_core_plan.py",
+      "sha256": "b8a9274f74efb19b0b600239313b6b47587779c34560bf2d05845c39e11cb299",
+      "size_bytes": 48018
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_core_run",
+      "relative_path": "src/atlas_sers/evaluation/p05_core_run.py",
+      "sha256": "819e7fb3fef0b41e9469af282a1558694dda8955a53c9b5afc156f40791caa86",
+      "size_bytes": 51862
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_development",
+      "relative_path": "src/atlas_sers/evaluation/p05_development.py",
+      "sha256": "f5639ec28077a8c15f2e9210c43490b44d7100ffa08d1975211d9e41a1efc8b8",
+      "size_bytes": 35417
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_development_plan",
+      "relative_path": "src/atlas_sers/evaluation/p05_development_plan.py",
+      "sha256": "9268eb406f90ea6674a19b79f71d5874a42d61a53ed0141e0cff0b5858e69b4f",
+      "size_bytes": 47084
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_evaluation_authority",
+      "relative_path": "src/atlas_sers/evaluation/p05_evaluation_authority.py",
+      "sha256": "4f0b932c84e8779e9d7a36488056b55a5a5e1bd0e3b158f7dd06b46b6e3a9aa8",
+      "size_bytes": 23089
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_evaluation_close",
+      "relative_path": "src/atlas_sers/evaluation/p05_evaluation_close.py",
+      "sha256": "564de1ee12b32d9ca2591b8c061fbbe195d5c642343c7b1920d24edcdd94e1dc",
+      "size_bytes": 4845
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_frozen_predictions",
+      "relative_path": "src/atlas_sers/evaluation/p05_frozen_predictions.py",
+      "sha256": "3a9a72babaf18bdd365b41a389b91093d5d8d0fb6479a77675bbc196dd707c50",
+      "size_bytes": 18704
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_legacy_references",
+      "relative_path": "src/atlas_sers/evaluation/p05_legacy_references.py",
+      "sha256": "c2b582b19831beffc770079ba40e48a73a37b20a1148f278d3af71a745743c4a",
+      "size_bytes": 12658
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_objectives",
+      "relative_path": "src/atlas_sers/evaluation/p05_objectives.py",
+      "sha256": "5a4006088a1c4198b141e8642bd53c287bfcf5feab8297338381fbbe2a8d0959",
+      "size_bytes": 12376
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_outer_inputs",
+      "relative_path": "src/atlas_sers/evaluation/p05_outer_inputs.py",
+      "sha256": "bb2bccd7db310af892ce4f6d82bcebeafcfbab620f5c73015cbe9911789cb183",
+      "size_bytes": 10202
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_pilot",
+      "relative_path": "src/atlas_sers/evaluation/p05_pilot.py",
+      "sha256": "057635c50f753abe998df88f43ccdcddd5e3c31e189261851d82195b223fb9b8",
+      "size_bytes": 68599
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_prediction",
+      "relative_path": "src/atlas_sers/evaluation/p05_prediction.py",
+      "sha256": "0c9d407db1c6614e403af08d55a3043698f7e1fecbaf5eb71527d212539933e6",
+      "size_bytes": 11579
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_prediction_io",
+      "relative_path": "src/atlas_sers/evaluation/p05_prediction_io.py",
+      "sha256": "2edc7c619946d0f364a6045c7f149790a5dc4ab6a3831caf39165b18e62598be",
+      "size_bytes": 11551
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_public_metrics",
+      "relative_path": "src/atlas_sers/evaluation/p05_public_metrics.py",
+      "sha256": "072f031098673d4de63b5607b75f6eb21767343a8e9edd1ca71f88ef7fe006f7",
+      "size_bytes": 31460
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_readiness",
+      "relative_path": "src/atlas_sers/evaluation/p05_readiness.py",
+      "sha256": "3e54cc01fb196905d58bcd04dd693ec2722467503c8187c5993094befc30449c",
+      "size_bytes": 23486
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery.py",
+      "sha256": "9a01ce4268bc91fa8d34d29d36a82e48cbf56cef42b5f403e3fdf00a8517290e",
+      "size_bytes": 28065
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery_acceptance",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery_acceptance.py",
+      "sha256": "5957b8617e3cfe974d3294b967b68b1edc93c81013e751c617ea0d0b06973adc",
+      "size_bytes": 33054
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery_authority",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery_authority.py",
+      "sha256": "2cc5dbb8f6518ff0395a2413191111b20a165b3b0c600d1cccdefb9bcfdc62df",
+      "size_bytes": 13433
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery_development",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery_development.py",
+      "sha256": "b477c3eb101a42a89ae4872ddb132e1370a472c3ee7debd22c630a99f8f82a3f",
+      "size_bytes": 41294
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery_evidence",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery_evidence.py",
+      "sha256": "298380f282a149ae849126a6fee6fd49627c7a49f62ff11884c4e7232fabbf8b",
+      "size_bytes": 21665
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery_inputs",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery_inputs.py",
+      "sha256": "9cf9a7fbfe04b75aff573143da928fac1ee1eead89146281f6b93b4007662250",
+      "size_bytes": 33069
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery_persistence",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery_persistence.py",
+      "sha256": "d275d75e8d3fd5ae054bb6d17ddf66ac6c4d710f7387aadafb4ec08c6bfb228b",
+      "size_bytes": 20141
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery_plan",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery_plan.py",
+      "sha256": "d5ca9ffdeae5b5351792d6803c605608b0bf17f29f8ebd9ab0af883ff2d21c81",
+      "size_bytes": 30332
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery_receipt",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery_receipt.py",
+      "sha256": "9fae52faa9fdca3649bb2908c3ee073532f4e1becc589cafbf0860bcb42269e5",
+      "size_bytes": 33187
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery_source",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery_source.py",
+      "sha256": "3906e7cff942da223bd454831a671b13bb488dcc828a0199037ee83e4edc04d5",
+      "size_bytes": 22293
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_recovery_unit",
+      "relative_path": "src/atlas_sers/evaluation/p05_recovery_unit.py",
+      "sha256": "b0aca1f0fdf93b05bb5661f2e33a04d6b1f94baf91be6f7eaeee6261bf68ca2f",
+      "size_bytes": 32021
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_refit",
+      "relative_path": "src/atlas_sers/evaluation/p05_refit.py",
+      "sha256": "811d4ae86f919028d2e7e44d843ccc113584d32b32071c305ed9afa2ecf3a659",
+      "size_bytes": 23515
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_refit_authority",
+      "relative_path": "src/atlas_sers/evaluation/p05_refit_authority.py",
+      "sha256": "defb70bde13149d0ded8974ce8f7433ca4f86e9ef6b27c203aeec14455dddb0d",
+      "size_bytes": 16122
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_refit_evidence",
+      "relative_path": "src/atlas_sers/evaluation/p05_refit_evidence.py",
+      "sha256": "f5124f475f0549b1d07848ae832839cf8d27b4e0c78da33d694f45d8fd6cdd46",
+      "size_bytes": 17624
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_refit_io",
+      "relative_path": "src/atlas_sers/evaluation/p05_refit_io.py",
+      "sha256": "53c7acb32f1c464107c17667b13613911dc2a9b9242905d76f8ba7ca8c52146a",
+      "size_bytes": 19920
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_refit_plan",
+      "relative_path": "src/atlas_sers/evaluation/p05_refit_plan.py",
+      "sha256": "2a4a2f7e97f8f05d88539088bd63ce491fbd8c9535591f6d441ed6e0264c54ec",
+      "size_bytes": 17376
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_reliability",
+      "relative_path": "src/atlas_sers/evaluation/p05_reliability.py",
+      "sha256": "d77c0568930292b191c2f93ebab62611a2cbd9bf7dcb399a53f9bc445da75591",
+      "size_bytes": 23704
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_reporting_inputs",
+      "relative_path": "src/atlas_sers/evaluation/p05_reporting_inputs.py",
+      "sha256": "320dc0f9f52b01becb3c7f169d2252ad7e067b6ad75a5d469cca813cde3dda58",
+      "size_bytes": 40799
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_results",
+      "relative_path": "src/atlas_sers/evaluation/p05_results.py",
+      "sha256": "c3adc4fe2dacb194266702fe84f2fd7fe5fa201017e17bb9a11eb1df2b96bd7c",
+      "size_bytes": 26206
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_sampling",
+      "relative_path": "src/atlas_sers/evaluation/p05_sampling.py",
+      "sha256": "3bcdfadc757a681420922843457e0a232cdbb31ee69647c183a7e28bd7361a97",
+      "size_bytes": 6922
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_selection",
+      "relative_path": "src/atlas_sers/evaluation/p05_selection.py",
+      "sha256": "416f7fc82b612ea87290a511a02129679dd064db14509b9dfd4508ae4343b966",
+      "size_bytes": 44109
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_smoke",
+      "relative_path": "src/atlas_sers/evaluation/p05_smoke.py",
+      "sha256": "44e1dd25fc2146702bb0d430f277a3c2c1725bfb69d91a036082528e093b4a4a",
+      "size_bytes": 29730
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_source_diagnostics",
+      "relative_path": "src/atlas_sers/evaluation/p05_source_diagnostics.py",
+      "sha256": "af7970cab8d380ce977ee9d867871afa54288cc63c397892d12b554cc30cdae5",
+      "size_bytes": 45361
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p05_support",
+      "relative_path": "src/atlas_sers/evaluation/p05_support.py",
+      "sha256": "c5a822a2fed3065f37cafc0d36f9db5e7c7f9a0e695a8cfa9b3ac1af342b5087",
+      "size_bytes": 46582
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_analysis",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_analysis.py",
+      "sha256": "7bab7fe26c45a3bbc9077300e306a6430b4c7eb5af7b58890866fbdff5a79e89",
+      "size_bytes": 13555
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_diagnostics",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_diagnostics.py",
+      "sha256": "956b0731ff160ea821bae31f4d7a42c22d4621660c4554e1a0dade46e4e9ffb9",
+      "size_bytes": 30733
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_guard",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_guard.py",
+      "sha256": "306ae0a9a1c2e5e3f1f439d2de0185a773b50798ed6c6a9f6720e8a8bfc63e3a",
+      "size_bytes": 15507
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_hierarchy",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_hierarchy.py",
+      "sha256": "3922aae8c4373e494f2e9ee628fbf1c6aebca0caf76422418bec2610a3fb3f6a",
+      "size_bytes": 9106
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_inference",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_inference.py",
+      "sha256": "349a60d41110928d984f3da8345b1a6e8705e0e63bccfdcd4482ee0566ff80c8",
+      "size_bytes": 12728
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_inputs",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_inputs.py",
+      "sha256": "73d50531234c0c1a2ac04b686f838c35436845d579f500d415e23c58cd39e430",
+      "size_bytes": 8796
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_metrics",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_metrics.py",
+      "sha256": "8b0445d45b304862182143b0075c4f84cc3f5ac4839adbbafbffcd3a785c6ec6",
+      "size_bytes": 26763
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_predictions",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_predictions.py",
+      "sha256": "19179d64a2a10ab835c476f6a80d0bf1392df00401b10daba7f48747d8e09d9f",
+      "size_bytes": 25718
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_release",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_release.py",
+      "sha256": "749806c84da57722c583c730bf5bf0d37ba042e9a4fcc99064021f262f8e8460",
+      "size_bytes": 16233
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_release_tables",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_release_tables.py",
+      "sha256": "76951a51cc426bc8c113ae07fd1fab4c1ed2182c5b36121926366259eaca1735",
+      "size_bytes": 10225
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_run",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_run.py",
+      "sha256": "e5526af2f1138a3e86ba3cea73868f794775d11d789eb5e2ec15142aaf8d8d08",
+      "size_bytes": 20366
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p06p11_support",
+      "relative_path": "src/atlas_sers/evaluation/p06p11_support.py",
+      "sha256": "1b59aa946b79219d52f0404bf0d4ac3614505ffee552a2e9803edb1f4be72ec9",
+      "size_bytes": 10505
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_accounting",
+      "relative_path": "src/atlas_sers/evaluation/p08_accounting.py",
+      "sha256": "9f9f6d25c9d2be41d622394c5b009128b0fa477a60000dac7c7527b92377851b",
+      "size_bytes": 12588
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_actions",
+      "relative_path": "src/atlas_sers/evaluation/p08_actions.py",
+      "sha256": "c9cef5cde309805897e0c2c42e727b96387538356edcb95977348d89f9e623b7",
+      "size_bytes": 10741
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_attempt_journal",
+      "relative_path": "src/atlas_sers/evaluation/p08_attempt_journal.py",
+      "sha256": "0bacbdf0281e157f248daf458897e7ba749303382d309298291ad695c1155aea",
+      "size_bytes": 15865
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_neural_bundle",
+      "relative_path": "src/atlas_sers/evaluation/p08_neural_bundle.py",
+      "sha256": "5114f2de5eed709893ade1077fa962f25823275b06dd99e62a4b9c98b5160ac5",
+      "size_bytes": 20353
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_plan",
+      "relative_path": "src/atlas_sers/evaluation/p08_plan.py",
+      "sha256": "c346614dc729209bdc33529969b7c432df4144713871c6136e3fa80875587c5a",
+      "size_bytes": 31304
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_qc_blocks",
+      "relative_path": "src/atlas_sers/evaluation/p08_qc_blocks.py",
+      "sha256": "64baadec4a37f70505fe8fff811b1efe43efcd2f458fc2d03d83d30f485ecbf9",
+      "size_bytes": 20372
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_qc_catalog",
+      "relative_path": "src/atlas_sers/evaluation/p08_qc_catalog.py",
+      "sha256": "6cd0d8d5efa0deddd588882a71cfe539a2e4144cbf6862984b1c3336da06ba14",
+      "size_bytes": 7746
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_qc_final",
+      "relative_path": "src/atlas_sers/evaluation/p08_qc_final.py",
+      "sha256": "d418cf28625bdfc46a3250e4e3859df570bdc82c4e499edd561e84417e8b5465",
+      "size_bytes": 14727
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_qc_policy",
+      "relative_path": "src/atlas_sers/evaluation/p08_qc_policy.py",
+      "sha256": "e254496802877bbff7f54bd73f6a4b8c2b7c534627296db4183f92931e1ec1e1",
+      "size_bytes": 24310
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_qc_roles",
+      "relative_path": "src/atlas_sers/evaluation/p08_qc_roles.py",
+      "sha256": "c76dd2bc4577da20a4fe47209cc8e084c9f02e1a166a4fe22f885c0179953670",
+      "size_bytes": 12344
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_qc_routing",
+      "relative_path": "src/atlas_sers/evaluation/p08_qc_routing.py",
+      "sha256": "f3cf21972f57002ea07fba7551849c125a1de4f2a632b7e2eb4b4e3f96b507f4",
+      "size_bytes": 8615
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_qc_support",
+      "relative_path": "src/atlas_sers/evaluation/p08_qc_support.py",
+      "sha256": "de0fa7a8a69702bdcf7670d83fe46af096a7132cddacdba37dee071b7a34b3a8",
+      "size_bytes": 19529
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_qc_thresholds",
+      "relative_path": "src/atlas_sers/evaluation/p08_qc_thresholds.py",
+      "sha256": "ce56549b85c64a54393685abbd3ea11720605eb062b83eda9bfdda2d7b731267",
+      "size_bytes": 9793
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_range_plan",
+      "relative_path": "src/atlas_sers/evaluation/p08_range_plan.py",
+      "sha256": "1c325f83a67c5bebb526dbdc8c501e7d4b2db558a892b270d6223a853206b399",
+      "size_bytes": 17231
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_resources",
+      "relative_path": "src/atlas_sers/evaluation/p08_resources.py",
+      "sha256": "1c39edcb3eb55a1bd7f6b6134548deb0f243cc39538e2f6db12f021249ff59ed",
+      "size_bytes": 7205
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_serial_resources",
+      "relative_path": "src/atlas_sers/evaluation/p08_serial_resources.py",
+      "sha256": "4a191984efcb1ff649bb789efbb3ec9b4b4f293a68200af0ddc4e9032a04ed07",
+      "size_bytes": 17414
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_source_artifacts",
+      "relative_path": "src/atlas_sers/evaluation/p08_source_artifacts.py",
+      "sha256": "a8a194443847718501f93400617de7c8be84fd627ff4d194e29a3605e15e1a14",
+      "size_bytes": 9998
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_source_predictions",
+      "relative_path": "src/atlas_sers/evaluation/p08_source_predictions.py",
+      "sha256": "977e6a2258f98ae7bb5a657569cb4eff5bf888face022588b7554566846bea13",
+      "size_bytes": 13444
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_terminal_receipt",
+      "relative_path": "src/atlas_sers/evaluation/p08_terminal_receipt.py",
+      "sha256": "09a2b7b1508226c1be24e9ba62b4ee8b81edec99de2b294ddf52d153a3870532",
+      "size_bytes": 13965
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_training_record",
+      "relative_path": "src/atlas_sers/evaluation/p08_training_record.py",
+      "sha256": "4579a2b691cb96c49e344fd7558d7abef96bd06e9c8ff9bb228496dd73f45b23",
+      "size_bytes": 19877
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_u0_admission",
+      "relative_path": "src/atlas_sers/evaluation/p08_u0_admission.py",
+      "sha256": "b12f9c440b498f81a1cf103cdf9c2bf78871212bbbf90f5f756d269f10e6e3f7",
+      "size_bytes": 7488
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_u0_arrays",
+      "relative_path": "src/atlas_sers/evaluation/p08_u0_arrays.py",
+      "sha256": "88df353c422464353f716745f55c1177c0444ac689ed1c815819d4634b3be7b6",
+      "size_bytes": 25758
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_u0_inputs",
+      "relative_path": "src/atlas_sers/evaluation/p08_u0_inputs.py",
+      "sha256": "03458c7a067cfc1a981b27ef9975c03b50116bca614f2638296eef5a4af04e43",
+      "size_bytes": 23663
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_u0_runtime_inputs",
+      "relative_path": "src/atlas_sers/evaluation/p08_u0_runtime_inputs.py",
+      "sha256": "9560b16fdaa5acd544840536aced947343908569680ce121243dd0fa5d05c3ab",
+      "size_bytes": 29346
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_u0_session",
+      "relative_path": "src/atlas_sers/evaluation/p08_u0_session.py",
+      "sha256": "3ac29b8a99dfc51910aa8bb803b3c7a1acb42e09017b69c790f6e6ff2378f0f2",
+      "size_bytes": 32026
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_u0_session_io",
+      "relative_path": "src/atlas_sers/evaluation/p08_u0_session_io.py",
+      "sha256": "9a0978c57c3ec757d3be3f70a912eee0bf5a92eaeaecc5bfcef85c416f572a6d",
+      "size_bytes": 35487
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_u0_stage_backend",
+      "relative_path": "src/atlas_sers/evaluation/p08_u0_stage_backend.py",
+      "sha256": "0f53cce29453c9cb669dac70b5dd3296ddb4bb4582f39b256fe4ae54fb316514",
+      "size_bytes": 39565
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p08_u0_store",
+      "relative_path": "src/atlas_sers/evaluation/p08_u0_store.py",
+      "sha256": "38da951917317d2df24322656af91e89c4b1cdb026d03b56d68648f5a4455054",
+      "size_bytes": 30079
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p13_plan",
+      "relative_path": "src/atlas_sers/evaluation/p13_plan.py",
+      "sha256": "93c59d8e9c0cf6f3f6b14c3d48b4e3cc35bae90899613f97c09dc2b77c1a08d4",
+      "size_bytes": 30863
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p13_results",
+      "relative_path": "src/atlas_sers/evaluation/p13_results.py",
+      "sha256": "901b17befcccd27e691941e406ae43e5267df31b9dd29478365bdfc0016f011e",
+      "size_bytes": 49626
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.evaluation.p13_runtime",
+      "relative_path": "src/atlas_sers/evaluation/p13_runtime.py",
+      "sha256": "48fabfb7d22787d7a0143700fe219a04757fbb7813099b87ac43b6c54418b37b",
+      "size_bytes": 18131
+    },
+    {
+      "is_package": true,
+      "module": "atlas_sers.exploration",
+      "relative_path": "src/atlas_sers/exploration/__init__.py",
+      "sha256": "dd6c208036a568de927e765d83505a131c12b76b65749f0a303a09402aab222f",
+      "size_bytes": 77
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.exploration.structure",
+      "relative_path": "src/atlas_sers/exploration/structure.py",
+      "sha256": "e5a142cc77c583092972d7d6b76894aa5368044928cfae62978c53802c775bd0",
+      "size_bytes": 15589
+    },
+    {
+      "is_package": true,
+      "module": "atlas_sers.governance",
+      "relative_path": "src/atlas_sers/governance/__init__.py",
+      "sha256": "2355ad13ed2bff31c6940fbb088f311c58e5bc1a8a7dee3c89726b1b1a300b23",
+      "size_bytes": 437
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.artifacts",
+      "relative_path": "src/atlas_sers/governance/artifacts.py",
+      "sha256": "a772e615532157960b2bc112c217ab750b4bc2643087d6318b01f8e1f42983ba",
+      "size_bytes": 6705
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.canonical",
+      "relative_path": "src/atlas_sers/governance/canonical.py",
+      "sha256": "753f210399cba2c3e88473fc7d96eddea2d3de7f4c28b823cb3d01aa56383885",
+      "size_bytes": 4026
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.cli",
+      "relative_path": "src/atlas_sers/governance/cli.py",
+      "sha256": "a3056ef8b673514d4f852fbd0734030cbe5603cd42f7d6d5484812610ce8b146",
+      "size_bytes": 1364
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.dry_run",
+      "relative_path": "src/atlas_sers/governance/dry_run.py",
+      "sha256": "ce58c4a9bd50b4fc89a2a92e18fe3059b51bdd6bf34a777434538d97f2a89038",
+      "size_bytes": 10374
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.inputs",
+      "relative_path": "src/atlas_sers/governance/inputs.py",
+      "sha256": "936ed4689204b58bf8b058dd179708e4bec84903b68d8061e38c8166ce62c269",
+      "size_bytes": 5256
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p00",
+      "relative_path": "src/atlas_sers/governance/p00.py",
+      "sha256": "85dad103aad64effa40b07f38b5745ba87edf13db8f563dcc2879960a01fb586",
+      "size_bytes": 13383
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p01",
+      "relative_path": "src/atlas_sers/governance/p01.py",
+      "sha256": "05d8dad4e79b01f3034be21af0e8e947de0478958b394ac2ca65d055f04b8581",
+      "size_bytes": 31345
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p01_cli",
+      "relative_path": "src/atlas_sers/governance/p01_cli.py",
+      "sha256": "3459c7f0d0bf48e3eb4b3eb56ede27fe10e9c3af0e6d2f7271c3931756d52506",
+      "size_bytes": 2775
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p02",
+      "relative_path": "src/atlas_sers/governance/p02.py",
+      "sha256": "c3496ef930334caa58cf9be23dff115d9be5a928ea4e01db90020d780fb38a22",
+      "size_bytes": 21900
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p02_cli",
+      "relative_path": "src/atlas_sers/governance/p02_cli.py",
+      "sha256": "4f0693d3f761ff1cd98cff5c5915c8f34b476dfa1167149d254434336fd8eabf",
+      "size_bytes": 2688
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p03",
+      "relative_path": "src/atlas_sers/governance/p03.py",
+      "sha256": "8a61453266542e3ae7125f4eb36b3ecff9a68290dff3be3177e83d9ee25463ce",
+      "size_bytes": 20809
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p03_cli",
+      "relative_path": "src/atlas_sers/governance/p03_cli.py",
+      "sha256": "aa46f9b0855a93c53b0d7047476947b3c1b41139ed621684c3933f641285b17a",
+      "size_bytes": 5701
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p03_execution",
+      "relative_path": "src/atlas_sers/governance/p03_execution.py",
+      "sha256": "a8f002e9e868bf755505c603cab549097a990a5adfcdd556e54f964eca6f4a27",
+      "size_bytes": 54920
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p03_store",
+      "relative_path": "src/atlas_sers/governance/p03_store.py",
+      "sha256": "90cdfd209b8e31a43afe48c289f410245c7247d1312baf849ed8e182bddd442f",
+      "size_bytes": 5573
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p04",
+      "relative_path": "src/atlas_sers/governance/p04.py",
+      "sha256": "ed2ab13e39356d234a8fb1f6710ebc398dd818d18a716016852cb7b9b42ae395",
+      "size_bytes": 11479
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p04_cli",
+      "relative_path": "src/atlas_sers/governance/p04_cli.py",
+      "sha256": "a41125c0e155c9dcd68599fc9f006ff4b67943265570cea040a3a9c3ea89d8f3",
+      "size_bytes": 3535
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p04_execution",
+      "relative_path": "src/atlas_sers/governance/p04_execution.py",
+      "sha256": "abf841fbc7d0f1f892b8faaaf361133007fb1a777f70b07730bfbee4c3de7665",
+      "size_bytes": 24789
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p04_publication",
+      "relative_path": "src/atlas_sers/governance/p04_publication.py",
+      "sha256": "2eca58425dcce6502ecabea1b51dad7f5a7817998202b46f4cb1a1cbb64163ed",
+      "size_bytes": 26405
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p04_reporting",
+      "relative_path": "src/atlas_sers/governance/p04_reporting.py",
+      "sha256": "50cdfa4485cad7e105fd677f7f4298b4bf47f4b9c010121c9ba1110b535e328a",
+      "size_bytes": 20315
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p04_results",
+      "relative_path": "src/atlas_sers/governance/p04_results.py",
+      "sha256": "f79aab6ccba54fd7ba1b6fd5addd6cafd86d84ef4874f03010306a90334e76bd",
+      "size_bytes": 12692
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p05_publication_gate",
+      "relative_path": "src/atlas_sers/governance/p05_publication_gate.py",
+      "sha256": "51beb916e68a5d12c45d29090415a53a4229fcec82730aba59f348d6394fb431",
+      "size_bytes": 31094
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p13",
+      "relative_path": "src/atlas_sers/governance/p13.py",
+      "sha256": "2eb77213a4dc553ccb27ff498f57ffbfc5258a1041f24c092d13440a11625033",
+      "size_bytes": 12213
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p13_cli",
+      "relative_path": "src/atlas_sers/governance/p13_cli.py",
+      "sha256": "de418a032206ead6854e6b8a0d651b8dc3a9b852724549d0217fefccee6c90ca",
+      "size_bytes": 3181
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p13_execution",
+      "relative_path": "src/atlas_sers/governance/p13_execution.py",
+      "sha256": "49d400533d1dd0a24a55279bb2735b176a0185eb4cf79cf48ba0f3b4c2e85e59",
+      "size_bytes": 8806
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.p13_results",
+      "relative_path": "src/atlas_sers/governance/p13_results.py",
+      "sha256": "5ca657f49451295b52f18aa19db8b046d9a3cd4ed8ddc4349840b50538df9a7a",
+      "size_bytes": 13174
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.provenance",
+      "relative_path": "src/atlas_sers/governance/provenance.py",
+      "sha256": "08b8fc1439e6d9a7c96db352e72c6bdb1b81f9e4910ce0a3b6f630e679a30410",
+      "size_bytes": 6121
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.registries",
+      "relative_path": "src/atlas_sers/governance/registries.py",
+      "sha256": "94e8877a38e9a42fd33578a4812a8373409ecded195ee38a2431b130d46ef984",
+      "size_bytes": 14931
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.governance.runs",
+      "relative_path": "src/atlas_sers/governance/runs.py",
+      "sha256": "e6b2533a4321437a3ab7940c0374d6dc969fd3341a26cb1ee969c22916897634",
+      "size_bytes": 1817
+    },
+    {
+      "is_package": true,
+      "module": "atlas_sers.models",
+      "relative_path": "src/atlas_sers/models/__init__.py",
+      "sha256": "047a35cabe649ed42b883a433d33ea21187761a659464f24e27f324b5f07b829",
+      "size_bytes": 84
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.models.acquisition",
+      "relative_path": "src/atlas_sers/models/acquisition.py",
+      "sha256": "6957b1b1908bed89195a656197ee6a250ef81ad5a7a98225672a983db912a304",
+      "size_bytes": 4554
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.models.classical",
+      "relative_path": "src/atlas_sers/models/classical.py",
+      "sha256": "ec8e42197e95fb96afc6c391343a7a8b94de0788b6301a24d0c4607fddf51ed4",
+      "size_bytes": 25834
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.models.deep",
+      "relative_path": "src/atlas_sers/models/deep.py",
+      "sha256": "1f6340dc54538feb28bc029f4a65dc096c042aced964b51c613faa01f914fd4d",
+      "size_bytes": 5909
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.paths",
+      "relative_path": "src/atlas_sers/paths.py",
+      "sha256": "748c531cbb7a314b510e824efc8a54afe61f3aa9bacd5310c5c352ca5d3c390f",
+      "size_bytes": 2279
+    },
+    {
+      "is_package": true,
+      "module": "atlas_sers.preprocessing",
+      "relative_path": "src/atlas_sers/preprocessing/__init__.py",
+      "sha256": "0d53c062af1d9c77b094bd3add5d3ace73b34ff09413705ea81cef75d6b8d694",
+      "size_bytes": 77
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.preprocessing.representations",
+      "relative_path": "src/atlas_sers/preprocessing/representations.py",
+      "sha256": "e14d3e447beff887aa0710b17ffa985fd43e49f8f6aa4ed47ad5fd1b671b8980",
+      "size_bytes": 17034
+    },
+    {
+      "is_package": true,
+      "module": "atlas_sers.splits",
+      "relative_path": "src/atlas_sers/splits/__init__.py",
+      "sha256": "530bb38f2935c366c13202698f8f8a887c46459172bd79f20f40e548d112af7e",
+      "size_bytes": 199
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.splits.p02",
+      "relative_path": "src/atlas_sers/splits/p02.py",
+      "sha256": "8e36597292034cc70a58f787d1e9789fe7b9668b4f7d586b49f04c8031a3d664",
+      "size_bytes": 53758
+    },
+    {
+      "is_package": true,
+      "module": "atlas_sers.visualization",
+      "relative_path": "src/atlas_sers/visualization/__init__.py",
+      "sha256": "089aecbb018332628fca84db4bc84a4b472d90665e74d812640724b41aa1012e",
+      "size_bytes": 76
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p01_figures",
+      "relative_path": "src/atlas_sers/visualization/p01_figures.py",
+      "sha256": "9c2e61a5dde535cfc14fbed843dd3b9f2c5f799582e0cda4ef4aebbc1a4bdbd2",
+      "size_bytes": 24655
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p02_figures",
+      "relative_path": "src/atlas_sers/visualization/p02_figures.py",
+      "sha256": "9963570c33d61aeaaa321f2aae024f11df5edf297b716b41e383407df9710e84",
+      "size_bytes": 18194
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p03_figures",
+      "relative_path": "src/atlas_sers/visualization/p03_figures.py",
+      "sha256": "ffa00e0ccdc8edf6547794feb31d0116b1394c64a597bbe883c920a657f71229",
+      "size_bytes": 47894
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p04_figures",
+      "relative_path": "src/atlas_sers/visualization/p04_figures.py",
+      "sha256": "3f253e91f8a9ba78a6c4e5d0435db1a8f06a0d5f605f32c76ca0410bfd3db486",
+      "size_bytes": 25357
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p05_benchmark_figures",
+      "relative_path": "src/atlas_sers/visualization/p05_benchmark_figures.py",
+      "sha256": "061545c4dd066743b47feda62af472223a94df346091fa850711651feabdf2a0",
+      "size_bytes": 23938
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p05_diagnostic_figures",
+      "relative_path": "src/atlas_sers/visualization/p05_diagnostic_figures.py",
+      "sha256": "f8cad93d8aa07b535bea3bcb00d0f95dc40f089597ceb2132f1a8267211155a4",
+      "size_bytes": 57875
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p05_figure_runtime",
+      "relative_path": "src/atlas_sers/visualization/p05_figure_runtime.py",
+      "sha256": "7499be3c489f60b6eaabde459a42abccdbdb740aa5238be54517aa6d2a3622cf",
+      "size_bytes": 4298
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p05_pilot_figures",
+      "relative_path": "src/atlas_sers/visualization/p05_pilot_figures.py",
+      "sha256": "158fa7f67a4742ba4b55bd828273c900bbc319cab3723246c81719d49357c5e3",
+      "size_bytes": 26048
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p05_smoke_figures",
+      "relative_path": "src/atlas_sers/visualization/p05_smoke_figures.py",
+      "sha256": "a78e9cf1274bb8e7b52d227f7ca710727452cfbb96d8beab771bcac02bf27e70",
+      "size_bytes": 16687
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p06p11_deletion_data",
+      "relative_path": "src/atlas_sers/visualization/p06p11_deletion_data.py",
+      "sha256": "7912ee07be235827ddfc8a91a03a4a034002023bf02020d2aa6158a235a45ff9",
+      "size_bytes": 8349
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p06p11_figure_data",
+      "relative_path": "src/atlas_sers/visualization/p06p11_figure_data.py",
+      "sha256": "c62d6513a528a7dd81b30d2d9d6fb49db74914eaa44f75893176373a937ecbff",
+      "size_bytes": 5203
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p06p11_figures",
+      "relative_path": "src/atlas_sers/visualization/p06p11_figures.py",
+      "sha256": "f558ab0a2ac340760661de1c95aa0f5e008a488b277bc1264c6a7064dc38cc4c",
+      "size_bytes": 21760
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p06p11_interval_data",
+      "relative_path": "src/atlas_sers/visualization/p06p11_interval_data.py",
+      "sha256": "f418270d8c5bf4732c3b1dc78f45999e1b4eeb9286c986141bff67dfcf42ca12",
+      "size_bytes": 8049
+    },
+    {
+      "is_package": false,
+      "module": "atlas_sers.visualization.p13_figures",
+      "relative_path": "src/atlas_sers/visualization/p13_figures.py",
+      "sha256": "873ed1f138fc57fb8c93bf5b63c3a7e5f1361bb4da600890e211e930f7662ccf",
+      "size_bytes": 29108
+    }
+  ]
+}
