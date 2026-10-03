@@ -1,0 +1,41 @@
+{
+  "action_pins": {
+    "R_ARPLS_400_1800": {
+      "array_sha256": "43de38c9648a1650301e3f5ace4aecfabef5adaa5357bc0a46a5f733b7af9b94",
+      "axis_sha256": "5065a3af2dd37f3dd41780ac57f1da7c1bf24c07398f05f0082932d728cbf2d2",
+      "file_sha256": "f04aef601a8e9c962864f4d23b23612cf8db21caef2df36bf365f17d79d286f8",
+      "row_order_sha256": "b0d9ef9ae34a87443d951742bf1b295df522dd12674d5ca4a9785953cee6a5a7"
+    },
+    "R_MIN_400_1800": {
+      "array_sha256": "9b3d815b618c5cf3a7a29a0b571d3b2004326eae03d79ae4ebcaafb94600727e",
+      "axis_sha256": "5065a3af2dd37f3dd41780ac57f1da7c1bf24c07398f05f0082932d728cbf2d2",
+      "file_sha256": "db942996c324b7b9f7f7d73b2b371bacffd71ab8400f230e7e16c1d4fa53c2cf",
+      "row_order_sha256": "b0d9ef9ae34a87443d951742bf1b295df522dd12674d5ca4a9785953cee6a5a7"
+    },
+    "R_SG_400_1800": {
+      "array_sha256": "0f79f3820e4f29df9e5336a78f08d89bbb4c7bc25b5969b6fb0f6b6d076b739d",
+      "axis_sha256": "5065a3af2dd37f3dd41780ac57f1da7c1bf24c07398f05f0082932d728cbf2d2",
+      "file_sha256": "3af989fa417c887b105e3d04559cc41153412d72186575f11c6f18e3722a60ff",
+      "row_order_sha256": "b0d9ef9ae34a87443d951742bf1b295df522dd12674d5ca4a9785953cee6a5a7"
+    }
+  },
+  "arrays_verified": true,
+  "authenticated_action_count": 3,
+  "execution_authorized": false,
+  "features": 1401,
+  "live_controller_verified": false,
+  "manifest_rows": 598,
+  "metadata_binding_report_sha256": "c8c9b0f78fd8679753092f5754f61d29d7af4876e6f2da8abbc8a64c8fdb4ba5",
+  "model_parameters_loaded": false,
+  "native_noise_metadata_preserved": true,
+  "new_scientific_operations": 0,
+  "noise_quantiles_computed": false,
+  "ordered_source_rows_verified": true,
+  "prepared_policy_count": 2,
+  "prepared_source_roles": 10,
+  "preprocessing_recomputed": false,
+  "report_sha256": "0623ae6b6b24ae6379026eaa3795559f85cb9c217eea72ef25dceb459fa2fb7a",
+  "schema_version": "nato-sers-p08-u0-source-arrays-v1",
+  "source_fit_jobs": 78,
+  "source_prediction_jobs": 78
+}

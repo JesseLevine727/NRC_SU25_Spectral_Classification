@@ -50,3 +50,19 @@ The [metadata binding audit](../results/p08_readiness/u0_source_binding_audit.js
 The **78 fit–prediction pairs** share **five source units in five contexts**: four pseudo-instrument units and one physical-master cross-validation unit. Each training and validation role contains the same **three chemicals**. Explicit checks exclude shared physical masters between training and validation, exclude held-test masters from the outer source set, and exclude the held instrument from source rows. The returned private objects retain only ordered source observations and job records; the public report contains counts, hashes and verification flags.
 
 An independent read-only reconstruction matched every returned observation, metadata field, class order and full job record. All five input files retained their hashes. This authenticates recorded metadata against reviewed pins, not independent historical provenance or numerical execution. Arrays, model parameters, live permit enforcement, cumulative accounting and recovery remain separate checks. The binding object is not an execution capability; its scientific launch function always refuses execution.
+
+## 6. Fixed source arrays and inherited noise reference
+
+The [source-array audit](../results/p08_readiness/u0_source_array_audit.json) connects those ordered roles to the frozen MIN, SG and arPLS representations. Each archive contains **598 spectra × 1,401 channels** on the **400–1,800 cm⁻¹** grid. The reader authenticates all three archive hashes before parsing, checks array contents and row order, and returns only the proposed SG/arPLS source-training and source-validation rows. The **78 fit–prediction pairs** share **ten prepared inputs**: five source units under each of the two new policies. Authenticating MIN does not introduce additional MIN fits.
+
+Every selected float32 row matches the original array bytes in the required order. Returned array views are read-only and backed by immutable bytes. The fitting-row quality-control metadata matches the original manifest parser, and each call returns a fresh frame. The public aggregate contains hashes and counts, not spectra, sample identifiers, source paths or noise values. Archive/header bounds are defensive reader limits, not a runtime memory guarantee.
+
+### Noise augmentation is fixed across preprocessing policies
+
+The inherited [neural protocol](P05_CORE_PROTOCOL.md#4-frozen-optimization-and-numerical-smoke) retains the P04 augmentation implementation and its source-only noise rule. The original P01 manifest supplies `first_difference_noise_mad` and `intensity_range`; these describe the native measured spectra, not residual noise recomputed after smoothing or baseline correction. For a given fitting role, the same recorded values are supplied under every preprocessing policy. Validation and held-test QC values do not determine that role's augmentation noise.
+
+During later authorized fitting, the unchanged kernel divides the recorded noise estimate by the recorded intensity range and obtains its source-only noise levels. This preparation step neither computes those levels nor augments any spectrum. It does not retune noise magnitude for SG or arPLS.
+
+The planned comparison therefore tests preprocessing under a fixed training recipe, not the best separately optimized augmentation for each pipeline. A fixed absolute augmentation can have a different strength relative to the remaining spectral structure after preprocessing. That is a limitation of the comparison, not an observed performance effect. Changing the noise reference would change the training recipe and requires a separately specified experiment.
+
+The reader does not load models, calculate predictions, prove model-output agreement or enforce a live permit. Specification loading, controller ordering, durable resource accounting and reviewed recovery remain required before scientific execution can be requested.
