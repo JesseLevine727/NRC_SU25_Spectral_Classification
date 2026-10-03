@@ -1,0 +1,29 @@
+{
+  "arrays_verified": false,
+  "byte_pins": {
+    "attempt_manifest_bytes": "edf04d94f377ad143adcc0126d27e5d5dcb185dbc1aae0e8f0017eccfb8a654c",
+    "contexts_bytes": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "manifest_bytes": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "proposal_bytes": "3b556d39686e8bad330ac48a4c68c30660ce7ff3a1a4d28488bc8c0bdc4f773f",
+    "roles_bytes": "224891579d5df84c42a1c3c827590b6515ec83a13bfe4f07d48f249432f38d91"
+  },
+  "cpu_fit_jobs": 42,
+  "execution_authorized": false,
+  "gpu_fit_jobs": 36,
+  "live_controller_verified": false,
+  "manifest_rows": 598,
+  "manifest_sha256": "aac8523a1614610cf99cf1ab548d8970b4f8054fe8821b5250c347376e30b28a",
+  "model_parameters_loaded": false,
+  "new_scientific_operations": 0,
+  "ordered_source_roles_verified": true,
+  "parent_plan_sha256": "179b95e8011a5f6cc02c65c7fab1acf0f6a6241ba1ef02378aac207b9e19cb03",
+  "physical_role_isolation_verified": true,
+  "proposal_sha256": "6639a32c1dd930612ead6ae59adf9aff5831904e883081f16c3490721af5089a",
+  "registry_bytes_verified": true,
+  "report_sha256": "c8c9b0f78fd8679753092f5754f61d29d7af4876e6f2da8abbc8a64c8fdb4ba5",
+  "schema_version": "nato-sers-p08-u0-input-binding-v1",
+  "selected_contexts": 5,
+  "source_fit_jobs": 78,
+  "source_prediction_jobs": 78,
+  "source_units": 5
+}

@@ -42,3 +42,11 @@ The [synthetic integration tests](../tests/test_p08_source_kernel_integration.py
 The combined artifact checker deliberately leaves prediction-parity and external-authenticity flags false: valid hashes and finite values alone do not establish that the fitted model produced those scores. The subsequent numerical check is a separate requirement. Passing a synthetic composition does not establish live controller ordering, authenticated permit enforcement, durable cumulative measurements or safe incomplete-session recovery.
 
 The [resource proposal](P08_RESOURCE_PROPOSAL.md), original job graph and all zero-execution allowances remain in force. The full controller must be reviewed against this mapping before a separate scientific smoke request can be accepted.
+
+## 5. Fixed graph and source-role binding
+
+The [metadata binding audit](../results/p08_readiness/u0_source_binding_audit.json) connects the exact proposed jobs to their permitted source rows. Its reader authenticates the proposal, compact attempt manifest, primary manifest, context registry and role registry against fixed byte hashes before parsing. It then checks the full fit–prediction pairs against the journal projection and resolves the ordered source roles from recorded membership, not hash differences alone.
+
+The **78 fit–prediction pairs** share **five source units in five contexts**: four pseudo-instrument units and one physical-master cross-validation unit. Each training and validation role contains the same **three chemicals**. Explicit checks exclude shared physical masters between training and validation, exclude held-test masters from the outer source set, and exclude the held instrument from source rows. The returned private objects retain only ordered source observations and job records; the public report contains counts, hashes and verification flags.
+
+An independent read-only reconstruction matched every returned observation, metadata field, class order and full job record. All five input files retained their hashes. This authenticates recorded metadata against reviewed pins, not independent historical provenance or numerical execution. Arrays, model parameters, live permit enforcement, cumulative accounting and recovery remain separate checks. The binding object is not an execution capability; its scientific launch function always refuses execution.
