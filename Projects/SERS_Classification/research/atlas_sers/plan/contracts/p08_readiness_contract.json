@@ -122,6 +122,17 @@
     "source_stage_numerical_backend_module": "src/atlas_sers/evaluation/p08_u0_stage_backend.py",
     "source_stage_numerical_backend_tests": "tests/test_p08_u0_stage_backend.py",
     "source_stage_numerical_backend_report_schema": "nato-sers-p08-u0-stage-backend-v1",
+    "internal_source_session_reviewed": true,
+    "internal_source_session_scope": "invented_cpu_pair_real_storage_and_receipts_with_fake_resource_observations_and_zero_fit_fault_diagnostics_not_live_scientific_execution",
+    "internal_source_session_modules": [
+      "src/atlas_sers/evaluation/p08_u0_session.py",
+      "src/atlas_sers/evaluation/p08_u0_session_io.py"
+    ],
+    "internal_source_session_tests": [
+      "tests/test_p08_u0_session.py",
+      "tests/test_p08_u0_session_faults.py"
+    ],
+    "internal_source_session_report_schema": "nato-sers-p08-u0-session-report-v1",
     "loaded_runtime_code_verified": false,
     "live_runtime_accepted": false,
     "scientific_artifact_semantics_accepted": false,

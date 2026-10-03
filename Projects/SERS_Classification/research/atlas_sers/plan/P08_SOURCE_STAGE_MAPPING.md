@@ -93,7 +93,7 @@ An independent invented-data CPU check completed one fit for each of the three c
 
 ## 9. Integrated session requirements
 
-This section specifies the next controller implementation. It is not evidence that the controller exists or has passed review. The reviewed backend remains separate from loaded-code authentication, an independently approved execution permit and durable session orchestration.
+This section records the session requirements established before implementation. Section 10 distinguishes the subsequently tested internal core from loaded-code authentication and an independently approved execution permit.
 
 ### Ownership and operation order
 
@@ -124,3 +124,13 @@ The initial session core must refuse automatic entry into any previous session, 
 Failure after a start consumes that attempt. The controller must retain the original result and partial artifacts, attempt a bound failed/interrupted receipt, and stop further work. If writing or verifying the terminal evidence fails, the attempt remains unfinished for review. Genuine interrupts must propagate, not become successful results. A successful classical fit with an unfinished prediction still depends on its in-memory estimator; the controller must not report that state as safely closed or recreate the estimator through an unrecorded fit.
 
 Acceptance requires an invented-data fit through actual storage and receipt verification, not only a mocked sequence of successful callbacks. Fault cases must cover stale usage, changed bytes, wrong job projections, storage failures, resource exhaustion, interrupted attempts and previous-session refusal. Mock GPU observations must remain labelled synthetic. Passing these tests would establish the tested session behavior only; loaded-runtime identity, independent permit binding and the final goal-wide readiness review remain separate gates.
+
+## 10. Internal session integration evidence
+
+The internal [session core](../src/atlas_sers/evaluation/p08_u0_session.py) and [persistence component](../src/atlas_sers/evaluation/p08_u0_session_io.py) now compose the prepared inputs, inherited backend, journal and receipt verifier. Before opening a session, the core checks every prepared pair against the compact job projection. A pair then follows separate fit and prediction admissions. Fit structure and saved-byte readback precede fit success; authenticated saved-output agreement precedes prediction success. The dependent verification retains the fitted estimator and does not refit it.
+
+An invented-data CPU test completed one RBF-SVM pair through actual temporary storage and receipt verification. It checked both successful journal entries, exact saved-byte reuse, receipt hashes, progress/start counter equality and the final file inventory. Closed-session reports matched the durable journal counters and separately recorded the subsequent finalization interval. Resource observations were supplied by test fixtures; this is not a measurement of available host capacity or GPU execution.
+
+Independent zero-fit diagnostics exercised altered saved bytes, replaced artifact directories, partial writes, exhausted storage, aged resource observations, lost ownership and genuine interrupts. They also checked that a successful fit with no terminal prediction cannot close merely because an in-memory status set is empty. Active-worker counts came from the journal in both CPU- and GPU-labelled toy cases; no GPU kernel ran. Regression packaging and repository-wide acceptance are recorded in the [review](delegation/P08_REVIEW.md#internal-source-session-integration-review).
+
+The implementation preserves conservative journal-inclusive byte charges without treating unallocated prospective bytes as consumed physical space. A final freshness check occurs immediately before requesting the start append. These are cooperative checks, not hard operating-system time or memory isolation. The loaded implementation and independent permit still require a trusted outer entry point; scientific launch functions remain disabled. Previous-session entry is refused, not automatically recovered. No SERS array, model score or scientific artifact changed during these tests.

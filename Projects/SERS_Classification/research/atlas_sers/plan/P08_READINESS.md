@@ -325,3 +325,11 @@ The [session requirements](P08_SOURCE_STAGE_MAPPING.md#9-integrated-session-requ
 Resource accounting includes journal files and pending writes, not only checkpoints. Conservative charges must remain distinct from physically written bytes and cannot weaken free-space checks. The protocol also distinguishes measured finalization time from the preceding durable timestamp. The initial core must refuse previous-session entry pending review, preserving recorded counters and unfinished evidence.
 
 The bounded controller-authoring task returned no patch before its **600-second** deadline and was terminated. No controller implementation was accepted, no scientific process ran, and the published backend is unchanged. The next implementation assignment requires revised packaging of the same integration requirements, not a replay of the failed request or a reduction in the original goal. Scientific permissions and unresolved owner choices remain unchanged.
+
+## 34. Internal session composition
+
+The [internal session core](P08_SOURCE_STAGE_MAPPING.md#10-internal-session-integration-evidence) now connects the reviewed inputs, backend, durable journal and saved-artifact checks. An invented-data RBF-SVM pair completed one fit and its dependent verification without refitting. Actual temporary files and receipts were checked; resource observations were simulated. This is integration evidence, not a new field-trial result or a preprocessing comparison.
+
+Independent fault diagnostics checked interrupted and unfinished attempts, altered bytes, partial writes, resource-measurement freshness, storage limits and previous-session refusal. A fit cannot be treated as safely closed while its prediction still depends on the retained estimator. Durable counters remain distinct from measured file sizes and the post-close finalization interval. Review and fixed-package validation are recorded in the [implementation review](delegation/P08_REVIEW.md#internal-source-session-integration-review).
+
+Loaded-code authentication, an independently approved permit, later-branch decisions and final goal-wide acceptance remain open. The **54** adaptive contexts, **206** complete MIN fallbacks and proposed budgets are unchanged. No real-data fitting, new prediction, resampling, QC routing or preprocessing rebuild is authorized.
