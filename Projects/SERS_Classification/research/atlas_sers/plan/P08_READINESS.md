@@ -317,3 +317,11 @@ The [stage mapping](P08_SOURCE_STAGE_MAPPING.md#8-numerical-backend-and-saved-ou
 An independent check fitted the three classical methods and four neural recipes on invented CPU data. All seven saved outputs matched their models, input arrays remained unchanged, and warnings were treated as errors. No field-trial data were fitted or scored. These checks do not measure preprocessing benefit or validate cross-device numerical equality.
 
 The backend is not a complete run controller. Loaded-code identity, live permit enforcement, durable artifact writes, cumulative resources, stage ordering and interrupted-session handling still require integrated review. All proposed resource limits remain unapproved. The original goal, pending later-branch choices and **54/206** adaptive/fallback rule are unchanged.
+
+## 33. Session accounting and recovery specification
+
+The [session requirements](P08_SOURCE_STAGE_MAPPING.md#9-integrated-session-requirements) define the remaining orchestration boundary. Fit artifacts must be written, read back and verified before fit success; the dependent prediction must authenticate those saved bytes and match the retained model before prediction success. No replacement fit is permitted.
+
+Resource accounting includes journal files and pending writes, not only checkpoints. Conservative charges must remain distinct from physically written bytes and cannot weaken free-space checks. The protocol also distinguishes measured finalization time from the preceding durable timestamp. The initial core must refuse previous-session entry pending review, preserving recorded counters and unfinished evidence.
+
+The bounded controller-authoring task returned no patch before its **600-second** deadline and was terminated. No controller implementation was accepted, no scientific process ran, and the published backend is unchanged. The next implementation assignment requires revised packaging of the same integration requirements, not a replay of the failed request or a reduction in the original goal. Scientific permissions and unresolved owner choices remain unchanged.

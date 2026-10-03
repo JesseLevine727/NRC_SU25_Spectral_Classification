@@ -37,6 +37,8 @@ Other perturbation details still require an explicit numerical specification: di
 
 First finish the inherited source-kernel/controller integration against the existing input, job, journal and artifact contracts. Test failure, interruption, resource exhaustion and refused recovery using synthetic fixtures. Preserve successful and failed attempts; do not add fits to repair an integration check.
 
+The [integrated session requirements](P08_SOURCE_STAGE_MAPPING.md#9-integrated-session-requirements) now specify exact receipt ordering, journal-inclusive retained-file charges, admission freshness, classical observation limits and post-close finalization accounting. Implementation remains outstanding. An authoring task that times out without a patch is not an accepted controller or a scientific execution attempt.
+
 After the required owner choices, complete the affected later-branch numerical specifications, exact operation ledgers and finite resource proposals. Then perform a final requirement-wide audit, publish only reviewed public artifacts, verify the remote revision and CI, and submit the separate bounded scientific execution request. Staged execution remains universal first, adaptive second and robustness/exploratory branches last.
 
 The eventual P08 outcome checklist in Master Plan §27 requires policy effects, routing, preservation and degradation results. Those results belong to later authorized scientific execution; this readiness goal must specify their production and verification without fabricating or prematurely computing them. Minimal min–max remains the reference, not an established optimum.
