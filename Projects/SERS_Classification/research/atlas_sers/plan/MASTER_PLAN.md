@@ -841,6 +841,8 @@ P08 begins only after the `RQ-P01` pipelines and conclusions are frozen. It answ
 
 The [readiness completion checkpoint](P08_COMPLETION_AUDIT.md) maps the original no-fit goal to its evidence and outstanding gates. The [source-stage mapping](P08_SOURCE_STAGE_MAPPING.md) preserves the inherited kernels' internal validation while separating logical fit and prediction acceptance. Passing artifact checks or synthetic integration does not establish a complete authorized runtime.
 
+The [outer launch boundary](P08_U0_LAUNCH_BOUNDARY.md) specifies independent permit binding, retained same-process import ownership and cumulative setup/control-file accounting. A failed launch must retain its evidence rather than silently reset the proposed budget. These implementation requirements do not change the scientific panels, source-only selection rules or separate-approval requirement.
+
 ### 16.1 Universal preprocessing (`RQ-S01`)
 
 Cross `PP-U-MIN`, `PP-U-SG`, and `PP-U-ARPLS` with fixed RBF SVM, Random Forest, D0, and the frozen acquisition-aware candidate. Also retain `R_MIN_400_1849` as a range sensitivity, not a policy candidate. Classical hyperparameters are reselected within the same source-only inner procedure for each universal action. Deep architecture/loss identity stays frozen and is retrained without policy-specific architecture tuning.

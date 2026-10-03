@@ -10,6 +10,8 @@ The next experimental question is whether smoothing or baseline correction impro
 
 The [requirement-to-evidence checkpoint](P08_COMPLETION_AUDIT.md) separates completed readiness components from unresolved owner decisions and the incomplete runtime gate. The [source-stage mapping](P08_SOURCE_STAGE_MAPPING.md) records how inherited within-fit validation relates to the distinct fit and prediction jobs. Neither document authorizes a scientific run.
 
+The [outer launch specification](P08_U0_LAUNCH_BOUNDARY.md) now connects those components to the independent-permit, retained-import, failed-setup and cumulative-accounting requirements. An import-audit report cannot substitute for a permit-bound process, and a failed setup cannot silently reset the run's time or storage allowance. Implementation and end-to-end acceptance remain required before a scientific smoke request.
+
 This handoff implements the ordering in [Master Plan §16](MASTER_PLAN.md#16-sub-plan-p08--preprocessing-policy-factorial-and-robustness). The current frozen-prediction uncertainty analysis does not authorize new fitting, policy selection, calibration, perturbations, or predictions. Its release must be reviewed before P08 begins. The original plans and immutable registries remain unchanged.
 
 ## 1. Scientific questions and reading order

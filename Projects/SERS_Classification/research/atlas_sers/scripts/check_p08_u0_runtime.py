@@ -23,6 +23,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import contextlib
 import hashlib
 import importlib
 import importlib.abc
@@ -32,12 +33,14 @@ import keyword
 import os
 import stat
 import sys
+import threading
 import types
 
 EXPECTED_CATALOG_SHA256 = "6b7a04bcef77b012b07a5757df2e76e3cca336601e96caf73244ad85fbc18f1f"
 CATALOG_RELATIVE_PATH = "plan/contracts/p08_runtime_source_catalog.json"
 EXPECTED_CATALOG_SCHEMA = "nato-sers-p08-runtime-source-catalog-v1"
 REPORT_SCHEMA = "nato-sers-p08-u0-runtime-import-audit-v1"
+SCOPE_SCHEMA = "nato-sers-p08-authenticated-runtime-scope-v1"
 NAMESPACE = "atlas_sers"
 REQUIRED_IMPORTS = (
     "atlas_sers.evaluation.p08_u0_runtime_inputs",
@@ -453,8 +456,109 @@ def _cuda_initialized_flag():
     return False
 
 
-def inspect_runtime(package_root):
-    """Verify all catalog bytes, then import the fixed roots in-process."""
+class _AuthenticatedRuntime:
+    """Internal, single-context trust carrier over authenticated source bytes.
+
+    The handle is valid only inside the ``authenticated_runtime`` context that
+    created it, only on the creating thread and process, and only while its
+    finder remains the first entry of ``sys.meta_path``.  Its ``repr`` exposes
+    no filesystem paths or source buffers; immutable verified source bytes are
+    available only through the guarded ``source_bytes`` accessor.  It is not a
+    security boundary against a malicious interpreter, Python process, or
+    external dependency.
+    """
+
+    __slots__ = (
+        "_finder",
+        "_verified",
+        "_sources_by_path",
+        "_catalog_digest",
+        "_source_revision",
+        "_owned_meta_path",
+        "_pid",
+        "_thread_ident",
+        "_active",
+    )
+
+    def __init__(
+        self,
+        finder,
+        verified,
+        sources_by_path,
+        catalog_digest,
+        source_revision,
+        owned_meta_path,
+    ):
+        self._finder = finder
+        self._verified = verified
+        self._sources_by_path = sources_by_path
+        self._catalog_digest = catalog_digest
+        self._source_revision = source_revision
+        self._owned_meta_path = owned_meta_path
+        self._pid = os.getpid()
+        self._thread_ident = threading.get_ident()
+        self._active = True
+
+    def __repr__(self):
+        return (
+            f"<_AuthenticatedRuntime active={self._active} "
+            f"verified_source_count={len(self._verified)}>"
+        )
+
+    def _check_scope(self):
+        if self._active is not True:
+            raise RuntimeAuditError("scope_closed")
+        if os.getpid() != self._pid or threading.get_ident() != self._thread_ident:
+            raise RuntimeAuditError("scope_owner_changed")
+        current = sys.meta_path
+        if current is not self._owned_meta_path or not current or current[0] is not self._finder:
+            raise RuntimeAuditError("scope_finder_changed")
+
+    def verify_loaded(self):
+        """Return small metadata for every executed project module."""
+        self._check_scope()
+        loaded_count = _verify_loaded_modules(self._finder, self._verified)
+        _verify_callable_surface()
+        return {
+            "schema_version": SCOPE_SCHEMA,
+            "execution_authorized": False,
+            "external_dependencies_authenticated": False,
+            "project_sources_verified": True,
+            "project_modules_loaded_from_authenticated_bytes": True,
+            "catalog_sha256": self._catalog_digest,
+            "source_revision": self._source_revision,
+            "verified_source_count": len(self._verified),
+            "loaded_project_module_count": loaded_count,
+            "required_import_count": len(REQUIRED_IMPORTS),
+            "scope_active": True,
+        }
+
+    def source_bytes(self, relative_path):
+        """Return authenticated immutable bytes for one catalog relative path.
+
+        The current module objects and callable surface are re-authenticated
+        before any buffer is released.  Only exact catalog relative-path names
+        are accepted; caller-supplied paths or hashes are never honored.
+        """
+        self.verify_loaded()
+        if type(relative_path) is not str:
+            raise RuntimeAuditError("unknown_source")
+        data = self._sources_by_path.get(relative_path)
+        if data is None:
+            raise RuntimeAuditError("unknown_source")
+        return data
+
+
+@contextlib.contextmanager
+def authenticated_runtime(package_root):
+    """Own the authenticated project import scope for the caller's block.
+
+    All project source buffers are verified before the first project import.
+    The owned finder stays at the head of ``sys.meta_path`` for the whole
+    context, including consumer-triggered lazy project imports.  The caller
+    performs its own work; this context neither performs nor authorizes
+    scientific execution.
+    """
     if sys.flags.isolated != 1:
         raise RuntimeAuditError("not_isolated")
     if not sys.dont_write_bytecode:
@@ -468,31 +572,58 @@ def inspect_runtime(package_root):
     revision, sources = _validate_catalog(document)
     bindings = _validate_sources(sources)
     verified = _load_verified_sources(root, bindings)
+    sources_by_path = {bindings[module][0]: verified[module][0] for module in verified}
     finder = _RuntimeFinder(verified)
     original_meta_path = sys.meta_path
-    sys.meta_path = [finder] + list(original_meta_path)
+    owned_meta_path = [finder] + list(original_meta_path)
+    sys.meta_path = owned_meta_path
+    handle = None
     try:
         for name in REQUIRED_IMPORTS:
             importlib.import_module(name)
-        loaded_count = _verify_loaded_modules(finder, verified)
+        _verify_loaded_modules(finder, verified)
+        _verify_callable_surface()
+        _cuda_initialized_flag()
+        handle = _AuthenticatedRuntime(
+            finder,
+            verified,
+            sources_by_path,
+            catalog_digest,
+            revision,
+            owned_meta_path,
+        )
+        yield handle
+    except BaseException:
+        raise
+    else:
+        handle._check_scope()
+        _verify_loaded_modules(finder, verified)
         _verify_callable_surface()
     finally:
+        if handle is not None:
+            handle._active = False
         sys.meta_path = original_meta_path
-    report = {
-        "schema_version": REPORT_SCHEMA,
-        "execution_authorized": False,
-        "live_runtime_accepted": False,
-        "scientific_execution_performed": False,
-        "external_dependencies_authenticated": False,
-        "project_sources_verified": True,
-        "project_modules_loaded_from_authenticated_bytes": True,
-        "catalog_sha256": catalog_digest,
-        "source_revision": revision,
-        "verified_source_count": len(verified),
-        "loaded_project_module_count": loaded_count,
-        "required_import_count": len(REQUIRED_IMPORTS),
-        "cuda_initialized": _cuda_initialized_flag(),
-    }
+
+
+def inspect_runtime(package_root):
+    """Verify all catalog bytes, then import the fixed roots in-process."""
+    with authenticated_runtime(package_root) as runtime:
+        metadata = runtime.verify_loaded()
+        report = {
+            "schema_version": REPORT_SCHEMA,
+            "execution_authorized": False,
+            "live_runtime_accepted": False,
+            "scientific_execution_performed": False,
+            "external_dependencies_authenticated": False,
+            "project_sources_verified": True,
+            "project_modules_loaded_from_authenticated_bytes": True,
+            "catalog_sha256": metadata["catalog_sha256"],
+            "source_revision": metadata["source_revision"],
+            "verified_source_count": metadata["verified_source_count"],
+            "loaded_project_module_count": metadata["loaded_project_module_count"],
+            "required_import_count": metadata["required_import_count"],
+            "cuda_initialized": False,
+        }
     canonical = json.dumps(report, sort_keys=True, separators=(",", ":"))
     report["report_sha256"] = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
     return report
