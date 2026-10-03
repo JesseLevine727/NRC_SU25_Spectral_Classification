@@ -82,6 +82,9 @@
     "attempt_manifest_scope": "metadata_only_no_execution_events_or_durable_journal",
     "proposed_smoke_schedule": "serial_one_operation_in_controller_process",
     "proposed_resource_check_maximum_age_ns": 1000000000,
+    "synthetic_component_integration_reviewed": true,
+    "live_runtime_accepted": false,
+    "scientific_artifact_semantics_accepted": false,
     "parallel_runtime_validated": false,
     "execution_authorized": false
   },
@@ -113,7 +116,10 @@
     "ledger_audit": "results/p08_readiness/range_ledger_audit.json",
     "primary_width_guards_changed": false,
     "input_component_isolation_claim": false,
-    "numerical_inference_lock_complete": false,
+    "numerical_inference_lock_complete": true,
+    "inference_protocol": "plan/P08_RANGE_INFERENCE.md",
+    "inference_registry": "plan/contracts/p08_range_inference.json",
+    "inference_implementation_accepted": false,
     "range_runtime_accepted": false,
     "execution_authorized": false,
     "resource_proposal": {

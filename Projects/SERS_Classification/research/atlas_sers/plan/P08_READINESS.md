@@ -231,3 +231,17 @@ For the four exploratory controls, full source-only family reselection has a cei
 The owner decision remains pending. The new evidence justifies asking for that decision with both costs, not silently adopting the cheaper option. Source records and historical elapsed times were read; no control array, model, calibration, prediction or score was calculated. The other unresolved population and perturbation choices, range inference and runtime gates remain open.
 
 A subsequent [capacity check](P08_RESOURCE_PROPOSAL.md#13-conditional-n2-proposal-frozen-min-selected-families) clears the proposed initial storage thresholds for U0 and conditional N2 only. It supersedes the earlier low-space checkpoint as a point-in-time observation, not as a reservation or authority. The universal full-comparison allowance remains unsupported by that observed capacity.
+
+## 21. Range-specific numerical inference specification
+
+The [range protocol](P08_RANGE_INFERENCE.md) and [registry](contracts/p08_range_inference.json) now specify **eight range effects** and **eight range–model interactions** for the four-method panel and two endpoints. These secondary families remain separate from the universal and QC families. The registry binds the unchanged primary statistical protocol and both public range audits by SHA-256.
+
+The range procedure retains equal-context/equal-domain scoring, shared **10,000-draw** master/instrument weighting, the original hierarchy as a feasibility check and separate Holm adjustment for each range family and sign sensitivity. Missing complete context cells make a full-support contrast unavailable; a separately labelled paired-support sensitivity cannot replace it. No failed range cell receives MIN fallback. Wider-input min–max scaling and pooling prevent a claim that the comparison isolates the added channels.
+
+This closes the range-specific numerical-definition gap identified in the earlier checkpoints, not the inference-implementation or runtime gate. R1 resources remain proposed, and no fitting, prediction or uncertainty analysis has been launched. The four pending normalization/population/perturbation decisions and remaining later-branch job specifications are unchanged.
+
+## 22. Combined component checks, not a scientific runner
+
+The [combined no-fit specification](P08_RESOURCE_PROPOSAL.md#combined-no-fit-validation-boundary) now has synthetic tests across the actual store, journal, serial resource/admission and receipt components. They cover CPU and fake-GPU bookkeeping, dependency ordering, durable progress, corrupt artifact refusal, clean reopen, persistent failure/interruption accounting and refusal of incomplete sessions. All execution entry points still deny scientific work.
+
+The [review](delegation/P08_REVIEW.md) records **11 integration tests** and **13 range-registry tests**, with exact schema corrections reviewed before acceptance. These tests do not establish measured cumulative artifact growth, live permit enforcement, checkpoint loadability or valid source predictions. The next runtime work must enforce the tested ordering and stage-specific semantic checks; no complete launch-safety claim follows from the test helper. Production scientific code, primary inference definitions and historical artifacts are unchanged.

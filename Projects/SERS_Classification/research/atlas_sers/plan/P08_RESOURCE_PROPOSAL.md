@@ -142,6 +142,12 @@ The measured resources feed the existing prospective candidate check. A monotoni
 
 This read-only adapter neither records durable progress nor starts a job. It cannot reconstruct unrecorded elapsed time, measure cumulative artifact growth, validate a checkpoint, grant a permit or enforce memory peaks between observations. Those obligations remain with the reviewed runtime. Synthetic test acceptance is recorded separately in the [review log](delegation/P08_REVIEW.md); no scientific operation is authorized by this scheduling proposal.
 
+### Combined no-fit validation boundary
+
+The integration tests compose the existing components in the proposed serial order: record progress under the store lease, inspect the candidate and resource observations, record an invented start, verify an invented terminal receipt, and append its terminal event. A dependent prediction remains unavailable until its fitting dependency succeeds. Clean session closure preserves cumulative counters; releasing a lease without session closure requires review before reopening. A failed or interrupted attempt remains consumed after a clean reopen and prevents further admission under the unchanged no-retry authority.
+
+These tests replace hardware and clock observations with explicit synthetic values; their files contain invented non-model bytes. They verify record consistency and byte-check composition, not measured artifact growth, checkpoint loadability, valid scientific predictions or enforcement of a live permit. The store itself does not automatically call the receipt verifier. A future runtime must enforce that ordering, bind the stage-specific required artifacts and perform semantic acceptance before recording scientific success. The [review](delegation/P08_REVIEW.md) records which combined checks passed; no test callback is a production runner.
+
 ## 12. R1 proposal: frozen wider-range sensitivity
 
 The [range ledger audit](../results/p08_readiness/range_ledger_audit.json) binds **131,199 prospective operations** across the unchanged **260 contexts**. Its four-method panel is RBF-SVM, Random Forest, D0-M and the frozen context-local P05-selected recipe. Extra Trees is excluded. Source/test roles, seeds and classical candidate grids are inherited; range input and model-specification hashes are new. No historical MIN estimator or prediction is reused as wider-range evidence.

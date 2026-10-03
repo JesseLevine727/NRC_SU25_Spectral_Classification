@@ -847,6 +847,8 @@ Report paired policy-minus-minimal domain effects, 13 domain values, hierarchica
 
 **Range-readiness clarification:** the [later-branch design note](P08_LATER_BRANCH_DESIGN.md#4-range-and-population-controls-need-separate-role-accounting) records authenticated support for the existing 400–1,849 cm⁻¹ input. This sensitivity retains the four-model panel without Extra Trees. Wider min–max normalization and adaptive pooling can change responses inside the shared range; the comparison does not isolate the causal contribution of added channels. Its input/operation audit, finite resource proposal, numerical inference lock and runtime acceptance remain distinct from permission to execute.
 
+The [range inference specification](P08_RANGE_INFERENCE.md) and [contrast registry](contracts/p08_range_inference.json) now fix eight range effects and eight range–model interactions, their separate multiplicity families, missing-cell rules and inherited conditional uncertainty. The primary statistical families remain unchanged. Numerical implementation, runtime acceptance and separate R1 approval are still required.
+
 ### 16.2 Platform-family-aware preprocessing (`RQ-S02`)
 
 For each outer source partition and platform family:
