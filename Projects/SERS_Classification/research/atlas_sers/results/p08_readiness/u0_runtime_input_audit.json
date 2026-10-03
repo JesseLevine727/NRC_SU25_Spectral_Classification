@@ -1,0 +1,20 @@
+{
+  "candidate_registry_sha256": "046ebfa9023591ba91f48b797fe3bb037f6e7e82cb4bfb34800a9aa12b468bba",
+  "candidates": 3,
+  "classical_pairs": 42,
+  "execution_authorized": false,
+  "kernel_arguments_prepared": true,
+  "live_controller_verified": false,
+  "loaded_runtime_code_verified": false,
+  "models": 7,
+  "neural_pairs": 36,
+  "new_scientific_operations": 0,
+  "pairs": 78,
+  "prepared_report_sha256": "0623ae6b6b24ae6379026eaa3795559f85cb9c217eea72ef25dceb459fa2fb7a",
+  "report_sha256": "72aa462036222a9d8ea816064f9eeb33b41bff84d57a110e873939275acf1f98",
+  "schema_version": "nato-sers-p08-u0-runtime-inputs-v1",
+  "source_files": 18,
+  "specification_audit_sha256": "7a6fdd91b33ae63a212c7936599e38b28cb0e88273024ed28f4bf0ec7d42c1a0",
+  "specification_bytes_verified": true,
+  "substrate_metadata_preserved": true
+}
