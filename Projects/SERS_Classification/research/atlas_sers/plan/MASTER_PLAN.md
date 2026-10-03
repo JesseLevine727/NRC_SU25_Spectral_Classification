@@ -893,6 +893,8 @@ Robustness area under the degradation curve is reported. Perturbations are not c
 
 `R_SNV_400_1800`, `R_VECTOR_400_1800`, and `R_AREA_400_1800` are fixed exploratory controls for the classical champion only unless compute is expanded before any outcome. `R_D1_400_1800` remains a destructive control and cannot be promoted from clustering or a favorable isolated test domain.
 
+**Selector decision pending:** the [audited alternatives](P08_LATER_BRANCH_DESIGN.md#2-a-full-classical-selector-is-a-substantial-experiment) distinguish full source-only family reselection from retaining each context's MIN-selected family and retuning its hyperparameters. Their four-control ceilings are 525,288 and 42,368 model fits, respectively. The latter is a narrower sensitivity, not an approved substitute. All 260 source-family choices are recorded, but eight historical final endpoints remain missing under either choice. No control has been trained or selected from held results.
+
 ### 16.7 Population branches
 
 Repeat primary comparisons on notes-clear and Mira-1-excluded tiers using regenerated master-group splits. Preserve the same eligibility logic; report domains that become unsupported.

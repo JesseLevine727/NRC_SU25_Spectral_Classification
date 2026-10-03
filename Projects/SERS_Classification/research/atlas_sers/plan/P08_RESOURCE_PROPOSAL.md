@@ -167,4 +167,20 @@ R1 requires at least **70 GiB free** initially under the existing **30-GiB reser
 
 ### Current storage feasibility, 2026-10-02
 
-A fresh filesystem check reported **8,824,156,160 bytes available**, approximately **8.2 GiB**. This supersedes the earlier capacity observation for present admission decisions; it is not reserved space. It is below the initial requirements for U0 (**38 GiB**), U1/N1 (**110 GiB**), R1 (**70 GiB**) and Q1 (**430 GiB**). None is currently storage-feasible under its proposed full allowance. Additional private capacity or an explicitly approved storage/retention amendment is required; no cleanup, evidence deletion or reduced reserve is inferred. Repeat the check before any future launch request.
+A fresh filesystem check reported **8,824,156,160 bytes available**, approximately **8.2 GiB**. This superseded the earlier capacity observation at that checkpoint; it was not reserved space. It was below the initial requirements for U0 (**38 GiB**), U1/N1 (**110 GiB**), R1 (**70 GiB**) and Q1 (**430 GiB**). None was storage-feasible under its proposed full allowance at that observation. Additional private capacity or an explicitly approved storage/retention amendment was required; no cleanup, evidence deletion or reduced reserve was inferred. Repeat the check before any future launch request.
+
+## 13. Conditional N2 proposal: frozen MIN-selected families
+
+N2 applies only if the owner chooses to keep each context's recorded MIN-selected classical family and retune that family's hyperparameters for each normalization control. It is an alternative to the full-selector N1 interpretation, not an additional experiment or an approved narrowing of the question. Both retain SNV, vector, area and the derivative destructive control; neither permits held-test model selection or repairs the eight missing historical final results.
+
+The [authenticated accounting](../results/p08_readiness/fixed_family_alternative_audit.json) gives **42,368 model-fit slots** and **1,040 scalar temperatures** across these four controls. Per control, **9,876 source fits**, **426 fresh calibration fits** and **290 final fits** account for every fitting slot after **444 exact-role calibration aliases**. A future ledger must still enumerate prediction, selection, calibration and artifact dependencies and bind each control's authenticated numerical input. These totals are conditional ceilings, not that executable ledger.
+
+| Proposed alternative | Active wall time | New private artifacts | Process-tree RAM | Allocated GPU memory | CPU fitting workers |
+|---|---:|---:|---:|---:|---:|
+| N2, only if fixed-family scope is chosen | 24 hours | 20 GiB | 24 GiB | 0 GiB | At most four single-thread workers |
+
+All failed and interrupted attempts consume their slots and time; there are no automatic retries. The same evidence-retention and **30-GiB reserve** rules apply. N2 requires at least **50 GiB free** initially, including the space occupied by earlier retained stages. Retain source records/predictions, selection and calibration states, and final estimators; do not save or delete evidence by convenience to meet a ceiling. N2 does not change the universal-first sequence or borrow an earlier permit.
+
+The relevant historical source durations sum to **7,988.616 seconds**; four copies give **8.88 sequential CPU-hours**, including the recorded costs of failed candidates. This excludes new-control changes, calibration, final fitting, predictions, persistence and scheduling. The 24-hour and 20-GiB limits are proposed operational bounds, not measured needs or promised completion. Scope selection, numerical/input locks, exact jobs, fresh capacity checks and a separate scientific permit remain required.
+
+**Subsequent capacity observation:** at **2026-10-03T00:05:39Z** (the evening of **2026-10-02** locally), the filesystem reported **57,421,008,896 bytes free**, approximately **53.5 GiB**. This clears the proposed initial U0 and conditional N2 storage thresholds at that instant, but not U1/N1, R1 or Q1. No cleanup was performed as part of this audit. The increased capacity is not reserved, does not approve N2, and does not authorize a launch or a change to the universal-first sequence.

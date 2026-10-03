@@ -130,11 +130,40 @@
       "initial_required_free_gib": 70
     }
   },
+  "normalization_fixed_family_alternative": {
+    "status": "audited_unapproved_alternative_to_full_selector",
+    "approved": false,
+    "complete_minimal_source_family_choices": 260,
+    "historical_final_contexts_available": 252,
+    "historical_final_contexts_missing": 8,
+    "source_family_mapping_sha256": "09334215250e974b1354667ef1ff55755524c115af6d632283d590af6768a9b1",
+    "per_control_model_fit_ceiling": 10592,
+    "four_control_model_fit_ceiling": 42368,
+    "four_control_scalar_ceiling": 1040,
+    "audit": "results/p08_readiness/fixed_family_alternative_audit.json",
+    "execution_authorized": false,
+    "resource_proposal": {
+      "stage_id": "N2",
+      "alternative_to": "N1",
+      "approved": false,
+      "active_wall_hours": 24,
+      "new_private_artifacts_gib": 20,
+      "process_tree_ram_gib": 24,
+      "allocated_gpu_gib": 0,
+      "cpu_workers": 4,
+      "model_threads_per_worker": 1,
+      "automatic_retries": 0,
+      "initial_required_free_gib": 50
+    }
+  },
   "latest_storage_observation": {
     "date": "2026-10-02",
-    "free_bytes": 8824156160,
+    "observed_at_utc": "2026-10-03T00:05:39Z",
+    "free_bytes": 57421008896,
+    "previous_recorded_free_bytes": 8824156160,
     "point_in_time_not_reserved": true,
-    "proposed_stages_initially_feasible": [],
+    "proposed_stages_initially_feasible": ["U0", "N2"],
+    "scope_budget_or_execution_approval_implied": false,
     "cleanup_authorized": false
   },
   "pending_later_branch_choices": ["normalization_classical_selector_scope", "regenerated_tier_source_selection_scope", "perturbation_before_or_after_preprocessing", "synthetic_rigid_shift_endpoint_extension"],

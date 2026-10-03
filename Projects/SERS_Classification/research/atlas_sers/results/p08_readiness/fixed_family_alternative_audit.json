@@ -1,0 +1,175 @@
+{
+  "caveat": "Conditional accounting, not an executable DAG, approved protocol, complete runtime estimate or permit. Eight incomplete historical final endpoints remain missing. Saved MIN source family decisions exist for all contexts; that does not repair their final outcomes.",
+  "complete_source_selections": 260,
+  "execution_authorized": false,
+  "families": [
+    {
+      "calibration_prediction_aliases": 9,
+      "contexts": 4,
+      "final_fit_slots": 12,
+      "fresh_calibration_fit_slots": 27,
+      "historical_source_fit_seconds": 373.92642666987376,
+      "historical_source_status_counts": {
+        "complete": 432
+      },
+      "literal_model_fit_slots_before_role_cache": 480,
+      "model_fit_slots_after_role_cache": 471,
+      "model_id": "C-EXTRA-TREES",
+      "scalar_temperatures": 4,
+      "source_fit_slots": 432,
+      "source_selection_units": 9
+    },
+    {
+      "calibration_prediction_aliases": 51,
+      "contexts": 64,
+      "final_fit_slots": 64,
+      "fresh_calibration_fit_slots": 141,
+      "historical_source_fit_seconds": 5388.226533693436,
+      "historical_source_status_counts": {
+        "complete": 4480,
+        "convergence_failure": 320
+      },
+      "literal_model_fit_slots_before_role_cache": 5056,
+      "model_fit_slots_after_role_cache": 5005,
+      "model_id": "C-LOGREG-EN",
+      "scalar_temperatures": 64,
+      "source_fit_slots": 4800,
+      "source_selection_units": 160
+    },
+    {
+      "calibration_prediction_aliases": 15,
+      "contexts": 13,
+      "final_fit_slots": 13,
+      "fresh_calibration_fit_slots": 24,
+      "historical_source_fit_seconds": 2.821729030169068,
+      "historical_source_status_counts": {
+        "complete": 264
+      },
+      "literal_model_fit_slots_before_role_cache": 316,
+      "model_fit_slots_after_role_cache": 301,
+      "model_id": "C-NEAREST-CENTROID",
+      "scalar_temperatures": 13,
+      "source_fit_slots": 264,
+      "source_selection_units": 33
+    },
+    {
+      "calibration_prediction_aliases": 6,
+      "contexts": 18,
+      "final_fit_slots": 18,
+      "fresh_calibration_fit_slots": 48,
+      "historical_source_fit_seconds": 4.942575447785185,
+      "historical_source_status_counts": {
+        "complete": 356,
+        "rank_failure": 54
+      },
+      "literal_model_fit_slots_before_role_cache": 482,
+      "model_fit_slots_after_role_cache": 476,
+      "model_id": "C-PCA-LDA",
+      "scalar_temperatures": 18,
+      "source_fit_slots": 410,
+      "source_selection_units": 41
+    },
+    {
+      "calibration_prediction_aliases": 210,
+      "contexts": 80,
+      "final_fit_slots": 80,
+      "fresh_calibration_fit_slots": 30,
+      "historical_source_fit_seconds": 26.965655218693374,
+      "historical_source_status_counts": {
+        "complete": 1136,
+        "rank_failure": 14
+      },
+      "literal_model_fit_slots_before_role_cache": 1470,
+      "model_fit_slots_after_role_cache": 1260,
+      "model_id": "C-PLS-DA",
+      "scalar_temperatures": 80,
+      "source_fit_slots": 1150,
+      "source_selection_units": 230
+    },
+    {
+      "calibration_prediction_aliases": 63,
+      "contexts": 11,
+      "final_fit_slots": 33,
+      "fresh_calibration_fit_slots": 36,
+      "historical_source_fit_seconds": 2175.9903510144213,
+      "historical_source_status_counts": {
+        "complete": 1392
+      },
+      "literal_model_fit_slots_before_role_cache": 1524,
+      "model_fit_slots_after_role_cache": 1461,
+      "model_id": "C-RANDOM-FOREST",
+      "scalar_temperatures": 11,
+      "source_fit_slots": 1392,
+      "source_selection_units": 29
+    },
+    {
+      "calibration_prediction_aliases": 3,
+      "contexts": 12,
+      "final_fit_slots": 12,
+      "fresh_calibration_fit_slots": 33,
+      "historical_source_fit_seconds": 11.046903892303769,
+      "historical_source_status_counts": {
+        "complete": 972
+      },
+      "literal_model_fit_slots_before_role_cache": 1020,
+      "model_fit_slots_after_role_cache": 1017,
+      "model_id": "C-RBF-SVM",
+      "scalar_temperatures": 12,
+      "source_fit_slots": 972,
+      "source_selection_units": 27
+    },
+    {
+      "calibration_prediction_aliases": 87,
+      "contexts": 58,
+      "final_fit_slots": 58,
+      "fresh_calibration_fit_slots": 87,
+      "historical_source_fit_seconds": 4.695523603237212,
+      "historical_source_status_counts": {
+        "complete": 456
+      },
+      "literal_model_fit_slots_before_role_cache": 688,
+      "model_fit_slots_after_role_cache": 601,
+      "model_id": "C-SPECTRAL-MATCH",
+      "scalar_temperatures": 58,
+      "source_fit_slots": 456,
+      "source_selection_units": 152
+    }
+  ],
+  "family_choice_recomputed": false,
+  "four_control_fit_ceiling": 42368,
+  "four_control_scalar_ceiling": 1040,
+  "historical_missing_endpoints_repaired": false,
+  "historical_selected_classical_final_available_contexts": 252,
+  "historical_selected_classical_final_missing_contexts": 8,
+  "historical_source_fit_seconds": 7988.61569856992,
+  "historical_source_status_counts": {
+    "complete": 9488,
+    "convergence_failure": 320,
+    "rank_failure": 68
+  },
+  "input_sha256": {
+    "contexts": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "fit_manifest": "3a8e22e50cb87c32ff26062d65d35dcd7ae6d339ef344bcedcde9123a33122a8",
+    "historical_predictions": "ddc1620ffb67335c63806e778abf13d830f5bd68a39b2ecc5fb05d87e898aa9a",
+    "hyperparameter_registry": "e1f966b10c135d83698ad67d1869ce84f9808e6d37b1800cf093b9b7aba807ee",
+    "p03_contract": "08ec538bd1d45eed8f404430d6359315d7b0016b4b406e2e9d18c549b9a00207",
+    "selected_specs": "61570bf4bf837c420869a49d84855c15ee03a3a85f1fedbbdef5af352a0f8e1c",
+    "terminal_ledger": "b72956190cc57529fdbb61e7211cd94b2be26a534cf2c71f9bbfd4c869b86845"
+  },
+  "new_scientific_operations": 0,
+  "per_representation_ceiling": {
+    "calibration_prediction_aliases": 444,
+    "contexts": 260,
+    "final_fit_slots": 290,
+    "fresh_calibration_fit_slots": 426,
+    "literal_model_fit_slots_before_role_cache": 11036,
+    "model_fit_slots_after_role_cache": 10592,
+    "scalar_temperatures": 260,
+    "source_fit_slots": 9876,
+    "source_selection_units": 681
+  },
+  "schema_version": "nato-sers-p08-fixed-family-alternative-audit-v1",
+  "scope": "Frozen MIN-selected family per context; proposed source-only hyperparameter retuning within that family for each new control; no numerical inputs or outcomes recomputed.",
+  "source_family_mapping_sha256": "09334215250e974b1354667ef1ff55755524c115af6d632283d590af6768a9b1",
+  "status": "metadata_verified_unapproved_alternative"
+}

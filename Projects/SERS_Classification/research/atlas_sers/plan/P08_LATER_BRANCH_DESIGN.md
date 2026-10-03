@@ -47,7 +47,27 @@ If the same full-selector procedure is approved for all three normalization cont
 
 The subsequent [N1 resource proposal](P08_RESOURCE_PROPOSAL.md#conditional-n1-proposal-full-selector-normalization-controls) adds finite, conditional ceilings without approving the selector choice. Its [timing basis](../results/p08_readiness/later_classical_timing_basis.json) preserves historical rank and convergence failures. The recorded source-fit durations sum to 123,953.952 seconds per historical selector; four copies give 137.73 sequential CPU-hours before calibration, final fitting, inference and persistence. These recorded costs do not guarantee new-representation runtimes or establish a launchable operation ledger.
 
-The alternative is to freeze the family chosen from MIN source data within each context and retune only its hyperparameters for each control. That answers a narrower question: how normalization affects a fixed source-selected family. Its cost requires an audit of the actual source-selection map. The eight missing historical selected-classical final references must not be imputed, but their absence does not by itself prove that source family selections are missing.
+The alternative is to freeze the family chosen from MIN source data within each context and retune only its hyperparameters for each control. That answers a narrower question: how normalization affects a fixed source-selected family. The following audit supplies its cost from the actual source-selection map. The eight missing historical selected-classical final references must not be imputed, but their absence does not by itself prove that source family selections are missing.
+
+**Alternative audited, 2026-10-02:** the [saved-family audit](../results/p08_readiness/fixed_family_alternative_audit.json) confirms complete source-only family selections for all **260 contexts**, including the **eight** whose historical final predictions are unavailable. The family map is authenticated, not recomputed. It spans eight of the nine registered families; the class-prior reference was never selected. Selection frequencies describe the recorded source procedure, not a ranking by held-test performance.
+
+| MIN-selected family | Contexts | Candidate–seed source-fit slots per new control |
+|---|---:|---:|
+| PLS–DA | 80 | 1,150 |
+| Elastic-net logistic regression | 64 | 4,800 |
+| Spectral matching | 58 | 456 |
+| PCA–LDA | 18 | 410 |
+| Nearest centroid | 13 | 264 |
+| RBF-SVM | 12 | 972 |
+| Random Forest | 11 | 1,392 |
+| Extra Trees | 4 | 432 |
+| Total | **260** | **9,876** |
+
+After exact fit/validation-role matching, this alternative adds **426 fresh calibration fits** and **290 final fits** per representation. Its **444 calibration prediction aliases** are within-representation role reuse, not reuse of old MIN predictions on new inputs. The ceiling is therefore **10,592 model fits and 260 scalar temperatures per control**, or **42,368 fits and 1,040 scalar temperatures** across the four controls. The corresponding full-selector ceilings remain **525,288** and **1,040**. The [conditional resource proposals](P08_RESOURCE_PROPOSAL.md#13-conditional-n2-proposal-frozen-min-selected-families) are alternatives, not cumulative permission to execute both.
+
+Neither choice repairs the historical **252/260** final-result coverage. Even complete new-control results would pair with at most 252 historical C-SELECTED contexts under the current evidence lock. A complete family choice is not a complete fitted/calibrated test result. If every candidate within a frozen family fails for a new control, the context remains unavailable; the implementation may not silently switch families or substitute MIN.
+
+The audited alternative's historical source-fitting records contain **9,488 complete attempts**, **320 convergence failures** and **68 rank failures**. All recorded costs are retained. Four copies of their **7,988.616-second** sum give **8.88 sequential CPU-hours** for source fitting alone, not a measured control runtime or completion guarantee. The owner has been asked to choose between the broader full-selector procedure and this narrower fixed-family sensitivity using these audited costs. No answer or training permission is inferred.
 
 ## 3. Rigid shifts need an explicit edge rule
 
