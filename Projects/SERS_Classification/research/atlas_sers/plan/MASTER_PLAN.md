@@ -903,11 +903,15 @@ Robustness area under the degradation curve is reported. Perturbations are not c
 
 **Selector decision P08-A06:** the [audited alternatives](P08_LATER_BRANCH_DESIGN.md#2-a-full-classical-selector-is-a-substantial-experiment) distinguish full source-only family reselection from retaining each context's MIN-selected family and retuning its hyperparameters. Their four-control ceilings are 525,288 and 42,368 model fits, respectively. The owner approved the latter, N2, as a narrower conditional sensitivity; N1 is not selected. All 260 source-family choices are recorded, but eight historical final endpoints remain missing under either choice. No control has been trained or selected from held results, and scope approval is not budget or execution approval.
 
+The [N2 inference specification](P08_NORMALIZATION_INFERENCE.md) and [registry](contracts/p08_normalization_inference.json) now fix eight exploratory normalization effects on the 252 reference-supported contexts. The complete-four-fold sensitivity retains 57 domain/repeat groups. The all-260-context paired effect remains unavailable; new failures cannot silently redefine either fixed comparison set. Shared P08 uncertainty settings and a separate eight-slot multiplicity family retain the primary analyses unchanged. This is a numerical declaration, not an implemented inference engine or execution permit.
+
 ### 16.7 Population branches
 
 Repeat primary comparisons on notes-clear and Mira-1-excluded tiers using regenerated master-group splits. Preserve the same eligibility logic; report domains that become unsupported.
 
 Under P08-A07, repeat registered source-only model tuning and neural-recipe selection within each regenerated source partition, then freeze that context's neural recipe across preprocessing. Do not transplant the primary recipe map into changed splits. Exact role/support accounting and finite execution budgets remain required.
+
+The [population prescreen](P08_POPULATION_SUPPORT.md) verifies 500 notes-clear spectra and 575 Mira-1-excluded spectra, both retaining all 69 masters. Their pooled eligible primary-domain counts are 11 and 12, respectively. This does not establish regenerated fold-level support or fit counts. Equal master membership can preserve outer assignments under the fixed splitter, while changed spectral rows still require new role hashes and source-only selection.
 
 ## 17. Sub-plan P09 — narrow open-set evaluation
 

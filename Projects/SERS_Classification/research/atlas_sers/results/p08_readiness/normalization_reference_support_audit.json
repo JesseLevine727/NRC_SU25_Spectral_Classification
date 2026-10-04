@@ -1,0 +1,87 @@
+{
+  "all_input_bytes_unchanged": true,
+  "complete_domain_repeat_groups": 57,
+  "complete_four_fold_group_set_sha256": "fd78769d2b03c6de6dbd0b9612bb34fc5515d65b081d5b3ef5ac0a0108f056e4",
+  "execution_authorized": false,
+  "fixed_complete_four_fold_support": {
+    "context_set_sha256": "3e20b081c2f2df2ae15db0724d1fd28fca904fc8d0c54f6f26af58febfc047ad",
+    "contexts": 228,
+    "contexts_per_domain_max": 20,
+    "contexts_per_domain_min": 12,
+    "distinct_physical_masters": 69,
+    "distinct_spectra": 557,
+    "domains": 13,
+    "instrument_set_sha256": "3e42e1aca8e0ba4c160e79eb5252f81df12b8dfa5471533e72b9477ae616277f",
+    "instruments": 10,
+    "master_context_prediction_units": 1150,
+    "master_set_sha256": "5b22395ca0c811736cced0d3ab47111690b22a5fcf710232d7a0f5467fe4bb6b",
+    "original_present_classes_per_context_histogram": {
+      "1": 1,
+      "2": 34,
+      "3": 193
+    },
+    "spectrum_context_appearances": 2499,
+    "spectrum_set_sha256": "67306ed58c2a16c6a555b985a46a46acb5a5f3bc544a4769f36e64cb5defff47",
+    "stations": 3
+  },
+  "fixed_reference_available_support": {
+    "context_set_sha256": "57fc03baeb6224d5f7c836161cad5830b82c310948ec2a18dd53d7b8a6ef11a7",
+    "contexts": 252,
+    "contexts_per_domain_max": 20,
+    "contexts_per_domain_min": 18,
+    "distinct_physical_masters": 69,
+    "distinct_spectra": 557,
+    "domains": 13,
+    "instrument_set_sha256": "3e42e1aca8e0ba4c160e79eb5252f81df12b8dfa5471533e72b9477ae616277f",
+    "instruments": 10,
+    "master_context_prediction_units": 1268,
+    "master_set_sha256": "5b22395ca0c811736cced0d3ab47111690b22a5fcf710232d7a0f5467fe4bb6b",
+    "original_present_classes_per_context_histogram": {
+      "1": 1,
+      "2": 40,
+      "3": 211
+    },
+    "spectrum_context_appearances": 2714,
+    "spectrum_set_sha256": "67306ed58c2a16c6a555b985a46a46acb5a5f3bc544a4769f36e64cb5defff47",
+    "stations": 3
+  },
+  "historical_missing_contexts": 8,
+  "historical_missing_endpoints_repaired": false,
+  "incomplete_domain_repeat_groups": 8,
+  "input_bindings_sha256": "9ee38820304fa16fa3af7a042fc61ea77988bce35d27ac60e4835a9c0995f638",
+  "input_pins": {
+    "contexts": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "manifest": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "p03_predictions": "ddc1620ffb67335c63806e778abf13d830f5bd68a39b2ecc5fb05d87e898aa9a",
+    "roles": "224891579d5df84c42a1c3c827590b6515ec83a13bfe4f07d48f249432f38d91"
+  },
+  "limits": "Pre-existing reference identity/support only. No predictive values, new scores, fitted parameters or resampling. Availability remains conditional on separate prediction-content validation at execution.",
+  "new_scientific_operations": 0,
+  "normalization_slot_plan_sha256": "c65e3eb505db1afddf093bf86d2cf643e85437f1f7256711abf0ff90bad59cc1",
+  "predictions_recomputed": false,
+  "primary_registered_support": {
+    "context_set_sha256": "583040c9af05878b44698dae79b6af5414c98a3085092d3c00ca1b5e947d9e15",
+    "contexts": 260,
+    "contexts_per_domain_max": 20,
+    "contexts_per_domain_min": 20,
+    "distinct_physical_masters": 69,
+    "distinct_spectra": 557,
+    "domains": 13,
+    "instrument_set_sha256": "3e42e1aca8e0ba4c160e79eb5252f81df12b8dfa5471533e72b9477ae616277f",
+    "instruments": 10,
+    "master_context_prediction_units": 1310,
+    "master_set_sha256": "5b22395ca0c811736cced0d3ab47111690b22a5fcf710232d7a0f5467fe4bb6b",
+    "original_present_classes_per_context_histogram": {
+      "1": 1,
+      "2": 40,
+      "3": 219
+    },
+    "spectrum_context_appearances": 2785,
+    "spectrum_set_sha256": "67306ed58c2a16c6a555b985a46a46acb5a5f3bc544a4769f36e64cb5defff47",
+    "stations": 3
+  },
+  "private_support_records_sha256": "59300a8e7a173b4b3a2afdd0f5203e2615883001b934fd0e61e2b42bbd65085f",
+  "schema_version": "nato-sers-p08-n2-reference-support-audit-v1",
+  "score_columns_loaded": false,
+  "status": "pass_metadata_only"
+}

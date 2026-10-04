@@ -1,0 +1,385 @@
+{
+  "all_input_bytes_unchanged": true,
+  "arrays_loaded": false,
+  "eligibility_requirements": {
+    "pooled_test_masters_minimum": 15,
+    "test_classes": 3
+  },
+  "execution_authorized": false,
+  "limits": "Pooled observed domain eligibility only. Regenerated outer/inner/calibration support, source-only recipe selection and exact operation budgets remain required. Unobserved combinations are not failed sensor measurements.",
+  "model_fit_counts_enumerated": false,
+  "new_roles_generated": false,
+  "new_scientific_operations": 0,
+  "p01_artifact_manifest_sha256": "4312448dd7e11176ea1cb79324881c464db51fb9d6f79a07fc6476c9032f202d",
+  "populations": [
+    {
+      "domain_support": [
+        {
+          "classes": 3,
+          "domain": "cwa:Mira-2",
+          "masters": 24,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 72
+        },
+        {
+          "classes": 3,
+          "domain": "cwa:Pendar-2",
+          "masters": 24,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 57
+        },
+        {
+          "classes": 3,
+          "domain": "cwa:RMX-1",
+          "masters": 18,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 47
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Agilent-1",
+          "masters": 19,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 29
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Agilent-3",
+          "masters": 20,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 35
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Mira-3",
+          "masters": 19,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 72
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Pendar-1",
+          "masters": 20,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 46
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Pendar-3",
+          "masters": 19,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 20
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Agilent-3",
+          "masters": 17,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 19
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Mira-1",
+          "masters": 17,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 23
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Pendar-2",
+          "masters": 25,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 35
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Pendar-3",
+          "masters": 17,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 37
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:RMX-2",
+          "masters": 23,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 65
+        }
+      ],
+      "file_sha256": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+      "instruments": 10,
+      "master_set_sha256": "5b22395ca0c811736cced0d3ab47111690b22a5fcf710232d7a0f5467fe4bb6b",
+      "masters": 69,
+      "pooled_supported_original_primary_domains": 13,
+      "pooled_unsupported_original_primary_domains": 0,
+      "population_id": "primary_598",
+      "retains_primary_master_set": true,
+      "row_set_sha256": "c760d148feb7e663250db2a410f561da69a777b9a669ba98f532aacac5fc1944",
+      "spectra": 598,
+      "stations": 3
+    },
+    {
+      "domain_support": [
+        {
+          "classes": 3,
+          "domain": "cwa:Mira-2",
+          "masters": 24,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 71
+        },
+        {
+          "classes": 1,
+          "domain": "cwa:Pendar-2",
+          "masters": 7,
+          "passes_pooled_domain_rule": false,
+          "reason_codes": [
+            "pooled_domain_class_support_below_three",
+            "pooled_domain_master_support_below_fifteen"
+          ],
+          "spectra": 10
+        },
+        {
+          "classes": 3,
+          "domain": "cwa:RMX-1",
+          "masters": 18,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 45
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Agilent-1",
+          "masters": 19,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 29
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Agilent-3",
+          "masters": 20,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 35
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Mira-3",
+          "masters": 19,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 71
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Pendar-1",
+          "masters": 19,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 40
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Pendar-3",
+          "masters": 11,
+          "passes_pooled_domain_rule": false,
+          "reason_codes": [
+            "pooled_domain_master_support_below_fifteen"
+          ],
+          "spectra": 11
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Agilent-3",
+          "masters": 17,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 19
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Mira-1",
+          "masters": 15,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 21
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Pendar-2",
+          "masters": 23,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 29
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Pendar-3",
+          "masters": 16,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 25
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:RMX-2",
+          "masters": 23,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 64
+        }
+      ],
+      "file_sha256": "e215f99034301f1bb66d21c616dc59d66c9174855b5f25403cfc2af321e6cf5d",
+      "instruments": 10,
+      "master_set_sha256": "5b22395ca0c811736cced0d3ab47111690b22a5fcf710232d7a0f5467fe4bb6b",
+      "masters": 69,
+      "pooled_supported_original_primary_domains": 11,
+      "pooled_unsupported_original_primary_domains": 2,
+      "population_id": "notes_clear_500",
+      "retains_primary_master_set": true,
+      "row_set_sha256": "e87f46d7daeb69010cb73f818827c4ea50202f0f9abe41a6d761e4f22bf01df2",
+      "spectra": 500,
+      "stations": 3
+    },
+    {
+      "domain_support": [
+        {
+          "classes": 3,
+          "domain": "cwa:Mira-2",
+          "masters": 24,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 72
+        },
+        {
+          "classes": 3,
+          "domain": "cwa:Pendar-2",
+          "masters": 24,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 57
+        },
+        {
+          "classes": 3,
+          "domain": "cwa:RMX-1",
+          "masters": 18,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 47
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Agilent-1",
+          "masters": 19,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 29
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Agilent-3",
+          "masters": 20,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 35
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Mira-3",
+          "masters": 19,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 72
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Pendar-1",
+          "masters": 20,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 46
+        },
+        {
+          "classes": 3,
+          "domain": "pills:Pendar-3",
+          "masters": 19,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 20
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Agilent-3",
+          "masters": 17,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 19
+        },
+        {
+          "classes": 0,
+          "domain": "surfaces:Mira-1",
+          "masters": 0,
+          "passes_pooled_domain_rule": false,
+          "reason_codes": [
+            "no_observed_rows",
+            "pooled_domain_class_support_below_three",
+            "pooled_domain_master_support_below_fifteen"
+          ],
+          "spectra": 0
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Pendar-2",
+          "masters": 25,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 35
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:Pendar-3",
+          "masters": 17,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 37
+        },
+        {
+          "classes": 3,
+          "domain": "surfaces:RMX-2",
+          "masters": 23,
+          "passes_pooled_domain_rule": true,
+          "reason_codes": [],
+          "spectra": 65
+        }
+      ],
+      "file_sha256": "192dfe55ef76072616e259ad55cb27f9ae46339d9b89f52904e9dbb3e363290b",
+      "instruments": 9,
+      "master_set_sha256": "5b22395ca0c811736cced0d3ab47111690b22a5fcf710232d7a0f5467fe4bb6b",
+      "masters": 69,
+      "pooled_supported_original_primary_domains": 12,
+      "pooled_unsupported_original_primary_domains": 1,
+      "population_id": "mira1_excluded_575",
+      "retains_primary_master_set": true,
+      "row_set_sha256": "a08483dc7490f987439567e18a0f53e3509906bbaa8cc338b3932d896bb32fce",
+      "spectra": 575,
+      "stations": 3
+    }
+  ],
+  "schema_version": "nato-sers-p08-population-membership-prescreen-v1",
+  "split_contract_sha256": "e2ce9cbdc16570ef6130e3bb8f86db9998e97f23d21ed3bf77870b0c650ff365",
+  "status": "pass_metadata_only_prescreen_not_regenerated_role_audit"
+}

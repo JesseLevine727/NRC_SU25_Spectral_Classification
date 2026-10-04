@@ -239,7 +239,11 @@
     "slot_plan_sha256": "c65e3eb505db1afddf093bf86d2cf643e85437f1f7256711abf0ff90bad59cc1",
     "four_control_operation_slots": 89632,
     "four_control_calibration_prediction_aliases": 1776,
-    "numerical_inference_lock_complete": false,
+    "numerical_inference_lock_complete": true,
+    "inference_protocol": "plan/P08_NORMALIZATION_INFERENCE.md",
+    "inference_registry": "plan/contracts/p08_normalization_inference.json",
+    "reference_support_audit": "results/p08_readiness/normalization_reference_support_audit.json",
+    "inference_implementation_accepted": false,
     "normalization_runtime_accepted": false,
     "execution_authorized": false,
     "resource_proposal": {
@@ -277,6 +281,19 @@
     "execution_sequence": ["U0_separate_smoke_approval", "U1_separate_universal_approval", "adaptive_separate_resource_gate", "robustness_and_exploratory_separate_budgets"],
     "remaining_numerical_specifications_locked": false,
     "resource_ceilings_approved": false,
+    "execution_authorized": false
+  },
+  "population_membership_prescreen": {
+    "status": "metadata_membership_and_pooled_eligibility_verified_roles_not_regenerated",
+    "protocol": "plan/P08_POPULATION_SUPPORT.md",
+    "audit": "results/p08_readiness/population_membership_prescreen.json",
+    "notes_clear_spectra": 500,
+    "mira1_excluded_spectra": 575,
+    "physical_masters_per_tier": 69,
+    "notes_clear_pooled_supported_domains": 11,
+    "mira1_excluded_pooled_supported_domains": 12,
+    "regenerated_roles_verified": false,
+    "exact_operation_counts_verified": false,
     "execution_authorized": false
   },
   "pending_later_branch_choices": [],
