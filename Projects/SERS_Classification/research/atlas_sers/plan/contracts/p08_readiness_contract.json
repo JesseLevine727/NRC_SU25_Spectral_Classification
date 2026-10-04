@@ -284,7 +284,7 @@
     "execution_authorized": false
   },
   "population_membership_prescreen": {
-    "status": "metadata_membership_and_pooled_eligibility_verified_roles_not_regenerated",
+    "status": "metadata_membership_pooled_eligibility_and_regenerated_roles_verified",
     "protocol": "plan/P08_POPULATION_SUPPORT.md",
     "audit": "results/p08_readiness/population_membership_prescreen.json",
     "notes_clear_spectra": 500,
@@ -292,7 +292,17 @@
     "physical_masters_per_tier": 69,
     "notes_clear_pooled_supported_domains": 11,
     "mira1_excluded_pooled_supported_domains": 12,
-    "regenerated_roles_verified": false,
+    "regenerated_roles_verified": true,
+    "role_audit": "results/p08_readiness/population_role_support_audit.json",
+    "calibration_scope": "inherited_classical_three_fold_master_cv",
+    "neural_guard_and_source_logit_calibration_readiness_verified": false,
+    "outer_assignments_match_historical": true,
+    "notes_clear_eligible_contexts": 220,
+    "notes_clear_selection_supported_contexts": 216,
+    "notes_clear_calibration_supported_contexts": 215,
+    "notes_clear_calibration_unavailable_contexts": 5,
+    "mira1_excluded_eligible_contexts": 240,
+    "mira1_excluded_selection_and_calibration_supported_contexts": 240,
     "exact_operation_counts_verified": false,
     "execution_authorized": false
   },

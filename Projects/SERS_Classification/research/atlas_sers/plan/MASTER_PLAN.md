@@ -913,6 +913,8 @@ Under P08-A07, repeat registered source-only model tuning and neural-recipe sele
 
 The [population prescreen](P08_POPULATION_SUPPORT.md) verifies 500 notes-clear spectra and 575 Mira-1-excluded spectra, both retaining all 69 masters. Their pooled eligible primary-domain counts are 11 and 12, respectively. This does not establish regenerated fold-level support or fit counts. Equal master membership can preserve outer assignments under the fixed splitter, while changed spectral rows still require new role hashes and source-only selection.
 
+The subsequent [regenerated-role audit](P08_POPULATION_SUPPORT.md#4-regenerated-role-support) reproduces the 345 historical master/repeat assignments for each population. Notes-clear has 220 eligible contexts, of which 216 support model selection and 215 support registered classical calibration; the five calibration-unavailable contexts remain recorded. All 240 eligible Mira-1-excluded contexts support both audited stages. These are metadata support counts, not model fits or predictions. Neural guard-role and source-logit calibration support require separate checks. Complete those checks and the population-specific operation ledger, inference rules and resource proposal before any scientific execution; do not repair sparse roles or inherit the primary recipe map.
+
 ## 17. Sub-plan P09 — narrow open-set evaluation
 
 P09 answers `RQ-S06` under `PP-U-MIN`. Preprocessing-policy selection is not reopened, and open-set results cannot choose an adaptive preprocessing rule.
