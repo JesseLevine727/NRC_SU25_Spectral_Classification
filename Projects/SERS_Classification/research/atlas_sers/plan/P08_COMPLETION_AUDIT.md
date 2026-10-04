@@ -8,6 +8,8 @@
 
 **Current implementation checkpoint:** main revision `1967656f46d927d8e64b3489eaf3fb3ec567c1f8` contains the default-denied outer launcher and its reviewed invented-data integration tests. The launcher is implemented; a scientific launch is neither approved nor validated by those tests. The remaining work below concerns unresolved scientific specifications, resource feasibility and separate execution authority.
 
+**Population inference checkpoint:** the [conditional specification](P08_POPULATION_INFERENCE.md) now fixes comparison support, effects, interactions, missingness and uncertainty rules for both panel alternatives. The identity-only audit finds 215 classical/common and 216 neural notes-clear contexts, with 208 and 212 contexts in their complete-four-fold sensitivities. Mira-1 exclusion retains all 240 contexts. The panel must be resolved before outcomes; numerical inference implementation and finite resource proposals remain separate gates. The remaining-inference statements below are superseded only to this conditional declaration extent.
+
 ## 1. Requirement coverage
 
 | Goal requirement | Current evidence | Remaining boundary |
@@ -64,3 +66,5 @@ The eventual P08 outcome checklist in Master Plan §27 requires policy effects, 
 The owner choices are resolved, but their dependent branch specifications and exact accounting remain incomplete. The reviewed U0 implementation does not complete those later requirements. Continue with the approved designs without changing the existing fallback rules or treating the resumed no-fit goal as a scientific permit.
 
 The population catalog supersedes the remaining operation-enumeration requirement in this checkpoint. It does not resolve the subsequently identified panel clarification, population inference or finite-resource requirements. Primary universal scope, the approved four later-branch choices and all numerical permissions are unchanged.
+
+The later population inference declaration closes the unspecified-comparison-rules gap conditionally for both panels. It fixes separate family sizes of 32 effects/32 interactions or 40 effects/48 interactions across both tiers, without changing the primary analyses. It does not resolve the panel clarification or validate numerical inference. The next safe work is the historical timing/storage basis and finite population proposals, followed by the remaining perturbation specifications and exact ledgers. No scientific launch follows from these metadata or declaration checks.

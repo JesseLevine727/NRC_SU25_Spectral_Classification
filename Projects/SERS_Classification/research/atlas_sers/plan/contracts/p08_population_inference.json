@@ -1,0 +1,477 @@
+{
+  "schema_version": "nato-sers-p08-population-inference-v1",
+  "protocol_version": "nato-sers-p08-population-inference-20261004-v1",
+  "date": "2026-10-04",
+  "status": "conditional_pre_outcome_specification_panel_clarification_and_implementation_review_pending",
+  "execution_authorized": false,
+  "authorized_model_fits": 0,
+  "authorized_new_predictions": 0,
+  "authorized_resampling_draws": 0,
+  "protocol": "plan/P08_POPULATION_INFERENCE.md",
+  "inherited_protocol": "plan/P08_STATISTICAL_PROTOCOL.md",
+  "inherited_protocol_sha256": "edf4b6e4ab303b2b5910b0285cd07e4ffdbaa782373f6d2e074faea07d8b2907",
+  "support_audit": "results/p08_readiness/population_inference_support_audit.json",
+  "support_audit_sha256": "4a7c2efec550e05c24b9d150059965ac4c3f2435fbc002e83613a84e332b8800",
+  "slot_audit_sha256": "858b1c8b91b58fb90935df35b58f758950a7ece0841e421948bebdec7cf7ed3f",
+  "owner_selection_decision": "P08-A07",
+  "panel_scope_clarification_pending": true,
+  "selected_panel": null,
+  "panels": {
+    "four_method": {
+      "methods": [
+        "C-RBF-SVM",
+        "C-RANDOM-FOREST",
+        "D0-M",
+        "P05-SELECTED"
+      ],
+      "classical_methods": [
+        "C-RBF-SVM",
+        "C-RANDOM-FOREST"
+      ],
+      "effect_family_size": 32,
+      "interaction_family_size": 32
+    },
+    "five_method": {
+      "methods": [
+        "C-RBF-SVM",
+        "C-RANDOM-FOREST",
+        "C-EXTRA-TREES",
+        "D0-M",
+        "P05-SELECTED"
+      ],
+      "classical_methods": [
+        "C-RBF-SVM",
+        "C-RANDOM-FOREST",
+        "C-EXTRA-TREES"
+      ],
+      "effect_family_size": 40,
+      "interaction_family_size": 48
+    }
+  },
+  "neural_methods": [
+    "D0-M",
+    "P05-SELECTED"
+  ],
+  "policies": [
+    "PP-U-MIN",
+    "PP-U-SG",
+    "PP-U-ARPLS"
+  ],
+  "reference_policy": "PP-U-MIN",
+  "nonminimal_policies": [
+    "PP-U-SG",
+    "PP-U-ARPLS"
+  ],
+  "endpoints": [
+    "M01",
+    "M06"
+  ],
+  "populations": [
+    {
+      "population_id": "notes_clear_500",
+      "population_plan_sha256": "133c6d60e3c5e0553b50f18749b9c7bc06ca17b1fea6cdddf02dfc853046c606",
+      "neural_support_result_sha256": "7ffd8936ecf594c75c770da48923b07cf8992651d01db30558f0d55980ce0969",
+      "private_primary_bridge_sha256": "cc5a12b32e906d31253cf7f3b78812c8752aee8c34dce44d698795e49c89c510",
+      "support_sets": {
+        "classical": {
+          "fixed": {
+            "contexts": 215,
+            "domains": 11,
+            "instruments": 10,
+            "physical_masters": 69,
+            "distinct_spectra": 449,
+            "spectrum_context_appearances": 2135,
+            "master_context_units": 1033,
+            "context_set_sha256": "e75ab84bfc273b93bb50a1272f0c903a90611a926d28e7aef61cc094b8c1729d",
+            "domain_sign_assignments": 2048,
+            "instrument_sign_assignments": 1024
+          },
+          "pooled": {
+            "contexts": 208,
+            "domains": 11,
+            "instruments": 10,
+            "physical_masters": 69,
+            "distinct_spectra": 449,
+            "spectrum_context_appearances": 2032,
+            "master_context_units": 993,
+            "context_set_sha256": "5086edfadefca756410575072cf854044c40a7cd4d6249f1de884ed791605fc9",
+            "domain_sign_assignments": 2048,
+            "instrument_sign_assignments": 1024
+          },
+          "complete_domain_repeat_groups": 52,
+          "incomplete_domain_repeat_groups": 3,
+          "complete_group_set_sha256": "52568098d2c1b491469b1d336871644abcdbf681da6434cdd47ba9693d564d31"
+        },
+        "common": {
+          "fixed": {
+            "contexts": 215,
+            "domains": 11,
+            "instruments": 10,
+            "physical_masters": 69,
+            "distinct_spectra": 449,
+            "spectrum_context_appearances": 2135,
+            "master_context_units": 1033,
+            "context_set_sha256": "e75ab84bfc273b93bb50a1272f0c903a90611a926d28e7aef61cc094b8c1729d",
+            "domain_sign_assignments": 2048,
+            "instrument_sign_assignments": 1024
+          },
+          "pooled": {
+            "contexts": 208,
+            "domains": 11,
+            "instruments": 10,
+            "physical_masters": 69,
+            "distinct_spectra": 449,
+            "spectrum_context_appearances": 2032,
+            "master_context_units": 993,
+            "context_set_sha256": "5086edfadefca756410575072cf854044c40a7cd4d6249f1de884ed791605fc9",
+            "domain_sign_assignments": 2048,
+            "instrument_sign_assignments": 1024
+          },
+          "complete_domain_repeat_groups": 52,
+          "incomplete_domain_repeat_groups": 3,
+          "complete_group_set_sha256": "52568098d2c1b491469b1d336871644abcdbf681da6434cdd47ba9693d564d31"
+        },
+        "eligible": {
+          "fixed": {
+            "contexts": 220,
+            "domains": 11,
+            "instruments": 10,
+            "physical_masters": 69,
+            "distinct_spectra": 449,
+            "spectrum_context_appearances": 2245,
+            "master_context_units": 1065,
+            "context_set_sha256": "d514014e79d5e553487303b1eb650991241fcb2a79b17428654de6ba8f934355",
+            "domain_sign_assignments": 2048,
+            "instrument_sign_assignments": 1024
+          },
+          "pooled": {
+            "contexts": 220,
+            "domains": 11,
+            "instruments": 10,
+            "physical_masters": 69,
+            "distinct_spectra": 449,
+            "spectrum_context_appearances": 2245,
+            "master_context_units": 1065,
+            "context_set_sha256": "d514014e79d5e553487303b1eb650991241fcb2a79b17428654de6ba8f934355",
+            "domain_sign_assignments": 2048,
+            "instrument_sign_assignments": 1024
+          },
+          "complete_domain_repeat_groups": 55,
+          "incomplete_domain_repeat_groups": 0,
+          "complete_group_set_sha256": "7435d80f1fbab6c313df409152e82f88735e60712f01e003231271d35506b5b6"
+        },
+        "neural": {
+          "fixed": {
+            "contexts": 216,
+            "domains": 11,
+            "instruments": 10,
+            "physical_masters": 69,
+            "distinct_spectra": 449,
+            "spectrum_context_appearances": 2152,
+            "master_context_units": 1040,
+            "context_set_sha256": "1257ecced3817262c85499c8090ca8cc1797bc505137c2f44d8f482695f5d554",
+            "domain_sign_assignments": 2048,
+            "instrument_sign_assignments": 1024
+          },
+          "pooled": {
+            "contexts": 212,
+            "domains": 11,
+            "instruments": 10,
+            "physical_masters": 69,
+            "distinct_spectra": 449,
+            "spectrum_context_appearances": 2103,
+            "master_context_units": 1017,
+            "context_set_sha256": "75d8f20cecf5d6c8bb4b2e0cc34883b9f351d32615d09192b700224816e7b4a9",
+            "domain_sign_assignments": 2048,
+            "instrument_sign_assignments": 1024
+          },
+          "complete_domain_repeat_groups": 53,
+          "incomplete_domain_repeat_groups": 2,
+          "complete_group_set_sha256": "ca8cddc5c000951aa649563098e8f23e27f45ecb922b1fbb709be7e0d80fd97c"
+        }
+      }
+    },
+    {
+      "population_id": "mira1_excluded_575",
+      "population_plan_sha256": "c37f2c510f1c3acc21af6f2edfefc2d5d2a3c411435f100b3eb92d9bdba24c89",
+      "neural_support_result_sha256": "148fdd351c4a0f8ac3c3c7dd15e4f690e3bf436a0834de65c7e680e8af9602f0",
+      "private_primary_bridge_sha256": "8441af7a8aef157909922c11a9dc949a5388ac1bcd8889e235abd275b3f37642",
+      "support_sets": {
+        "classical": {
+          "fixed": {
+            "contexts": 240,
+            "domains": 12,
+            "instruments": 9,
+            "physical_masters": 69,
+            "distinct_spectra": 534,
+            "spectrum_context_appearances": 2670,
+            "master_context_units": 1225,
+            "context_set_sha256": "9f267636a2247c29b7d89393149dd6ef4268454ef3e320e64c34d7c044eced3c",
+            "domain_sign_assignments": 4096,
+            "instrument_sign_assignments": 512
+          },
+          "pooled": {
+            "contexts": 240,
+            "domains": 12,
+            "instruments": 9,
+            "physical_masters": 69,
+            "distinct_spectra": 534,
+            "spectrum_context_appearances": 2670,
+            "master_context_units": 1225,
+            "context_set_sha256": "9f267636a2247c29b7d89393149dd6ef4268454ef3e320e64c34d7c044eced3c",
+            "domain_sign_assignments": 4096,
+            "instrument_sign_assignments": 512
+          },
+          "complete_domain_repeat_groups": 60,
+          "incomplete_domain_repeat_groups": 0,
+          "complete_group_set_sha256": "106ed53b76bb194095cf98ad9c14052875efdf31379ae118578912f486cccaa5"
+        },
+        "common": {
+          "fixed": {
+            "contexts": 240,
+            "domains": 12,
+            "instruments": 9,
+            "physical_masters": 69,
+            "distinct_spectra": 534,
+            "spectrum_context_appearances": 2670,
+            "master_context_units": 1225,
+            "context_set_sha256": "9f267636a2247c29b7d89393149dd6ef4268454ef3e320e64c34d7c044eced3c",
+            "domain_sign_assignments": 4096,
+            "instrument_sign_assignments": 512
+          },
+          "pooled": {
+            "contexts": 240,
+            "domains": 12,
+            "instruments": 9,
+            "physical_masters": 69,
+            "distinct_spectra": 534,
+            "spectrum_context_appearances": 2670,
+            "master_context_units": 1225,
+            "context_set_sha256": "9f267636a2247c29b7d89393149dd6ef4268454ef3e320e64c34d7c044eced3c",
+            "domain_sign_assignments": 4096,
+            "instrument_sign_assignments": 512
+          },
+          "complete_domain_repeat_groups": 60,
+          "incomplete_domain_repeat_groups": 0,
+          "complete_group_set_sha256": "106ed53b76bb194095cf98ad9c14052875efdf31379ae118578912f486cccaa5"
+        },
+        "eligible": {
+          "fixed": {
+            "contexts": 240,
+            "domains": 12,
+            "instruments": 9,
+            "physical_masters": 69,
+            "distinct_spectra": 534,
+            "spectrum_context_appearances": 2670,
+            "master_context_units": 1225,
+            "context_set_sha256": "9f267636a2247c29b7d89393149dd6ef4268454ef3e320e64c34d7c044eced3c",
+            "domain_sign_assignments": 4096,
+            "instrument_sign_assignments": 512
+          },
+          "pooled": {
+            "contexts": 240,
+            "domains": 12,
+            "instruments": 9,
+            "physical_masters": 69,
+            "distinct_spectra": 534,
+            "spectrum_context_appearances": 2670,
+            "master_context_units": 1225,
+            "context_set_sha256": "9f267636a2247c29b7d89393149dd6ef4268454ef3e320e64c34d7c044eced3c",
+            "domain_sign_assignments": 4096,
+            "instrument_sign_assignments": 512
+          },
+          "complete_domain_repeat_groups": 60,
+          "incomplete_domain_repeat_groups": 0,
+          "complete_group_set_sha256": "106ed53b76bb194095cf98ad9c14052875efdf31379ae118578912f486cccaa5"
+        },
+        "neural": {
+          "fixed": {
+            "contexts": 240,
+            "domains": 12,
+            "instruments": 9,
+            "physical_masters": 69,
+            "distinct_spectra": 534,
+            "spectrum_context_appearances": 2670,
+            "master_context_units": 1225,
+            "context_set_sha256": "9f267636a2247c29b7d89393149dd6ef4268454ef3e320e64c34d7c044eced3c",
+            "domain_sign_assignments": 4096,
+            "instrument_sign_assignments": 512
+          },
+          "pooled": {
+            "contexts": 240,
+            "domains": 12,
+            "instruments": 9,
+            "physical_masters": 69,
+            "distinct_spectra": 534,
+            "spectrum_context_appearances": 2670,
+            "master_context_units": 1225,
+            "context_set_sha256": "9f267636a2247c29b7d89393149dd6ef4268454ef3e320e64c34d7c044eced3c",
+            "domain_sign_assignments": 4096,
+            "instrument_sign_assignments": 512
+          },
+          "complete_domain_repeat_groups": 60,
+          "incomplete_domain_repeat_groups": 0,
+          "complete_group_set_sha256": "106ed53b76bb194095cf98ad9c14052875efdf31379ae118578912f486cccaa5"
+        }
+      }
+    }
+  ],
+  "source_selection": {
+    "fresh_population_MIN_neural_recipe_selection": true,
+    "copy_primary_recipe_mapping": false,
+    "recipe_fixed_across_population_policies": true,
+    "source_only_classical_grid_retuned_per_policy": true,
+    "primary_or_population_held_outcomes_used_for_selection": false,
+    "primary_MIN_models_reused": false,
+    "structural_ordinary_fallback_requires_valid_selection_readiness": true,
+    "unknown_or_failed_selection_is_fallback": false,
+    "neural_source_calibration_uses_inherited_units_only": true
+  },
+  "contrasts": {
+    "effect_axes": [
+      "population_id",
+      "method",
+      "nonminimal_policy",
+      "endpoint"
+    ],
+    "effect_id_template": "POP-E/{population_id}/{method}/{nonminimal_policy}/{endpoint}",
+    "effect_direction": "same_population_policy_minus_MIN",
+    "classical_effect_support": "classical.fixed",
+    "neural_effect_support": "neural.fixed",
+    "interaction_axes": [
+      "population_id",
+      "neural_method",
+      "classical_method",
+      "nonminimal_policy",
+      "endpoint"
+    ],
+    "interaction_id_template": "POP-I/{population_id}/{neural_method}/{classical_method}/{nonminimal_policy}/{endpoint}",
+    "interaction_direction": "neural_policy_effect_minus_classical_policy_effect",
+    "interaction_support": "common.fixed",
+    "interaction_recompute_all_four_cells_on_common_support": true,
+    "subtract_unmatched_method_means": false,
+    "point_estimator": "equal_original_present_classes_then_equal_fixed_contexts_within_domain_then_equal_domains",
+    "paired_absolute_method_comparisons_use_common_support": true
+  },
+  "pooled_sensitivity": {
+    "enabled": true,
+    "require_complete_four_folds": true,
+    "source": "same_method_or_common_support_pooled_set",
+    "within_domain_repeat_average_then_equal_retained_repeats_then_equal_domains": true,
+    "pool_across_repeats": false,
+    "changes_class_weighting_and_may_change_support": true,
+    "additional_hypothesis_family": false
+  },
+  "multiplicity": {
+    "procedure": "Holm",
+    "scope": "both_population_tiers_together_within_selected_panel",
+    "families": [
+      "filtered_population_effects",
+      "filtered_population_interactions"
+    ],
+    "separate_sign_sensitivities": [
+      "domain",
+      "instrument_identity"
+    ],
+    "remove_structural_duplicates": false,
+    "unavailable_adjustment_bookkeeping_p": 1,
+    "unavailable_estimate_and_raw_p": null,
+    "primary_family_sizes_changed": false,
+    "panel_selection_required_before_new_outcomes": true,
+    "choose_panel_from_outcomes": false,
+    "additional_complete_case_p_values_fill_registered_slots": false
+  },
+  "weighted_uncertainty": {
+    "owner_amendment": "P08-A02",
+    "draws": 10000,
+    "distribution": "Exponential_mean_1",
+    "generator": "PCG64",
+    "master_seed": 2026093001,
+    "instrument_seed": 2026093002,
+    "share_existing_global_P08_weight_arrays": true,
+    "master_array_shape": [
+      10000,
+      69
+    ],
+    "instrument_array_shape": [
+      10000,
+      10
+    ],
+    "array_dtype": "float64",
+    "array_axes": [
+      "draw",
+      "lexicographically_sorted_identity"
+    ],
+    "subset_strategy": "index_global_sorted_identities_no_redraw",
+    "factors": [
+      "master_and_instrument",
+      "master_only",
+      "instrument_only"
+    ],
+    "maximum_batch_size": 128,
+    "unit_weight_absolute_tolerance": 1e-12,
+    "quantiles": [
+      0.025,
+      0.975
+    ],
+    "quantile_method": "linear",
+    "intervals_simultaneous": false,
+    "includes_retraining_uncertainty": false,
+    "includes_source_selection_uncertainty": false,
+    "includes_support_or_missingness_uncertainty": false,
+    "bca_available": false
+  },
+  "hierarchical_feasibility": {
+    "draws": 10000,
+    "generator": "PCG64",
+    "seed": 2026093003,
+    "reset_per_contrast_endpoint": true,
+    "draw_order": "inherited_P06P11_section_4",
+    "empty_original_context_class_rule": "undefined_draw_no_drop_no_retry",
+    "unconditional_interval_requires_all_draws_defined": true
+  },
+  "sign_sensitivities": {
+    "statistic": "absolute_equal_domain_effect_two_sided",
+    "enumeration": "exhaustive_including_observed",
+    "equality_tolerance": 1e-12,
+    "instrument_sign_shared_across_stations": true,
+    "assignment_counts_source": "each_population_and_support_definition",
+    "randomized_treatment_interpretation": false
+  },
+  "missingness": {
+    "support_fixed_before_new_outcomes": true,
+    "fixed_support_contrast_requires_every_registered_cell_and_row": true,
+    "new_missing_cell_rule": "fixed_support_contrast_unavailable",
+    "average_incomplete_seeds": false,
+    "primary_selected_classical_eight_missing_contexts_do_not_define_new_population_support": true,
+    "repair_primary_missing_endpoints": false,
+    "complete_case_sensitivity_separately_labelled": true,
+    "complete_case_cross_policy_comparison_requires_common_MIN_SG_ARPLS_intersection": true,
+    "metadata_unsupported_contexts_retained_in_availability_report": true,
+    "missingness_assumed_random": false
+  },
+  "cross_population": {
+    "comparison": "descriptive_matched_test_subset_only",
+    "pair_by": [
+      "domain",
+      "outer_repeat",
+      "outer_fold"
+    ],
+    "primary_predictions_restricted_to_exact_filtered_test_uids": true,
+    "M06_recomputed_from_same_retained_views": true,
+    "requires_complete_content_validated_primary_and_filtered_predictions": true,
+    "no_new_fit_or_prediction_jobs_added": true,
+    "adds_inference_family": false,
+    "additional_p_values_or_intervals": false,
+    "whole_population_mean_difference_is_matched_filter_effect": false,
+    "selection_and_source_information_may_change": true,
+    "causal_clean_chemistry_claim": false
+  },
+  "figure_id": "P08-F11",
+  "prior_minimal_benchmark_outcomes_seen": true,
+  "new_primary_hypothesis": false,
+  "original_G4_pass_implied": false,
+  "inference_implementation_accepted": false,
+  "population_runtime_accepted": false,
+  "resource_proposal_approved": false
+}
