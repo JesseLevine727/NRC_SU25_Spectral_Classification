@@ -1,0 +1,173 @@
+{
+  "audit_script_sha256": "095dbfffcd53e6d86fbf197575b12cfefe36d5d47365f52f14ee748e8db4c154",
+  "authenticated_input_files": 22,
+  "context_count": 260,
+  "decision_id": "P08-A06",
+  "execution_authorized": false,
+  "historical_missing_endpoints_repaired": false,
+  "historical_reference_available_contexts": 252,
+  "historical_reference_missing_contexts": 8,
+  "input_bytes_unchanged": true,
+  "limits": "Hash and saved-role reconciliation is not runtime validation, a new independent physical-master audit, complete resource approval or permission to fit. Dynamic candidates and failures resolve only in separately authorized execution. Historical paired contrasts have at most 252 contexts.",
+  "master_calibration_role_matches": 396,
+  "model_specification_sha256": {
+    "C-EXTRA-TREES": "0b0e87045266fc15e90cf717ede1c0417e6ac61212b100945f6042770304e443",
+    "C-LOGREG-EN": "8a92e97f237be1666fe928367e0590a80a8ba4c0999ce77770b81c7fea5a707d",
+    "C-NEAREST-CENTROID": "335245197c60b37f168673f85c8afeaaaa44a0f069dc667e32befbfe2a1a8761",
+    "C-PCA-LDA": "276890ad2e8e90626c6d2bce25c8503c35cf500d996fac3504616299a45a634d",
+    "C-PLS-DA": "0224e30109f52ae7d4a3d75ecf1ac76283aa282b7189625d706c142673746fea",
+    "C-RANDOM-FOREST": "6f3650de057c777606914c83669f2082cd3219c7d01e773cd708c72d7b8796a5",
+    "C-RBF-SVM": "004ad69fbef5e7bfee598ad92974a8389f356f299735bb0e9d4ef47304db5e1a",
+    "C-SPECTRAL-MATCH": "fd191bd5bfe6c9070535d9f909c460601c5c679dc94c0729e52709163c87afb5"
+  },
+  "new_control_contexts": 260,
+  "new_scientific_operations": 0,
+  "normalization_input_contracts_sha256": "81fd7b4a87b3fff63859393a3669ccbca2d3c07290badc446ebf5b0672958b3a",
+  "plan_sha256": "c65e3eb505db1afddf093bf86d2cf643e85437f1f7256711abf0ff90bad59cc1",
+  "planner_sha256": "dc5c55dd47b14e396a2502e1a0a876dd22daacd1e6bbf2e71f150a22a4cf8843",
+  "private_archive_bytes": 25552530,
+  "private_archive_sha256": "c6102192cf8a56d6112a843b0069848cb888bd5dfe62e33a6bb079bb40aba66e",
+  "private_input_bindings_sha256": "9ee38820304fa16fa3af7a042fc61ea77988bce35d27ac60e4835a9c0995f638",
+  "schema_version": "nato-sers-p08-n2-slot-ledger-audit-v1",
+  "scope": "Exact N2 metadata slot graph; frozen MIN-selected family, fresh within-family source-only tuning per control. No arrays rebuilt or numerical outcomes computed.",
+  "selected_family_context_counts": {
+    "C-EXTRA-TREES": 4,
+    "C-LOGREG-EN": 64,
+    "C-NEAREST-CENTROID": 13,
+    "C-PCA-LDA": 18,
+    "C-PLS-DA": 80,
+    "C-RANDOM-FOREST": 11,
+    "C-RBF-SVM": 12,
+    "C-SPECTRAL-MATCH": 58
+  },
+  "source_family_mapping_sha256": "09334215250e974b1354667ef1ff55755524c115af6d632283d590af6768a9b1",
+  "source_units_matched": 681,
+  "status": "pass_metadata_only",
+  "summary": {
+    "authorized_fit_slots": 0,
+    "by_policy": {
+      "PP-NORM-AREA": {
+        "calibration_prediction_aliases": 444,
+        "model_fit_slots": 10592,
+        "prediction_stage_counts": {
+          "calibration_validation_prediction": 426,
+          "held_prediction": 290,
+          "seed_ensemble_prediction": 260,
+          "source_validation_prediction": 9876
+        },
+        "scalar_calibrations": 260,
+        "stage_counts": {
+          "calibration_model_fit": 426,
+          "calibration_prediction_alias": 444,
+          "calibration_validation_prediction": 426,
+          "final_refit": 290,
+          "held_prediction": 290,
+          "scalar_calibration": 260,
+          "seed_ensemble_prediction": 260,
+          "select_hyperparameters": 260,
+          "source_fit": 9876,
+          "source_validation_prediction": 9876
+        },
+        "total_jobs": 22408
+      },
+      "PP-NORM-D1": {
+        "calibration_prediction_aliases": 444,
+        "model_fit_slots": 10592,
+        "prediction_stage_counts": {
+          "calibration_validation_prediction": 426,
+          "held_prediction": 290,
+          "seed_ensemble_prediction": 260,
+          "source_validation_prediction": 9876
+        },
+        "scalar_calibrations": 260,
+        "stage_counts": {
+          "calibration_model_fit": 426,
+          "calibration_prediction_alias": 444,
+          "calibration_validation_prediction": 426,
+          "final_refit": 290,
+          "held_prediction": 290,
+          "scalar_calibration": 260,
+          "seed_ensemble_prediction": 260,
+          "select_hyperparameters": 260,
+          "source_fit": 9876,
+          "source_validation_prediction": 9876
+        },
+        "total_jobs": 22408
+      },
+      "PP-NORM-SNV": {
+        "calibration_prediction_aliases": 444,
+        "model_fit_slots": 10592,
+        "prediction_stage_counts": {
+          "calibration_validation_prediction": 426,
+          "held_prediction": 290,
+          "seed_ensemble_prediction": 260,
+          "source_validation_prediction": 9876
+        },
+        "scalar_calibrations": 260,
+        "stage_counts": {
+          "calibration_model_fit": 426,
+          "calibration_prediction_alias": 444,
+          "calibration_validation_prediction": 426,
+          "final_refit": 290,
+          "held_prediction": 290,
+          "scalar_calibration": 260,
+          "seed_ensemble_prediction": 260,
+          "select_hyperparameters": 260,
+          "source_fit": 9876,
+          "source_validation_prediction": 9876
+        },
+        "total_jobs": 22408
+      },
+      "PP-NORM-VECTOR": {
+        "calibration_prediction_aliases": 444,
+        "model_fit_slots": 10592,
+        "prediction_stage_counts": {
+          "calibration_validation_prediction": 426,
+          "held_prediction": 290,
+          "seed_ensemble_prediction": 260,
+          "source_validation_prediction": 9876
+        },
+        "scalar_calibrations": 260,
+        "stage_counts": {
+          "calibration_model_fit": 426,
+          "calibration_prediction_alias": 444,
+          "calibration_validation_prediction": 426,
+          "final_refit": 290,
+          "held_prediction": 290,
+          "scalar_calibration": 260,
+          "seed_ensemble_prediction": 260,
+          "select_hyperparameters": 260,
+          "source_fit": 9876,
+          "source_validation_prediction": 9876
+        },
+        "total_jobs": 22408
+      }
+    },
+    "execution_authorized": false,
+    "historical_reference_unavailable_contexts": 8,
+    "totals": {
+      "calibration_prediction_aliases": 1776,
+      "model_fit_slots": 42368,
+      "prediction_stage_counts": {
+        "calibration_validation_prediction": 1704,
+        "held_prediction": 1160,
+        "seed_ensemble_prediction": 1040,
+        "source_validation_prediction": 39504
+      },
+      "scalar_calibrations": 1040,
+      "stage_counts": {
+        "calibration_model_fit": 1704,
+        "calibration_prediction_alias": 1776,
+        "calibration_validation_prediction": 1704,
+        "final_refit": 1160,
+        "held_prediction": 1160,
+        "scalar_calibration": 1040,
+        "seed_ensemble_prediction": 1040,
+        "select_hyperparameters": 1040,
+        "source_fit": 39504,
+        "source_validation_prediction": 39504
+      },
+      "total_jobs": 89632
+    }
+  }
+}

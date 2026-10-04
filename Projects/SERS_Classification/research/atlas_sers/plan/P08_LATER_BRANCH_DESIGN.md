@@ -2,6 +2,8 @@
 
 **Status:** no-fit design audit, not a numerical execution lock or permit.
 
+**Decisions approved, 2026-10-04:** [P08-A06–A09](P08_LATER_BRANCH_DECISIONS.md) select N2 fixed-family normalization controls, fresh source-only selection for regenerated tiers, perturbations before numerical preprocessing and constant endpoint extension for unsupported shift coordinates. The dated audits below retain their original pre-approval status. Their conditional counts are evidence for planning, not an execution permit or a complete numerical specification.
+
 This note separates the approved universal preprocessing comparison from the later controls in [Master Plan §16](MASTER_PLAN.md#16-sub-plan-p08--preprocessing-policy-factorial-and-robustness). It records arithmetic and metadata findings, not new classification results. The universal MIN/SG/arPLS comparison, the 54-context adaptive subset and the 206 complete MIN fallbacks are unchanged.
 
 ## 1. Normalization controls must remain distinct
@@ -26,7 +28,7 @@ The subsequent [frozen-input audit](../results/p08_readiness/normalization_input
 
 ## 2. A full classical selector is a substantial experiment
 
-The pending choice of a “classical champion” must be defined by source data, not by the best held-test score. Repeating the full historical selector means considering all nine families, not just the three classical families in the universal panel. The [metadata-only accounting audit](../results/p08_readiness/later_classical_selector_bounds.json) authenticates the original candidate registry and fit manifest.
+The “classical champion” is defined by source data, not by the best held-test score. P08-A06 retains each context's recorded MIN-selected family and retunes within it. The unselected full historical selector would consider all nine families, not just the three classical families in the universal panel. The [metadata-only accounting audit](../results/p08_readiness/later_classical_selector_bounds.json) authenticates the original candidate registry and fit manifest.
 
 | Family | Hyperparameter candidates | Candidate–seed pairs |
 |---|---:|---:|
@@ -69,7 +71,7 @@ After exact fit/validation-role matching, this alternative adds **426 fresh cali
 
 Neither choice repairs the historical **252/260** final-result coverage. Even complete new-control results would pair with at most 252 historical C-SELECTED contexts under the current evidence lock. A complete family choice is not a complete fitted/calibrated test result. If every candidate within a frozen family fails for a new control, the context remains unavailable; the implementation may not silently switch families or substitute MIN.
 
-The audited alternative's historical source-fitting records contain **9,488 complete attempts**, **320 convergence failures** and **68 rank failures**. All recorded costs are retained. Four copies of their **7,988.616-second** sum give **8.88 sequential CPU-hours** for source fitting alone, not a measured control runtime or completion guarantee. The owner has been asked to choose between the broader full-selector procedure and this narrower fixed-family sensitivity using these audited costs. No answer or training permission is inferred.
+The audited alternative's historical source-fitting records contain **9,488 complete attempts**, **320 convergence failures** and **68 rank failures**. All recorded costs are retained. Four copies of their **7,988.616-second** sum give **8.88 sequential CPU-hours** for source fitting alone, not a measured control runtime or completion guarantee. The owner selected this narrower fixed-family sensitivity under P08-A06 using the documented trade-off. The subsequent [N2 slot audit](../results/p08_readiness/normalization_slot_ledger_audit.json) verifies exact metadata dependencies; no training permission follows.
 
 ## 3. Rigid shifts need an explicit edge rule
 
@@ -84,11 +86,11 @@ Use the stated convention `y_shift(v) = y(v − delta)`. The model's primary inp
 
 These counts concern the registered arrays, not a claim that every original instrument lacks all lower-wavenumber measurements. The synthetic tests check only coordinate membership. They implement no shift, padding or extrapolation.
 
-The later perturbation lock must state how unsupported edges are handled. Endpoint extension would be a declared synthetic boundary assumption, not recovered measured signal. Returning to native measurements would require a separately governed input definition. Dropping channels would change the model input. None of these choices follows automatically from the approved shift range, and none has been implemented or approved here.
+The later perturbation lock must state how unsupported edges are handled. P08-A09 explicitly approves endpoint extension as a synthetic boundary assumption, not recovered measured signal. Returning to native measurements would require a separately governed input definition. Dropping channels would change the model input. The edge rule was approved separately from the shift range; no numerical shift has been executed here.
 
-The owner has now been asked whether to approve constant endpoint extension for this labelled synthetic stress test only. The recommendation retains the registered model width and leaves measured-data preprocessing unchanged. It remains pending, and cannot be described as measured spectral support or a physically validated instrument error model.
+The owner approved constant endpoint extension for this labelled synthetic stress test only. It retains the registered model width and leaves measured-data preprocessing unchanged. It cannot be described as measured spectral support or a physically validated instrument error model. Use available wider-support values before extending an endpoint; do not create unsupported edges by prematurely narrowing the input.
 
-Perturbation placement also remains pending. Corruption before the numerical preprocessing stages asks whether preprocessing protects identification; corruption after those stages asks about classifier-input sensitivity. The frozen common-support input is already interpolated, so “before preprocessing” must identify its starting array rather than imply a native irregular-axis experiment. The two questions cannot be silently interchanged.
+P08-A08 selects corruption before the numerical preprocessing stages to ask whether preprocessing protects identification. Corruption after those stages would instead ask about classifier-input sensitivity and is not selected. The frozen common-support input is already interpolated, so “before preprocessing” identifies that starting array rather than a native irregular-axis experiment. The two questions cannot be silently interchanged.
 
 ## 4. Range and population controls need separate role accounting
 
@@ -104,10 +106,10 @@ The [metadata-only range ledger](../results/p08_readiness/range_ledger_audit.jso
 
 Population controls regenerate master-separated splits for the notes-clear and Mira-1-excluded tiers. The 260 primary contexts and their source-role counts cannot simply be copied to the regenerated populations. Support must be recomputed from membership metadata, with newly unsupported domains reported. Reusing a context label is not proof that its fitting, selection or test rows match.
 
-The owner has been asked whether these regenerated tiers should repeat source-only model selection and then freeze neural recipe identity, or use a separately specified fixed-model comparison. No answer is inferred here. Neither a previously inspected held score nor the primary context's recipe may select a model for a changed source population by convenience.
+P08-A07 approves repeating registered source-only model selection within the regenerated tiers and then freezing each new context's neural recipe across preprocessing. The fixed-model alternative is not selected. Neither a previously inspected held score nor the primary context's recipe may select a model for a changed source population by convenience.
 
 ## 5. Next decision boundary
 
-The four submitted decisions remain open: full versus fixed-family normalization selection, source selection for regenerated populations, perturbation placement, and constant endpoint extension for synthetic shifts. Once those choices are resolved, a later perturbation specification must also lock discrete severity grids, impulse magnitude, random replicates, source-noise estimation, zero-dose parity and statistical contrast families. These details must be locked before new outcomes, not filled in after viewing degradation curves.
+The four submitted decisions are resolved by P08-A06–A09: fixed-family normalization selection, fresh source selection for regenerated populations, perturbations before the numerical pipeline, and constant endpoint extension for synthetic shifts. A later perturbation specification must still lock discrete severity grids, impulse magnitude, random replicates, source-noise estimation, zero-dose parity and statistical contrast families. These details must be locked before new outcomes, not filled in after viewing degradation curves.
 
 The universal comparison remains the first proposed numerical stage. Later-branch uncertainty does not authorize narrowing their scientific scope or launching them. The [resource proposal](P08_RESOURCE_PROPOSAL.md) and [readiness record](P08_READINESS.md) retain the separate runtime-review and execution-approval gates. Native TikZ and offline HTML figures remain planned outputs; no new P08 outcome plot exists.

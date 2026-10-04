@@ -2,6 +2,8 @@
 
 **Date:** 2026-09-30. **Status:** no-fit readiness work in progress; not an execution permit.
 
+**Owner update, 2026-10-04:** [P08-A06–A09](P08_LATER_BRANCH_DECISIONS.md) resolve the four later-branch choices and resume the original readiness goal. N2 normalization scope, fresh source-only population-tier selection, pre-pipeline disturbances and constant shift-edge extension are approved as planning decisions. Historical pending-choice checkpoints below are superseded; numerical branch specifications and exact ledgers remain incomplete. No resource ceiling or scientific operation is approved.
+
 P08 tests whether defined preprocessing pipelines change chemical identification on unseen instruments and physical samples. Minimal min–max scaling remains the reference, not an established optimum. This task follows [Master Plan §16](MASTER_PLAN.md#16-sub-plan-p08--preprocessing-policy-factorial-and-robustness) and the [handoff](P08_HANDOFF.md). It does not authorize training, calibration, new predictions, resampling, perturbations or reconstruction of preprocessing arrays.
 
 ## 1. Authenticated inputs
@@ -353,3 +355,11 @@ The [default-denied launcher](P08_SOURCE_STAGE_MAPPING.md#13-default-denied-oute
 The eight entry-point tests passed in **7.92 seconds**, with warnings treated as errors in the parent test process. Resource and CUDA observations were fixtures; no GPU kernel or real SERS training occurred. Separate accounting and fault tests cover control-file charges, setup time, altered files, bounded inventories, resource limits and exception preservation. The [review](delegation/P08_REVIEW.md#outer-launcher-and-accounting-review) records corrections and release checks.
 
 This evidence does not complete the original readiness goal. The **54** adaptive contexts and **206** complete MIN fallbacks remain fixed, all proposed budgets remain unapproved, and later-branch decisions remain open. No new chemical-identification result, preprocessing winner, held prediction, QC route or resampling result is reported here.
+
+## 38. Approved later branches and exact normalization accounting
+
+The owner approved [P08-A06–A09](P08_LATER_BRANCH_DECISIONS.md) on 2026-10-04 and resumed this no-fit goal. These decisions supersede the pending-choice checkpoints above. N2 retains the saved MIN-selected classical family in each context and retunes its registered hyperparameters separately for the four normalization controls. Regenerated population tiers repeat source-only model selection. Synthetic disturbances precede numerical preprocessing; unsupported shift coordinates use labelled endpoint extension.
+
+DeepSeek implemented the metadata-only N2 planner; **45 synthetic tests passed** after supervisor review. A separate [actual-record audit](../results/p08_readiness/normalization_slot_ledger_audit.json) enumerated **89,632 operation slots**, including **42,368 model fits** and **1,040 scalar calibrations**, across **260 contexts**. All **681** source units matched saved source roles. The eight missing historical endpoints remain missing, limiting paired historical-reference coverage to at most **252 contexts**. No new model was fitted or selected.
+
+This closes N2's exact metadata-accounting gap, not its inference specification, numerical runtime acceptance or resource approval. Population/perturbation specifications and ledgers remain unfinished. The primary recipe map, **54/206** adaptive/fallback rule, universal-first order and zero scientific execution authority are unchanged.

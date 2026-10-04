@@ -835,6 +835,8 @@ Use `k={1,2,3,5}` labelled target masters per class. All draws are master-strati
 
 ## 16. Sub-plan P08 — preprocessing-policy factorial and robustness
 
+**Later-branch approval, 2026-10-04:** [P08-A06–A09](P08_LATER_BRANCH_DECISIONS.md) select N2 fixed-family normalization controls, fresh source-only selection for regenerated populations, test disturbances before numerical preprocessing, and constant endpoint extension for unavailable synthetic-shift coordinates. The owner resumed the no-fit readiness goal. These decisions do not approve any resource ceiling or scientific execution; universal preprocessing remains first and adaptive work retains a separate resource gate.
+
 **Readiness update, 2026-09-30:** the owner approved the [P08 readiness decisions](P08_READINESS.md) and their [separate contract](contracts/p08_readiness_contract.json): D0 maps explicitly to D0-M, the acquisition-aware procedure uses the frozen context-local P05 recipe, and Extra Trees joins the universal panel. The scoring amendment retains equal-context/equal-domain scores, adds pooled-four-fold sensitivity and uses documented support-preserving weighted uncertainty with the original hierarchy retained as feasibility analysis. Unsupported held families use the complete minimal-trained/minimal-input pipeline. All current held-family contexts require that fallback; family-specific transfer is untestable here. Original contracts and the historical wording below remain intact. Numerical details, exact ledgers, finite resources and execution guards are still being locked; no new scientific run is authorized.
 
 P08 begins only after the `RQ-P01` pipelines and conclusions are frozen. It answers `RQ-S01`, `RQ-S02`, `RQ-S03`, and the perturbation/quality part of `RQ-S05`. The same policy-development panel, gate library, support rules, split UIDs, and action arrays are used for all models.
@@ -882,7 +884,7 @@ The fixed model panel is crossed with every permissible policy cell. For policy 
 
 ### 16.5 Prespecified input perturbations
 
-**No-fit design audit:** the [later-branch note](P08_LATER_BRANCH_DESIGN.md) records shift-edge support, normalization invariants and conditional classical-selector costs. It does not change the ranges below or authorize computation. Perturbation placement and boundary handling still require an explicit numerical lock; approved ranges alone do not define missing-edge values.
+**No-fit design audit:** the [later-branch note](P08_LATER_BRANCH_DESIGN.md) records shift-edge support, normalization invariants and conditional classical-selector costs. It does not change the ranges below or authorize computation. P08-A08–A09 now approve placement before numerical preprocessing and constant endpoint extension outside the stored common-support input. The remaining severity, randomization and inference details still require an explicit numerical lock.
 
 Apply only at test time, without retraining:
 
@@ -899,11 +901,13 @@ Robustness area under the degradation curve is reported. Perturbations are not c
 
 `R_SNV_400_1800`, `R_VECTOR_400_1800`, and `R_AREA_400_1800` are fixed exploratory controls for the classical champion only unless compute is expanded before any outcome. `R_D1_400_1800` remains a destructive control and cannot be promoted from clustering or a favorable isolated test domain.
 
-**Selector decision pending:** the [audited alternatives](P08_LATER_BRANCH_DESIGN.md#2-a-full-classical-selector-is-a-substantial-experiment) distinguish full source-only family reselection from retaining each context's MIN-selected family and retuning its hyperparameters. Their four-control ceilings are 525,288 and 42,368 model fits, respectively. The latter is a narrower sensitivity, not an approved substitute. All 260 source-family choices are recorded, but eight historical final endpoints remain missing under either choice. No control has been trained or selected from held results.
+**Selector decision P08-A06:** the [audited alternatives](P08_LATER_BRANCH_DESIGN.md#2-a-full-classical-selector-is-a-substantial-experiment) distinguish full source-only family reselection from retaining each context's MIN-selected family and retuning its hyperparameters. Their four-control ceilings are 525,288 and 42,368 model fits, respectively. The owner approved the latter, N2, as a narrower conditional sensitivity; N1 is not selected. All 260 source-family choices are recorded, but eight historical final endpoints remain missing under either choice. No control has been trained or selected from held results, and scope approval is not budget or execution approval.
 
 ### 16.7 Population branches
 
 Repeat primary comparisons on notes-clear and Mira-1-excluded tiers using regenerated master-group splits. Preserve the same eligibility logic; report domains that become unsupported.
+
+Under P08-A07, repeat registered source-only model tuning and neural-recipe selection within each regenerated source partition, then freeze that context's neural recipe across preprocessing. Do not transplant the primary recipe map into changed splits. Exact role/support accounting and finite execution budgets remain required.
 
 ## 17. Sub-plan P09 — narrow open-set evaluation
 

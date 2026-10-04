@@ -2,6 +2,8 @@
 
 **Date:** 2026-09-30. **Status:** proposed limits, not an execution permit. Current authorized scientific operations remain zero. Previous P03–P05 permissions do not transfer to P08.
 
+**Scope update, 2026-10-04:** the owner selected the N2 fixed-family normalization design under [P08-A06](P08_LATER_BRANCH_DECISIONS.md), with the other three later-branch decisions approved concurrently. N1 is retained below as the unselected historical alternative. Every resource ceiling in this document, including N2's, remains proposed and unapproved. The universal-first sequence and separate adaptive-resource gate are unchanged.
+
 Universal preprocessing is the first executable research stage to prepare. It directly tests whether the frozen SG or arPLS pipeline changes unseen-instrument identification relative to MIN. QC-adaptive selection is a separate, substantially larger stage; its feasibility does not need to delay this universal comparison once the remaining universal readiness checks pass.
 
 ## 1. Evidence used for the estimate
@@ -74,7 +76,7 @@ Range, normalization, derivative-control, population-tier and test-time perturba
 
 ### Conditional N1 proposal: full-selector normalization controls
 
-This separate proposal applies only if the owner chooses to repeat the full source-only classical selector for SNV, vector and area normalization and the derivative control. It does not settle that pending choice. The [conditional slot audit](../results/p08_readiness/later_classical_selector_bounds.json) gives a ceiling of **525,288 model fits and 1,040 scalar calibrations** across those four controls, after authenticated within-representation calibration-role reuse.
+This historical proposal would apply to repeating the full source-only classical selector for SNV, vector and area normalization and the derivative control. The owner instead selected N2 under P08-A06; N1 is not part of the approved branch design. The [conditional slot audit](../results/p08_readiness/later_classical_selector_bounds.json) gives a ceiling of **525,288 model fits and 1,040 scalar calibrations** across those four controls, after authenticated within-representation calibration-role reuse.
 
 | Proposed stage | Active wall time | New private artifacts | Process-tree RAM | Allocated GPU memory | CPU workers |
 |---|---:|---:|---:|---:|---:|
@@ -88,7 +90,7 @@ N1 requires its own approval, an exact operation ledger and a fresh storage chec
 
 ## 6. Current decision boundary
 
-The first possible execution request is **U0 only**, after the no-fit package and runtime review gates close. It is not being launched by publishing this proposal. Historical operation-to-artifact evidence mapping and the metadata-only adaptive catalog are complete, as recorded in the [readiness audit](P08_READINESS.md). Later-branch choices and budgets, resource feasibility, live admission/restart integration and the final reviewed release remain open. No planning approval is treated as a training permit.
+The first possible execution request is **U0 only**, after the no-fit package and runtime review gates close. It is not being launched by publishing this proposal. Historical operation-to-artifact evidence mapping and the metadata-only adaptive catalog are complete, as recorded in the [readiness audit](P08_READINESS.md). P08-A06–A09 resolve the later-branch choices; their numerical specifications, exact ledgers and budgets remain incomplete. Real resource checks and scientific runtime acceptance remain separate from the published synthetic launcher tests. No planning approval is treated as a training permit.
 
 ## 7. Resource snapshots and cumulative attempt accounting
 
@@ -221,16 +223,18 @@ A fresh filesystem check reported **8,824,156,160 bytes available**, approximate
 
 ## 13. Conditional N2 proposal: frozen MIN-selected families
 
-N2 applies only if the owner chooses to keep each context's recorded MIN-selected classical family and retune that family's hyperparameters for each normalization control. It is an alternative to the full-selector N1 interpretation, not an additional experiment or an approved narrowing of the question. Both retain SNV, vector, area and the derivative destructive control; neither permits held-test model selection or repairs the eight missing historical final results.
+The owner selected N2's scientific design on 2026-10-04: keep each context's recorded MIN-selected classical family and retune that family's hyperparameters for each normalization control. It replaces the full-selector N1 interpretation for this exploratory branch; its resource proposal below is not approved. Both designs retain SNV, vector, area and the derivative destructive control; neither permits held-test model selection or repairs the eight missing historical final results.
 
-The [authenticated accounting](../results/p08_readiness/fixed_family_alternative_audit.json) gives **42,368 model-fit slots** and **1,040 scalar temperatures** across these four controls. Per control, **9,876 source fits**, **426 fresh calibration fits** and **290 final fits** account for every fitting slot after **444 exact-role calibration aliases**. A future ledger must still enumerate prediction, selection, calibration and artifact dependencies and bind each control's authenticated numerical input. These totals are conditional ceilings, not that executable ledger.
+The [authenticated accounting](../results/p08_readiness/fixed_family_alternative_audit.json) gives **42,368 model-fit slots** and **1,040 scalar temperatures** across these four controls. Per control, **9,876 source fits**, **426 fresh calibration fits** and **290 final fits** account for every fitting slot after **444 exact-role calibration aliases**. The subsequent [N2 slot ledger](../results/p08_readiness/normalization_slot_ledger_audit.json) enumerates **89,632 operations** with exact selection, calibration and prediction dependencies and binds the frozen input hashes. It is metadata planning evidence, not an accepted numerical runtime or an execution permit.
 
 | Proposed alternative | Active wall time | New private artifacts | Process-tree RAM | Allocated GPU memory | CPU fitting workers |
 |---|---:|---:|---:|---:|---:|
-| N2, only if fixed-family scope is chosen | 24 hours | 20 GiB | 24 GiB | 0 GiB | At most four single-thread workers |
+| N2, selected design; resources unapproved | 24 hours | 20 GiB | 24 GiB | 0 GiB | At most four single-thread workers |
 
 All failed and interrupted attempts consume their slots and time; there are no automatic retries. The same evidence-retention and **30-GiB reserve** rules apply. N2 requires at least **50 GiB free** initially, including the space occupied by earlier retained stages. Retain source records/predictions, selection and calibration states, and final estimators; do not save or delete evidence by convenience to meet a ceiling. N2 does not change the universal-first sequence or borrow an earlier permit.
 
-The relevant historical source durations sum to **7,988.616 seconds**; four copies give **8.88 sequential CPU-hours**, including the recorded costs of failed candidates. This excludes new-control changes, calibration, final fitting, predictions, persistence and scheduling. The 24-hour and 20-GiB limits are proposed operational bounds, not measured needs or promised completion. Scope selection, numerical/input locks, exact jobs, fresh capacity checks and a separate scientific permit remain required.
+The relevant historical source durations sum to **7,988.616 seconds**; four copies give **8.88 sequential CPU-hours**, including the recorded costs of failed candidates. This excludes new-control changes, calibration, final fitting, predictions, persistence and scheduling. The 24-hour and 20-GiB limits are proposed operational bounds, not measured needs or promised completion. Scope selection and the metadata ledger are resolved; the numerical inference lock, runtime acceptance, fresh capacity checks and a separate scientific permit remain required.
 
 **Subsequent capacity observation:** at **2026-10-03T00:05:39Z** (the evening of **2026-10-02** locally), the filesystem reported **57,421,008,896 bytes free**, approximately **53.5 GiB**. This clears the proposed initial U0 and conditional N2 storage thresholds at that instant, but not U1/N1, R1 or Q1. No cleanup was performed as part of this audit. The increased capacity is not reserved, does not approve N2, and does not authorize a launch or a change to the universal-first sequence.
+
+**Latest capacity observation:** at **2026-10-04T18:08:50Z**, the filesystem reported **210,259,017,728 bytes free**, approximately **195.8 GiB**. This meets the proposed initial storage thresholds for U0, U1, R1 and the selected N2 design individually. It remains below Q1's **430-GiB** initial requirement. The observation does not reserve space for concurrent or cumulative stages, approve any allowance, or resolve adaptive-stage storage. No cleanup was performed during this audit; capacity must be checked again at any authorized launch.

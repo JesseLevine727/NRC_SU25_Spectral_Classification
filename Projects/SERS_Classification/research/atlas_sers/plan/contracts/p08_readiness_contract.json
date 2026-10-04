@@ -18,7 +18,11 @@
     {"decision_id": "P08-A02", "status": "approved", "answer": "Approve the documented amendment", "scope": "Equal-context/equal-domain scoring; pooled-four-fold sensitivity; 10000-draw support-preserving weighted uncertainty; retain original hierarchical feasibility analysis; no automatic G4 or superiority claim."},
     {"decision_id": "P08-A03", "status": "approved", "answer": "Include Extra Trees and budget it explicitly", "scope": "Add Extra Trees to the universal-preprocessing panel with separate accounting; not a training permit."},
     {"decision_id": "P08-A04", "status": "approved", "answer": "Use the complete minimal-pipeline fallback", "scope": "Unsupported held families use both the minimal-trained estimator and minimal test representation. All 260 held contexts are baseline aliases after full hash verification; mixed-source-family training is a separate unapproved experiment."},
-    {"decision_id": "P08-A05", "status": "approved", "answer": "Approve the nested-support fallback (Recommended)", "scope": "QC-adaptive selection uses nested three-fold sample-separated estimator selection only where every registered source pseudo-domain fitting role retains at least three physical masters per class: 54 eligible contexts. The other 206 use the complete minimal pipeline: 132 lack pseudo-domain support and 74 lack nested class support. Report all 260 operationally and the 54 eligible contexts separately. Planning amendment only, not training permission."}
+    {"decision_id": "P08-A05", "status": "approved", "answer": "Approve the nested-support fallback (Recommended)", "scope": "QC-adaptive selection uses nested three-fold sample-separated estimator selection only where every registered source pseudo-domain fitting role retains at least three physical masters per class: 54 eligible contexts. The other 206 use the complete minimal pipeline: 132 lack pseudo-domain support and 74 lack nested class support. Report all 260 operationally and the 54 eligible contexts separately. Planning amendment only, not training permission."},
+    {"decision_id": "P08-A06", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Approve recommended N2 normalization scope: retain each context's MIN-source-selected classical family and retune/retrain within its registered grid for the four frozen controls. Conditional exploratory comparison, not full-family reselection; resource ceilings and execution remain unapproved."},
+    {"decision_id": "P08-A07", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Regenerate master-separated notes-clear and Mira-1-excluded roles; repeat registered source-only tuning and neural-recipe selection within each new source population, then freeze its recipe across preprocessing. No new grids, architectures or scientific execution."},
+    {"decision_id": "P08-A08", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Apply test-time synthetic disturbances to the stored common-support interpolated spectrum before the numerical preprocessing pipeline, using matched disturbances across methods. No native-raw simulation claim or numerical perturbation execution."},
+    {"decision_id": "P08-A09", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Use constant endpoint extension only where a prespecified synthetic shift requires unsupported coordinates; retain model width and label filled values as assumptions, not measured Raman signal. No input rebuild or scientific execution."}
   ],
   "universal_panel": ["C-RBF-SVM", "C-RANDOM-FOREST", "C-EXTRA-TREES", "D0-M", "P05-SELECTED"],
   "adaptive_panel_pending_execution_lock": ["C-RBF-SVM", "C-RANDOM-FOREST", "D0-M", "P05-SELECTED"],
@@ -214,12 +218,15 @@
     "invalid_rows": 0,
     "same_row_order_as_primary": true,
     "input_contracts_sha256": "81fd7b4a87b3fff63859393a3669ccbca2d3c07290badc446ebf5b0672958b3a",
-    "selector_choice_approved": false,
+    "selector_choice_approved": true,
+    "selected_selector_scope": "N2_frozen_MIN_source_selected_family_with_source_only_hyperparameter_retuning",
     "execution_authorized": false
   },
   "normalization_fixed_family_alternative": {
-    "status": "audited_unapproved_alternative_to_full_selector",
-    "approved": false,
+    "status": "approved_design_exact_metadata_operation_ledger_verified",
+    "approved": true,
+    "approval_scope": "scientific_design_only_not_resource_or_execution",
+    "decision_id": "P08-A06",
     "complete_minimal_source_family_choices": 260,
     "historical_final_contexts_available": 252,
     "historical_final_contexts_missing": 8,
@@ -228,6 +235,12 @@
     "four_control_model_fit_ceiling": 42368,
     "four_control_scalar_ceiling": 1040,
     "audit": "results/p08_readiness/fixed_family_alternative_audit.json",
+    "slot_ledger_audit": "results/p08_readiness/normalization_slot_ledger_audit.json",
+    "slot_plan_sha256": "c65e3eb505db1afddf093bf86d2cf643e85437f1f7256711abf0ff90bad59cc1",
+    "four_control_operation_slots": 89632,
+    "four_control_calibration_prediction_aliases": 1776,
+    "numerical_inference_lock_complete": false,
+    "normalization_runtime_accepted": false,
     "execution_authorized": false,
     "resource_proposal": {
       "stage_id": "N2",
@@ -244,15 +257,28 @@
     }
   },
   "latest_storage_observation": {
-    "date": "2026-10-02",
-    "observed_at_utc": "2026-10-03T00:05:39Z",
-    "free_bytes": 57421008896,
-    "previous_recorded_free_bytes": 8824156160,
+    "date": "2026-10-04",
+    "observed_at_utc": "2026-10-04T18:08:50Z",
+    "free_bytes": 210259017728,
+    "previous_recorded_free_bytes": 57421008896,
     "point_in_time_not_reserved": true,
-    "proposed_stages_initially_feasible": ["U0", "N2"],
+    "proposed_stages_initially_feasible": ["U0", "U1", "R1", "N2"],
     "scope_budget_or_execution_approval_implied": false,
     "cleanup_authorized": false
   },
-  "pending_later_branch_choices": ["normalization_classical_selector_scope", "regenerated_tier_source_selection_scope", "perturbation_before_or_after_preprocessing", "synthetic_rigid_shift_endpoint_extension"],
+  "later_branch_decisions": {
+    "approved_date": "2026-10-04",
+    "protocol": "plan/P08_LATER_BRANCH_DECISIONS.md",
+    "normalization": "N2_fixed_MIN_selected_family_source_retune",
+    "regenerated_tiers": "fresh_registered_source_only_selection",
+    "perturbation_placement": "stored_common_support_interpolated_input_before_numerical_preprocessing",
+    "synthetic_shift_edges": "constant_nearest_endpoint_extension_only_outside_available_support",
+    "primary_neural_recipe_mapping_changed": false,
+    "execution_sequence": ["U0_separate_smoke_approval", "U1_separate_universal_approval", "adaptive_separate_resource_gate", "robustness_and_exploratory_separate_budgets"],
+    "remaining_numerical_specifications_locked": false,
+    "resource_ceilings_approved": false,
+    "execution_authorized": false
+  },
+  "pending_later_branch_choices": [],
   "completion_gaps": ["later_branch_numerical_specs_and_finite_budgets", "resource_feasibility_and_final_lock", "reviewed_admission_restart_guards", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
 }
