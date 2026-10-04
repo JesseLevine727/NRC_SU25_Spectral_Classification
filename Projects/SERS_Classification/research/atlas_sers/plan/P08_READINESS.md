@@ -387,3 +387,11 @@ The [neural-role audit](P08_POPULATION_SUPPORT.md#5-neural-guard-and-calibration
 The independent audit authenticated **33** inputs, reconstructed the population-bound guard assignment and retained the single unsupported notes-clear guard. Maximum batch capacities are **38**, **37** and **38** for the primary reference and two filtered tiers, below the existing **48** limit. These are source-role feasibility checks, not fits, logits, calibration values or model-selection outcomes. Classical/neural comparisons require their common supported context set; each method's broader coverage remains separately reported.
 
 DeepSeek authored the adapter and its correction; supervisor review and invented-data tests remain separate from this metadata evidence. Exact population operation ledgers, inference rules, budgets, perturbation specifications and final readiness review remain required. The numerical launch permit is still unset.
+
+## 42. Conditional filtered-population operation catalogs
+
+The [population operation audit](P08_POPULATION_SUPPORT.md#6-conditional-population-operation-accounting) verifies fresh source-only selection and all three universal preprocessing actions within each filtered tier. Four-method model-fit ceilings are **170,277** for notes-clear and **184,749** without Mira-1; five-method ceilings are **258,387** and **280,878**. The **184,239-fit** Extra Trees increment is explicitly costed as a panel alternative, not silently authorized.
+
+The graph retains all registered MIN neural-development recipes, ordinary-CNN fallbacks, unsupported guards and distinct classical/neural coverage. Conditional D1/D2/D3 branches share one future context-local selection decision; only one candidate branch can activate. Classical master-CV calibration uses exact-role aliases, and neural temperatures use only inherited source-selection predictions. An unknown or failed selection is not a valid fallback result.
+
+DeepSeek authored the planner and tests; independent review checked arithmetic, dependency ordering and saved-graph readback. The full graphs remain private. No scientific fit, new prediction or preprocessing result was produced. The population-panel clarification, inference specification, finite resource proposals, perturbation specifications and final goal-wide review remain open. The launch permit is still unset.

@@ -917,6 +917,8 @@ The subsequent [regenerated-role audit](P08_POPULATION_SUPPORT.md#4-regenerated-
 
 The later [neural-role audit](P08_POPULATION_SUPPORT.md#5-neural-guard-and-calibration-role-support) supports ordinary-CNN/calibration metadata in 216 notes-clear and 240 Mira-1-excluded contexts. Acquisition-aware recipe comparison is structurally supported in 93 and 83 contexts; 123 and 157 require the registered ordinary-CNN fallback. Four notes-clear contexts remain unavailable. This supersedes the pending neural metadata check above, not the remaining operation, inference, resource and numerical-validation gates. Preserve the distinct classical/neural coverage and use matched contexts for model contrasts; no new recipe, fit or prediction has been produced.
 
+The [conditional operation audit](P08_POPULATION_SUPPORT.md#6-conditional-population-operation-accounting) now enumerates both four- and five-method population panels. Their combined model-fit ceilings are 355,026 and 539,265, respectively; Extra Trees accounts for the 184,239-fit difference. Each structurally comparable context can activate only one source-selected neural recipe, so alternative branches must not be summed as executed work. Extra Trees inclusion in these population sensitivities remains a scope clarification, separate from its approved inclusion in the primary universal panel. Population inference and finite resource proposals remain incomplete; no scientific operation is authorized.
+
 ## 17. Sub-plan P09 — narrow open-set evaluation
 
 P09 answers `RQ-S06` under `PP-U-MIN`. Preprocessing-policy selection is not reopened, and open-set results cannot choose an adaptive preprocessing rule.

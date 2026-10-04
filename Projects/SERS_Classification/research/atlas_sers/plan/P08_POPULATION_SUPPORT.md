@@ -85,3 +85,32 @@ Guard construction retains the inherited chemical-stratified SHA-ordered assignm
 Later classical-versus-neural contrasts must use matched contexts: metadata supports at most 215 common notes-clear contexts and 240 common Mira-1-excluded contexts. Retain each method's full coverage separately, and record further numerical failures rather than treating these ceilings as completed predictions. The differing 215/216 denominators must not enter an unpaired apparent model advantage.
 
 The [neural adapter](../src/atlas_sers/evaluation/p08_population_neural.py) checks all inherited units, physical-master isolation, held-instrument exclusion, population provenance and role hashes. Its caller-supplied hashes establish internal consistency; the supervisor separately authenticates the upstream artifacts. Exact population operations, selection-dependent reuse, inference definitions and finite resources remain incomplete. No new recipe has been selected and no model, temperature or outcome has been computed.
+
+## 6. Conditional population operation accounting
+
+The [operation audit](../results/p08_readiness/population_slot_ledger_audit.json) now enumerates the filtered-population comparisons for MIN, Savitzky–Golay smoothing and arPLS baseline correction. It closes the exact-accounting gap above, not the inference, resource or numerical-execution gates. The four-method alternative contains RBF-SVM, Random Forest, the ordinary CNN and the source-selected CNN strategy. The five-method alternative additionally contains Extra Trees. Whether the population sensitivity retains Extra Trees is an explicit scope clarification awaiting the owner's response; neither alternative is authorized to run.
+
+Every classical family repeats its registered source-only hyperparameter search within each population and preprocessing action. The existing 598-row representation arrays remain unchanged; authenticated population and role identities select their rows. The catalog does not create filtered intensity arrays, inherit a primary fitted estimator or transplant the primary neural recipe map.
+
+Neural development evaluates all four registered recipes on each supported context's MIN source-selection roles and supported guard roles. This includes contexts whose structural support already requires the ordinary-CNN fallback: the inherited readiness rule still requires the registered, nonexcluded development records. The single unsupported notes-clear guard creates 12 excluded recipe/seed slots, not 12 attempted fits. A later numerical failure does not become permission to omit evidence or use an unverified fallback.
+
+One future source-only decision selects a recipe per context. The selected identity is then fixed across the three preprocessing actions. For a structurally comparable context, the catalog lists D1, D2 and D3 alternatives, but at most one can activate. If the decision selects D0-M, the selected strategy references the ordinary-CNN pipeline without another refit. Both strategies still wait for successful source readiness. An unknown or failed decision is not a D0-M selection.
+
+| Population | Panel alternative | Prospective model fits, lower–upper | Scalar calibrations, lower–upper | Logical evaluated pipelines |
+|---|---|---:|---:|---:|
+| Notes-clear | Four methods | 168,150–170,277 | 3,234–4,071 | 2,586 |
+| Notes-clear | Five methods | 256,260–258,387 | 3,879–4,716 | 3,231 |
+| Mira-1 excluded | Four methods | 183,006–184,749 | 3,600–4,347 | 2,880 |
+| Mira-1 excluded | Five methods | 279,135–280,878 | 4,320–5,067 | 3,600 |
+
+These are successful-completion bounds without retries, not measured executions or independent sample counts. The lower bound assumes every selected strategy resolves to D0-M. The upper bound allows one acquisition-aware winner in every structurally comparable context. Classical grid searches, source-validation roles, technical seeds and preprocessing actions account for most fits. The number of physical samples remains 69 per tier.
+
+Across both populations, the four-method ceiling is 355,026 model fits; the five-method ceiling is 539,265. Extra Trees adds 184,239 fits and 1,365 scalar calibrations. These population counts are separate from the primary universal comparison and cannot borrow its proposed resources. Time, RAM, GPU and retained-artifact ceilings still require their own cost basis and finite proposal.
+
+The catalog contains 549,384 and 595,608 operation records for the five-method notes-clear and Mira-1-excluded alternatives, respectively. Those catalogs deliberately include mutually exclusive recipe branches. Their executable upper bounds are 536,970 and 585,150 operations; summing all listed branches would overstate the planned work. Per-recipe upper bounds are likewise nonadditive. Logical pipeline counts retain two neural strategy endpoints even where both reference one fitted pipeline; they are not independent models or statistical replicates.
+
+Classical calibration retains exact master-CV prediction aliases and fresh pseudo-domain calibration fits. Forests average seed probabilities before one temperature; neural models fit a temperature per seed before averaging calibrated probabilities. Neural temperature and epoch selection use inherited source-selection predictions, never guard, classical-calibration or held-test evidence. The graph binds these dependencies and orders every operation after its prerequisites.
+
+The supervisor's input bridge authenticated 29 files, checked the regenerated role and neural-support digests, and matched 366 notes-clear and 471 Mira-1-excluded master-CV calibration roles to their selection roles. An independent arithmetic and dependency audit verified both panel alternatives for both populations, including compressed-JSON readback. Identity-bearing graphs remain private; the public audit contains aggregate counts and hashes. Caller-provided hashes alone still do not prove provenance or physical-master separation.
+
+No new fit, temperature, prediction, score, uncertainty draw, QC cutpoint or preprocessing array was calculated. Population-specific inference, the panel clarification, finite resource proposals, later perturbation specifications and final readiness review remain open. Universal preprocessing remains first; these sensitivity branches do not acquire automatic execution permission.

@@ -1,0 +1,2088 @@
+{
+  "arrays_loaded": false,
+  "catalogs": [
+    {
+      "include_extra_trees": false,
+      "independent_counts_and_dependencies_verified": true,
+      "inputs_file_sha256": "bcbde2cc644ffd48a32885916447e86b049f13f8135e5ddd6e4866dc4740ecea",
+      "neural_support_sha256": "7ffd8936ecf594c75c770da48923b07cf8992651d01db30558f0d55980ce0969",
+      "panel_choice_is_planning_only": true,
+      "plan_sha256": "dd48e72b0860d476a8492b91b1bb408f51d7e17f0ad2f5f9075fd2db6f59c6fc",
+      "population_id": "notes_clear_500",
+      "population_plan_sha256": "133c6d60e3c5e0553b50f18749b9c7bc06ca17b1fea6cdddf02dfc853046c606",
+      "private_graph_archive_bytes": 70823621,
+      "private_graph_archive_sha256": "f1abcbbc3263788c3622b5e173d0c94e459656ab054ef664401d24b9fa93bc55",
+      "serialized_readback_verified": true,
+      "summary": {
+        "authorized_scientific_operations": 0,
+        "bounds_are_nonadditive": true,
+        "catalog_stage_counts": {
+          "calibration_model_fit": 3348,
+          "calibration_prediction_alias": 4392,
+          "calibration_validation_prediction": 3348,
+          "final_refit": 7035,
+          "guard_source_fit": 3372,
+          "guard_validation_prediction": 3372,
+          "held_prediction": 7035,
+          "scalar_calibration": 5745,
+          "seed_ensemble_prediction": 2775,
+          "select_hyperparameters": 1290,
+          "select_neural_recipe": 216,
+          "select_refit_epochs": 4455,
+          "source_fit": 160776,
+          "source_validation_prediction": 160776
+        },
+        "classical_family_ensembles": 1290,
+        "conditional_context_count": 93,
+        "excluded_source_fit_slots": 12,
+        "logical_neural_endpoints": 1296,
+        "logical_total_endpoints": 2586,
+        "lower": {
+          "model_fit_slots": 168150,
+          "scalar_calibrations": 3234,
+          "stage_counts": {
+            "calibration_model_fit": 3348,
+            "calibration_prediction_alias": 4392,
+            "calibration_validation_prediction": 3348,
+            "final_refit": 4524,
+            "guard_source_fit": 3372,
+            "guard_validation_prediction": 3372,
+            "held_prediction": 4524,
+            "scalar_calibration": 3234,
+            "seed_ensemble_prediction": 1938,
+            "select_hyperparameters": 1290,
+            "select_neural_recipe": 216,
+            "select_refit_epochs": 1944,
+            "source_fit": 156906,
+            "source_validation_prediction": 156906
+          },
+          "total_jobs": 349314
+        },
+        "per_model": {
+          "bounds_are_nonadditive": true,
+          "catalog": {
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 88110,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 2511,
+                "calibration_prediction_alias": 3294,
+                "calibration_validation_prediction": 2511,
+                "final_refit": 1935,
+                "held_prediction": 1935,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 83664,
+                "source_validation_prediction": 83664
+              },
+              "total_jobs": 181449
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 64230,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 837,
+                "calibration_prediction_alias": 1098,
+                "calibration_validation_prediction": 837,
+                "final_refit": 645,
+                "held_prediction": 645,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 62748,
+                "source_validation_prediction": 62748
+              },
+              "total_jobs": 131493
+            },
+            "D0-M": {
+              "model_fit_slots": 8034,
+              "scalar_calibrations": 1944,
+              "stage_counts": {
+                "final_refit": 1944,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 1944,
+                "scalar_calibration": 1944,
+                "seed_ensemble_prediction": 648,
+                "select_neural_recipe": 216,
+                "select_refit_epochs": 1944,
+                "source_fit": 5247,
+                "source_validation_prediction": 5247
+              },
+              "total_jobs": 20820
+            },
+            "D1": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            },
+            "D2": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            },
+            "D3": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            }
+          },
+          "lower": {
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 88110,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 2511,
+                "calibration_prediction_alias": 3294,
+                "calibration_validation_prediction": 2511,
+                "final_refit": 1935,
+                "held_prediction": 1935,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 83664,
+                "source_validation_prediction": 83664
+              },
+              "total_jobs": 181449
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 64230,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 837,
+                "calibration_prediction_alias": 1098,
+                "calibration_validation_prediction": 837,
+                "final_refit": 645,
+                "held_prediction": 645,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 62748,
+                "source_validation_prediction": 62748
+              },
+              "total_jobs": 131493
+            },
+            "D0-M": {
+              "model_fit_slots": 8034,
+              "scalar_calibrations": 1944,
+              "stage_counts": {
+                "final_refit": 1944,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 1944,
+                "scalar_calibration": 1944,
+                "seed_ensemble_prediction": 648,
+                "select_neural_recipe": 216,
+                "select_refit_epochs": 1944,
+                "source_fit": 5247,
+                "source_validation_prediction": 5247
+              },
+              "total_jobs": 20820
+            },
+            "D1": {
+              "model_fit_slots": 2592,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "source_fit": 1749,
+                "source_validation_prediction": 1749
+              },
+              "total_jobs": 5184
+            },
+            "D2": {
+              "model_fit_slots": 2592,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "source_fit": 1749,
+                "source_validation_prediction": 1749
+              },
+              "total_jobs": 5184
+            },
+            "D3": {
+              "model_fit_slots": 2592,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "source_fit": 1749,
+                "source_validation_prediction": 1749
+              },
+              "total_jobs": 5184
+            }
+          },
+          "upper": {
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 88110,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 2511,
+                "calibration_prediction_alias": 3294,
+                "calibration_validation_prediction": 2511,
+                "final_refit": 1935,
+                "held_prediction": 1935,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 83664,
+                "source_validation_prediction": 83664
+              },
+              "total_jobs": 181449
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 64230,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 837,
+                "calibration_prediction_alias": 1098,
+                "calibration_validation_prediction": 837,
+                "final_refit": 645,
+                "held_prediction": 645,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 62748,
+                "source_validation_prediction": 62748
+              },
+              "total_jobs": 131493
+            },
+            "D0-M": {
+              "model_fit_slots": 8034,
+              "scalar_calibrations": 1944,
+              "stage_counts": {
+                "final_refit": 1944,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 1944,
+                "scalar_calibration": 1944,
+                "seed_ensemble_prediction": 648,
+                "select_neural_recipe": 216,
+                "select_refit_epochs": 1944,
+                "source_fit": 5247,
+                "source_validation_prediction": 5247
+              },
+              "total_jobs": 20820
+            },
+            "D1": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            },
+            "D2": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            },
+            "D3": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            }
+          }
+        },
+        "per_policy": {
+          "PP-U-ARPLS": {
+            "lower": {
+              "model_fit_slots": 53177,
+              "scalar_calibrations": 1078,
+              "stage_counts": {
+                "calibration_model_fit": 1116,
+                "calibration_prediction_alias": 1464,
+                "calibration_validation_prediction": 1116,
+                "final_refit": 1508,
+                "held_prediction": 1508,
+                "scalar_calibration": 1078,
+                "seed_ensemble_prediction": 646,
+                "select_hyperparameters": 430,
+                "select_refit_epochs": 648,
+                "source_fit": 50553,
+                "source_validation_prediction": 50553
+              },
+              "total_jobs": 110620
+            },
+            "upper": {
+              "model_fit_slots": 54101,
+              "scalar_calibrations": 1357,
+              "stage_counts": {
+                "calibration_model_fit": 1116,
+                "calibration_prediction_alias": 1464,
+                "calibration_validation_prediction": 1116,
+                "final_refit": 1787,
+                "held_prediction": 1787,
+                "scalar_calibration": 1357,
+                "seed_ensemble_prediction": 739,
+                "select_hyperparameters": 430,
+                "select_refit_epochs": 927,
+                "source_fit": 51198,
+                "source_validation_prediction": 51198
+              },
+              "total_jobs": 113119
+            }
+          },
+          "PP-U-MIN": {
+            "lower": {
+              "model_fit_slots": 61796,
+              "scalar_calibrations": 1078,
+              "stage_counts": {
+                "calibration_model_fit": 1116,
+                "calibration_prediction_alias": 1464,
+                "calibration_validation_prediction": 1116,
+                "final_refit": 1508,
+                "guard_source_fit": 3372,
+                "guard_validation_prediction": 3372,
+                "held_prediction": 1508,
+                "scalar_calibration": 1078,
+                "seed_ensemble_prediction": 646,
+                "select_hyperparameters": 430,
+                "select_neural_recipe": 216,
+                "select_refit_epochs": 648,
+                "source_fit": 55800,
+                "source_validation_prediction": 55800
+              },
+              "total_jobs": 128074
+            },
+            "upper": {
+              "model_fit_slots": 62075,
+              "scalar_calibrations": 1357,
+              "stage_counts": {
+                "calibration_model_fit": 1116,
+                "calibration_prediction_alias": 1464,
+                "calibration_validation_prediction": 1116,
+                "final_refit": 1787,
+                "guard_source_fit": 3372,
+                "guard_validation_prediction": 3372,
+                "held_prediction": 1787,
+                "scalar_calibration": 1357,
+                "seed_ensemble_prediction": 739,
+                "select_hyperparameters": 430,
+                "select_neural_recipe": 216,
+                "select_refit_epochs": 927,
+                "source_fit": 55800,
+                "source_validation_prediction": 55800
+              },
+              "total_jobs": 129283
+            }
+          },
+          "PP-U-SG": {
+            "lower": {
+              "model_fit_slots": 53177,
+              "scalar_calibrations": 1078,
+              "stage_counts": {
+                "calibration_model_fit": 1116,
+                "calibration_prediction_alias": 1464,
+                "calibration_validation_prediction": 1116,
+                "final_refit": 1508,
+                "held_prediction": 1508,
+                "scalar_calibration": 1078,
+                "seed_ensemble_prediction": 646,
+                "select_hyperparameters": 430,
+                "select_refit_epochs": 648,
+                "source_fit": 50553,
+                "source_validation_prediction": 50553
+              },
+              "total_jobs": 110620
+            },
+            "upper": {
+              "model_fit_slots": 54101,
+              "scalar_calibrations": 1357,
+              "stage_counts": {
+                "calibration_model_fit": 1116,
+                "calibration_prediction_alias": 1464,
+                "calibration_validation_prediction": 1116,
+                "final_refit": 1787,
+                "held_prediction": 1787,
+                "scalar_calibration": 1357,
+                "seed_ensemble_prediction": 739,
+                "select_hyperparameters": 430,
+                "select_refit_epochs": 927,
+                "source_fit": 51198,
+                "source_validation_prediction": 51198
+              },
+              "total_jobs": 113119
+            }
+          }
+        },
+        "upper": {
+          "model_fit_slots": 170277,
+          "scalar_calibrations": 4071,
+          "stage_counts": {
+            "calibration_model_fit": 3348,
+            "calibration_prediction_alias": 4392,
+            "calibration_validation_prediction": 3348,
+            "final_refit": 5361,
+            "guard_source_fit": 3372,
+            "guard_validation_prediction": 3372,
+            "held_prediction": 5361,
+            "scalar_calibration": 4071,
+            "seed_ensemble_prediction": 2217,
+            "select_hyperparameters": 1290,
+            "select_neural_recipe": 216,
+            "select_refit_epochs": 2781,
+            "source_fit": 158196,
+            "source_validation_prediction": 158196
+          },
+          "total_jobs": 355521
+        }
+      }
+    },
+    {
+      "include_extra_trees": true,
+      "independent_counts_and_dependencies_verified": true,
+      "inputs_file_sha256": "bcbde2cc644ffd48a32885916447e86b049f13f8135e5ddd6e4866dc4740ecea",
+      "neural_support_sha256": "7ffd8936ecf594c75c770da48923b07cf8992651d01db30558f0d55980ce0969",
+      "panel_choice_is_planning_only": true,
+      "plan_sha256": "4adc00892651b55834c3f597c23f10a4d959a28afeb026bef94c557a840dbf4e",
+      "population_id": "notes_clear_500",
+      "population_plan_sha256": "133c6d60e3c5e0553b50f18749b9c7bc06ca17b1fea6cdddf02dfc853046c606",
+      "private_graph_archive_bytes": 108325287,
+      "private_graph_archive_sha256": "b864ba747b3e58ffb1acbbc36d8f63966adc16411d82ab3f0e8bd32462e5f403",
+      "serialized_readback_verified": true,
+      "summary": {
+        "authorized_scientific_operations": 0,
+        "bounds_are_nonadditive": true,
+        "catalog_stage_counts": {
+          "calibration_model_fit": 5859,
+          "calibration_prediction_alias": 7686,
+          "calibration_validation_prediction": 5859,
+          "final_refit": 8970,
+          "guard_source_fit": 3372,
+          "guard_validation_prediction": 3372,
+          "held_prediction": 8970,
+          "scalar_calibration": 6390,
+          "seed_ensemble_prediction": 3420,
+          "select_hyperparameters": 1935,
+          "select_neural_recipe": 216,
+          "select_refit_epochs": 4455,
+          "source_fit": 244440,
+          "source_validation_prediction": 244440
+        },
+        "classical_family_ensembles": 1935,
+        "conditional_context_count": 93,
+        "excluded_source_fit_slots": 12,
+        "logical_neural_endpoints": 1296,
+        "logical_total_endpoints": 3231,
+        "lower": {
+          "model_fit_slots": 256260,
+          "scalar_calibrations": 3879,
+          "stage_counts": {
+            "calibration_model_fit": 5859,
+            "calibration_prediction_alias": 7686,
+            "calibration_validation_prediction": 5859,
+            "final_refit": 6459,
+            "guard_source_fit": 3372,
+            "guard_validation_prediction": 3372,
+            "held_prediction": 6459,
+            "scalar_calibration": 3879,
+            "seed_ensemble_prediction": 2583,
+            "select_hyperparameters": 1935,
+            "select_neural_recipe": 216,
+            "select_refit_epochs": 1944,
+            "source_fit": 240570,
+            "source_validation_prediction": 240570
+          },
+          "total_jobs": 530763
+        },
+        "per_model": {
+          "bounds_are_nonadditive": true,
+          "catalog": {
+            "C-EXTRA-TREES": {
+              "model_fit_slots": 88110,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 2511,
+                "calibration_prediction_alias": 3294,
+                "calibration_validation_prediction": 2511,
+                "final_refit": 1935,
+                "held_prediction": 1935,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 83664,
+                "source_validation_prediction": 83664
+              },
+              "total_jobs": 181449
+            },
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 88110,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 2511,
+                "calibration_prediction_alias": 3294,
+                "calibration_validation_prediction": 2511,
+                "final_refit": 1935,
+                "held_prediction": 1935,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 83664,
+                "source_validation_prediction": 83664
+              },
+              "total_jobs": 181449
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 64230,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 837,
+                "calibration_prediction_alias": 1098,
+                "calibration_validation_prediction": 837,
+                "final_refit": 645,
+                "held_prediction": 645,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 62748,
+                "source_validation_prediction": 62748
+              },
+              "total_jobs": 131493
+            },
+            "D0-M": {
+              "model_fit_slots": 8034,
+              "scalar_calibrations": 1944,
+              "stage_counts": {
+                "final_refit": 1944,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 1944,
+                "scalar_calibration": 1944,
+                "seed_ensemble_prediction": 648,
+                "select_neural_recipe": 216,
+                "select_refit_epochs": 1944,
+                "source_fit": 5247,
+                "source_validation_prediction": 5247
+              },
+              "total_jobs": 20820
+            },
+            "D1": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            },
+            "D2": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            },
+            "D3": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            }
+          },
+          "lower": {
+            "C-EXTRA-TREES": {
+              "model_fit_slots": 88110,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 2511,
+                "calibration_prediction_alias": 3294,
+                "calibration_validation_prediction": 2511,
+                "final_refit": 1935,
+                "held_prediction": 1935,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 83664,
+                "source_validation_prediction": 83664
+              },
+              "total_jobs": 181449
+            },
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 88110,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 2511,
+                "calibration_prediction_alias": 3294,
+                "calibration_validation_prediction": 2511,
+                "final_refit": 1935,
+                "held_prediction": 1935,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 83664,
+                "source_validation_prediction": 83664
+              },
+              "total_jobs": 181449
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 64230,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 837,
+                "calibration_prediction_alias": 1098,
+                "calibration_validation_prediction": 837,
+                "final_refit": 645,
+                "held_prediction": 645,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 62748,
+                "source_validation_prediction": 62748
+              },
+              "total_jobs": 131493
+            },
+            "D0-M": {
+              "model_fit_slots": 8034,
+              "scalar_calibrations": 1944,
+              "stage_counts": {
+                "final_refit": 1944,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 1944,
+                "scalar_calibration": 1944,
+                "seed_ensemble_prediction": 648,
+                "select_neural_recipe": 216,
+                "select_refit_epochs": 1944,
+                "source_fit": 5247,
+                "source_validation_prediction": 5247
+              },
+              "total_jobs": 20820
+            },
+            "D1": {
+              "model_fit_slots": 2592,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "source_fit": 1749,
+                "source_validation_prediction": 1749
+              },
+              "total_jobs": 5184
+            },
+            "D2": {
+              "model_fit_slots": 2592,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "source_fit": 1749,
+                "source_validation_prediction": 1749
+              },
+              "total_jobs": 5184
+            },
+            "D3": {
+              "model_fit_slots": 2592,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "source_fit": 1749,
+                "source_validation_prediction": 1749
+              },
+              "total_jobs": 5184
+            }
+          },
+          "upper": {
+            "C-EXTRA-TREES": {
+              "model_fit_slots": 88110,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 2511,
+                "calibration_prediction_alias": 3294,
+                "calibration_validation_prediction": 2511,
+                "final_refit": 1935,
+                "held_prediction": 1935,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 83664,
+                "source_validation_prediction": 83664
+              },
+              "total_jobs": 181449
+            },
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 88110,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 2511,
+                "calibration_prediction_alias": 3294,
+                "calibration_validation_prediction": 2511,
+                "final_refit": 1935,
+                "held_prediction": 1935,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 83664,
+                "source_validation_prediction": 83664
+              },
+              "total_jobs": 181449
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 64230,
+              "scalar_calibrations": 645,
+              "stage_counts": {
+                "calibration_model_fit": 837,
+                "calibration_prediction_alias": 1098,
+                "calibration_validation_prediction": 837,
+                "final_refit": 645,
+                "held_prediction": 645,
+                "scalar_calibration": 645,
+                "seed_ensemble_prediction": 645,
+                "select_hyperparameters": 645,
+                "source_fit": 62748,
+                "source_validation_prediction": 62748
+              },
+              "total_jobs": 131493
+            },
+            "D0-M": {
+              "model_fit_slots": 8034,
+              "scalar_calibrations": 1944,
+              "stage_counts": {
+                "final_refit": 1944,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 1944,
+                "scalar_calibration": 1944,
+                "seed_ensemble_prediction": 648,
+                "select_neural_recipe": 216,
+                "select_refit_epochs": 1944,
+                "source_fit": 5247,
+                "source_validation_prediction": 5247
+              },
+              "total_jobs": 20820
+            },
+            "D1": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            },
+            "D2": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            },
+            "D3": {
+              "model_fit_slots": 4719,
+              "scalar_calibrations": 837,
+              "stage_counts": {
+                "final_refit": 837,
+                "guard_source_fit": 843,
+                "guard_validation_prediction": 843,
+                "held_prediction": 837,
+                "scalar_calibration": 837,
+                "seed_ensemble_prediction": 279,
+                "select_refit_epochs": 837,
+                "source_fit": 3039,
+                "source_validation_prediction": 3039
+              },
+              "total_jobs": 11391
+            }
+          }
+        },
+        "per_policy": {
+          "PP-U-ARPLS": {
+            "lower": {
+              "model_fit_slots": 82547,
+              "scalar_calibrations": 1293,
+              "stage_counts": {
+                "calibration_model_fit": 1953,
+                "calibration_prediction_alias": 2562,
+                "calibration_validation_prediction": 1953,
+                "final_refit": 2153,
+                "held_prediction": 2153,
+                "scalar_calibration": 1293,
+                "seed_ensemble_prediction": 861,
+                "select_hyperparameters": 645,
+                "select_refit_epochs": 648,
+                "source_fit": 78441,
+                "source_validation_prediction": 78441
+              },
+              "total_jobs": 171103
+            },
+            "upper": {
+              "model_fit_slots": 83471,
+              "scalar_calibrations": 1572,
+              "stage_counts": {
+                "calibration_model_fit": 1953,
+                "calibration_prediction_alias": 2562,
+                "calibration_validation_prediction": 1953,
+                "final_refit": 2432,
+                "held_prediction": 2432,
+                "scalar_calibration": 1572,
+                "seed_ensemble_prediction": 954,
+                "select_hyperparameters": 645,
+                "select_refit_epochs": 927,
+                "source_fit": 79086,
+                "source_validation_prediction": 79086
+              },
+              "total_jobs": 173602
+            }
+          },
+          "PP-U-MIN": {
+            "lower": {
+              "model_fit_slots": 91166,
+              "scalar_calibrations": 1293,
+              "stage_counts": {
+                "calibration_model_fit": 1953,
+                "calibration_prediction_alias": 2562,
+                "calibration_validation_prediction": 1953,
+                "final_refit": 2153,
+                "guard_source_fit": 3372,
+                "guard_validation_prediction": 3372,
+                "held_prediction": 2153,
+                "scalar_calibration": 1293,
+                "seed_ensemble_prediction": 861,
+                "select_hyperparameters": 645,
+                "select_neural_recipe": 216,
+                "select_refit_epochs": 648,
+                "source_fit": 83688,
+                "source_validation_prediction": 83688
+              },
+              "total_jobs": 188557
+            },
+            "upper": {
+              "model_fit_slots": 91445,
+              "scalar_calibrations": 1572,
+              "stage_counts": {
+                "calibration_model_fit": 1953,
+                "calibration_prediction_alias": 2562,
+                "calibration_validation_prediction": 1953,
+                "final_refit": 2432,
+                "guard_source_fit": 3372,
+                "guard_validation_prediction": 3372,
+                "held_prediction": 2432,
+                "scalar_calibration": 1572,
+                "seed_ensemble_prediction": 954,
+                "select_hyperparameters": 645,
+                "select_neural_recipe": 216,
+                "select_refit_epochs": 927,
+                "source_fit": 83688,
+                "source_validation_prediction": 83688
+              },
+              "total_jobs": 189766
+            }
+          },
+          "PP-U-SG": {
+            "lower": {
+              "model_fit_slots": 82547,
+              "scalar_calibrations": 1293,
+              "stage_counts": {
+                "calibration_model_fit": 1953,
+                "calibration_prediction_alias": 2562,
+                "calibration_validation_prediction": 1953,
+                "final_refit": 2153,
+                "held_prediction": 2153,
+                "scalar_calibration": 1293,
+                "seed_ensemble_prediction": 861,
+                "select_hyperparameters": 645,
+                "select_refit_epochs": 648,
+                "source_fit": 78441,
+                "source_validation_prediction": 78441
+              },
+              "total_jobs": 171103
+            },
+            "upper": {
+              "model_fit_slots": 83471,
+              "scalar_calibrations": 1572,
+              "stage_counts": {
+                "calibration_model_fit": 1953,
+                "calibration_prediction_alias": 2562,
+                "calibration_validation_prediction": 1953,
+                "final_refit": 2432,
+                "held_prediction": 2432,
+                "scalar_calibration": 1572,
+                "seed_ensemble_prediction": 954,
+                "select_hyperparameters": 645,
+                "select_refit_epochs": 927,
+                "source_fit": 79086,
+                "source_validation_prediction": 79086
+              },
+              "total_jobs": 173602
+            }
+          }
+        },
+        "upper": {
+          "model_fit_slots": 258387,
+          "scalar_calibrations": 4716,
+          "stage_counts": {
+            "calibration_model_fit": 5859,
+            "calibration_prediction_alias": 7686,
+            "calibration_validation_prediction": 5859,
+            "final_refit": 7296,
+            "guard_source_fit": 3372,
+            "guard_validation_prediction": 3372,
+            "held_prediction": 7296,
+            "scalar_calibration": 4716,
+            "seed_ensemble_prediction": 2862,
+            "select_hyperparameters": 1935,
+            "select_neural_recipe": 216,
+            "select_refit_epochs": 2781,
+            "source_fit": 241860,
+            "source_validation_prediction": 241860
+          },
+          "total_jobs": 536970
+        }
+      }
+    },
+    {
+      "include_extra_trees": false,
+      "independent_counts_and_dependencies_verified": true,
+      "inputs_file_sha256": "333f4165e8b36b5f155afd73e2cb9d2c4dd3b5567a78c48c50cf27b6224da967",
+      "neural_support_sha256": "148fdd351c4a0f8ac3c3c7dd15e4f690e3bf436a0834de65c7e680e8af9602f0",
+      "panel_choice_is_planning_only": true,
+      "plan_sha256": "5bbd0ebadf1038c04c8db90ab1f62b82668bd9cd670faec4d09ac2641eb61e58",
+      "population_id": "mira1_excluded_575",
+      "population_plan_sha256": "c37f2c510f1c3acc21af6f2edfefc2d5d2a3c411435f100b3eb92d9bdba24c89",
+      "private_graph_archive_bytes": 77205126,
+      "private_graph_archive_sha256": "b80c5978c7f4d0591c4e62c442d6e9bdb5f0959f7f9e9d0aa1d6429fc8639a17",
+      "serialized_readback_verified": true,
+      "summary": {
+        "authorized_scientific_operations": 0,
+        "bounds_are_nonadditive": true,
+        "catalog_stage_counts": {
+          "calibration_model_fit": 2988,
+          "calibration_prediction_alias": 5652,
+          "calibration_validation_prediction": 2988,
+          "final_refit": 7281,
+          "guard_source_fit": 2988,
+          "guard_validation_prediction": 2988,
+          "held_prediction": 7281,
+          "scalar_calibration": 5841,
+          "seed_ensemble_prediction": 2907,
+          "select_hyperparameters": 1440,
+          "select_neural_recipe": 240,
+          "select_refit_epochs": 4401,
+          "source_fit": 174978,
+          "source_validation_prediction": 174978
+        },
+        "classical_family_ensembles": 1440,
+        "conditional_context_count": 83,
+        "excluded_source_fit_slots": 0,
+        "logical_neural_endpoints": 1440,
+        "logical_total_endpoints": 2880,
+        "lower": {
+          "model_fit_slots": 183006,
+          "scalar_calibrations": 3600,
+          "stage_counts": {
+            "calibration_model_fit": 2988,
+            "calibration_prediction_alias": 5652,
+            "calibration_validation_prediction": 2988,
+            "final_refit": 5040,
+            "guard_source_fit": 2988,
+            "guard_validation_prediction": 2988,
+            "held_prediction": 5040,
+            "scalar_calibration": 3600,
+            "seed_ensemble_prediction": 2160,
+            "select_hyperparameters": 1440,
+            "select_neural_recipe": 240,
+            "select_refit_epochs": 2160,
+            "source_fit": 171990,
+            "source_validation_prediction": 171990
+          },
+          "total_jobs": 381264
+        },
+        "per_model": {
+          "bounds_are_nonadditive": true,
+          "catalog": {
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 96129,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 2241,
+                "calibration_prediction_alias": 4239,
+                "calibration_validation_prediction": 2241,
+                "final_refit": 2160,
+                "held_prediction": 2160,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 198657
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 70263,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 747,
+                "calibration_prediction_alias": 1413,
+                "calibration_validation_prediction": 747,
+                "final_refit": 720,
+                "held_prediction": 720,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 68796,
+                "source_validation_prediction": 68796
+              },
+              "total_jobs": 144099
+            },
+            "D0-M": {
+              "model_fit_slots": 8640,
+              "scalar_calibrations": 2160,
+              "stage_counts": {
+                "final_refit": 2160,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 2160,
+                "scalar_calibration": 2160,
+                "seed_ensemble_prediction": 720,
+                "select_neural_recipe": 240,
+                "select_refit_epochs": 2160,
+                "source_fit": 5733,
+                "source_validation_prediction": 5733
+              },
+              "total_jobs": 22560
+            },
+            "D1": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            },
+            "D2": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            },
+            "D3": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            }
+          },
+          "lower": {
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 96129,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 2241,
+                "calibration_prediction_alias": 4239,
+                "calibration_validation_prediction": 2241,
+                "final_refit": 2160,
+                "held_prediction": 2160,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 198657
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 70263,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 747,
+                "calibration_prediction_alias": 1413,
+                "calibration_validation_prediction": 747,
+                "final_refit": 720,
+                "held_prediction": 720,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 68796,
+                "source_validation_prediction": 68796
+              },
+              "total_jobs": 144099
+            },
+            "D0-M": {
+              "model_fit_slots": 8640,
+              "scalar_calibrations": 2160,
+              "stage_counts": {
+                "final_refit": 2160,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 2160,
+                "scalar_calibration": 2160,
+                "seed_ensemble_prediction": 720,
+                "select_neural_recipe": 240,
+                "select_refit_epochs": 2160,
+                "source_fit": 5733,
+                "source_validation_prediction": 5733
+              },
+              "total_jobs": 22560
+            },
+            "D1": {
+              "model_fit_slots": 2658,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "source_fit": 1911,
+                "source_validation_prediction": 1911
+              },
+              "total_jobs": 5316
+            },
+            "D2": {
+              "model_fit_slots": 2658,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "source_fit": 1911,
+                "source_validation_prediction": 1911
+              },
+              "total_jobs": 5316
+            },
+            "D3": {
+              "model_fit_slots": 2658,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "source_fit": 1911,
+                "source_validation_prediction": 1911
+              },
+              "total_jobs": 5316
+            }
+          },
+          "upper": {
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 96129,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 2241,
+                "calibration_prediction_alias": 4239,
+                "calibration_validation_prediction": 2241,
+                "final_refit": 2160,
+                "held_prediction": 2160,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 198657
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 70263,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 747,
+                "calibration_prediction_alias": 1413,
+                "calibration_validation_prediction": 747,
+                "final_refit": 720,
+                "held_prediction": 720,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 68796,
+                "source_validation_prediction": 68796
+              },
+              "total_jobs": 144099
+            },
+            "D0-M": {
+              "model_fit_slots": 8640,
+              "scalar_calibrations": 2160,
+              "stage_counts": {
+                "final_refit": 2160,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 2160,
+                "scalar_calibration": 2160,
+                "seed_ensemble_prediction": 720,
+                "select_neural_recipe": 240,
+                "select_refit_epochs": 2160,
+                "source_fit": 5733,
+                "source_validation_prediction": 5733
+              },
+              "total_jobs": 22560
+            },
+            "D1": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            },
+            "D2": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            },
+            "D3": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            }
+          }
+        },
+        "per_policy": {
+          "PP-U-ARPLS": {
+            "lower": {
+              "model_fit_slots": 58095,
+              "scalar_calibrations": 1200,
+              "stage_counts": {
+                "calibration_model_fit": 996,
+                "calibration_prediction_alias": 1884,
+                "calibration_validation_prediction": 996,
+                "final_refit": 1680,
+                "held_prediction": 1680,
+                "scalar_calibration": 1200,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 480,
+                "select_refit_epochs": 720,
+                "source_fit": 55419,
+                "source_validation_prediction": 55419
+              },
+              "total_jobs": 121194
+            },
+            "upper": {
+              "model_fit_slots": 58842,
+              "scalar_calibrations": 1449,
+              "stage_counts": {
+                "calibration_model_fit": 996,
+                "calibration_prediction_alias": 1884,
+                "calibration_validation_prediction": 996,
+                "final_refit": 1929,
+                "held_prediction": 1929,
+                "scalar_calibration": 1449,
+                "seed_ensemble_prediction": 803,
+                "select_hyperparameters": 480,
+                "select_refit_epochs": 969,
+                "source_fit": 55917,
+                "source_validation_prediction": 55917
+              },
+              "total_jobs": 123269
+            }
+          },
+          "PP-U-MIN": {
+            "lower": {
+              "model_fit_slots": 66816,
+              "scalar_calibrations": 1200,
+              "stage_counts": {
+                "calibration_model_fit": 996,
+                "calibration_prediction_alias": 1884,
+                "calibration_validation_prediction": 996,
+                "final_refit": 1680,
+                "guard_source_fit": 2988,
+                "guard_validation_prediction": 2988,
+                "held_prediction": 1680,
+                "scalar_calibration": 1200,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 480,
+                "select_neural_recipe": 240,
+                "select_refit_epochs": 720,
+                "source_fit": 61152,
+                "source_validation_prediction": 61152
+              },
+              "total_jobs": 138876
+            },
+            "upper": {
+              "model_fit_slots": 67065,
+              "scalar_calibrations": 1449,
+              "stage_counts": {
+                "calibration_model_fit": 996,
+                "calibration_prediction_alias": 1884,
+                "calibration_validation_prediction": 996,
+                "final_refit": 1929,
+                "guard_source_fit": 2988,
+                "guard_validation_prediction": 2988,
+                "held_prediction": 1929,
+                "scalar_calibration": 1449,
+                "seed_ensemble_prediction": 803,
+                "select_hyperparameters": 480,
+                "select_neural_recipe": 240,
+                "select_refit_epochs": 969,
+                "source_fit": 61152,
+                "source_validation_prediction": 61152
+              },
+              "total_jobs": 139955
+            }
+          },
+          "PP-U-SG": {
+            "lower": {
+              "model_fit_slots": 58095,
+              "scalar_calibrations": 1200,
+              "stage_counts": {
+                "calibration_model_fit": 996,
+                "calibration_prediction_alias": 1884,
+                "calibration_validation_prediction": 996,
+                "final_refit": 1680,
+                "held_prediction": 1680,
+                "scalar_calibration": 1200,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 480,
+                "select_refit_epochs": 720,
+                "source_fit": 55419,
+                "source_validation_prediction": 55419
+              },
+              "total_jobs": 121194
+            },
+            "upper": {
+              "model_fit_slots": 58842,
+              "scalar_calibrations": 1449,
+              "stage_counts": {
+                "calibration_model_fit": 996,
+                "calibration_prediction_alias": 1884,
+                "calibration_validation_prediction": 996,
+                "final_refit": 1929,
+                "held_prediction": 1929,
+                "scalar_calibration": 1449,
+                "seed_ensemble_prediction": 803,
+                "select_hyperparameters": 480,
+                "select_refit_epochs": 969,
+                "source_fit": 55917,
+                "source_validation_prediction": 55917
+              },
+              "total_jobs": 123269
+            }
+          }
+        },
+        "upper": {
+          "model_fit_slots": 184749,
+          "scalar_calibrations": 4347,
+          "stage_counts": {
+            "calibration_model_fit": 2988,
+            "calibration_prediction_alias": 5652,
+            "calibration_validation_prediction": 2988,
+            "final_refit": 5787,
+            "guard_source_fit": 2988,
+            "guard_validation_prediction": 2988,
+            "held_prediction": 5787,
+            "scalar_calibration": 4347,
+            "seed_ensemble_prediction": 2409,
+            "select_hyperparameters": 1440,
+            "select_neural_recipe": 240,
+            "select_refit_epochs": 2907,
+            "source_fit": 172986,
+            "source_validation_prediction": 172986
+          },
+          "total_jobs": 386493
+        }
+      }
+    },
+    {
+      "include_extra_trees": true,
+      "independent_counts_and_dependencies_verified": true,
+      "inputs_file_sha256": "333f4165e8b36b5f155afd73e2cb9d2c4dd3b5567a78c48c50cf27b6224da967",
+      "neural_support_sha256": "148fdd351c4a0f8ac3c3c7dd15e4f690e3bf436a0834de65c7e680e8af9602f0",
+      "panel_choice_is_planning_only": true,
+      "plan_sha256": "fc5dc47391e828057f5e07327785bcf13684d2629736c9b23e24995bcb03ecab",
+      "population_id": "mira1_excluded_575",
+      "population_plan_sha256": "c37f2c510f1c3acc21af6f2edfefc2d5d2a3c411435f100b3eb92d9bdba24c89",
+      "private_graph_archive_bytes": 118426033,
+      "private_graph_archive_sha256": "5f5259ce39034913dc8695477d9d35fd1bb62308882719e942c46cfadf89f2d7",
+      "serialized_readback_verified": true,
+      "summary": {
+        "authorized_scientific_operations": 0,
+        "bounds_are_nonadditive": true,
+        "catalog_stage_counts": {
+          "calibration_model_fit": 5229,
+          "calibration_prediction_alias": 9891,
+          "calibration_validation_prediction": 5229,
+          "final_refit": 9441,
+          "guard_source_fit": 2988,
+          "guard_validation_prediction": 2988,
+          "held_prediction": 9441,
+          "scalar_calibration": 6561,
+          "seed_ensemble_prediction": 3627,
+          "select_hyperparameters": 2160,
+          "select_neural_recipe": 240,
+          "select_refit_epochs": 4401,
+          "source_fit": 266706,
+          "source_validation_prediction": 266706
+        },
+        "classical_family_ensembles": 2160,
+        "conditional_context_count": 83,
+        "excluded_source_fit_slots": 0,
+        "logical_neural_endpoints": 1440,
+        "logical_total_endpoints": 3600,
+        "lower": {
+          "model_fit_slots": 279135,
+          "scalar_calibrations": 4320,
+          "stage_counts": {
+            "calibration_model_fit": 5229,
+            "calibration_prediction_alias": 9891,
+            "calibration_validation_prediction": 5229,
+            "final_refit": 7200,
+            "guard_source_fit": 2988,
+            "guard_validation_prediction": 2988,
+            "held_prediction": 7200,
+            "scalar_calibration": 4320,
+            "seed_ensemble_prediction": 2880,
+            "select_hyperparameters": 2160,
+            "select_neural_recipe": 240,
+            "select_refit_epochs": 2160,
+            "source_fit": 263718,
+            "source_validation_prediction": 263718
+          },
+          "total_jobs": 579921
+        },
+        "per_model": {
+          "bounds_are_nonadditive": true,
+          "catalog": {
+            "C-EXTRA-TREES": {
+              "model_fit_slots": 96129,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 2241,
+                "calibration_prediction_alias": 4239,
+                "calibration_validation_prediction": 2241,
+                "final_refit": 2160,
+                "held_prediction": 2160,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 198657
+            },
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 96129,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 2241,
+                "calibration_prediction_alias": 4239,
+                "calibration_validation_prediction": 2241,
+                "final_refit": 2160,
+                "held_prediction": 2160,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 198657
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 70263,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 747,
+                "calibration_prediction_alias": 1413,
+                "calibration_validation_prediction": 747,
+                "final_refit": 720,
+                "held_prediction": 720,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 68796,
+                "source_validation_prediction": 68796
+              },
+              "total_jobs": 144099
+            },
+            "D0-M": {
+              "model_fit_slots": 8640,
+              "scalar_calibrations": 2160,
+              "stage_counts": {
+                "final_refit": 2160,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 2160,
+                "scalar_calibration": 2160,
+                "seed_ensemble_prediction": 720,
+                "select_neural_recipe": 240,
+                "select_refit_epochs": 2160,
+                "source_fit": 5733,
+                "source_validation_prediction": 5733
+              },
+              "total_jobs": 22560
+            },
+            "D1": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            },
+            "D2": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            },
+            "D3": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            }
+          },
+          "lower": {
+            "C-EXTRA-TREES": {
+              "model_fit_slots": 96129,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 2241,
+                "calibration_prediction_alias": 4239,
+                "calibration_validation_prediction": 2241,
+                "final_refit": 2160,
+                "held_prediction": 2160,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 198657
+            },
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 96129,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 2241,
+                "calibration_prediction_alias": 4239,
+                "calibration_validation_prediction": 2241,
+                "final_refit": 2160,
+                "held_prediction": 2160,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 198657
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 70263,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 747,
+                "calibration_prediction_alias": 1413,
+                "calibration_validation_prediction": 747,
+                "final_refit": 720,
+                "held_prediction": 720,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 68796,
+                "source_validation_prediction": 68796
+              },
+              "total_jobs": 144099
+            },
+            "D0-M": {
+              "model_fit_slots": 8640,
+              "scalar_calibrations": 2160,
+              "stage_counts": {
+                "final_refit": 2160,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 2160,
+                "scalar_calibration": 2160,
+                "seed_ensemble_prediction": 720,
+                "select_neural_recipe": 240,
+                "select_refit_epochs": 2160,
+                "source_fit": 5733,
+                "source_validation_prediction": 5733
+              },
+              "total_jobs": 22560
+            },
+            "D1": {
+              "model_fit_slots": 2658,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "source_fit": 1911,
+                "source_validation_prediction": 1911
+              },
+              "total_jobs": 5316
+            },
+            "D2": {
+              "model_fit_slots": 2658,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "source_fit": 1911,
+                "source_validation_prediction": 1911
+              },
+              "total_jobs": 5316
+            },
+            "D3": {
+              "model_fit_slots": 2658,
+              "scalar_calibrations": 0,
+              "stage_counts": {
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "source_fit": 1911,
+                "source_validation_prediction": 1911
+              },
+              "total_jobs": 5316
+            }
+          },
+          "upper": {
+            "C-EXTRA-TREES": {
+              "model_fit_slots": 96129,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 2241,
+                "calibration_prediction_alias": 4239,
+                "calibration_validation_prediction": 2241,
+                "final_refit": 2160,
+                "held_prediction": 2160,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 198657
+            },
+            "C-RANDOM-FOREST": {
+              "model_fit_slots": 96129,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 2241,
+                "calibration_prediction_alias": 4239,
+                "calibration_validation_prediction": 2241,
+                "final_refit": 2160,
+                "held_prediction": 2160,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 198657
+            },
+            "C-RBF-SVM": {
+              "model_fit_slots": 70263,
+              "scalar_calibrations": 720,
+              "stage_counts": {
+                "calibration_model_fit": 747,
+                "calibration_prediction_alias": 1413,
+                "calibration_validation_prediction": 747,
+                "final_refit": 720,
+                "held_prediction": 720,
+                "scalar_calibration": 720,
+                "seed_ensemble_prediction": 720,
+                "select_hyperparameters": 720,
+                "source_fit": 68796,
+                "source_validation_prediction": 68796
+              },
+              "total_jobs": 144099
+            },
+            "D0-M": {
+              "model_fit_slots": 8640,
+              "scalar_calibrations": 2160,
+              "stage_counts": {
+                "final_refit": 2160,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 2160,
+                "scalar_calibration": 2160,
+                "seed_ensemble_prediction": 720,
+                "select_neural_recipe": 240,
+                "select_refit_epochs": 2160,
+                "source_fit": 5733,
+                "source_validation_prediction": 5733
+              },
+              "total_jobs": 22560
+            },
+            "D1": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            },
+            "D2": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            },
+            "D3": {
+              "model_fit_slots": 4401,
+              "scalar_calibrations": 747,
+              "stage_counts": {
+                "final_refit": 747,
+                "guard_source_fit": 747,
+                "guard_validation_prediction": 747,
+                "held_prediction": 747,
+                "scalar_calibration": 747,
+                "seed_ensemble_prediction": 249,
+                "select_refit_epochs": 747,
+                "source_fit": 2907,
+                "source_validation_prediction": 2907
+              },
+              "total_jobs": 10545
+            }
+          }
+        },
+        "per_policy": {
+          "PP-U-ARPLS": {
+            "lower": {
+              "model_fit_slots": 90138,
+              "scalar_calibrations": 1440,
+              "stage_counts": {
+                "calibration_model_fit": 1743,
+                "calibration_prediction_alias": 3297,
+                "calibration_validation_prediction": 1743,
+                "final_refit": 2400,
+                "held_prediction": 2400,
+                "scalar_calibration": 1440,
+                "seed_ensemble_prediction": 960,
+                "select_hyperparameters": 720,
+                "select_refit_epochs": 720,
+                "source_fit": 85995,
+                "source_validation_prediction": 85995
+              },
+              "total_jobs": 187413
+            },
+            "upper": {
+              "model_fit_slots": 90885,
+              "scalar_calibrations": 1689,
+              "stage_counts": {
+                "calibration_model_fit": 1743,
+                "calibration_prediction_alias": 3297,
+                "calibration_validation_prediction": 1743,
+                "final_refit": 2649,
+                "held_prediction": 2649,
+                "scalar_calibration": 1689,
+                "seed_ensemble_prediction": 1043,
+                "select_hyperparameters": 720,
+                "select_refit_epochs": 969,
+                "source_fit": 86493,
+                "source_validation_prediction": 86493
+              },
+              "total_jobs": 189488
+            }
+          },
+          "PP-U-MIN": {
+            "lower": {
+              "model_fit_slots": 98859,
+              "scalar_calibrations": 1440,
+              "stage_counts": {
+                "calibration_model_fit": 1743,
+                "calibration_prediction_alias": 3297,
+                "calibration_validation_prediction": 1743,
+                "final_refit": 2400,
+                "guard_source_fit": 2988,
+                "guard_validation_prediction": 2988,
+                "held_prediction": 2400,
+                "scalar_calibration": 1440,
+                "seed_ensemble_prediction": 960,
+                "select_hyperparameters": 720,
+                "select_neural_recipe": 240,
+                "select_refit_epochs": 720,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 205095
+            },
+            "upper": {
+              "model_fit_slots": 99108,
+              "scalar_calibrations": 1689,
+              "stage_counts": {
+                "calibration_model_fit": 1743,
+                "calibration_prediction_alias": 3297,
+                "calibration_validation_prediction": 1743,
+                "final_refit": 2649,
+                "guard_source_fit": 2988,
+                "guard_validation_prediction": 2988,
+                "held_prediction": 2649,
+                "scalar_calibration": 1689,
+                "seed_ensemble_prediction": 1043,
+                "select_hyperparameters": 720,
+                "select_neural_recipe": 240,
+                "select_refit_epochs": 969,
+                "source_fit": 91728,
+                "source_validation_prediction": 91728
+              },
+              "total_jobs": 206174
+            }
+          },
+          "PP-U-SG": {
+            "lower": {
+              "model_fit_slots": 90138,
+              "scalar_calibrations": 1440,
+              "stage_counts": {
+                "calibration_model_fit": 1743,
+                "calibration_prediction_alias": 3297,
+                "calibration_validation_prediction": 1743,
+                "final_refit": 2400,
+                "held_prediction": 2400,
+                "scalar_calibration": 1440,
+                "seed_ensemble_prediction": 960,
+                "select_hyperparameters": 720,
+                "select_refit_epochs": 720,
+                "source_fit": 85995,
+                "source_validation_prediction": 85995
+              },
+              "total_jobs": 187413
+            },
+            "upper": {
+              "model_fit_slots": 90885,
+              "scalar_calibrations": 1689,
+              "stage_counts": {
+                "calibration_model_fit": 1743,
+                "calibration_prediction_alias": 3297,
+                "calibration_validation_prediction": 1743,
+                "final_refit": 2649,
+                "held_prediction": 2649,
+                "scalar_calibration": 1689,
+                "seed_ensemble_prediction": 1043,
+                "select_hyperparameters": 720,
+                "select_refit_epochs": 969,
+                "source_fit": 86493,
+                "source_validation_prediction": 86493
+              },
+              "total_jobs": 189488
+            }
+          }
+        },
+        "upper": {
+          "model_fit_slots": 280878,
+          "scalar_calibrations": 5067,
+          "stage_counts": {
+            "calibration_model_fit": 5229,
+            "calibration_prediction_alias": 9891,
+            "calibration_validation_prediction": 5229,
+            "final_refit": 7947,
+            "guard_source_fit": 2988,
+            "guard_validation_prediction": 2988,
+            "held_prediction": 7947,
+            "scalar_calibration": 5067,
+            "seed_ensemble_prediction": 3129,
+            "select_hyperparameters": 2160,
+            "select_neural_recipe": 240,
+            "select_refit_epochs": 2907,
+            "source_fit": 264714,
+            "source_validation_prediction": 264714
+          },
+          "total_jobs": 585150
+        }
+      }
+    }
+  ],
+  "execution_authorized": false,
+  "numerical_readiness_verified": false,
+  "outcomes_loaded": false,
+  "panel_scope_decision_pending": true,
+  "planner_source_sha256": "472bf0ac186d58febbac481c1fe896c47b8ddfb650d6a509a9aae8e298a1a671",
+  "schema_version": "nato-sers-p08-population-slot-audit-v1",
+  "scientific_fit_count": 0,
+  "scientific_operations": 0,
+  "scope": "Metadata-only four- and five-method alternatives. Counts are successful-completion bounds, not authorized jobs. Each comparable context activates at most one candidate recipe; no recipe is selected here."
+}
