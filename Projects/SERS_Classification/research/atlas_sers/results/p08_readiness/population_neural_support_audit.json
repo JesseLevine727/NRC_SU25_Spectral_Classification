@@ -1,0 +1,132 @@
+{
+  "arrays_loaded": false,
+  "core_contract_file_sha256": "f350ab8dd2be4ca72ddb8adcce4c36b6be63001b7c97d8f70c8d34ba8bbe45e4",
+  "exact_model_operation_ledger_complete": false,
+  "execution_authorized": false,
+  "guard_core_source_sha256": "b8a9274f74efb19b0b600239313b6b47587779c34560bf2d05845c39e11cb299",
+  "logits_or_outcomes_loaded": false,
+  "neural_support_source_sha256": "761492d92b5783e978299d214371a767f5c1790e989aace05853b1d5619383a1",
+  "new_scientific_operations": 0,
+  "numerical_calibration_verified": false,
+  "populations": [
+    {
+      "counts": {
+        "all_observed_capacities_within_ceiling": true,
+        "context_count": 260,
+        "eligible_context_count": 260,
+        "g3_structurally_comparable_context_count": 128,
+        "guard_supported_count": 384,
+        "guard_unit_count": 384,
+        "ineligible_context_count": 0,
+        "inherited_selection_unit_count": 681,
+        "master_cv_context_count": 132,
+        "maximum_observed_batch_capacity": 38,
+        "neural_source_calibration_supported_context_count": 260,
+        "ordinary_neural_supported_context_count": 260,
+        "pseudo_domain_context_count": 128,
+        "sampler_batch_size_ceiling": 48,
+        "selection_not_applicable_context_count": 0,
+        "selection_unsupported_context_count": 0,
+        "structural_D0M_fallback_context_count": 132,
+        "structural_D0M_fallbacks_by_cause": {
+          "master_cv_structural_fallback": 132
+        },
+        "supported_inherited_selection_unit_count": 681
+      },
+      "independent_checks": {
+        "g3_comparable_contexts": 128,
+        "guard_limited_fallback_contexts": 0,
+        "master_cv_fallback_contexts": 132,
+        "maximum_sampler_capacity": 38,
+        "neural_source_calibration_supported_contexts": 260,
+        "ordinary_neural_supported_contexts": 260,
+        "unavailable_by_domain": {}
+      },
+      "input_population_plan_sha256": "8da85e40815b13cda958e0e7472dc4027dbd738a745fafb52ff2d52dc84f27d6",
+      "neural_support_result_sha256": "a00af8913648595bf7e8be22022f5b8baea8ceb576a2bd5f1360d202c3cff441",
+      "population_id": "primary_598"
+    },
+    {
+      "counts": {
+        "all_observed_capacities_within_ceiling": true,
+        "context_count": 260,
+        "eligible_context_count": 220,
+        "g3_structurally_comparable_context_count": 93,
+        "guard_supported_count": 281,
+        "guard_unit_count": 282,
+        "ineligible_context_count": 40,
+        "inherited_selection_unit_count": 583,
+        "master_cv_context_count": 122,
+        "maximum_observed_batch_capacity": 37,
+        "neural_source_calibration_supported_context_count": 216,
+        "ordinary_neural_supported_context_count": 216,
+        "pseudo_domain_context_count": 94,
+        "sampler_batch_size_ceiling": 48,
+        "selection_not_applicable_context_count": 40,
+        "selection_unsupported_context_count": 4,
+        "structural_D0M_fallback_context_count": 123,
+        "structural_D0M_fallbacks_by_cause": {
+          "guard_support_structural_fallback": 1,
+          "master_cv_structural_fallback": 122
+        },
+        "supported_inherited_selection_unit_count": 583
+      },
+      "independent_checks": {
+        "g3_comparable_contexts": 93,
+        "guard_limited_fallback_contexts": 1,
+        "master_cv_fallback_contexts": 122,
+        "maximum_sampler_capacity": 37,
+        "neural_source_calibration_supported_contexts": 216,
+        "ordinary_neural_supported_contexts": 216,
+        "unavailable_by_domain": {
+          "cwa:Mira-2": 4
+        }
+      },
+      "input_population_plan_sha256": "133c6d60e3c5e0553b50f18749b9c7bc06ca17b1fea6cdddf02dfc853046c606",
+      "neural_support_result_sha256": "7ffd8936ecf594c75c770da48923b07cf8992651d01db30558f0d55980ce0969",
+      "population_id": "notes_clear_500"
+    },
+    {
+      "counts": {
+        "all_observed_capacities_within_ceiling": true,
+        "context_count": 260,
+        "eligible_context_count": 240,
+        "g3_structurally_comparable_context_count": 83,
+        "guard_supported_count": 249,
+        "guard_unit_count": 249,
+        "ineligible_context_count": 20,
+        "inherited_selection_unit_count": 637,
+        "master_cv_context_count": 157,
+        "maximum_observed_batch_capacity": 38,
+        "neural_source_calibration_supported_context_count": 240,
+        "ordinary_neural_supported_context_count": 240,
+        "pseudo_domain_context_count": 83,
+        "sampler_batch_size_ceiling": 48,
+        "selection_not_applicable_context_count": 20,
+        "selection_unsupported_context_count": 0,
+        "structural_D0M_fallback_context_count": 157,
+        "structural_D0M_fallbacks_by_cause": {
+          "master_cv_structural_fallback": 157
+        },
+        "supported_inherited_selection_unit_count": 637
+      },
+      "independent_checks": {
+        "g3_comparable_contexts": 83,
+        "guard_limited_fallback_contexts": 0,
+        "master_cv_fallback_contexts": 157,
+        "maximum_sampler_capacity": 38,
+        "neural_source_calibration_supported_contexts": 240,
+        "ordinary_neural_supported_contexts": 240,
+        "unavailable_by_domain": {}
+      },
+      "input_population_plan_sha256": "c37f2c510f1c3acc21af6f2edfefc2d5d2a3c411435f100b3eb92d9bdba24c89",
+      "neural_support_result_sha256": "148fdd351c4a0f8ac3c3c7dd15e4f690e3bf436a0834de65c7e680e8af9602f0",
+      "population_id": "mira1_excluded_575"
+    }
+  ],
+  "primary_reference_not_a_replacement_recipe_selection": true,
+  "schema_version": "nato-sers-p08-population-neural-support-audit-v1",
+  "status": "pass_metadata_only",
+  "upstream_role_audit_sha256": "472feaf5e6c91eb7aa1bd76544b5c338de07ff8fd52873413d0bd51d1d2ec4af",
+  "verified_input_file_count": 33
+}

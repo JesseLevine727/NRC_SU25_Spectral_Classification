@@ -63,3 +63,25 @@ The eligible held roles contain 557, 449 and 534 distinct spectra in the primary
 The [population planner](../src/atlas_sers/evaluation/p08_population_plan.py) binds each context to its population, input metadata and split contracts. Its identity-bearing tables remain private. The supervisor authenticated 14 input files, independently reconstructed source roles, checked primary parity against the frozen P02 tables, and verified the canonical hashes after reloading all 24 generated metadata tables. No intensity array or saved outcome was loaded.
 
 Fresh neural guard-role and source-logit calibration audits, exact model-operation ledgers, population-specific inferential comparisons and finite resource proposals remain required. In particular, a complete 220-context calibrated classical notes-clear result cannot be promised under the registered support rules. Any conditional support summary must retain the five unavailable contexts in its coverage accounting and must not be called a full-population result. The planner's `metadata_ready` field denotes its audited outer/selection/classical-calibration conditions, not complete neural or execution readiness.
+
+## 5. Neural guard and calibration-role support
+
+The subsequent [neural metadata audit](../results/p08_readiness/population_neural_support_audit.json) checks the distinct CNN requirements. It supersedes Section 4's pending neural-role check, not its classical support counts. The supervisor authenticated 33 input files and independently reconstructed the guard assignments from source-master metadata. No spectrum intensity, saved logit, prediction or outcome was loaded.
+
+| Population | Eligible contexts | Ordinary CNN and source-calibration roles supported | Acquisition-aware recipe comparison structurally supported | Ordinary-CNN fallback required by support | Neural roles unavailable |
+|---|---:|---:|---:|---:|---:|
+| Primary reference | 260 | 260 | 128 | 132 | 0 |
+| Notes-clear | 220 | 216 | 93 | 123 | 4 |
+| Mira-1 excluded | 240 | 240 | 83 | 157 | 0 |
+
+Neural temperature calibration uses the registered source-selection validation outputs, averaged by physical master with equal master weight. It does not require the additional three-fold calibration procedure used by the classical pipeline. The notes-clear tier therefore retains one ordinary-CNN case beyond its 215 classically supported contexts. This case has supported source validation but one unsupported neural guard fold. The inherited selection rule blocks acquisition-aware advancement and retains the ordinary-CNN fallback if its later numerical fits succeed. It does not justify inventing another fold or borrowing held data.
+
+The notes-clear fallback count comprises 122 master-CV contexts and this one guard-limited pseudo-instrument context. Four further CWA/Mira-2 contexts lack supported source selection and remain unavailable. Without Mira-1, all 240 eligible contexts support ordinary neural fitting/calibration metadata; 157 lack pseudo-instrument selection and therefore require the ordinary-CNN fallback. A structural fallback is not a measured recipe-selection result or evidence that the ordinary CNN is more accurate.
+
+The three reference/tier audits contain 384, 282 and 249 guard units, respectively. All are supported except one notes-clear unit, which remains explicitly excluded. Maximum audited batch capacities, including outer source refits, are 38, 37 and 38 spectra; each is below the locked ceiling of 48. These checks establish metadata feasibility, not successful optimization, finite logits, calibration quality or GPU-memory compliance.
+
+Guard construction retains the inherited chemical-stratified SHA-ordered assignment but uses the newly population-bound context IDs. Regenerated guard identities are consequently not asserted to equal historical P05 identities. The primary audit is a metadata reference, not permission to replace the completed primary recipe map. Guard-validation, classical-calibration and held-test rows are excluded from neural temperature-calibration inputs.
+
+Later classical-versus-neural contrasts must use matched contexts: metadata supports at most 215 common notes-clear contexts and 240 common Mira-1-excluded contexts. Retain each method's full coverage separately, and record further numerical failures rather than treating these ceilings as completed predictions. The differing 215/216 denominators must not enter an unpaired apparent model advantage.
+
+The [neural adapter](../src/atlas_sers/evaluation/p08_population_neural.py) checks all inherited units, physical-master isolation, held-instrument exclusion, population provenance and role hashes. Its caller-supplied hashes establish internal consistency; the supervisor separately authenticates the upstream artifacts. Exact population operations, selection-dependent reuse, inference definitions and finite resources remain incomplete. No new recipe has been selected and no model, temperature or outcome has been computed.

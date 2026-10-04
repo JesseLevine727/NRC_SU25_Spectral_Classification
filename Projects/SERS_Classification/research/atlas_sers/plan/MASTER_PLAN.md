@@ -915,6 +915,8 @@ The [population prescreen](P08_POPULATION_SUPPORT.md) verifies 500 notes-clear s
 
 The subsequent [regenerated-role audit](P08_POPULATION_SUPPORT.md#4-regenerated-role-support) reproduces the 345 historical master/repeat assignments for each population. Notes-clear has 220 eligible contexts, of which 216 support model selection and 215 support registered classical calibration; the five calibration-unavailable contexts remain recorded. All 240 eligible Mira-1-excluded contexts support both audited stages. These are metadata support counts, not model fits or predictions. Neural guard-role and source-logit calibration support require separate checks. Complete those checks and the population-specific operation ledger, inference rules and resource proposal before any scientific execution; do not repair sparse roles or inherit the primary recipe map.
 
+The later [neural-role audit](P08_POPULATION_SUPPORT.md#5-neural-guard-and-calibration-role-support) supports ordinary-CNN/calibration metadata in 216 notes-clear and 240 Mira-1-excluded contexts. Acquisition-aware recipe comparison is structurally supported in 93 and 83 contexts; 123 and 157 require the registered ordinary-CNN fallback. Four notes-clear contexts remain unavailable. This supersedes the pending neural metadata check above, not the remaining operation, inference, resource and numerical-validation gates. Preserve the distinct classical/neural coverage and use matched contexts for model contrasts; no new recipe, fit or prediction has been produced.
+
 ## 17. Sub-plan P09 — narrow open-set evaluation
 
 P09 answers `RQ-S06` under `PP-U-MIN`. Preprocessing-policy selection is not reopened, and open-set results cannot choose an adaptive preprocessing rule.
