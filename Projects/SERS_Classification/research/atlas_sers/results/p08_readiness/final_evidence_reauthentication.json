@@ -1,0 +1,37 @@
+{
+  "P06P11_release_base_commit": "a08c2b06af9049e0181560e216ad733f04ee1327",
+  "both_P01_lineages_match_primary_manifest_and_action_bytes": true,
+  "execution_authorized": false,
+  "frozen_input_pin_count": 17,
+  "full_readiness_complete": false,
+  "inference_plan_bytes_reauthenticated": true,
+  "inherited_specification_source_count": 18,
+  "input_pin_reader_sha256": "73d50531234c0c1a2ac04b686f838c35436845d579f500d415e23c58cd39e430",
+  "inputs_unchanged": true,
+  "metadata_archives_reauthenticated": 9,
+  "new_scientific_operations": 0,
+  "public_evidence_report_hashes": {
+    "input_support_audit.json": "08310a0ef5cd91dacc5a46c129a3043e32cadcd0a06f305f34c568b2e88f3863",
+    "preservation_reporting_support_audit.json": "afa64083f5cb78a1c6d0f256b40cda8565ce72ed8c86febec59cb4862bc919e0",
+    "stress_inference_plan_audit.json": "bb3616394083bef3a2485f1552fa886458a6d5645e96597fbf1b9bb710aa2907",
+    "universal_slot_ledger_audit.json": "7a6fdd91b33ae63a212c7936599e38b28cb0e88273024ed28f4bf0ec7d42c1a0"
+  },
+  "public_release_counts": {
+    "P05_public_private_pairs": 159,
+    "P06P11": 35,
+    "P13": 11
+  },
+  "retained_state_file_counts": {
+    "P00_preservation": 12,
+    "P00_primary": 12,
+    "P01_preservation": 71,
+    "P01_primary": 71,
+    "P02": 34,
+    "P04_plan": 9,
+    "P13_aggregation": 16
+  },
+  "schema_version": "nato-sers-p08-final-evidence-reauthentication-v1",
+  "scope": "byte_hash_and_retained_state_reauthentication_only_no_scientific_values_decoded",
+  "status": "pass",
+  "unique_files_reauthenticated": 634
+}

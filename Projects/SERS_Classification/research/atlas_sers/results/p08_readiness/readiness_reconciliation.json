@@ -1,0 +1,150 @@
+{
+  "U0_fit_slots_inside_U1_not_additive": 78,
+  "U0_source_prediction_slots_inside_U1_not_additive": 78,
+  "additional_archive_files_reauthenticated": 7,
+  "audit_script_sha256": "f56ddd933029150ccf4a64d473451dbab7634ae423694358e1f94674c212dca3",
+  "execution_authorized": false,
+  "existing_probability_case_jobs_not_added_again": 830208,
+  "fit_operation_ledgers": {
+    "N2": {
+      "calibration_prediction_aliases_in_descriptor_count": 1776,
+      "model_fits": 42368,
+      "operation_descriptors": 89632,
+      "scalar_calibrations": 1040
+    },
+    "Q1": {
+      "model_fits": 1630980,
+      "operation_descriptors": 3471416,
+      "reporting_aliases_excluded": 1040,
+      "scalar_calibrations": 53880
+    },
+    "R1": {
+      "calibration_prediction_aliases_in_descriptor_count": 1584,
+      "model_fits": 62981,
+      "operation_descriptors": 131199,
+      "scalar_calibrations": 1417
+    },
+    "U1": {
+      "calibration_prediction_aliases_in_descriptor_count": 5544,
+      "model_fits": 195202,
+      "operation_descriptors": 404814,
+      "scalar_calibrations": 3354
+    }
+  },
+  "full_numerical_runtime_accepted": false,
+  "full_readiness_complete": false,
+  "inputs_unchanged": true,
+  "new_scientific_operations": 0,
+  "population_alternatives": [
+    {
+      "lower": {
+        "model_fit_slots": 168150,
+        "scalar_calibrations": 3234,
+        "total_jobs": 349314
+      },
+      "panel": "four",
+      "population": "notes_clear_500",
+      "upper": {
+        "model_fit_slots": 170277,
+        "scalar_calibrations": 4071,
+        "total_jobs": 355521
+      }
+    },
+    {
+      "lower": {
+        "model_fit_slots": 256260,
+        "scalar_calibrations": 3879,
+        "total_jobs": 530763
+      },
+      "panel": "five",
+      "population": "notes_clear_500",
+      "upper": {
+        "model_fit_slots": 258387,
+        "scalar_calibrations": 4716,
+        "total_jobs": 536970
+      }
+    },
+    {
+      "lower": {
+        "model_fit_slots": 183006,
+        "scalar_calibrations": 3600,
+        "total_jobs": 381264
+      },
+      "panel": "four",
+      "population": "mira1_excluded_575",
+      "upper": {
+        "model_fit_slots": 184749,
+        "scalar_calibrations": 4347,
+        "total_jobs": 386493
+      }
+    },
+    {
+      "lower": {
+        "model_fit_slots": 279135,
+        "scalar_calibrations": 4320,
+        "total_jobs": 579921
+      },
+      "panel": "five",
+      "population": "mira1_excluded_575",
+      "upper": {
+        "model_fit_slots": 280878,
+        "scalar_calibrations": 5067,
+        "total_jobs": 585150
+      }
+    }
+  ],
+  "population_panel_choice_resolved": false,
+  "population_upper_fit_totals": {
+    "five": 539265,
+    "four": 355026
+  },
+  "preservation_aliases_not_new_metrics": 1794,
+  "public_input_hashes": {
+    "plan/P08_FIGURE_PLAN.csv": "d921b877fceba9ba286ee8da1e6b7f8d4f78395900e7f0beb1396afde7dcac0e",
+    "plan/P08_FIGURE_PROTOCOL.md": "73eebbbb13dbaccdceec1c28d4124573ca59f63537c0681872aacd9150ec8c45",
+    "plan/P08_STATISTICAL_PROTOCOL.md": "edf4b6e4ab303b2b5910b0285cd07e4ffdbaa782373f6d2e074faea07d8b2907",
+    "plan/contracts/p08_reporting_accounting.json": "111da67df456f6d44bba9184e5f314c9f0078beb7ef7f43a433646e3dc7e264b",
+    "plan/contracts/p08_stress_resources.json": "b64212724556d8d596208f97620cdb617dd43f3553207f7852740900b6b2d8ee",
+    "results/p08_readiness/normalization_slot_ledger_audit.json": "234b38eea46c241021006bb17b7a1b30fd5cf79eec2cc706bbd910fc1070e373",
+    "results/p08_readiness/population_slot_ledger_audit.json": "858b1c8b91b58fb90935df35b58f758950a7ece0841e421948bebdec7cf7ed3f",
+    "results/p08_readiness/preservation_reporting_support_audit.json": "afa64083f5cb78a1c6d0f256b40cda8565ce72ed8c86febec59cb4862bc919e0",
+    "results/p08_readiness/qc_complete_catalog_audit.json": "ff3ef9005262e3858c7f901c220c3ad92eae78239ac2a4b3f46ccf4debfebc1f",
+    "results/p08_readiness/range_ledger_audit.json": "4d107425aad5554276f89b08887a7f30c2bfb834d27abb6473d27b02adceb78e",
+    "results/p08_readiness/stress_contrast_catalog_audit.json": "1a5dd9345d83183637759ac4f80750b9393d4a30e67e70f6de4e51c449414155",
+    "results/p08_readiness/stress_inference_plan_audit.json": "bb3616394083bef3a2485f1552fa886458a6d5645e96597fbf1b9bb710aa2907",
+    "results/p08_readiness/stress_input_catalog_audit.json": "6a1c735a5f0942a8b56de27441cd8cacdeb8ad8f25b4d234f6579ffb94731e01",
+    "results/p08_readiness/stress_prediction_catalog_audit.json": "63f271aaff66d2ecc96c418d4bfa002acf4062c0ae585502d557a578f2964224",
+    "results/p08_readiness/stress_score_catalog_audit.json": "1be38c92b63b9de5c33c0a6a49dd794a2a23c95dcb42277aed590f3880abee39",
+    "results/p08_readiness/universal_slot_ledger_audit.json": "7a6fdd91b33ae63a212c7936599e38b28cb0e88273024ed28f4bf0ec7d42c1a0"
+  },
+  "readiness_source_snapshot": {
+    "base_commit": "269b2a19318a234f91ad6f3c38e4fe07236ec632",
+    "is_historical_snapshot_not_current_contract_pin": true,
+    "sha256": "22eb4902a15c491b84ac911cb3cc4018b0ec836a2a03c9be4c1fbf9aa2c41c1a"
+  },
+  "reporting_conditional_slots_by_stage": {
+    "U1": 441
+  },
+  "reporting_nonalias_slots_by_stage": {
+    "N2": 8,
+    "Q1": 16,
+    "R1": 8,
+    "S1": 24981,
+    "U1": 582,
+    "population": 8
+  },
+  "reporting_total": 25603,
+  "schema_version": "nato-sers-p08-readiness-reconciliation-v2",
+  "scope": "published_stage_sums_parent_hash_links_archive_bytes_and_reporting_ownership_not_numerical_runtime_or_global_execution_graph_acceptance",
+  "status": "pass_aggregate_metadata_reconciliation",
+  "stress_layer_descriptor_counts": {
+    "inference": 495780,
+    "inputs": 658876,
+    "predictions": 2013605,
+    "scores": 882096
+  },
+  "stress_layer_descriptor_subtotal": 4050357,
+  "stress_subtotal_excludes_reporting_aliases_and_upstream_fit_jobs": true,
+  "stress_subtotal_includes_conditional_inference_descriptors": 223440,
+  "stress_with_its_reporting_subtotal": 4075338
+}

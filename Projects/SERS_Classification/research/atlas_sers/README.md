@@ -105,10 +105,13 @@ mapping, explicit Extra Trees inclusion in the universal panel, the statistical
 amendment and the complete minimal-pipeline fallback for unsupported families.
 The approved nested-support rule retains 54 QC-adaptive contexts, all at CWA,
 and 206 complete minimal-pipeline fallbacks. All 260 remain in operational
-results, with the supported subset reported separately. Universal and QC
-operation catalogs are audited; [resource ceilings](plan/P08_RESOURCE_PROPOSAL.md)
-remain proposals. [Later-branch choices](plan/P08_LATER_BRANCH_DESIGN.md), live
-runtime integration and a separate training permit remain outstanding.
+results, with the supported subset reported separately. The
+[current requirement audit](plan/P08_COMPLETION_AUDIT.md) reconciles upstream
+evidence, stage accounting, reporting ownership and the reviewed invented-data
+U0 launcher. [Resource ceilings](plan/P08_RESOURCE_PROPOSAL.md) remain proposals.
+The separate filtered-population Extra Trees choice, final release checks and
+a distinct U0 execution request remain. Later numerical runtimes retain their
+own acceptance gates; they are not all prerequisites for this planning lock.
 No new P08 models have been trained.
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.

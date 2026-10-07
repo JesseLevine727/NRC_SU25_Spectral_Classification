@@ -163,6 +163,21 @@
   },
   "smoke_authority": "separate_owner_permit_required",
   "completion_audit": "plan/P08_COMPLETION_AUDIT.md",
+  "requirement_reconciliation": {
+    "date": "2026-10-07",
+    "status": "metadata_reconciled_final_lock_incomplete",
+    "fresh_evidence_audit": "results/p08_readiness/final_evidence_reauthentication.json",
+    "unique_retained_files_reauthenticated": 634,
+    "cross_ledger_audit": "results/p08_readiness/readiness_reconciliation.json",
+    "additional_range_normalization_population_files_reauthenticated": 7,
+    "aggregate_stage_sums_and_parent_hash_links_verified": true,
+    "reporting_stage_ownership_verified": true,
+    "later_numerical_runtime_acceptance_is_separate": true,
+    "population_panel_choice_resolved": false,
+    "final_release_ci_verified": false,
+    "full_readiness_complete": false,
+    "execution_authorized": false
+  },
   "historical_minimal_evidence": {
     "operation_bindings": 202407,
     "complete_distinct_model_context_endpoints": 1079,
@@ -447,5 +462,5 @@
     "execution_authorized": false
   },
   "pending_later_branch_choices": ["filtered_population_extra_trees_panel_scope_clarification"],
-  "completion_gaps": ["later_branch_numerical_specs_and_finite_budgets", "resource_feasibility_and_final_lock", "reviewed_admission_restart_guards", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
+  "completion_gaps": ["filtered_population_extra_trees_panel_scope_clarification", "requirement_wide_final_lock", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
 }

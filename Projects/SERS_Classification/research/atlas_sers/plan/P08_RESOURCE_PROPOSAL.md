@@ -90,7 +90,7 @@ N1 requires its own approval, an exact operation ledger and a fresh storage chec
 
 ## 6. Current decision boundary
 
-The first possible execution request is **U0 only**, after the no-fit package and runtime review gates close. It is not being launched by publishing this proposal. Historical operation-to-artifact evidence mapping and the metadata-only adaptive catalog are complete, as recorded in the [readiness audit](P08_READINESS.md). P08-A06–A09 resolve the later-branch choices; their numerical specifications, exact ledgers and budgets remain incomplete. Real resource checks and scientific runtime acceptance remain separate from the published synthetic launcher tests. No planning approval is treated as a training permit.
+The first possible execution request is **U0 only**, after the no-fit package and its release checks close. It is not being launched by publishing this proposal. The [current requirement audit](P08_COMPLETION_AUDIT.md) reconciles the operation catalogs, conditional later-branch specifications, finite proposals and reviewed invented-data launcher. The separate filtered-population Extra Trees choice remains unresolved. Real resource admission and each later stage's numerical acceptance remain separate from the planning lock and synthetic tests. No planning approval is treated as a training permit.
 
 ## 7. Resource snapshots and cumulative attempt accounting
 

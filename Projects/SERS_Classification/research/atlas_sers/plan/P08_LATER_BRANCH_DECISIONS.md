@@ -2,6 +2,8 @@
 
 **Approved:** 2026-10-04. **Authority:** scientific planning only. The owner accepted the four recommendations and resumed the existing no-fit readiness goal. No fit, scalar calibration, prediction, resampling draw, representation rebuild or perturbation run is authorized.
 
+**Current status, 2026-10-07:** P08-A10–A11 in Section 6 additionally approve the five-method universal robustness panel and fixed-clean-route QC interpretation. The [requirement audit](P08_COMPLETION_AUDIT.md) now reconciles the dependent catalogs, conditional statistical definitions and finite proposals. Earlier statements below about unspecified ledgers or resources describe their status when these decisions were made. The distinct filtered-population Extra Trees choice remains unresolved; numerical execution and resource ceilings are unapproved.
+
 ## 1. Decision record
 
 | Decision | Approved choice | Question and evidence boundary |
