@@ -2,7 +2,7 @@
 
 **Approved:** 2026-10-04. **Authority:** scientific planning only. The owner accepted the four recommendations and resumed the existing no-fit readiness goal. No fit, scalar calibration, prediction, resampling draw, representation rebuild or perturbation run is authorized.
 
-**Current status, 2026-10-07:** P08-A10–A11 in Section 6 additionally approve the five-method universal robustness panel and fixed-clean-route QC interpretation. The [requirement audit](P08_COMPLETION_AUDIT.md) now reconciles the dependent catalogs, conditional statistical definitions and finite proposals. Earlier statements below about unspecified ledgers or resources describe their status when these decisions were made. The distinct filtered-population Extra Trees choice remains unresolved; numerical execution and resource ceilings are unapproved.
+**Current decision status, 2026-10-07:** P08-A12 in Section 7 resolves the filtered-population panel in favor of including Extra Trees in both sensitivities. This supersedes earlier unanswered-panel wording. P08-A10–A11 in Section 6 retain the five-method universal robustness panel and fixed-clean-route QC interpretation. The owner has also raised concern about excessive planning; the panel answer does not approve or reject the separate proposed simplification or pause. This update records the answer only, without expanding implementation or authorizing execution. Existing machine-readable pending-state fields have not yet been synchronized with this decision; their numerical definitions and execution denials remain unchanged.
 
 ## 1. Decision record
 
@@ -65,3 +65,11 @@ The owner separately approved the two recommendations below. They supplement P08
 The [stress-test protocol](P08_PERTURBATION_PROTOCOL.md) defines the measurement-grid distinction and the fixed-route result's interpretation. The adaptive panel remains the existing four methods; adding Extra Trees to universal robustness does not expand it. Keep the 54-context supported adaptive subset separate from the 260-context fallback-inclusive result. Complete MIN fallbacks must use the matched disturbed MIN prediction, not the saved clean prediction.
 
 The 96-case descriptor inventory is metadata only. Exact reconstruction/prediction accounting, finite resource proposals, numerical inference and a separate execution permit remain required. No new model, calibration, preprocessing result, prediction, QC route or disturbance was computed by these approvals.
+
+## 7. Filtered-population panel, approved 2026-10-07
+
+**P08-A12. Recorded answer:** “Include Extra Trees in both sensitivities.”
+
+The notes-clear and Mira-1-excluded sensitivity studies will use RBF-SVM, Random Forest, Extra Trees, D0-M and the source-selected CNN procedure. This selects the already documented five-method alternative; it does not add a new model family or candidate grid. The combined prospective fit ceiling is **539,265**, rather than **355,026** for four methods, a difference of **184,239**. These are planning counts, not approved executions or completed fits.
+
+This decision does not change the main five-method universal preprocessing or robustness panels. It does not approve resource limits, launch either sensitivity, authorize the U0 pilot, or answer whether to pause or narrow the current planning goal. The four-method catalogs remain historical alternatives, not additional work to execute. No new implementation, scientific calculation or training accompanies this decision record.
