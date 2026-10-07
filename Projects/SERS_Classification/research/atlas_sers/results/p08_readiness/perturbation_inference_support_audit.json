@@ -1,0 +1,137 @@
+{
+  "execution_authorized": false,
+  "input_bytes_unchanged": true,
+  "input_hashes": {
+    "contexts": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "manifest": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "qc_private_support": "01201497d5c2934030713575f78eb0292cb10ef59989598503c2f1ee319af2a7",
+    "qc_public_support": "2f3378ba90b7dbe6f31536feef56cff59fed2202ddeb97a19def8d5327bc2a62",
+    "roles": "224891579d5df84c42a1c3c827590b6515ec83a13bfe4f07d48f249432f38d91"
+  },
+  "inputs_verified": 5,
+  "new_scientific_operations": 0,
+  "private_membership_file_sha256": "b15ff3bf38d3c386fd94df7987636543c404a92acf1324c5d3ce4a561db5686a",
+  "schema_version": "nato-sers-p08-perturbation-inference-support-v1",
+  "scope": "authenticated_identity_and_role_metadata_only",
+  "scores_or_resampling_draws_computed": false,
+  "spectral_arrays_or_predictions_loaded": false,
+  "status": "pass",
+  "supports": {
+    "operational_260": {
+      "by_domain": [
+        {
+          "contexts": 20,
+          "domain": "cwa:Mira-2"
+        },
+        {
+          "contexts": 20,
+          "domain": "cwa:Pendar-2"
+        },
+        {
+          "contexts": 20,
+          "domain": "cwa:RMX-1"
+        },
+        {
+          "contexts": 20,
+          "domain": "pills:Agilent-1"
+        },
+        {
+          "contexts": 20,
+          "domain": "pills:Agilent-3"
+        },
+        {
+          "contexts": 20,
+          "domain": "pills:Mira-3"
+        },
+        {
+          "contexts": 20,
+          "domain": "pills:Pendar-1"
+        },
+        {
+          "contexts": 20,
+          "domain": "pills:Pendar-3"
+        },
+        {
+          "contexts": 20,
+          "domain": "surfaces:Agilent-3"
+        },
+        {
+          "contexts": 20,
+          "domain": "surfaces:Mira-1"
+        },
+        {
+          "contexts": 20,
+          "domain": "surfaces:Pendar-2"
+        },
+        {
+          "contexts": 20,
+          "domain": "surfaces:Pendar-3"
+        },
+        {
+          "contexts": 20,
+          "domain": "surfaces:RMX-2"
+        }
+      ],
+      "complete_four_fold_contexts": 260,
+      "complete_four_fold_distinct_masters": 69,
+      "complete_four_fold_distinct_spectra": 557,
+      "complete_four_fold_domain_repeat_groups": 65,
+      "complete_four_fold_domains": 13,
+      "complete_four_fold_instruments": 10,
+      "complete_four_fold_test_appearances": 2785,
+      "contexts": 260,
+      "distinct_test_masters": 69,
+      "distinct_test_spectra": 557,
+      "domains": 13,
+      "exhaustive_domain_sign_assignments": 8192,
+      "exhaustive_instrument_sign_assignments": 1024,
+      "fixed_context_set_sha256": "583040c9af05878b44698dae79b6af5414c98a3085092d3c00ca1b5e947d9e15",
+      "fixed_pooled_context_set_sha256": "583040c9af05878b44698dae79b6af5414c98a3085092d3c00ca1b5e947d9e15",
+      "instruments": 10,
+      "master_context_prediction_units": 1310,
+      "stations": [
+        "cwa",
+        "pills",
+        "surfaces"
+      ],
+      "test_spectrum_appearances": 2785
+    },
+    "qc_eligible_54": {
+      "by_domain": [
+        {
+          "contexts": 18,
+          "domain": "cwa:Mira-2"
+        },
+        {
+          "contexts": 18,
+          "domain": "cwa:Pendar-2"
+        },
+        {
+          "contexts": 18,
+          "domain": "cwa:RMX-1"
+        }
+      ],
+      "complete_four_fold_contexts": 36,
+      "complete_four_fold_distinct_masters": 24,
+      "complete_four_fold_distinct_spectra": 176,
+      "complete_four_fold_domain_repeat_groups": 9,
+      "complete_four_fold_domains": 3,
+      "complete_four_fold_instruments": 3,
+      "complete_four_fold_test_appearances": 528,
+      "contexts": 54,
+      "distinct_test_masters": 24,
+      "distinct_test_spectra": 176,
+      "domains": 3,
+      "exhaustive_domain_sign_assignments": 8,
+      "exhaustive_instrument_sign_assignments": 8,
+      "fixed_context_set_sha256": "3df72346762da0709238c6b77dc624633be27604ca00a04c65e0578595d7811a",
+      "fixed_pooled_context_set_sha256": "c98992eccc44e68e146d844ff6c12f2671c851d5e8901059aec2890ed1891f07",
+      "instruments": 3,
+      "master_context_prediction_units": 293,
+      "stations": [
+        "cwa"
+      ],
+      "test_spectrum_appearances": 758
+    }
+  }
+}

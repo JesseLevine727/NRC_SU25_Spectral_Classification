@@ -901,6 +901,8 @@ The [numerical design](P08_PERTURBATION_PROTOCOL.md) now specifies intermediate 
 
 Native-grid QC and common-grid disturbances are not interchangeable. The P08-A11-approved fixed-clean-route QC sensitivity tests the trained mixed-route pipeline conditional on its original preprocessing decisions, not whether its gate reacts correctly to new contamination. A native-grid gate-reaction experiment is not included and needs a separate approved design. The standard unperturbed adaptive comparison and its four-method panel are unchanged.
 
+The [robustness inference specification](P08_PERTURBATION_INFERENCE.md) defines 456 comparisons in five separate multiplicity families, spanning all six disturbances within each family. Universal and operational QC effects target all 260 contexts; eligible-QC effects target the fixed 54-context CWA subset. That subset covers only three instruments and 24 masters, giving a minimum two-sided sign p-value of 0.25. Preserve this support limit beside QC results; conditional intervals cannot replace it. Exact perturbation jobs and finite resources remain separate no-fit requirements.
+
 ### 16.6 Broader normalization controls
 
 `R_SNV_400_1800`, `R_VECTOR_400_1800`, and `R_AREA_400_1800` are fixed exploratory controls for the classical champion only unless compute is expanded before any outcome. `R_D1_400_1800` remains a destructive control and cannot be promoted from clustering or a favorable isolated test domain.

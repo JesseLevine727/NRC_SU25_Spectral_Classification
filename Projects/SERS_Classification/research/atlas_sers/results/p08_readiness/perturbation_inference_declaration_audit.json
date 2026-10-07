@@ -1,0 +1,48 @@
+{
+  "all_six_disturbances_in_each_family": true,
+  "contrasts": 456,
+  "execution_authorized": false,
+  "input_bytes_unchanged": true,
+  "invented_all_zero_sign_fraction": "1",
+  "invented_full_support_point_rescaling": "27/130",
+  "invented_sign_arithmetic": {
+    "ten_instrument_view": {
+      "exact_fraction": "1/4",
+      "passing_assignments": 256,
+      "total_assignments": 1024
+    },
+    "thirteen_domain_view": {
+      "exact_fraction": "1/4",
+      "passing_assignments": 2048,
+      "total_assignments": 8192
+    },
+    "three_nonzero": {
+      "exact_fraction": "1/4",
+      "passing_assignments": 2,
+      "total_assignments": 8
+    }
+  },
+  "multiplicity_families": {
+    "eligible_qc_robustness_effects": 48,
+    "eligible_qc_robustness_model_interactions": 48,
+    "operational_qc_robustness_effects": 48,
+    "operational_robustness_model_interactions": 192,
+    "universal_robustness_effects": 120
+  },
+  "new_scientific_operations": 0,
+  "numerical_inference_engine_accepted": false,
+  "point_rescaling_applies_to_pooled_sensitivity_or_all_weighted_draws": false,
+  "qc_sign_bound_is_measured_p_value": false,
+  "resampling_draws_generated": false,
+  "schema_version": "nato-sers-p08-perturbation-inference-declaration-audit-v1",
+  "scientific_arrays_predictions_or_scores_loaded": false,
+  "scope": "public_metadata_and_invented_exact_rational_arithmetic",
+  "source_file_hashes": {
+    "plan/P08_STATISTICAL_PROTOCOL.md": "edf4b6e4ab303b2b5910b0285cd07e4ffdbaa782373f6d2e074faea07d8b2907",
+    "plan/contracts/p08_perturbation_design.json": "072ba9ee3223e9e206af83e0c57130b236758e35284e0488afd6b18d91f1bf08",
+    "plan/contracts/p08_perturbation_inference.json": "f4957ef2ec3eaba60079b8cda84c52e48faba79d968bf575e587324adcc290dd",
+    "results/p08_readiness/perturbation_inference_support_audit.json": "df740cf203bdf84be93a7abd4364825bcb7427df17c0da74ee0875ae31f416e8"
+  },
+  "status": "pass",
+  "unique_contrast_identities": 456
+}

@@ -32,6 +32,8 @@ Family-aware results must distinguish structural MIN aliases from a supported tr
 
 P08-F08 follows the [stress-test design](P08_PERTURBATION_PROTOCOL.md): show both shift/slope directions, dose markers and paired domain scatter for normalized loss areas. Gaussian/impulse repetition spread describes synthetic Monte Carlo variation, not uncertainty over new physical samples. Do not pool synthetic repetitions into a probability ensemble. Label the Gaussian curve's quantile-index axis and show source-proxy amplitude summaries; do not describe that axis as equal physical noise increments. The approved fixed-route QC view must state that routing reactions were not tested.
 
+Use the [robustness inference registry](contracts/p08_perturbation_inference.json) for area benefits and model interactions. Show clean and stressed absolute accuracy beside relative degradation, since a low clean score can limit apparent loss. Label the QC eligible view as three CWA instruments and 24 masters, and its complete-four-fold sensitivity as 36 contexts rather than 54. State the 0.25 sign-resolution bound without presenting it as an observed p-value. No pointwise-dose or directional-area significance annotations are registered.
+
 Use the intervals, missing-cell rules and multiplicity families in the [statistical protocol](P08_STATISTICAL_PROTOCOL.md). Negative effects, weakest-domain changes and fallback burdens remain visible. An interval is conditional on the saved fits and observed support; no figure may imply clean-spectrum recovery or a passed superiority gate.
 
 ## 4. Release evidence

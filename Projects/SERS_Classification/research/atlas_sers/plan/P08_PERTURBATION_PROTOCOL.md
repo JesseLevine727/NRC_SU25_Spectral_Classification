@@ -2,6 +2,8 @@
 
 **Specified:** 2026-10-07. **State:** pre-outcome numerical design with owner-approved model panel and QC interpretation; not an execution permit. The [registry](contracts/p08_perturbation_design.json) records the numerical choices below, and the [case inventory](../results/p08_readiness/perturbation_case_inventory.json) enumerates their descriptors. Exact prediction/reconstruction accounting, finite resources and numerical acceptance remain incomplete.
 
+**Inference checkpoint:** the subsequent [comparison specification](P08_PERTURBATION_INFERENCE.md) and its registry now define all robustness effects, interactions, multiplicity families, support, uncertainty and missingness. They supersede the pending-inference wording retained below. Numerical inference acceptance and execution remain unauthorized; the disturbance geometry and 96-case definition are unchanged.
+
 ## 1. Question and scope
 
 These tests ask whether the registered preprocessing-and-classification pipelines retain identification performance under a defined change to the test spectrum. They do not estimate the frequency of that disturbance in the field trial, reconstruct clean chemistry or establish a particular instrument's physical failure mechanism. All source selection, model weights, training durations, calibration parameters and preprocessing parameters remain fixed. No model is trained on the disturbed held data.

@@ -14,6 +14,8 @@
 
 **Perturbation design checkpoint:** the [numerical specification](P08_PERTURBATION_PROTOCOL.md) now defines disturbance geometry, paired repetitions, source-noise scaling, zero-dose parity and loss-area summaries. The 96-case design is not an exact prediction/reconstruction ledger. Owner decisions P08-A10–A11 approve all five universal models and the fixed-clean-route QC sensitivity; the native-grid gate-reaction alternative is not included. Complete inference families, resources and numerical acceptance remain open. This supersedes only the corresponding unspecified-numerical-detail statements below.
 
+**Perturbation inference checkpoint:** the [comparison specification](P08_PERTURBATION_INFERENCE.md) now enumerates 456 comparisons and their fixed support, missingness, uncertainty and five multiplicity families. An identity-only audit verifies the 54-context QC subset's three instruments, 24 masters and nine complete-four-fold groups. The resulting 0.25 QC sign-resolution limit is analytical, not a new outcome. This closes the previously unspecified inference declaration; exact perturbation jobs, finite resources and numerical acceptance remain incomplete. No execution permit or G4 pass follows.
+
 ## 1. Requirement coverage
 
 | Goal requirement | Current evidence | Remaining boundary |
