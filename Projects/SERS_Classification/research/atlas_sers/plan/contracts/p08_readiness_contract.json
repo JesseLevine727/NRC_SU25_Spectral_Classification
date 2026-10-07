@@ -24,7 +24,8 @@
     {"decision_id": "P08-A08", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Apply test-time synthetic disturbances to the stored common-support interpolated spectrum before the numerical preprocessing pipeline, using matched disturbances across methods. No native-raw simulation claim or numerical perturbation execution."},
     {"decision_id": "P08-A09", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Use constant endpoint extension only where a prespecified synthetic shift requires unsupported coordinates; retain model width and label filled values as assumptions, not measured Raman signal. No input rebuild or scientific execution."},
     {"decision_id": "P08-A10", "status": "approved", "date": "2026-10-07", "answer": "Use all five universal-panel methods (Recommended)", "scope": "Include RBF-SVM, Random Forest, Extra Trees, D0-M and context-local P05-SELECTED in test-time robustness of MIN, SG and arPLS. Planning scope only; no fit, prediction, perturbation or resource approval. This decision does not resolve the distinct filtered-population panel question."},
-    {"decision_id": "P08-A11", "status": "approved", "date": "2026-10-07", "answer": "Plan a clearly labelled fixed-route QC sensitivity (Recommended)", "scope": "Hold each spectrum's clean-data QC preprocessing decision fixed while disturbing its common-grid input and applying that selected action through the already trained mixed-route estimator. This tests robustness conditional on original routing, not QC gate reactions. No additional native-grid gate-reaction experiment or scientific execution is authorized."}
+    {"decision_id": "P08-A11", "status": "approved", "date": "2026-10-07", "answer": "Plan a clearly labelled fixed-route QC sensitivity (Recommended)", "scope": "Hold each spectrum's clean-data QC preprocessing decision fixed while disturbing its common-grid input and applying that selected action through the already trained mixed-route estimator. This tests robustness conditional on original routing, not QC gate reactions. No additional native-grid gate-reaction experiment or scientific execution is authorized."},
+    {"decision_id": "P08-A12", "status": "approved", "date": "2026-10-07", "answer": "Include Extra Trees in both sensitivities", "scope": "Include C-EXTRA-TREES in both filtered-population sensitivities (notes-clear 500 and Mira-1-excluded 575) using the five already specified universal-panel methods. Selects the already costed five_method alternative; no new science, numerical implementation, resource, budget, training or execution approval."}
   ],
   "universal_panel": ["C-RBF-SVM", "C-RANDOM-FOREST", "C-EXTRA-TREES", "D0-M", "P05-SELECTED"],
   "adaptive_panel_pending_execution_lock": ["C-RBF-SVM", "C-RANDOM-FOREST", "D0-M", "P05-SELECTED"],
@@ -173,7 +174,7 @@
     "aggregate_stage_sums_and_parent_hash_links_verified": true,
     "reporting_stage_ownership_verified": true,
     "later_numerical_runtime_acceptance_is_separate": true,
-    "population_panel_choice_resolved": false,
+    "population_panel_choice_resolved": true,
     "final_release_ci_verified": false,
     "full_readiness_complete": false,
     "execution_authorized": false
@@ -298,7 +299,8 @@
     "synthetic_shift_edges": "constant_nearest_endpoint_extension_only_outside_available_support",
     "primary_neural_recipe_mapping_changed": false,
     "execution_sequence": ["U0_separate_smoke_approval", "U1_separate_universal_approval", "adaptive_separate_resource_gate", "robustness_and_exploratory_separate_budgets"],
-    "remaining_numerical_specifications_locked": false,
+    "remaining_numerical_specifications_locked": true,
+    "specification_lock_scope": "pre_outcome_definitions_only_not_numerical_implementation_or_execution",
     "resource_ceilings_approved": false,
     "execution_authorized": false
   },
@@ -335,7 +337,11 @@
     "exact_operation_counts_verified": true,
     "operation_audit": "results/p08_readiness/population_slot_ledger_audit.json",
     "operation_scope": "four_and_five_method_alternatives_three_universal_policies_fresh_population_selection",
-    "panel_scope_clarification_pending": true,
+    "panel_scope_clarification_pending": false,
+    "selected_panel": "five_method",
+    "panel_decision": "P08-A12",
+    "selected_combined_model_fit_upper": 539265,
+    "selected_resource_proposal_stages": ["POP-NOTES-5", "POP-MIRA-5"],
     "notes_clear_four_method_model_fit_lower": 168150,
     "notes_clear_four_method_model_fit_upper": 170277,
     "notes_clear_five_method_model_fit_lower": 256260,
@@ -346,12 +352,13 @@
     "mira1_excluded_five_method_model_fit_upper": 280878,
     "conditional_candidate_branches_mutually_exclusive_per_context": true,
     "selected_recipe_outcomes_computed": false,
-    "population_inference_locked": false,
+    "population_inference_locked": true,
+    "population_inference_lock_scope": "pre_outcome_definitions_only_not_numerical_implementation_or_execution",
     "conditional_population_inference_specified": true,
     "population_inference_protocol": "plan/P08_POPULATION_INFERENCE.md",
     "population_inference_registry": "plan/contracts/p08_population_inference.json",
     "population_inference_support_audit": "results/p08_readiness/population_inference_support_audit.json",
-    "population_inference_lock_remaining": "panel_scope_clarification_and_numerical_implementation_review",
+    "population_inference_lock_remaining": "numerical_implementation_and_runtime_acceptance_separate_before_execution",
     "notes_clear_common_comparison_contexts": 215,
     "notes_clear_complete_four_fold_classical_contexts": 208,
     "notes_clear_complete_four_fold_neural_contexts": 212,
@@ -461,6 +468,6 @@
     "numerical_execution_accepted": false,
     "execution_authorized": false
   },
-  "pending_later_branch_choices": ["filtered_population_extra_trees_panel_scope_clarification"],
-  "completion_gaps": ["filtered_population_extra_trees_panel_scope_clarification", "requirement_wide_final_lock", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
+  "pending_later_branch_choices": [],
+  "completion_gaps": ["requirement_wide_final_lock", "final_reviewed_release_and_remote_ci", "separate_scientific_execution_request"]
 }

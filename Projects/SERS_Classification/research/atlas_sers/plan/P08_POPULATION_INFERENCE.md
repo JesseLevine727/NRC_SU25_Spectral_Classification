@@ -1,6 +1,6 @@
 # P08 filtered-population comparisons
 
-**Date:** 2026-10-04. **Status:** pre-outcome specification, conditional on the outstanding four- versus five-method panel clarification. This document authorizes no fitting, prediction, calibration or resampling. It specifies how the approved regenerated populations will be compared; numerical implementation and finite resources remain separate gates.
+**Specified:** 2026-10-04. **Panel locked:** 2026-10-07 under P08-A12, including Extra Trees in both sensitivities. This pre-outcome specification authorizes no fitting, prediction, calibration or resampling. Numerical implementation acceptance and approval of the existing finite resource proposals remain separate gates.
 
 ## 1. Question and model selection
 
@@ -8,7 +8,7 @@ The notes-clear and Mira-1-excluded sensitivities ask whether the preprocessing 
 
 Under P08-A07, each filtered population receives fresh, registered source-only classical tuning and MIN neural-recipe selection. Freeze that population's context-local neural recipe across MIN, SG and arPLS. Do not copy the primary recipe choices, winning classical hyperparameters or fitted estimators. Each policy retains its own source-only stopping and calibration. Source neural calibration uses inherited selection units, not the additional guard units. A structural ordinary-CNN fallback still requires a valid completed selection/readiness record; failed or unknown selection does not trigger that fallback.
 
-The four-method alternative contains RBF-SVM, Random Forest, D0-M and P05-SELECTED. The five-method alternative adds Extra Trees. The [registry](contracts/p08_population_inference.json) and [operation catalog](../results/p08_readiness/population_slot_ledger_audit.json) retain both alternatives until the owner resolves the panel. Neither is silently activated. This clarification does not change the approved primary universal five-method panel or reopen P08-A07.
+The four-method historical alternative contains RBF-SVM, Random Forest, D0-M and P05-SELECTED. The five-method panel adds Extra Trees and is selected for both populations under P08-A12. The [registry](contracts/p08_population_inference.json) selects that existing alternative; the [operation catalog](../results/p08_readiness/population_slot_ledger_audit.json) preserves both for provenance. They are not cumulative experiments. This choice does not change the primary universal five-method panel or reopen P08-A07.
 
 The minimal benchmark's outcomes have already been examined. These rules precede new filtered-population outcomes; they are not retrospective preregistration of the earlier benchmark. The sensitivities cannot establish a causal chemical-cleaning effect, instrument-independent substrate chemistry or passage of the original G4 superiority gate.
 
@@ -51,10 +51,10 @@ The pooled-fold sensitivity uses the method-specific complete groups in Section 
 
 ## 4. Inference and multiplicity
 
-| Conditional panel | Population policy effects | Population model–policy interactions |
+| Panel status | Population policy effects | Population model–policy interactions |
 |---|---:|---:|
-| Four methods | 2 tiers × 4 methods × 2 policies × 2 endpoints = 32 | 2 tiers × 2 neural × 2 classical × 2 policies × 2 endpoints = 32 |
-| Five methods | 2 tiers × 5 methods × 2 policies × 2 endpoints = 40 | 2 tiers × 2 neural × 3 classical × 2 policies × 2 endpoints = 48 |
+| Four methods, historical alternative | 2 tiers × 4 methods × 2 policies × 2 endpoints = 32 | 2 tiers × 2 neural × 2 classical × 2 policies × 2 endpoints = 32 |
+| Five methods, selected under P08-A12 | 2 tiers × 5 methods × 2 policies × 2 endpoints = 40 | 2 tiers × 2 neural × 3 classical × 2 policies × 2 endpoints = 48 |
 
 Use one exploratory effect family across both tiers and one exploratory interaction family across both tiers, for the panel selected before new outcomes. Apply Holm adjustment within each family separately for the domain-sign and instrument-sign sensitivities. Retain structurally duplicated entries. An unavailable planned contrast contributes p = 1 only to adjustment bookkeeping; its estimate and raw p-value remain missing. Pooled sensitivities add no hypothesis family. The primary universal, QC, range and normalization families are unchanged.
 
@@ -82,6 +82,6 @@ Figure P08-F11 will show MIN-versus-policy domain scatter, faceted by population
 
 ## 6. Remaining gates
 
-The panel clarification, finite resource proposals, numerical implementation review and execution authority remain outstanding. Declaration tests check agreement between documents and metadata; they do not validate a training or inference engine. Conditional operation ceilings remain 355,026 fits for the four-method alternative and 539,265 for the five-method alternative across both tiers. Neither ceiling is approved for execution. Universal preprocessing remains first, adaptive work second, and these later sensitivities require separate stage-specific permission.
+The panel clarification is resolved by P08-A12; numerical implementation review and execution authority remain outstanding. Declaration tests check agreement between documents and metadata; they do not validate a training or inference engine. Conditional operation ceilings remain 355,026 fits for the historical four-method alternative and 539,265 for the selected five-method panel across both tiers. Neither ceiling is approved for execution. Universal preprocessing remains first, adaptive work second, and these later sensitivities require separate stage-specific permission.
 
-The subsequent [finite resource proposals](P08_RESOURCE_PROPOSAL.md#14-filtered-population-resource-proposals) close the unspecified-budget checkpoint above for both panel alternatives. They remain unapproved and do not change this inference declaration. Historical per-model/stage costs are estimates rather than measured filtered-population needs; cumulative artifact retention exceeds current capacity at the full proposed allowances. Panel selection, numerical implementation and future resource admission remain separate requirements.
+The [finite resource proposals](P08_RESOURCE_PROPOSAL.md#14-filtered-population-resource-proposals) cover both alternatives; P08-A12 selects the five-method stages but does not approve their resources. Historical per-model/stage costs are estimates rather than measured filtered-population needs; cumulative artifact retention exceeds observed capacity at the full proposed allowances. Numerical implementation and fresh resource admission remain separate execution requirements.

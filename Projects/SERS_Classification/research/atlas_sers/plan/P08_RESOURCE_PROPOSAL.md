@@ -90,7 +90,7 @@ N1 requires its own approval, an exact operation ledger and a fresh storage chec
 
 ## 6. Current decision boundary
 
-The first possible execution request is **U0 only**, after the no-fit package and its release checks close. It is not being launched by publishing this proposal. The [current requirement audit](P08_COMPLETION_AUDIT.md) reconciles the operation catalogs, conditional later-branch specifications, finite proposals and reviewed invented-data launcher. The separate filtered-population Extra Trees choice remains unresolved. Real resource admission and each later stage's numerical acceptance remain separate from the planning lock and synthetic tests. No planning approval is treated as a training permit.
+The first possible execution request is **U0 only**, after the no-fit package and its release checks close. It is not being launched by publishing this proposal. The [current requirement audit](P08_COMPLETION_AUDIT.md) reconciles the operation catalogs, conditional later-branch specifications, finite proposals and reviewed invented-data launcher. P08-A12 resolves the filtered-population scope with Extra Trees in both tiers. Real resource admission and each later stage's numerical acceptance remain separate from the planning lock and synthetic tests. No planning approval is treated as a training permit.
 
 ## 7. Resource snapshots and cumulative attempt accounting
 
@@ -241,7 +241,7 @@ The relevant historical source durations sum to **7,988.616 seconds**; four copi
 
 ## 14. Filtered-population resource proposals
 
-The [population catalog](../results/p08_readiness/population_slot_ledger_audit.json) enumerates fresh source-only model selection in the notes-clear and Mira-1-excluded tiers. These are later sensitivity stages, not additions to U0 or U1. Both four- and five-method alternatives remain explicit until the owner resolves Extra Trees inclusion. Their [cost audit](../results/p08_readiness/population_resource_proposal_audit.json) specifies finite ceilings without selecting a panel, transferring prior permissions or launching work.
+The [population catalog](../results/p08_readiness/population_slot_ledger_audit.json) enumerates fresh source-only model selection in the notes-clear and Mira-1-excluded tiers. These are later sensitivity stages, not additions to U0 or U1. P08-A12 selects the five-method stages, POP-NOTES-5 and POP-MIRA-5; four-method alternatives remain explicit historical comparisons, not additional planned runs. Their [cost audit](../results/p08_readiness/population_resource_proposal_audit.json) specifies finite ceilings without selecting a panel, transferring prior permissions or launching work.
 
 ### Historical cost basis
 
@@ -285,7 +285,7 @@ The **2026-10-07T13:30:53Z** recheck reported **192,519,241,728 bytes free**, ap
 
 The stages cannot all assume the same free space. Retaining the full **80-GiB** U1 allowance plus both four-method population allowances and the **30-GiB** reserve requires **254 GiB**. The five-method counterparts require **302 GiB**. Both exceed the observed capacity even before range, normalization or adaptive artifacts. Actual retained sizes may be lower, but their size cannot be assumed in advance. Recheck capacity after each accepted stage; additional storage or an explicitly approved retention amendment is required if the next stage fails admission. No cleanup is authorized or performed by this audit.
 
-Universal preprocessing remains the first scientific stage to request. These larger sensitivities do not delay implementation work on the remaining readiness specifications and do not become authorized because their costs are now explicit. Panel resolution, numerical runtime/inference review and separate stage-specific permits remain outstanding.
+Universal preprocessing remains the first scientific stage to request. These larger sensitivities do not delay implementation work on the remaining readiness specifications and do not become authorized because their costs are now explicit. Panel scope is resolved; numerical runtime/inference review and separate stage-specific permits remain outstanding.
 
 ## 15. S1 proposal: registered test-time robustness
 

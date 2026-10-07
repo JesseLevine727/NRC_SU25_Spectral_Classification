@@ -2,7 +2,7 @@
   "schema_version": "nato-sers-p08-population-inference-v1",
   "protocol_version": "nato-sers-p08-population-inference-20261004-v1",
   "date": "2026-10-04",
-  "status": "conditional_pre_outcome_specification_panel_clarification_and_implementation_review_pending",
+  "status": "pre_outcome_specification_five_method_panel_locked_numerical_review_pending",
   "execution_authorized": false,
   "authorized_model_fits": 0,
   "authorized_new_predictions": 0,
@@ -14,8 +14,10 @@
   "support_audit_sha256": "4a7c2efec550e05c24b9d150059965ac4c3f2435fbc002e83613a84e332b8800",
   "slot_audit_sha256": "858b1c8b91b58fb90935df35b58f758950a7ece0841e421948bebdec7cf7ed3f",
   "owner_selection_decision": "P08-A07",
-  "panel_scope_clarification_pending": true,
-  "selected_panel": null,
+  "panel_decision": "P08-A12",
+  "panel_approved_date": "2026-10-07",
+  "panel_scope_clarification_pending": false,
+  "selected_panel": "five_method",
   "panels": {
     "four_method": {
       "methods": [

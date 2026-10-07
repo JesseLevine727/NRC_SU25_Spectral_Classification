@@ -255,6 +255,11 @@ def test_owner_scope_approvals_remain_planning_only(design):
         owner_decisions["P08-A11"]["answer"]
         == "Plan a clearly labelled fixed-route QC sensitivity (Recommended)"
     )
+    assert owner_decisions["P08-A12"]["status"] == "approved"
+    assert (
+        owner_decisions["P08-A12"]["answer"]
+        == "Include Extra Trees in both sensitivities"
+    )
 
     perturbation_design = readiness["perturbation_design"]
     assert perturbation_design["robustness_panel_scope_resolved"] is True
@@ -265,6 +270,4 @@ def test_owner_scope_approvals_remain_planning_only(design):
         == "results/p08_readiness/perturbation_case_inventory.json"
     )
 
-    assert readiness["pending_later_branch_choices"] == [
-        "filtered_population_extra_trees_panel_scope_clarification"
-    ]
+    assert readiness["pending_later_branch_choices"] == []

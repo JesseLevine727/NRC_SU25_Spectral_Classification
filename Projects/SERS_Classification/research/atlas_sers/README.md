@@ -109,8 +109,8 @@ results, with the supported subset reported separately. The
 [current requirement audit](plan/P08_COMPLETION_AUDIT.md) reconciles upstream
 evidence, stage accounting, reporting ownership and the reviewed invented-data
 U0 launcher. [Resource ceilings](plan/P08_RESOURCE_PROPOSAL.md) remain proposals.
-The separate filtered-population Extra Trees choice, final release checks and
-a distinct U0 execution request remain. Later numerical runtimes retain their
+P08-A12 resolves the population panel with Extra Trees in both sensitivities.
+Final release checks and a distinct U0 execution request remain. Later numerical runtimes retain their
 own acceptance gates; they are not all prerequisites for this planning lock.
 No new P08 models have been trained.
 Reviewed and validated substantive milestones are pushed to

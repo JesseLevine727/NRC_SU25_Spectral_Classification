@@ -176,8 +176,7 @@ def test_schema_status_and_denied_execution(population):
     assert population["schema_version"] == "nato-sers-p08-population-inference-v1"
     assert population["date"] == "2026-10-04"
     assert population["status"] == (
-        "conditional_pre_outcome_specification_panel_clarification_"
-        "and_implementation_review_pending"
+        "pre_outcome_specification_five_method_panel_locked_numerical_review_pending"
     )
     assert population["execution_authorized"] is False
     assert population["authorized_model_fits"] == 0
@@ -196,8 +195,10 @@ def test_schema_status_and_denied_execution(population):
 
 def test_scope_is_conditional_not_approval(population):
     assert population["owner_selection_decision"] == "P08-A07"
-    assert population["panel_scope_clarification_pending"] is True
-    assert population["selected_panel"] is None
+    assert population["panel_decision"] == "P08-A12"
+    assert population["panel_approved_date"] == "2026-10-07"
+    assert population["panel_scope_clarification_pending"] is False
+    assert population["selected_panel"] == "five_method"
     assert (
         population["support_audit"]
         == "results/p08_readiness/population_inference_support_audit.json"
@@ -266,6 +267,114 @@ def test_panels_and_model_identifiers(population):
     assert "C-EXTRA-TREES" not in panels["four_method"]["methods"]
     assert "C-EXTRA-TREES" in panels["five_method"]["methods"]
     assert set(panels["four_method"]["methods"]) < set(panels["five_method"]["methods"])
+
+
+def test_a12_five_method_panel_selected(population, readiness):
+    assert population["panel_decision"] == "P08-A12"
+    assert population["panel_approved_date"] == "2026-10-07"
+    assert population["status"] == (
+        "pre_outcome_specification_five_method_panel_locked_numerical_review_pending"
+    )
+    assert population["panel_scope_clarification_pending"] is False
+    assert population["selected_panel"] == "five_method"
+    five = population["panels"]["five_method"]
+    assert five["effect_family_size"] == 40
+    assert five["interaction_family_size"] == 48
+    assert five["methods"] == [
+        "C-RBF-SVM",
+        "C-RANDOM-FOREST",
+        "C-EXTRA-TREES",
+        "D0-M",
+        "P05-SELECTED",
+    ]
+    assert five["classical_methods"] == [
+        "C-RBF-SVM",
+        "C-RANDOM-FOREST",
+        "C-EXTRA-TREES",
+    ]
+    # historical four-method alternative retained, not additional execution
+    four = population["panels"]["four_method"]
+    assert four["effect_family_size"] == 32
+    assert four["interaction_family_size"] == 32
+    assert set(population["panels"]) == {"four_method", "five_method"}
+    # selected panel applies to both filtered populations (shared registry scope)
+    assert {entry["population_id"] for entry in population["populations"]} == {
+        NOTES,
+        MIRA,
+    }
+    decisions = {entry["decision_id"]: entry for entry in readiness["owner_decisions"]}
+    decision = decisions["P08-A12"]
+    assert decision["status"] == "approved"
+    assert decision["date"] == "2026-10-07"
+    assert decision["answer"] == "Include Extra Trees in both sensitivities"
+    assert "both filtered-population sensitivities" in decision["scope"]
+
+
+def test_a12_selected_panel_budget_and_stages(readiness):
+    prescreen = readiness["population_membership_prescreen"]
+    assert prescreen["panel_scope_clarification_pending"] is False
+    assert prescreen["selected_panel"] == "five_method"
+    assert prescreen["panel_decision"] == "P08-A12"
+    assert prescreen["selected_combined_model_fit_upper"] == 539265
+    assert prescreen["selected_combined_model_fit_upper"] == (
+        prescreen["notes_clear_five_method_model_fit_upper"]
+        + prescreen["mira1_excluded_five_method_model_fit_upper"]
+    )
+    assert prescreen["notes_clear_five_method_model_fit_upper"] == 258387
+    assert prescreen["mira1_excluded_five_method_model_fit_upper"] == 280878
+    assert prescreen["selected_resource_proposal_stages"] == [
+        "POP-NOTES-5",
+        "POP-MIRA-5",
+    ]
+    # original four- and five-method alternatives preserved
+    assert prescreen["notes_clear_four_method_model_fit_lower"] == 168150
+    assert prescreen["notes_clear_four_method_model_fit_upper"] == 170277
+    assert prescreen["notes_clear_five_method_model_fit_lower"] == 256260
+    assert prescreen["mira1_excluded_four_method_model_fit_lower"] == 183006
+    assert prescreen["mira1_excluded_four_method_model_fit_upper"] == 184749
+    assert prescreen["mira1_excluded_five_method_model_fit_lower"] == 279135
+    assert prescreen["execution_authorized"] is False
+
+
+def test_a12_design_locks_and_execution_denials(population, readiness):
+    prescreen = readiness["population_membership_prescreen"]
+    assert prescreen["population_inference_locked"] is True
+    assert prescreen["population_inference_lock_scope"] == (
+        "pre_outcome_definitions_only_not_numerical_implementation_or_execution"
+    )
+    assert prescreen["population_inference_lock_remaining"] == (
+        "numerical_implementation_and_runtime_acceptance_separate_before_execution"
+    )
+    reconciliation = readiness["requirement_reconciliation"]
+    assert reconciliation["population_panel_choice_resolved"] is True
+    assert reconciliation["final_release_ci_verified"] is False
+    assert reconciliation["full_readiness_complete"] is False
+    assert reconciliation["execution_authorized"] is False
+    later = readiness["later_branch_decisions"]
+    assert later["remaining_numerical_specifications_locked"] is True
+    assert later["specification_lock_scope"] == (
+        "pre_outcome_definitions_only_not_numerical_implementation_or_execution"
+    )
+    assert later["resource_ceilings_approved"] is False
+    assert later["execution_authorized"] is False
+    assert readiness["pending_later_branch_choices"] == []
+    assert readiness["completion_gaps"] == [
+        "requirement_wide_final_lock",
+        "final_reviewed_release_and_remote_ci",
+        "separate_scientific_execution_request",
+    ]
+    assert population["execution_authorized"] is False
+    for key in (
+        "authorized_model_fits",
+        "authorized_new_predictions",
+        "authorized_resampling_draws",
+    ):
+        value = population[key]
+        assert type(value) is int
+        assert value == 0
+    assert population["inference_implementation_accepted"] is False
+    assert population["population_runtime_accepted"] is False
+    assert population["resource_proposal_approved"] is False
 
 
 def test_neural_methods_policies_and_endpoints(population):
@@ -618,7 +727,7 @@ def test_prose_and_readiness_links(readiness):
     assert POPULATION_PROTOCOL.is_file()
     block = readiness["population_membership_prescreen"]
     assert block["conditional_population_inference_specified"] is True
-    assert block["population_inference_locked"] is False
+    assert block["population_inference_locked"] is True
     assert block["population_resource_proposal_complete"] is True
     assert block["execution_authorized"] is False
     for link in (

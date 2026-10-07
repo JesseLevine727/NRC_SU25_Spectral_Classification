@@ -2,7 +2,7 @@
 
 **Approved:** 2026-10-04. **Authority:** scientific planning only. The owner accepted the four recommendations and resumed the existing no-fit readiness goal. No fit, scalar calibration, prediction, resampling draw, representation rebuild or perturbation run is authorized.
 
-**Current decision status, 2026-10-07:** P08-A12 in Section 7 resolves the filtered-population panel in favor of including Extra Trees in both sensitivities. This supersedes earlier unanswered-panel wording. P08-A10–A11 in Section 6 retain the five-method universal robustness panel and fixed-clean-route QC interpretation. The owner has also raised concern about excessive planning; the panel answer does not approve or reject the separate proposed simplification or pause. This update records the answer only, without expanding implementation or authorizing execution. Existing machine-readable pending-state fields have not yet been synchronized with this decision; their numerical definitions and execution denials remain unchanged.
+**Current decision status, 2026-10-07:** P08-A12 in Section 7 resolves the filtered-population panel in favor of including Extra Trees in both sensitivities. This supersedes earlier unanswered-panel wording and is synchronized with the readiness and population registries. P08-A10–A11 in Section 6 retain the five-method universal robustness panel and fixed-clean-route QC interpretation. The owner has also raised concern about excessive planning; the panel answer does not approve or reject the separate proposed simplification or pause. No experimental branch or numerical implementation is added by this synchronization. Scientific definitions and execution denials remain unchanged.
 
 ## 1. Decision record
 

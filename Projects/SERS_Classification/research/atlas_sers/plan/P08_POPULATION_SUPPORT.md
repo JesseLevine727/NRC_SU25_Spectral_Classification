@@ -2,6 +2,8 @@
 
 **Date:** 2026-10-04. **Authority:** no-fit planning under P08-A07. No new split, QC cutpoint, model, prediction or score has been produced by this prescreen.
 
+**Panel decision, 2026-10-07:** P08-A12 selects the existing five-method panel, including Extra Trees, for both tiers. The [inference registry](contracts/p08_population_inference.json) and [current requirement audit](P08_COMPLETION_AUDIT.md) reflect this approval. Earlier pending-panel statements below are historical audit checkpoints. Resource ceilings and scientific execution remain unapproved.
+
 Sections 1–3 retain the membership-prescreen checkpoint. Section 4 records the subsequent regenerated-role audit; it supersedes the earlier statement that fold support had not yet been checked. Neither checkpoint authorizes scientific execution.
 
 ## 1. What the filters change
