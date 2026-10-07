@@ -30,6 +30,8 @@ The comparison figures show every planned domain, including poor and unavailable
 
 Family-aware results must distinguish structural MIN aliases from a supported transfer estimate, which is unavailable here. QC figures show both all-context operational results and the separately labelled supported CWA subset. Counts of contexts, masters, spectra and technical seeds must not be presented as interchangeable sample sizes.
 
+P08-F08 follows the [stress-test design](P08_PERTURBATION_PROTOCOL.md): show both shift/slope directions, dose markers and paired domain scatter for normalized loss areas. Gaussian/impulse repetition spread describes synthetic Monte Carlo variation, not uncertainty over new physical samples. Do not pool synthetic repetitions into a probability ensemble. Label the Gaussian curve's quantile-index axis and show source-proxy amplitude summaries; do not describe that axis as equal physical noise increments. The approved fixed-route QC view must state that routing reactions were not tested.
+
 Use the intervals, missing-cell rules and multiplicity families in the [statistical protocol](P08_STATISTICAL_PROTOCOL.md). Negative effects, weakest-domain changes and fallback burdens remain visible. An interval is conditional on the saved fits and observed support; no figure may imply clean-spectrum recovery or a passed superiority gate.
 
 ## 4. Release evidence

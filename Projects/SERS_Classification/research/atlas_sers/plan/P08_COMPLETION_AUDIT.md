@@ -12,6 +12,8 @@
 
 **Population resource checkpoint:** [finite conditional proposals](P08_RESOURCE_PROPOSAL.md#14-filtered-population-resource-proposals) now cover both panels. Their historical basis includes all four neural recipes and excludes development contexts and interrupted-run accounting charges. Individual initial storage thresholds fit the observed capacity, but full U1-plus-population retention does not. This supersedes earlier statements that population resource proposals were absent; it does not approve them, resolve the panel or validate numerical execution.
 
+**Perturbation design checkpoint:** the [numerical specification](P08_PERTURBATION_PROTOCOL.md) now defines disturbance geometry, paired repetitions, source-noise scaling, zero-dose parity and loss-area summaries. The 96-case design is not an exact prediction/reconstruction ledger. Owner decisions P08-A10–A11 approve all five universal models and the fixed-clean-route QC sensitivity; the native-grid gate-reaction alternative is not included. Complete inference families, resources and numerical acceptance remain open. This supersedes only the corresponding unspecified-numerical-detail statements below.
+
 ## 1. Requirement coverage
 
 | Goal requirement | Current evidence | Remaining boundary |

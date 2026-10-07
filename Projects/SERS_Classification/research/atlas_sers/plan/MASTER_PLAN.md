@@ -897,6 +897,10 @@ Apply only at test time, without retraining:
 
 Robustness area under the degradation curve is reported. Perturbations are not claimed to reproduce a specific physical instrument unless supported by source measurements.
 
+The [numerical design](P08_PERTURBATION_PROTOCOL.md) now specifies intermediate levels, source-only noise scaling, impulse height and separation, ten paired stochastic repetitions, clean-path parity and normalized loss-area definitions. It contains 95 nonzero-labelled realizations plus one shared clean case. The associated [registry](contracts/p08_perturbation_design.json) is a pre-outcome declaration, not an executed stress test or a prediction-job ledger. P08-A10 includes all five universal methods in this robustness branch, including Extra Trees; it does not resolve the separate filtered-population panel question.
+
+Native-grid QC and common-grid disturbances are not interchangeable. The P08-A11-approved fixed-clean-route QC sensitivity tests the trained mixed-route pipeline conditional on its original preprocessing decisions, not whether its gate reacts correctly to new contamination. A native-grid gate-reaction experiment is not included and needs a separate approved design. The standard unperturbed adaptive comparison and its four-method panel are unchanged.
+
 ### 16.6 Broader normalization controls
 
 `R_SNV_400_1800`, `R_VECTOR_400_1800`, and `R_AREA_400_1800` are fixed exploratory controls for the classical champion only unless compute is expanded before any outcome. `R_D1_400_1800` remains a destructive control and cannot be promoted from clustering or a favorable isolated test domain.

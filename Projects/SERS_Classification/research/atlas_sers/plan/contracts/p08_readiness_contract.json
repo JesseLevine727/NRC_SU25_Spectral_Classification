@@ -22,7 +22,9 @@
     {"decision_id": "P08-A06", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Approve recommended N2 normalization scope: retain each context's MIN-source-selected classical family and retune/retrain within its registered grid for the four frozen controls. Conditional exploratory comparison, not full-family reselection; resource ceilings and execution remain unapproved."},
     {"decision_id": "P08-A07", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Regenerate master-separated notes-clear and Mira-1-excluded roles; repeat registered source-only tuning and neural-recipe selection within each new source population, then freeze its recipe across preprocessing. No new grids, architectures or scientific execution."},
     {"decision_id": "P08-A08", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Apply test-time synthetic disturbances to the stored common-support interpolated spectrum before the numerical preprocessing pipeline, using matched disturbances across methods. No native-raw simulation claim or numerical perturbation execution."},
-    {"decision_id": "P08-A09", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Use constant endpoint extension only where a prespecified synthetic shift requires unsupported coordinates; retain model width and label filled values as assumptions, not measured Raman signal. No input rebuild or scientific execution."}
+    {"decision_id": "P08-A09", "status": "approved", "date": "2026-10-04", "answer": "okokokokok I agree resume the goal", "scope": "Use constant endpoint extension only where a prespecified synthetic shift requires unsupported coordinates; retain model width and label filled values as assumptions, not measured Raman signal. No input rebuild or scientific execution."},
+    {"decision_id": "P08-A10", "status": "approved", "date": "2026-10-07", "answer": "Use all five universal-panel methods (Recommended)", "scope": "Include RBF-SVM, Random Forest, Extra Trees, D0-M and context-local P05-SELECTED in test-time robustness of MIN, SG and arPLS. Planning scope only; no fit, prediction, perturbation or resource approval. This decision does not resolve the distinct filtered-population panel question."},
+    {"decision_id": "P08-A11", "status": "approved", "date": "2026-10-07", "answer": "Plan a clearly labelled fixed-route QC sensitivity (Recommended)", "scope": "Hold each spectrum's clean-data QC preprocessing decision fixed while disturbing its common-grid input and applying that selected action through the already trained mixed-route estimator. This tests robustness conditional on original routing, not QC gate reactions. No additional native-grid gate-reaction experiment or scientific execution is authorized."}
   ],
   "universal_panel": ["C-RBF-SVM", "C-RANDOM-FOREST", "C-EXTRA-TREES", "D0-M", "P05-SELECTED"],
   "adaptive_panel_pending_execution_lock": ["C-RBF-SVM", "C-RANDOM-FOREST", "D0-M", "P05-SELECTED"],
@@ -350,6 +352,25 @@
       {"stage_id": "POP-MIRA-4", "model_fits": 184749, "scalar_calibrations": 4347, "active_wall_hours": 144, "new_artifacts_gib": 80, "initial_free_gib": 110},
       {"stage_id": "POP-MIRA-5", "model_fits": 280878, "scalar_calibrations": 5067, "active_wall_hours": 192, "new_artifacts_gib": 96, "initial_free_gib": 126}
     ],
+    "execution_authorized": false
+  },
+  "perturbation_design": {
+    "protocol": "plan/P08_PERTURBATION_PROTOCOL.md",
+    "registry": "plan/contracts/p08_perturbation_design.json",
+    "case_inventory": "results/p08_readiness/perturbation_case_inventory.json",
+    "conditional_numerical_design_specified": true,
+    "case_inventory_scope": "metadata_only_not_numerical_perturbations_or_prediction_jobs",
+    "unique_cases_with_shared_zero": 96,
+    "nonzero_labelled_cases": 95,
+    "stochastic_repetitions": 10,
+    "robustness_panel_scope_resolved": true,
+    "robustness_panel_decision": "P08-A10",
+    "qc_stress_scope_resolved": true,
+    "qc_stress_decision": "P08-A11",
+    "full_inference_registry_complete": false,
+    "exact_prediction_reconstruction_ledger_complete": false,
+    "finite_resource_proposal_complete": false,
+    "numerical_execution_accepted": false,
     "execution_authorized": false
   },
   "pending_later_branch_choices": ["filtered_population_extra_trees_panel_scope_clarification"],

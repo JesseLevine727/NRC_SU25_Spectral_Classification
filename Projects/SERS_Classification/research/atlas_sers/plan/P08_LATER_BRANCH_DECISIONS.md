@@ -50,3 +50,16 @@ The reviewed planner enumerates 89,632 operation slots across four controls, inc
 The [resource proposal](P08_RESOURCE_PROPOSAL.md) remains a set of unapproved finite limits. N2 scope approval does not approve its proposed time, storage, memory or fitting allowances. The first possible scientific request remains the separately reviewed U0 source-only smoke; successful U0 work would count toward U1 only after exact input/specification verification. There are no automatic retries or automatic stage advancement.
 
 Figures retain the [P08 format and disclosure rules](P08_FIGURE_PROTOCOL.md): native TikZ, offline HTML, vector PDF and PNG from shared reviewed semantic data. These decisions create no new classification, preservation or degradation result and no new outcome figure.
+
+## 6. Robustness scope decisions, approved 2026-10-07
+
+The owner separately approved the two recommendations below. They supplement P08-A08–A09 without approving execution, finite resource ceilings or additional population experiments.
+
+| Decision | Recorded answer | Approved scope and boundary |
+|---|---|---|
+| P08-A10: universal robustness panel | Use all five universal-panel methods (Recommended) | Test MIN, SG and arPLS with RBF-SVM, Random Forest, Extra Trees, D0-M and the context-local source-selected CNN. This resolves the robustness panel only; the filtered-population panel remains a separate unanswered question. |
+| P08-A11: QC stress interpretation | Plan a clearly labelled fixed-route QC sensitivity (Recommended) | Hold each row's clean native-QC preprocessing decision fixed, disturb the common-grid input and apply that selected action using the existing mixed-route estimator. This tests robustness after routing, not whether the gate detects new contamination. No native-grid gate-reaction experiment is added. |
+
+The [stress-test protocol](P08_PERTURBATION_PROTOCOL.md) defines the measurement-grid distinction and the fixed-route result's interpretation. The adaptive panel remains the existing four methods; adding Extra Trees to universal robustness does not expand it. Keep the 54-context supported adaptive subset separate from the 260-context fallback-inclusive result. Complete MIN fallbacks must use the matched disturbed MIN prediction, not the saved clean prediction.
+
+The 96-case descriptor inventory is metadata only. Exact reconstruction/prediction accounting, finite resource proposals, numerical inference and a separate execution permit remain required. No new model, calibration, preprocessing result, prediction, QC route or disturbance was computed by these approvals.

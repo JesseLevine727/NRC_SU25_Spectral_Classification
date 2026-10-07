@@ -1,0 +1,717 @@
+{
+  "case_definition_sha256": "c711ffe79759f2569231eb131e25b9aed25999af2094830c94f4ba65bae97285",
+  "cases": [
+    {
+      "case_id": "P08-STRESS-CLEAN",
+      "family": "clean",
+      "replicate_index": null,
+      "value": 0
+    },
+    {
+      "case_id": "P08-STRESS-6d3900b8986712436da83846544908a755089ab65fe40e7350d76cfb82420990",
+      "family": "shift",
+      "replicate_index": null,
+      "value": -5
+    },
+    {
+      "case_id": "P08-STRESS-84547a1acf26e42d763d7c6fd8047a23fb0ca35ed87829cdf2058e708a3f3e27",
+      "family": "shift",
+      "replicate_index": null,
+      "value": -4
+    },
+    {
+      "case_id": "P08-STRESS-bb971959a3c886066153e30cd234cbaabe478b6ecf1e4cba1a5f26da1891efd9",
+      "family": "shift",
+      "replicate_index": null,
+      "value": -3
+    },
+    {
+      "case_id": "P08-STRESS-17d88d5b574173b8d0d01c8e378cae3ed4e26f271ef0cf8d41517454bb7c8568",
+      "family": "shift",
+      "replicate_index": null,
+      "value": -2
+    },
+    {
+      "case_id": "P08-STRESS-859c6361e44870c4f82a9b7d25d82328671f35c428dc84eecf5301ddb161d22e",
+      "family": "shift",
+      "replicate_index": null,
+      "value": -1
+    },
+    {
+      "case_id": "P08-STRESS-7b16d785c4afc359242206a9877c75629b3f5ae99c44fa0cb59166d2b4bcc075",
+      "family": "shift",
+      "replicate_index": null,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-572a235230f89f5d17f568d04bb2d06855effdb5b26cb7fdebb5b7ae4cadc17e",
+      "family": "shift",
+      "replicate_index": null,
+      "value": 2
+    },
+    {
+      "case_id": "P08-STRESS-78c1f5f14a5a9b727ebd7d93dcfc1bfe7d0acadc2014a6286b2c581b24761e27",
+      "family": "shift",
+      "replicate_index": null,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-81c5558f7112157011107a10e480dc0a50469ec8a99f46d12fb5d1e2733d6616",
+      "family": "shift",
+      "replicate_index": null,
+      "value": 4
+    },
+    {
+      "case_id": "P08-STRESS-2d815fbb86cf0ff67625f6ee27a184360aa51839bb08e9a60259007dfc84e298",
+      "family": "shift",
+      "replicate_index": null,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-c9f321bbc176e344d96cf1258ff7a311b3462f372b8922357ed257e07f7750da",
+      "family": "slope",
+      "replicate_index": null,
+      "value": -0.1
+    },
+    {
+      "case_id": "P08-STRESS-ee838050730e2f4de0a3ae5223ef5a328130bcab95c73c1371eb4342b6bc9724",
+      "family": "slope",
+      "replicate_index": null,
+      "value": -0.075
+    },
+    {
+      "case_id": "P08-STRESS-40896cd5f7461d85f18cad4e9135ea04dfe409aef9ac42b9366059d6b8df2b63",
+      "family": "slope",
+      "replicate_index": null,
+      "value": -0.05
+    },
+    {
+      "case_id": "P08-STRESS-0454a0740f376feb2e95891d5ccc74da6d58ca46d0b9c710c0088ccd8ffda1b6",
+      "family": "slope",
+      "replicate_index": null,
+      "value": -0.025
+    },
+    {
+      "case_id": "P08-STRESS-9da2220e33d0c75a422ff232329f9eab49a0e51e052e6de472e27ffa653e4e37",
+      "family": "slope",
+      "replicate_index": null,
+      "value": 0.025
+    },
+    {
+      "case_id": "P08-STRESS-26deed2d57d50671c6421e7a4f67d7e8c071f88bed2e04ce2ae4bd17a9ffc171",
+      "family": "slope",
+      "replicate_index": null,
+      "value": 0.05
+    },
+    {
+      "case_id": "P08-STRESS-d19514f650164a8fd2205da3513fbe05efb967f6a80dedeb3b503b7ddb8b734b",
+      "family": "slope",
+      "replicate_index": null,
+      "value": 0.075
+    },
+    {
+      "case_id": "P08-STRESS-a95db059bdb0280c00ba238e9f3b15fe1c0555dd72518924c2e8b2d02849498d",
+      "family": "slope",
+      "replicate_index": null,
+      "value": 0.1
+    },
+    {
+      "case_id": "P08-STRESS-bf200b0daff4ddbd37d04a7f9a0e0bcf6e9eeaafe0f1d67ac00a62fc0a976e8f",
+      "family": "quadratic",
+      "replicate_index": null,
+      "value": 0.025
+    },
+    {
+      "case_id": "P08-STRESS-0a7c3110c57bd3f4310dbe227971cbe03cf1a28fb2b41d8a7d07feda0c5558a9",
+      "family": "quadratic",
+      "replicate_index": null,
+      "value": 0.05
+    },
+    {
+      "case_id": "P08-STRESS-750e4ed604ac70333099b91f0bf3f75849be0dba2202cd1132790ffff02a24f0",
+      "family": "quadratic",
+      "replicate_index": null,
+      "value": 0.075
+    },
+    {
+      "case_id": "P08-STRESS-d8f522c5d6cfb31822287dfe5772b11ce2406cbc9aa96396f0c58a55233ff72c",
+      "family": "quadratic",
+      "replicate_index": null,
+      "value": 0.1
+    },
+    {
+      "case_id": "P08-STRESS-4f69d199bbd78608390cc2a4d0f9541443c1e762c78732dabf564606d0dfd5b6",
+      "family": "gaussian",
+      "replicate_index": 0,
+      "value": 0.5
+    },
+    {
+      "case_id": "P08-STRESS-8a948a48ddc60bde40d5a77eb2d5192a06e5d9b188ce047081df325290467e02",
+      "family": "gaussian",
+      "replicate_index": 1,
+      "value": 0.5
+    },
+    {
+      "case_id": "P08-STRESS-273599c9f6efe675e61552587a0e850adf7221783ecbfa28ef5520174823931b",
+      "family": "gaussian",
+      "replicate_index": 2,
+      "value": 0.5
+    },
+    {
+      "case_id": "P08-STRESS-f62cde16d4a8fbb4ff7e6ad8e20cbf170e6a4cbc1371c1339080da1268d56480",
+      "family": "gaussian",
+      "replicate_index": 3,
+      "value": 0.5
+    },
+    {
+      "case_id": "P08-STRESS-3ea2986c51063dee5d4e2b438d61558cb026657d8bee568d49719ac18719632c",
+      "family": "gaussian",
+      "replicate_index": 4,
+      "value": 0.5
+    },
+    {
+      "case_id": "P08-STRESS-de5cdc3c530ba5bf988b8687fe1971da0f6248a1c315265e3113b1be52a49222",
+      "family": "gaussian",
+      "replicate_index": 5,
+      "value": 0.5
+    },
+    {
+      "case_id": "P08-STRESS-a34d7eb748f8d3a387853486c83377423c264a1b221693d4dfdb6cad7606e64b",
+      "family": "gaussian",
+      "replicate_index": 6,
+      "value": 0.5
+    },
+    {
+      "case_id": "P08-STRESS-fdd415f21f9b1034c665ddc09846d756302b938f81b720fd69d6797696729c8c",
+      "family": "gaussian",
+      "replicate_index": 7,
+      "value": 0.5
+    },
+    {
+      "case_id": "P08-STRESS-32a29b21c828c51399e1fa3f6c965e504a11f7d39ee7075b486b735d0f2e6a0a",
+      "family": "gaussian",
+      "replicate_index": 8,
+      "value": 0.5
+    },
+    {
+      "case_id": "P08-STRESS-6147a9e9c6ad8f070fa91924f096cd81550208ab0f2cbb8a7aad89e079515b6a",
+      "family": "gaussian",
+      "replicate_index": 9,
+      "value": 0.5
+    },
+    {
+      "case_id": "P08-STRESS-57ca91a3190ba576fa7c8e8d0531829ae088d6c2217d15a46dd4b89a261f6530",
+      "family": "gaussian",
+      "replicate_index": 0,
+      "value": 0.75
+    },
+    {
+      "case_id": "P08-STRESS-a5ca613236afe7e8bc0114dbdb751e8ac81a79353e8e116390bfdcbd5dbaff01",
+      "family": "gaussian",
+      "replicate_index": 1,
+      "value": 0.75
+    },
+    {
+      "case_id": "P08-STRESS-44da501d893b4da733c7ec2d5d90ddd22e313a7cd8efda669ca2ecfa628628dc",
+      "family": "gaussian",
+      "replicate_index": 2,
+      "value": 0.75
+    },
+    {
+      "case_id": "P08-STRESS-a70e842c727971cb78d39bdf68f5fea0b7cc7c2bca1d43d2d1d186c0547fb122",
+      "family": "gaussian",
+      "replicate_index": 3,
+      "value": 0.75
+    },
+    {
+      "case_id": "P08-STRESS-52c4e55c32efde57f05da736f583af1859a355cb50e52e1f8a6c13d569d6742e",
+      "family": "gaussian",
+      "replicate_index": 4,
+      "value": 0.75
+    },
+    {
+      "case_id": "P08-STRESS-19f4d2d94ed0cbc03ea43559f5386fbd9e4f35a83bd908faa728755445884f66",
+      "family": "gaussian",
+      "replicate_index": 5,
+      "value": 0.75
+    },
+    {
+      "case_id": "P08-STRESS-75b7b5e8dd2ae478a654e023df69d0704d88552d3bff28491a73871e06dcb1d1",
+      "family": "gaussian",
+      "replicate_index": 6,
+      "value": 0.75
+    },
+    {
+      "case_id": "P08-STRESS-1625b32bbf3ec45c00dd2795e4f0085d989636f958efb9de68ef34d6d92a7efc",
+      "family": "gaussian",
+      "replicate_index": 7,
+      "value": 0.75
+    },
+    {
+      "case_id": "P08-STRESS-98a0044415564dd370ea21288d7373bdae363cfb9407a49152a8ddc2a85373a1",
+      "family": "gaussian",
+      "replicate_index": 8,
+      "value": 0.75
+    },
+    {
+      "case_id": "P08-STRESS-385b4bd37924577de7700ace4b2cdeccc5cdd65321a6c18ec4264be7ab09a820",
+      "family": "gaussian",
+      "replicate_index": 9,
+      "value": 0.75
+    },
+    {
+      "case_id": "P08-STRESS-6ac0021ff501666b8a4ca7d41bf6e9ac2de9f2dba9339b34198c8870216444fb",
+      "family": "gaussian",
+      "replicate_index": 0,
+      "value": 0.9
+    },
+    {
+      "case_id": "P08-STRESS-ba04221c40476d76b952171feb862c460341242faf07bac1ba30e38dab9dcdf9",
+      "family": "gaussian",
+      "replicate_index": 1,
+      "value": 0.9
+    },
+    {
+      "case_id": "P08-STRESS-bbe30431a147bbcc1d79442f2755a9ca7fd44fda3f7b627fb7a411029d9ff60c",
+      "family": "gaussian",
+      "replicate_index": 2,
+      "value": 0.9
+    },
+    {
+      "case_id": "P08-STRESS-a770af6c2fcb217110e940cd3e2617d002dcf3b9d9b55062f087b120a82d3e50",
+      "family": "gaussian",
+      "replicate_index": 3,
+      "value": 0.9
+    },
+    {
+      "case_id": "P08-STRESS-662b0833d61dec955f3f57698ff2b2057b62a0890a19126b66083c2ea0640128",
+      "family": "gaussian",
+      "replicate_index": 4,
+      "value": 0.9
+    },
+    {
+      "case_id": "P08-STRESS-219ee52857d3a616ef5c94477c4344fbd31f584c25404271cb7eab6a45c5af43",
+      "family": "gaussian",
+      "replicate_index": 5,
+      "value": 0.9
+    },
+    {
+      "case_id": "P08-STRESS-1a23f8c0b9c3379684527dbc6fb17cf1e06ccf53683aa1adfebbe853f7f1f78a",
+      "family": "gaussian",
+      "replicate_index": 6,
+      "value": 0.9
+    },
+    {
+      "case_id": "P08-STRESS-638c17f3a5f28840473f3e1c72d963976199f517187074e5df76ec17ca5c9e8f",
+      "family": "gaussian",
+      "replicate_index": 7,
+      "value": 0.9
+    },
+    {
+      "case_id": "P08-STRESS-bec174e5e61ac54f0ddc2d003fb576802f9841b47df1238a70bcdad3654cc777",
+      "family": "gaussian",
+      "replicate_index": 8,
+      "value": 0.9
+    },
+    {
+      "case_id": "P08-STRESS-9170d8fc6d34d9accc3d06af6b716563adfea4c3ed2d794bc7f4b7211835dc21",
+      "family": "gaussian",
+      "replicate_index": 9,
+      "value": 0.9
+    },
+    {
+      "case_id": "P08-STRESS-af5231e6c2350ce27106ac72dcaa7145944e675c9ac65e012a333c809c0c126b",
+      "family": "gaussian",
+      "replicate_index": 0,
+      "value": 0.95
+    },
+    {
+      "case_id": "P08-STRESS-6ea2de5eb9f36abbdf623c13ef85be188cef098026889943332e24d727957f53",
+      "family": "gaussian",
+      "replicate_index": 1,
+      "value": 0.95
+    },
+    {
+      "case_id": "P08-STRESS-3cbcc4fba9fd74d39db8bc52466305a184f34032d1145b7f018e75ffed39001b",
+      "family": "gaussian",
+      "replicate_index": 2,
+      "value": 0.95
+    },
+    {
+      "case_id": "P08-STRESS-09db9717940499a5d3c4e2d83833774264119432bb9f5ccb7a0e73927fa0811e",
+      "family": "gaussian",
+      "replicate_index": 3,
+      "value": 0.95
+    },
+    {
+      "case_id": "P08-STRESS-7576ffc8d5b8d50dfae5c72640be0ef86c37682ec315d34211bc0b0630316aaf",
+      "family": "gaussian",
+      "replicate_index": 4,
+      "value": 0.95
+    },
+    {
+      "case_id": "P08-STRESS-b1b3c0fdd3b6896c16a50b0b2813a6b3b825ed5ed79a6b1f23e500e0c225e8b8",
+      "family": "gaussian",
+      "replicate_index": 5,
+      "value": 0.95
+    },
+    {
+      "case_id": "P08-STRESS-cf7da3f06828d439cd2813ab61a50d188618b4d3489faa303af0700a64ae4128",
+      "family": "gaussian",
+      "replicate_index": 6,
+      "value": 0.95
+    },
+    {
+      "case_id": "P08-STRESS-710566d114e5a3391f4f716691fbfaf96045fa668664f283ff2d085ad8d25ddc",
+      "family": "gaussian",
+      "replicate_index": 7,
+      "value": 0.95
+    },
+    {
+      "case_id": "P08-STRESS-3284277306503692c74013840772afdc4fa551c28124cf96b1ac95fe812b4d91",
+      "family": "gaussian",
+      "replicate_index": 8,
+      "value": 0.95
+    },
+    {
+      "case_id": "P08-STRESS-7ae8a0426b98d563b4ae7ee7d98ee5b6062bd4f61e4c9f73ef60d76c23a76f86",
+      "family": "gaussian",
+      "replicate_index": 9,
+      "value": 0.95
+    },
+    {
+      "case_id": "P08-STRESS-2f4bb61a37625ed879c5dc0ea1da74527a1754ed405fb886a43bfe041114577a",
+      "family": "impulse",
+      "replicate_index": 0,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-009367aab35efaf0d26e8f8caa17b6cfd1cdf50406f8929729b327cf3a796262",
+      "family": "impulse",
+      "replicate_index": 1,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-3df4473c3b852e12f85ef50929f8fbfe94c7399c66157ff34bdca2df92bb9b38",
+      "family": "impulse",
+      "replicate_index": 2,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-b9c3fce9255ad9ea1abbfdce91810339f2ab7bbf82cf9f957a4e780626ddbb08",
+      "family": "impulse",
+      "replicate_index": 3,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-a68026c33126560818c814e4a7110de5bff3e2e65f94552d8bd2e96cc4d06046",
+      "family": "impulse",
+      "replicate_index": 4,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-0097f71cf7b2c674aa2bea9ac2ef9128766afcc4f6a3742269ce5c11c78dfb4d",
+      "family": "impulse",
+      "replicate_index": 5,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-762439934cc02735b05186cfe9d53d930abd982954ce0f6548e310ab20b87c00",
+      "family": "impulse",
+      "replicate_index": 6,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-7d1ddbe189250805477027f8a62d17309cb44b738d1232e84b6890310fe4e6db",
+      "family": "impulse",
+      "replicate_index": 7,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-42146b0f6a5c742dfe019f433eff63a3b5573275090a2c89198b271f74fdf674",
+      "family": "impulse",
+      "replicate_index": 8,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-d911fb629633558ff53de18e009e69272073f9b01037742fe3ad59e64cdd68d9",
+      "family": "impulse",
+      "replicate_index": 9,
+      "value": 1
+    },
+    {
+      "case_id": "P08-STRESS-bdc043089dad6830497cadbaea53d24cd77cf93398808920e3bcc404ed36a1bb",
+      "family": "impulse",
+      "replicate_index": 0,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-b06fcbaf54fe82adf8a06e29233955da05c34b08834bab6fd15bc1e55ad08c46",
+      "family": "impulse",
+      "replicate_index": 1,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-c1990b91b927a8dd39c0d81e73e5f31e51c5d547067779883b7046b8404ad2a0",
+      "family": "impulse",
+      "replicate_index": 2,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-a71b0a93bb00e68d4a1667553c1ca2c4aab12e3a6191af18726e2eb05c1878ad",
+      "family": "impulse",
+      "replicate_index": 3,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-99eb1c2b99229bb7fc338eaeda2cb6f010a7d29f76fc3205daa255262f0e0a56",
+      "family": "impulse",
+      "replicate_index": 4,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-8f2b5f1b7a0b2b90a3ad3df1786c15a2aa83da1c3b7a14bd6b69d4001cee1c81",
+      "family": "impulse",
+      "replicate_index": 5,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-3601a1305f5ab35a08a363bade214122fd8babdf762b71e6a157da70f9b3269f",
+      "family": "impulse",
+      "replicate_index": 6,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-f542b913ae408ffc1277d0192bf57363edaff8feccb94337e0b207d1888e191e",
+      "family": "impulse",
+      "replicate_index": 7,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-0866fe53dd4b695245df3dfc04344ded1f3bb953465cecf1306507bea054f25a",
+      "family": "impulse",
+      "replicate_index": 8,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-5b62957c496d089b2aca18727c47aecbf3d619eee833ce021e69cd129ae63ac1",
+      "family": "impulse",
+      "replicate_index": 9,
+      "value": 3
+    },
+    {
+      "case_id": "P08-STRESS-c3e08625a80ab73ea7be171c9cf8ee1c006a9fde0397926b4d0ccc9df1352f49",
+      "family": "impulse",
+      "replicate_index": 0,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-ab949a6eae7cf4a65f5f7563d493e36665cee5d150d28cb8567f9c0533d35d8c",
+      "family": "impulse",
+      "replicate_index": 1,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-219c222610a1687fb8400c57311a46448c14feb863ffc598d1bb2db60d18eefd",
+      "family": "impulse",
+      "replicate_index": 2,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-205da9ded1bb7d5186047736daac9a3aa3dd0e4e5df47dcc9bb42c4e49273c2d",
+      "family": "impulse",
+      "replicate_index": 3,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-8d37ea07d18b4022cecdb6cefbdb90fde4991c2cbf6201c772a0ed2b9b7c66e7",
+      "family": "impulse",
+      "replicate_index": 4,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-57c4ca3c89900e0868850afcb53e97df70d379d525409537805be7ef4aecad01",
+      "family": "impulse",
+      "replicate_index": 5,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-e54dc9df0a7b6faf97270e8ffb058b77888b7b4e2bf88435f08ca5e056ad9094",
+      "family": "impulse",
+      "replicate_index": 6,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-9e36091b74ee18c901fdf8482d027c298ecc68fc97e0bc2353d5154c9ed75664",
+      "family": "impulse",
+      "replicate_index": 7,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-93012d9b06763c67012deb9938af30b40f16631be2a7c28e8eb0c1122c562b9a",
+      "family": "impulse",
+      "replicate_index": 8,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-549a946f9c0a378a69088b39b9792eedc5bb6b11292a673623c2e939e00e32d6",
+      "family": "impulse",
+      "replicate_index": 9,
+      "value": 5
+    },
+    {
+      "case_id": "P08-STRESS-683fee85a52391a1ab50c1ee8c2c7b0dbb1a4d25d1e14a9487e365e42e465489",
+      "family": "clipping",
+      "replicate_index": null,
+      "value": 0.999
+    },
+    {
+      "case_id": "P08-STRESS-c1ef2d9cf8af42ef913d891e7d3db6ff0febb19371169b3ddaefe3991a23a74f",
+      "family": "clipping",
+      "replicate_index": null,
+      "value": 0.995
+    },
+    {
+      "case_id": "P08-STRESS-7f980ab4b7b7c04cac0a08882b06a493e1af3d1927574f1d4f486f5fe62c8863",
+      "family": "clipping",
+      "replicate_index": null,
+      "value": 0.99
+    }
+  ],
+  "design_sha256": "93597f325d60399cc9b07d57c1fe314f3f14a7e2f9fd56867fa326dbe01646ce",
+  "execution_authorized": false,
+  "family_cases": {
+    "clipping": [
+      "P08-STRESS-CLEAN",
+      "P08-STRESS-683fee85a52391a1ab50c1ee8c2c7b0dbb1a4d25d1e14a9487e365e42e465489",
+      "P08-STRESS-c1ef2d9cf8af42ef913d891e7d3db6ff0febb19371169b3ddaefe3991a23a74f",
+      "P08-STRESS-7f980ab4b7b7c04cac0a08882b06a493e1af3d1927574f1d4f486f5fe62c8863"
+    ],
+    "gaussian": [
+      "P08-STRESS-CLEAN",
+      "P08-STRESS-4f69d199bbd78608390cc2a4d0f9541443c1e762c78732dabf564606d0dfd5b6",
+      "P08-STRESS-8a948a48ddc60bde40d5a77eb2d5192a06e5d9b188ce047081df325290467e02",
+      "P08-STRESS-273599c9f6efe675e61552587a0e850adf7221783ecbfa28ef5520174823931b",
+      "P08-STRESS-f62cde16d4a8fbb4ff7e6ad8e20cbf170e6a4cbc1371c1339080da1268d56480",
+      "P08-STRESS-3ea2986c51063dee5d4e2b438d61558cb026657d8bee568d49719ac18719632c",
+      "P08-STRESS-de5cdc3c530ba5bf988b8687fe1971da0f6248a1c315265e3113b1be52a49222",
+      "P08-STRESS-a34d7eb748f8d3a387853486c83377423c264a1b221693d4dfdb6cad7606e64b",
+      "P08-STRESS-fdd415f21f9b1034c665ddc09846d756302b938f81b720fd69d6797696729c8c",
+      "P08-STRESS-32a29b21c828c51399e1fa3f6c965e504a11f7d39ee7075b486b735d0f2e6a0a",
+      "P08-STRESS-6147a9e9c6ad8f070fa91924f096cd81550208ab0f2cbb8a7aad89e079515b6a",
+      "P08-STRESS-57ca91a3190ba576fa7c8e8d0531829ae088d6c2217d15a46dd4b89a261f6530",
+      "P08-STRESS-a5ca613236afe7e8bc0114dbdb751e8ac81a79353e8e116390bfdcbd5dbaff01",
+      "P08-STRESS-44da501d893b4da733c7ec2d5d90ddd22e313a7cd8efda669ca2ecfa628628dc",
+      "P08-STRESS-a70e842c727971cb78d39bdf68f5fea0b7cc7c2bca1d43d2d1d186c0547fb122",
+      "P08-STRESS-52c4e55c32efde57f05da736f583af1859a355cb50e52e1f8a6c13d569d6742e",
+      "P08-STRESS-19f4d2d94ed0cbc03ea43559f5386fbd9e4f35a83bd908faa728755445884f66",
+      "P08-STRESS-75b7b5e8dd2ae478a654e023df69d0704d88552d3bff28491a73871e06dcb1d1",
+      "P08-STRESS-1625b32bbf3ec45c00dd2795e4f0085d989636f958efb9de68ef34d6d92a7efc",
+      "P08-STRESS-98a0044415564dd370ea21288d7373bdae363cfb9407a49152a8ddc2a85373a1",
+      "P08-STRESS-385b4bd37924577de7700ace4b2cdeccc5cdd65321a6c18ec4264be7ab09a820",
+      "P08-STRESS-6ac0021ff501666b8a4ca7d41bf6e9ac2de9f2dba9339b34198c8870216444fb",
+      "P08-STRESS-ba04221c40476d76b952171feb862c460341242faf07bac1ba30e38dab9dcdf9",
+      "P08-STRESS-bbe30431a147bbcc1d79442f2755a9ca7fd44fda3f7b627fb7a411029d9ff60c",
+      "P08-STRESS-a770af6c2fcb217110e940cd3e2617d002dcf3b9d9b55062f087b120a82d3e50",
+      "P08-STRESS-662b0833d61dec955f3f57698ff2b2057b62a0890a19126b66083c2ea0640128",
+      "P08-STRESS-219ee52857d3a616ef5c94477c4344fbd31f584c25404271cb7eab6a45c5af43",
+      "P08-STRESS-1a23f8c0b9c3379684527dbc6fb17cf1e06ccf53683aa1adfebbe853f7f1f78a",
+      "P08-STRESS-638c17f3a5f28840473f3e1c72d963976199f517187074e5df76ec17ca5c9e8f",
+      "P08-STRESS-bec174e5e61ac54f0ddc2d003fb576802f9841b47df1238a70bcdad3654cc777",
+      "P08-STRESS-9170d8fc6d34d9accc3d06af6b716563adfea4c3ed2d794bc7f4b7211835dc21",
+      "P08-STRESS-af5231e6c2350ce27106ac72dcaa7145944e675c9ac65e012a333c809c0c126b",
+      "P08-STRESS-6ea2de5eb9f36abbdf623c13ef85be188cef098026889943332e24d727957f53",
+      "P08-STRESS-3cbcc4fba9fd74d39db8bc52466305a184f34032d1145b7f018e75ffed39001b",
+      "P08-STRESS-09db9717940499a5d3c4e2d83833774264119432bb9f5ccb7a0e73927fa0811e",
+      "P08-STRESS-7576ffc8d5b8d50dfae5c72640be0ef86c37682ec315d34211bc0b0630316aaf",
+      "P08-STRESS-b1b3c0fdd3b6896c16a50b0b2813a6b3b825ed5ed79a6b1f23e500e0c225e8b8",
+      "P08-STRESS-cf7da3f06828d439cd2813ab61a50d188618b4d3489faa303af0700a64ae4128",
+      "P08-STRESS-710566d114e5a3391f4f716691fbfaf96045fa668664f283ff2d085ad8d25ddc",
+      "P08-STRESS-3284277306503692c74013840772afdc4fa551c28124cf96b1ac95fe812b4d91",
+      "P08-STRESS-7ae8a0426b98d563b4ae7ee7d98ee5b6062bd4f61e4c9f73ef60d76c23a76f86"
+    ],
+    "impulse": [
+      "P08-STRESS-CLEAN",
+      "P08-STRESS-2f4bb61a37625ed879c5dc0ea1da74527a1754ed405fb886a43bfe041114577a",
+      "P08-STRESS-009367aab35efaf0d26e8f8caa17b6cfd1cdf50406f8929729b327cf3a796262",
+      "P08-STRESS-3df4473c3b852e12f85ef50929f8fbfe94c7399c66157ff34bdca2df92bb9b38",
+      "P08-STRESS-b9c3fce9255ad9ea1abbfdce91810339f2ab7bbf82cf9f957a4e780626ddbb08",
+      "P08-STRESS-a68026c33126560818c814e4a7110de5bff3e2e65f94552d8bd2e96cc4d06046",
+      "P08-STRESS-0097f71cf7b2c674aa2bea9ac2ef9128766afcc4f6a3742269ce5c11c78dfb4d",
+      "P08-STRESS-762439934cc02735b05186cfe9d53d930abd982954ce0f6548e310ab20b87c00",
+      "P08-STRESS-7d1ddbe189250805477027f8a62d17309cb44b738d1232e84b6890310fe4e6db",
+      "P08-STRESS-42146b0f6a5c742dfe019f433eff63a3b5573275090a2c89198b271f74fdf674",
+      "P08-STRESS-d911fb629633558ff53de18e009e69272073f9b01037742fe3ad59e64cdd68d9",
+      "P08-STRESS-bdc043089dad6830497cadbaea53d24cd77cf93398808920e3bcc404ed36a1bb",
+      "P08-STRESS-b06fcbaf54fe82adf8a06e29233955da05c34b08834bab6fd15bc1e55ad08c46",
+      "P08-STRESS-c1990b91b927a8dd39c0d81e73e5f31e51c5d547067779883b7046b8404ad2a0",
+      "P08-STRESS-a71b0a93bb00e68d4a1667553c1ca2c4aab12e3a6191af18726e2eb05c1878ad",
+      "P08-STRESS-99eb1c2b99229bb7fc338eaeda2cb6f010a7d29f76fc3205daa255262f0e0a56",
+      "P08-STRESS-8f2b5f1b7a0b2b90a3ad3df1786c15a2aa83da1c3b7a14bd6b69d4001cee1c81",
+      "P08-STRESS-3601a1305f5ab35a08a363bade214122fd8babdf762b71e6a157da70f9b3269f",
+      "P08-STRESS-f542b913ae408ffc1277d0192bf57363edaff8feccb94337e0b207d1888e191e",
+      "P08-STRESS-0866fe53dd4b695245df3dfc04344ded1f3bb953465cecf1306507bea054f25a",
+      "P08-STRESS-5b62957c496d089b2aca18727c47aecbf3d619eee833ce021e69cd129ae63ac1",
+      "P08-STRESS-c3e08625a80ab73ea7be171c9cf8ee1c006a9fde0397926b4d0ccc9df1352f49",
+      "P08-STRESS-ab949a6eae7cf4a65f5f7563d493e36665cee5d150d28cb8567f9c0533d35d8c",
+      "P08-STRESS-219c222610a1687fb8400c57311a46448c14feb863ffc598d1bb2db60d18eefd",
+      "P08-STRESS-205da9ded1bb7d5186047736daac9a3aa3dd0e4e5df47dcc9bb42c4e49273c2d",
+      "P08-STRESS-8d37ea07d18b4022cecdb6cefbdb90fde4991c2cbf6201c772a0ed2b9b7c66e7",
+      "P08-STRESS-57c4ca3c89900e0868850afcb53e97df70d379d525409537805be7ef4aecad01",
+      "P08-STRESS-e54dc9df0a7b6faf97270e8ffb058b77888b7b4e2bf88435f08ca5e056ad9094",
+      "P08-STRESS-9e36091b74ee18c901fdf8482d027c298ecc68fc97e0bc2353d5154c9ed75664",
+      "P08-STRESS-93012d9b06763c67012deb9938af30b40f16631be2a7c28e8eb0c1122c562b9a",
+      "P08-STRESS-549a946f9c0a378a69088b39b9792eedc5bb6b11292a673623c2e939e00e32d6"
+    ],
+    "quadratic": [
+      "P08-STRESS-CLEAN",
+      "P08-STRESS-bf200b0daff4ddbd37d04a7f9a0e0bcf6e9eeaafe0f1d67ac00a62fc0a976e8f",
+      "P08-STRESS-0a7c3110c57bd3f4310dbe227971cbe03cf1a28fb2b41d8a7d07feda0c5558a9",
+      "P08-STRESS-750e4ed604ac70333099b91f0bf3f75849be0dba2202cd1132790ffff02a24f0",
+      "P08-STRESS-d8f522c5d6cfb31822287dfe5772b11ce2406cbc9aa96396f0c58a55233ff72c"
+    ],
+    "shift": [
+      "P08-STRESS-6d3900b8986712436da83846544908a755089ab65fe40e7350d76cfb82420990",
+      "P08-STRESS-84547a1acf26e42d763d7c6fd8047a23fb0ca35ed87829cdf2058e708a3f3e27",
+      "P08-STRESS-bb971959a3c886066153e30cd234cbaabe478b6ecf1e4cba1a5f26da1891efd9",
+      "P08-STRESS-17d88d5b574173b8d0d01c8e378cae3ed4e26f271ef0cf8d41517454bb7c8568",
+      "P08-STRESS-859c6361e44870c4f82a9b7d25d82328671f35c428dc84eecf5301ddb161d22e",
+      "P08-STRESS-CLEAN",
+      "P08-STRESS-7b16d785c4afc359242206a9877c75629b3f5ae99c44fa0cb59166d2b4bcc075",
+      "P08-STRESS-572a235230f89f5d17f568d04bb2d06855effdb5b26cb7fdebb5b7ae4cadc17e",
+      "P08-STRESS-78c1f5f14a5a9b727ebd7d93dcfc1bfe7d0acadc2014a6286b2c581b24761e27",
+      "P08-STRESS-81c5558f7112157011107a10e480dc0a50469ec8a99f46d12fb5d1e2733d6616",
+      "P08-STRESS-2d815fbb86cf0ff67625f6ee27a184360aa51839bb08e9a60259007dfc84e298"
+    ],
+    "slope": [
+      "P08-STRESS-c9f321bbc176e344d96cf1258ff7a311b3462f372b8922357ed257e07f7750da",
+      "P08-STRESS-ee838050730e2f4de0a3ae5223ef5a328130bcab95c73c1371eb4342b6bc9724",
+      "P08-STRESS-40896cd5f7461d85f18cad4e9135ea04dfe409aef9ac42b9366059d6b8df2b63",
+      "P08-STRESS-0454a0740f376feb2e95891d5ccc74da6d58ca46d0b9c710c0088ccd8ffda1b6",
+      "P08-STRESS-CLEAN",
+      "P08-STRESS-9da2220e33d0c75a422ff232329f9eab49a0e51e052e6de472e27ffa653e4e37",
+      "P08-STRESS-26deed2d57d50671c6421e7a4f67d7e8c071f88bed2e04ce2ae4bd17a9ffc171",
+      "P08-STRESS-d19514f650164a8fd2205da3513fbe05efb967f6a80dedeb3b503b7ddb8b734b",
+      "P08-STRESS-a95db059bdb0280c00ba238e9f3b15fe1c0555dd72518924c2e8b2d02849498d"
+    ]
+  },
+  "input_provenance_independently_verified": false,
+  "job_ledger_complete": false,
+  "numerical_perturbations_computed": false,
+  "report_sha256": "df8d1497ff334a5667ced8ee2b6854854060271a271b48830b607dcd4f44bd36",
+  "schema_version": "nato-sers-p08-perturbation-cases-v1",
+  "scientific_operations": 0,
+  "summary": {
+    "family_case_counts": {
+      "clipping": 4,
+      "gaussian": 41,
+      "impulse": 31,
+      "quadratic": 5,
+      "shift": 11,
+      "slope": 9
+    },
+    "family_memberships_including_zero_aliases": 101,
+    "nonzero_cases": 95,
+    "unique_cases_with_shared_zero": 96
+  }
+}
