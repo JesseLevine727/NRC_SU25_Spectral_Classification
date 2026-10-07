@@ -435,3 +435,11 @@ The [procedure-reference audit](P08_PERTURBATION_PROTOCOL.md#9-universal-model-r
 DeepSeek authored the metadata adapter and synthetic tests. Supervisor review corrected seed accounting, evidence scope, reference shape and upstream hash serialization. The independent actual-record audit reconciled original operation references and rehashed **6,826 existing files** without parsing predictions or checkpoint tensors. It did not fit a model, test numerical parity or evaluate robustness.
 
 The catalog preserves context-local source selection, original fitting/test hashes, calibration order and neural reporting aliases. It is not the full disturbance-job ledger: fixed-route QC extraction, case-level dependencies, finite resources and numerical acceptance remain open. The original readiness goal and separate execution-permit boundary are unchanged.
+
+## 48. Fixed-route QC references and complete MIN fallbacks
+
+The [QC procedure-reference audit](P08_PERTURBATION_PROTOCOL.md#10-fixed-route-qc-model-reference-accounting) closes the extraction gap in §47. It binds **176 mixed-route procedures** in **54 eligible contexts** to **420 seed-estimator references** and **312 calibration references**. Their clean routing decisions remain unresolved upstream dependencies; no gate or route was calculated.
+
+The remaining **206 contexts** contribute **824 reporting aliases** to **643 MIN procedures**. Each fallback must use the same disturbed case as its adaptive comparison, not the saved clean prediction. The **1,517 referenced MIN seed slots** are reused, not added to the fit count. Independent verification reconciled **920 blocks** and **1,544 operation slots**, preserving original roles, calibration order and complete-fallback semantics.
+
+DeepSeek authored the adapter and regression tests; supervisor review corrected action-array binding and calibration-parent validation. The fixed-route interpretation implements P08-A11 and does not test native-grid gate reactions. The complete disturbance ledger, finite resources, numerical acceptance and requirement-wide readiness closure remain open. No new scientific operation or execution permission follows.
