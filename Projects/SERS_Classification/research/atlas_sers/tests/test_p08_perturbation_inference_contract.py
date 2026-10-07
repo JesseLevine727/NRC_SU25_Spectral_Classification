@@ -483,7 +483,18 @@ def test_readiness_perturbation_design(readiness):
         "results/p08_readiness/perturbation_inference_support_audit.json"
     )
     assert design["inference_implementation_accepted"] is False
-    assert design["exact_prediction_reconstruction_ledger_complete"] is False
+    assert design["exact_prediction_reconstruction_ledger_complete"] is True
+    assert design["stress_prediction_layer_metadata_verified"] is True
+    assert design["stress_prediction_catalog_audit"] == (
+        "results/p08_readiness/stress_prediction_catalog_audit.json"
+    )
+    assert design["stress_prediction_operation_descriptors"] == 2013605
+    assert design["stress_prediction_reporting_aliases"] == 574080
+    assert design["stress_combined_procedures"] == 3413
+    assert design["stress_seed_estimator_slots"] == 8571
+    assert design["full_stress_job_ledger_complete"] is False
+    assert design["stress_scoring_inference_rendering_ledger_complete"] is False
+    assert design["stress_clean_probability_parity_accepted"] is False
     assert design["finite_resource_proposal_complete"] is False
     assert design["execution_authorized"] is False
 

@@ -451,3 +451,13 @@ The [input-operation audit](P08_PERTURBATION_PROTOCOL.md#11-exact-input-operatio
 The independent audit verified every content ID and dependency, source/test master separation, held-instrument exclusion and the raw-to-logical observation-ID mapping. It authenticated the raw intensity header without loading its values. Non-Gaussian row transforms are shared across repeated appearances; Gaussian amplitudes retain their original source-context binding. Input files and frozen preprocessing remain unchanged.
 
 The next ledger layer must join these input dependencies to retained models, reconstruction/parity, calibrated predictions, fixed-route QC composition and same-case aliases. Scoring/inference accounting, finite resources and the final readiness review remain open. No scientific operation or execution permit is implied by this metadata checkpoint.
+
+## 50. Joined prediction, reuse and same-case reporting graph
+
+The [prediction/reuse audit](P08_PERTURBATION_PROTOCOL.md#12-exact-prediction-reuse-and-reporting-dependencies) closes the model-and-prediction dependency gap in §49. It joins **3,413 procedures**, **8,571 seed-estimator slots** and **96 cases** into **2,013,605 planned operation descriptors**. Its **574,080 reporting aliases** preserve universal strategies, eligible QC, complete QC fallback and family fallback without inventing extra fits. The separate input graph is not counted again.
+
+Only **1,820 historical classical MIN slots** require estimator reconstruction; all other final estimators must be retained from their original upstream stage. The stress graph adds no temperature fitting. Every nonclean prediction depends on a clean replay check against its recorded reference, preserving classical and neural calibration order. No such numerical check was performed during this metadata audit.
+
+QC composition retains each row's native clean action and distinguishes an invalid-action MIN-input fallback under the QC model from a complete MIN-model fallback. The latter always targets the same disturbance case. Independent enumeration verified every dependency and alias target. DeepSeek implemented the join, graph and synthetic tests; supervisor review corrected nested-reference sharing and a mistaken test field.
+
+Scoring, conditional uncertainty, stability and rendering operations still require exact accounting before the finite robustness resource proposal and final readiness lock. The distinct filtered-population panel choice also remains open. No model, spectrum, prediction or routing outcome was computed, and the scientific permit remains unset.

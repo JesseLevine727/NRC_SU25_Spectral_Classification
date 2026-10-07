@@ -4,6 +4,8 @@
 
 **Inference checkpoint:** the subsequent [comparison specification](P08_PERTURBATION_INFERENCE.md) and its registry now define all robustness effects, interactions, multiplicity families, support, uncertainty and missingness. They supersede the pending-inference wording retained below. Numerical inference acceptance and execution remain unauthorized; the disturbance geometry and 96-case definition are unchanged.
 
+**Dependency checkpoint:** §§11–12 now complete exact input and prediction/reconstruction metadata accounting, including calibration application, QC composition and same-case reporting aliases. They supersede the corresponding pending-accounting statements retained below. Scoring, uncertainty, stability and rendering operations, finite resources and numerical acceptance remain unfinished. No scientific operation has been executed.
+
 ## 1. Question and scope
 
 These tests ask whether the registered preprocessing-and-classification pipelines retain identification performance under a defined change to the test spectrum. They do not estimate the frequency of that disturbance in the field trial, reconstruct clean chemistry or establish a particular instrument's physical failure mechanism. All source selection, model weights, training durations, calibration parameters and preprocessing parameters remain fixed. No model is trained on the disturbed held data.
@@ -152,3 +154,31 @@ The raw archive stores source observation identifiers, whereas the frozen datase
 Every context/action assembly depends on the corresponding clean-path parity checks. A transform's future invalid-output receipt remains explicit so later QC composition can apply its registered MIN-input fallback; it is not permission to remove a row or substitute the complete MIN model. No spectral intensity values, prediction arrays or model tensors were loaded during this audit. Only file bytes, identity/role metadata, axis metadata and the raw array header were authenticated.
 
 This closes the input-operation layer, not the full robustness ledger. Retained-model/reconstruction references, per-seed predictions, calibration applications, endpoint aggregation, fixed-route QC composition, same-case reporting aliases, scoring/inference jobs and finite resources still require a joined graph. The seven stages above remain unexecuted and require a separate scientific permit.
+
+## 12. Exact prediction, reuse and reporting dependencies
+
+The [joined metadata audit](../results/p08_readiness/stress_prediction_catalog_audit.json) verifies **3,413 procedures** and **8,571 seed-estimator slots** across the **96 cases**. It authenticates the previously reviewed input, universal, QC and historical-bridge catalogs; it does not reload scientific prediction values or model tensors. Independent enumeration checks every content identifier, dependency, reporting target and stage count.
+
+| Planned operation | Count | Dependency or reuse condition |
+|---|---:|---|
+| Reconstruct historical classical MIN estimators | 1,820 | Saved source selection, original fitting rows and seeds; no retuning |
+| Authenticate retained final estimators | 6,751 | Historical neural checkpoints or upstream universal/QC estimators; no added fit |
+| Authenticate source-fitted temperatures | 5,343 | Retain original calibration order and seed binding; no temperature fit |
+| Authenticate the fixed clean QC route | 54 | After all final QC estimators in the context are frozen |
+| Assemble mixed-route QC inputs | 5,184 | Context × case; row-level action receipts and clean-path checks |
+| Predict uncalibrated seed-specific scores | 822,816 | Same estimator and case; disturbed cases require their clean replay gate |
+| Average classical seed scores | 235,008 | Before applying the single source-fitted temperature |
+| Apply a retained temperature | 512,928 | Once after classical averaging, or separately per neural seed |
+| Average calibrated neural probabilities | 92,640 | After each seed's temperature |
+| Construct M01/M06 prediction units | 327,648 | Per procedure and case; no ensemble over disturbance repetitions |
+| Check clean probability replay | 3,413 | Recorded endpoints and retained seed values; before nonclean prediction |
+
+These **2,013,605 descriptors** are planned operations, not that many fits. The **658,876 input descriptors** in §11 remain a separate upstream graph and are not counted twice. The **1,820 reconstruction slots** are the only added estimator fits in this stress layer; future universal/QC fitting remains charged to its original stage. No new scalar calibration fit is added.
+
+The clean replay compares M01/M06 probabilities and retained seed values with absolute tolerance **1e-7**, zero relative tolerance and exact class agreement. Classical replay checks raw seed scores; neural replay checks the original per-seed calibrated values. The clean prediction precedes this check, while every nonclean raw prediction depends on its successful completion. This ordering avoids a dependency cycle without treating an old saved prediction as a new replay. The graph specifies the check; its numerical acceptance remains false.
+
+QC input assembly depends on candidate row-level receipts from all three actions, not on successful completion of every universal batch. It selects the row's unchanged native clean route and requires the relevant clean-path parity. An invalid selected action invokes the registered MIN-input fallback under the **same QC estimator**; an invalid unselected action is not fatal to that row. Invalid MIN remains fatal. None of these declarations calculates a route or establishes that the gate detects newly injected contamination.
+
+The graph also has **574,080 logical reporting aliases**: **374,400 universal**, **20,736 eligible fixed-route QC**, **79,104 complete-QC-fallback** and **99,840 family-fallback** aliases. Each resolves to the matching context, recipe and disturbance case. Complete fallbacks target the MIN-trained pipeline on that same disturbed MIN input, never the old clean prediction. Selected/D0 reporting identities remain separate when they share one physical procedure. Extra Trees remains universal-only in this robustness graph.
+
+The metadata join performs no scientific calculation. Its hashes bind supplied metadata; they do not independently prove physical exclusions, checkpoint validity or probability parity. The private catalog retains identities and evidence pointers; only aggregate counts and hashes are public. Scoring, inference, stability, rendering, finite resources and a separate scientific permit remain necessary before executing the planned robustness experiment.
