@@ -1,0 +1,44 @@
+{
+  "QC_procedure_extraction_included": false,
+  "catalog_sha256": "5afeaf8d7545179af19618bcb09b513a06421f100daddf0c862f0b0a41581e41",
+  "exact_prediction_reconstruction_job_ledger_complete": false,
+  "execution_authorized": false,
+  "existing_final_reference_bytes_rehashed": 810255576,
+  "existing_final_reference_files_rehashed": 6826,
+  "historical_reference_bindings_verified": 8190,
+  "inputs_unchanged": true,
+  "minimal_bridge_archive_sha256": "7954181851586f24e648ddda98d2ba3380bdabfb50ec767ebb21a9ae07c5e74e",
+  "new_scientific_operations": 0,
+  "parent_plan_sha256": "179b95e8011a5f6cc02c65c7fab1acf0f6a6241ba1ef02378aac207b9e19cb03",
+  "predictions_or_tensors_parsed": false,
+  "private_archive_bytes": 1893172,
+  "private_archive_sha256": "1790f4b8a874855cae85af55d77a5860524f53604a5ff7793f06631d380b2f46",
+  "schema_version": "nato-sers-p08-universal-stress-procedure-audit-v1",
+  "scientific_runtime_accepted": false,
+  "scope": "universal_final_procedure_metadata_and_existing_reference_bytes",
+  "source_sha256": "c94e99f12c0e9ad69320aeb0bdb3dafd063032b914b9b2d9e2d46e32edf360af",
+  "status": "pass",
+  "summary": {
+    "by_policy": {
+      "PP-U-ARPLS": {
+        "procedures": 1079,
+        "seed_estimators": 2717
+      },
+      "PP-U-MIN": {
+        "procedures": 1079,
+        "seed_estimators": 2717
+      },
+      "PP-U-SG": {
+        "procedures": 1079,
+        "seed_estimators": 2717
+      }
+    },
+    "future_seed_estimator_slots": 5434,
+    "historical_classical_reconstruction_slots": 1820,
+    "historical_neural_checkpoint_slots": 897,
+    "procedure_count": 3237,
+    "reporting_alias_count": 1560,
+    "seed_estimator_count": 8151
+  },
+  "universal_archive_sha256": "c636358211edf350e2d36e4de40531a27e6402c937d191a4ebdeba83f1a086e8"
+}

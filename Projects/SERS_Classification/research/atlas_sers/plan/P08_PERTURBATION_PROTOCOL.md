@@ -102,3 +102,19 @@ The later inference registry must enumerate separate robustness families under t
 P08-F08 will show directional degradation curves with dose markers and paired domain scatter of MIN versus nonminimal loss area. Display both endpoints, poor domains and unavailable cells. Private review may include matched disturbed spectral examples; public spectral aggregates retain the two-master minimum and privacy rules in the [figure protocol](P08_FIGURE_PROTOCOL.md). Native TikZ, offline HTML, vector PDF and PNG must share reviewed semantic data and black standard-font text.
 
 The two scope decisions are approved in P08-A10–A11. Remaining gates are the exact reconstruction/prediction ledger, finite resource proposal, complete inference registry, numerical implementation and synthetic tests, scientific-input authentication and a separate execution permit. The current case enumeration is not that job ledger. Universal preprocessing remains first, adaptive work second and robustness later. No training, new prediction, QC calculation, preprocessing-array rebuild, perturbation run or automatic retry is authorized.
+
+## 9. Universal model-reference accounting
+
+The [procedure audit](../results/p08_readiness/universal_stress_procedure_audit.json) binds each universal pipeline to its existing final-fit, calibration, clean-prediction and ensemble metadata. It verifies **3,237 distinct procedures** across MIN, SG and arPLS, with **8,151 seed-specific estimator slots**. Each preprocessing action has **1,079 procedures** and **2,717 estimator slots**. A procedure is one context–preprocessing–model combination; technical seeds are its component estimators, not additional physical samples.
+
+| Model source | Seed-specific slots | Required later handling |
+|---|---:|---|
+| Historical classical MIN models | 1,820 | Reconstruct the saved selected specifications once on their original fitting rows and seeds. Require clean prediction parity; do not retune or recalibrate. |
+| Historical neural MIN models | 897 | Authenticate and reuse the saved checkpoints and calibration states, subject to clean prediction parity. |
+| Future SG/arPLS final models | 5,434 | Retain the estimators produced by the separately approved universal experiment. These are upstream fits, not additional robustness fits. |
+
+The **1,560 neural reporting aliases** preserve the ordinary and source-selected views without counting a shared D0-M procedure twice. Classical predictions retain seed averaging before their single temperature calibration; neural predictions retain per-seed calibration before averaging. These operations must not be interchanged when the case-level ledger is assembled.
+
+Independent verification reconciled **24,570 upstream operation references**, including **8,190 historical MIN bindings**, and rehashed **6,826 existing files** containing **810,255,576 bytes**. Prediction values and checkpoint tensors were not parsed. The full reference catalog remains private; the public aggregate contains counts and hashes only. Its authenticated metadata does not establish successful reconstruction, numerical equality or preprocessing benefit.
+
+This closes the universal procedure-reference slice only. The fixed-route QC procedures, disturbed-MIN fallback aliases, case expansion, numerical transform/noise-reference dependencies, calibration applications, scoring/inference jobs and finite resources still require complete accounting. The metadata adapter always denies scientific execution; no model was reconstructed and no disturbed spectrum or prediction was generated.
