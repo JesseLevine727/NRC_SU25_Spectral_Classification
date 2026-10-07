@@ -619,7 +619,7 @@ def test_prose_and_readiness_links(readiness):
     block = readiness["population_membership_prescreen"]
     assert block["conditional_population_inference_specified"] is True
     assert block["population_inference_locked"] is False
-    assert block["population_resource_proposal_complete"] is False
+    assert block["population_resource_proposal_complete"] is True
     assert block["execution_authorized"] is False
     for link in (
         "plan/P08_POPULATION_INFERENCE.md",

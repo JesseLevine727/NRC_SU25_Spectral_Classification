@@ -261,12 +261,14 @@
     }
   },
   "latest_storage_observation": {
-    "date": "2026-10-04",
-    "observed_at_utc": "2026-10-04T18:08:50Z",
-    "free_bytes": 210259017728,
-    "previous_recorded_free_bytes": 57421008896,
+    "date": "2026-10-07",
+    "observed_at_utc": "2026-10-07T13:30:53Z",
+    "free_bytes": 192519241728,
+    "previous_recorded_free_bytes": 210259017728,
+    "earlier_recorded_free_bytes": 57421008896,
     "point_in_time_not_reserved": true,
-    "proposed_stages_initially_feasible": ["U0", "U1", "R1", "N2"],
+    "proposed_stages_initially_feasible": ["U0", "U1", "R1", "N2", "POP-NOTES-4", "POP-NOTES-5", "POP-MIRA-4", "POP-MIRA-5"],
+    "individual_initial_thresholds_only_not_cumulative_retention": true,
     "scope_budget_or_execution_approval_implied": false,
     "cleanup_authorized": false
   },
@@ -337,7 +339,17 @@
     "notes_clear_complete_four_fold_classical_contexts": 208,
     "notes_clear_complete_four_fold_neural_contexts": 212,
     "mira1_excluded_complete_four_fold_contexts": 240,
-    "population_resource_proposal_complete": false,
+    "population_resource_proposal_complete": true,
+    "population_resource_proposal_approved": false,
+    "population_resource_proposal": "plan/P08_RESOURCE_PROPOSAL.md#14-filtered-population-resource-proposals",
+    "resource_audit": "results/p08_readiness/population_resource_proposal_audit.json",
+    "historical_neural_cost_basis": "results/p08_readiness/population_historical_neural_cost.json",
+    "proposed_stage_ceilings": [
+      {"stage_id": "POP-NOTES-4", "model_fits": 170277, "scalar_calibrations": 4071, "active_wall_hours": 120, "new_artifacts_gib": 64, "initial_free_gib": 94},
+      {"stage_id": "POP-NOTES-5", "model_fits": 258387, "scalar_calibrations": 4716, "active_wall_hours": 168, "new_artifacts_gib": 96, "initial_free_gib": 126},
+      {"stage_id": "POP-MIRA-4", "model_fits": 184749, "scalar_calibrations": 4347, "active_wall_hours": 144, "new_artifacts_gib": 80, "initial_free_gib": 110},
+      {"stage_id": "POP-MIRA-5", "model_fits": 280878, "scalar_calibrations": 5067, "active_wall_hours": 192, "new_artifacts_gib": 96, "initial_free_gib": 126}
+    ],
     "execution_authorized": false
   },
   "pending_later_branch_choices": ["filtered_population_extra_trees_panel_scope_clarification"],

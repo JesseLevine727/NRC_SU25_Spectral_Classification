@@ -1,0 +1,785 @@
+{
+  "calculator_source_sha256": "35544078138ef915fcd9fd4eb21db580d9ab91863a1313c6baf572fc54a50e5f",
+  "capacity_observation": {
+    "all_population_stages_individually_meet_initial_storage_threshold": true,
+    "cleanup_performed": false,
+    "device_reported_gpu_free_mib": 15145,
+    "filesystem_free_bytes": 192519241728,
+    "full_U1_plus_both_five_method_populations_and_reserve_gib": 302,
+    "full_U1_plus_both_four_method_populations_and_reserve_gib": 254,
+    "full_cumulative_five_method_retention_fits_observed_storage": false,
+    "full_cumulative_four_method_retention_fits_observed_storage": false,
+    "host_available_ram_bytes": 53036097536,
+    "observed_at_utc": "2026-10-07T13:30:53Z",
+    "point_in_time_not_reserved": true,
+    "previous_observation": {
+      "device_reported_gpu_free_mib": 15187,
+      "filesystem_free_bytes": 211101495296,
+      "host_available_ram_bytes": 52779343872,
+      "observed_at_utc": "2026-10-04T21:04:53Z"
+    }
+  },
+  "execution_authorized": false,
+  "independent_checks": [
+    {
+      "active_wall_hours": 120,
+      "independent_arithmetic": {
+        "classical_seconds": 150517.5844152354,
+        "component_storage_bytes_envelope": 33719476023.51923,
+        "neural_base_seconds": 55408.423079291766,
+        "neural_envelope_seconds": 64694.743513485286,
+        "serial_kernel_seconds_envelope": 215212.32792872068
+      },
+      "initial_required_free_gib": 94,
+      "new_artifacts_gib": 64,
+      "stage_id": "POP-NOTES-4"
+    },
+    {
+      "active_wall_hours": 168,
+      "independent_arithmetic": {
+        "classical_seconds": 232688.9723439726,
+        "component_storage_bytes_envelope": 43542198649.38461,
+        "neural_base_seconds": 55408.423079291766,
+        "neural_envelope_seconds": 64694.743513485286,
+        "serial_kernel_seconds_envelope": 297383.7158574579
+      },
+      "initial_required_free_gib": 126,
+      "new_artifacts_gib": 96,
+      "stage_id": "POP-NOTES-5"
+    },
+    {
+      "active_wall_hours": 144,
+      "independent_arithmetic": {
+        "classical_seconds": 164359.08087784232,
+        "component_storage_bytes_envelope": 34947666102.230774,
+        "neural_base_seconds": 57792.51909208858,
+        "neural_envelope_seconds": 65338.62031159074,
+        "serial_kernel_seconds_envelope": 229697.70118943305
+      },
+      "initial_required_free_gib": 110,
+      "new_artifacts_gib": 80,
+      "stage_id": "POP-MIRA-4"
+    },
+    {
+      "active_wall_hours": 192,
+      "independent_arithmetic": {
+        "classical_seconds": 254107.14117096644,
+        "component_storage_bytes_envelope": 45912565777.61539,
+        "neural_base_seconds": 57792.51909208858,
+        "neural_envelope_seconds": 65338.62031159074,
+        "serial_kernel_seconds_envelope": 319445.76148255717
+      },
+      "initial_required_free_gib": 126,
+      "new_artifacts_gib": 96,
+      "stage_id": "POP-MIRA-5"
+    }
+  ],
+  "independent_counts_and_costs_verified": true,
+  "input_bytes_unchanged": true,
+  "input_file_sha256": {
+    "historical_classical": "0978dbee3a1ccb0b414cf3015acd467fef393feb80f3d281d999af8c210d2cd9",
+    "historical_neural": "5b1ba2fb57e135bcf1db68e93febca0ba9528d8fc80529e300f8381873a586da",
+    "slot_audit": "858b1c8b91b58fb90935df35b58f758950a7ece0841e421948bebdec7cf7ed3f"
+  },
+  "input_object_immutability_verified": true,
+  "limits": "Finite planning ceilings and projections from historical aggregate cost evidence; no new fits, predictions, arrays, statistical resampling or live resource reservation. Individual stage capacity is not cumulative retention capacity or a completion guarantee.",
+  "new_scientific_operations": 0,
+  "panel_scope_clarification_pending": true,
+  "proposal": {
+    "actual_arrays_loaded": false,
+    "capacities_reserved": false,
+    "execution_authorized": false,
+    "input_canonical_sha256": {
+      "historical_classical": "816b75aa497bce85baf63a2d5461201972f4e9a968632e74897a695063bd782f",
+      "historical_neural": "40e590f6bf2647b962197183e5c9aa3b56ac6445c25934bdbdab43171badd3cf",
+      "slot_audit": "13ca612ff50bef8f3b258b52f30d225c4ecec57430a29f5ed63e5924cd2bb1a0"
+    },
+    "input_provenance_independently_verified": false,
+    "measured_new_population_costs": false,
+    "proposals": [
+      {
+        "accounted_fit_models": [
+          "C-RANDOM-FOREST",
+          "C-RBF-SVM",
+          "D0-M",
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "active_walltime_ceiling_seconds": 432000,
+        "active_walltime_formula": {
+          "margin_factor": 2,
+          "period_seconds": 86400,
+          "periods_rounded_up": 5,
+          "result_seconds": 432000,
+          "serial_kernel_seconds_envelope": 215212.32792872074
+        },
+        "auto_launch": false,
+        "automatic_retries": 0,
+        "classical_grid_and_calibration_estimators_retained_by_default": false,
+        "classical_models": [
+          "C-RANDOM-FOREST",
+          "C-RBF-SVM"
+        ],
+        "classical_retained_estimator_bytes": 5416029780.519231,
+        "classical_seconds": 150517.58441523544,
+        "completion_guaranteed": false,
+        "component_storage_bytes_envelope": 33719476023.51923,
+        "conditional_envelope": {
+          "calibration_model_fit": {
+            "count": 0
+          },
+          "final_refit": {
+            "count": 837,
+            "max_checkpoint_bytes": 865311,
+            "max_checkpoint_bytes_recipe": "D1",
+            "max_mean_seconds": 3.733673550147311,
+            "max_mean_seconds_recipe": "D3"
+          },
+          "guard_source_fit": {
+            "count": 0
+          },
+          "is_conservative_historical_rate_envelope": true,
+          "is_future_runtime_upper_bound": false,
+          "may_combine_recipe_maxima_across_stages": true,
+          "single_selection_map_realizability_asserted": false,
+          "source_fit": {
+            "count": 1290,
+            "max_checkpoint_bytes": 1730622,
+            "max_checkpoint_bytes_recipe": "D1",
+            "max_mean_seconds": 4.776151684279238,
+            "max_mean_seconds_recipe": "D3"
+          }
+        },
+        "conditional_storage_bytes_envelope": 2956767687,
+        "estimated_parallel_walltime_provided": false,
+        "evidence_deletion_permitted": false,
+        "excluded_from_serial_sum": [
+          "external_calibration",
+          "io",
+          "orchestration",
+          "persistence",
+          "reporting",
+          "new_data_or_stopping_changes"
+        ],
+        "failures_and_interruptions_consume_allowances": true,
+        "historical_source_kernels_include_internal_validation": true,
+        "include_extra_trees": false,
+        "logical_neural_strategies_in_panel": 2,
+        "margin_factors_are_statistical_bounds": false,
+        "margin_factors_are_supervisor_planning_choices": true,
+        "model_fit_ceiling": 170277,
+        "neural_base_seconds": 55408.423079291766,
+        "neural_conditional_envelope_seconds": 9286.320434193516,
+        "neural_envelope_seconds": 64694.743513485286,
+        "neural_models": [
+          "D0-M",
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "neural_recipes_charged_in_fresh_source_selection": 4,
+        "neural_retained_checkpoint_bytes": 25346678556.0,
+        "new_artifact_allowance_bytes": 68719476736,
+        "new_artifact_allowance_formula": {
+          "allocation_unit_bytes": 17179869184,
+          "allocation_units_rounded_up": 4,
+          "component_storage_bytes_envelope": 33719476023.51923,
+          "margin_factor": 2,
+          "result_bytes": 68719476736
+        },
+        "panel_alternatives_mutually_exclusive_within_population": true,
+        "per_model_components": {
+          "C-RANDOM-FOREST": {
+            "calibration_model_fit_count": 2511,
+            "family": "classical",
+            "final_refit_count": 1935,
+            "kernel_seconds": 149668.61166245,
+            "retained_estimator_bytes": 4695579992.596154,
+            "source_fit_count": 83664
+          },
+          "C-RBF-SVM": {
+            "calibration_model_fit_count": 837,
+            "family": "classical",
+            "final_refit_count": 645,
+            "kernel_seconds": 848.9727527854154,
+            "retained_estimator_bytes": 720449787.9230769,
+            "source_fit_count": 62748
+          },
+          "D0-M": {
+            "family": "neural",
+            "final_refit_count": 1944,
+            "guard_source_fit_count": 843,
+            "kernel_seconds": 22302.11284644437,
+            "retained_checkpoint_bytes": 11978578524,
+            "source_fit_count": 5247
+          },
+          "D1": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 843,
+            "kernel_seconds": 10065.458619809157,
+            "retained_checkpoint_bytes": 4485772224,
+            "source_fit_count": 1749
+          },
+          "D2": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 843,
+            "kernel_seconds": 10366.379874805956,
+            "retained_checkpoint_bytes": 4396555584,
+            "source_fit_count": 1749
+          },
+          "D3": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 843,
+            "kernel_seconds": 12674.471738232285,
+            "retained_checkpoint_bytes": 4485772224,
+            "source_fit_count": 1749
+          }
+        },
+        "per_stage_resources": {
+          "allocated_gpu_gib": 8,
+          "free_space_reserve_gib": 30,
+          "max_gpu_workers": 1,
+          "max_single_thread_cpu_workers": 4,
+          "ram_gib": 24,
+          "starting_free_space_requirement_bytes": 100931731456
+        },
+        "population_id": "notes_clear_500",
+        "prior_permits_transferable": false,
+        "resource_proposal_approved": false,
+        "scalar_calibration_ceiling": 4071,
+        "selected_panel": null,
+        "serial_kernel_seconds_envelope": 215212.32792872074,
+        "serial_sum_is_gpu_profile_time": false,
+        "serial_sum_is_walltime_prediction": false,
+        "stage_id": "POP-NOTES-4",
+        "starting_free_space_requirement_bytes": 100931731456,
+        "total_catalog_jobs": 367935,
+        "total_job_ceiling": 355521
+      },
+      {
+        "accounted_fit_models": [
+          "C-RANDOM-FOREST",
+          "C-RBF-SVM",
+          "C-EXTRA-TREES",
+          "D0-M",
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "active_walltime_ceiling_seconds": 604800,
+        "active_walltime_formula": {
+          "margin_factor": 2,
+          "period_seconds": 86400,
+          "periods_rounded_up": 7,
+          "result_seconds": 604800,
+          "serial_kernel_seconds_envelope": 297383.7158574579
+        },
+        "auto_launch": false,
+        "automatic_retries": 0,
+        "classical_grid_and_calibration_estimators_retained_by_default": false,
+        "classical_models": [
+          "C-RANDOM-FOREST",
+          "C-RBF-SVM",
+          "C-EXTRA-TREES"
+        ],
+        "classical_retained_estimator_bytes": 15238752406.384613,
+        "classical_seconds": 232688.97234397262,
+        "completion_guaranteed": false,
+        "component_storage_bytes_envelope": 43542198649.38461,
+        "conditional_envelope": {
+          "calibration_model_fit": {
+            "count": 0
+          },
+          "final_refit": {
+            "count": 837,
+            "max_checkpoint_bytes": 865311,
+            "max_checkpoint_bytes_recipe": "D1",
+            "max_mean_seconds": 3.733673550147311,
+            "max_mean_seconds_recipe": "D3"
+          },
+          "guard_source_fit": {
+            "count": 0
+          },
+          "is_conservative_historical_rate_envelope": true,
+          "is_future_runtime_upper_bound": false,
+          "may_combine_recipe_maxima_across_stages": true,
+          "single_selection_map_realizability_asserted": false,
+          "source_fit": {
+            "count": 1290,
+            "max_checkpoint_bytes": 1730622,
+            "max_checkpoint_bytes_recipe": "D1",
+            "max_mean_seconds": 4.776151684279238,
+            "max_mean_seconds_recipe": "D3"
+          }
+        },
+        "conditional_storage_bytes_envelope": 2956767687,
+        "estimated_parallel_walltime_provided": false,
+        "evidence_deletion_permitted": false,
+        "excluded_from_serial_sum": [
+          "external_calibration",
+          "io",
+          "orchestration",
+          "persistence",
+          "reporting",
+          "new_data_or_stopping_changes"
+        ],
+        "failures_and_interruptions_consume_allowances": true,
+        "historical_source_kernels_include_internal_validation": true,
+        "include_extra_trees": true,
+        "logical_neural_strategies_in_panel": 2,
+        "margin_factors_are_statistical_bounds": false,
+        "margin_factors_are_supervisor_planning_choices": true,
+        "model_fit_ceiling": 258387,
+        "neural_base_seconds": 55408.423079291766,
+        "neural_conditional_envelope_seconds": 9286.320434193516,
+        "neural_envelope_seconds": 64694.743513485286,
+        "neural_models": [
+          "D0-M",
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "neural_recipes_charged_in_fresh_source_selection": 4,
+        "neural_retained_checkpoint_bytes": 25346678556.0,
+        "new_artifact_allowance_bytes": 103079215104,
+        "new_artifact_allowance_formula": {
+          "allocation_unit_bytes": 17179869184,
+          "allocation_units_rounded_up": 6,
+          "component_storage_bytes_envelope": 43542198649.38461,
+          "margin_factor": 2,
+          "result_bytes": 103079215104
+        },
+        "panel_alternatives_mutually_exclusive_within_population": true,
+        "per_model_components": {
+          "C-EXTRA-TREES": {
+            "calibration_model_fit_count": 2511,
+            "family": "classical",
+            "final_refit_count": 1935,
+            "kernel_seconds": 82171.38792873718,
+            "retained_estimator_bytes": 9822722625.865383,
+            "source_fit_count": 83664
+          },
+          "C-RANDOM-FOREST": {
+            "calibration_model_fit_count": 2511,
+            "family": "classical",
+            "final_refit_count": 1935,
+            "kernel_seconds": 149668.61166245,
+            "retained_estimator_bytes": 4695579992.596154,
+            "source_fit_count": 83664
+          },
+          "C-RBF-SVM": {
+            "calibration_model_fit_count": 837,
+            "family": "classical",
+            "final_refit_count": 645,
+            "kernel_seconds": 848.9727527854154,
+            "retained_estimator_bytes": 720449787.9230769,
+            "source_fit_count": 62748
+          },
+          "D0-M": {
+            "family": "neural",
+            "final_refit_count": 1944,
+            "guard_source_fit_count": 843,
+            "kernel_seconds": 22302.11284644437,
+            "retained_checkpoint_bytes": 11978578524,
+            "source_fit_count": 5247
+          },
+          "D1": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 843,
+            "kernel_seconds": 10065.458619809157,
+            "retained_checkpoint_bytes": 4485772224,
+            "source_fit_count": 1749
+          },
+          "D2": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 843,
+            "kernel_seconds": 10366.379874805956,
+            "retained_checkpoint_bytes": 4396555584,
+            "source_fit_count": 1749
+          },
+          "D3": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 843,
+            "kernel_seconds": 12674.471738232285,
+            "retained_checkpoint_bytes": 4485772224,
+            "source_fit_count": 1749
+          }
+        },
+        "per_stage_resources": {
+          "allocated_gpu_gib": 8,
+          "free_space_reserve_gib": 30,
+          "max_gpu_workers": 1,
+          "max_single_thread_cpu_workers": 4,
+          "ram_gib": 24,
+          "starting_free_space_requirement_bytes": 135291469824
+        },
+        "population_id": "notes_clear_500",
+        "prior_permits_transferable": false,
+        "resource_proposal_approved": false,
+        "scalar_calibration_ceiling": 4716,
+        "selected_panel": null,
+        "serial_kernel_seconds_envelope": 297383.7158574579,
+        "serial_sum_is_gpu_profile_time": false,
+        "serial_sum_is_walltime_prediction": false,
+        "stage_id": "POP-NOTES-5",
+        "starting_free_space_requirement_bytes": 135291469824,
+        "total_catalog_jobs": 549384,
+        "total_job_ceiling": 536970
+      },
+      {
+        "accounted_fit_models": [
+          "C-RANDOM-FOREST",
+          "C-RBF-SVM",
+          "D0-M",
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "active_walltime_ceiling_seconds": 518400,
+        "active_walltime_formula": {
+          "margin_factor": 2,
+          "period_seconds": 86400,
+          "periods_rounded_up": 6,
+          "result_seconds": 518400,
+          "serial_kernel_seconds_envelope": 229697.70118943308
+        },
+        "auto_launch": false,
+        "automatic_retries": 0,
+        "classical_grid_and_calibration_estimators_retained_by_default": false,
+        "classical_models": [
+          "C-RANDOM-FOREST",
+          "C-RBF-SVM"
+        ],
+        "classical_retained_estimator_bytes": 6045800685.23077,
+        "classical_seconds": 164359.08087784235,
+        "completion_guaranteed": false,
+        "component_storage_bytes_envelope": 34947666102.230774,
+        "conditional_envelope": {
+          "calibration_model_fit": {
+            "count": 0
+          },
+          "final_refit": {
+            "count": 747,
+            "max_checkpoint_bytes": 865311,
+            "max_checkpoint_bytes_recipe": "D1",
+            "max_mean_seconds": 3.733673550147311,
+            "max_mean_seconds_recipe": "D3"
+          },
+          "guard_source_fit": {
+            "count": 0
+          },
+          "is_conservative_historical_rate_envelope": true,
+          "is_future_runtime_upper_bound": false,
+          "may_combine_recipe_maxima_across_stages": true,
+          "single_selection_map_realizability_asserted": false,
+          "source_fit": {
+            "count": 996,
+            "max_checkpoint_bytes": 1730622,
+            "max_checkpoint_bytes_recipe": "D1",
+            "max_mean_seconds": 4.776151684279238,
+            "max_mean_seconds_recipe": "D3"
+          }
+        },
+        "conditional_storage_bytes_envelope": 2370086829,
+        "estimated_parallel_walltime_provided": false,
+        "evidence_deletion_permitted": false,
+        "excluded_from_serial_sum": [
+          "external_calibration",
+          "io",
+          "orchestration",
+          "persistence",
+          "reporting",
+          "new_data_or_stopping_changes"
+        ],
+        "failures_and_interruptions_consume_allowances": true,
+        "historical_source_kernels_include_internal_validation": true,
+        "include_extra_trees": false,
+        "logical_neural_strategies_in_panel": 2,
+        "margin_factors_are_statistical_bounds": false,
+        "margin_factors_are_supervisor_planning_choices": true,
+        "model_fit_ceiling": 184749,
+        "neural_base_seconds": 57792.51909208857,
+        "neural_conditional_envelope_seconds": 7546.101219502162,
+        "neural_envelope_seconds": 65338.620311590734,
+        "neural_models": [
+          "D0-M",
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "neural_recipes_charged_in_fresh_source_selection": 4,
+        "neural_retained_checkpoint_bytes": 26531778588.0,
+        "new_artifact_allowance_bytes": 85899345920,
+        "new_artifact_allowance_formula": {
+          "allocation_unit_bytes": 17179869184,
+          "allocation_units_rounded_up": 5,
+          "component_storage_bytes_envelope": 34947666102.230774,
+          "margin_factor": 2,
+          "result_bytes": 85899345920
+        },
+        "panel_alternatives_mutually_exclusive_within_population": true,
+        "per_model_components": {
+          "C-RANDOM-FOREST": {
+            "calibration_model_fit_count": 2241,
+            "family": "classical",
+            "final_refit_count": 2160,
+            "kernel_seconds": 163430.99712799262,
+            "retained_estimator_bytes": 5241577666.153847,
+            "source_fit_count": 91728
+          },
+          "C-RBF-SVM": {
+            "calibration_model_fit_count": 747,
+            "family": "classical",
+            "final_refit_count": 720,
+            "kernel_seconds": 928.0837498497189,
+            "retained_estimator_bytes": 804223019.076923,
+            "source_fit_count": 68796
+          },
+          "D0-M": {
+            "family": "neural",
+            "final_refit_count": 2160,
+            "guard_source_fit_count": 747,
+            "kernel_seconds": 23905.63924560186,
+            "retained_checkpoint_bytes": 12823287120,
+            "source_fit_count": 5733
+          },
+          "D1": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 747,
+            "kernel_seconds": 10305.528784029328,
+            "retained_checkpoint_bytes": 4599993276,
+            "source_fit_count": 1911
+          },
+          "D2": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 747,
+            "kernel_seconds": 10625.211926310278,
+            "retained_checkpoint_bytes": 4508504916,
+            "source_fit_count": 1911
+          },
+          "D3": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 747,
+            "kernel_seconds": 12956.139136147112,
+            "retained_checkpoint_bytes": 4599993276,
+            "source_fit_count": 1911
+          }
+        },
+        "per_stage_resources": {
+          "allocated_gpu_gib": 8,
+          "free_space_reserve_gib": 30,
+          "max_gpu_workers": 1,
+          "max_single_thread_cpu_workers": 4,
+          "ram_gib": 24,
+          "starting_free_space_requirement_bytes": 118111600640
+        },
+        "population_id": "mira1_excluded_575",
+        "prior_permits_transferable": false,
+        "resource_proposal_approved": false,
+        "scalar_calibration_ceiling": 4347,
+        "selected_panel": null,
+        "serial_kernel_seconds_envelope": 229697.70118943308,
+        "serial_sum_is_gpu_profile_time": false,
+        "serial_sum_is_walltime_prediction": false,
+        "stage_id": "POP-MIRA-4",
+        "starting_free_space_requirement_bytes": 118111600640,
+        "total_catalog_jobs": 396951,
+        "total_job_ceiling": 386493
+      },
+      {
+        "accounted_fit_models": [
+          "C-RANDOM-FOREST",
+          "C-RBF-SVM",
+          "C-EXTRA-TREES",
+          "D0-M",
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "active_walltime_ceiling_seconds": 691200,
+        "active_walltime_formula": {
+          "margin_factor": 2,
+          "period_seconds": 86400,
+          "periods_rounded_up": 8,
+          "result_seconds": 691200,
+          "serial_kernel_seconds_envelope": 319445.76148255717
+        },
+        "auto_launch": false,
+        "automatic_retries": 0,
+        "classical_grid_and_calibration_estimators_retained_by_default": false,
+        "classical_models": [
+          "C-RANDOM-FOREST",
+          "C-RBF-SVM",
+          "C-EXTRA-TREES"
+        ],
+        "classical_retained_estimator_bytes": 17010700360.615385,
+        "classical_seconds": 254107.14117096644,
+        "completion_guaranteed": false,
+        "component_storage_bytes_envelope": 45912565777.61539,
+        "conditional_envelope": {
+          "calibration_model_fit": {
+            "count": 0
+          },
+          "final_refit": {
+            "count": 747,
+            "max_checkpoint_bytes": 865311,
+            "max_checkpoint_bytes_recipe": "D1",
+            "max_mean_seconds": 3.733673550147311,
+            "max_mean_seconds_recipe": "D3"
+          },
+          "guard_source_fit": {
+            "count": 0
+          },
+          "is_conservative_historical_rate_envelope": true,
+          "is_future_runtime_upper_bound": false,
+          "may_combine_recipe_maxima_across_stages": true,
+          "single_selection_map_realizability_asserted": false,
+          "source_fit": {
+            "count": 996,
+            "max_checkpoint_bytes": 1730622,
+            "max_checkpoint_bytes_recipe": "D1",
+            "max_mean_seconds": 4.776151684279238,
+            "max_mean_seconds_recipe": "D3"
+          }
+        },
+        "conditional_storage_bytes_envelope": 2370086829,
+        "estimated_parallel_walltime_provided": false,
+        "evidence_deletion_permitted": false,
+        "excluded_from_serial_sum": [
+          "external_calibration",
+          "io",
+          "orchestration",
+          "persistence",
+          "reporting",
+          "new_data_or_stopping_changes"
+        ],
+        "failures_and_interruptions_consume_allowances": true,
+        "historical_source_kernels_include_internal_validation": true,
+        "include_extra_trees": true,
+        "logical_neural_strategies_in_panel": 2,
+        "margin_factors_are_statistical_bounds": false,
+        "margin_factors_are_supervisor_planning_choices": true,
+        "model_fit_ceiling": 280878,
+        "neural_base_seconds": 57792.51909208857,
+        "neural_conditional_envelope_seconds": 7546.101219502162,
+        "neural_envelope_seconds": 65338.620311590734,
+        "neural_models": [
+          "D0-M",
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "neural_recipes_charged_in_fresh_source_selection": 4,
+        "neural_retained_checkpoint_bytes": 26531778588.0,
+        "new_artifact_allowance_bytes": 103079215104,
+        "new_artifact_allowance_formula": {
+          "allocation_unit_bytes": 17179869184,
+          "allocation_units_rounded_up": 6,
+          "component_storage_bytes_envelope": 45912565777.61539,
+          "margin_factor": 2,
+          "result_bytes": 103079215104
+        },
+        "panel_alternatives_mutually_exclusive_within_population": true,
+        "per_model_components": {
+          "C-EXTRA-TREES": {
+            "calibration_model_fit_count": 2241,
+            "family": "classical",
+            "final_refit_count": 2160,
+            "kernel_seconds": 89748.0602931241,
+            "retained_estimator_bytes": 10964899675.384615,
+            "source_fit_count": 91728
+          },
+          "C-RANDOM-FOREST": {
+            "calibration_model_fit_count": 2241,
+            "family": "classical",
+            "final_refit_count": 2160,
+            "kernel_seconds": 163430.99712799262,
+            "retained_estimator_bytes": 5241577666.153847,
+            "source_fit_count": 91728
+          },
+          "C-RBF-SVM": {
+            "calibration_model_fit_count": 747,
+            "family": "classical",
+            "final_refit_count": 720,
+            "kernel_seconds": 928.0837498497189,
+            "retained_estimator_bytes": 804223019.076923,
+            "source_fit_count": 68796
+          },
+          "D0-M": {
+            "family": "neural",
+            "final_refit_count": 2160,
+            "guard_source_fit_count": 747,
+            "kernel_seconds": 23905.63924560186,
+            "retained_checkpoint_bytes": 12823287120,
+            "source_fit_count": 5733
+          },
+          "D1": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 747,
+            "kernel_seconds": 10305.528784029328,
+            "retained_checkpoint_bytes": 4599993276,
+            "source_fit_count": 1911
+          },
+          "D2": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 747,
+            "kernel_seconds": 10625.211926310278,
+            "retained_checkpoint_bytes": 4508504916,
+            "source_fit_count": 1911
+          },
+          "D3": {
+            "family": "neural",
+            "final_refit_count": 0,
+            "guard_source_fit_count": 747,
+            "kernel_seconds": 12956.139136147112,
+            "retained_checkpoint_bytes": 4599993276,
+            "source_fit_count": 1911
+          }
+        },
+        "per_stage_resources": {
+          "allocated_gpu_gib": 8,
+          "free_space_reserve_gib": 30,
+          "max_gpu_workers": 1,
+          "max_single_thread_cpu_workers": 4,
+          "ram_gib": 24,
+          "starting_free_space_requirement_bytes": 135291469824
+        },
+        "population_id": "mira1_excluded_575",
+        "prior_permits_transferable": false,
+        "resource_proposal_approved": false,
+        "scalar_calibration_ceiling": 5067,
+        "selected_panel": null,
+        "serial_kernel_seconds_envelope": 319445.76148255717,
+        "serial_sum_is_gpu_profile_time": false,
+        "serial_sum_is_walltime_prediction": false,
+        "stage_id": "POP-MIRA-5",
+        "starting_free_space_requirement_bytes": 135291469824,
+        "total_catalog_jobs": 595608,
+        "total_job_ceiling": 585150
+      }
+    ],
+    "report_sha256": "0efa45387e658bf30c36a432b542b6993f3309a8e8e1a1686074512a07df9ea4",
+    "resource_proposal_approved": false,
+    "resources_live_inspected": false,
+    "schema_version": "nato-sers-p08-population-resource-proposal-v1",
+    "scientific_operations": 0,
+    "serialized_estimator_sizes_are_in_memory_estimates_not_persisted_checkpoints": true
+  },
+  "repeatability_verified": true,
+  "resource_proposal_approved": false,
+  "schema_version": "nato-sers-p08-population-resource-audit-v1",
+  "selected_panel": null,
+  "status": "pass_metadata_costing_only"
+}

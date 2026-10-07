@@ -238,3 +238,51 @@ The relevant historical source durations sum to **7,988.616 seconds**; four copi
 **Subsequent capacity observation:** at **2026-10-03T00:05:39Z** (the evening of **2026-10-02** locally), the filesystem reported **57,421,008,896 bytes free**, approximately **53.5 GiB**. This clears the proposed initial U0 and conditional N2 storage thresholds at that instant, but not U1/N1, R1 or Q1. No cleanup was performed as part of this audit. The increased capacity is not reserved, does not approve N2, and does not authorize a launch or a change to the universal-first sequence.
 
 **Latest capacity observation:** at **2026-10-04T18:08:50Z**, the filesystem reported **210,259,017,728 bytes free**, approximately **195.8 GiB**. This meets the proposed initial storage thresholds for U0, U1, R1 and the selected N2 design individually. It remains below Q1's **430-GiB** initial requirement. The observation does not reserve space for concurrent or cumulative stages, approve any allowance, or resolve adaptive-stage storage. No cleanup was performed during this audit; capacity must be checked again at any authorized launch.
+
+## 14. Filtered-population resource proposals
+
+The [population catalog](../results/p08_readiness/population_slot_ledger_audit.json) enumerates fresh source-only model selection in the notes-clear and Mira-1-excluded tiers. These are later sensitivity stages, not additions to U0 or U1. Both four- and five-method alternatives remain explicit until the owner resolves Extra Trees inclusion. Their [cost audit](../results/p08_readiness/population_resource_proposal_audit.json) specifies finite ceilings without selecting a panel, transferring prior permissions or launching work.
+
+### Historical cost basis
+
+The new [historical neural audit](../results/p08_readiness/population_historical_neural_cost.json) authenticates **14,428 files** and extracts **12,780 source-fit** and **1,635 final-refit** duration records from the **260** held-evaluation contexts. It excludes **60** development contexts. The source count contains **8,172 inherited-selection fits** and **4,608 guard fits** across all four recipes. The **36** reused pilot fits appear once, not as additional executions. Interrupted-run accounting charges are not substituted for measured kernel durations.
+
+The source kernel's elapsed time includes its internal validation. External scalar calibration, persistence, orchestration, reporting and interruptions remain outside these durations. Source summaries contain historical validation metrics, but the audit did not extract or use them. It loaded no prediction archive or checkpoint tensor. Checkpoint sizes come from authenticated inventory entries checked against current file sizes, not a fresh tensor-content verification. The D1/D2 final-refit samples contain only **42** and **33** selected historical cases, respectively; their means are not representative timing guarantees for a new population.
+
+Classical rates use the existing [MIN timing basis](../results/p08_readiness/historical_timing_basis.json), separately for source search, fresh calibration fitting and final refitting. Divide durations by the number of recorded fits, not by counts that include reused calibration aliases. Historical serialized estimator sizes were measured in memory; they do not establish that primary classical checkpoints exist.
+
+For each catalog, multiply unconditional model/stage counts by their corresponding historical mean kernel duration. For the remaining conditional source/refit counts, use the largest D1/D2/D3 mean rate separately at each stage. This is a historical-rate envelope, not a bound on future time. It must not sum mutually exclusive candidate branches. The checkpoint estimate retains neural best and terminal source checkpoints and terminal final checkpoints. Classical size estimates retain final estimators; grid/calibration prediction and status records remain required, but their estimators need not be stored.
+
+| Population | Panel | Sequential classical kernel hours | Neural kernel-hour envelope | Serial kernel-hour envelope | Checkpoint/estimator estimate, GiB |
+|---|---|---:|---:|---:|---:|
+| Notes-clear | Four methods | 41.81 | 17.97 | 59.78 | 31.40 |
+| Notes-clear | Five methods | 64.64 | 17.97 | 82.61 | 40.55 |
+| Mira-1 excluded | Four methods | 45.66 | 18.15 | 63.80 | 32.55 |
+| Mira-1 excluded | Five methods | 70.59 | 18.15 | 88.73 | 42.76 |
+
+These are arithmetic projections from historical MIN runs, not new-population measurements, GPU profiler times or parallel wall-time forecasts. Filtering and preprocessing may change convergence and selected hyperparameters. Do not divide these sums by a worker count and present the result as a completion promise.
+
+### Finite, unapproved ceilings
+
+The planning rule doubles the serial kernel-hour envelope and rounds upward to the next **24-hour** block. It doubles the checkpoint/estimator estimate and rounds upward to the next **16-GiB** block. These margins cover unspecified overhead and variability provisionally; they are not measured total-cost bounds or statistical confidence limits. The resulting ceilings limit execution even if a stage remains incomplete.
+
+| Proposed stage | Model fits | Scalar calibrations | Active wall time | New artifacts | Initial free space including reserve |
+|---|---:|---:|---:|---:|---:|
+| POP-NOTES-4 | 170,277 | 4,071 | 120 hours | 64 GiB | 94 GiB |
+| POP-NOTES-5 | 258,387 | 4,716 | 168 hours | 96 GiB | 126 GiB |
+| POP-MIRA-4 | 184,749 | 4,347 | 144 hours | 80 GiB | 110 GiB |
+| POP-MIRA-5 | 280,878 | 5,067 | 192 hours | 96 GiB | 126 GiB |
+
+The four- and five-method stages are alternatives within a population, not cumulative permissions. Every stage proposes **24 GiB process-tree RAM**, **8 GiB allocated GPU memory**, at most **four single-thread CPU fitting workers** and **one GPU fitting worker**. Model-internal, BLAS and PyTorch CPU thread counts remain one per worker. The inherited inner neural limits are unchanged. Record reserved and device-reported GPU memory separately from allocation.
+
+Active wall time includes setup, failed attempts, fitting, predictions, calibration, persistence and reporting. Every attempted operation consumes its slot; automatic retries remain zero. Preserve completed and failed evidence. Retained catalogs, status records, predictions, selection/calibration records and logs count toward actual stage storage, even though they are absent from the checkpoint-only estimate. A ceiling breach stops new admission; it does not authorize deletion, a new allowance or a reduced scientific experiment. Numerical runtime review and independent live enforcement remain necessary before any permit.
+
+### Capacity and cumulative retention
+
+At **2026-10-04T21:04:53Z**, the private-artifact filesystem reported **211,101,495,296 bytes free**, approximately **196.6 GiB**. Host available RAM was **52,779,343,872 bytes**; device-reported free GPU memory was **15,187 MiB**. These observations are not reservations or runtime acceptance. Each population stage individually meets its proposed initial storage threshold at that instant; Q1 still does not meet its **430-GiB** threshold.
+
+The **2026-10-07T13:30:53Z** recheck reported **192,519,241,728 bytes free**, approximately **179.3 GiB**, with **53,036,097,536 bytes** of available host RAM and **15,145 MiB** of device-reported free GPU memory. Each population stage still clears its initial threshold individually. The reduced free space illustrates why a dated observation cannot substitute for admission-time checks. No cleanup or reservation was performed.
+
+The stages cannot all assume the same free space. Retaining the full **80-GiB** U1 allowance plus both four-method population allowances and the **30-GiB** reserve requires **254 GiB**. The five-method counterparts require **302 GiB**. Both exceed the observed capacity even before range, normalization or adaptive artifacts. Actual retained sizes may be lower, but their size cannot be assumed in advance. Recheck capacity after each accepted stage; additional storage or an explicitly approved retention amendment is required if the next stage fails admission. No cleanup is authorized or performed by this audit.
+
+Universal preprocessing remains the first scientific stage to request. These larger sensitivities do not delay implementation work on the remaining readiness specifications and do not become authorized because their costs are now explicit. Panel resolution, numerical runtime/inference review and separate stage-specific permits remain outstanding.

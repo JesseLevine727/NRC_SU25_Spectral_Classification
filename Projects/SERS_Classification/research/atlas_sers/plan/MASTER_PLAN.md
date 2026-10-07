@@ -921,6 +921,10 @@ The [conditional operation audit](P08_POPULATION_SUPPORT.md#6-conditional-popula
 
 The [conditional population inference specification](P08_POPULATION_INFERENCE.md) and [registry](contracts/p08_population_inference.json) now bind policy effects to method-specific metadata support and model comparisons to their common support. Notes-clear retains 215 classical/common and 216 neural contexts; complete-four-fold checks retain 208 and 212 contexts, respectively. Mira-1 exclusion retains all 240 contexts and 60 complete groups. The identity-only audit verifies exact retained test observations against the original primary roles. Separate exploratory families span both tiers: 32 effects and 32 interactions for four methods, or 40 effects and 48 interactions for five. Panel resolution, numerical implementation and finite resource proposals remain required; the primary statistical families and zero-execution boundary are unchanged.
 
+The [population resource proposals](P08_RESOURCE_PROPOSAL.md#14-filtered-population-resource-proposals) now cost both panel alternatives using historical per-model/stage durations, fresh source selection and mutually exclusive neural branches. Proposed per-tier ceilings span 120–192 active hours and 64–96 GiB of new artifacts; these are limits, not predicted wall times or approved allowances. The observed 196.6 GiB free meets each stage's initial threshold individually, but cannot cover the full U1 allowance plus both population allowances and reserve (254 GiB for four methods or 302 GiB for five). Preserve prior evidence and recheck capacity between stages. Universal-first ordering and separate scientific permission remain unchanged.
+
+The 2026-10-07 recheck reports 179.3 GiB free; the same individual-versus-cumulative capacity distinction still holds. Neither observation reserves capacity or authorizes evidence deletion.
+
 ## 17. Sub-plan P09 — narrow open-set evaluation
 
 P09 answers `RQ-S06` under `PP-U-MIN`. Preprocessing-policy selection is not reopened, and open-set results cannot choose an adaptive preprocessing rule.
