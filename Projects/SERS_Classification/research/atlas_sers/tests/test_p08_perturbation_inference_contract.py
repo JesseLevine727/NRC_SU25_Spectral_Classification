@@ -495,7 +495,10 @@ def test_readiness_perturbation_design(readiness):
     assert design["full_stress_job_ledger_complete"] is False
     assert design["stress_scoring_inference_rendering_ledger_complete"] is False
     assert design["stress_clean_probability_parity_accepted"] is False
-    assert design["finite_resource_proposal_complete"] is False
+    assert design["finite_resource_proposal_complete"] is True
+    assert design["resource_proposal"] == "plan/contracts/p08_stress_resources.json"
+    assert design["resource_proposal_approved"] is False
+    assert design["full_upstream_and_stress_retention_capacity_available"] is False
     assert design["execution_authorized"] is False
 
 

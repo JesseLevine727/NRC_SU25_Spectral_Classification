@@ -286,3 +286,35 @@ The **2026-10-07T13:30:53Z** recheck reported **192,519,241,728 bytes free**, ap
 The stages cannot all assume the same free space. Retaining the full **80-GiB** U1 allowance plus both four-method population allowances and the **30-GiB** reserve requires **254 GiB**. The five-method counterparts require **302 GiB**. Both exceed the observed capacity even before range, normalization or adaptive artifacts. Actual retained sizes may be lower, but their size cannot be assumed in advance. Recheck capacity after each accepted stage; additional storage or an explicitly approved retention amendment is required if the next stage fails admission. No cleanup is authorized or performed by this audit.
 
 Universal preprocessing remains the first scientific stage to request. These larger sensitivities do not delay implementation work on the remaining readiness specifications and do not become authorized because their costs are now explicit. Panel resolution, numerical runtime/inference review and separate stage-specific permits remain outstanding.
+
+## 15. S1 proposal: registered test-time robustness
+
+The [S1 resource proposal](contracts/p08_stress_resources.json) bounds the approved 96-case robustness design after the required universal and QC estimators are available. It crosses neither the wider range nor the normalization or filtered-population branches. The fixed-clean-route QC interpretation remains unchanged. This proposal does not authorize native-grid gate-reaction testing, new hyperparameter selection, neural optimization or a scientific launch.
+
+Only the **1,820 historical classical MIN estimators** require new fitting: **260 RBF-SVM**, **780 Random Forest** and **780 Extra Trees** fits. Reconstruct their exact saved source-selected specifications, original fitting rows and seeds. No scalar temperature is refitted. The other **6,751 estimator references** and **5,343 calibration references** come from retained upstream artifacts; a missing or incompatible artifact cannot trigger a replacement fit under S1.
+
+| Proposed stage | Active wall time | New private artifacts | Process-tree RAM | Allocated GPU memory | Workers |
+|---|---:|---:|---:|---:|---|
+| S1, complete registered robustness design | 72 hours | 64 GiB | 24 GiB | 8 GiB | At most four single-thread CPU workers and one GPU worker |
+
+The CPU workers may reconstruct classical estimators or execute bounded processing jobs. The GPU worker performs retained neural inference, not optimization. The wall ceiling includes authentication, setup, reconstruction, transforms, predictions, inference, diagnostics, persistence and reporting. Failed attempts consume their slots and time. Automatic retries remain zero; a ceiling breach stops new admission and preserves evidence. These limits are proposals, not transferred U0/U1/Q1 permissions.
+
+### Cost evidence and unmeasured work
+
+The authenticated historical final-refit records contain **1,786.700 seconds** of summed fitting time and **6,142,752,908 bytes** of in-memory serialized estimators (approximately **0.50 hours** and **5.72 GiB**). These are historical kernel measurements, not saved estimator files or a forecast of the full stress experiment. They omit disturbed preprocessing, prediction, uncertainty, serialization and scheduling. No stress runtime has been measured, so the **72-hour** ceiling is an operational limit rather than a promised completion time.
+
+Payload arithmetic provides scale without claiming a measured storage requirement. The **142,592** primary-grid raw cases would occupy **1,598,171,136 bytes** at float64. The **427,776** transformed rows would occupy **2,397,256,704 bytes** at their declared float32 serialization, or **4,794,513,408 bytes** if all float64 working values were retained simultaneously. These figures exclude predictions, metadata, receipts, logs, compression and filesystem overhead; runtime work need not hold every row simultaneously.
+
+The inherited master/instrument weight arrays contain **6,320,000 float64 bytes** in total and must be referenced once by identity and hash. A single reporting view of all **456 contrasts**, **three weighting modes** and **10,000 draws** has **109,440,000 bytes** of scalar terminal draws. Allowing four views for fixed and conditionally available paired-support reporting gives **437,760,000 bytes**. This is a capacity allowance, not permission to invent another inferential family or reduced-support method. The original hierarchical scalar results and defined-draw mask require **36,480,000** and **4,560,000 bytes**, respectively, before metadata. Exact conditional activation and analysis-job accounting remain separately reviewed requirements.
+
+Process uncertainty in batches of at most **128 draws**, or **79 batches** for each registered stream. Retain terminal contrast draws, defined/undefined status, support and provenance. Do not persist a draw-by-context-by-case tensor: it is not required evidence, and its size would dominate these terminal records. Shared weights, frozen inputs, calibrated predictions and the exact algorithm must permit reconstruction of the calculation without repeating model fits. No random values or statistical outputs were generated to obtain these arithmetic counts.
+
+### Retention and capacity
+
+Retain reconstructed MIN estimators, realization/source-noise bindings, transformed rows, seed predictions, calibrated prediction units, case scores, clean-parity receipts, terminal contrast draws, missingness reasons, diagnostic summaries and figure provenance. Reference existing upstream models instead of copying or refitting them. Immutable shards may package records only when every record keeps its identity and hash. Failed attempts, control files and logs count toward the **64-GiB** allowance. The proposal neither deletes earlier evidence nor relaxes its retention obligations.
+
+S1 requires **94 GiB free** initially under the existing **30-GiB reserve**. At **2026-10-07 18:09:10 UTC**, available filesystem space was **135,042,387,968 bytes** (approximately **125.8 GiB**), with **49,015,124 kB** of available host RAM and **14,699 MiB** of device-reported free GPU memory. This clears S1's individual initial thresholds at that instant; it does not reserve capacity or establish live enforcement.
+
+The required stages cannot each spend that same free space. Retaining the full U1 and Q1 allowances, S1 and the reserve requires **574 GiB**, before range, normalization or population artifacts. The present machine does not meet that cumulative requirement. Additional private storage or an explicitly approved retention/resource amendment is required before admitting a stage that lacks capacity; smaller actual artifact sizes must be observed, not assumed. No cleanup or storage expansion was performed by this audit.
+
+S1 still requires complete analysis accounting, numerical implementation review, scientific clean-path parity, actual admission-time capacity and its own execution permit. It does not delay the separately bounded U0 request once readiness closes, and it cannot start automatically after an earlier stage succeeds.

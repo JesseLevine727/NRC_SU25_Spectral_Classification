@@ -1,0 +1,60 @@
+{
+  "catalog_sha256": "480396e90caaf1740ced7ad4f889d6dedf7f06122a3515d4638911d71130cff6",
+  "draws_scores_or_contrasts_computed": false,
+  "execution_authorized": false,
+  "full_stress_job_ledger_complete": false,
+  "global_weight_column_identity_mapping_verified": true,
+  "input_hashes": {
+    "inference_registry": "f4957ef2ec3eaba60079b8cda84c52e48faba79d968bf575e587324adcc290dd",
+    "platform_mapping_source": "8e36597292034cc70a58f787d1e9789fe7b9668b4f7d586b49f04c8031a3d664",
+    "resource_proposal": "b64212724556d8d596208f97620cdb617dd43f3553207f7852740900b6b2d8ee",
+    "score_archive": "7cf47938d2777a3b0cb11645d38033625f883d875d684d0539ad47bf66dd6168",
+    "score_audit": "1be38c92b63b9de5c33c0a6a49dd794a2a23c95dcb42277aed590f3880abee39",
+    "scores_source": "1ffa143ea31d0b9439c0574a8e0416db7170555ca6bcdc2b412acf40d0ac186f",
+    "source": "d1628ecfa7d53a32b63e2edc56a364f8d60ceadbc4dbfd14be57ce572646aac5",
+    "support_source": "b4dbcc88a7f34ab6a2bef509bc7dc50ade56f152b68e2a787cf7091dcb14dd39"
+  },
+  "inputs_unchanged": true,
+  "known_platform_family_counts": {
+    "operational_260": 4,
+    "qc_eligible_54": 3
+  },
+  "new_scientific_operations": 0,
+  "numerical_inference_accepted": false,
+  "private_archive_bytes": 77878482,
+  "private_archive_sha256": "633d83c151060140e8210df02e5a521ff9db96d991c3137719e85bbf9541df0b",
+  "recorded_master_id_types_preserved": true,
+  "registered_contrast_family_sizes_preserved": true,
+  "schema_version": "nato-sers-p08-stress-contrast-catalog-audit-v1",
+  "scientific_values_predictions_or_weights_loaded": false,
+  "scope": "authenticated_metadata_signed_terms_sample_support_and_lexical_identity_mapping_only",
+  "signed_terms_and_all_view_targets_verified": true,
+  "status": "pass",
+  "structural_QC_effect_bindings_retained": 9888,
+  "summary": {
+    "all_authorization_flags_false": true,
+    "context_comparison_units": 98784,
+    "contrast_count": 456,
+    "global_instruments": 10,
+    "global_masters": 69,
+    "kind_counts": {
+      "effect": 216,
+      "interaction": 240
+    },
+    "multiplicity_family_counts": {
+      "eligible_qc_robustness_effects": 48,
+      "eligible_qc_robustness_model_interactions": 48,
+      "operational_qc_robustness_effects": 48,
+      "operational_robustness_model_interactions": 192,
+      "universal_robustness_effects": 120
+    },
+    "platform_family_mapping_sha256": "cbc2bed123ee062223e82aff4711703a1b9c593497a4a172ef0834387b60f635",
+    "pooled_comparison_units": 24264,
+    "signed_context_term_references": 302592,
+    "signed_pooled_term_references": 74352,
+    "support_contrast_counts": {
+      "operational_260": 360,
+      "qc_eligible_54": 96
+    }
+  }
+}

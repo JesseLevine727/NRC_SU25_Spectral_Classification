@@ -471,3 +471,11 @@ The graph contains 882,096 score/curve descriptors and 1,539,588 reporting alias
 Pooled scoring reconstructs M01/M06 from four disjoint folds within a domain/repeat. It does not average fold balanced accuracies, pool repeats or treat technical repetitions as new masters. Every curve depends on its full registered case list and shared clean reference. The audit verifies metadata dependencies, not numerical scores, clean parity or uncertainty.
 
 DeepSeek authored the adapters and synthetic tests. Supervisor review corrected shared-clean validation, strict input checking, recorded ID types and test assumptions about support aliases. Conditional inference still needs explicit mapping from recorded numeric IDs to the inherited lexical bootstrap identity order. Contrast/uncertainty, stability, preservation/rendering accounting, finite resources, the distinct population-panel choice and final requirement-wide acceptance remain open. No scientific execution is authorized.
+
+## 52. Bound contrasts and finite robustness proposal
+
+The [comparison audit](P08_PERTURBATION_INFERENCE.md#7-audited-comparison-bindings-and-proposed-resources) verifies all 456 registered effects/interactions, each signed model/policy term, complete-fold support and the explicit mapping from recorded master IDs to global lexical uncertainty columns. The operational and eligible subsets use the same global identities; neither aliases nor repeated measurements create new independent samples. This is metadata acceptance, not a calculated contrast or validated inference runtime.
+
+The [S1 proposal](P08_RESOURCE_PROPOSAL.md#15-s1-proposal-registered-test-time-robustness) now bounds historical classical reconstruction and later retained-model inference. Its limits remain unapproved. The full U1/Q1/S1 artifact allowances plus reserve exceed current capacity; no cleanup or additional storage is assumed.
+
+Next, reconcile exact uncertainty, hierarchy, sign/Holm, stability, preservation and rendering operations, then the original requirement-wide readiness audit and separate U0 request. The distinct filtered-population Extra Trees choice remains unresolved. The current goal stays active and incomplete; no scientific operation has been authorized.
