@@ -1,0 +1,98 @@
+{
+  "catalog_sha256": "40191b1dc6511a2fa872a1b81a242d3a872b89f39df36e0fd0480f4e4a64e43e",
+  "complete_pool_groups_verified": true,
+  "dependencies_precede_consumers": true,
+  "eligible_pooled_procedures_reuse_operational_procedures": true,
+  "exact_dependencies_verified": true,
+  "execution_authorized": false,
+  "expanded_record_stream_sha256": "15f5da96280c313977bbc3a2d8d64ba138b0c91e51bd16717daf3903fbc5ef52",
+  "full_stress_job_ledger_complete": false,
+  "input_hashes": {
+    "membership_report": "df740cf203bdf84be93a7abd4364825bcb7427df17c0da74ee0875ae31f416e8",
+    "memberships": "b15ff3bf38d3c386fd94df7987636543c404a92acf1324c5d3ce4a561db5686a",
+    "p08_perturbation_inputs.py": "21cd65d4d7426d526a43348a6b4412521b56ed7fceb2086ed1e8245046d55f43",
+    "p08_perturbation_join.py": "dcda6ed9c145f9cff2a14b77f9edf704980ff66674cfa181c1a7ea05113bddc2",
+    "p08_perturbation_predictions.py": "e500420ba24f84a5904b6aa71c6ef50f4d42080b5471f225970feb4c70cd146e",
+    "p08_perturbation_procedures.py": "c94e99f12c0e9ad69320aeb0bdb3dafd063032b914b9b2d9e2d46e32edf360af",
+    "p08_perturbation_qc_procedures.py": "8aa9e0ab52e2119d3e210e969b4c65d963fd4ba0ee610841fca4e670d5e1a5df",
+    "prediction_catalog": "d2896db1f0dc50175ed5ec1b6c4de8b019787b966b217debfd73dbe9410d2299",
+    "prediction_report": "63f271aaff66d2ecc96c418d4bfa002acf4062c0ae585502d557a578f2964224",
+    "scores_source": "1ffa143ea31d0b9439c0574a8e0416db7170555ca6bcdc2b412acf40d0ac186f",
+    "support_source": "b4dbcc88a7f34ab6a2bef509bc7dc50ade56f152b68e2a787cf7091dcb14dd39"
+  },
+  "inputs_unchanged": true,
+  "job_alias_ids_unique": true,
+  "membership_and_master_grouping_verified": true,
+  "new_scientific_operations": 0,
+  "numerical_score_runtime_accepted": false,
+  "private_archive_bytes": 46690947,
+  "private_archive_sha256": "7cf47938d2777a3b0cb11645d38033625f883d875d684d0539ad47bf66dd6168",
+  "resampling_draws_computed": false,
+  "schema_version": "nato-sers-p08-stress-score-catalog-audit-v1",
+  "scientific_predictions_arrays_or_scores_loaded": false,
+  "scope": "identity_membership_pooling_and_exact_score_curve_descriptors_only",
+  "status": "pass",
+  "summary": {
+    "alias_counts": {
+      "context_case": 1148160,
+      "context_family": 71760,
+      "pooled_case": 300864,
+      "pooled_family": 18804
+    },
+    "case_count": 96,
+    "context_count": 260,
+    "context_view_count": 5980,
+    "disturbance_family_count": 6,
+    "eligible_qc_context_count": 54,
+    "endpoint_count": 2,
+    "pooled_procedure_count": 911,
+    "pooled_view_count": 1567,
+    "procedure_count": 3413,
+    "reporting_alias_count": 1539588,
+    "score_job_count": 882096,
+    "stage_counts": {
+      "context_case_score": 655296,
+      "context_family_curve": 40956,
+      "pooled_case_score": 174912,
+      "pooled_family_curve": 10932
+    }
+  },
+  "supports": {
+    "operational_260": {
+      "complete_four_fold_contexts": 260,
+      "complete_four_fold_distinct_masters": 69,
+      "complete_four_fold_distinct_spectra": 557,
+      "complete_four_fold_domain_repeat_groups": 65,
+      "complete_four_fold_test_appearances": 2785,
+      "contexts": 260,
+      "distinct_test_masters": 69,
+      "distinct_test_spectra": 557,
+      "domains": 13,
+      "instruments": 10,
+      "master_context_prediction_units": 1310,
+      "stations": [
+        "cwa",
+        "pills",
+        "surfaces"
+      ],
+      "test_spectrum_appearances": 2785
+    },
+    "qc_eligible_54": {
+      "complete_four_fold_contexts": 36,
+      "complete_four_fold_distinct_masters": 24,
+      "complete_four_fold_distinct_spectra": 176,
+      "complete_four_fold_domain_repeat_groups": 9,
+      "complete_four_fold_test_appearances": 528,
+      "contexts": 54,
+      "distinct_test_masters": 24,
+      "distinct_test_spectra": 176,
+      "domains": 3,
+      "instruments": 3,
+      "master_context_prediction_units": 293,
+      "stations": [
+        "cwa"
+      ],
+      "test_spectrum_appearances": 758
+    }
+  }
+}

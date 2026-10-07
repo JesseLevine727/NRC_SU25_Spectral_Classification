@@ -461,3 +461,13 @@ Only **1,820 historical classical MIN slots** require estimator reconstruction; 
 QC composition retains each row's native clean action and distinguishes an invalid-action MIN-input fallback under the QC model from a complete MIN-model fallback. The latter always targets the same disturbance case. Independent enumeration verified every dependency and alias target. DeepSeek implemented the join, graph and synthetic tests; supervisor review corrected nested-reference sharing and a mistaken test field.
 
 Scoring, conditional uncertainty, stability and rendering operations still require exact accounting before the finite robustness resource proposal and final readiness lock. The distinct filtered-population panel choice also remains open. No model, spectrum, prediction or routing outcome was computed, and the scientific permit remains unset.
+
+## 51. Sample-bound scoring and complete-fold sensitivity
+
+The [score-support audit](P08_PERTURBATION_PROTOCOL.md#13-sample-membership-pooled-scoring-and-curve-dependencies) closes context scoring, complete-fold pooling and curve dependency accounting. It binds 557 held spectra and 69 masters to their original 260 contexts. Recorded numeric master IDs remain unchanged; the private metadata archive, not the public aggregate, retains them.
+
+The graph contains 882,096 score/curve descriptors and 1,539,588 reporting aliases. Its 911 distinct pooled procedures support 1,567 reporting views without duplicating model predictions. All nine eligible-QC complete groups reuse operational procedures. Their 36 contexts form the pooled sensitivity; the other 18 remain in the main 54-context analysis and are not filled in artificially.
+
+Pooled scoring reconstructs M01/M06 from four disjoint folds within a domain/repeat. It does not average fold balanced accuracies, pool repeats or treat technical repetitions as new masters. Every curve depends on its full registered case list and shared clean reference. The audit verifies metadata dependencies, not numerical scores, clean parity or uncertainty.
+
+DeepSeek authored the adapters and synthetic tests. Supervisor review corrected shared-clean validation, strict input checking, recorded ID types and test assumptions about support aliases. Conditional inference still needs explicit mapping from recorded numeric IDs to the inherited lexical bootstrap identity order. Contrast/uncertainty, stability, preservation/rendering accounting, finite resources, the distinct population-panel choice and final requirement-wide acceptance remain open. No scientific execution is authorized.

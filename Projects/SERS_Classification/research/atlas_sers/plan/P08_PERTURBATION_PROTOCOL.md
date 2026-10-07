@@ -182,3 +182,24 @@ QC input assembly depends on candidate row-level receipts from all three actions
 The graph also has **574,080 logical reporting aliases**: **374,400 universal**, **20,736 eligible fixed-route QC**, **79,104 complete-QC-fallback** and **99,840 family-fallback** aliases. Each resolves to the matching context, recipe and disturbance case. Complete fallbacks target the MIN-trained pipeline on that same disturbed MIN input, never the old clean prediction. Selected/D0 reporting identities remain separate when they share one physical procedure. Extra Trees remains universal-only in this robustness graph.
 
 The metadata join performs no scientific calculation. Its hashes bind supplied metadata; they do not independently prove physical exclusions, checkpoint validity or probability parity. The private catalog retains identities and evidence pointers; only aggregate counts and hashes are public. Scoring, inference, stability, rendering, finite resources and a separate scientific permit remain necessary before executing the planned robustness experiment.
+
+## 13. Sample membership, pooled scoring and curve dependencies
+
+The [score-support audit](../results/p08_readiness/stress_score_catalog_audit.json) binds the prediction graph to the authenticated test memberships. It preserves **260 contexts**, **557 distinct held spectra** and **69 physical masters**. The **2,785 spectrum appearances** and **1,310 master/context prediction units** are repeated evaluation appearances, not independent samples. Recorded numeric master IDs remain numeric in the private membership catalog; none is published.
+
+The primary score is calculated separately in each context. The pooled sensitivity instead concatenates predictions from four disjoint folds within one domain/repeat, reconstructs M01/M06 units and calculates the score again. It never averages fold balanced accuracies or pools different repeats. All **65 operational groups** are complete. Eligible QC has **nine complete groups covering 36 contexts**; its other **18 contexts** remain in the **54-context** primary analysis, without fabricated folds.
+
+Exact member lists yield **911 distinct pooled procedures** and **1,567 pooled reporting views**. The latter comprise **1,495 operational views** and **72 eligible-QC views**. All eligible-QC pooled procedures already occur in the operational graph: their reporting identities remain separate without adding predictions or independent evidence. Context reporting retains **5,980 views**, including selected/D0 identities and complete MIN fallbacks.
+
+| Planned score or curve operation | Count | Required input |
+|---|---:|---|
+| Context/case scoring | 655,296 | Same-case prediction units and the procedure's clean-replay gate, for each endpoint |
+| Context/family curve | 40,956 | Every registered family case, including the shared clean reference |
+| Pooled/case scoring | 174,912 | All four member procedures' same-case predictions and clean-replay gates |
+| Pooled/family curve | 10,932 | Every registered pooled family case, including the shared clean reference |
+
+The graph therefore contains **882,096 score/curve descriptors** and **1,539,588 reporting aliases**. These are not new fits or calculated scores. Independent enumeration verified each content hash, exact dependency, unique identity and reporting target. All case-level scoring precedes its dependent curve; all model/reporting aliases retain the same endpoint and disturbance. Stochastic repetition scores are averaged only after the normal M01/M06 prediction construction.
+
+Raw membership order is not the bootstrap column order. The later inference adapter must map recorded master IDs explicitly and bijectively to the inherited lexicographically sorted textual identities. It must index the same global weight arrays by identity, never by this catalog's numeric position. No weights or bootstrap draws are generated here.
+
+This checkpoint closes membership, context/pooled scoring and curve dependency accounting. Conditional uncertainty, contrasts, stability, preservation/rendering operations and finite resource feasibility remain separate. The original readiness goal is incomplete; numerical score acceptance and scientific execution remain false.
