@@ -2,6 +2,8 @@
 
 **Date:** 2026-09-30. **Status:** no-fit readiness work in progress; not an execution permit.
 
+**Current accounting, 2026-10-07:** [statistical-operation metadata](P08_PERTURBATION_INFERENCE.md#8-statistical-operation-metadata-acceptance) now covers uncertainty, the original hierarchy, sign/Holm and stability with 495,780 planned descriptors. [Reporting accounting](P08_REPORTING_ACCOUNTING.md) separates diagnostic reuse from future numerical summaries and native figure delivery. No scientific score, draw or figure has been produced. Final cross-ledger and requirement-wide reconciliation, the separate filtered-population panel clarification and release checks remain before a distinct execution request. Earlier dated checkpoints retain their historical scope.
+
 **Owner update, 2026-10-04:** [P08-A06–A09](P08_LATER_BRANCH_DECISIONS.md) resolve the four later-branch choices and resume the original readiness goal. N2 normalization scope, fresh source-only population-tier selection, pre-pipeline disturbances and constant shift-edge extension are approved as planning decisions. Historical pending-choice checkpoints below are superseded; numerical branch specifications and exact ledgers remain incomplete. No resource ceiling or scientific operation is approved.
 
 P08 tests whether defined preprocessing pipelines change chemical identification on unseen instruments and physical samples. Minimal min–max scaling remains the reference, not an established optimum. This task follows [Master Plan §16](MASTER_PLAN.md#16-sub-plan-p08--preprocessing-policy-factorial-and-robustness) and the [handoff](P08_HANDOFF.md). It does not authorize training, calibration, new predictions, resampling, perturbations or reconstruction of preprocessing arrays.

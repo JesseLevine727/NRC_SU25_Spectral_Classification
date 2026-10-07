@@ -1,0 +1,381 @@
+{
+  "schema": "nato-sers-p08-reporting-accounting-v1",
+  "protocol_version": "nato-sers-p08-reporting-accounting-20261007-v1",
+  "document": "T262 bounded reporting declaration",
+  "specified": "2026-10-07",
+  "status": "prospective_metadata_inventory",
+  "package_root": "atlas_sers",
+  "authority": {
+    "execution_authorized": false,
+    "numerical_reporting_accepted": false,
+    "full_readiness_complete": false,
+    "authorized_scientific_operations": 0,
+    "new_figures_rendered": false
+  },
+  "declaration_boundary": {
+    "is_numerical_executor": false,
+    "is_generic_planner": false,
+    "is_finite_declarative_inventory": true,
+    "allocated_future_operations_not_results": true,
+    "qc_gate_reaction_evaluated": false,
+    "completes_readiness_goal": false,
+    "accepts_numerical_implementation": false,
+    "later_branch_inference_launch_acceptance_separate": true
+  },
+  "privacy": {
+    "public_identities": false,
+    "public_row_identifiers": false,
+    "private_examples_public": false,
+    "public_cells_min_masters": 2,
+    "note": "public reports carry aggregates only; private catalogs stay private"
+  },
+  "evidence_bindings": {
+    "preservation_reporting_support_audit": {
+      "path": "results/p08_readiness/preservation_reporting_support_audit.json",
+      "sha256": "afa64083f5cb78a1c6d0f256b40cda8565ce72ed8c86febec59cb4862bc919e0"
+    },
+    "stress_score_catalog_audit": {
+      "path": "results/p08_readiness/stress_score_catalog_audit.json",
+      "sha256": "1be38c92b63b9de5c33c0a6a49dd794a2a23c95dcb42277aed590f3880abee39"
+    },
+    "P08_STATISTICAL_PROTOCOL": {
+      "path": "plan/P08_STATISTICAL_PROTOCOL.md",
+      "sha256": "edf4b6e4ab303b2b5910b0285cd07e4ffdbaa782373f6d2e074faea07d8b2907"
+    },
+    "P08_FIGURE_PLAN": {
+      "path": "plan/P08_FIGURE_PLAN.csv",
+      "sha256": "d921b877fceba9ba286ee8da1e6b7f8d4f78395900e7f0beb1396afde7dcac0e"
+    },
+    "P08_FIGURE_PROTOCOL": {
+      "path": "plan/P08_FIGURE_PROTOCOL.md",
+      "sha256": "73eebbbb13dbaccdceec1c28d4124573ca59f63537c0681872aacd9150ec8c45"
+    }
+  },
+  "private_catalog_bindings": {
+    "preservation_rows": {
+      "digest": "4e77dcad7978f5f6fe48260f4336711ae17213917ffbfd1ba93dddf905e9d24f",
+      "fixes": "ordering and membership",
+      "public": false
+    }
+  },
+  "blocks": [
+    {
+      "index": 1,
+      "id": "preservation_authentication",
+      "new_operations": 1,
+      "aliases": 0,
+      "allocation": "unconditional",
+      "stage": "U1",
+      "conditional_operations": 0,
+      "depends_on": ["evidence_bindings.preservation_reporting_support_audit"],
+      "inputs": ["results/p08_readiness/preservation_reporting_support_audit.json"]
+    },
+    {
+      "index": 2,
+      "id": "preservation_rows",
+      "new_operations": 0,
+      "aliases": 1794,
+      "allocation": "alias_only",
+      "stage": "U1",
+      "depends_on": ["preservation_authentication"],
+      "composition": {
+        "observations": 598,
+        "actions": 3,
+        "aliases": 1794
+      },
+      "fixes": "ordering and membership",
+      "private_catalog_digest": "4e77dcad7978f5f6fe48260f4336711ae17213917ffbfd1ba93dddf905e9d24f",
+      "aliases_excluded_from_totals": true
+    },
+    {
+      "index": 3,
+      "id": "preservation_domain_action_summary",
+      "new_operations": 51,
+      "aliases": 0,
+      "allocation": "unconditional",
+      "stage": "U1",
+      "depends_on": ["preservation_rows"],
+      "composition": {
+        "domains": 17,
+        "actions": 3,
+        "total": 51
+      },
+      "stored_numeric_column_count": 11,
+      "column_enumeration_authority": "results/p08_readiness/preservation_reporting_support_audit.json",
+      "summary_statistics": ["finite_count", "undefined_count", "median", "q10", "q90"],
+      "quantile_method": "linear",
+      "denominators": ["spectral", "master"],
+      "constraints": {
+        "no_new_spectral_diagnostic_computation": true,
+        "no_clean_chemical_reference": true,
+        "no_binary_preservation_threshold": true,
+        "row_level_values_used_as_recorded": true,
+        "master_equal_applies_to_display_curves_only": true
+      }
+    },
+    {
+      "index": 4,
+      "id": "public_spectral_cell_prepare",
+      "new_operations": 49,
+      "aliases": 0,
+      "allocation": "unconditional",
+      "stage": "U1",
+      "depends_on": [
+        "preservation_authentication",
+        "frozen_primary_action_arrays_and_validity_receipts",
+        "fixed_private_cell_membership"
+      ],
+      "composition": {
+        "planned_cells": 49,
+        "eligible_cells": 46,
+        "unavailable_cells": 3,
+        "curves_max": 138,
+        "curves_formula": "eligible_cells*actions"
+      },
+      "actions": 3,
+      "availability": "unavailable display cells are reason-coded, never removed from the planned count",
+      "aggregation": {
+        "within_master": "mean",
+        "across_masters": "equal",
+        "aggregate_renormalization": false,
+        "is_averaged_model_input": false
+      },
+      "privacy": {
+        "public": true,
+        "min_masters_per_public_cell": 2
+      }
+    },
+    {
+      "index": 5,
+      "id": "private_example_prepare",
+      "new_operations": 49,
+      "aliases": 0,
+      "allocation": "conditional",
+      "stage": "U1",
+      "depends_on": [
+        "preservation_authentication",
+        "frozen_primary_action_arrays_and_validity_receipts",
+        "fixed_private_cell_membership",
+        "explicit later private-reporting approval"
+      ],
+      "cells": 49,
+      "actions": 3,
+      "selection": "preselected first lexical master then first lexical observation per cell; all three actions on the same row",
+      "outcome_selected": false,
+      "visibility": "private",
+      "ever_public": false
+    },
+    {
+      "index": 6,
+      "id": "fixed_route_qc_case_summary",
+      "new_operations": 24960,
+      "aliases": 0,
+      "allocation": "unconditional",
+      "stage": "S1",
+      "depends_on": [
+        "clean frozen route",
+        "case action-validity receipt",
+        "explicit complete-MIN model fallback declaration"
+      ],
+      "composition": {
+        "contexts": 260,
+        "cases": 96,
+        "total": 24960
+      },
+      "qc_methods": ["RBF-SVM", "Random Forest", "D0-M", "P05-SELECTED"],
+      "extra_trees_in_qc_panel": false,
+      "one_gate_per_context": true,
+      "method_multiplied": false,
+      "route_summary_unit": "context x case",
+      "eligible_contexts": 54,
+      "unsupported_contexts": 206,
+      "reporting": {
+        "counts_and_fractions": "by context then equally across domains",
+        "fixed_original_clean_choice": true
+      },
+      "fallback": {
+        "invalid_selected_action": "MIN-input under same QC estimator",
+        "invalid_unselected_action": "not fatal",
+        "invalid_MIN": "fatal",
+        "structurally_unsupported_206": "complete-MIN estimator"
+      },
+      "no_regating": true,
+      "qc_gate_reaction_evaluated": false
+    },
+    {
+      "index": 7,
+      "id": "source_noise_display_summary",
+      "new_operations": 13,
+      "aliases": 0,
+      "allocation": "unconditional",
+      "stage": "S1",
+      "depends_on": ["source-reference receipt", "original context/domain membership"],
+      "domains": 13,
+      "quantile_labels": [0.5, 0.75, 0.9, 0.95],
+      "statistics": ["count", "median", "min", "max", "missingness"],
+      "per": "domain and label",
+      "held_data_quantile_fit": false
+    },
+    {
+      "index": 8,
+      "id": "public_figure_delivery",
+      "new_operations": 88,
+      "aliases": 0,
+      "allocation": "unconditional",
+      "stage": "per_figure_ownership",
+      "depends_on": ["frozen scientific outputs"],
+      "composition": {
+        "figures": 11,
+        "delivery_stages": 8,
+        "total": 88
+      },
+      "figure_ids": [
+        "P08-F01",
+        "P08-F02",
+        "P08-F03",
+        "P08-F04",
+        "P08-F05",
+        "P08-F06",
+        "P08-F07",
+        "P08-F08",
+        "P08-F09",
+        "P08-F10",
+        "P08-F11"
+      ],
+      "ownership": {
+        "U1": ["P08-F01", "P08-F02", "P08-F03", "P08-F04", "P08-F07"],
+        "Q1": ["P08-F05", "P08-F06"],
+        "S1": ["P08-F08"],
+        "R1": ["P08-F09"],
+        "N2": ["P08-F10"],
+        "population": ["P08-F11"]
+      },
+      "consumes_frozen_outputs": true,
+      "performs_fits_or_recalculated_scores": false
+    },
+    {
+      "index": 9,
+      "id": "private_example_delivery",
+      "new_operations": 392,
+      "aliases": 0,
+      "allocation": "conditional",
+      "stage": "U1",
+      "depends_on": ["private_example_prepare", "explicit later private-reporting approval"],
+      "composition": {
+        "cells": 49,
+        "delivery_stages": 8,
+        "total": 392
+      },
+      "new_public_figure_ids": 0,
+      "private_f01_subviews": true,
+      "authorization": "requires private_example_prepare and explicit later private-reporting approval"
+    }
+  ],
+  "totals": {
+    "nonalias_planned_slots": 25603,
+    "conditional_slots": 441,
+    "unconditional_slots": 25162,
+    "aliases": 1794,
+    "aliases_excluded_from_nonalias": true,
+    "missing_prerequisites_reduce_slots": false,
+    "missing_prerequisites": "reason-coded unavailable records, never fewer planned slots",
+    "automatic_retries": false
+  },
+  "stage_owner_map": {
+    "universal": "U1",
+    "adaptive": "Q1",
+    "preservation": "U1",
+    "robustness": "S1",
+    "range": "R1",
+    "normalization": "N2",
+    "population": "population"
+  },
+  "delivery_stages": [
+    {
+      "order": 1,
+      "id": "semantic_data",
+      "depends_on": [],
+      "local_predecessor": false,
+      "scientific_prerequisites": "required"
+    },
+    {
+      "order": 2,
+      "id": "disclosure_review",
+      "depends_on": ["semantic_data"]
+    },
+    {
+      "order": 3,
+      "id": "native_tikz",
+      "depends_on": ["disclosure_review"]
+    },
+    {
+      "order": 4,
+      "id": "offline_html",
+      "depends_on": ["disclosure_review"]
+    },
+    {
+      "order": 5,
+      "id": "vector_pdf",
+      "depends_on": ["native_tikz"]
+    },
+    {
+      "order": 6,
+      "id": "png_review",
+      "depends_on": ["vector_pdf"]
+    },
+    {
+      "order": 7,
+      "id": "visual_semantic_review",
+      "depends_on": ["offline_html", "vector_pdf", "png_review"]
+    },
+    {
+      "order": 8,
+      "id": "release_manifest",
+      "depends_on": ["visual_semantic_review"]
+    }
+  ],
+  "format_constraints": {
+    "formats": ["native_tikz", "offline_html", "vector_pdf", "png"],
+    "text": "black standard LaTeX or Times-compatible text",
+    "raster_embedded_in_tikz": false,
+    "external_scripts_or_fonts_in_html": false,
+    "same_semantic_data": true,
+    "final_publication_requires": ["disclosure_review", "visual_semantic_review"]
+  },
+  "probability_diagnostic_reuse": {
+    "existing_case_jobs": {
+      "context_case_scoring": 655296,
+      "pooled_case_scoring": 174912,
+      "total": 830208
+    },
+    "new_jobs": 0,
+    "added_to_new_operations": false,
+    "outputs": [
+      "balanced_accuracy",
+      "supported_macro_f1",
+      "nll",
+      "brier",
+      "confusion",
+      "class_recall",
+      "ten_equal_width_confidence_bins_inclusive_final_bin"
+    ],
+    "pooled": "concatenate four-fold prediction units before scoring",
+    "weakest_domain_diagnostics": {
+      "belongs_to_existing_inference_descriptors": true,
+      "additional_reporting_jobs": 0,
+      "items": [
+        "per_procedure_minima",
+        "policy_pair_lowest_domain_difference",
+        "minimum_paired_domain_effect",
+        "ties_retained"
+      ],
+      "extra_significance_families": 0
+    }
+  },
+  "resource_charging": {
+    "charged_to_producing_stage_ceilings": true,
+    "includes_failures_and_logs": true,
+    "new_resource_allowance": 0,
+    "permission_inheritance": false
+  }
+}

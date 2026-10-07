@@ -115,3 +115,29 @@ The generic adapter binds the externally authenticated registry and platform map
 The [S1 proposal](P08_RESOURCE_PROPOSAL.md#15-s1-proposal-registered-test-time-robustness) now supplies finite, unapproved limits: **1,820 exact historical MIN reconstruction fits**, no neural optimization or new scalar calibration, **72 hours**, **64 GiB** of artifacts, **24 GiB** of process-tree RAM and **8 GiB** of allocated GPU memory. These limits are not a completion forecast. Full upstream-plus-stress retention exceeds observed capacity; admission requires actual free space and a separate permit.
 
 This closes comparison-to-support binding and the finite-proposal gap, not the full analysis ledger. Exact uncertainty, original-hierarchy, sign/Holm, stability, preservation and rendering operations still require reconciled accounting. Numerical inference, scientific clean-path parity and execution remain unaccepted. No comparison, score, draw, fit or prediction was computed.
+
+## 8. Statistical-operation metadata acceptance
+
+The [operation audit](../results/p08_readiness/stress_inference_plan_audit.json) enumerates the finite inference inventory against the authenticated comparison catalog. It verifies **495,780 planned descriptors**, including **272,340 unconditional slots** and **223,440 conditional slots**. These are future analysis operations, not model fits or executed calculations. Conditional slots remain inactive unless the fixed target is unavailable and the whole-curve paired intersection is nonempty; their existence does not imply that condition has occurred.
+
+| Operation | Allocated descriptors |
+|---|---:|
+| Shared global-weight authentication | 2 |
+| Fixed and candidate support assessment | 912 |
+| Point estimates and descriptive curves | 1,824 |
+| Unit-weight parity | 5,472 |
+| Positive-weight batches | 432,288 |
+| Positive-weight summaries | 5,472 |
+| Original-hierarchy realization preparation | 456 |
+| Original-hierarchy batches | 36,024 |
+| Original-hierarchy summaries | 456 |
+| Domain/instrument sign sensitivities | 1,824 |
+| Fixed-family Holm bookkeeping | 10 |
+| Domain stability summaries | 456 |
+| Leave-one-domain/instrument/known-platform-family summaries | 10,584 |
+
+Each contrast allocates fixed-context, fixed-pooled, conditional paired-context and conditional paired-pooled views. Each weighted view retains crossed, master-only and instrument-only analyses. Its **10,000** draws occupy **79** batches of at most **128**, with **16** in the final batch. The allocation permits at most **54,720,000 terminal contrast scalars**; no scalar or weight was computed. The full-support sign enumeration contains **3,319,296 assignments** across registered contrasts, with the same upper bound for paired sensitivities. Sign assignments and technical repetitions are not independent samples.
+
+Every emitted operation identifier hashes its complete descriptor, parent-catalog identity and already resolved dependencies. Support assessments retain ordered targets, and every weighted batch depends on both global-weight authentication records. The original hierarchy declares one complete domain-index draw followed by a single multinomial call per sorted domain/class for all selected occurrences, before score batching. It is not replaced with interleaved per-occurrence draws. Numerical parity and these future random-stream operations still require separate implementation acceptance.
+
+The audit traversed every descriptor, checked content identities and topological dependencies, verified ordered support targets and fixed Holm membership, and confirmed unchanged inputs. No scientific values, saved predictions or random weights were loaded. Public evidence contains counts and hashes only; the identity-bearing plan stays private. The [reporting inventory](P08_REPORTING_ACCOUNTING.md) accounts separately for diagnostic reuse and figure delivery. Final cross-ledger reconciliation and requirement-wide readiness review remain open; neither component grants execution authority.
