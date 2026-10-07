@@ -18,6 +18,8 @@
 
 ## 1. Requirement coverage
 
+**Stress-input checkpoint:** the [exact input audit](P08_PERTURBATION_PROTOCOL.md#11-exact-input-operation-dependencies-and-reuse) verifies 658,876 dependency-linked descriptors, explicit raw-to-logical identity mapping and source-context-specific Gaussian inputs. This completes input-layer accounting only. Model/prediction/calibration, QC composition, reporting/scoring/inference joins and finite resources remain incomplete; none of these descriptors was executed.
+
 **Fixed-route QC reference checkpoint:** the [QC procedure audit](P08_PERTURBATION_PROTOCOL.md#10-fixed-route-qc-model-reference-accounting) now verifies the 176 eligible procedures, 420 seed-estimator references, 312 calibration references and all 824 fallback reporting aliases. This closes QC procedure extraction only. Case-level disturbed-MIN matching, exact transform/prediction/inference jobs and finite robustness resources remain unfinished; no routes or predictions were calculated.
 
 **Universal robustness reference checkpoint:** the [procedure audit](P08_PERTURBATION_PROTOCOL.md#9-universal-model-reference-accounting) verifies 3,237 procedures, 8,151 seed-specific estimator slots and their original operation/evidence links. This separates 1,820 historical classical reconstruction slots, 897 saved neural checkpoints and 5,434 future universal estimator slots. It does not complete the QC/case-level stress ledger, finite resources or numerical acceptance. The earlier dated checkpoints describe incremental progress, not new execution authority.

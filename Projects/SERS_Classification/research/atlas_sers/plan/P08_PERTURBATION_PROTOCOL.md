@@ -130,3 +130,25 @@ The **206 unsupported contexts** retain **824 reporting aliases** to **643 disti
 Independent metadata verification reconciled **920 upstream blocks** and **1,544 selected operation slots**, without expanding the full adaptive source-selection grid or loading spectral values, prediction arrays or checkpoint tensors. The aggregate audit is public; the full catalog remains private. Source and test roles, seed identities, calibration order and the requirement to freeze all final models before clean test routing are preserved.
 
 This is a **fixed-route QC sensitivity**, not a test of whether the native-grid QC gate detects contamination introduced on the interpolated grid. No gate, threshold or route was calculated by this audit. Case-level dependencies, transform/noise-reference accounting, calibration applications, scoring/inference jobs, finite resources and numerical acceptance remain unfinished. Scientific execution remains denied.
+
+## 11. Exact input-operation dependencies and reuse
+
+The [input-catalog audit](../results/p08_readiness/stress_input_catalog_audit.json) verifies **658,876 planned input-operation descriptors** across the registered **96 cases**. These are row preparation, future random realizations, transforms, checks and batch assemblies—not model fits, new samples or completed scientific operations. The compact catalog generates the exact graph deterministically; the independent audit expanded every descriptor, checked its content identity and verified each dependency before its consumer.
+
+| Planned input operation | Count | Reuse boundary |
+|---|---:|---|
+| Prepare an original held row and its unchanged intensity range | 557 | Once per distinct held observation |
+| Compute the four source-noise quantiles | 260 | Once per outer context, using only its fitting rows |
+| Generate a Gaussian vector or nested impulse-position sequence | 11,140 | Observation × family × repetition; shared across severity, context, action and model |
+| Form a clean or disturbed raw row | 142,592 | Context-independent except for Gaussian amplitude |
+| Apply MIN, SG or arPLS | 427,776 | Once per disturbed-row identity and action |
+| Verify the clean numerical transform against the frozen action | 1,671 | Observation × action |
+| Assemble a context's test inputs | 74,880 | Context × case × action; preserves its registered test-row order |
+
+The **56 context-independent cases** comprise the shared clean case and all non-Gaussian disturbances. Their row/action results can be reused across appearances of the same observation. The **40 Gaussian cases** retain context-specific raw rows because their source-only amplitude references can differ. Their standardized random vectors remain shared as specified in §4. Thus raw-row accounting is **56 × 557 + 40 × 2,785 = 142,592**, followed by three action transforms per row. No equality of source quantiles or runtime action outcomes is assumed.
+
+The raw archive stores source observation identifiers, whereas the frozen dataset uses logical observation identifiers. The audit verifies their recorded one-to-one mapping and unchanged row order before binding either identity. It also distinguishes canonical UID-list hashes from P01's newline-joined action-row hash. All three action archives retain the same logical row order. Native noise diagnostics are bound to the authenticated primary manifest; the separate representation-validity table is not substituted as a native-QC source.
+
+Every context/action assembly depends on the corresponding clean-path parity checks. A transform's future invalid-output receipt remains explicit so later QC composition can apply its registered MIN-input fallback; it is not permission to remove a row or substitute the complete MIN model. No spectral intensity values, prediction arrays or model tensors were loaded during this audit. Only file bytes, identity/role metadata, axis metadata and the raw array header were authenticated.
+
+This closes the input-operation layer, not the full robustness ledger. Retained-model/reconstruction references, per-seed predictions, calibration applications, endpoint aggregation, fixed-route QC composition, same-case reporting aliases, scoring/inference jobs and finite resources still require a joined graph. The seven stages above remain unexecuted and require a separate scientific permit.

@@ -443,3 +443,11 @@ The [QC procedure-reference audit](P08_PERTURBATION_PROTOCOL.md#10-fixed-route-q
 The remaining **206 contexts** contribute **824 reporting aliases** to **643 MIN procedures**. Each fallback must use the same disturbed case as its adaptive comparison, not the saved clean prediction. The **1,517 referenced MIN seed slots** are reused, not added to the fit count. Independent verification reconciled **920 blocks** and **1,544 operation slots**, preserving original roles, calibration order and complete-fallback semantics.
 
 DeepSeek authored the adapter and regression tests; supervisor review corrected action-array binding and calibration-parent validation. The fixed-route interpretation implements P08-A11 and does not test native-grid gate reactions. The complete disturbance ledger, finite resources, numerical acceptance and requirement-wide readiness closure remain open. No new scientific operation or execution permission follows.
+
+## 49. Exact stress-input graph and source-ID binding
+
+The [input-operation audit](P08_PERTURBATION_PROTOCOL.md#11-exact-input-operation-dependencies-and-reuse) verifies **658,876 descriptors**, including **142,592 raw-row cases**, **427,776 action transforms** and **74,880 context/action assemblies**. These counts include explicit clean-path checks and separate context-local noise references. They are planned operations, not executed transforms or model fits.
+
+The independent audit verified every content ID and dependency, source/test master separation, held-instrument exclusion and the raw-to-logical observation-ID mapping. It authenticated the raw intensity header without loading its values. Non-Gaussian row transforms are shared across repeated appearances; Gaussian amplitudes retain their original source-context binding. Input files and frozen preprocessing remain unchanged.
+
+The next ledger layer must join these input dependencies to retained models, reconstruction/parity, calibrated predictions, fixed-route QC composition and same-case aliases. Scoring/inference accounting, finite resources and the final readiness review remain open. No scientific operation or execution permit is implied by this metadata checkpoint.

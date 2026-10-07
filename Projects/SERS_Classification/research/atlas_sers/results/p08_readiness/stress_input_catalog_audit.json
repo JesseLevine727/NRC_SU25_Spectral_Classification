@@ -1,0 +1,61 @@
+{
+  "action_row_order_verified": true,
+  "catalog_sha256": "64a31d550aab7b9feb4bff3830d07fd73beef7e41a1a60b88a4c988d3a95a3de",
+  "dependencies_precede_consumers": true,
+  "execution_authorized": false,
+  "expanded_job_ids_unique": true,
+  "expanded_job_stream_sha256": "ca6f27d4103db2558e09079e0d6c25a4f0e9d7e3493f6a001de240b6c1ed0b23",
+  "full_stress_job_ledger_complete": false,
+  "independent_dependency_agreement": true,
+  "input_hashes": {
+    "P01_contract_sha256": "0acdcec1ed3a599b49ce6d5b3f8a1695b359cdfb0756646af53a265dc1a91267",
+    "P01_transform_source_sha256": "e14d3e447beff887aa0710b17ffa985fd43e49f8f6aa4ed47ad5fd1b671b8980",
+    "R_ARPLS_400_1800": "f04aef601a8e9c962864f4d23b23612cf8db21caef2df36bf365f17d79d286f8",
+    "R_MIN_400_1800": "db942996c324b7b9f7f7d73b2b371bacffd71ab8400f230e7e16c1d4fa53c2cf",
+    "R_SG_400_1800": "3af989fa417c887b105e3d04559cc41153412d72186575f11c6f18e3722a60ff",
+    "actions_report": "08310a0ef5cd91dacc5a46c129a3043e32cadcd0a06f305f34c568b2e88f3863",
+    "contexts": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "design": "072ba9ee3223e9e206af83e0c57130b236758e35284e0488afd6b18d91f1bf08",
+    "manifest": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "native_QC_source_sha256": "159b419c9e85b37b393d5f454a2bffdb92af18decaf8abe867139070b58b70b6",
+    "raw": "25c765231d15d75c7e0d274de3dd8108224966310ee9b974ae6673dbe8e893b9",
+    "roles": "224891579d5df84c42a1c3c827590b6515ec83a13bfe4f07d48f249432f38d91",
+    "source": "21cd65d4d7426d526a43348a6b4412521b56ed7fceb2086ed1e8245046d55f43"
+  },
+  "inputs_unchanged": true,
+  "new_scientific_operations": 0,
+  "noise_quantiles_or_perturbations_computed": false,
+  "numerical_runtime_accepted": false,
+  "private_archive_bytes": 144613,
+  "private_archive_sha256": "4df3259a39e1d1b69c046b99a7cb1b2a8ef2dc51e2a42057aec03ad6f5e9a9d2",
+  "raw_intensity_header_dtype": "float32",
+  "raw_intensity_header_shape": [
+    598,
+    1450
+  ],
+  "raw_primary_uid_mapping_verified": true,
+  "schema_version": "nato-sers-p08-stress-input-catalog-audit-v1",
+  "scope": "identity_header_and_exact_input_dependency_metadata_only",
+  "source_test_master_and_instrument_exclusion_verified": true,
+  "spectral_values_or_predictions_loaded": false,
+  "status": "pass",
+  "summary": {
+    "action_count": 3,
+    "case_count": 96,
+    "context_count": 260,
+    "context_dependent_case_count": 40,
+    "context_independent_case_count": 56,
+    "distinct_test_uid_count": 557,
+    "stage_counts": {
+      "action_transform": 427776,
+      "context_action_assembly": 74880,
+      "raw_case": 142592,
+      "row_prepare": 557,
+      "source_noise_reference": 260,
+      "stochastic_realization": 11140,
+      "zero_input_parity": 1671
+    },
+    "test_uid_appearances": 2785,
+    "total_job_count": 658876
+  }
+}
