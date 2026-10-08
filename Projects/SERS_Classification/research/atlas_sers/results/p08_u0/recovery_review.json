@@ -1,0 +1,139 @@
+{
+  "artifact_entries_verified": 534,
+  "classical_prediction_tables_finite": 42,
+  "combined_retained_run_bytes": 64846625,
+  "evidence_inventory_sha256": "f0ed157a0d928a7114344e2520adbbef5daddaed39ce4f4b0e8fd41a74dabd4f",
+  "failed_fits": 0,
+  "fit_attempts": 78,
+  "head_sha256": "277fa3ed063a159a20c9c8156af6505f24dc1b968d0e310218fcb18873a02c56",
+  "inventory_schema": "sorted_relative_path_size_bytes_sha256_v1",
+  "journal_events_verified": 3048,
+  "launch_report_sha256": "64a932cb89bafaa4aa7fa7f2f52f1eb7447e648ee1e7de80f57b7e461cc47617",
+  "maximum_recorded_neural_fit_peak_cuda_bytes": 147855872,
+  "model_statistics": {
+    "C-EXTRA-TREES": {
+      "fit_seconds_max": 0.4394587919814512,
+      "fit_seconds_median": 0.35535757697653025,
+      "fit_seconds_min": 0.26868163398467004,
+      "fits": 18
+    },
+    "C-RANDOM-FOREST": {
+      "fit_seconds_max": 0.6854958259500563,
+      "fit_seconds_median": 0.44639726349851117,
+      "fit_seconds_min": 0.330888801952824,
+      "fits": 18
+    },
+    "C-RBF-SVM": {
+      "fit_seconds_max": 0.010124161024577916,
+      "fit_seconds_median": 0.006795516528654844,
+      "fit_seconds_min": 0.006266676005907357,
+      "fits": 6
+    },
+    "D0-M": {
+      "epochs_max": 78,
+      "epochs_min": 30,
+      "fit_seconds_max": 20.95551407302264,
+      "fit_seconds_median": 6.7104770870064385,
+      "fit_seconds_min": 2.7039017820497975,
+      "fits": 18,
+      "parameters": [
+        208691
+      ]
+    },
+    "D1": {
+      "epochs_max": 35,
+      "epochs_min": 30,
+      "fit_seconds_max": 12.109174840967171,
+      "fit_seconds_median": 8.882314449525438,
+      "fit_seconds_min": 6.165318805957213,
+      "fits": 6,
+      "parameters": [
+        212851
+      ]
+    },
+    "D2": {
+      "epochs_max": 45,
+      "epochs_min": 30,
+      "fit_seconds_max": 18.49818808597047,
+      "fit_seconds_median": 9.03685629600659,
+      "fit_seconds_min": 4.3561458240728825,
+      "fits": 6,
+      "parameters": [
+        208691
+      ]
+    },
+    "D3": {
+      "epochs_max": 43,
+      "epochs_min": 30,
+      "fit_seconds_max": 14.081197271007113,
+      "fit_seconds_median": 12.735555325518362,
+      "fit_seconds_min": 4.535850194049999,
+      "fits": 6,
+      "parameters": [
+        212851
+      ]
+    }
+  },
+  "neural_checkpoints_loadable_and_finite": 72,
+  "neural_collapse_flags": 0,
+  "neural_epochs_max": 78,
+  "neural_epochs_min": 30,
+  "neural_logit_archives_finite": 36,
+  "prediction_parity_records_verified": 78,
+  "replay_elapsed_seconds_including_cleanup": 757.694676884,
+  "retained_run_bytes": 64739703,
+  "run_file_count": 3515,
+  "scientific_fits_performed_by_review": 0,
+  "status": "go_for_separately_authorized_U1",
+  "successful_fits": 78,
+  "successful_prediction_operations": 78,
+  "terminal_receipts_verified": 156,
+  "unstarted_fits": 0,
+  "full_benchmark_execution_authorized": false,
+  "source_input_review": {
+    "pairs_checked": 78,
+    "fit_validation_master_overlap_pairs": 0,
+    "held_instrument_rows_in_consumed_pairs": 0,
+    "unique_source_units": 5,
+    "station_pair_counts": {
+      "cwa": 26,
+      "pills": 20,
+      "surfaces": 32
+    },
+    "action_pair_counts": {
+      "R_ARPLS_400_1800": 39,
+      "R_SG_400_1800": 39
+    },
+    "fit_master_count_range": [
+      7,
+      12
+    ],
+    "validation_master_count_range": [
+      5,
+      12
+    ],
+    "prepared_inputs_report_sha256": "72aa462036222a9d8ea816064f9eeb33b41bff84d57a110e873939275acf1f98"
+  },
+  "prior_fit_attempts": 5,
+  "prior_successful_fits": 4,
+  "prior_failed_fits": 1,
+  "prior_successful_prediction_operations": 4,
+  "combined_fit_attempts": 83,
+  "combined_successful_fits": 82,
+  "combined_failed_fits": 1,
+  "combined_prediction_operations": 82,
+  "recovery_duplicate_successful_slots": 4,
+  "authorized_recovery_replays": 1,
+  "further_scientific_retries": 0,
+  "held_predictions": 0,
+  "code_correction_rounds": 0,
+  "focused_tests_passed": 85,
+  "focused_tests_seconds": 9.67,
+  "non_training_cuda_probe_passed": true,
+  "conservatively_reserved_prior_and_finalization_seconds": 600,
+  "charged_execution_seconds_with_reserve": 1357.694676884,
+  "last_observed_process_rss_high_water_bytes": 2199392256,
+  "last_memory_observation_scope": "live main process at 66 completed pairs; no child processes observed; not a final process-tree peak",
+  "resource_interpretation": "Per-fit allocated CUDA peaks and point-in-time outer checks, not a complete operating-system-isolated resource trace.",
+  "validation_metrics_interpretation": "Operational source-validation pilot only; no held-instrument evaluation or preprocessing winner selection."
+}
