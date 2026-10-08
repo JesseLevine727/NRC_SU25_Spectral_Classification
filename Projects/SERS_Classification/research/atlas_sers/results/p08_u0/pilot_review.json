@@ -1,0 +1,28 @@
+{
+  "automatic_retries": 0,
+  "classical_models_completed": {
+    "C-EXTRA-TREES": 4
+  },
+  "current_retained_logical_bytes": 106922,
+  "evidence_inventory_sha256": "60be0962087ae324f438998454ff12af6068310b06f949b462e5d6267b1dc196",
+  "evidence_unchanged_by_review": true,
+  "failed_fit_epochs": 0,
+  "failed_fit_optimizer_steps": 0,
+  "failed_fits": 1,
+  "failed_recipe": "D0-M",
+  "failure_reason": "cublas_workspace_config_invalid",
+  "fit_attempts": 5,
+  "held_predictions": 0,
+  "journal_events_verified": 86,
+  "recorded_outer_elapsed_seconds_before_terminal_persistence": 5.526092778,
+  "registered_source_fits": 78,
+  "resource_peak_acceptance": "unavailable_after_early_failure",
+  "run_file_count": 113,
+  "source_prediction_parity_records_verified": 4,
+  "status": "no_go",
+  "successful_fits": 4,
+  "successful_prediction_operations": 4,
+  "terminal_receipts_verified": 9,
+  "unstarted_fits": 73,
+  "unstarted_prediction_operations": 74
+}
