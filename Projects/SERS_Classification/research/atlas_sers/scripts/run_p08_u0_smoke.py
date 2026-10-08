@@ -9,15 +9,20 @@ record.  It is an implementation specification, not an execution permit.
 Production release
 ------------------
 This deployment sets ``APPROVED_PERMIT_SHA256`` to the exact SHA-256 of the
-independently approved 2026-10-08 U0 private permit, bound to one destination.
-Only a byte-identical copy of that permit is accepted: an absent, unset or
-changed permit still denies before any scientific work begins.  There is no CLI
+single independently approved 2026-10-08 U0 recovery-replay permit.  That
+recovery permit authorises one 78-fit replay and differs from the original
+attempt only by its independently approved output destination; every scientific
+identity, grid, seed, stopping rule and resource limit is unchanged.  Only a
+byte-identical copy of that permit is accepted: an absent, unset or changed
+permit still denies before any scientific work begins.  There is no CLI
 replacement hash, no new destination and no retry.  Setting the pin is a
 reviewed deployment decision, not a public mode: the command line has no
 authority flag, no alternate output, no job subset and no environment bypass.
 If the pin is left unset (``None``), every invocation denies with the static
 reason ``scientific_execution_not_authorized`` before the permit file is even
-opened.
+opened.  A valid deployment environment must also export
+``CUBLAS_WORKSPACE_CONFIG=':4096:8'``; the launcher verifies this and never
+rewrites the environment.
 
 Trust limits
 ------------
@@ -50,9 +55,11 @@ __all__ = ["launch", "main"]
 # Independent release pin (the ONLY production authority gate)
 # ---------------------------------------------------------------------------
 
-# Owner-approved 2026-10-08 U0 private permit, bound to one destination.
-# If this pin is left unset (None) the launcher denies all invocations.
-APPROVED_PERMIT_SHA256 = "a0ddf4adbbdad560de83941e5ca8f5330b98e000928f887ac88a69afdb04947d"
+# Owner-approved 2026-10-08 U0 recovery-replay permit (one 78-fit replay).  Its
+# only change from the original attempt is the independently approved output
+# destination; all scientific identities and settings are identical.  If this
+# pin is left unset (None) the launcher denies all invocations.
+APPROVED_PERMIT_SHA256 = "b845de4ab7a340cd5c217b557c19affd34e17b6051f1bab7d4cc0dd208ee70d0"
 BOOTSTRAP_SHA256 = "fa7c48b766b5522eb5008ed7faf2fc92e5013b2a96376f83167ab77d307dc784"
 PROPOSAL_SHA256 = "6639a32c1dd930612ead6ae59adf9aff5831904e883081f16c3490721af5089a"
 MANIFEST_SHA256 = "aac8523a1614610cf99cf1ab548d8970b4f8054fe8821b5250c347376e30b28a"
@@ -189,6 +196,7 @@ _REASON_CODES = frozenset(
         "not_isolated",
         "bytecode_writes_enabled",
         "preexisting_project_modules",
+        "cublas_workspace_config_invalid",
         "permit_pin_invalid",
         "package_root_invalid",
         "permit_read_failed",
@@ -369,6 +377,8 @@ def _require_environment():
     supports = getattr(os, "supports_dir_fd", None)
     if supports is None or os.open not in supports or os.stat not in supports:
         _fail("unsupported_platform")
+    if os.environ.get("CUBLAS_WORKSPACE_CONFIG") != ":4096:8":
+        _fail("cublas_workspace_config_invalid")
 
 
 def _validate_hex(value, length, reason):

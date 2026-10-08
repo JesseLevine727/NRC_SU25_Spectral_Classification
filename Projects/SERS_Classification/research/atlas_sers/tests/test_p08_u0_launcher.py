@@ -127,6 +127,7 @@ def main():
         "injection_applied": False,
         "cuda_initialized": False,
         "reached_success": False,
+        "cublas_workspace_config": None,
     }
 
     launcher = _load_module(config["launcher_path"], "p08_u0_launcher_under_test")
@@ -450,6 +451,7 @@ def main():
     summary["mutation_events"] = counters["mutation"]
     summary["process_events"] = counters["process"]
     summary["network_events"] = counters["network"]
+    summary["cublas_workspace_config"] = os.environ.get("CUBLAS_WORKSPACE_CONFIG")
     sys.stdout.write(json.dumps(summary, sort_keys=True) + "\\n")
     return 0
 
@@ -668,7 +670,7 @@ def _write_child_assets(env, scenario):
     return config_path, driver_path
 
 
-def _run_child(driver_path, config_path, cwd):
+def _run_child(driver_path, config_path, cwd, *, cublas_workspace_config=":4096:8"):
     environment = dict(os.environ)
     environment["CUDA_VISIBLE_DEVICES"] = ""
     for name in (
@@ -679,6 +681,12 @@ def _run_child(driver_path, config_path, cwd):
     ):
         environment[name] = "1"
     environment.pop("PYTHONPATH", None)
+    # Deterministically pin the child's CUDA workspace setting, overriding any
+    # inherited host value; ``None`` means the variable must be absent.
+    if cublas_workspace_config is None:
+        environment.pop("CUBLAS_WORKSPACE_CONFIG", None)
+    else:
+        environment["CUBLAS_WORKSPACE_CONFIG"] = cublas_workspace_config
     return subprocess.run(
         [sys.executable, "-I", "-B", str(driver_path), str(config_path)],
         capture_output=True,
@@ -890,7 +898,7 @@ def test_deployed_pin_rejects_unapproved_permit(monkeypatch, tmp_path):
     """The released pin refuses an unapproved permit before any output claim."""
     launcher = _load_launcher(_find_launcher_path())
     assert launcher.APPROVED_PERMIT_SHA256 == (
-        "a0ddf4adbbdad560de83941e5ca8f5330b98e000928f887ac88a69afdb04947d"
+        "b845de4ab7a340cd5c217b557c19affd34e17b6051f1bab7d4cc0dd208ee70d0"
     )
     # The in-process pytest interpreter is not ``-I``; relax only that
     # positional environment guard for this synthetic refusal test.
@@ -914,6 +922,75 @@ def test_deployed_pin_rejects_unapproved_permit(monkeypatch, tmp_path):
     assert excinfo.value.reason_code == "permit_hash_mismatch"
     assert permit_path.read_bytes() == b"{}"
     assert launcher.APPROVED_PERMIT_SHA256 != hashlib.sha256(b"{}").hexdigest()
+
+
+# ---------------------------------------------------------------------------
+# CUDA workspace preflight (real entry, isolated subprocess, never training)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "workspace_config",
+    [None, "", ":16:8", "0:0:0"],
+    ids=["missing", "empty", "wrong", "invalid"],
+)
+def test_cublas_workspace_config_required(
+    monkeypatch, tmp_path, package_template, workspace_config
+):
+    """An absent or incorrect workspace setting denies before any work."""
+    env = _materialize(monkeypatch, tmp_path, package_template)
+    config_path, driver_path = _write_child_assets(env, "cublas_workspace_invalid")
+    result = _run_child(
+        driver_path,
+        config_path,
+        env["base"],
+        cublas_workspace_config=workspace_config,
+    )
+    summary = _summary_from(result)
+    assert summary["error_reason"] == "cublas_workspace_config_invalid", summary
+    assert summary["error_type"] == "LaunchError", summary
+    assert summary["reached_success"] is False, summary
+    assert summary["runtime_entered"] is False, summary
+    assert summary["setup_cuda_called"] is False, summary
+    assert summary["torch_imported"] is False, summary
+    assert summary["cuda_initialized"] is False, summary
+    assert summary["atlas_modules_loaded"] == [], summary
+    assert summary["mutation_events"] == 0, summary
+    assert summary["process_events"] == 0, summary
+    assert summary["network_events"] == 0, summary
+    assert summary["sample_calls"] == 0, summary
+    assert summary["fit_calls"] == 0, summary
+    assert summary["verify_calls"] == 0, summary
+    assert summary["candidate_fit_calls"] == 0, summary
+    assert summary["neural_fit_calls"] == 0, summary
+    assert not Path(env["permit"]["output_root"]).exists()
+
+
+def test_valid_cublas_workspace_config_reaches_denied_authority_gate(
+    monkeypatch, tmp_path, package_template
+):
+    """A valid setting is preserved and still hits the unset-pin gate."""
+    env = _materialize(monkeypatch, tmp_path, package_template)
+    config_path, driver_path = _write_child_assets(env, "default_denied")
+    result = _run_child(
+        driver_path,
+        config_path,
+        env["base"],
+        cublas_workspace_config=":4096:8",
+    )
+    summary = _summary_from(result)
+    assert summary["error_reason"] == "scientific_execution_not_authorized", summary
+    assert summary["cublas_workspace_config"] == ":4096:8", summary
+    assert summary["runtime_entered"] is False, summary
+    assert summary["setup_cuda_called"] is False, summary
+    assert summary["torch_imported"] is False, summary
+    assert summary["atlas_modules_loaded"] == [], summary
+    assert summary["sample_calls"] == 0, summary
+    assert summary["fit_calls"] == 0, summary
+    assert summary["verify_calls"] == 0, summary
+    assert summary["candidate_fit_calls"] == 0, summary
+    assert summary["neural_fit_calls"] == 0, summary
+    assert not Path(env["permit"]["output_root"]).exists()
 
 
 def test_changed_permit_bytes_rejected(monkeypatch, tmp_path, package_template):
