@@ -192,7 +192,10 @@ def main():
         f_bavail=64 * 1024 ** 3, f_frsize=1
     )
 
-    if scenario != "default_denied":
+    if scenario == "default_denied":
+        # Explicitly exercise the unset-deployment branch of the real pin.
+        launcher.APPROVED_PERMIT_SHA256 = None
+    else:
         launcher.BOOTSTRAP_SHA256 = config["bootstrap_sha256"]
         launcher.PROPOSAL_SHA256 = config["proposal_sha256"]
         launcher.MANIFEST_SHA256 = config["manifest_sha256"]
@@ -861,7 +864,7 @@ def test_interrupt_after_first_pair_and_relaunch_refuses(
 # ---------------------------------------------------------------------------
 
 
-def test_default_pin_denies_before_any_open(monkeypatch, tmp_path, package_template):
+def test_unset_pin_denies_before_any_open(monkeypatch, tmp_path, package_template):
     env = _materialize(monkeypatch, tmp_path, package_template)
     config_path, driver_path = _write_child_assets(env, "default_denied")
     result = _run_child(driver_path, config_path, env["base"])
@@ -881,6 +884,36 @@ def test_default_pin_denies_before_any_open(monkeypatch, tmp_path, package_templ
     assert summary["candidate_fit_calls"] == 0
     assert summary["neural_fit_calls"] == 0
     assert not Path(env["permit"]["output_root"]).exists()
+
+
+def test_deployed_pin_rejects_unapproved_permit(monkeypatch, tmp_path):
+    """The released pin refuses an unapproved permit before any output claim."""
+    launcher = _load_launcher(_find_launcher_path())
+    assert launcher.APPROVED_PERMIT_SHA256 == (
+        "a0ddf4adbbdad560de83941e5ca8f5330b98e000928f887ac88a69afdb04947d"
+    )
+    # The in-process pytest interpreter is not ``-I``; relax only that
+    # positional environment guard for this synthetic refusal test.
+    monkeypatch.setattr(launcher, "_require_environment", lambda: None)
+
+    def _forbidden(*args, **kwargs):
+        raise AssertionError("scientific stage reached before the permit hash check")
+
+    monkeypatch.setattr(launcher, "_claim_output", _forbidden)
+    monkeypatch.setattr(launcher, "_load_bootstrap", _forbidden)
+    monkeypatch.setattr(launcher, "_run", _forbidden)
+
+    package_root = tmp_path / "package"
+    package_root.mkdir()
+    permit_path = tmp_path / "permit.json"
+    permit_path.write_bytes(b"{}")
+
+    with pytest.raises(launcher.LaunchError) as excinfo:
+        launcher.launch(str(package_root), str(permit_path))
+
+    assert excinfo.value.reason_code == "permit_hash_mismatch"
+    assert permit_path.read_bytes() == b"{}"
+    assert launcher.APPROVED_PERMIT_SHA256 != hashlib.sha256(b"{}").hexdigest()
 
 
 def test_changed_permit_bytes_rejected(monkeypatch, tmp_path, package_template):

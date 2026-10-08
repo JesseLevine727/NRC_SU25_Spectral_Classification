@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
-"""P08-T145 default-denied cohesive outer launcher for the proposed U0 smoke.
+"""P08 U0 permit-bound outer launcher for the approved source-only pilot.
 
 This is the single outer entry point that connects independent authority, an
 exclusive private destination, the reviewer-authenticated project runtime, the
 fixed input adapters, one existing serial session and a residual evidence
 record.  It is an implementation specification, not an execution permit.
 
-Production default
+Production release
 ------------------
-``APPROVED_PERMIT_SHA256`` is ``None``.  Until a separate owner approval and a
-supervisor-reviewed release replace that single pin, every invocation denies
-with the static reason ``scientific_execution_not_authorized`` before the
-permit file is even opened.  Replacing the pin is a deployment decision, not a
-public mode: the command line has no authority flag, no alternate output, no
-job subset, no user-supplied hash and no environment bypass.
+This deployment sets ``APPROVED_PERMIT_SHA256`` to the exact SHA-256 of the
+independently approved 2026-10-08 U0 private permit, bound to one destination.
+Only a byte-identical copy of that permit is accepted: an absent, unset or
+changed permit still denies before any scientific work begins.  There is no CLI
+replacement hash, no new destination and no retry.  Setting the pin is a
+reviewed deployment decision, not a public mode: the command line has no
+authority flag, no alternate output, no job subset and no environment bypass.
+If the pin is left unset (``None``), every invocation denies with the static
+reason ``scientific_execution_not_authorized`` before the permit file is even
+opened.
 
 Trust limits
 ------------
@@ -46,7 +50,9 @@ __all__ = ["launch", "main"]
 # Independent release pin (the ONLY production authority gate)
 # ---------------------------------------------------------------------------
 
-APPROVED_PERMIT_SHA256 = None
+# Owner-approved 2026-10-08 U0 private permit, bound to one destination.
+# If this pin is left unset (None) the launcher denies all invocations.
+APPROVED_PERMIT_SHA256 = "a0ddf4adbbdad560de83941e5ca8f5330b98e000928f887ac88a69afdb04947d"
 BOOTSTRAP_SHA256 = "fa7c48b766b5522eb5008ed7faf2fc92e5013b2a96376f83167ab77d307dc784"
 PROPOSAL_SHA256 = "6639a32c1dd930612ead6ae59adf9aff5831904e883081f16c3490721af5089a"
 MANIFEST_SHA256 = "aac8523a1614610cf99cf1ab548d8970b4f8054fe8821b5250c347376e30b28a"
@@ -1873,11 +1879,11 @@ def _finalize_failure(output, permit, permit_sha256, outer_start_ns, exc, budget
 def launch(package_root, permit_file):
     """Validate independent authority, claim output, run one fixed U0 smoke.
 
-    The default production pin ``APPROVED_PERMIT_SHA256`` is ``None`` and this
-    function denies with ``scientific_execution_not_authorized`` before opening
-    the permit file.  A successful return is a scalar-only report.  Any failure
-    preserves and re-raises the original exception through all diagnostic and
-    close failures.
+    An unset production pin (``APPROVED_PERMIT_SHA256`` is ``None``) denies with
+    ``scientific_execution_not_authorized`` before the permit file is read.  This
+    release accepts only the exact bytes of the independently approved private
+    permit.  A successful return remains scalar-only.  Any original failure still
+    propagates through all diagnostic and close failures.
     """
     outer_start_ns = time.monotonic_ns()
     _require_environment()
