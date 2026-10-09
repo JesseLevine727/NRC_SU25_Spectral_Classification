@@ -5,6 +5,7 @@ import time
 
 import pytest
 
+from atlas_sers.evaluation import p08_u1_process as pw
 from atlas_sers.evaluation import p08_u1_resource_telemetry as rt
 from atlas_sers.evaluation.p08_u1_process import (
     ProcessWorker,
@@ -124,8 +125,10 @@ def _bare_worker(stamp, alloc, reserved, health=1.0, pid=987654, kind="GPU"):
     return worker
 
 
-def test_telemetry_typed_stale_carries_last_evidence():
-    worker = _bare_worker(time.monotonic() - 6.0, 128.0, 256.0)
+def test_telemetry_typed_stale_carries_last_evidence(monkeypatch):
+    now = 1_000.0
+    monkeypatch.setattr(pw.time, "monotonic", lambda: now)
+    worker = _bare_worker(now - 6.0, 128.0, 256.0)
     with pytest.raises(StaleTelemetryError) as excinfo:
         worker.telemetry()
     err = excinfo.value
@@ -140,18 +143,45 @@ def test_telemetry_typed_stale_carries_last_evidence():
 
 
 @pytest.mark.parametrize(
-    "stamp, alloc, reserved, health",
+    "stamp_offset, alloc, reserved, health",
     [
-        (time.monotonic() + 60.0, 0.0, 0.0, 1.0),  # future timestamp
-        (float("inf"), 0.0, 0.0, 1.0),  # nonfinite timestamp
-        (time.monotonic() - 6.0, float("nan"), 0.0, 1.0),  # invalid value
-        (time.monotonic() - 6.0, -1.0, 0.0, 1.0),  # negative value
-        (time.monotonic() - 6.0, 1.5, 0.0, 1.0),  # fractional value
-        (time.monotonic() - 6.0, 0.0, 0.0, 0.0),  # unhealthy
+        (60.0, 0.0, 0.0, 1.0),  # future timestamp
+        (None, 0.0, 0.0, 1.0),  # nonfinite timestamp
+        (-6.0, float("nan"), 0.0, 1.0),  # invalid value
+        (-6.0, -1.0, 0.0, 1.0),  # negative value
+        (-6.0, 1.5, 0.0, 1.0),  # fractional value
+        (-6.0, 0.0, 0.0, 0.0),  # unhealthy
     ],
 )
-def test_telemetry_non_stale_failures_are_plain_errors(stamp, alloc, reserved, health):
+def test_telemetry_non_stale_failures_are_plain_errors(
+    monkeypatch, stamp_offset, alloc, reserved, health
+):
+    now = 1_000.0
+    monkeypatch.setattr(pw.time, "monotonic", lambda: now)
+    stamp = float("inf") if stamp_offset is None else now + stamp_offset
     worker = _bare_worker(stamp, alloc, reserved, health)
+    with pytest.raises(ProcessWorkerError) as excinfo:
+        worker.telemetry()
+    assert not isinstance(excinfo.value, StaleTelemetryError)
+
+
+def test_future_timestamp_survives_long_collection_to_execution_delay(monkeypatch):
+    """Regression for CI37885498154: a future heartbeat must stay future.
+
+    The historical fixture baked ``time.monotonic() + 60`` at collection time.
+    When the case finally executed 26 minutes later the stored stamp was in the
+    past, so the transport correctly raised StaleTelemetryError and the
+    "ordinary error" assertion failed. Resolving the offset against the
+    production clock at execution time keeps the case future no matter how long
+    the suite takes, without sleeping or weakening the assertion.
+    """
+    collection_epoch = 1_000.0
+    execution_epoch = collection_epoch + 126.0  # 2m06s collection-to-execution
+    clock = [execution_epoch]
+    monkeypatch.setattr(pw.time, "monotonic", lambda: clock[0])
+    stamp = clock[0] + 60.0
+    assert stamp > clock[0]
+    worker = _bare_worker(stamp, 0.0, 0.0, 1.0)
     with pytest.raises(ProcessWorkerError) as excinfo:
         worker.telemetry()
     assert not isinstance(excinfo.value, StaleTelemetryError)
