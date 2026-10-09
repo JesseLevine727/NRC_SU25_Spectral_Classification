@@ -29,6 +29,8 @@ import os
 import sqlite3
 from datetime import datetime, timezone
 
+from . import p08_u1_standing_accounting as _standing
+
 __all__ = [
     "P08U1Error",
     "ValidationError",
@@ -312,6 +314,8 @@ def _validate_recovery_profile(profile):
         return _validate_recovery_accounting(profile)
     if schema == R2_ACCOUNTING_SCHEMA:
         return _validate_r2_accounting(profile)
+    if schema == _standing.STANDING_ACCOUNTING_SCHEMA:
+        return _standing.validate_standing_profile(profile)
     raise ValidationError("recovery_accounting_schema_unsupported")
 
 
@@ -437,6 +441,8 @@ def execution_accounting(binding):
             "parent_binding_sha256": normalized["parent_binding_sha256"],
             "parent_inventory_sha256": normalized["parent_inventory_sha256"],
         }
+    if schema == _standing.STANDING_ACCOUNTING_SCHEMA:
+        return _standing.derive_standing_accounting(profile)
     raise ValidationError("recovery_accounting_schema_unsupported")
 
 
@@ -601,6 +607,9 @@ def _validate_recovery_jobs(binding, parsed_jobs):
     if not isinstance(binding, dict) or "recovery_accounting" not in binding:
         return
     accounting = execution_accounting(binding)
+    if accounting.get("standing"):
+        _standing.validate_standing_jobs(accounting, parsed_jobs)
+        return
     by_id = {record["job_id"]: record for record in parsed_jobs}
     listed = tuple(accounting["replay_fit_job_ids"]) + tuple(
         accounting["additional_reuse_fit_job_ids"]
@@ -736,6 +745,8 @@ _REUSE_COUNTER_KEYS = {
     "fit": "reuse_fit_count",
     "prediction": "reuse_prediction_count",
     "selector": "reuse_selector_count",
+    "calibration": "reuse_calibration_count",
+    "operation": "reuse_operation_count",
 }
 
 
@@ -767,7 +778,8 @@ def _check_attempt_budgets(conn, stage, accounting):
         raise BudgetError("fit_attempt_ceiling")
     if reuse_fits + prospective_fits > MAX_UNIQUE_FIT_JOBS:
         raise BudgetError("unique_fit_job_ceiling")
-    prospective_scalar = new_scalar + (1 if stage == SCALAR_STAGE else 0)
+    reused_scalar = _count_reuse(conn, "calibration")
+    prospective_scalar = reused_scalar + new_scalar + (1 if stage == SCALAR_STAGE else 0)
     if prospective_scalar > MAX_SCALAR_ATTEMPTS:
         raise BudgetError("scalar_attempt_ceiling")
 
@@ -817,6 +829,8 @@ def _verify_events(conn, binding_json=None):
     reuse_fit = 0
     reuse_pred = 0
     reuse_selector = 0
+    reuse_calibration = 0
+    reuse_operation = 0
     for row in conn.execute(
         "SELECT seq,payload_json,prev_hash,event_hash FROM events ORDER BY seq"
     ):
@@ -841,6 +855,10 @@ def _verify_events(conn, binding_json=None):
                 reuse_pred += 1
             elif payload["kind"] == "selector":
                 reuse_selector += 1
+            elif payload["kind"] == "calibration":
+                reuse_calibration += 1
+            elif payload["kind"] == "operation":
+                reuse_operation += 1
             else:
                 raise ValidationError("reuse_kind_invalid")
         elif event_type == "seal_reuse":
@@ -957,6 +975,10 @@ def _verify_events(conn, binding_json=None):
         raise ValidationError("reuse_prediction_counter_mismatch")
     if int(_meta_get(conn, "reuse_selector_count", "0")) != reuse_selector:
         raise ValidationError("reuse_selector_counter_mismatch")
+    if int(_meta_get(conn, "reuse_calibration_count", "0")) != reuse_calibration:
+        raise ValidationError("reuse_calibration_counter_mismatch")
+    if int(_meta_get(conn, "reuse_operation_count", "0")) != reuse_operation:
+        raise ValidationError("reuse_operation_counter_mismatch")
     if (_meta_get(conn, "sealed", "0") == "1") != sealed:
         raise ValidationError("seal_ledger_mismatch")
     if (_meta_get(conn, "failure", "0") == "1") != failure:
@@ -976,6 +998,10 @@ class P08U1Store:
         self._conn = conn
         self._lock = lock
         self._accounting = execution_accounting(binding)
+        self._completed_ids_by_stage = {
+            stage: frozenset(ids)
+            for stage, ids in self._accounting.get("completed_job_ids_by_stage", {}).items()
+        }
         self._closed = False
         self._persistence_failed = False
 
@@ -1019,6 +1045,8 @@ class P08U1Store:
             _meta_set(conn, "reuse_fit_count", "0")
             _meta_set(conn, "reuse_prediction_count", "0")
             _meta_set(conn, "reuse_selector_count", "0")
+            _meta_set(conn, "reuse_calibration_count", "0")
+            _meta_set(conn, "reuse_operation_count", "0")
             for record in parsed_jobs:
                 conn.execute(
                     "INSERT INTO jobs(job_id,job_json,job_sha,stage,model_id,policy_id,"
@@ -1147,13 +1175,34 @@ class P08U1Store:
             _require_not_blocked(conn)
             if _meta_get(conn, "sealed", "0") == "1":
                 raise ValidationError("reuse_import_sealed")
-            if job_id in accounting["replay_fit_job_ids"]:
+            if accounting.get("standing"):
+                replay_ids = accounting.get(
+                    "all_replay_job_ids", accounting["replay_fit_job_ids"]
+                )
+            else:
+                replay_ids = accounting["replay_fit_job_ids"]
+            if job_id in replay_ids:
                 raise ValidationError("replay_fit_cannot_be_reused")
             row = conn.execute("SELECT * FROM jobs WHERE job_id=?", (job_id,)).fetchone()
             if row is None:
                 raise ValidationError("unknown_job_id")
+            standing = bool(accounting.get("standing"))
+            if standing:
+                declared = self._completed_ids_by_stage.get(row["stage"], frozenset())
+                if job_id not in declared:
+                    raise ValidationError("reuse_job_not_declared")
+                if conn.execute(
+                    "SELECT 1 FROM reuse WHERE job_id=?", (job_id,)
+                ).fetchone():
+                    raise ValidationError("duplicate_reuse")
+                kind = accounting["stage_kinds"][row["stage"]]
+                for dep in json.loads(row["dependencies_json"]):
+                    if not conn.execute(
+                        "SELECT 1 FROM reuse WHERE job_id=?", (dep,)
+                    ).fetchone():
+                        raise ValidationError("reuse_dependency_not_imported")
             selector_ids = accounting.get("selector_job_ids")
-            if selector_ids and job_id in selector_ids:
+            if not standing and selector_ids and job_id in selector_ids:
                 if row["stage"] != "select_refit_epochs":
                     raise ValidationError("selector_stage_invalid")
                 if conn.execute("SELECT COUNT(*) AS c FROM attempts").fetchone()["c"]:
@@ -1174,7 +1223,7 @@ class P08U1Store:
                     if not conn.execute("SELECT 1 FROM reuse WHERE job_id=?", (dep,)).fetchone():
                         raise ValidationError("selector_dependency_not_imported")
                 kind = "selector"
-            else:
+            elif not standing:
                 if row["stage"] not in REUSE_STAGES:
                     if row["stage"] == "select_refit_epochs" and selector_ids is not None:
                         raise ValidationError("selector_not_permitted")
@@ -1184,6 +1233,14 @@ class P08U1Store:
                 if conn.execute("SELECT 1 FROM reuse WHERE job_id=?", (job_id,)).fetchone():
                     raise ValidationError("duplicate_reuse")
                 kind = "fit" if row["stage"] == "source_fit" else "prediction"
+            if standing and kind in ("selector", "calibration", "operation"):
+                standing_limit = {
+                    "selector": len(accounting["selector_job_ids"]),
+                    "calibration": len(accounting["scalar_job_ids"]),
+                    "operation": len(accounting["operation_job_ids"]),
+                }[kind]
+                if _count_reuse(conn, kind) >= standing_limit:
+                    raise ValidationError("reuse_" + kind + "_ceiling")
             if kind == "fit" and _count_reuse(conn, "fit") >= accounting["max_reuse_fits"]:
                 raise ValidationError("reuse_fit_ceiling")
             if (
@@ -1191,7 +1248,7 @@ class P08U1Store:
                 and _count_reuse(conn, "prediction") >= accounting["max_reuse_predictions"]
             ):
                 raise ValidationError("reuse_prediction_ceiling")
-            if kind == "prediction":
+            if kind == "prediction" and not standing:
                 deps = json.loads(row["dependencies_json"])
                 if len(deps) != 1:
                     raise ValidationError("reuse_prediction_dependency_invalid")
@@ -1272,16 +1329,47 @@ class P08U1Store:
                 }
                 if imported_selectors != set(selector_ids):
                     raise ValidationError("recovery_selector_import_incomplete")
+                if accounting.get("standing"):
+                    imported_predictions = {
+                        row["job_id"]
+                        for row in conn.execute(
+                            "SELECT job_id FROM reuse WHERE kind='prediction'"
+                        )
+                    }
+                    if imported_predictions != set(accounting["prediction_job_ids"]):
+                        raise ValidationError("recovery_prediction_import_incomplete")
+                    imported_calibration = {
+                        row["job_id"]
+                        for row in conn.execute(
+                            "SELECT job_id FROM reuse WHERE kind='calibration'"
+                        )
+                    }
+                    if imported_calibration != set(accounting["scalar_job_ids"]):
+                        raise ValidationError("recovery_calibration_import_incomplete")
+                    imported_operation = {
+                        row["job_id"]
+                        for row in conn.execute(
+                            "SELECT job_id FROM reuse WHERE kind='operation'"
+                        )
+                    }
+                    if imported_operation != set(accounting["operation_job_ids"]):
+                        raise ValidationError("recovery_operation_import_incomplete")
             if _meta_get(conn, "sealed", "0") != "1":
                 _meta_set(conn, "sealed", "1")
                 payload = {"type": "seal_reuse", "fits": fits, "predictions": predictions}
                 if r2:
                     payload["selectors"] = selectors
+                if accounting.get("standing"):
+                    payload["calibrations"] = _count_reuse(conn, "calibration")
+                    payload["operations"] = _count_reuse(conn, "operation")
                 _append_event(conn, payload)
             conn.execute("COMMIT")
             result = {"sealed": True, "fits": fits, "predictions": predictions}
             if r2:
                 result["selectors"] = selectors
+            if accounting.get("standing"):
+                result["calibrations"] = _count_reuse(conn, "calibration")
+                result["operations"] = _count_reuse(conn, "operation")
             return result
         except BaseException as exc:
             self._abort_transaction(exc)
@@ -1445,6 +1533,9 @@ class P08U1Store:
                 "receipt_sha256": row["receipt_sha"],
             }
         reuse = {"fits": 0, "predictions": 0, "selectors": 0, "job_ids": []}
+        standing = bool(self._accounting.get("standing"))
+        if standing:
+            reuse.update(calibrations=0, operations=0)
         for row in conn.execute("SELECT job_id,kind FROM reuse ORDER BY job_id"):
             if row["kind"] == "fit":
                 reuse["fits"] += 1
@@ -1452,6 +1543,10 @@ class P08U1Store:
                 reuse["predictions"] += 1
             elif row["kind"] == "selector":
                 reuse["selectors"] += 1
+            elif standing and row["kind"] == "calibration":
+                reuse["calibrations"] += 1
+            elif standing and row["kind"] == "operation":
+                reuse["operations"] += 1
             else:
                 raise ValidationError("reuse_kind_invalid")
             reuse["job_ids"].append(row["job_id"])
@@ -1461,7 +1556,7 @@ class P08U1Store:
             + _fit_attempt_count(conn)
             + self._accounting["historical_overhead_attempts"]
         )
-        return {
+        result = {
             "state": _meta_get(conn, "state"),
             "clean": _meta_get(conn, "clean", "0") == "1",
             "failure": _meta_get(conn, "failure", "0") == "1",
@@ -1482,6 +1577,16 @@ class P08U1Store:
             "cumulative_artifact_bytes": artifact,
             "accounted_model_fit_attempts": accounted_fit_attempts,
         }
+        if standing:
+            overhead = self._accounting["scalar_overhead_attempts"]
+            result.update(
+                scalar_attempt_count=_scalar_attempt_count(conn),
+                scalar_overhead_attempts=overhead,
+                accounted_scalar_attempts=(
+                    reuse["calibrations"] + _scalar_attempt_count(conn) + overhead
+                ),
+            )
+        return result
 
     def public_summary(self):
         self._require_open()
@@ -1499,7 +1604,7 @@ class P08U1Store:
         accounted_fit_attempts = (
             reuse_fits + _fit_attempt_count(conn) + self._accounting["historical_overhead_attempts"]
         )
-        return {
+        summary = {
             "schema_version": SCHEMA_VERSION,
             "binding_sha256": _meta_get(conn, "binding_sha256"),
             "state": _meta_get(conn, "state"),
@@ -1539,6 +1644,19 @@ class P08U1Store:
                 "max_gpu_workers": MAX_GPU_WORKERS,
             },
         }
+        if self._accounting.get("standing"):
+            overhead = self._accounting["scalar_overhead_attempts"]
+            calibrations = _count_reuse(conn, "calibration")
+            new_scalar = _scalar_attempt_count(conn)
+            summary.update(
+                reuse_scalar_calibrations=calibrations,
+                reuse_operations=_count_reuse(conn, "operation"),
+                new_scalar_attempts=new_scalar,
+                scalar_overhead_attempts=overhead,
+                accounted_scalar_attempts=calibrations + new_scalar + overhead,
+            )
+            summary["budgets"]["max_scalar_total_attempts"] = MAX_SCALAR_ATTEMPTS + overhead
+        return summary
 
     def close(self):
         if self._closed:
