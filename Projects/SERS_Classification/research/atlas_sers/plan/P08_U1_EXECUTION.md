@@ -66,3 +66,11 @@ The corrected mutable-output scanner counts a zero-link regular inode using its 
 Family-specific/QC-adaptive preprocessing, perturbations, range/normalization/population sensitivities and new models are excluded. They do not extend U1's completion boundary. At most two worker correction rounds per bounded slice precede supervisor reassessment; the token ceiling is not a spending target. Required completion is the reviewed universal benchmark and release, not another planning-only milestone.
 
 Current acceptance evidence is maintained in the [U1 review log](delegation/P08_U1_REVIEW.md).
+
+## Owner-approved standing recovery and eight-CPU amendment, 2026-10-09
+
+The owner authorized bounded infrastructure recovery once, without repeated approval requests: at most 32 model-fit/scalar replay attempts, 40 replay attempts across all stages, two per operation and eight recovery generations. Every completed operation must be authenticated and retained. Only interrupted or failed operations covered by that authority may be replayed; completed fits must not be repeated. Prior attempts, time and artifact high-water usage carry forward. This supersedes the earlier prohibition on further automatic recovery only within these explicit limits; it does not authorize scientific retuning.
+
+After requesting higher throughput and permitting memory above 30 GiB if safe, the owner explicitly approved **eight single-thread CPU workers**. The reviewed recommendation retains **one GPU worker** and raises the whole-process-tree RAM ceiling from 24 to **36 GiB**. The 48-hour cumulative active-time ceiling, 80-GiB artifact ceiling, 8-GiB allocated-GPU ceiling, disk reserve and inner neural-fit guards remain unchanged. The unique 195,202 model-fit slots, 3,354 scalar calibrations and all scientific choices are unchanged.
+
+The change is operational, not a new experiment. Candidate code is tested separately while the four-CPU run continues. A controlled handover must preserve paired fit/prediction boundaries, authenticate the closed parent, carry all recovery history and bind the exact two-file resource-cap change into a new permit. No live runtime or permit is edited in place. CPU throughput must be measured after launch; a doubling is not assumed. If the amended memory guard is exceeded, admissions stop and retained evidence is preserved.

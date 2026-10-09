@@ -318,6 +318,19 @@ def test_gpu_and_cpu_lanes(tmp_path):
         store.close()
 
 
+def test_worker_panel_amended_cpu8_gpu1_limits():
+    assert ctrl.MAX_CPU_WORKERS == 8
+    assert ctrl.MAX_GPU_WORKERS == 1
+    assert ctrl.MAX_TOTAL_WORKERS == 9
+    cpu = [FakeWorker(f"cpu{index}", "CPU") for index in range(8)]
+    gpu = [FakeWorker("gpu0", "GPU")]
+    assert len(ctrl._validate_workers(cpu + gpu, {"CPU", "GPU"})) == 9
+    with pytest.raises(ctrl.ControllerError, match="cpu_worker_limit"):
+        ctrl._validate_workers(cpu + [FakeWorker("cpu8", "CPU")], {"CPU"})
+    with pytest.raises(ctrl.ControllerError, match="gpu_worker_limit"):
+        ctrl._validate_workers(gpu + [FakeWorker("gpu1", "GPU")], {"GPU"})
+
+
 def test_orphan_completed_fit_needs_review_and_stops_workers(tmp_path):
     jobs = classical_chain("orphan")
     store = make_store(tmp_path, jobs)

@@ -120,10 +120,12 @@ MAX_UNIQUE_FIT_JOBS = 195202
 MAX_SCALAR_ATTEMPTS = 3354
 MAX_WALL_SECONDS = 172800
 MAX_ARTIFACT_BYTES = 80 * 2**30
-MAX_RAM_BYTES = 24 * 2**30
+MAX_RAM_BYTES = 36 * 2**30
 MAX_GPU_BYTES = 8 * 2**30
 FREE_SPACE_FLOOR_BYTES = 30 * 2**30
-MAX_CPU_WORKERS = 4
+# 2026-10-09 owner throughput amendment: eight single-thread CPU workers plus
+# one GPU worker under a 36 GiB whole-tree RAM cap; all other caps unchanged.
+MAX_CPU_WORKERS = 8
 MAX_GPU_WORKERS = 1
 
 # Expected/sealed reuse import for full U1.  Tests may monkeypatch these to

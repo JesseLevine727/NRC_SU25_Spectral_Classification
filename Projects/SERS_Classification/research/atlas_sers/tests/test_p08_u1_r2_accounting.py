@@ -376,9 +376,9 @@ def test_r0_r1_shape_unchanged():
     assert r1["historical_overhead_attempts"] == ledger.RECOVERY_HISTORICAL_OVERHEAD_ATTEMPTS
     assert ledger.MAX_UNIQUE_FIT_JOBS == 195202
     assert ledger.MAX_SCALAR_ATTEMPTS == 3354
-    assert ledger.MAX_RAM_BYTES == 24 * 2**30
+    assert ledger.MAX_RAM_BYTES == 36 * 2**30
     assert ledger.MAX_GPU_BYTES == 8 * 2**30
     assert ledger.MAX_ARTIFACT_BYTES == 80 * 2**30
-    assert ledger.MAX_CPU_WORKERS == 4
+    assert ledger.MAX_CPU_WORKERS == 8
     assert ledger.MAX_GPU_WORKERS == 1
     assert ledger.FREE_SPACE_FLOOR_BYTES == 30 * 2**30

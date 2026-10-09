@@ -273,7 +273,7 @@ def test_baseline_nonregression_and_accounting_ceiling(tmp_path):
 
 
 def test_fixed_caps_unchanged_and_breach_still_budget(tmp_path):
-    assert ledger.MAX_RAM_BYTES == 24 * 2**30
+    assert ledger.MAX_RAM_BYTES == 36 * 2**30
     assert ledger.MAX_GPU_BYTES == 8 * 2**30
     assert ledger.MAX_WALL_SECONDS == 172800
     assert ledger.MAX_ARTIFACT_BYTES == 80 * 2**30
@@ -290,7 +290,7 @@ def test_fixed_caps_unchanged_and_breach_still_budget(tmp_path):
     assert budgets["historical_overhead_attempts"] == 10
     assert budgets["max_unique_fit_jobs"] == 195202
     assert budgets["max_scalar_attempts"] == 3354
-    assert budgets["max_ram_bytes"] == 24 * 2**30
+    assert budgets["max_ram_bytes"] == 36 * 2**30
     assert budgets["max_gpu_bytes"] == 8 * 2**30
     assert budgets["max_wall_seconds"] == 172800
     assert budgets["max_artifact_bytes"] == 80 * 2**30

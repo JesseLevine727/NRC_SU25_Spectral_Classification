@@ -152,15 +152,17 @@ def test_attempt_ceilings(tmp_path, monkeypatch):
 
 def test_worker_slots(tmp_path, monkeypatch):
     _patch_reuse(monkeypatch)
-    cpu_jobs = [_job("held_prediction") for _ in range(5)]
+    assert ledger.MAX_CPU_WORKERS == 8
+    assert ledger.MAX_GPU_WORKERS == 1
+    cpu_jobs = [_job("held_prediction") for _ in range(9)]
     gpu_jobs = [_job("held_prediction", model_id="D0-M") for _ in range(2)]
     store = ledger.P08U1Store.create(tmp_path / "slots", _binding(), cpu_jobs + gpu_jobs)
     store.seal_reuse()
     snapshot = _snapshot()
-    for job in cpu_jobs[:4]:
+    for job in cpu_jobs[:8]:
         store.start(job["job_id"], "CPU", snapshot)
     with pytest.raises(ledger.ValidationError):
-        store.start(cpu_jobs[4]["job_id"], "CPU", snapshot)
+        store.start(cpu_jobs[8]["job_id"], "CPU", snapshot)
     store.start(gpu_jobs[0]["job_id"], "gpu", snapshot)
     with pytest.raises(ledger.ValidationError):
         store.start(gpu_jobs[1]["job_id"], "GPU", snapshot)
@@ -532,6 +534,29 @@ def test_resource_breach_recorded_and_survives_reopen(tmp_path, monkeypatch):
     raw.close()
     assert row[0] == ledger.MAX_RAM_BYTES + 4096
     assert row[1] == ledger.MAX_GPU_BYTES + 4096
+    reopened.close()
+
+
+def test_ram_ceiling_amended_36gib_boundary(tmp_path, monkeypatch):
+    _patch_reuse(monkeypatch)
+    assert ledger.MAX_RAM_BYTES == 36 * 2**30
+    jobs = [_job("held_prediction"), _job("held_prediction")]
+    run = str(tmp_path / "ram36")
+    binding = _binding("ram36")
+    store = ledger.P08U1Store.create(run, binding, jobs)
+    store.seal_reuse()
+    # Exactly 36 GiB is admitted; one byte more is refused and latches the store.
+    store.start(jobs[0]["job_id"], "CPU", _snapshot(rss=ledger.MAX_RAM_BYTES))
+    store.finish(jobs[0]["job_id"], "complete", _receipt("a"))
+    with pytest.raises(ledger.BudgetError):
+        store.start(jobs[1]["job_id"], "CPU", _snapshot(rss=ledger.MAX_RAM_BYTES + 1))
+    with pytest.raises(ledger.ReviewRequiredError):
+        store.start(jobs[1]["job_id"], "CPU", _snapshot())
+    assert store.close()["clean"] is True
+
+    reopened = ledger.P08U1Store.reopen(run, binding)
+    with pytest.raises(ledger.ReviewRequiredError):
+        reopened.start(jobs[1]["job_id"], "CPU", _snapshot())
     reopened.close()
 
 

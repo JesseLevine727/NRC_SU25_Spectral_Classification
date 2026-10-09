@@ -41,7 +41,7 @@ from .p08_u1_store import (
 
 __all__ = ["ControllerError", "run_controller", "sha256_value"]
 
-MAX_TOTAL_WORKERS = 5
+MAX_TOTAL_WORKERS = MAX_CPU_WORKERS + MAX_GPU_WORKERS
 PROGRESS_INTERVAL_SECONDS = 5.0
 IDLE_RESOURCE_INTERVAL_SECONDS = 2.0
 MAX_POLL_SECONDS = 1.0
