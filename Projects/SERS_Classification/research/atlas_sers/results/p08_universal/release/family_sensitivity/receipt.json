@@ -1,0 +1,31 @@
+{
+  "available_contrasts_per_estimand": 44,
+  "elapsed_seconds": 0.23263810796197504,
+  "estimands": 2,
+  "excluded_domain_counts": {
+    "Agilent": 3,
+    "Mira": 3,
+    "Pendar": 5,
+    "RMX": 2
+  },
+  "families": [
+    "Agilent",
+    "Mira",
+    "Pendar",
+    "RMX"
+  ],
+  "no_fitting": true,
+  "no_resampling": true,
+  "original_scores_and_intervals_unchanged": true,
+  "output_sha256": "7ca388b7daef482935aee3641718510f6ec9939606f249ebb91017644b8d9b38",
+  "platform_mapping_source_sha256": "8e36597292034cc70a58f787d1e9789fe7b9668b4f7d586b49f04c8031a3d664",
+  "public_disclosure_reviewed": true,
+  "reason": "Pinned manifest omitted instrument_family; original analysis left descriptive family deletions empty. This completes the preplanned sensitivity using the frozen P02 mapping.",
+  "review_record": "../RELEASE_REVIEW.md",
+  "rows": 352,
+  "schema": "nato-sers-p08-family-deletion-supplement-v1",
+  "source_paired_domains_sha256": "e150c7ebd15b179596abd152e56166c969f320317302d343dcd319930e14600d",
+  "source_receipt_sha256": "d52d6621feb4a7c760e7366ba035b5e5440aabf15842a6fccb03af5e536a6963",
+  "source_tables_manifest_sha256": "c37be421b5827803cde1f14705ba52c4f01552755ec26c922a5fc554fe4c6f0c",
+  "status": "computed_independently_checked"
+}

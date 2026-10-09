@@ -125,3 +125,48 @@ The isolated candidate passed **301 U1 tests in 155.34 seconds** and **20 privat
 At 15:41:55 UTC on 2026-10-09, the approved controlled handover stopped the verified eight-worker supervisor at a complete fit/prediction boundary. All owned processes exited and the ledger closed cleanly without worker-shutdown errors. Nine in-progress source fits were interrupted by this planned switch, not by numerical failure. The read-only audit authenticated **83,375 completed operations**, including **41,453 source fits and paired predictions**, 169 epoch selections and 169 scalar calibrations. The complete stage inventory also retains final refits and other completed operations. The audit checked **258,153 retained files (8,019,754,223 bytes)** in 59.10 seconds; inventory SHA-256 is `6a3b62e8af88adc5432eb4dee4772c78e171d9c90f4dfe8681f5779465e89d26`.
 
 The new generation must preserve all completed work, exact interrupted identities, previous replay counts, cumulative active time and artifact high-water usage. This review accepts the operational change, not benchmark completion or a scientific performance claim. Admission still requires the real-data retention check and a fresh bound permit; final held-endpoint, statistical, visual and disclosure reviews remain outstanding.
+
+## Completed universal benchmark and release review, 2026-10-09
+
+The twelve-CPU continuation finished at 19:18 UTC with 195,202 unique fit slots,
+3,354 scalar calibrations and all 404,814 registered operations complete. The
+store closed cleanly; no workers, shutdown errors or remaining jobs persisted.
+The final phase added 153,634 fits to 41,568 verified reused fits, averaging
+approximately 763 fits/minute over that phase. This is not the campaign-wide
+rate and does not treat reused fits as new execution.
+
+DeepSeek V4.1 Flash implemented the final analysis, aggregate reporting and
+native/HTML rendering components in bounded private tasks. The supervisor
+reviewed the complete responses, corrected integration/semantic defects and
+tested them before actual field-data execution. The final authenticated
+analysis completed in 374.27 seconds; the original 117-panel build completed
+in 230.08 seconds. Neither stage fitted additional models.
+
+Review found two bounded omissions: absent derived family metadata prevented
+the planned descriptive family deletions, and native spectral pages needed
+additional text margins. A separate 352-row family supplement uses the frozen
+mapping without refitting or resampling; the future loader now checks that
+mapping. The 17 corrected spectral PDFs preserve all semantic values and
+byte-identical HTML/CSV. The original private outputs remain immutable.
+
+Portable integration initially passed 6,632 tests, with 11 launch-environment
+failures and seven CUDA-disabled skips. The corrected real-file/Git-root rerun
+passed all 41 tests in the affected modules, covering every failed node; the
+isolated analysis runner passed 16 tests. Final corrected new-package testing
+passed 422 tests plus 40 subtests. Four additional actual-release tests check
+the complete artifact/code inventory, figure parity, support, scores, report
+links and conservative resource accounting. Ruff passed over the CI scope.
+
+All 117 actual HTML pages passed the corrected browser review. All output
+hashes, vector PDF raster absence and page bounds were checked; representative
+native and HTML views from every figure type were inspected directly. The
+reviewed package contains no new individual spectra/identifiers/checkpoints.
+The original working checkout also contains ignored historical P03 LaTeX build
+logs; these are unrelated, remain local and are excluded from the publication
+tree rather than deleted.
+
+The [report](../../reports/NATO_SERS_UNIVERSAL_PREPROCESSING_REPORT.md),
+[release review](../../results/p08_universal/release/RELEASE_REVIEW.md) and
+[completion audit](../P08_U1_COMPLETION_AUDIT.md) record the scientific result
+and claim limits. The remaining transport gate is actual main-branch push and
+CI verification. Later P08 branches were not launched.

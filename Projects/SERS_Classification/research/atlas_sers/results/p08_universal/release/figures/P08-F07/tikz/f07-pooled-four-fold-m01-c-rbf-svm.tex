@@ -1,0 +1,36 @@
+\documentclass[border=0pt]{standalone}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.17}
+\definecolor{f07min}{HTML}{000000}
+\definecolor{f07sg}{HTML}{0072B2}
+\definecolor{f07arpls}{HTML}{D55E00}
+\begin{document}
+\begin{minipage}{181.86mm}
+\centering
+% figure: P08-F07; panel: f07-pooled-four-fold-m01-c-rbf-svm; semantic-sha256: a80ccd58447783b6ff83336d15c300b5297f955760921573638eaca3cc08512e
+{\bfseries\fontsize{10}{12}\selectfont P08-F07 / RQ-S05 | RBF-SVM | M01 individual-spectrum predictions | Pooled sensitivity (S)\par}
+\vspace{2mm}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1, horizontal sep=10mm, vertical sep=0mm}, width=75mm, height=65mm, clip=false, axis line style={line width=0.6pt}, tick style={line width=0.6pt}, tick label style={font=\fontsize{8}{9.6}\selectfont, black}, label style={font=\fontsize{8}{9.6}\selectfont, black}, title style={font=\bfseries\fontsize{10}{12}\selectfont}, legend style={at={(0.5,1.18)}, anchor=south, draw=none, fill=none, legend columns=3, font=\fontsize{8}{9.6}\selectfont}, ymin=0, ymax=1, ytick={0,0.20000000000000001,0.40000000000000002,0.59999999999999998,0.80000000000000004,1}, yticklabels={0,0.2,0.4,0.6,0.8,1}]
+\nextgroupplot[title={(A) Peak displacement}, xlabel={Peak displacement (cm$^{-1}$)}, ylabel={Balanced accuracy}, xmin=0, xmax=1, xtick={0,0.20000000000000001,0.40000000000000002,0.59999999999999998,0.80000000000000004,1}, xticklabels={0,0.2,0.4,0.6,0.8,1}]
+\addlegendimage{only marks, mark=triangle*, mark size=2.2pt, mark options={fill=f07min, draw=black, line width=0.8pt}}
+\addlegendentry{MIN}
+\addlegendimage{only marks, mark=*, mark size=2.2pt, mark options={fill=f07sg, draw=black, line width=0.8pt}}
+\addlegendentry{SG}
+\addlegendimage{only marks, mark=square*, mark size=2.2pt, mark options={fill=f07arpls, draw=black, line width=0.8pt}}
+\addlegendentry{arPLS}
+\addplot+[only marks, mark=triangle*, mark size=2.2pt, mark options={fill=f07min, draw=black, line width=0.8pt}] coordinates {(0,0.50126984126984131) (0,0.52306878306878313) (0,0.60290909090909095) (0,0.81439393939393945) (0,0.95757575757575764) (0,0.33333333333333331) (0,0.78128306878306886) (0,1) (0,0.47301587301587295) (0,0.49898989898989898) (0,0.5503030303030304) (0,0.69126984126984126) (0,0.73304597701149421)};
+\addplot+[only marks, mark=*, mark size=2.2pt, mark options={fill=f07sg, draw=black, line width=0.8pt}] coordinates {(0,0.52373015873015871) (0,0.5363174603174603) (0,0.60824242424242436) (0,0.81439393939393945) (0,0.95757575757575764) (0,0.33333333333333331) (0,0.80244708994708991) (0.25,1) (0,0.47301587301587295) (0,0.47272727272727266) (0,0.52484848484848479) (0,0.69507936507936507) (0,0.76695402298850568)};
+\addplot+[only marks, mark=square*, mark size=2.2pt, mark options={fill=f07arpls, draw=black, line width=0.8pt}] coordinates {(0,0.59952380952380957) (0,0.49572486772486773) (0,0.63248484848484843) (0,0.81439393939393945) (0,0.92121212121212126) (0,0.64188172043010749) (0,0.80482804232804228) (0,0.95238095238095233) (0,0.46031746031746035) (0,0.63030303030303036) (0,0.6360606060606061) (0,0.64492063492063489) (0,0.87710727969348667)};
+\nextgroupplot[title={(B) Peak recall}, xlabel={Peak recall ($\pm$5 cm$^{-1}$)}, ylabel={Balanced accuracy}, xmin=0, xmax=1, xtick={0,0.20000000000000001,0.40000000000000002,0.59999999999999998,0.80000000000000004,1}, xticklabels={0,0.2,0.4,0.6,0.8,1}]
+\addplot+[only marks, mark=triangle*, mark size=2.2pt, mark options={fill=f07min, draw=black, line width=0.8pt}] coordinates {(1,0.50126984126984131) (1,0.52306878306878313) (1,0.60290909090909095) (1,0.81439393939393945) (1,0.95757575757575764) (1,0.33333333333333331) (1,0.78128306878306886) (1,1) (1,0.47301587301587295) (1,0.49898989898989898) (1,0.5503030303030304) (1,0.69126984126984126) (1,0.73304597701149421)};
+\addplot+[only marks, mark=*, mark size=2.2pt, mark options={fill=f07sg, draw=black, line width=0.8pt}] coordinates {(1,0.52373015873015871) (1,0.5363174603174603) (1,0.60824242424242436) (1,0.81439393939393945) (1,0.95757575757575764) (1,0.33333333333333331) (1,0.80244708994708991) (1,1) (1,0.47301587301587295) (1,0.47272727272727266) (1,0.52484848484848479) (1,0.69507936507936507) (1,0.76695402298850568)};
+\addplot+[only marks, mark=square*, mark size=2.2pt, mark options={fill=f07arpls, draw=black, line width=0.8pt}] coordinates {(1,0.59952380952380957) (1,0.49572486772486773) (1,0.63248484848484843) (1,0.81439393939393945) (1,0.92121212121212126) (1,0.64188172043010749) (1,0.80482804232804228) (1,0.95238095238095233) (1,0.46031746031746035) (1,0.63030303030303036) (1,0.6360606060606061) (1,0.64492063492063489) (1,0.87710727969348667)};
+\end{groupplot}
+\node[anchor=north, yshift=-6mm, text width=175mm, align=left, font=\fontsize{8}{9.6}\selectfont] at (current bounding box.south) {RQ-S05. Each plotted marker is one accepted point: a comparison domain crossed with an action (policy), not an individual spectrum. Panel A shows stored median peak displacement; panel B shows stored median reference-peak recall. Both use balanced accuracy on y. MIN (black triangle), SG (blue circle) and arPLS (vermillion square) are overlaid. MIN uses minimal min-max scaling; SG combines impulse replacement and smoothing; arPLS combines impulse replacement and baseline correction. All use 400-1800 cm\textasciicircum{}-1 and final [0,1] scaling. Per-axis NA points (A=12, B=12) remain in the table/CSV and are not plotted, so the two axes may carry different plotted denominators. Stored 10th/90th percentiles are summaries, not confidence intervals. P08-F07 joins accepted F02 balanced-accuracy pairs to accepted preservation summaries. The source study comprised 598 original spectra from 69 physical masters across 10 instruments, partitioned into 17 station-instrument domains (13 held comparison domains, 4 exploratory domains). Endpoint M01 uses individual predictions and M06 uses mean model probabilities; neither is a mean spectrum. Model selection and calibration are source-only, and the selected CNN identity is fixed across preprocessing. Peak diagnostics are descriptive against the frozen observed-spectrum reference and are not clean-chemistry truth. No causal distinction, winner selection, or new-instrument guarantee is implied. Summaries are stored-observation-weighted medians and 10th/90th percentiles (linear interpolation), not confidence intervals or master-equal chemical estimates. Original preservation counts and held-prediction support counts are kept separate. The baseline-span proxy is not measured fluorescence, and clipped fraction does not prove physical detector saturation. M06 averages model probabilities within each sample/instrument and then equally across instruments, not input spectra or hard labels.};
+\end{tikzpicture}
+\end{minipage}
+\end{document}

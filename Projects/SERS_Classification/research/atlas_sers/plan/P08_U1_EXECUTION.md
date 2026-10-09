@@ -1,5 +1,12 @@
 # P08-U1 universal preprocessing execution boundary
 
+**2026-10-09 completion checkpoint:** all 195,202 unique fits, 3,354 scalar
+calibrations and 404,814 registered operations completed with clean shutdown.
+See the [completion audit](P08_U1_COMPLETION_AUDIT.md) and
+[reviewed results](../reports/NATO_SERS_UNIVERSAL_PREPROCESSING_REPORT.md).
+The approvals and recovery history below are retained as execution provenance,
+not a request to relaunch any fitting.
+
 Owner approval, 2026-10-08: **“Approve these limits and proceed after review.”** This supersedes the earlier proposal-only status for U1 resources. It does not certify an implementation or indicate that training has started. Storage has been freed at the owner's request; admission must still use a fresh measurement.
 
 ## Scientific scope

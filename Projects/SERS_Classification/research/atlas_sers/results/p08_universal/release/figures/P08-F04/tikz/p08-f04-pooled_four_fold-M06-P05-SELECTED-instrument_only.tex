@@ -1,0 +1,46 @@
+% P08-F04 bounded interaction renderer -- copied estimates only
+%% source SHA256: 8c910290a3d09cbc9f03e7dcde77ae1598487533b0c68cfa1709a42e7d38621d
+%% semantic SHA256: 7d136d1005cadbac7773e64dd39bb49d4ffc000a13fac4c4a3d1ee9c7742891a
+\documentclass[border=0pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\definecolor{PolA}{HTML}{0072B2}
+\pgfplotsset{pt0/.style={only marks, mark=*, color=PolA, mark options={fill=PolA, draw=black}}}
+\pgfplotsset{bar0/.style={PolA, line width=0.8pt, mark=|, mark options={color=PolA}}}
+\definecolor{PolB}{HTML}{D55E00}
+\pgfplotsset{pt1/.style={only marks, mark=square*, color=PolB, mark options={fill=PolB, draw=black}}}
+\pgfplotsset{bar1/.style={PolB, line width=0.8pt, mark=|, mark options={color=PolB}}}
+\pgfplotsset{domainpts/.style={only marks, mark=o, mark options={draw=gray, fill=none, scale=0.7}}}
+\tikzset{intervalna/.style={font=\fontsize{8}{10}\selectfont, anchor=east}}
+\begin{document}
+\begin{minipage}{181.86mm}\centering
+\begin{tikzpicture}
+\begin{axis}[width=145mm, height=80mm, clip=false, xmin=-2, xmax=2, xtick={-2,-1,0,1,2}, xticklabels={-200,-100,0,100,200}, xlabel={Difference-in-differences (percentage points)}, ymin=-0.5, ymax=5.5, ytick={0,1,2,3,4,5}, yticklabels={{Extra Trees arPLS}, {Extra Trees SG}, {Random Forest arPLS}, {Random Forest SG}, {RBF-SVM arPLS}, {RBF-SVM SG}}, yticklabel style={font=\fontsize{8}{10}\selectfont}, tick label style={font=\fontsize{8}{10}\selectfont}, axis lines=left, title={S: Source-selected CNN}, title style={font=\bfseries\fontsize{10}{12}\selectfont}, every axis plot/.append style={line width=0.6pt}]
+\draw[black, dash dot, line width=0.6pt] (axis cs:0,-0.5) -- (axis cs:0,5.5);
+\addplot[domainpts] coordinates {(-0.049603174603174607,4.8200000000000003) (-0.019047619047619042,4.8499999999999996) (-0.01388888888888889,4.8799999999999999) (-2.7755575615628915e-18,4.9100000000000001) (0,4.9400000000000004) (0,4.9699999999999998) (-0.017619047619047621,5) (-0.01666666666666667,5.0300000000000002) (0.0095238095238095229,5.0599999999999996) (0.073015873015873006,5.0899999999999999) (-0.00030303030303030222,5.1200000000000001) (0.0095238095238095229,5.1500000000000004) (-0.087407407407407406,5.1799999999999997)};
+\addplot[bar0] coordinates {(-0.028446862760151955,5) (0.010436971981435941,5)};
+\addplot[pt0] coordinates {(-0.0086517186517186522,5)};
+\addplot[domainpts] coordinates {(0.045105820105820107,3.8199999999999998) (0.125,3.8500000000000001) (0.02222222222222222,3.8799999999999999) (0.11166666666666666,3.9100000000000001) (-0.0095238095238095229,3.9399999999999999) (0.27142857142857146,3.9700000000000002) (0.0095238095238095229,4) (0.0095238095238095229,4.0300000000000002) (0.095238095238095233,4.0599999999999996) (-0.0063492063492063492,4.0899999999999999) (-0.059696969696969693,4.1200000000000001) (0.073015873015873006,4.1500000000000004) (-0.10333333333333332,4.1799999999999997)};
+\addplot[bar1] coordinates {(0.0073870530049016895,4) (0.096599714240799092,4)};
+\addplot[pt1] coordinates {(0.044909349909349916,4)};
+\addplot[domainpts] coordinates {(-0.0022486772486772512,2.8199999999999998) (-0.0041005291005291001,2.8500000000000001) (0.066666666666666652,2.8799999999999999) (0.05333333333333333,2.9100000000000001) (0,2.9399999999999999) (0,2.9700000000000002) (0.013333333333333332,3) (-0.01666666666666667,3.0299999999999998) (-0.057142857142857141,3.0600000000000001) (0.066666666666666666,3.0899999999999999) (0.054545454545454543,3.1200000000000001) (0.0095238095238095229,3.1499999999999999) (0.082592592592592592,3.1800000000000002)};
+\addplot[bar0] coordinates {(0.00048325085952301663,3) (0.042917443816790551,3)};
+\addplot[pt0] coordinates {(0.020500240500240498,3)};
+\addplot[domainpts] coordinates {(0.24788359788359787,1.8200000000000001) (0.22076719576719578,1.8500000000000001) (-0.03333333333333334,1.8799999999999999) (0.044999999999999998,1.9099999999999999) (-0.0095238095238095229,1.9399999999999999) (0.15714285714285714,1.97) (-0.059047619047619036,2) (-0.0095238095238095229,2.0299999999999998) (-0.044444444444444439,2.0600000000000001) (-0.038095238095238106,2.0899999999999999) (-0.068181818181818177,2.1200000000000001) (0.088888888888888878,2.1499999999999999) (-0.13592592592592592,2.1800000000000002)};
+\addplot[bar1] coordinates {(-0.022779925624811521,2) (0.086596852352120751,2)};
+\addplot[pt1] coordinates {(0.027815887815887817,2)};
+\addplot[domainpts] coordinates {(0.064285714285714293,0.82000000000000006) (0.0042328042328042322,0.84999999999999998) (0.01111111111111111,0.88) (0.040000000000000001,0.91000000000000003) (0,0.93999999999999995) (0,0.96999999999999997) (0.013333333333333332,1) (-0.01666666666666667,1.03) (0.0095238095238095229,1.0600000000000001) (0.053968253968253964,1.0900000000000001) (-0.0075757575757575777,1.1200000000000001) (0.047619047619047616,1.1499999999999999) (0.0025925925925925921,1.1799999999999999)};
+\addplot[bar0] coordinates {(0.0073483485488021203,1) (0.031947970502264576,1)};
+\addplot[pt0] coordinates {(0.017109557109557107,1)};
+\addplot[domainpts] coordinates {(0.22380952380952382,-0.17999999999999999) (0.18373015873015869,-0.14999999999999999) (-0.0027777777777777792,-0.12) (0.031666666666666669,-0.089999999999999997) (-0.0095238095238095229,-0.059999999999999998) (0.20000000000000001,-0.029999999999999999) (-0.074285714285714274,0) (-0.0095238095238095229,0.029999999999999999) (0.050793650793650794,0.059999999999999998) (-0.057142857142857148,0.089999999999999997) (-0.056060606060606054,0.12) (0.092063492063492056,0.14999999999999999) (-0.28185185185185185,0.17999999999999999)};
+\addplot[bar1] coordinates {(-0.050198830668958076,0) (0.083560032225177022,0)};
+\addplot[pt1] coordinates {(0.022376697376697376,0)};
+\end{axis}
+\node[anchor=north, align=justify, text width=170mm, font=\fontsize{8}{10}\selectfont] at ([yshift=-6mm]current bounding box.south) {RQ-S01 / P08-F04 model-by-preprocessing interaction. Endpoint: M06 combined predictions per physical sample. Mode: instrument-only. Estimand: sensitivity: reconstruct each four-fold pooled prediction set before scoring. Positive interaction means preprocessing helped the deep strategy more (or hurt it less) than the comparator, not that the deep absolute balanced accuracy is higher. Whole pipelines: MIN is minimal min-max scaling; SG is impulse replacement, smoothing and min-max; arPLS is impulse replacement, baseline correction and min-max; all use 400-1800 cm\textasciicircum{}-1 and [0,1]. Source-only selection/calibration; frozen CNN recipe identity across policies. 598 original spectra, 69 physical masters, 10 instruments, 557 held spectra, 260 contexts, 13 domains. M01 uses individual predictions; M06 averages model probabilities within sample/instrument then equal instruments, not mean spectra. Gray points are domains, not independent samples. 95\% marginal conditional intervals use 10,000 support-preserving weights; no retraining, no new-instrument uncertainty, no causal nuisance removal, no G4, no superiority or winner selection. Multiplicity family 32 retained; symmetry p-values are descriptive and no stars are drawn. Two planned QC contrasts are outside this universal run; no estimates.};
+\end{tikzpicture}
+\end{minipage}
+\end{document}

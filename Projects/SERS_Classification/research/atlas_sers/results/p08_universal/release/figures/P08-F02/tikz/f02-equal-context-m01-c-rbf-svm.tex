@@ -1,0 +1,36 @@
+\documentclass[border=0pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\definecolor{f02sg}{HTML}{0072B2}
+\definecolor{f02arpls}{HTML}{D55E00}
+\begin{document}
+\begin{minipage}{181.86mm}
+\centering
+{\bfseries\fontsize{10}{12}\selectfont P08-F02 RBF-SVM / M01 individual-spectrum predictions / Primary (P)}\par\vspace{6mm}
+% semantic SHA-256: 4c3507299219d2ce29fd9a2a58f030be1b778fd9bbceb756756ca16d12f674f7
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=2 by 1, horizontal sep=10mm, vertical sep=6mm},
+  width=75mm, height=65mm,
+  xmin=0, xmax=1, ymin=0, ymax=1,
+  xtick={0,0.25,0.5,0.75,1}, ytick={0,0.25,0.5,0.75,1},
+  tick label style={font=\fontsize{8}{9}\selectfont},
+  label style={font=\fontsize{8}{9}\selectfont},
+  title style={font=\bfseries\fontsize{10}{12}\selectfont},
+  xlabel={MIN balanced accuracy}, ylabel={Policy balanced accuracy},
+]
+\nextgroupplot[title={A  Smoothing (SG)}]
+\addplot[black, dash dot, line width=0.6pt, samples=2, domain=0:1, forget plot] {x};
+\addplot[only marks, mark=*, mark size=1.7pt, color=f02sg, mark options={draw=black,line width=0.8pt}] coordinates {(0.517389971139971,0.5535545935545937) (0.511468253968254,0.5331878306878307) (0.6551190476190476,0.659404761904762) (0.8511111111111115,0.8511111111111115) (0.9791666666666666,0.9791666666666666) (0.3666666666666666,0.3666666666666666) (0.8181746031746033,0.8292857142857143) (1.0,1.0) (0.4791666666666667,0.48944444444444446) (0.544206349206349,0.5100793650793649) (0.5827777777777778,0.5516666666666669) (0.70265873015873,0.7159523809523809) (0.7038708513708514,0.782720658970659)};
+\nextgroupplot[title={B  Baseline correction (arPLS)}]
+\addplot[black, dash dot, line width=0.6pt, samples=2, domain=0:1, forget plot] {x};
+\addplot[only marks, mark=square*, mark size=1.7pt, color=f02arpls, mark options={draw=black,line width=0.8pt}] coordinates {(0.517389971139971,0.674037999037999) (0.511468253968254,0.4976587301587302) (0.6551190476190476,0.6967857142857143) (0.8511111111111115,0.8511111111111115) (0.9791666666666666,0.9458333333333332) (0.3666666666666666,0.6751653439153439) (0.8181746031746033,0.8341468253968255) (1.0,0.9416666666666668) (0.4791666666666667,0.5102777777777778) (0.544206349206349,0.6375000000000001) (0.5827777777777778,0.6536111111111111) (0.70265873015873,0.6568253968253969) (0.7038708513708514,0.8953354978354978)};
+\end{groupplot}
+\end{tikzpicture}
+\par\vspace{4pt}
+{\fontsize{8}{10}\selectfont RQ-S01: preprocessing and chemical identification. Source-only selection/calibration; selected CNN identity fixed across policies. SG = impulse replacement, smoothing, minmax; arPLS = impulse replacement, baseline correction, minmax. MIN = minimal minmax. Primary: equal contexts within domain, then equal domains. Pooled-fold sensitivity reconstructs each four-fold prediction set before scoring. M01 individual-spectrum predictions; M06 combined predictions per physical sample. M06 averages model probabilities within sample/instrument then equally across instruments, never input spectra or hard labels. 598 original spectra / 69 physical samples / 10 instruments; 557 spectra in 13 held station/instrument domains, 260 contexts. Per-domain independent support in the CSV/table. D1..D13 are lexicographic station/instrument domains, not samples. Diagonal y=x; the 520 points across all panels are paired domain measurements, not 520 independent observations. Claim limit: cannot establish causal background removal or new-instrument performance; no error bars, no significance stars.}\par
+\end{minipage}
+\end{document}

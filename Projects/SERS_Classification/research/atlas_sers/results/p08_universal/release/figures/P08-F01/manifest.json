@@ -1,0 +1,2314 @@
+{
+  "disclosure_reviewed": true,
+  "external_authentication_verified": false,
+  "figure_id": "P08-F01",
+  "fonts": [
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "FYYSBU+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "SLJHFL+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "KNHWAK+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "YAFCEX+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "ZRKWPY+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "QSOGQR+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "MXBBWH+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "NSEBFQ+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "ZGNUJT+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "JWJOJL+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "LNZYRS+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "ALBXYS+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "FLEJVB+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "JFXYEI+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "QDOLQR+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "ERWMYP+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "XCIETB+CMR8",
+      "object_id": [
+        7,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "EQBCKI+CMMI8",
+      "object_id": [
+        8,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F38",
+      "object_id": [
+        9,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "ICXJWG+SFBX1000",
+      "object_id": [
+        10,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "HBIEHQ+CMSY6",
+      "object_id": [
+        11,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Builtin",
+      "name": "WIRDCL+CMR6",
+      "object_id": [
+        12,
+        0
+      ],
+      "sub": "yes",
+      "type": "Type 1",
+      "uni": "yes"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F46",
+      "object_id": [
+        13,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    },
+    {
+      "emb": "yes",
+      "encoding": "Custom",
+      "name": "F47",
+      "object_id": [
+        14,
+        0
+      ],
+      "sub": "no",
+      "type": "Type 3",
+      "uni": "no"
+    }
+  ],
+  "limits": {
+    "child_seconds": 45.0,
+    "log_bytes": 1048576,
+    "pdf_width_mm": 181.86,
+    "pdf_width_tolerance_mm": 0.2,
+    "png_dpi": 300,
+    "poll_seconds": 0.1
+  },
+  "outputs": [
+    {
+      "path": "built_index.html",
+      "sha256": "938e0efa7f292cc7021a7be6b717e5b40a15bc277b20bd3eb876e79ba098b322",
+      "size": 2503
+    },
+    {
+      "path": "data/P08-F01-D01.csv",
+      "sha256": "3e37373ae6b6dbd244497167cd3dda3b45bba47afe7da87ad42c98e8e1a24e9a",
+      "size": 1206318
+    },
+    {
+      "path": "data/P08-F01-D02.csv",
+      "sha256": "a175d9e02de30d70a20aff5ce2420856133716cc65b592adeddda964724fa4a5",
+      "size": 1164971
+    },
+    {
+      "path": "data/P08-F01-D03.csv",
+      "sha256": "051c717ce7d5b816db7c0e7f161ed9b9a0089530aa0864d72db814190c921603",
+      "size": 1187045
+    },
+    {
+      "path": "data/P08-F01-D04.csv",
+      "sha256": "1d92f6a8e27fa05d64b0f08e5473aab9151f57c0cb763ce94f81a79c33f09d7d",
+      "size": 1187035
+    },
+    {
+      "path": "data/P08-F01-D05.csv",
+      "sha256": "a2c4ada86185b35d44d700653432c3289765f8716432a8e83da3310744f57594",
+      "size": 1152117
+    },
+    {
+      "path": "data/P08-F01-D06.csv",
+      "sha256": "ada19d095f823ae36bb2c4a501e983103a5aa3185235efadc222e931a7ec91f8",
+      "size": 1194354
+    },
+    {
+      "path": "data/P08-F01-D07.csv",
+      "sha256": "797cd62a1a8a1555f568acf2a4cb18cf6372d76931b189c729c93fe27b4d7743",
+      "size": 1199804
+    },
+    {
+      "path": "data/P08-F01-D08.csv",
+      "sha256": "c0168b6f541badf9bb59b872705151b9cc94a207c592e9879e94b5db2a64ee91",
+      "size": 1154961
+    },
+    {
+      "path": "data/P08-F01-D09.csv",
+      "sha256": "5c08381468916b9f0ae5af41a841d70f30ecf5678265a356770596a9dfd4e066",
+      "size": 1175685
+    },
+    {
+      "path": "data/P08-F01-D10.csv",
+      "sha256": "ed309bb13b0177a6436724a0c2db2b309aaa3e0215e806ef4863adf402cc4bd3",
+      "size": 377643
+    },
+    {
+      "path": "data/P08-F01-D11.csv",
+      "sha256": "2f32551ec8fdee14cb39d6ae324345ef76032073e53b6c7ae80b43300981d67b",
+      "size": 1168067
+    },
+    {
+      "path": "data/P08-F01-D12.csv",
+      "sha256": "8c4a3ad195e8a50600dfe7a5bbad0b38e76607e29f47569f4a53380314e57180",
+      "size": 1260436
+    },
+    {
+      "path": "data/P08-F01-D13.csv",
+      "sha256": "9a8fc0a86782df78667d65d8250413596d9a9cdbd0741fb9d0564cd4769e6585",
+      "size": 1218178
+    },
+    {
+      "path": "data/P08-F01-D14.csv",
+      "sha256": "926758d0b5bc72eb544983eea250e18656c750b9f6d98beab3053841772be199",
+      "size": 329
+    },
+    {
+      "path": "data/P08-F01-D15.csv",
+      "sha256": "e3d3535577ae8c8e078ee1368d0af1b5803d6983f69ffac7a72663a42d242ce5",
+      "size": 1257701
+    },
+    {
+      "path": "data/P08-F01-D16.csv",
+      "sha256": "ebea5f373cc5e17abc83929ffb91c7105029ada81a4fe013e25b70e069b97dea",
+      "size": 1246179
+    },
+    {
+      "path": "data/P08-F01-D17.csv",
+      "sha256": "7462adb47468037e8e5175f25ce801e943978037c693d1d161083f257a7db8c7",
+      "size": 1217666
+    },
+    {
+      "path": "data/semantic.json",
+      "sha256": "579370ea5cfa521fe566679494e9b32af4f67eba04d926dc2913520d72b8e6ef",
+      "size": 3830273
+    },
+    {
+      "path": "html/P08-F01-D01.html",
+      "sha256": "0ead25c21549a3ecfafea2fa4c270a018ad1c7458a0b871782c8b39c4302be44",
+      "size": 5644413
+    },
+    {
+      "path": "html/P08-F01-D02.html",
+      "sha256": "300038e4783c331a2698c84da742834e318c6ce68bb056876d3bf3c7c3407881",
+      "size": 5588928
+    },
+    {
+      "path": "html/P08-F01-D03.html",
+      "sha256": "06fecc95d847dca86208290639e33d8aabc04eb4d169afb95acce65488b46452",
+      "size": 5618649
+    },
+    {
+      "path": "html/P08-F01-D04.html",
+      "sha256": "bd0d4af793d213535a518b46db03e98e90c5be5f75eee32a0eb4189009ed3e88",
+      "size": 5618542
+    },
+    {
+      "path": "html/P08-F01-D05.html",
+      "sha256": "da8e2979e8518419db83df2dfbb123f256faa49c989486d7d0ccb6b2be7338d6",
+      "size": 5571703
+    },
+    {
+      "path": "html/P08-F01-D06.html",
+      "sha256": "26aeba6831fd7bb25f01f4c256118e27736eb02b36717ceff126c75dccd1ea47",
+      "size": 5628246
+    },
+    {
+      "path": "html/P08-F01-D07.html",
+      "sha256": "6a0c531648202ee5ab4121acb27f4bd030a86c7d8ccb4375026a66715a6afcc7",
+      "size": 5635526
+    },
+    {
+      "path": "html/P08-F01-D08.html",
+      "sha256": "1dc018f6e4d473c97cdc1aa8a9061b1a78f24725ab0e1b8d72c8b2ace67bf3c4",
+      "size": 5575376
+    },
+    {
+      "path": "html/P08-F01-D09.html",
+      "sha256": "4f15bc23e49bf00336be8c5f653a62fc7a69240769069a9d68d6301f95ed886b",
+      "size": 5603470
+    },
+    {
+      "path": "html/P08-F01-D10.html",
+      "sha256": "a878facea164350647bd9067f33260acefa3298911c6baaee005026969354226",
+      "size": 4409338
+    },
+    {
+      "path": "html/P08-F01-D11.html",
+      "sha256": "d709b647b78b02d3f3e350dc47bcfe8b2bfa3fb8b8fc18791380aaf1ad615296",
+      "size": 5593293
+    },
+    {
+      "path": "html/P08-F01-D12.html",
+      "sha256": "bd428c30153f51865721a527e108200805dc0a8c91c8aff1a445e7356a42c2c9",
+      "size": 5716589
+    },
+    {
+      "path": "html/P08-F01-D13.html",
+      "sha256": "bd55c6c0e6fa94ee915744eb2369e0ea61e89d367824e089f323daac97b221d4",
+      "size": 5658481
+    },
+    {
+      "path": "html/P08-F01-D14.html",
+      "sha256": "0547391c6b51050d8f6bb140579d6bf05e138f86042fddf3a94f43408b9bbe4e",
+      "size": 3842670
+    },
+    {
+      "path": "html/P08-F01-D15.html",
+      "sha256": "cf663d0569be9c0fbd5d083c2ee1bdbfbc1195cc5d315c640a40c0e5ace87151",
+      "size": 5712888
+    },
+    {
+      "path": "html/P08-F01-D16.html",
+      "sha256": "27b614d740ac710b1b15b023e1da1f1088f1d73b779f1388883746759ad07c6d",
+      "size": 5697529
+    },
+    {
+      "path": "html/P08-F01-D17.html",
+      "sha256": "7d64e77356b561b06e543f65974a0193ec929d1f69a0f3966de3001b6152a4c2",
+      "size": 5658963
+    },
+    {
+      "path": "pdf/P08-F01-D01.pdf",
+      "sha256": "83a2d054ac307e220819bf55db8230b011672fcface333de7cb54d25608ab5e9",
+      "size": 174743
+    },
+    {
+      "path": "pdf/P08-F01-D02.pdf",
+      "sha256": "7aa9dc362dca2857c0f2d67e6716f90523e4c9569a7cad87d90c00e43e70a6e1",
+      "size": 173660
+    },
+    {
+      "path": "pdf/P08-F01-D03.pdf",
+      "sha256": "6ed60c63cca75ba6fa81ea5f46cfc131f763193b494e5e96d55f3c36e17d44aa",
+      "size": 177328
+    },
+    {
+      "path": "pdf/P08-F01-D04.pdf",
+      "sha256": "c10bccccee1e391c4579e1e4522ecd9c3647ad29a17464ba28f639d958f861f6",
+      "size": 179270
+    },
+    {
+      "path": "pdf/P08-F01-D05.pdf",
+      "sha256": "e4623e497309986cda1ee1f38cbc117226ea6fc5ae3443e2e43cc36bfc0e1aa9",
+      "size": 174895
+    },
+    {
+      "path": "pdf/P08-F01-D06.pdf",
+      "sha256": "2e5abfddef193d6333c54f21d314fc22ab269427eca1eebfc38d886fc37a4dcb",
+      "size": 174002
+    },
+    {
+      "path": "pdf/P08-F01-D07.pdf",
+      "sha256": "23e826d14e28a678b6333b2bdd2fb87a85afda558049f7396eac23cc117ac172",
+      "size": 174464
+    },
+    {
+      "path": "pdf/P08-F01-D08.pdf",
+      "sha256": "dd68a41e2c03417ab03dd9bb7384f1e34d8364e9f82c4c7025aa849dbcaf0216",
+      "size": 176190
+    },
+    {
+      "path": "pdf/P08-F01-D09.pdf",
+      "sha256": "2ce6f801441ba21c9aa3a50d346f48a45d69ce1854dd18f5d87cc5dbd7ee8dd8",
+      "size": 177062
+    },
+    {
+      "path": "pdf/P08-F01-D10.pdf",
+      "sha256": "e231067058954539532c1d5725b13749b6c3682f9820885296a90d99767d9245",
+      "size": 113470
+    },
+    {
+      "path": "pdf/P08-F01-D11.pdf",
+      "sha256": "c31c454721df05f163f527411404746ffa1b5e4ddb0a6ae63a005b9b2cc4e287",
+      "size": 176853
+    },
+    {
+      "path": "pdf/P08-F01-D12.pdf",
+      "sha256": "72a9942736c937bd14ee1d3324af482489b5fe94ed0d9fe780999924b866dce9",
+      "size": 171650
+    },
+    {
+      "path": "pdf/P08-F01-D13.pdf",
+      "sha256": "3980d22d66e9df663ddb86cbd8e0f2a40612fb2ecd8d722939f676cdc92efc6b",
+      "size": 175407
+    },
+    {
+      "path": "pdf/P08-F01-D14.pdf",
+      "sha256": "a0066c669f38f93e1ef65e201455a9aa474c8c1a53b4dea86d79f8a97f5c12a8",
+      "size": 79416
+    },
+    {
+      "path": "pdf/P08-F01-D15.pdf",
+      "sha256": "60547257a7e3ee8125909d77086eb5180cdae10896da46b0347ddae6df465b46",
+      "size": 175717
+    },
+    {
+      "path": "pdf/P08-F01-D16.pdf",
+      "sha256": "b8baa7ab70768ee7b39b563be18ef3a087478d65b393bab7664d4cd6ea1ddfb0",
+      "size": 176799
+    },
+    {
+      "path": "pdf/P08-F01-D17.pdf",
+      "sha256": "977040c4f61a0b95e3cbf59e0a5b0085ec751441f4987a49309a703a63a05d3d",
+      "size": 176678
+    },
+    {
+      "path": "png/P08-F01-D01.png",
+      "sha256": "cfaf5a5435c52f30450e57c3761d90e6f706b004027ebb212c494e9f18d1d777",
+      "size": 446725
+    },
+    {
+      "path": "png/P08-F01-D02.png",
+      "sha256": "c9471482e04b30f19e5995eaa84aba975849c8ad1403727264a3960e9d00d85a",
+      "size": 441593
+    },
+    {
+      "path": "png/P08-F01-D03.png",
+      "sha256": "a734484264c70d6d2a316b5d7fbef9d5228b20e2b5c3f0de774f490c916e59a4",
+      "size": 635845
+    },
+    {
+      "path": "png/P08-F01-D04.png",
+      "sha256": "d76b95690e14b122b04c54b2df38eacc3174c03ade993a23fd59ac6ff217c1ef",
+      "size": 721676
+    },
+    {
+      "path": "png/P08-F01-D05.png",
+      "sha256": "9a1122de7987b27d5e9441e8c38a008a5232dde59c61c64fe865d75ac63e477b",
+      "size": 470987
+    },
+    {
+      "path": "png/P08-F01-D06.png",
+      "sha256": "3dc5fd8339d3b68e9ae5d624bc37ba368bb12310da404b6da4a9eb84e2706f03",
+      "size": 431572
+    },
+    {
+      "path": "png/P08-F01-D07.png",
+      "sha256": "ffd0d519540b9b527b1c8909d781f91dab4e185ffd1a64bc8ba874d39a574966",
+      "size": 437764
+    },
+    {
+      "path": "png/P08-F01-D08.png",
+      "sha256": "0a5052c4cae3e9d95611ba193b93df505b323b72bac418c5000950aec49e2e54",
+      "size": 416180
+    },
+    {
+      "path": "png/P08-F01-D09.png",
+      "sha256": "e7e60589ba90150ceeeb6a4b3066e37c3cad789b64c7d523f04bff6018cb77db",
+      "size": 510974
+    },
+    {
+      "path": "png/P08-F01-D10.png",
+      "sha256": "5febd8afabb5aa06d1c7af9f54725dba5b6819cfc58ef3302ad1eaed6b12425b",
+      "size": 381109
+    },
+    {
+      "path": "png/P08-F01-D11.png",
+      "sha256": "709287bf357907b2dde632a3fdf8bb1ca6c4149ac76983526a612d8d9b21c354",
+      "size": 583721
+    },
+    {
+      "path": "png/P08-F01-D12.png",
+      "sha256": "79268ba8efc48ff3daeb2f6507df228915f933919df4e5afb72a5ce355566ee0",
+      "size": 383657
+    },
+    {
+      "path": "png/P08-F01-D13.png",
+      "sha256": "af25526325f706b030e2f4c6869339fc00f5b3b121574b47dd14e1dba0397237",
+      "size": 459426
+    },
+    {
+      "path": "png/P08-F01-D14.png",
+      "sha256": "d81eef1f7f3851551038b7b711d6f9324dde274e21f62f609ff45a05fe8910c7",
+      "size": 190152
+    },
+    {
+      "path": "png/P08-F01-D15.png",
+      "sha256": "86fdafb082f15e7db1f1a2363b9d92f09948c4e7b504c145fb4b65f0e0c409f5",
+      "size": 529448
+    },
+    {
+      "path": "png/P08-F01-D16.png",
+      "sha256": "bb42d421e4d89ca2f112e9926b613f1c91aeb00bea89d4df924062662a4823d6",
+      "size": 542714
+    },
+    {
+      "path": "png/P08-F01-D17.png",
+      "sha256": "20bbd5fc59d4896aa6d1a006e0481fe62f6d6eb2aad4f2d72a2dedec262e50e0",
+      "size": 501079
+    },
+    {
+      "path": "tikz/P08-F01-D01.tex",
+      "sha256": "0ca278eb04614f523ce3561dee143d6a26b4110d82672d2557282ac0c9835666",
+      "size": 332133
+    },
+    {
+      "path": "tikz/P08-F01-D02.tex",
+      "sha256": "01c2897fe0daa205a7a11cb5aa8128b90ee0ba73163ffd965789c55007660136",
+      "size": 328563
+    },
+    {
+      "path": "tikz/P08-F01-D03.tex",
+      "sha256": "2f537299fadcb6aa038f4e37279af2b9fe0265cc52c64690d84416158fced6f1",
+      "size": 325421
+    },
+    {
+      "path": "tikz/P08-F01-D04.tex",
+      "sha256": "1d7998f3ddeedf2023e27e8a2e479d8232b472842182be0aacf26177c93091d4",
+      "size": 325458
+    },
+    {
+      "path": "tikz/P08-F01-D05.tex",
+      "sha256": "1e7d8ebd7b8cfe3734b4f9df95841f25bfccf791c343ab67c54dfe295828f0f1",
+      "size": 328317
+    },
+    {
+      "path": "tikz/P08-F01-D06.tex",
+      "sha256": "7bdc766db31454d9c70401d03eb8a95e817c311af6af883f1f34e72167071a99",
+      "size": 332724
+    },
+    {
+      "path": "tikz/P08-F01-D07.tex",
+      "sha256": "473b0b6079b0b5ad2d65e3352b2d6ebf6972a8736acc300ea3eab911f964d106",
+      "size": 333972
+    },
+    {
+      "path": "tikz/P08-F01-D08.tex",
+      "sha256": "341ac614b472658949773b341a8379ceefe93ee39bad5cbd617fd7fd6621ea28",
+      "size": 326953
+    },
+    {
+      "path": "tikz/P08-F01-D09.tex",
+      "sha256": "9f71ba92036165f29c9ef655fb5c1b4f4c41b73fe67f0d959f985cf3d0e55ca2",
+      "size": 326663
+    },
+    {
+      "path": "tikz/P08-F01-D10.tex",
+      "sha256": "decee62cb0b13730da753b38624ba442a9d1af5be4852507e972c69263cf8981",
+      "size": 111067
+    },
+    {
+      "path": "tikz/P08-F01-D11.tex",
+      "sha256": "9a2f5ef9618f7d010949f123ac44a79dadcf0d17ea5e7faa455c603670de0dbc",
+      "size": 327449
+    },
+    {
+      "path": "tikz/P08-F01-D12.tex",
+      "sha256": "b37e0cd230faa2b4a96d1a588aa1aad654f7308dab1c308e7fe3c422dbc56ed1",
+      "size": 335770
+    },
+    {
+      "path": "tikz/P08-F01-D13.tex",
+      "sha256": "52780d12151ec5ce5827e4809c76180a337f78b183d675232b0979a3243de04e",
+      "size": 327134
+    },
+    {
+      "path": "tikz/P08-F01-D14.tex",
+      "sha256": "68f227add0ba994a4a006e98e1195eaadc4da7917e7b02062bd4889802b652ae",
+      "size": 3409
+    },
+    {
+      "path": "tikz/P08-F01-D15.tex",
+      "sha256": "860a7b048e58fe1c323ba5c6a7ab4ab9269ac6017c2b6084b8f560f72cff35dd",
+      "size": 328835
+    },
+    {
+      "path": "tikz/P08-F01-D16.tex",
+      "sha256": "983f2656d830f9e2803135d87d2d9198ac990893f16d8662dd7963b906f4f632",
+      "size": 325717
+    },
+    {
+      "path": "tikz/P08-F01-D17.tex",
+      "sha256": "3d8807c06d7f63b8e8fc712d775a49e1debf46b03a51667dbae004b3b477f2da",
+      "size": 326624
+    }
+  ],
+  "pdf_inspections": [
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 164.9656,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 164.9656,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    },
+    {
+      "height_mm": 211.6497,
+      "pages": 1,
+      "width_mm": 181.8601
+    }
+  ],
+  "publication_state_at_seal": "reviewed_for_main_push",
+  "published": false,
+  "renderer_source_references": {
+    "analysis_receipt_sha256": "a411f50fcde81e752a54330f1e4f495b736ad942a73568d7e3724372d2f8b915",
+    "bundle_manifest_sha256": "c329d034128af34a27becd7e3ccd96c7bb2c37e3a5d34e3f09f1e86a6072d16b",
+    "f01_clearance_renderer_sha256": "b6e7ed8cc9130d9b1239f4bae4c0980d2816b2c4dc5d93a9742ca179a797653e",
+    "held_contexts_sha256": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "input_support_audit_sha256": "08310a0ef5cd91dacc5a46c129a3043e32cadcd0a06f305f34c568b2e88f3863",
+    "original_f01_manifest_sha256": "01fdc0999cd828c12ba1e9d654997d2b9943ad094fd853ededa387e6b4e2b332",
+    "p08_analysis_child.py": "64121b5bb7d4f5bd36953745032975ff06f4cbb1b321f5759fa9d45bddb3e3cf",
+    "p08_analysis_guard.py": "72ff36370af3009e6b4f1a784e9b1a35821db825649bfef13be29beb6d191490",
+    "p08_f01_render.py": "bd93bfe8bf7bc27c25dfc451d3a0293bd5905e48ade279932ffe29a91a4277c3",
+    "p08_f02_render.py": "232989c6c735cc093ce405dfe5d1f8f42f979f71a6dec776cd3e504d1d674380",
+    "p08_f03_render.py": "88f359be312b86f779ef17b937a7e5431bf64c3f787c82e198d6c127a27a0de9",
+    "p08_f04_render.py": "457e041670b9c58e96ab019bf75912abdee03a383a31d213d5aa19c22f70ed85",
+    "p08_f07_data.py": "5bd37dfd602cb1b77cdfe085cffb977bf02406998c190b207de8193d37be386a",
+    "p08_f07_render.py": "0e1e289b3bf0dd42af5876dba913689b4b1d8f9dea438544a268f8c1a48c2840",
+    "p08_figure_build.py": "e4d289b60ee35bb0121ef1f5583fe7fe82172643454f63c6d4b6488b7f1121d3",
+    "p08_figure_run.py": "8e6fb453f6e1cf481eae46d11388b165016ba527318b211d650b4ee877cfd052",
+    "p08_model_figure_data.py": "a033f169b12be700dac74d53304daaff5bcf588914d6893ec6a5b54ce0576cd3",
+    "p08_owned_process.py": "0fa917e1857e7737a96917a255e8ee30f3cabace1e610ddef9ff7b498eb75e0c",
+    "p08_release_contrasts.py": "2344bf02d79d040697b96ee370ca71ad28b00e05ad1594eae2924300223f05fb",
+    "p08_release_metrics.py": "c0c470ea20199bc10a54ae73f7e3ae3129faa431c6b7e9c6e99be7c33282d8fb",
+    "p08_release_write.py": "ec2c98eb73524d2642b6582a83899aa03a9b2094e4443607c29bd8add726741b",
+    "p08_training_evidence.py": "4267228ef3384c2d45743020bb0f2306ebf387bee188fa17bf3291f08f688ba5",
+    "p08_training_figure_data.py": "d7c2f0ec2fb81d44116b57616c6532ce3e9fdf60a1138f9bea848380f5985b68",
+    "p08_training_render.py": "9d3a436c0c96b14b4c233c6d0a141c9321b71e1fa336c3b974f6e97081b0c033",
+    "p08_universal_analysis.py": "806b35b8230ed6729b79c1ab881904e0ae552c1e05dd70f13ea09e8e971d274f",
+    "p08_universal_evidence.py": "fb45bfbe0b05437022dcb8df471e9caedaedafcf079402118a76b563fb4e6aaa",
+    "p08_universal_figures.py": "6b02ade29d5f3a83238e61aa6e497b20ced4edfb9a35acff162d3f9a062b24ad",
+    "p08_universal_inference.py": "1a35b452f8073e8e62132c9f8c9b945c6aa0e943c59eea117aaf6b4f919bbe1a",
+    "p08_universal_panel.py": "098a6cf9c88b816aa799b0f99f3b6d69ae9579855ffa4307e6ea5a13d85ca0b1",
+    "p08_universal_preservation.py": "c4d34192eb694b1c2eec6f5c158fc66671b663c5f9ecfa65808d6094d8a63cc4",
+    "p08_universal_run.py": "00f83d0c9ca2665f70d10d9e4eab7011a90704b22e8450d66835f912ecea121f",
+    "p08_universal_units.py": "7f9519403adf0ad80dc12b87ae4367d0e328ec9f04885edf666d734c8093a899",
+    "preservation_by_instrument_sha256": "3d8a3bf699908d7a62cd70a689cd2a1d247c8e43d16da07dc80b8c575d871892",
+    "preservation_metrics_sha256": "eccd4c1f3c374848482bdca41c2ac4c4450a2869e45f3245edcce736336661d4",
+    "preservation_reporting_support_audit_sha256": "afa64083f5cb78a1c6d0f256b40cda8565ce72ed8c86febec59cb4862bc919e0",
+    "primary_manifest_sha256": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "private_catalog_sha256": "4e77dcad7978f5f6fe48260f4336711ae17213917ffbfd1ba93dddf905e9d24f",
+    "representations_source_sha256": "e14d3e447beff887aa0710b17ffa985fd43e49f8f6aa4ed47ad5fd1b671b8980",
+    "style_contract_sha256": "117c3a1ae08fbab7c4737b5c3bc8b22cf748e5c85641fb5f598dbc990f7416ee",
+    "test_p08_analysis_guard.py": "fec80c0f07a1ba6afcb7933b92eba6e6ea9e1320973f9cdf29d6b31f62c7c75a",
+    "test_p08_f01_render.py": "51d81a86d119c5fdade1e3210c960dcad7fde5d159f79fbfeae1529e7d6a0fa9",
+    "test_p08_f02_render.py": "0f865fcf81d04f4ed828d86ce09324ac064aba508db1624e6a460d9a954a345c",
+    "test_p08_f03_render.py": "dbf989a639135ab375d1ca757dd7afdee7d321e2b4506e2c743116f622897642",
+    "test_p08_f04_render.py": "6fe7115a034ec83356c47d523cfd622659e268c68054dd64373475a6e2120b67",
+    "test_p08_f07_data.py": "e7346b29b7a2bb714cb6ec9f93e7173aa217bdd366d7be169e5b19bd97a34d99",
+    "test_p08_f07_render.py": "0768fb6234410d523b52272de06448f3065606174e3b598416d392a520950059",
+    "test_p08_figure_build.py": "c51080e027ba7fc7883456a1a17c7d484ed2d92410e42d17b3a9aadd88e4ac94",
+    "test_p08_figure_run.py": "2c9f96a07ea3717802d67c6bb0aece62373383162f6e0cd40e560cbf327b377e",
+    "test_p08_model_figure_data.py": "597b4ed18dedc34935b48073cf7e59394241ddc6ec624fc9cc7143ccc290d28d",
+    "test_p08_release_contrasts.py": "1539cfeb9d11a538e228de226fc191da91f21b5010604b91c7c448c0729a3390",
+    "test_p08_release_metrics.py": "47266ba339a88567c0f96aa0ebf435350bbb94332eb69b18f988e34ed49f5e58",
+    "test_p08_release_write.py": "d4c5d4aa913d8d5edb3ba7c6c94850baa3bc40c69efd0b1ae375d4d65889721b",
+    "test_p08_training_evidence.py": "9facab114280d808d94183c891cbe55b8f8997f4ff4a8e6c051ab688627d414b",
+    "test_p08_training_figure_data.py": "6d6bc95bed3a356a405bb505a6c34fc7ad2f1021d709bd9c6d01b2fe19c25f8f",
+    "test_p08_training_render.py": "90517098269d9b479ff4c502cd6c2d5245e0eca4a44c0c555343b90ba6db84ea",
+    "test_p08_universal_analysis.py": "d02f765eab9f965b3dc504c000d025bc4e64530496d331df0aa9a4504ae85f90",
+    "test_p08_universal_evidence.py": "28d242a39110f47bbc9e0419793d43e14ac12e163259f8fa44926b23a86dc831",
+    "test_p08_universal_figures.py": "1b524d72a8f0ae61baaa592bb4095e3683db071ace770f60b037320430b4089e",
+    "test_p08_universal_inference.py": "dbf4f3aae0a630c259274f43d495705d317f927a8141dcb9c656b35b0e8e21ab",
+    "test_p08_universal_panel.py": "5402ebed3b5d03f2747853706e16afcea512606e23fc143f822e1c86f5f2d9d8",
+    "test_p08_universal_preservation.py": "e7bc16ee3e7a7fe0c2b75c8ee1409bc32f8df137899782aa5f6bbcacfcb142d0",
+    "test_p08_universal_run.py": "a66ba095a55fb3065842897984f282a814ed345ee6d9d599c56684db134707e3",
+    "test_p08_universal_units.py": "fde80c8dca6be6362ab42a040127c1120e5566d01e6311a20f5c643a300efb5e",
+    "training_prepared_semantic_sha256": "5f16ed3771320fbffc9b3b16576c0398a194f055508bdac95320844c1f2b18b2"
+  },
+  "review_checks_sha256": "e1575702e2e95a11a1b3669ab3d631f5a1b1e38542fad46ff3a69353a7b0ddf1",
+  "review_record": "../../RELEASE_REVIEW.md",
+  "reviewed": true,
+  "semantic_sha256": "579370ea5cfa521fe566679494e9b32af4f67eba04d926dc2913520d72b8e6ef",
+  "source_build_manifest_sha256": "4b986d52a795f0b0cd8a90b4ecc1ff0ab35cfc50c67ce4c82b0f5012d251048f",
+  "source_refs": {
+    "analysis_receipt_sha256": "a411f50fcde81e752a54330f1e4f495b736ad942a73568d7e3724372d2f8b915",
+    "bundle_manifest_sha256": "c329d034128af34a27becd7e3ccd96c7bb2c37e3a5d34e3f09f1e86a6072d16b",
+    "f01_clearance_renderer_sha256": "b6e7ed8cc9130d9b1239f4bae4c0980d2816b2c4dc5d93a9742ca179a797653e",
+    "held_contexts_sha256": "12be22701e6c9847301bff7978bd6e4a4cd2f4abade84c4a025f1ed2c24810fb",
+    "input_support_audit_sha256": "08310a0ef5cd91dacc5a46c129a3043e32cadcd0a06f305f34c568b2e88f3863",
+    "original_f01_manifest_sha256": "01fdc0999cd828c12ba1e9d654997d2b9943ad094fd853ededa387e6b4e2b332",
+    "p08_analysis_child.py": "64121b5bb7d4f5bd36953745032975ff06f4cbb1b321f5759fa9d45bddb3e3cf",
+    "p08_analysis_guard.py": "72ff36370af3009e6b4f1a784e9b1a35821db825649bfef13be29beb6d191490",
+    "p08_f01_render.py": "bd93bfe8bf7bc27c25dfc451d3a0293bd5905e48ade279932ffe29a91a4277c3",
+    "p08_f02_render.py": "232989c6c735cc093ce405dfe5d1f8f42f979f71a6dec776cd3e504d1d674380",
+    "p08_f03_render.py": "88f359be312b86f779ef17b937a7e5431bf64c3f787c82e198d6c127a27a0de9",
+    "p08_f04_render.py": "457e041670b9c58e96ab019bf75912abdee03a383a31d213d5aa19c22f70ed85",
+    "p08_f07_data.py": "5bd37dfd602cb1b77cdfe085cffb977bf02406998c190b207de8193d37be386a",
+    "p08_f07_render.py": "0e1e289b3bf0dd42af5876dba913689b4b1d8f9dea438544a268f8c1a48c2840",
+    "p08_figure_build.py": "e4d289b60ee35bb0121ef1f5583fe7fe82172643454f63c6d4b6488b7f1121d3",
+    "p08_figure_run.py": "8e6fb453f6e1cf481eae46d11388b165016ba527318b211d650b4ee877cfd052",
+    "p08_model_figure_data.py": "a033f169b12be700dac74d53304daaff5bcf588914d6893ec6a5b54ce0576cd3",
+    "p08_owned_process.py": "0fa917e1857e7737a96917a255e8ee30f3cabace1e610ddef9ff7b498eb75e0c",
+    "p08_release_contrasts.py": "2344bf02d79d040697b96ee370ca71ad28b00e05ad1594eae2924300223f05fb",
+    "p08_release_metrics.py": "c0c470ea20199bc10a54ae73f7e3ae3129faa431c6b7e9c6e99be7c33282d8fb",
+    "p08_release_write.py": "ec2c98eb73524d2642b6582a83899aa03a9b2094e4443607c29bd8add726741b",
+    "p08_training_evidence.py": "4267228ef3384c2d45743020bb0f2306ebf387bee188fa17bf3291f08f688ba5",
+    "p08_training_figure_data.py": "d7c2f0ec2fb81d44116b57616c6532ce3e9fdf60a1138f9bea848380f5985b68",
+    "p08_training_render.py": "9d3a436c0c96b14b4c233c6d0a141c9321b71e1fa336c3b974f6e97081b0c033",
+    "p08_universal_analysis.py": "806b35b8230ed6729b79c1ab881904e0ae552c1e05dd70f13ea09e8e971d274f",
+    "p08_universal_evidence.py": "fb45bfbe0b05437022dcb8df471e9caedaedafcf079402118a76b563fb4e6aaa",
+    "p08_universal_figures.py": "6b02ade29d5f3a83238e61aa6e497b20ced4edfb9a35acff162d3f9a062b24ad",
+    "p08_universal_inference.py": "1a35b452f8073e8e62132c9f8c9b945c6aa0e943c59eea117aaf6b4f919bbe1a",
+    "p08_universal_panel.py": "098a6cf9c88b816aa799b0f99f3b6d69ae9579855ffa4307e6ea5a13d85ca0b1",
+    "p08_universal_preservation.py": "c4d34192eb694b1c2eec6f5c158fc66671b663c5f9ecfa65808d6094d8a63cc4",
+    "p08_universal_run.py": "00f83d0c9ca2665f70d10d9e4eab7011a90704b22e8450d66835f912ecea121f",
+    "p08_universal_units.py": "7f9519403adf0ad80dc12b87ae4367d0e328ec9f04885edf666d734c8093a899",
+    "preservation_by_instrument_sha256": "3d8a3bf699908d7a62cd70a689cd2a1d247c8e43d16da07dc80b8c575d871892",
+    "preservation_metrics_sha256": "eccd4c1f3c374848482bdca41c2ac4c4450a2869e45f3245edcce736336661d4",
+    "preservation_reporting_support_audit_sha256": "afa64083f5cb78a1c6d0f256b40cda8565ce72ed8c86febec59cb4862bc919e0",
+    "primary_manifest_sha256": "db1f298a76aeb9962db004776a9f41d6c9afe5b76c39aa9277a24848108d5f90",
+    "private_catalog_sha256": "4e77dcad7978f5f6fe48260f4336711ae17213917ffbfd1ba93dddf905e9d24f",
+    "representations_source_sha256": "e14d3e447beff887aa0710b17ffa985fd43e49f8f6aa4ed47ad5fd1b671b8980",
+    "style_contract_sha256": "117c3a1ae08fbab7c4737b5c3bc8b22cf748e5c85641fb5f598dbc990f7416ee",
+    "test_p08_analysis_guard.py": "fec80c0f07a1ba6afcb7933b92eba6e6ea9e1320973f9cdf29d6b31f62c7c75a",
+    "test_p08_f01_render.py": "51d81a86d119c5fdade1e3210c960dcad7fde5d159f79fbfeae1529e7d6a0fa9",
+    "test_p08_f02_render.py": "0f865fcf81d04f4ed828d86ce09324ac064aba508db1624e6a460d9a954a345c",
+    "test_p08_f03_render.py": "dbf989a639135ab375d1ca757dd7afdee7d321e2b4506e2c743116f622897642",
+    "test_p08_f04_render.py": "6fe7115a034ec83356c47d523cfd622659e268c68054dd64373475a6e2120b67",
+    "test_p08_f07_data.py": "e7346b29b7a2bb714cb6ec9f93e7173aa217bdd366d7be169e5b19bd97a34d99",
+    "test_p08_f07_render.py": "0768fb6234410d523b52272de06448f3065606174e3b598416d392a520950059",
+    "test_p08_figure_build.py": "c51080e027ba7fc7883456a1a17c7d484ed2d92410e42d17b3a9aadd88e4ac94",
+    "test_p08_figure_run.py": "2c9f96a07ea3717802d67c6bb0aece62373383162f6e0cd40e560cbf327b377e",
+    "test_p08_model_figure_data.py": "597b4ed18dedc34935b48073cf7e59394241ddc6ec624fc9cc7143ccc290d28d",
+    "test_p08_release_contrasts.py": "1539cfeb9d11a538e228de226fc191da91f21b5010604b91c7c448c0729a3390",
+    "test_p08_release_metrics.py": "47266ba339a88567c0f96aa0ebf435350bbb94332eb69b18f988e34ed49f5e58",
+    "test_p08_release_write.py": "d4c5d4aa913d8d5edb3ba7c6c94850baa3bc40c69efd0b1ae375d4d65889721b",
+    "test_p08_training_evidence.py": "9facab114280d808d94183c891cbe55b8f8997f4ff4a8e6c051ab688627d414b",
+    "test_p08_training_figure_data.py": "6d6bc95bed3a356a405bb505a6c34fc7ad2f1021d709bd9c6d01b2fe19c25f8f",
+    "test_p08_training_render.py": "90517098269d9b479ff4c502cd6c2d5245e0eca4a44c0c555343b90ba6db84ea",
+    "test_p08_universal_analysis.py": "d02f765eab9f965b3dc504c000d025bc4e64530496d331df0aa9a4504ae85f90",
+    "test_p08_universal_evidence.py": "28d242a39110f47bbc9e0419793d43e14ac12e163259f8fa44926b23a86dc831",
+    "test_p08_universal_figures.py": "1b524d72a8f0ae61baaa592bb4095e3683db071ace770f60b037320430b4089e",
+    "test_p08_universal_inference.py": "dbf4f3aae0a630c259274f43d495705d317f927a8141dcb9c656b35b0e8e21ab",
+    "test_p08_universal_panel.py": "5402ebed3b5d03f2747853706e16afcea512606e23fc143f822e1c86f5f2d9d8",
+    "test_p08_universal_preservation.py": "e7bc16ee3e7a7fe0c2b75c8ee1409bc32f8df137899782aa5f6bbcacfcb142d0",
+    "test_p08_universal_run.py": "a66ba095a55fb3065842897984f282a814ed345ee6d9d599c56684db134707e3",
+    "test_p08_universal_units.py": "fde80c8dca6be6362ab42a040127c1120e5566d01e6311a20f5c643a300efb5e",
+    "training_prepared_semantic_sha256": "5f16ed3771320fbffc9b3b16576c0398a194f055508bdac95320844c1f2b18b2"
+  },
+  "status": "built_unreviewed",
+  "structural_validation": true,
+  "style_config_sha256": "117c3a1ae08fbab7c4737b5c3bc8b22cf748e5c85641fb5f598dbc990f7416ee",
+  "visual_reviewed": true
+}

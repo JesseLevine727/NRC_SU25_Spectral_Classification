@@ -97,8 +97,8 @@ The selected CNN gains 4.36 percentage points over selected classical at M01
 remain inconclusive. The original G4 gate is unpassed: four criteria are supported
 and two unassessable. See the [four-figure browser](results/p06p11/index.html)
 and [review record](plan/delegation/P06P11_REVIEW.md).
-No models were retrained. The next boundary is the **[P08 no-fit preprocessing
-planning gate](plan/P08_HANDOFF.md)**, not an automatically authorized sweep.
+No models were retrained for P06/P11. Its following **[P08 planning
+gate](plan/P08_HANDOFF.md)** and universal execution stage are now complete.
 The **[P08 readiness audit](plan/P08_READINESS.md)** now verifies the three frozen
 input pipelines and their held-split support. The owner approved the matched-CNN
 mapping, explicit Extra Trees inclusion in the universal panel, the statistical
@@ -106,13 +106,22 @@ amendment and the complete minimal-pipeline fallback for unsupported families.
 The approved nested-support rule retains 54 QC-adaptive contexts, all at CWA,
 and 206 complete minimal-pipeline fallbacks. All 260 remain in operational
 results, with the supported subset reported separately. The
-[current requirement audit](plan/P08_COMPLETION_AUDIT.md) reconciles upstream
+[historical planning audit](plan/P08_COMPLETION_AUDIT.md) reconciles upstream
 evidence, stage accounting, reporting ownership and the reviewed invented-data
-U0 launcher. [Resource ceilings](plan/P08_RESOURCE_PROPOSAL.md) remain proposals.
+U0 launcher. The later [approved execution amendments](plan/P08_U1_EXECUTION.md)
+supersede the historical resource proposals for U1 only.
 P08-A12 resolves the population panel with Extra Trees in both sensitivities.
-Final release checks and a distinct U0 execution request remain. Later numerical runtimes retain their
-own acceptance gates; they are not all prerequisites for this planning lock.
-No new P08 models have been trained.
+The **[completed universal preprocessing benchmark](reports/NATO_SERS_UNIVERSAL_PREPROCESSING_REPORT.md)**
+contains 195,202 unique SG/arPLS fit slots, 3,354 scalar calibrations and complete
+held evaluation. Baseline correction improves mean balanced accuracy by
+5.70–6.70 percentage points for individual spectra and 5.72–9.31 points for
+combined predictions; smoothing gives small, mixed changes. Some domains worsen.
+The [117-panel figure browser](results/p08_universal/release/figures/index.html)
+includes spectra, paired scatter, conditional effects, model interactions,
+preservation diagnostics and training curves in native TikZ/HTML/PDF/PNG.
+See the [U1 completion audit](plan/P08_U1_COMPLETION_AUDIT.md).
+Later adaptive and robustness runtimes retain separate acceptance and execution
+gates. No universal winner or chemical/nuisance separation is established.
 Reviewed and validated substantive milestones are pushed to
 `main` under the project owner's authorization.
 

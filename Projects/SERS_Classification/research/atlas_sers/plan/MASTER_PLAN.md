@@ -13,6 +13,16 @@
 
 ## 0. Master decision
 
+**Execution checkpoint, 2026-10-09:** the universal preprocessing benchmark
+(P08-U1) has completed fitting, held evaluation and reviewed numerical reporting.
+Its [report](../reports/NATO_SERS_UNIVERSAL_PREPROCESSING_REPORT.md),
+[figures](../results/p08_universal/release/figures/index.html) and
+[completion audit](P08_U1_COMPLETION_AUDIT.md) supersede historical prospective
+status statements for U1 only. The primary minimal-preprocessing comparison and
+its unpassed superiority gate remain unchanged. Adaptive preprocessing,
+controlled disturbances and other later branches remain separate, unexecuted
+stages; these results do not automatically authorize them.
+
 The definitive research question is:
 
 > **Can an acquisition-aware representation trained on heterogeneous field-trial SERS spectra identify supported chemicals on an instrument absent from training, and on physical samples absent from training, more reliably than rigorously tuned classical chemometric and machine-learning methods?**
