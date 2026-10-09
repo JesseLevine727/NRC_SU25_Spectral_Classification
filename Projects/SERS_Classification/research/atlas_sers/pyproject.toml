@@ -12,6 +12,7 @@ dependencies = [
   "jsonschema>=4.21",
   "numpy>=1.26",
   "pandas>=2.1",
+  "psutil>=7.2",
   "pyarrow>=16",
   "scipy>=1.11",
   "scikit-learn>=1.4",

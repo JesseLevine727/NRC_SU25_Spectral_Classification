@@ -170,3 +170,19 @@ The [report](../../reports/NATO_SERS_UNIVERSAL_PREPROCESSING_REPORT.md),
 [completion audit](../P08_U1_COMPLETION_AUDIT.md) record the scientific result
 and claim limits. The remaining transport gate is actual main-branch push and
 CI verification. Later P08 branches were not launched.
+
+### Clean-environment dependency correction
+
+The first release commit, `d93ff273`, passed GitHub's public-boundary, lint,
+dependency preflight and isolated-runner checks. Workflow 37984655294 then
+stopped during collection of three figure/reporting test modules: `psutil`
+was available in the workstation environment but absent from the package's
+declared dependencies. This was a packaging omission, not failed field-data
+training or changed results. The process helper imports it unconditionally.
+
+A metadata regression failed before the fix. Declaring `psutil>=7.2` as a core
+dependency resolves the missing-install cause; the local version used for the
+completed execution was 7.2.2. The corrected dependency check and affected
+modules are rerun before the follow-up push. No scientific kernel, prediction,
+analysis table or figure artifact is changed. A fresh GitHub workflow must
+still pass; the failed first run is not presented as successful validation.
