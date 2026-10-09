@@ -318,15 +318,15 @@ def test_gpu_and_cpu_lanes(tmp_path):
         store.close()
 
 
-def test_worker_panel_amended_cpu8_gpu1_limits():
-    assert ctrl.MAX_CPU_WORKERS == 8
+def test_worker_panel_amended_cpu12_gpu1_limits():
+    assert ctrl.MAX_CPU_WORKERS == 12
     assert ctrl.MAX_GPU_WORKERS == 1
-    assert ctrl.MAX_TOTAL_WORKERS == 9
-    cpu = [FakeWorker(f"cpu{index}", "CPU") for index in range(8)]
+    assert ctrl.MAX_TOTAL_WORKERS == 13
+    cpu = [FakeWorker(f"cpu{index}", "CPU") for index in range(12)]
     gpu = [FakeWorker("gpu0", "GPU")]
-    assert len(ctrl._validate_workers(cpu + gpu, {"CPU", "GPU"})) == 9
+    assert len(ctrl._validate_workers(cpu + gpu, {"CPU", "GPU"})) == 13
     with pytest.raises(ctrl.ControllerError, match="cpu_worker_limit"):
-        ctrl._validate_workers(cpu + [FakeWorker("cpu8", "CPU")], {"CPU"})
+        ctrl._validate_workers(cpu + [FakeWorker("cpu12", "CPU")], {"CPU"})
     with pytest.raises(ctrl.ControllerError, match="gpu_worker_limit"):
         ctrl._validate_workers(gpu + [FakeWorker("gpu1", "GPU")], {"GPU"})
 

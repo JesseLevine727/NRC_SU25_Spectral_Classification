@@ -74,3 +74,11 @@ The owner authorized bounded infrastructure recovery once, without repeated appr
 After requesting higher throughput and permitting memory above 30 GiB if safe, the owner explicitly approved **eight single-thread CPU workers**. The reviewed recommendation retains **one GPU worker** and raises the whole-process-tree RAM ceiling from 24 to **36 GiB**. The 48-hour cumulative active-time ceiling, 80-GiB artifact ceiling, 8-GiB allocated-GPU ceiling, disk reserve and inner neural-fit guards remain unchanged. The unique 195,202 model-fit slots, 3,354 scalar calibrations and all scientific choices are unchanged.
 
 The change is operational, not a new experiment. Candidate code is tested separately while the four-CPU run continues. A controlled handover must preserve paired fit/prediction boundaries, authenticate the closed parent, carry all recovery history and bind the exact two-file resource-cap change into a new permit. No live runtime or permit is edited in place. CPU throughput must be measured after launch; a doubling is not assumed. If the amended memory guard is exceeded, admissions stop and retained evidence is preserved.
+
+## Owner-approved twelve-CPU amendment, 2026-10-09
+
+After observing the eight-worker run, the owner approved the recommendation of **twelve single-thread CPU workers plus one GPU worker, with a 44-GiB whole-process-tree RAM guard**. This supersedes only the eight-worker/36-GiB operational ceilings. All other resource limits, recovery limits and scientific choices above remain unchanged. Sixteen CPU workers and a second GPU worker are not authorized by this amendment.
+
+The measured eight-worker run reached approximately 563 completed model fits/minute over a 296-second window. Its observed process-tree peak was 31.56 GiB; each CPU worker used approximately 2.46 GiB. The twelve-worker estimate is approximately 38–42 GiB before unexpected peaks; this estimate is not an assurance of future resource use or throughput. The 44-GiB guard remains mandatory.
+
+The same controlled, authenticated handover and cumulative accounting apply. Only the ledger's CPU/RAM constants and associated resource-boundary tests change; the controller already derives its total-worker ceiling. No completed fit may be repeated and no scientific result may be used to retune the benchmark.
