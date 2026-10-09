@@ -47,6 +47,15 @@ __all__ = [
     "RESOURCE_FIELDS",
     "job_sha256",
     "execution_accounting",
+    "R2_ACCOUNTING_SCHEMA",
+    "R2_REPLAY_FIT_COUNT",
+    "R2_ADDITIONAL_FIT_COUNT",
+    "R2_SELECTOR_COUNT",
+    "R2_EXPECTED_REUSE_PAIRS",
+    "R2_HISTORICAL_OVERHEAD_ATTEMPTS",
+    "R2_MAX_FIT_TOTAL",
+    "R2_MIN_ACTIVE_SECONDS",
+    "R2_MIN_ARTIFACT_BYTES",
 ]
 
 SCHEMA_VERSION = "nato-sers-p08-u1-ledger-v1"
@@ -140,6 +149,31 @@ _RECOVERY_ACCOUNTING_FIELDS = frozenset(
         "parent_inventory_sha256",
         "replay_fit_job_ids",
         "additional_reuse_fit_job_ids",
+        "baseline_active_seconds",
+        "baseline_artifact_bytes",
+    )
+)
+
+# Optional immutable R2 recovery accounting profile (T308): an explicitly
+# owner-approved four-fit recovery after a non-scientific resource-scanner
+# race.  All scientific/resource caps stay untouched.
+R2_ACCOUNTING_SCHEMA = "nato-sers-p08-u1-r2-accounting-v1"
+R2_REPLAY_FIT_COUNT = 4
+R2_ADDITIONAL_FIT_COUNT = 8550
+R2_SELECTOR_COUNT = 1
+R2_EXPECTED_REUSE_PAIRS = 8550
+R2_HISTORICAL_OVERHEAD_ATTEMPTS = 14
+R2_MAX_FIT_TOTAL = 195216
+R2_MIN_ACTIVE_SECONDS = 3700
+R2_MIN_ARTIFACT_BYTES = 4285000000
+_R2_ACCOUNTING_FIELDS = frozenset(
+    (
+        "schema_version",
+        "parent_binding_sha256",
+        "parent_inventory_sha256",
+        "replay_fit_job_ids",
+        "additional_reuse_fit_job_ids",
+        "reused_epoch_selection_job_ids",
         "baseline_active_seconds",
         "baseline_artifact_bytes",
     )
@@ -270,6 +304,71 @@ def _validate_recovery_accounting(profile):
     }
 
 
+def _validate_recovery_profile(profile):
+    if not isinstance(profile, dict):
+        raise ValidationError("recovery_accounting_must_be_mapping")
+    schema = profile.get("schema_version")
+    if schema == RECOVERY_ACCOUNTING_SCHEMA:
+        return _validate_recovery_accounting(profile)
+    if schema == R2_ACCOUNTING_SCHEMA:
+        return _validate_r2_accounting(profile)
+    raise ValidationError("recovery_accounting_schema_unsupported")
+
+
+def _validate_r2_accounting(profile):
+    if set(profile.keys()) != _R2_ACCOUNTING_FIELDS:
+        raise ValidationError("r2_accounting_keys_invalid")
+    if profile["schema_version"] != R2_ACCOUNTING_SCHEMA:
+        raise ValidationError("recovery_accounting_schema_unsupported")
+    for field in ("parent_binding_sha256", "parent_inventory_sha256"):
+        if not _is_hex_digest(profile[field]):
+            raise ValidationError(field + "_invalid")
+    replay = _normalize_job_id_list(
+        profile["replay_fit_job_ids"], R2_REPLAY_FIT_COUNT, "replay_fit_job_ids"
+    )
+    additional = _normalize_job_id_list(
+        profile["additional_reuse_fit_job_ids"],
+        R2_ADDITIONAL_FIT_COUNT,
+        "additional_reuse_fit_job_ids",
+    )
+    selector = _normalize_job_id_list(
+        profile["reused_epoch_selection_job_ids"],
+        R2_SELECTOR_COUNT,
+        "reused_epoch_selection_job_ids",
+    )
+    replay_set = set(replay)
+    additional_set = set(additional)
+    selector_set = set(selector)
+    if replay_set & additional_set or replay_set & selector_set or additional_set & selector_set:
+        raise ValidationError("r2_accounting_lists_overlap")
+    active = profile["baseline_active_seconds"]
+    if (
+        isinstance(active, bool)
+        or not isinstance(active, (int, float))
+        or not math.isfinite(active)
+        or active < R2_MIN_ACTIVE_SECONDS
+        or active >= MAX_WALL_SECONDS
+    ):
+        raise ValidationError("baseline_active_seconds_invalid")
+    artifact = profile["baseline_artifact_bytes"]
+    if (
+        isinstance(artifact, bool)
+        or not isinstance(artifact, int)
+        or artifact < R2_MIN_ARTIFACT_BYTES
+        or artifact >= MAX_ARTIFACT_BYTES
+    ):
+        raise ValidationError("baseline_artifact_bytes_invalid")
+    return {
+        "parent_binding_sha256": profile["parent_binding_sha256"],
+        "parent_inventory_sha256": profile["parent_inventory_sha256"],
+        "replay_fit_job_ids": replay,
+        "additional_reuse_fit_job_ids": additional,
+        "selector_job_ids": selector,
+        "baseline_active_seconds": float(active),
+        "baseline_artifact_bytes": int(artifact),
+    }
+
+
 def _default_accounting():
     return {
         "schema_version": "nato-sers-p08-u1-ledger-accounting-v1",
@@ -293,28 +392,52 @@ def execution_accounting(binding):
 
     Absent ``recovery_accounting`` yields the inherited defaults (live module
     constants so synthetic tests may still patch them).  A present profile is
-    strictly validated and mapped to the fixed R1 derived accounting values.
+    strictly validated and mapped to the fixed R1 or R2 derived accounting values.
     """
     if not isinstance(binding, dict):
         raise ValidationError("binding_invalid")
     if "recovery_accounting" not in binding:
         return _default_accounting()
-    profile = _validate_recovery_accounting(binding["recovery_accounting"])
-    return {
-        "schema_version": RECOVERY_ACCOUNTING_SCHEMA,
-        "expected_reuse_fits": RECOVERY_EXPECTED_REUSE_PAIRS,
-        "expected_reuse_predictions": RECOVERY_EXPECTED_REUSE_PAIRS,
-        "max_reuse_fits": RECOVERY_EXPECTED_REUSE_PAIRS,
-        "max_reuse_predictions": RECOVERY_EXPECTED_REUSE_PAIRS,
-        "historical_overhead_attempts": RECOVERY_HISTORICAL_OVERHEAD_ATTEMPTS,
-        "max_fit_total": RECOVERY_MAX_FIT_TOTAL,
-        "baseline_active_seconds": profile["baseline_active_seconds"],
-        "baseline_artifact_bytes": profile["baseline_artifact_bytes"],
-        "replay_fit_job_ids": profile["replay_fit_job_ids"],
-        "additional_reuse_fit_job_ids": profile["additional_reuse_fit_job_ids"],
-        "parent_binding_sha256": profile["parent_binding_sha256"],
-        "parent_inventory_sha256": profile["parent_inventory_sha256"],
-    }
+    profile = binding["recovery_accounting"]
+    if not isinstance(profile, dict):
+        raise ValidationError("recovery_accounting_must_be_mapping")
+    schema = profile.get("schema_version")
+    if schema == RECOVERY_ACCOUNTING_SCHEMA:
+        normalized = _validate_recovery_accounting(profile)
+        return {
+            "schema_version": RECOVERY_ACCOUNTING_SCHEMA,
+            "expected_reuse_fits": RECOVERY_EXPECTED_REUSE_PAIRS,
+            "expected_reuse_predictions": RECOVERY_EXPECTED_REUSE_PAIRS,
+            "max_reuse_fits": RECOVERY_EXPECTED_REUSE_PAIRS,
+            "max_reuse_predictions": RECOVERY_EXPECTED_REUSE_PAIRS,
+            "historical_overhead_attempts": RECOVERY_HISTORICAL_OVERHEAD_ATTEMPTS,
+            "max_fit_total": RECOVERY_MAX_FIT_TOTAL,
+            "baseline_active_seconds": normalized["baseline_active_seconds"],
+            "baseline_artifact_bytes": normalized["baseline_artifact_bytes"],
+            "replay_fit_job_ids": normalized["replay_fit_job_ids"],
+            "additional_reuse_fit_job_ids": normalized["additional_reuse_fit_job_ids"],
+            "parent_binding_sha256": normalized["parent_binding_sha256"],
+            "parent_inventory_sha256": normalized["parent_inventory_sha256"],
+        }
+    if schema == R2_ACCOUNTING_SCHEMA:
+        normalized = _validate_r2_accounting(profile)
+        return {
+            "schema_version": R2_ACCOUNTING_SCHEMA,
+            "expected_reuse_fits": R2_EXPECTED_REUSE_PAIRS,
+            "expected_reuse_predictions": R2_EXPECTED_REUSE_PAIRS,
+            "max_reuse_fits": R2_EXPECTED_REUSE_PAIRS,
+            "max_reuse_predictions": R2_EXPECTED_REUSE_PAIRS,
+            "historical_overhead_attempts": R2_HISTORICAL_OVERHEAD_ATTEMPTS,
+            "max_fit_total": R2_MAX_FIT_TOTAL,
+            "baseline_active_seconds": normalized["baseline_active_seconds"],
+            "baseline_artifact_bytes": normalized["baseline_artifact_bytes"],
+            "replay_fit_job_ids": normalized["replay_fit_job_ids"],
+            "additional_reuse_fit_job_ids": normalized["additional_reuse_fit_job_ids"],
+            "selector_job_ids": normalized["selector_job_ids"],
+            "parent_binding_sha256": normalized["parent_binding_sha256"],
+            "parent_inventory_sha256": normalized["parent_inventory_sha256"],
+        }
+    raise ValidationError("recovery_accounting_schema_unsupported")
 
 
 class _Lock:
@@ -429,7 +552,7 @@ def _validate_binding(binding):
     if not isinstance(binding, dict) or not binding:
         raise ValidationError("binding_invalid")
     if "recovery_accounting" in binding:
-        _validate_recovery_accounting(binding["recovery_accounting"])
+        _validate_recovery_profile(binding["recovery_accounting"])
     return _canonical(binding)
 
 
@@ -488,6 +611,18 @@ def _validate_recovery_jobs(binding, parsed_jobs):
             raise ValidationError("recovery_accounting_job_missing")
         if record["stage"] != "source_fit":
             raise ValidationError("recovery_accounting_job_stage_invalid")
+    for job_id in accounting.get("selector_job_ids", ()):
+        record = by_id.get(job_id)
+        if record is None:
+            raise ValidationError("recovery_accounting_selector_missing")
+        if record["stage"] != "select_refit_epochs":
+            raise ValidationError("recovery_accounting_selector_stage_invalid")
+        for dep in record["dependencies"]:
+            dep_record = by_id.get(dep)
+            if dep_record is None:
+                raise ValidationError("recovery_accounting_selector_dependency_missing")
+            if dep_record["stage"] not in REUSE_STAGES:
+                raise ValidationError("recovery_accounting_selector_dependency_stage_invalid")
 
 
 def _validate_resources(snapshot):
@@ -597,9 +732,15 @@ def _require_not_blocked(conn):
         raise ReviewRequiredError("blocked_by_previous_failure")
 
 
+_REUSE_COUNTER_KEYS = {
+    "fit": "reuse_fit_count",
+    "prediction": "reuse_prediction_count",
+    "selector": "reuse_selector_count",
+}
+
+
 def _count_reuse(conn, kind):
-    key = "reuse_fit_count" if kind == "fit" else "reuse_prediction_count"
-    return int(_meta_get(conn, key, "0"))
+    return int(_meta_get(conn, _REUSE_COUNTER_KEYS[kind], "0"))
 
 
 def _fit_attempt_count(conn):
@@ -675,6 +816,7 @@ def _verify_events(conn, binding_json=None):
     scalar_counter = 0
     reuse_fit = 0
     reuse_pred = 0
+    reuse_selector = 0
     for row in conn.execute(
         "SELECT seq,payload_json,prev_hash,event_hash FROM events ORDER BY seq"
     ):
@@ -695,8 +837,12 @@ def _verify_events(conn, binding_json=None):
             reuse_evidence[job_id] = (payload["kind"], payload["evidence_sha256"])
             if payload["kind"] == "fit":
                 reuse_fit += 1
-            else:
+            elif payload["kind"] == "prediction":
                 reuse_pred += 1
+            elif payload["kind"] == "selector":
+                reuse_selector += 1
+            else:
+                raise ValidationError("reuse_kind_invalid")
         elif event_type == "seal_reuse":
             sealed = True
         elif event_type == "start":
@@ -809,6 +955,8 @@ def _verify_events(conn, binding_json=None):
         raise ValidationError("reuse_fit_counter_mismatch")
     if int(_meta_get(conn, "reuse_prediction_count", "0")) != reuse_pred:
         raise ValidationError("reuse_prediction_counter_mismatch")
+    if int(_meta_get(conn, "reuse_selector_count", "0")) != reuse_selector:
+        raise ValidationError("reuse_selector_counter_mismatch")
     if (_meta_get(conn, "sealed", "0") == "1") != sealed:
         raise ValidationError("seal_ledger_mismatch")
     if (_meta_get(conn, "failure", "0") == "1") != failure:
@@ -870,6 +1018,7 @@ class P08U1Store:
             _meta_set(conn, "scalar_attempt_count", "0")
             _meta_set(conn, "reuse_fit_count", "0")
             _meta_set(conn, "reuse_prediction_count", "0")
+            _meta_set(conn, "reuse_selector_count", "0")
             for record in parsed_jobs:
                 conn.execute(
                     "INSERT INTO jobs(job_id,job_json,job_sha,stage,model_id,policy_id,"
@@ -1003,13 +1152,38 @@ class P08U1Store:
             row = conn.execute("SELECT * FROM jobs WHERE job_id=?", (job_id,)).fetchone()
             if row is None:
                 raise ValidationError("unknown_job_id")
-            if row["stage"] not in REUSE_STAGES:
-                raise ValidationError("stage_not_reusable")
-            if conn.execute("SELECT COUNT(*) AS c FROM attempts").fetchone()["c"]:
-                raise ValidationError("reuse_after_new_start")
-            if conn.execute("SELECT 1 FROM reuse WHERE job_id=?", (job_id,)).fetchone():
-                raise ValidationError("duplicate_reuse")
-            kind = "fit" if row["stage"] == "source_fit" else "prediction"
+            selector_ids = accounting.get("selector_job_ids")
+            if selector_ids and job_id in selector_ids:
+                if row["stage"] != "select_refit_epochs":
+                    raise ValidationError("selector_stage_invalid")
+                if conn.execute("SELECT COUNT(*) AS c FROM attempts").fetchone()["c"]:
+                    raise ValidationError("reuse_after_new_start")
+                if conn.execute("SELECT 1 FROM reuse WHERE job_id=?", (job_id,)).fetchone():
+                    raise ValidationError("duplicate_reuse")
+                dependencies = json.loads(row["dependencies_json"])
+                if not dependencies:
+                    raise ValidationError("selector_dependency_missing")
+                for dep in dependencies:
+                    dep_row = conn.execute(
+                        "SELECT stage FROM jobs WHERE job_id=?", (dep,)
+                    ).fetchone()
+                    if dep_row is None:
+                        raise ValidationError("selector_dependency_missing")
+                    if dep_row["stage"] not in REUSE_STAGES:
+                        raise ValidationError("selector_dependency_stage_invalid")
+                    if not conn.execute("SELECT 1 FROM reuse WHERE job_id=?", (dep,)).fetchone():
+                        raise ValidationError("selector_dependency_not_imported")
+                kind = "selector"
+            else:
+                if row["stage"] not in REUSE_STAGES:
+                    if row["stage"] == "select_refit_epochs" and selector_ids is not None:
+                        raise ValidationError("selector_not_permitted")
+                    raise ValidationError("stage_not_reusable")
+                if conn.execute("SELECT COUNT(*) AS c FROM attempts").fetchone()["c"]:
+                    raise ValidationError("reuse_after_new_start")
+                if conn.execute("SELECT 1 FROM reuse WHERE job_id=?", (job_id,)).fetchone():
+                    raise ValidationError("duplicate_reuse")
+                kind = "fit" if row["stage"] == "source_fit" else "prediction"
             if kind == "fit" and _count_reuse(conn, "fit") >= accounting["max_reuse_fits"]:
                 raise ValidationError("reuse_fit_ceiling")
             if (
@@ -1050,8 +1224,7 @@ class P08U1Store:
                 "INSERT INTO reuse(job_id,kind,evidence_json,evidence_sha) VALUES(?,?,?,?)",
                 (job_id, kind, evidence_json, evidence_sha),
             )
-            key = "reuse_fit_count" if kind == "fit" else "reuse_prediction_count"
-            _meta_set(conn, key, str(_count_reuse(conn, kind) + 1))
+            _meta_set(conn, _REUSE_COUNTER_KEYS[kind], str(_count_reuse(conn, kind) + 1))
             _append_event(
                 conn,
                 {"type": "reuse", "job_id": job_id, "kind": kind, "evidence_sha256": evidence_sha},
@@ -1070,28 +1243,46 @@ class P08U1Store:
             conn.execute("BEGIN IMMEDIATE")
             fits = _count_reuse(conn, "fit")
             predictions = _count_reuse(conn, "prediction")
+            selectors = _count_reuse(conn, "selector")
             if (
                 fits != accounting["expected_reuse_fits"]
                 or predictions != accounting["expected_reuse_predictions"]
             ):
                 raise ValidationError("reuse_import_incomplete")
             additional = set(accounting["additional_reuse_fit_job_ids"])
-            if additional:
+            replay = set(accounting["replay_fit_job_ids"])
+            selector_ids = accounting.get("selector_job_ids")
+            r2 = selector_ids is not None
+            if additional or r2:
                 imported_fits = {
                     row["job_id"]
                     for row in conn.execute("SELECT job_id FROM reuse WHERE kind='fit'")
                 }
-                if not additional <= imported_fits:
+                if r2:
+                    if imported_fits != additional:
+                        raise ValidationError("recovery_additional_fits_incomplete")
+                elif not additional <= imported_fits:
                     raise ValidationError("recovery_additional_fits_missing")
-                if imported_fits & set(accounting["replay_fit_job_ids"]):
+                if imported_fits & replay:
                     raise ValidationError("recovery_replay_fit_imported")
+            if r2:
+                imported_selectors = {
+                    row["job_id"]
+                    for row in conn.execute("SELECT job_id FROM reuse WHERE kind='selector'")
+                }
+                if imported_selectors != set(selector_ids):
+                    raise ValidationError("recovery_selector_import_incomplete")
             if _meta_get(conn, "sealed", "0") != "1":
                 _meta_set(conn, "sealed", "1")
-                _append_event(
-                    conn, {"type": "seal_reuse", "fits": fits, "predictions": predictions}
-                )
+                payload = {"type": "seal_reuse", "fits": fits, "predictions": predictions}
+                if r2:
+                    payload["selectors"] = selectors
+                _append_event(conn, payload)
             conn.execute("COMMIT")
-            return {"sealed": True, "fits": fits, "predictions": predictions}
+            result = {"sealed": True, "fits": fits, "predictions": predictions}
+            if r2:
+                result["selectors"] = selectors
+            return result
         except BaseException as exc:
             self._abort_transaction(exc)
             raise
@@ -1253,12 +1444,16 @@ class P08U1Store:
                 "status": row["status"],
                 "receipt_sha256": row["receipt_sha"],
             }
-        reuse = {"fits": 0, "predictions": 0, "job_ids": []}
+        reuse = {"fits": 0, "predictions": 0, "selectors": 0, "job_ids": []}
         for row in conn.execute("SELECT job_id,kind FROM reuse ORDER BY job_id"):
             if row["kind"] == "fit":
                 reuse["fits"] += 1
-            else:
+            elif row["kind"] == "prediction":
                 reuse["predictions"] += 1
+            elif row["kind"] == "selector":
+                reuse["selectors"] += 1
+            else:
+                raise ValidationError("reuse_kind_invalid")
             reuse["job_ids"].append(row["job_id"])
         active, artifact = _cumulative_resources(conn, self._accounting)
         accounted_fit_attempts = (
@@ -1324,6 +1519,7 @@ class P08U1Store:
             ).fetchone()["c"],
             "reuse_fits": reuse_fits,
             "reuse_predictions": _count_reuse(conn, "prediction"),
+            "reuse_epoch_selections": _count_reuse(conn, "selector"),
             "accounted_model_fit_attempts": accounted_fit_attempts,
             "cumulative_active_seconds": active,
             "cumulative_artifact_bytes": artifact,

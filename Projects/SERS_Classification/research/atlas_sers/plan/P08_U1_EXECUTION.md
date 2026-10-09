@@ -48,6 +48,14 @@ The owner subsequently approved the exact five-fit recovery. This changes execut
 
 All hardware, disk-reserve, wall-time, scientific and inner-fit limits above remain unchanged. Carry-over preserves the previous artifact high-water mark even though database closure reduced its current file size. No further automatic retry is authorized. R1 must authenticate the closed parent inventory and exact reuse/replay identities, initialize CUDA before any scientific admission, and pass fresh-process GPU and end-to-end synthetic regression tests. The immutable R1 accounting profile, accepted runtime, launcher and owner approval are bound into the private launch permit. This amendment does not introduce a new preprocessing or model experiment.
 
+## Approved R2 recovery amendment
+
+R1 completed 8,466 new source fits and their paired predictions, in addition to the 84 imported pairs, and one source-only epoch-selection operation. A concurrent atomic update of the live HTML monitor caused the disk scanner to observe an already-unlinked inode with zero links. The scanner incorrectly treated this as a hard link and stopped admissions. Four source fits were interrupted by the controlled shutdown; there were no failed model outcomes or resource-limit breaches. The closed R1 evidence is preserved.
+
+The owner approved the exact four-fit recovery on 2026-10-09 and requested completion without restarting the benchmark. R2 imports all **8,550 verified fit/prediction pairs and the one completed epoch-selection result**, replays only the four interrupted fits, and executes **186,648 previously unstarted fits**. Thus 186,652 fits remain; the 195,202 unique slots and 3,354 calibrations are unchanged. Historical overhead becomes 14 and the cumulative fit-attempt ceiling becomes **195,216**. No further automatic retries are authorized.
+
+The corrected mutable-output scanner counts a zero-link regular inode using its observed size while continuing to reject actual hard links and symlinks. Immutable artifact authentication still requires exactly one link. The new recovery ledger records the epoch selector separately from fits, predictions and new attempts, and requires its imported dependencies. R2 authenticates every retained R1 file, exact registered job and complete receipt before reuse. The fresh destination and bound permit carry all prior time and artifact usage, including audit overhead; all scientific and resource limits remain unchanged.
+
 ## Implementation and execution gates
 
 1. DeepSeek V4.1 Flash implements bounded integrations through the existing supervised workflow. The supervisor independently reviews code, role isolation, numerical parity, persistence, resource stops and tests. Existing U0 limits and frozen scientific kernels are not widened.
