@@ -10,7 +10,7 @@ Classical hyperparameters are selected afresh within each policy using source da
 
 The frozen universal graph has plan SHA-256 `179b95e8011a5f6cc02c65c7fab1acf0f6a6241ba1ef02378aac207b9e19cb03`. Its archived graph and input/specification identities are recorded in the [slot audit](../results/p08_readiness/universal_slot_ledger_audit.json). Historical MIN endpoints are references under the [reuse protocol](P08_REUSE_PROTOCOL.md), not new fits.
 
-## Approved ceilings and carry-over
+## Original approved ceilings and carry-over
 
 | Item | Approved boundary |
 |---|---|
@@ -30,6 +30,23 @@ The frozen universal graph has plan SHA-256 `179b95e8011a5f6cc02c65c7fab1acf0f6a
 The accepted U0 carry-over is **1,357.694676884 seconds** and **64,846,625 logical artifact bytes** across original and recovery evidence. The five overhead attempts comprise four duplicated successful classical fits and one failed neural attempt. No counter resets at controller restart. The outer GPU allowance does not change the inherited per-neural-fit **120-second/4-GiB** guards.
 
 Reuse requires fresh verification of exact job, input, role, specification and retained artifact identities. A missing or mismatched pilot artifact is not permission to replace its fit. Failed or interrupted new attempts remain consumed and stop further admissions for review. Finite collapsed models remain results, not retry requests.
+
+## Approved R1 recovery amendment
+
+The first U1 run stopped because the fresh GPU worker had not explicitly initialized CUDA before the unchanged training kernel reset its memory statistics. This was a launcher setup error, before the first neural epoch, not a model-performance result. The original run remains closed and preserved.
+
+The owner subsequently approved the exact five-fit recovery. This changes execution accounting only:
+
+| Item | R1 boundary |
+|---|---|
+| Verified reusable fit/prediction pairs | 84: 78 U0 pairs plus six completed U1 pairs |
+| Exact replay fits | Five: one setup failure, three interrupted fits, one completed fit lacking its independent prediction verification |
+| Remaining fit executions | 195,118: five replays plus 195,113 previously unstarted slots |
+| Unique fit slots / scalar calibrations | Unchanged: 195,202 / 3,354 |
+| Historical overhead / total attempt ceiling | Ten / 195,212 |
+| Cumulative carry into R1 | 1,516 active seconds and 1,427,760,770 artifact bytes |
+
+All hardware, disk-reserve, wall-time, scientific and inner-fit limits above remain unchanged. Carry-over preserves the previous artifact high-water mark even though database closure reduced its current file size. No further automatic retry is authorized. R1 must authenticate the closed parent inventory and exact reuse/replay identities, initialize CUDA before any scientific admission, and pass fresh-process GPU and end-to-end synthetic regression tests. The immutable R1 accounting profile, accepted runtime, launcher and owner approval are bound into the private launch permit. This amendment does not introduce a new preprocessing or model experiment.
 
 ## Implementation and execution gates
 

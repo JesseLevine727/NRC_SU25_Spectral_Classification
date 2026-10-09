@@ -7,18 +7,33 @@ import time
 
 import pandas as pd
 import pytest
+import torch
 
 from atlas_sers.evaluation import p08_plan, p08_u0_arrays, p08_u1_selection
 from atlas_sers.evaluation import p08_u1_dispatch as dispatch
 from atlas_sers.evaluation import p08_u1_post_inputs as post
 from atlas_sers.evaluation.p08_u1_artifacts import ArtifactStore
+from atlas_sers.evaluation.p08_u1_device import prepare_worker_device
 from atlas_sers.governance.canonical import sha256_value
 from tests import test_p08_u0_runtime_inputs as fixture
 from tests import test_p08_u1_source_inputs as source_fixture
 
 
-@pytest.mark.parametrize("model_id", ["C-RBF-SVM", "D0-M"])
-def test_source_to_held_end_to_end(tmp_path, monkeypatch, model_id):
+@pytest.mark.parametrize(
+    "model_id,device",
+    [
+        ("C-RBF-SVM", "cpu"),
+        ("D0-M", "cpu"),
+        ("D0-M", "cuda:0"),
+        ("D3", "cuda:0"),
+    ],
+)
+def test_source_to_held_end_to_end(tmp_path, monkeypatch, model_id, device):
+    if device.startswith("cuda"):
+        if not torch.cuda.is_available():
+            pytest.skip("GPU integration requires usable CUDA")
+        monkeypatch.setenv("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+    prepare_worker_device(device)
     ctx = fixture._build_context(monkeypatch, "master_cv")
     plan, source = source_fixture._prepare(monkeypatch, ctx)
     metadata = ctx["metadata_bytes"]
@@ -51,7 +66,7 @@ def test_source_to_held_end_to_end(tmp_path, monkeypatch, model_id):
     context = dict(
         context_id=template["context_id"],
         selection_mode="master_cv",
-        selected_recipe_id="D0-M",
+        selected_recipe_id=model_id if model_id in p08_plan.NEURAL_RECIPES else "D0-M",
         outer_fit_uid_sha256=sha256_value(sorted(outer)),
         outer_test_uid_sha256=template["test_uid_sha256"],
         selection_units=units,
@@ -92,7 +107,7 @@ def test_source_to_held_end_to_end(tmp_path, monkeypatch, model_id):
         candidate_registry_bytes=registry,
         monitor_root=tmp_path / "monitor",
         stream=io.StringIO(),
-        device="cpu",
+        device=device,
         global_deadline=time.perf_counter() + 300,
     )
     complete = set()

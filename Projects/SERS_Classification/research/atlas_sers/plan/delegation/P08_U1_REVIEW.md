@@ -2,7 +2,7 @@
 
 ## Authority and current status
 
-The owner approved the [U1 execution limits](../P08_U1_EXECUTION.md) on 2026-10-08, conditional on implementation review. The accepted U0 recovery is unchanged. **No new U1 scientific fit, scalar calibration or held prediction has started at this checkpoint.**
+The owner approved the [U1 execution limits](../P08_U1_EXECUTION.md) on 2026-10-08, conditional on implementation review. The first U1 run later stopped at GPU initialization; the owner approved a bounded five-fit recovery. The accepted U0 evidence is unchanged. The component checkpoints below are historical; the recovery section records the latest execution state. No scalar calibration, final refit or held prediction was reached in the stopped run.
 
 DeepSeek V4.1 Flash is the implementation worker through the existing tool-disabled OpenCode patch-author wrapper. Only selected public source snapshots and synthetic fixture instructions are supplied. The supervisor applies patches, runs checks and controls scientific execution and publication. Worker statements are not acceptance evidence.
 
@@ -59,3 +59,21 @@ The four accepted components above pass **158 focused tests** together. A clean 
 The next integration drafts remain outside this release. T282 produced no code before its worker output limit; T286 is its bounded completion attempt with a smaller source context. T283 initially passed 18 synthetic tests, but metadata/seed validation and audit-count corrections were requested in T287. T285 composes the existing calibration-fit/final-refit/held-prediction kernels without changing them. None of these drafts grants execution permission or changes the frozen experiment.
 
 Calibration wording must distinguish physical-master-separated cross-fit roles from equal-master weighting. The inherited classical helper fits temperature to its cross-fitted observation rows after tree-seed aggregation; the neural helper first averages logits by physical master. U1 preserves both inherited numerical procedures. Neither a new weighting rule nor a calibration experiment is introduced by this adapter work.
+
+## Full integration and first launch
+
+The post-source input, fitting, calibration, prediction, artifact, process, dispatcher and controller integrations were accepted after supervisor corrections and 288 focused tests. Eight private resource-guard tests also passed. The real-data read-only post-input audit resolved 14,618 distinct bindings without fitting. Full synthetic SVM and ordinary-CNN dependency chains reached held prediction and ensemble output using invented spectra. The reviewed integration was pushed on `main` at `6475a0a9536af70dcd1c8384802b95968c3509ce`; its remote CI passed.
+
+The first launch reused all 78 U0 pairs and admitted 11 new source fits: seven completed, one failed at CUDA setup and three were interrupted by the controlled stop. Six new independent prediction verifications completed. The seventh completed fit had not reached its paired verification, and its estimator was not persisted; it is therefore included in the approved exact replay rather than treated as verified reuse. Zero scalar calibrations, final refits or held predictions ran. All five workers exited and the ledger closed cleanly.
+
+The private audit verified all 404,814 registered job hashes, 374 hash-linked events, 156 imported operation artifact sets and 14 new terminal artifact sets. The closed directory contains 601 files and 711,585,724 bytes, with inventory SHA-256 `2e9cd51d336f079f1e9240a5cb8ac796495802c3efb27af5926b49cdebd0b9f8`. Its larger recorded artifact high-water mark remains charged.
+
+## T297/T298: approved R1 recovery
+
+The supervisor's launcher omitted explicit CUDA initialization. A fresh-process synthetic reproduction matched the failed job's exception digest exactly, before any epoch or optimizer update. GPU availability and memory telemetry alone do not initialize CUDA. The inherited training kernel is unchanged; the correction initializes the worker device and verifies memory-statistic access before the worker becomes ready.
+
+DeepSeek V4.1 Flash authored the device-preparation helper and immutable recovery-accounting adapter. Supervisor review tightened boolean validation, required sorted distinct job-ID lists, removed an unused binding alias, corrected test fixtures and formatting, and added the recovered-attempt ceiling regression. The optional profile leaves original-run defaults intact, requires all six new reusable fits at sealing, prohibits reuse of the five replay identities, and carries previous time/storage/attempt charges into a distinct recovery directory. Failed original stores remain failure-latched.
+
+The read-only recovery bridge authenticated 84 exact fit/prediction pairs across both retained runs in 29.82 seconds, with zero new fits. Twelve device-helper tests passed, including a real fresh-subprocess CUDA test. Five end-to-end dispatcher tests passed, including ordinary and auxiliary-loss CNN paths on the GPU and the real unchanged kernels on invented spectra. The 62 combined ledger, recovery-accounting and controller tests passed. The final combined suite passed **326 tests in 80.47 seconds**, including all U1 components, the live monitor and eleven private resource-guard tests. Package-wide Ruff passed. This accepts the reviewed recovery implementation for its bound launch; actual benchmark completion remains pending.
+
+The recovery is limited to five exact replays and 195,113 previously unstarted fits. Its total fit-attempt ceiling is 195,212, including ten retained overhead attempts. All scientific choices and resource ceilings remain unchanged. These are infrastructure-recovery findings, not evidence that smoothing, baseline correction or a classifier improves chemical identification.

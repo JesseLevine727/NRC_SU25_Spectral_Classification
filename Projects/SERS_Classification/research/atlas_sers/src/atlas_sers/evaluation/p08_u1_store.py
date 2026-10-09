@@ -46,6 +46,7 @@ __all__ = [
     "ENUM_WORKER_KINDS",
     "RESOURCE_FIELDS",
     "job_sha256",
+    "execution_accounting",
 ]
 
 SCHEMA_VERSION = "nato-sers-p08-u1-ledger-v1"
@@ -121,6 +122,29 @@ EXPECTED_REUSE_PREDICTIONS = 78
 MAX_REUSE_FITS = 78
 MAX_REUSE_PREDICTIONS = 78
 
+# Optional immutable R1 recovery accounting profile.  When the caller binds a
+# ``recovery_accounting`` dict into the binding these derived values replace the
+# inherited defaults below; every scientific/resource cap stays untouched.
+RECOVERY_ACCOUNTING_SCHEMA = "nato-sers-p08-u1-r1-accounting-v1"
+RECOVERY_REPLAY_FIT_COUNT = 5
+RECOVERY_ADDITIONAL_FIT_COUNT = 6
+RECOVERY_EXPECTED_REUSE_PAIRS = 84
+RECOVERY_HISTORICAL_OVERHEAD_ATTEMPTS = 10
+RECOVERY_MAX_FIT_TOTAL = 195212
+RECOVERY_MIN_ACTIVE_SECONDS = 1516
+RECOVERY_MIN_ARTIFACT_BYTES = 1427760770
+_RECOVERY_ACCOUNTING_FIELDS = frozenset(
+    (
+        "schema_version",
+        "parent_binding_sha256",
+        "parent_inventory_sha256",
+        "replay_fit_job_ids",
+        "additional_reuse_fit_job_ids",
+        "baseline_active_seconds",
+        "baseline_artifact_bytes",
+    )
+)
+
 _HEX = frozenset("0123456789abcdef")
 _TERMINAL_STATUSES = frozenset(("complete", "failed", "interrupted"))
 
@@ -173,6 +197,124 @@ def _utc_now():
 
 def _is_hex_digest(value):
     return isinstance(value, str) and len(value) == 64 and all(c in _HEX for c in value)
+
+
+def _is_job_id(value):
+    return (
+        isinstance(value, str)
+        and len(value) == 71
+        and value.startswith("P08JOB-")
+        and all(character in _HEX for character in value[7:])
+    )
+
+
+def _normalize_job_id_list(value, expected_count, field):
+    if not isinstance(value, list):
+        raise ValidationError(field + "_invalid")
+    items = list(value)
+    if len(items) != expected_count:
+        raise ValidationError(field + "_invalid")
+    if any(not _is_job_id(item) for item in items):
+        raise ValidationError(field + "_invalid")
+    if len(set(items)) != len(items):
+        raise ValidationError(field + "_duplicate")
+    if items != sorted(items):
+        raise ValidationError(field + "_not_sorted")
+    return tuple(items)
+
+
+def _validate_recovery_accounting(profile):
+    if not isinstance(profile, dict):
+        raise ValidationError("recovery_accounting_must_be_mapping")
+    if set(profile.keys()) != _RECOVERY_ACCOUNTING_FIELDS:
+        raise ValidationError("recovery_accounting_keys_invalid")
+    if profile["schema_version"] != RECOVERY_ACCOUNTING_SCHEMA:
+        raise ValidationError("recovery_accounting_schema_unsupported")
+    for field in ("parent_binding_sha256", "parent_inventory_sha256"):
+        if not _is_hex_digest(profile[field]):
+            raise ValidationError(field + "_invalid")
+    replay = _normalize_job_id_list(
+        profile["replay_fit_job_ids"], RECOVERY_REPLAY_FIT_COUNT, "replay_fit_job_ids"
+    )
+    additional = _normalize_job_id_list(
+        profile["additional_reuse_fit_job_ids"],
+        RECOVERY_ADDITIONAL_FIT_COUNT,
+        "additional_reuse_fit_job_ids",
+    )
+    if set(replay) & set(additional):
+        raise ValidationError("recovery_accounting_lists_overlap")
+    active = profile["baseline_active_seconds"]
+    if (
+        isinstance(active, bool)
+        or not isinstance(active, (int, float))
+        or not math.isfinite(active)
+        or active < RECOVERY_MIN_ACTIVE_SECONDS
+        or active >= MAX_WALL_SECONDS
+    ):
+        raise ValidationError("baseline_active_seconds_invalid")
+    artifact = profile["baseline_artifact_bytes"]
+    if (
+        isinstance(artifact, bool)
+        or not isinstance(artifact, int)
+        or artifact < RECOVERY_MIN_ARTIFACT_BYTES
+        or artifact >= MAX_ARTIFACT_BYTES
+    ):
+        raise ValidationError("baseline_artifact_bytes_invalid")
+    return {
+        "parent_binding_sha256": profile["parent_binding_sha256"],
+        "parent_inventory_sha256": profile["parent_inventory_sha256"],
+        "replay_fit_job_ids": replay,
+        "additional_reuse_fit_job_ids": additional,
+        "baseline_active_seconds": float(active),
+        "baseline_artifact_bytes": int(artifact),
+    }
+
+
+def _default_accounting():
+    return {
+        "schema_version": "nato-sers-p08-u1-ledger-accounting-v1",
+        "expected_reuse_fits": EXPECTED_REUSE_FITS,
+        "expected_reuse_predictions": EXPECTED_REUSE_PREDICTIONS,
+        "max_reuse_fits": MAX_REUSE_FITS,
+        "max_reuse_predictions": MAX_REUSE_PREDICTIONS,
+        "historical_overhead_attempts": HISTORICAL_OVERHEAD_ATTEMPTS,
+        "max_fit_total": MAX_FIT_TOTAL,
+        "baseline_active_seconds": float(BASELINE_ACTIVE_SECONDS),
+        "baseline_artifact_bytes": int(BASELINE_ARTIFACT_BYTES),
+        "replay_fit_job_ids": (),
+        "additional_reuse_fit_job_ids": (),
+        "parent_binding_sha256": None,
+        "parent_inventory_sha256": None,
+    }
+
+
+def execution_accounting(binding):
+    """Return the normalized accounting profile bound into ``binding``.
+
+    Absent ``recovery_accounting`` yields the inherited defaults (live module
+    constants so synthetic tests may still patch them).  A present profile is
+    strictly validated and mapped to the fixed R1 derived accounting values.
+    """
+    if not isinstance(binding, dict):
+        raise ValidationError("binding_invalid")
+    if "recovery_accounting" not in binding:
+        return _default_accounting()
+    profile = _validate_recovery_accounting(binding["recovery_accounting"])
+    return {
+        "schema_version": RECOVERY_ACCOUNTING_SCHEMA,
+        "expected_reuse_fits": RECOVERY_EXPECTED_REUSE_PAIRS,
+        "expected_reuse_predictions": RECOVERY_EXPECTED_REUSE_PAIRS,
+        "max_reuse_fits": RECOVERY_EXPECTED_REUSE_PAIRS,
+        "max_reuse_predictions": RECOVERY_EXPECTED_REUSE_PAIRS,
+        "historical_overhead_attempts": RECOVERY_HISTORICAL_OVERHEAD_ATTEMPTS,
+        "max_fit_total": RECOVERY_MAX_FIT_TOTAL,
+        "baseline_active_seconds": profile["baseline_active_seconds"],
+        "baseline_artifact_bytes": profile["baseline_artifact_bytes"],
+        "replay_fit_job_ids": profile["replay_fit_job_ids"],
+        "additional_reuse_fit_job_ids": profile["additional_reuse_fit_job_ids"],
+        "parent_binding_sha256": profile["parent_binding_sha256"],
+        "parent_inventory_sha256": profile["parent_inventory_sha256"],
+    }
 
 
 class _Lock:
@@ -286,6 +428,8 @@ def _append_event(conn, payload):
 def _validate_binding(binding):
     if not isinstance(binding, dict) or not binding:
         raise ValidationError("binding_invalid")
+    if "recovery_accounting" in binding:
+        _validate_recovery_accounting(binding["recovery_accounting"])
     return _canonical(binding)
 
 
@@ -330,6 +474,22 @@ def _validate_jobs(jobs):
     return parsed
 
 
+def _validate_recovery_jobs(binding, parsed_jobs):
+    if not isinstance(binding, dict) or "recovery_accounting" not in binding:
+        return
+    accounting = execution_accounting(binding)
+    by_id = {record["job_id"]: record for record in parsed_jobs}
+    listed = tuple(accounting["replay_fit_job_ids"]) + tuple(
+        accounting["additional_reuse_fit_job_ids"]
+    )
+    for job_id in listed:
+        record = by_id.get(job_id)
+        if record is None:
+            raise ValidationError("recovery_accounting_job_missing")
+        if record["stage"] != "source_fit":
+            raise ValidationError("recovery_accounting_job_stage_invalid")
+
+
 def _validate_resources(snapshot):
     if not isinstance(snapshot, dict):
         raise ValidationError("resources_must_be_mapping")
@@ -371,21 +531,23 @@ def _validate_receipt(receipt):
     return _canonical(receipt), _sha256_json(receipt)
 
 
-def _cumulative_resources(conn):
+def _cumulative_resources(conn, accounting):
     # Rows are persisted monotonic, so the newest row by primary-key lookup
     # already carries the running maximum.  No aggregate table scan is needed.
     row = conn.execute(
         "SELECT active_seconds,artifact_bytes FROM resources ORDER BY seq DESC LIMIT 1"
     ).fetchone()
+    baseline_active = float(accounting["baseline_active_seconds"])
+    baseline_artifact = int(accounting["baseline_artifact_bytes"])
     if row is None:
-        return float(BASELINE_ACTIVE_SECONDS), int(BASELINE_ARTIFACT_BYTES)
-    active = max(BASELINE_ACTIVE_SECONDS, float(row["active_seconds"]))
-    artifact = max(BASELINE_ARTIFACT_BYTES, int(row["artifact_bytes"]))
+        return baseline_active, baseline_artifact
+    active = max(baseline_active, float(row["active_seconds"]))
+    artifact = max(baseline_artifact, int(row["artifact_bytes"]))
     return active, artifact
 
 
-def _check_resource_record_limits(conn, snapshot):
-    active, artifact = _cumulative_resources(conn)
+def _check_resource_record_limits(conn, snapshot, accounting):
+    active, artifact = _cumulative_resources(conn, accounting)
     if snapshot["active_seconds"] < active:
         raise ValidationError("active_seconds_regressed")
     if snapshot["artifact_bytes"] < artifact:
@@ -403,11 +565,11 @@ def _check_resource_record_limits(conn, snapshot):
         raise BudgetError("free_space_ceiling")
 
 
-def _check_resource_admission(conn, snapshot):
+def _check_resource_admission(conn, snapshot, accounting):
     # A snapshot exactly at an exact wall/artifact ceiling is still recordable
     # as final boundary usage, but no new effectful work may start once the
     # ledger is already exhausted.  RAM/GPU equal-cap is allowed.
-    _check_resource_record_limits(conn, snapshot)
+    _check_resource_record_limits(conn, snapshot, accounting)
     if snapshot["active_seconds"] >= MAX_WALL_SECONDS:
         raise BudgetError("wall_seconds_ceiling")
     if snapshot["artifact_bytes"] >= MAX_ARTIFACT_BYTES:
@@ -454,12 +616,13 @@ def _expected_worker_kind(stage, model_id):
     return "CPU"
 
 
-def _check_attempt_budgets(conn, stage):
+def _check_attempt_budgets(conn, stage, accounting):
     reuse_fits = _count_reuse(conn, "fit")
     new_fits = _fit_attempt_count(conn)
     new_scalar = _scalar_attempt_count(conn)
     prospective_fits = new_fits + (1 if stage in MODEL_FIT_STAGES else 0)
-    if reuse_fits + prospective_fits + HISTORICAL_OVERHEAD_ATTEMPTS > MAX_FIT_TOTAL:
+    overhead = accounting["historical_overhead_attempts"]
+    if reuse_fits + prospective_fits + overhead > accounting["max_fit_total"]:
         raise BudgetError("fit_attempt_ceiling")
     if reuse_fits + prospective_fits > MAX_UNIQUE_FIT_JOBS:
         raise BudgetError("unique_fit_job_ceiling")
@@ -660,10 +823,11 @@ def _verify_events(conn, binding_json=None):
 class P08U1Store:
     """Durable single-controller governance ledger for a future U1 run."""
 
-    def __init__(self, directory, conn, lock):
+    def __init__(self, directory, conn, lock, binding):
         self._directory = directory
         self._conn = conn
         self._lock = lock
+        self._accounting = execution_accounting(binding)
         self._closed = False
         self._persistence_failed = False
 
@@ -681,6 +845,7 @@ class P08U1Store:
         binding_json = _validate_binding(binding)
         binding_sha = _sha256_text(binding_json)
         parsed_jobs = _validate_jobs(jobs)
+        _validate_recovery_jobs(binding, parsed_jobs)
         if os.path.exists(directory):
             raise ValidationError("directory_already_exists")
         os.makedirs(directory, mode=0o700)
@@ -729,7 +894,7 @@ class P08U1Store:
                 },
             )
             conn.execute("COMMIT")
-            return cls(directory, conn, lock)
+            return cls(directory, conn, lock, binding)
         except BaseException:
             if conn is not None:
                 try:
@@ -756,7 +921,7 @@ class P08U1Store:
             conn = _open_conn(cls._db_path(directory))
             if _meta_get(conn, "schema") != SCHEMA_VERSION:
                 raise ValidationError("schema_mismatch")
-            store = cls(directory, conn, lock)
+            store = cls(directory, conn, lock, binding)
             _verify_events(conn, binding_json)
             _verify_registered_jobs(conn)
             if _meta_get(conn, "binding_sha256") != binding_sha:
@@ -827,11 +992,14 @@ class P08U1Store:
     def record_reuse(self, job_id, evidence):
         self._require_open()
         conn = self._conn
+        accounting = self._accounting
         try:
             conn.execute("BEGIN IMMEDIATE")
             _require_not_blocked(conn)
             if _meta_get(conn, "sealed", "0") == "1":
                 raise ValidationError("reuse_import_sealed")
+            if job_id in accounting["replay_fit_job_ids"]:
+                raise ValidationError("replay_fit_cannot_be_reused")
             row = conn.execute("SELECT * FROM jobs WHERE job_id=?", (job_id,)).fetchone()
             if row is None:
                 raise ValidationError("unknown_job_id")
@@ -842,9 +1010,12 @@ class P08U1Store:
             if conn.execute("SELECT 1 FROM reuse WHERE job_id=?", (job_id,)).fetchone():
                 raise ValidationError("duplicate_reuse")
             kind = "fit" if row["stage"] == "source_fit" else "prediction"
-            if kind == "fit" and _count_reuse(conn, "fit") >= MAX_REUSE_FITS:
+            if kind == "fit" and _count_reuse(conn, "fit") >= accounting["max_reuse_fits"]:
                 raise ValidationError("reuse_fit_ceiling")
-            if kind == "prediction" and _count_reuse(conn, "prediction") >= MAX_REUSE_PREDICTIONS:
+            if (
+                kind == "prediction"
+                and _count_reuse(conn, "prediction") >= accounting["max_reuse_predictions"]
+            ):
                 raise ValidationError("reuse_prediction_ceiling")
             if kind == "prediction":
                 deps = json.loads(row["dependencies_json"])
@@ -894,12 +1065,26 @@ class P08U1Store:
     def seal_reuse(self):
         self._require_open()
         conn = self._conn
+        accounting = self._accounting
         try:
             conn.execute("BEGIN IMMEDIATE")
             fits = _count_reuse(conn, "fit")
             predictions = _count_reuse(conn, "prediction")
-            if fits != EXPECTED_REUSE_FITS or predictions != EXPECTED_REUSE_PREDICTIONS:
+            if (
+                fits != accounting["expected_reuse_fits"]
+                or predictions != accounting["expected_reuse_predictions"]
+            ):
                 raise ValidationError("reuse_import_incomplete")
+            additional = set(accounting["additional_reuse_fit_job_ids"])
+            if additional:
+                imported_fits = {
+                    row["job_id"]
+                    for row in conn.execute("SELECT job_id FROM reuse WHERE kind='fit'")
+                }
+                if not additional <= imported_fits:
+                    raise ValidationError("recovery_additional_fits_missing")
+                if imported_fits & set(accounting["replay_fit_job_ids"]):
+                    raise ValidationError("recovery_replay_fit_imported")
             if _meta_get(conn, "sealed", "0") != "1":
                 _meta_set(conn, "sealed", "1")
                 _append_event(
@@ -917,7 +1102,7 @@ class P08U1Store:
         conn = self._conn
         try:
             conn.execute("BEGIN IMMEDIATE")
-            _check_resource_record_limits(conn, snapshot)
+            _check_resource_record_limits(conn, snapshot, self._accounting)
             resource_seq = _insert_resources(conn, snapshot)
             _append_event(
                 conn,
@@ -969,8 +1154,8 @@ class P08U1Store:
             cap = MAX_CPU_WORKERS if kind == "CPU" else MAX_GPU_WORKERS
             if int(running) >= cap:
                 raise ValidationError("worker_slot_unavailable")
-            _check_resource_admission(conn, snapshot)
-            _check_attempt_budgets(conn, row["stage"])
+            _check_resource_admission(conn, snapshot, self._accounting)
+            _check_attempt_budgets(conn, row["stage"], self._accounting)
             cursor = conn.execute(
                 "INSERT INTO attempts(job_id,worker_kind,status) VALUES(?,?, 'running')",
                 (job_id, kind),
@@ -1075,7 +1260,12 @@ class P08U1Store:
             else:
                 reuse["predictions"] += 1
             reuse["job_ids"].append(row["job_id"])
-        active, artifact = _cumulative_resources(conn)
+        active, artifact = _cumulative_resources(conn, self._accounting)
+        accounted_fit_attempts = (
+            reuse["fits"]
+            + _fit_attempt_count(conn)
+            + self._accounting["historical_overhead_attempts"]
+        )
         return {
             "state": _meta_get(conn, "state"),
             "clean": _meta_get(conn, "clean", "0") == "1",
@@ -1095,6 +1285,7 @@ class P08U1Store:
             "reuse": reuse,
             "cumulative_active_seconds": active,
             "cumulative_artifact_bytes": artifact,
+            "accounted_model_fit_attempts": accounted_fit_attempts,
         }
 
     def public_summary(self):
@@ -1108,7 +1299,11 @@ class P08U1Store:
             row["status"]: row["c"]
             for row in conn.execute("SELECT status,COUNT(*) AS c FROM attempts GROUP BY status")
         }
-        active, artifact = _cumulative_resources(conn)
+        active, artifact = _cumulative_resources(conn, self._accounting)
+        reuse_fits = _count_reuse(conn, "fit")
+        accounted_fit_attempts = (
+            reuse_fits + _fit_attempt_count(conn) + self._accounting["historical_overhead_attempts"]
+        )
         return {
             "schema_version": SCHEMA_VERSION,
             "binding_sha256": _meta_get(conn, "binding_sha256"),
@@ -1127,14 +1322,18 @@ class P08U1Store:
             "running_attempts": conn.execute(
                 "SELECT COUNT(*) AS c FROM attempts WHERE status='running'"
             ).fetchone()["c"],
-            "reuse_fits": _count_reuse(conn, "fit"),
+            "reuse_fits": reuse_fits,
             "reuse_predictions": _count_reuse(conn, "prediction"),
+            "accounted_model_fit_attempts": accounted_fit_attempts,
             "cumulative_active_seconds": active,
             "cumulative_artifact_bytes": artifact,
             "budgets": {
-                "max_fit_total": MAX_FIT_TOTAL,
+                "max_fit_total": self._accounting["max_fit_total"],
                 "max_unique_fit_jobs": MAX_UNIQUE_FIT_JOBS,
                 "max_scalar_attempts": MAX_SCALAR_ATTEMPTS,
+                "expected_reuse_fits": self._accounting["expected_reuse_fits"],
+                "expected_reuse_predictions": self._accounting["expected_reuse_predictions"],
+                "historical_overhead_attempts": self._accounting["historical_overhead_attempts"],
                 "max_wall_seconds": MAX_WALL_SECONDS,
                 "max_artifact_bytes": MAX_ARTIFACT_BYTES,
                 "max_ram_bytes": MAX_RAM_BYTES,
