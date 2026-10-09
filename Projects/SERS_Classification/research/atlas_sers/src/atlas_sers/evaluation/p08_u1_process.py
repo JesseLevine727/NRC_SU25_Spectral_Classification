@@ -14,6 +14,31 @@ class ProcessWorkerError(RuntimeError):
     """Transport failure; the owning controller decides recovery."""
 
 
+class StaleTelemetryError(ProcessWorkerError):
+    """A valid heartbeat that is merely older than the stale threshold.
+
+    Carries the last known allocator evidence so a supervising recovery layer
+    can decide what to do without mistaking stale bytes for fresh bytes.
+    """
+
+    def __init__(
+        self,
+        worker_id,
+        worker_kind,
+        pid,
+        age_seconds,
+        last_allocated_gpu_bytes,
+        last_reserved_gpu_bytes,
+    ):
+        self.worker_id = worker_id
+        self.worker_kind = worker_kind
+        self.pid = pid
+        self.age_seconds = age_seconds
+        self.last_allocated_gpu_bytes = last_allocated_gpu_bytes
+        self.last_reserved_gpu_bytes = last_reserved_gpu_bytes
+        super().__init__("telemetry stale or invalid")
+
+
 def _send_error(conn, exc, job):
     reply = {
         "type": "error",
@@ -190,11 +215,22 @@ class ProcessWorker:
             lock.release()
         if health != 1.0:
             raise ProcessWorkerError("telemetry unhealthy")
-        age = time.monotonic() - stamp
-        if not math.isfinite(stamp) or age < 0 or age > _STALE:
-            raise ProcessWorkerError("telemetry stale or invalid")
         if not all(math.isfinite(v) and v.is_integer() and v >= 0 for v in (alloc, reserved)):
             raise ProcessWorkerError("telemetry value invalid")
+        if not math.isfinite(stamp):
+            raise ProcessWorkerError("telemetry stale or invalid")
+        age = time.monotonic() - stamp
+        if not math.isfinite(age) or age < 0:
+            raise ProcessWorkerError("telemetry stale or invalid")
+        if age > _STALE:
+            raise StaleTelemetryError(
+                self._worker_id,
+                self._kind,
+                self._process.pid,
+                age,
+                int(alloc),
+                int(reserved),
+            )
         return {
             "timestamp": stamp,
             "allocated_gpu_bytes": int(alloc),
