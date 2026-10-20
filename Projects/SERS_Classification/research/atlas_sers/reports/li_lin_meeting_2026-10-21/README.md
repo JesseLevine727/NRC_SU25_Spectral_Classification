@@ -6,7 +6,7 @@ paper routes with verified literature.
 
 ## Contents
 
-- `deck.tex` - the slides (12 main + 8 backup).
+- `deck.tex` / `deck.pdf` - the slides (12 main + 8 backup) and the compiled deck.
 - `build_figure_data.py` - extracts aggregate tables into `data/` from the released P08-U1 and P13
   tables, plus coverage counts and a descriptive PCA from the private P01 run.
 - `make_figures.py` - writes the TikZ figures in `figures/` from `data/`.
@@ -23,8 +23,10 @@ export ATLAS_ARTIFACT_ROOT=/path/outside/the/repository/atlas_artifacts
 ./build.sh
 ```
 
-## Not published
+## Published and local-only files
 
-`deck.pdf`, `figures/pca_*.tex` and `private_data/` stay local: the PCA panel plots one point per
-spectrum, and row-level views are kept private under `PUBLICATION_POLICY.md`. Rebuilding them needs
-access to the private artifact root.
+`deck.pdf` is the compiled deck as presented, published at the project owner's request
+(2026-10-20); its slide-5 PCA panel plots one point per spectrum.
+
+`figures/pca_*.tex` (the per-spectrum PCA coordinates as text) and `private_data/` stay local under
+`PUBLICATION_POLICY.md`. Rebuilding them needs access to the private artifact root.

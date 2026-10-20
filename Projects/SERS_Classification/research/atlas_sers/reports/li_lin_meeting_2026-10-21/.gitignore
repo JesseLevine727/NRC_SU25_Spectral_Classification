@@ -11,7 +11,6 @@ private_data/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-# The compiled deck and the PCA figure show one point per spectrum; keep them local
-# under the project's publication policy (row-level views stay private).
-deck.pdf
+# The PCA figure source holds per-spectrum coordinates; keep it local (the rendered
+# plot is published in deck.pdf by the project owner's decision of 2026-10-20).
 figures/pca_*.tex
