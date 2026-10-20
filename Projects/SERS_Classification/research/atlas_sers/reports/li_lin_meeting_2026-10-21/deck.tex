@@ -38,6 +38,9 @@
 
 \newcommand{\takeaway}[1]{%
   \par\vspace{2pt}\noindent\colorbox{cTake}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\small #1}}}
+\definecolor{cGap}{HTML}{E3EEFC}
+\newcommand{\gapbox}[1]{%
+  \par\smallskip\noindent\colorbox{cGap}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\centering\bfseries\vspace{2pt}#1\par\vspace{2pt}}}\par\smallskip}
 \newcommand{\src}[1]{{\par\vspace{1pt}\tiny\color{cInk2}#1\par}}
 \newcommand{\yes}{\textcolor{sGood}{\ding{51}}}
 \newcommand{\partly}{\textcolor{sWarn}{\textbf{$\sim$}}}
@@ -71,8 +74,8 @@
 \vspace{0.6em}
 \textbf{For discussion}
 \begin{itemize}
-  \item What paper this dataset supports, and where to submit it.
-  \item What a new dataset would need for the original neural-network goal.
+  \item Paper 1: what this dataset supports, and what it still needs.
+  \item Paper 2: the original VAE goal, and what a proper dataset for it looks like.
 \end{itemize}
 \end{frame}
 
@@ -159,27 +162,6 @@ Pills station: principal-component map of 208 spectra (one point per spectrum).
 \takeaway{Removing the background moves spectra from grouping by instrument toward grouping by chemical. It does not remove the instrument effect completely.}
 \end{frame}
 
-% -------------------------------------------------------------------------- 6
-\begin{frame}{Seven questions and where each stands}
-\small
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{@{}c@{\;}>{\raggedright\arraybackslash}p{0.45\textwidth}>{\raggedright\arraybackslash}p{0.47\textwidth}@{}}
-\toprule
-& Question & Status\\
-\midrule
-\yes & 1. Identify the chemical on an unseen instrument? & 65--68\% minimal; 70--75\% baseline-corrected (chance 33\%)\\
-\yes & 2. Which single preprocessing pipeline helps most? & Baseline correction: +5 to +7 points; smoothing: no gain\\
-\partly & 3. Should preprocessing adapt to the instrument? & By brand: not testable here. By spectrum quality: possible at CWA only; not yet run\\
-\yes & 4. Do neural networks beat classical methods? & No clear difference\\
-\no & 5. How much do 1--2 calibration samples from a new instrument help? & Not yet run; feasible for 1--2 samples per chemical\\
-\no & 6. Are confidence scores reliable; can unknowns be flagged? & Not yet run; CNN confidence is poorly calibrated\\
-\partly & 7. Do substrates work independently of the instrument? & Partly: depends on the instrument; Mira units are the weakest\\
-\bottomrule
-\end{tabular}
-
-\src{\yes\ answered \quad \partly\ partly answered \quad \no\ not yet run. Balanced accuracy averages the hit rate over chemicals, so 33\% is chance for three chemicals.}
-\end{frame}
-
 % -------------------------------------------------------------------------- 7
 \begin{frame}{Results: identifying chemicals on an unseen instrument}
 \begin{columns}[T,onlytextwidth]
@@ -199,26 +181,39 @@ Pills station: principal-component map of 208 spectra (one point per spectrum).
 % -------------------------------------------------------------------------- 8
 \begin{frame}{Results: where it works and where it does not}
 \begin{columns}[T,onlytextwidth]
-\column{0.33\textwidth}
+\column{0.50\textwidth}
 \centering
 \scriptsize\textbf{Per chemical, all models (\% correct)}\par\smallskip
-\input{figures/per_class.tex}
-\column{0.30\textwidth}
+\scalebox{1.13}{\input{figures/per_class.tex}}
+\column{0.48\textwidth}
 \centering
 \scriptsize\textbf{Per instrument (Extra Trees)}\par\smallskip
-\input{figures/scatter_instruments.tex}
-\column{0.35\textwidth}
-\centering
-\scriptsize\textbf{Per substrate, held-out instrument}\par\smallskip
-\input{figures/substrate_domains.tex}
+\scalebox{1.08}{\input{figures/scatter_instruments.tex}}
 \end{columns}
-\takeaway{Correction rescues background-heavy instruments (Mira-3 +31, RMX-2 +35 points) but lowers every CWA instrument (by 1--9 points). pSERS silver passes 6 of 10 instrument tests. The field log recorded detection for 75\% of pSERS and 23\% of H-Kit measurements.}
-\src{Substrate panel (Extra Trees, chosen after the results): dot and bar = corrected estimate and 95\% interval; open circle = minimal. Pass: lower bound $\geq$60\% and $\leq$10-point loss. The pre-planned test found no substrate passed; NRC and GaN/polymer had too few samples.}
+\takeaway{Blank is easy (91--97\%) and ethyl paraoxon is near chance (28--39\%); the models agree chemical by chemical. Baseline correction rescues background-heavy instruments (Mira-3 +31, RMX-2 +35 points) but lowers every CWA instrument (by 1--9 points).}
+\src{Both panels: baseline-corrected, unseen instrument. Right: each point is one station--instrument combination; points above the dashed line improved with baseline correction.}
+\end{frame}
+
+% -------------------------------------------------------------------------- 8b
+\begin{frame}{Why baseline correction helped some instruments and not others}
+\begin{columns}[T,onlytextwidth]
+\column{0.60\textwidth}
+\centering
+\scriptsize\textbf{Same two pill samples (pSERS silver) on two instruments}\par\smallskip
+\input{figures/spectra_preprocessing.tex}
+\column{0.38\textwidth}
+\centering
+\scriptsize\textbf{Background vs gain (Extra Trees)}\par\smallskip
+\input{figures/background_vs_gain.tex}
+\end{columns}
+\takeaway{On Mira-3, drug and blank spectra look alike until the background is removed (median correlation 0.94 $\to$ 0.16): this is why drugs were called ``blank'' on slide 6. Correction pays off where the raw signal is almost all background ($\approx$99\%: RMX-2, Mira-1, Mira-3; +19 to +35 points). Below that, results are mixed.}
+\src{Samples: lowest-ID 4-ANPP and blank pills on both instruments, first scan each; correlations use all Pills/pSERS spectra. Right: background = area the models' own arPLS step removed $\div$ raw area. Exploratory (examined after the results); rank correlation with gain 0.73--0.75 for SVM and CNNs, 0.26--0.30 for tree models.}
 \end{frame}
 
 % -------------------------------------------------------------------------- 9
 \begin{frame}{Paper 1: what this dataset supports now}
 \textbf{Working title:} Chemical identification on unseen handheld Raman instruments: a leakage-controlled benchmark on a multi-instrument SERS field trial
+\gapbox{The gap: no published study has tested whether a SERS model still identifies the chemical on a handheld instrument it has never seen.}
 
 \begin{columns}[T,onlytextwidth]
 \column{0.50\textwidth}
@@ -243,56 +238,54 @@ Pills station: principal-component map of 208 spectra (one point per spectrum).
   \item Lai et al., \emph{Anal.\ Chem.} 2025; She et al., \emph{Anal.\ Chem.} 2026: transfer models between devices --- need data from the new instrument.
   \item Mirsafavi et al., \emph{Analyst} 2020; Wilson et al., \emph{Sens.\ Actuators B} 2021: SERS of fentanyl and 4-ANPP --- one instrument.
 \end{itemize}
-\textbf{Gap:} no study tests an unseen handheld instrument with sample-grouped splits across several substrates and vendors.
+
 
 \end{columns}
 \src{The contribution is the test protocol and a rare dataset, not a new method. Classical $\approx$ CNN agrees with recent Raman benchmarks (Sineesh \& Kamsali, \emph{Digital Discovery} 2026). Checked 20 October 2026 against Crossref; full list in backup.}
 \end{frame}
 
 % -------------------------------------------------------------------------- 10
-\begin{frame}{What a proper dataset needs}
-\begin{columns}[T,onlytextwidth]
-\column{0.40\textwidth}
-\centering
-\scriptsize\textbf{Independent samples per chemical $\times$ substrate}\par\smallskip
-\input{figures/coverage_chemical_substrate.tex}
-\par\medskip
-\scriptsize\textbf{Why sample count matters (schematic)}\par\smallskip
-\input{figures/capacity_schematic.tex}
-\column{0.58\textwidth}
-\small
-\textbf{1. Fill the matrix.} A model separates two effects only if they vary independently. Here H-Kit met only CWA chemicals and pSERS only Pills/Surfaces chemicals. Needed: every chemical on every substrate and instrument, several independent samples per cell.
+\begin{frame}{Paper 1: what it still needs}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.38\textwidth}>{\raggedright\arraybackslash}p{0.58\textwidth}@{}}
+\toprule
+Addition & Question it answers\\
+\midrule
+Calibration with 1--2 samples from the new instrument & How many samples fix a new instrument? Prior work uses target samples (Lai 2025, She 2026), so this places our results beside theirs\\
+Other normalizations (SNV, vector, area) & Why min--max scaling?\\
+Without Mira-1; without quality-flagged spectra & Do suspect measurements drive the results?\\
+Why CWA got worse with correction & All three CWA instruments dropped 1--9 points\\
+Background mechanism (slide 8) & Why correction helps some instruments and not others\\
+\bottomrule
+\end{tabular}
 
 \medskip
-\textbf{2. Ground truth for each effect:} pure-analyte Raman references, substrate-only blanks, instrument calibration standards; otherwise a model's ``chemical part'' cannot be checked.
+\textbf{Already answered:} spike removal is not the cause --- the smoothing pipeline also removes spikes and gained nothing.
 
-\medskip
-\textbf{3. Enough independent samples.} Our CNN has 208,691 adjustable parameters for 69 samples ($\approx$3,000 per sample). Extra parameters let a model fit the training data exactly yet miss new samples (left, bottom).
-
-\medskip
-\colorbox{cTake}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{Illustrative design:} (6 analytes $\times$ 3 concentrations + 1 blank) $\times$ 4 substrates $\times$ 5 preparations = 380 independent samples (5.5$\times$ today), each read on 4 instruments, including $\geq$3 units of one brand.}}
-\end{columns}
-\src{Theory agrees: without labelled factors, disentanglement cannot be learned (Locatello et al., ICML 2019); correlated factors stay entangled (Tr\"auble et al., ICML 2021). Schematic uses five invented points; no exact ``samples $>$ parameters'' rule exists.}
+\smallskip
+\textbf{Parked:} preprocessing chosen per spectrum quality (supported in 54 of 260 tests; $\approx$1.6M fits); per-brand preprocessing (untestable: instruments were tied to stations); unknown-chemical rejection; extra CNN losses; RBF networks and self-organizing maps (after submission).
+\takeaway{Plan: about one week of experiments on the existing splits and code, then freeze the results and write.}
 \end{frame}
 
 % -------------------------------------------------------------------------- 11
 \begin{frame}{Paper 2: the original VAE goal, with a designed dataset}
 \textbf{Working title:} Separating analyte, substrate and instrument contributions in SERS spectra with structured variational autoencoders
+\gapbox{The gap: no SERS dataset measures every chemical on every substrate and instrument, so the chemical's signal has never been separated from the rest.}
 
 \begin{columns}[T,onlytextwidth]
 \column{0.50\textwidth}
-\textbf{How it would be tested}
+\textbf{Approach and test}
 \begin{itemize}\small
+  \item Physics-structured VAE: spectrum $\approx$ instrument response $\times$ (analyte + substrate) + background.
   \item Recover each analyte's reference spectrum from its SERS spectra.
   \item Predict chemical $\times$ substrate $\times$ instrument combinations deliberately left out of training.
-  \item Compare against the Paper~1 benchmark methods.
+  \item Compare against the Paper~1 methods.
 \end{itemize}
 \textbf{Why Paper 1 comes first}\par\small
 Paper 1 shows the instrument effect dominates, and why separating it requires a crossed design.
 
-\medskip
-\textbf{Candidate journals}\par
-\scriptsize Analytical Chemistry (ACS) \,$\cdot$\, Digital Discovery (RSC) \,$\cdot$\, Machine Learning: Science and Technology (IOP) \,$\cdot$\, Nature Communications (stretch) \,$\cdot$\, plus a Scientific Data descriptor for the dataset
+
 \column{0.48\textwidth}
 \textbf{Closest prior work}\par
 \scriptsize
@@ -302,10 +295,83 @@ Paper 1 shows the instrument effect dominates, and why separating it requires a 
   \item Abram \& McCloskey, \emph{Biomolecules} 2023: a VAE separates instrument type --- in mass spectrometry.
   \item Lotfollahi et al., \emph{Mol.\ Syst.\ Biol.} 2023: predicts unseen drug $\times$ cell-type combinations --- a template from biology.
 \end{itemize}
-\textbf{Gap:} no crossed analyte $\times$ substrate $\times$ instrument SERS dataset with disentangled models was found.
+\bigskip
+\textbf{Candidate journals}\par
+\scriptsize Analytical Chemistry (ACS) \,$\cdot$\, Digital Discovery (RSC) \,$\cdot$\, Machine Learning: Science and Technology (IOP) \,$\cdot$\, Nature Communications (stretch) \,$\cdot$\, plus a Scientific Data descriptor for the dataset
+
 
 \end{columns}
 \src{Literature checked 20 October 2026 against Crossref and publisher/proceedings pages; repeat in Scopus before submission. Full list in backup.}
+\end{frame}
+
+% -------------------------------------------------------------------------- 12
+\begin{frame}{Paper 2: experiments and metrics}
+\footnotesize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.33\textwidth}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+\toprule
+Experiment & Question & How we measure it & Compared with\\
+\midrule
+\textbf{E1} Recover the pure chemical spectrum & Does the model's chemical part look like the analyte's reference spectrum? & How closely it matches (correlation, peak positions) & Standard unmixing (MCR-ALS, NMF)\\
+\textbf{E2} Separate chemical from substrate & Does the chemical part hold only chemistry? & Chemical readable from the chemical part, not from the substrate part & The model ladder below\\
+\textbf{E3} Predict unmeasured combinations & Can it predict a chemical on a substrate it never saw together? & Match to the real spectrum & Simple additive model\\
+\textbf{E4} Identify on a new substrate & Can it identify chemicals on a substrate left out of training? & Balanced accuracy & Paper 1 methods\\
+\bottomrule
+\end{tabular}
+
+\medskip
+\small
+\textbf{Model ladder (E2):} VAE $\to$ $\beta$-VAE (unsupervised disentanglement) $\to$ conditional VAE with label-partitioned latents (supervised disentanglement) $\to$ physics-structured VAE with an additive decoder (ours). Where it starts working shows what separation needs.
+
+\smallskip
+\textbf{Rules:} always split by prepared sample; decide what counts as success before running.
+\src{Instrument translation and ablations in backup.}
+\end{frame}
+
+% -------------------------------------------------------------------------- 12
+\begin{frame}{Paper 2: what a proper dataset needs}
+\begin{columns}[T,onlytextwidth]
+\column{0.40\textwidth}
+\centering
+\scriptsize\textbf{Today: independent samples per chemical $\times$ substrate}\par\smallskip
+\input{figures/coverage_chemical_substrate.tex}
+\column{0.58\textwidth}
+\small
+\textbf{1. Fill the matrix.} Every analyte on every substrate and instrument, about 5 independent preparations per cell. Today H-Kit met only CWA chemicals and pSERS only Pills/Surfaces chemicals, so substrate and chemical cannot be separated.
+
+\smallskip
+\textbf{2. Ground truth for each effect.} Pure-analyte Raman references, substrate-only blanks, instrument intensity standards (e.g.\ NIST SRM 2241).
+
+\smallskip
+\textbf{3. Enough instruments.} $\geq$5--6, including $\geq$3 units of one brand, so ``works on a new instrument'' is tested more than a few times.
+
+\smallskip
+\textbf{4. The same preparation on every instrument.} The pairing shows the model directly what an instrument effect looks like.
+\end{columns}
+\takeaway{Illustrative design: (6 analytes $\times$ 3 concentrations + 1 blank) $\times$ 4 substrates $\times$ 5 preparations = 380 independent samples, each read on 5 instruments $\times$ 3 scans $\approx$ 5,700 spectra.}
+\src{Theory agrees: without labelled, crossed factors, disentanglement cannot be learned (Locatello et al., ICML 2019); correlated factors stay entangled (Tr\"auble et al., ICML 2021).}
+\end{frame}
+
+% -------------------------------------------------------------------------- 13
+\begin{frame}{Paper 2: how much data?}
+\begin{columns}[c,onlytextwidth]
+\column{0.50\textwidth}
+\large Like a calibration curve: a model needs more data points than adjustable parameters to give one stable answer.
+
+\medskip
+\normalsize\textcolor{cInk2}{($N$ samples $\times$ $M$ outputs $>$ $W$ weights)}
+\column{0.48\textwidth}
+\centering\scalebox{1.25}{\input{figures/capacity_schematic.tex}}
+\end{columns}
+
+\bigskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}>{\bfseries}l>{\raggedright\arraybackslash}p{0.82\textwidth}@{}}
+Today & 69 samples. Our CNN had thousands of times more weights than data. It worked, but never beat Random Forest.\\
+Paper 2 & $\approx$300--500 independent preparations, each on every substrate and instrument.\\
+First & A $\approx$100-preparation pilot to confirm the number.\\
+\end{tabular}
+\src{Rule: Q.J.\ Zhang \& K.C.\ Gupta, \emph{Neural Networks for RF and Microwave Design} (Artech House, 2000). Numbers and test-precision details in backup.}
 \end{frame}
 
 % -------------------------------------------------------------------------- 12
@@ -313,14 +379,32 @@ Paper 1 shows the instrument effect dominates, and why separating it requires a 
 \begin{enumerate}
   \item \textbf{Publication.} Can results from the NATO trial data be published? Who must approve, who are co-authors, and is there a citable trial report (NATO SET-292, Aberdeen, March 2024)?
   \item \textbf{Route.} Paper 1 now with this dataset; Paper 2 requires new measurements.
-  \item \textbf{New data.} Which analytes, substrates and instruments could NRC measure? Are $\geq$3 units of one brand available? Can one SERS chip be read on several instruments before it degrades?
-  \item \textbf{Chemistry.} Why might the Mira units fail without baseline correction (Mira-1 also failed its system check)? Was ethyl paraoxon deposited from an ethanol solution?
-  \item \textbf{Next experiments.} 1--2-sample calibration on a new instrument; robustness to added noise and background; other normalizations. Which matter most for the paper?
+  \item \textbf{New data.} Which analytes, substrates and instruments could NRC measure? Are $\geq$5 instruments, with $\geq$3 of one brand, available? Can one SERS chip be read on several instruments? Could we start with a $\approx$100-preparation pilot?
 \end{enumerate}
 \end{frame}
 
 % ========================================================================== appendix
 \appendix
+
+\begin{frame}{Backup: seven questions and where each stands}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}c@{\;}>{\raggedright\arraybackslash}p{0.45\textwidth}>{\raggedright\arraybackslash}p{0.47\textwidth}@{}}
+\toprule
+& Question & Status\\
+\midrule
+\yes & 1. Identify the chemical on an unseen instrument? & 65--68\% minimal; 70--75\% baseline-corrected (chance 33\%)\\
+\yes & 2. Which single preprocessing pipeline helps most? & Baseline correction: +5 to +7 points; smoothing: no gain\\
+\partly & 3. Should preprocessing adapt to the instrument? & By brand: not testable here. By spectrum quality: possible at CWA only; not yet run\\
+\yes & 4. Do neural networks beat classical methods? & No clear difference\\
+\no & 5. How much do 1--2 calibration samples from a new instrument help? & Not yet run; feasible for 1--2 samples per chemical\\
+\no & 6. Are confidence scores reliable; can unknowns be flagged? & Not yet run; CNN confidence is poorly calibrated\\
+\partly & 7. Do substrates work independently of the instrument? & Partly: depends on the instrument; Mira units are the weakest\\
+\bottomrule
+\end{tabular}
+
+\src{\yes\ answered \quad \partly\ partly answered \quad \no\ not yet run. Balanced accuracy averages the hit rate over chemicals, so 33\% is chance for three chemicals.}
+\end{frame}
 
 \begin{frame}{Backup: how the test was kept fair}
 \centering
@@ -375,6 +459,56 @@ Preprocessing chosen from spectrum quality & Partly & Supported in 54 of 260 tes
 Preprocessing chosen per instrument brand & No & Instruments were tied to stations: within a station, holding one out leaves $\leq$1 unit of that brand to learn from\\
 \bottomrule
 \end{tabular}
+\end{frame}
+
+\begin{frame}{Backup: how much data, details}
+\begin{columns}[T,onlytextwidth]
+\column{0.50\textwidth}
+\small
+\textbf{Rule} (Zhang \& Gupta, 2000): $N$ samples $\times$ $M$ outputs give $N{\cdot}M$ constraints for $W$ weights.
+$N{\cdot}M > W$: overdetermined, one stable fit. $N{\cdot}M < W$: underdetermined, many fits.
+
+
+\smallskip
+\scriptsize
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+& $W$ & $N{\cdot}M$ & $W \div N{\cdot}M$\\
+\midrule
+CNN, one station & 208,691 & 54 & $\approx$3,900\\
+VAE, NATO data & $\approx$100k & 27.5k & $\approx$3.6\\
+VAE, Paper 2 design & 20--80k & 17.5--87k & $\approx$1\\
+\bottomrule
+\end{tabular}
+\column{0.48\textwidth}
+\small
+\textbf{Modern methods} (early stopping, convolutions, augmentation, pretraining, physics-based decoders) let compact models work below the classical limit. Our CNN was thousands of times underdetermined and still matched Random Forest --- but did not beat it.
+
+\medskip
+\textbf{Confidence comes from the test.} The 95\% range of an 80\% accuracy:
+
+\smallskip
+\centering
+\begin{tabular}{@{}lr@{}}
+\toprule
+Independent test samples & Range\\
+\midrule
+19 (today's substrate tests) & $\pm$18 points\\
+60 & $\pm$10 points\\
+250 & $\pm$5 points\\
+\bottomrule
+\end{tabular}
+\end{columns}
+\takeaway{Plan $\approx$300--500 crossed preparations, $\geq$60 independent test samples per key comparison and $\geq$5--6 instruments. Size the final study from a $\approx$100-preparation pilot learning curve.}
+\src{Ratio above 1 = underdetermined. $M$ = 3 for a three-chemical classifier; $\approx$46 for a spectrum (46 principal components hold 95\% of the variation). VAE sizes are assumptions.}
+\end{frame}
+
+\begin{frame}{Backup: Paper 2 translation and ablations}
+\small
+\textbf{E5 Instrument translation} (needs $\geq$2 instruments): convert one instrument's spectrum into the other's; compare with the real paired spectrum and with piecewise direct standardization (PDS).
+
+\smallskip
+\textbf{E6 What matters:} remove the physics structure, the labels, or the analyte $\times$ substrate interaction term; learning curve versus number of preparations.
 \end{frame}
 
 \begin{frame}{Backup: glossary}
@@ -434,6 +568,10 @@ Confusion matrix & Table of true versus predicted chemical.\\
   \item Zhang C, et al. Understanding deep learning requires rethinking generalization. \emph{ICLR} 2017.
   \item Choquette SJ, et al. Relative intensity correction of Raman spectrometers: NIST SRMs 2241 through 2243. \emph{Appl.\ Spectrosc.} 2007, 61, 117--129. doi:10.1366/000370207779947585
   \item Flanagan AR, Glavin FG. Open-source Raman spectra of chemical compounds for active pharmaceutical ingredient development. \emph{Sci.\ Data} 2025, 12, 498. doi:10.1038/s41597-025-04848-6
+  \item Zhang QJ, Gupta KC. \emph{Neural Networks for RF and Microwave Design.} Artech House, 2000. ISBN 1-58053-100-8
+  \item Belkin M, et al. Reconciling modern machine-learning practice and the classical bias--variance trade-off. \emph{PNAS} 2019, 116, 15849--15854. doi:10.1073/pnas.1903070116
+  \item Lachapelle S, et al. Additive decoders for latent variables identification and Cartesian-product extrapolation. \emph{NeurIPS} 2023.
+  \item Mahmud S. Multi-Instrument SERS Dataset (29,545 spectra, 5 instruments). Zenodo 2026. doi:10.5281/zenodo.23372983
 \end{enumerate}
 \end{frame}
 

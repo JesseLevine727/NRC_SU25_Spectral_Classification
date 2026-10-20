@@ -6,7 +6,7 @@ paper routes with verified literature.
 
 ## Contents
 
-- `deck.tex` / `deck.pdf` - the slides (12 main + 8 backup) and the compiled deck.
+- `deck.tex` / `deck.pdf` - the slides (15 main + 11 backup) and the compiled deck.
 - `build_figure_data.py` - extracts aggregate tables into `data/` from the released P08-U1 and P13
   tables, plus coverage counts and a descriptive PCA from the private P01 run.
 - `make_figures.py` - writes the TikZ figures in `figures/` from `data/`.

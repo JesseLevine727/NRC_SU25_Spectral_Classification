@@ -14,3 +14,5 @@ private_data/
 # The PCA figure source holds per-spectrum coordinates; keep it local (the rendered
 # plot is published in deck.pdf by the project owner's decision of 2026-10-20).
 figures/pca_*.tex
+# The spectra figure source holds individual spectra; keep it local like the PCA source.
+figures/spectra_*.tex

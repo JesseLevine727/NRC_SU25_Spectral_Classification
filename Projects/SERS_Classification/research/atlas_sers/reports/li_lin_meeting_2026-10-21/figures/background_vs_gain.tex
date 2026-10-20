@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+\begin{axis}[width=3.6cm,height=2.55cm,scale only axis,xmin=15,xmax=105,ymin=-19,ymax=44,
+  xtick={20,40,60,80,100},ytick={-10,0,10,20,30},tick label style={font=\tiny},label style={font=\tiny},
+  xlabel={arPLS background (\% of raw signal)},ylabel={gain from correction (points)},
+  xmajorgrids,ymajorgrids,grid style={cGrid,very thin},axis line style={cInk2},tick style={cInk2},clip=false]
+\addplot[cInk2,dashed,thin,domain=15:105] {0};
+\node[font=\tiny,anchor=south,inner sep=2.5pt] at (axis cs:30,2.5) {Agilent};
+\addplot[only marks,mark=*,mark size=2.0pt,color=cInk,mark options={fill=white,draw=cInk,line width=0.5pt}] coordinates {(93.0,-3.4) (90.0,-9.4) (93.0,-0.7)};
+\addplot[only marks,mark=square*,mark size=2.0pt,color=cInk,mark options={fill=cInk,draw=cInk,line width=0.5pt}] coordinates {(36.0,1.3) (30.0,1.8) (99.0,30.6) (83.0,2.2) (88.0,-2.9)};
+\addplot[only marks,mark=triangle*,mark size=2.0pt,color=cInk,mark options={fill=cInk,draw=cInk,line width=0.5pt}] coordinates {(24.0,1.2) (99.0,18.7) (85.0,9.3) (82.0,-1.3) (99.0,35.2)};
+\node[font=\tiny,anchor=south east,inner sep=2.5pt] at (axis cs:99.0,35.2) {RMX-2 +35};
+\node[font=\tiny,anchor=east,inner sep=2.5pt] at (axis cs:99.0,30.6) {Mira-3 +31};
+\node[font=\tiny,anchor=east,inner sep=2.5pt] at (axis cs:99.0,18.7) {Mira-1 +19};
+\node[font=\tiny,anchor=east,inner sep=2.5pt] at (axis cs:90.0,-9.4) {Pendar-2 $-$9};
+\node[font=\tiny,anchor=east,inner sep=2.5pt] at (axis cs:85.0,9.3) {Pendar-2 +9};
+\end{axis}
+\matrix[anchor=north,font=\tiny,column sep=1pt] at (1.8,-0.72) {\draw[fill=white,draw=cInk,line width=0.5pt] plot[mark=*,mark size=1.8pt] coordinates {(0,0)}; & \node[anchor=west]{CWA}; &\draw[fill=cInk,draw=cInk] plot[mark=square*,mark size=1.8pt] coordinates {(0,0)}; & \node[anchor=west]{Pills}; &\draw[fill=cInk,draw=cInk] plot[mark=triangle*,mark size=1.8pt] coordinates {(0,0)}; & \node[anchor=west]{Surfaces}; \\};
+\end{tikzpicture}

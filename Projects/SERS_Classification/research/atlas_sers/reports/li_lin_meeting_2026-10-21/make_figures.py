@@ -359,8 +359,8 @@ def fig_capacity():
            rf"\node[font=\tiny,anchor=north west,inner sep=1pt] at (axis cs:{xn - 0.6},{yn - 0.6}) {{new}};",
            r"\end{axis}",
            r"\matrix[anchor=north west,font=\tiny,row sep=0pt,column sep=1pt] at (-0.1,-0.12) {"
-           r"\draw[cBlue,line width=1pt] (0,0) -- (0.35,0); & \node[anchor=west]{2 parameters: follows the trend}; \\"
-           r"\draw[cOrange,line width=1pt] (0,0) -- (0.35,0); & \node[anchor=west]{5 parameters: fits every point, misses the new one}; \\};",
+           r"\draw[cBlue,line width=1pt] (0,0) -- (0.35,0); & \node[anchor=west]{line, $W$=2: 5 points $>$ 2, one best fit}; \\"
+           r"\draw[cOrange,line width=1pt] (0,0) -- (0.35,0); & \node[anchor=west]{curve, $W$=5: 5 = 5, hits every point, misses the new one}; \\};",
            r"\end{tikzpicture}"]
     write("capacity_schematic", "\n".join(out))
 
@@ -382,6 +382,78 @@ def table_per_instrument():
     write("table_per_instrument", tex)
 
 
+def fig_spectra():
+    """Same 4-ANPP and blank pill samples on Mira-3 and Agilent-3 at each preprocessing stage."""
+    stages = [("raw", "raw"), ("minimal", "minimal"), ("smoothed", "smoothed"), ("baseline", "baseline")]
+    insts = [("Mira-3", "Mira-3: mostly background"), ("Agilent-3", "Agilent-3: mostly peaks")]
+    series = [("4_ANPP", "cViolet"), ("blank", "cMagenta")]
+    out = [r"\begin{tikzpicture}",
+           r"\begin{groupplot}[group style={group size=2 by 4,horizontal sep=0.25cm,vertical sep=0.12cm,",
+           r"    xticklabels at=edge bottom,xlabels at=edge bottom},",
+           r"  width=3.75cm,height=0.70cm,scale only axis,xmin=400,xmax=1800,xtick={600,1000,1400,1800},",
+           r"  ylabel style={rotate=-90,anchor=east,font=\tiny,xshift=2pt},",
+           r"  tick label style={font=\tiny},label style={font=\tiny},title style={font=\scriptsize,yshift=-2pt},",
+           r"  axis line style={cGrid},tick style={cGrid},ytick=\empty,",
+           r"  every axis plot/.append style={line width=0.45pt,line join=round}]"]
+    for row, (tag, label) in enumerate(stages):
+        for col, (inst, title) in enumerate(insts):
+            opts = []
+            if row == 0:
+                opts.append(f"title={{{title}}}")
+            if col == 0:
+                opts.append(f"ylabel={{{label}}}")
+            if row == len(stages) - 1:
+                opts.append(r"xlabel={Raman shift (cm$^{-1}$)}")
+            if tag == "raw":
+                # Shared raw axis per instrument so the background level is visible.
+                ys = [pd.read_csv(PRIVATE / f"spectrum_{inst}_{c}_raw.csv").y for c, _ in series]
+                hi = max(float(y.max()) for y in ys)
+                opts.append(f"ymin=0,ymax={hi * 1.05:.1f}")
+            else:
+                opts.append("ymin=-0.05,ymax=1.08")
+            out.append(r"\nextgroupplot[" + ",".join(opts) + "]")
+            for chem, col_name in series:
+                d = pd.read_csv(PRIVATE / f"spectrum_{inst}_{chem}_{tag}.csv")
+                coords = " ".join(f"({x:.0f},{y:.4g})" for x, y in zip(d.x, d.y))
+                out.append(rf"\addplot[{col_name}] coordinates {{{coords}}};")
+    out.append(r"\end{groupplot}")
+    out.append(r"\matrix[anchor=north,font=\tiny,column sep=2pt] at ($(group c1r4.south)!0.5!(group c2r4.south)+(0,-0.62)$) {"
+               r"\draw[cViolet,line width=0.9pt] (0,0) -- (0.35,0); & \node[anchor=west]{4-ANPP sample}; &"
+               r"\draw[cMagenta,line width=0.9pt] (0,0) -- (0.35,0); & \node[anchor=west]{blank sample}; \\};")
+    out.append(r"\end{tikzpicture}")
+    write("spectra_preprocessing", "\n".join(out))
+
+
+def fig_background_gain():
+    d = pd.read_csv(DATA / "background_vs_gain.csv")
+    d = d[d.model_id == "C-EXTRA-TREES"]
+    marks = {"cwa": ("*", "white"), "pills": ("square*", "cInk"), "surfaces": ("triangle*", "cInk")}
+    callouts = {("surfaces", "RMX-2"): "south east", ("pills", "Mira-3"): "east", ("surfaces", "Mira-1"): "east",
+                ("cwa", "Pendar-2"): "east", ("surfaces", "Pendar-2"): "east"}
+    out = [r"\begin{tikzpicture}",
+           r"\begin{axis}[width=3.6cm,height=2.55cm,scale only axis,xmin=15,xmax=105,ymin=-19,ymax=44,",
+           r"  xtick={20,40,60,80,100},ytick={-10,0,10,20,30},tick label style={font=\tiny},label style={font=\tiny},",
+           r"  xlabel={arPLS background (\% of raw signal)},ylabel={gain from correction (points)},",
+           r"  xmajorgrids,ymajorgrids,grid style={cGrid,very thin},axis line style={cInk2},tick style={cInk2},clip=false]",
+           r"\addplot[cInk2,dashed,thin,domain=15:105] {0};",
+           r"\node[font=\tiny,anchor=south,inner sep=2.5pt] at (axis cs:30,2.5) {Agilent};"]
+    for st, (mk, fill) in marks.items():
+        g = d[d.station == st]
+        coords = " ".join(f"({r.background_pct},{r.change})" for _, r in g.iterrows())
+        out.append(rf"\addplot[only marks,mark={mk},mark size=2.0pt,color=cInk,mark options={{fill={fill},draw=cInk,line width=0.5pt}}] coordinates {{{coords}}};")
+    for (st, inst), anchor in callouts.items():
+        r = d[(d.station == st) & (d.instrument == inst)].iloc[0]
+        sign = "+" if r.change >= 0 else "$-$"
+        out.append(rf"\node[font=\tiny,anchor={anchor},inner sep=2.5pt] at (axis cs:{r.background_pct},{r.change}) {{{inst} {sign}{abs(r.change):.0f}}};")
+    out.append(r"\end{axis}")
+    out.append(r"\matrix[anchor=north,font=\tiny,column sep=1pt] at (1.8,-0.72) {"
+               r"\draw[fill=white,draw=cInk,line width=0.5pt] plot[mark=*,mark size=1.8pt] coordinates {(0,0)}; & \node[anchor=west]{CWA}; &"
+               r"\draw[fill=cInk,draw=cInk] plot[mark=square*,mark size=1.8pt] coordinates {(0,0)}; & \node[anchor=west]{Pills}; &"
+               r"\draw[fill=cInk,draw=cInk] plot[mark=triangle*,mark size=1.8pt] coordinates {(0,0)}; & \node[anchor=west]{Surfaces}; \\};")
+    out.append(r"\end{tikzpicture}")
+    write("background_vs_gain", "\n".join(out))
+
+
 if __name__ == "__main__":
     fig_coverage()
     fig_chem_substrate()
@@ -395,4 +467,6 @@ if __name__ == "__main__":
     fig_substrate()
     fig_capacity()
     table_per_instrument()
+    fig_spectra()
+    fig_background_gain()
     print("figures:", sorted(p.name for p in FIG.glob("*.tex")))

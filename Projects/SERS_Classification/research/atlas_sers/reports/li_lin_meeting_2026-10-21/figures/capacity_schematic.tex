@@ -7,5 +7,5 @@
 \addplot[only marks,mark=star,mark size=3pt,color=cInk,line width=0.8pt] coordinates {(5.8,5.9)};
 \node[font=\tiny,anchor=north west,inner sep=1pt] at (axis cs:5.2,5.300000000000001) {new};
 \end{axis}
-\matrix[anchor=north west,font=\tiny,row sep=0pt,column sep=1pt] at (-0.1,-0.12) {\draw[cBlue,line width=1pt] (0,0) -- (0.35,0); & \node[anchor=west]{2 parameters: follows the trend}; \\\draw[cOrange,line width=1pt] (0,0) -- (0.35,0); & \node[anchor=west]{5 parameters: fits every point, misses the new one}; \\};
+\matrix[anchor=north west,font=\tiny,row sep=0pt,column sep=1pt] at (-0.1,-0.12) {\draw[cBlue,line width=1pt] (0,0) -- (0.35,0); & \node[anchor=west]{line, $W$=2: 5 points $>$ 2, one best fit}; \\\draw[cOrange,line width=1pt] (0,0) -- (0.35,0); & \node[anchor=west]{curve, $W$=5: 5 = 5, hits every point, misses the new one}; \\};
 \end{tikzpicture}

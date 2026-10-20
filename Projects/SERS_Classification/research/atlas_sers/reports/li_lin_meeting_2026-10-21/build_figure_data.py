@@ -203,6 +203,90 @@ def private_inputs():
             print(f"PCA {tag} {st}: n={mask.sum()} var={np.round(100 * pca.explained_variance_ratio_, 1)}")
 
 
+def spectra_examples():
+    """Same pill sample on two instruments at each preprocessing stage (row-level -> private).
+
+    Samples are the lowest-ID 4-ANPP and blank pills measured on pSERS silver with both Mira-3 and
+    Agilent-3 (first scan each), chosen by ID rather than by appearance. The drug-vs-blank similarity
+    table aggregates every Pills/pSERS spectrum per instrument and is safe to publish.
+    """
+    man = pd.read_csv(P01_RUN / "primary_manifest.csv", low_memory=False)
+    raw = np.load(HERE.parents[3] / "Workspace/nato_sers_raw_reexploration_v1/arrays/"
+                  "unique_attributable_common_support_raw.npz")
+    reps = {"raw": raw}
+    for rep, tag in (("R_MIN_400_1800", "minimal"), ("R_SG_400_1800", "smoothed"), ("R_ARPLS_400_1800", "baseline")):
+        reps[tag] = np.load(P01_RUN / "representations" / f"{rep}.npz")
+    index = {tag: {u: i for i, u in enumerate(z["observation_uid"])} for tag, z in reps.items()}
+    # The raw array is keyed by the source (session/row) identifier; map it to P01 observation IDs.
+    src = dict(zip(man.observation_uid, man.source_observation_uid))
+    index["raw"] = {obs: index["raw"][src[obs]] for obs in man.observation_uid}
+    pills = man[(man.station == "pills") & (man.sensor_family == "pSERS_Metrohm_silver")]
+    paired = pills[pills.instrument.isin(["Mira-3", "Agilent-3"])].groupby(["master_sample_id", "target_analyte"]).instrument.nunique()
+    paired = paired[paired == 2].reset_index()
+    chosen = {c: int(paired[paired.target_analyte == c].master_sample_id.min()) for c in ("4_ANPP", "blank")}
+    for inst in ("Mira-3", "Agilent-3"):
+        for chem, master in chosen.items():
+            uid = pills[(pills.master_sample_id == master) & (pills.instrument == inst)].observation_uid.iloc[0]
+            for tag, z in reps.items():
+                y = z["intensity"][index[tag][uid]].astype(float)
+                x = z["axis_cm1"].astype(float)
+                keep = (x <= 1800)
+                pd.DataFrame({"x": x[keep][::2], "y": y[keep][::2]}).to_csv(
+                    PRIVATE / f"spectrum_{inst}_{chem}_{tag}.csv", index=False)
+    print("example samples:", chosen)
+    rows = []
+    for inst in ("Mira-3", "Agilent-3", "Agilent-1", "Pendar-1", "Pendar-3"):
+        sub = pills[pills.instrument == inst]
+        drug, blank = sub[sub.target_analyte != "blank"].observation_uid, sub[sub.target_analyte == "blank"].observation_uid
+        rec = {"instrument": inst, "drug_spectra": len(drug), "blank_spectra": len(blank)}
+        for tag in ("minimal", "baseline"):
+            X = reps[tag]["intensity"]
+            D = np.array([X[index[tag][u]] for u in drug])
+            B = np.array([X[index[tag][u]] for u in blank])
+            rec[f"median_r_{tag}"] = round(float(np.median(np.corrcoef(np.vstack([D, B]))[:len(D), len(D):])), 2)
+        rows.append(rec)
+    out = pd.DataFrame(rows)
+    out.to_csv(DATA / "drug_blank_similarity.csv", index=False)
+    print(out.to_string(index=False))
+
+
+def background_vs_gain():
+    """arPLS background share per station-instrument versus the baseline-correction gain (aggregate).
+
+    Background share = area of the arPLS background / area of the spike-removed raw signal on
+    400-1800 cm-1 (areas above zero), using the project's own despike + arPLS code and frozen P01
+    parameters, so it is exactly the background the baseline-corrected models had removed.
+    Median per station-instrument. Exploratory: examined after the results.
+    """
+    import json
+    import sys
+    from scipy.stats import spearmanr
+    sys.path.insert(0, str(ATLAS / "src"))
+    from atlas_sers.preprocessing.representations import arpls_correct, despike
+    params = json.loads((ATLAS / "plan/contracts/p01_governance_contract.json").read_text())["transformation_parameters"]
+    man = pd.read_csv(P01_RUN / "primary_manifest.csv", low_memory=False).set_index("source_observation_uid")
+    raw = np.load(HERE.parents[3] / "Workspace/nato_sers_raw_reexploration_v1/arrays/"
+                  "unique_attributable_common_support_raw.npz")
+    x = raw["intensity"][:, raw["axis_cm1"] <= 1800].astype(float)
+    clean = despike(x, window=int(params["despike_window"]), threshold=float(params["despike_mad_threshold"]))
+    corrected = arpls_correct(clean, lam=float(params["arpls_lambda"]), iterations=int(params["arpls_iterations"]),
+                              relative_tolerance=float(params["arpls_relative_weight_tolerance"]),
+                              logistic_clip=float(params["arpls_logistic_clip"]))
+    background = clean - corrected
+    meta = man.loc[raw["observation_uid"], ["station", "instrument"]].reset_index(drop=True)
+    meta["share"] = np.clip(background, 0, None).sum(1) / np.clip(clean, 0, None).sum(1)
+    share = meta.groupby(["station", "instrument"]).share.median().reset_index()
+    gains = pd.read_csv(DATA / "per_instrument.csv").merge(share, on=["station", "instrument"])
+    gains["background_pct"] = (100 * gains.share).round(0)
+    gains.drop(columns="share").to_csv(DATA / "background_vs_gain.csv", index=False)
+    rho = [{"model_id": m, "spearman_rho": round(spearmanr(g.share, g.change).statistic, 2),
+            "p_value": round(spearmanr(g.share, g.change).pvalue, 3), "domains": len(g)}
+           for m, g in gains.groupby("model_id")]
+    pd.DataFrame(rho).to_csv(DATA / "background_vs_gain_rank_correlation.csv", index=False)
+    print(pd.DataFrame(rho).to_string(index=False))
+    print(gains[gains.model_id == "C-EXTRA-TREES"][["station", "instrument", "background_pct", "change"]]
+          .sort_values("background_pct").to_string(index=False))
+
 if __name__ == "__main__":
     print(model_by_preprocessing().to_string(index=False))
     confusion_tables()
@@ -210,3 +294,5 @@ if __name__ == "__main__":
     print(pi[pi.model_id == "C-EXTRA-TREES"].to_string(index=False))
     print(substrate()[["substrate", "station", "instrument", "et_min_ba", "et_arpls_ba", "et_arpls_state"]].to_string(index=False))
     private_inputs()
+    spectra_examples()
+    background_vs_gain()
