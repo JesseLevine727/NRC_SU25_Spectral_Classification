@@ -1,0 +1,12 @@
+policy,,baseline,baseline,baseline,baseline,baseline,minimal,minimal,minimal,minimal,minimal
+model_id,,C-EXTRA-TREES,C-RANDOM-FOREST,C-RBF-SVM,D0-M,P05-SELECTED,C-EXTRA-TREES,C-RANDOM-FOREST,C-RBF-SVM,D0-M,P05-SELECTED
+station,true,,,,,,,,,,
+cwa,4_nitrophenol,72.6,72.8,69.0,78.2,78.7,70.5,66.9,66.7,69.7,70.5
+cwa,ethanol,69.4,68.3,66.8,60.4,60.4,72.1,72.1,54.3,45.7,45.7
+cwa,ethyl_paraoxon,34.7,28.4,36.9,39.1,39.1,48.9,44.0,40.9,37.8,37.8
+pills,4_ANPP,73.9,72.8,72.2,74.4,74.4,58.1,58.1,56.7,63.6,63.6
+pills,benzyl_fentanyl,68.8,68.8,65.8,69.6,69.6,52.1,51.2,53.3,54.6,54.6
+pills,blank,96.6,92.7,96.8,91.2,91.2,96.1,92.0,95.6,92.9,92.9
+surfaces,4_ANPP,76.7,70.7,65.3,68.0,69.3,48.7,56.7,62.7,62.0,62.7
+surfaces,acetaminophen,78.7,79.5,72.9,80.3,80.5,78.2,71.6,72.9,80.0,80.3
+surfaces,benzyl_fentanyl,88.3,88.3,75.4,82.9,84.0,64.6,64.6,58.0,68.3,68.6

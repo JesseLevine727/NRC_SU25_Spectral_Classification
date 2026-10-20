@@ -1,0 +1,17 @@
+# Row-level coordinates derived from private spectra stay local.
+private_data/
+# TeX by-products.
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+# The compiled deck and the PCA figure show one point per spectrum; keep them local
+# under the project's publication policy (row-level views stay private).
+deck.pdf
+figures/pca_*.tex

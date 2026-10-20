@@ -1,0 +1,6 @@
+y,model,M01_minimal,M01_smoothed,M01_baseline,M06_minimal,M06_smoothed,M06_baseline
+5,Extra Trees,68.5,67.7,74.8,75.6,74.6,83.0
+4,Random Forest,66.8,66.3,73.8,75.7,74.4,82.6
+3,SVM,65.1,65.5,70.1,69.7,71.3,74.8
+2,CNN,67.8,67.5,73.7,74.2,74.4,83.4
+1,CNN (selected recipe),68.0,67.9,73.9,74.1,74.8,83.7

@@ -1,0 +1,14 @@
+y,station,substrate,instrument,et_min_ba,et_min_lo,et_min_hi,et_min_state,et_arpls_ba,et_arpls_lo,et_arpls_hi,et_arpls_state,sel_min_ba,sel_min_lo,sel_min_hi,sel_min_state,sel_arpls_ba,sel_arpls_lo,sel_arpls_hi,sel_arpls_state
+13,CWA,H-Kit,Mira-2,91.5,69.0,96.3,supports_portability,83.1,65.1,92.6,inconclusive,70.9,52.9,85.2,inconclusive,83.1,62.4,92.6,inconclusive
+12,CWA,H-Kit,Pendar-2,58.3,41.6,62.5,inferior_portability,58.3,41.7,62.5,inconclusive,,,,unavailable_terminal_failure,,,,unavailable_terminal_failure
+11,CWA,H-Kit,RMX-1,86.1,55.6,94.4,inconclusive,81.9,52.8,95.8,inconclusive,,,,unavailable_terminal_failure,,,,unavailable_terminal_failure
+10,Pills,pSERS silver,Agilent-1,100.0,100.0,100.0,supports_portability,100.0,100.0,100.0,supports_portability,95.8,79.2,100.0,inconclusive,93.3,67.1,100.0,inconclusive
+9,Pills,pSERS silver,Agilent-3,100.0,100.0,100.0,supports_portability,100.0,100.0,100.0,supports_portability,95.8,75.1,100.0,inconclusive,100.0,100.0,100.0,supports_portability
+8,Pills,pSERS silver,Mira-3,33.3,33.3,33.3,inferior_portability,78.0,51.8,91.7,inconclusive,33.3,33.3,33.3,inferior_portability,82.1,56.0,95.2,inconclusive
+7,Pills,pSERS silver,Pendar-1,93.3,66.7,100.0,inconclusive,100.0,100.0,100.0,supports_portability,93.3,66.7,100.0,inconclusive,100.0,100.0,100.0,supports_portability
+6,Pills,pSERS silver,Pendar-3,100.0,100.0,100.0,supports_portability,95.2,71.6,100.0,supports_portability,95.2,71.6,100.0,inconclusive,95.2,71.6,100.0,supports_portability
+5,Surfaces,pSERS silver,Agilent-3,49.2,33.3,69.8,inferior_portability,49.2,33.3,69.8,inferior_portability,,,,unavailable_terminal_failure,54.0,33.3,76.2,inferior_portability
+4,Surfaces,pSERS silver,Mira-1,66.7,66.7,66.7,inferior_portability,74.6,42.9,90.5,inconclusive,57.1,38.1,61.9,inferior_portability,69.8,42.9,85.7,inferior_portability
+3,Surfaces,pSERS silver,Pendar-2,90.9,75.8,97.0,inconclusive,97.0,78.8,100.0,supports_portability,,,,unavailable_terminal_failure,,,,unavailable_terminal_failure
+2,Surfaces,pSERS silver,Pendar-3,83.3,66.7,88.9,inconclusive,83.3,50.0,94.4,inconclusive,,,,unavailable_terminal_failure,,,,unavailable_terminal_failure
+1,Surfaces,pSERS silver,RMX-2,50.0,36.7,56.7,inferior_portability,100.0,100.0,100.0,supports_portability,,,,unavailable_terminal_failure,100.0,100.0,100.0,supports_portability

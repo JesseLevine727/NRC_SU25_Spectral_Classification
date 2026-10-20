@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+\begin{axis}[width=3.4cm,height=3.4cm,scale only axis,xmin=30,xmax=102,ymin=30,ymax=102,
+  xtick={40,60,80,100},ytick={40,60,80,100},tick label style={font=\tiny},label style={font=\tiny},
+  xlabel={minimal (\%)},ylabel={baseline-corrected (\%)},xmajorgrids,ymajorgrids,grid style={cGrid,very thin},
+  axis line style={cInk2},tick style={cInk2},clip=false]
+\addplot[cInk2,dashed,thin,domain=30:102] {x};
+\addplot[only marks,mark=*,mark size=2.0pt,color=cInk,mark options={fill=white,draw=cInk,line width=0.5pt}] coordinates {(63.8,60.4) (61.3,51.9) (63.9,63.2)};
+\addplot[only marks,mark=square*,mark size=2.0pt,color=cInk,mark options={fill=cInk,draw=cInk,line width=0.5pt}] coordinates {(80.1,81.4) (93.3,95.2) (34.2,64.8) (79.6,81.8) (100.0,97.1)};
+\addplot[only marks,mark=triangle*,mark size=2.0pt,color=cInk,mark options={fill=cInk,draw=cInk,line width=0.5pt}] coordinates {(43.3,44.4) (53.2,71.9) (89.0,98.3) (73.4,72.1) (55.1,90.3)};
+\node[font=\tiny,anchor=west,inner sep=2.5pt,text=cInk] at (axis cs:34.2,64.8) {Mira-3 +31};
+\node[font=\tiny,anchor=south,inner sep=2.5pt,text=cInk] at (axis cs:55.1,90.3) {RMX-2 +35};
+\node[font=\tiny,anchor=east,inner sep=2.5pt,text=cInk] at (axis cs:53.2,71.9) {Mira-1 +19};
+\node[font=\tiny,anchor=west,inner sep=2.5pt,text=cInk] at (axis cs:61.3,51.9) {Pendar-2 $-$9};
+\node[font=\tiny,anchor=north west,inner sep=2.5pt,text=cInk] at (axis cs:43.3,44.4) {Agilent-3 +1};
+\end{axis}
+\matrix[anchor=north,font=\tiny,column sep=1pt] at (1.7,-0.72) {\draw[fill=white,draw=cInk,line width=0.5pt] plot[mark=*,mark size=1.8pt] coordinates {(0,0)}; & \node[anchor=west]{CWA}; &\draw[fill=cInk,draw=cInk] plot[mark=square*,mark size=1.8pt] coordinates {(0,0)}; & \node[anchor=west]{Pills}; &\draw[fill=cInk,draw=cInk] plot[mark=triangle*,mark size=1.8pt] coordinates {(0,0)}; & \node[anchor=west]{Surfaces}; \\\draw[cInk2,dashed] (-0.12,0) -- (0.12,0); & \node[anchor=west]{no change}; & & \node[anchor=west]{above = helped}; & & \\};
+\end{tikzpicture}

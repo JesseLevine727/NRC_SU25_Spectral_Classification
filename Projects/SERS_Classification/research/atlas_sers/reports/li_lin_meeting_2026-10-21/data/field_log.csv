@@ -1,0 +1,6 @@
+substrate_family,endpoint_type,definite_views,successful_views,complete_case_estimate,worst_case_missing_bound,best_case_missing_bound
+H_SERS_H_Kit,nonblank_detection,69,16,0.231884057971,0.219178082192,0.27397260274
+NRC_Canadian_SERS,nonblank_detection,5,0,0.0,0.0,0.666666666667
+NRC_Canadian_SERS,blank_specificity,3,3,1.0,0.3,1.0
+pSERS_Metrohm_silver,nonblank_detection,100,75,0.75,0.563909774436,0.812030075188
+pSERS_Metrohm_silver,blank_specificity,9,8,0.888888888889,0.205128205128,0.974358974359
