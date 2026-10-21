@@ -1,0 +1,139 @@
+block,preprocessing,experiment,method,held_out,analyte,substrate,laser,n_donors,corr,rmse
+A,minmax,E3,additive,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,10,0.9459670831160196,0.11800409888247337
+A,minmax,E3,same analyte / other substrate,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,2,0.676777599019186,0.39818594969167703
+A,minmax,E3,same substrate / other analyte,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,2,0.9590029145765515,0.0867632685928815
+A,minmax,E3,additive,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,10,0.48537683986406555,0.2385253996704998
+A,minmax,E3,same analyte / other substrate,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,2,0.48177873808123806,0.20342106728897677
+A,minmax,E3,same substrate / other analyte,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,2,0.42998314534641474,0.25563231067544084
+A,minmax,E3,additive,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,10,0.8422776450873823,0.14951538476561438
+A,minmax,E3,same analyte / other substrate,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,2,0.2939262339053033,0.30333167056398214
+A,minmax,E3,same substrate / other analyte,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,2,0.9896821635941346,0.016285256810028924
+A,minmax,E3,additive,A_BT_Ag_632_map1,benzenethiol,Ag,632,10,0.8283736587256754,0.1548989426249244
+A,minmax,E3,same analyte / other substrate,A_BT_Ag_632_map1,benzenethiol,Ag,632,3,0.27814321479665616,0.28427393818063423
+A,minmax,E3,same substrate / other analyte,A_BT_Ag_632_map1,benzenethiol,Ag,632,2,0.9772417730588172,0.055074769294254464
+A,minmax,E3,additive,A_BT_Au_632_map1,benzenethiol,Au,632,10,0.8691348744817323,0.2559347510487627
+A,minmax,E3,same analyte / other substrate,A_BT_Au_632_map1,benzenethiol,Au,632,3,0.7548828867364842,0.15961607256310972
+A,minmax,E3,same substrate / other analyte,A_BT_Au_632_map1,benzenethiol,Au,632,1,0.8403773126004446,0.22718176279661376
+A,minmax,E3,additive,A_BT_PICO_632_map1,benzenethiol,PICO,632,10,0.4421118958878129,0.38828878417170415
+A,minmax,E3,same analyte / other substrate,A_BT_PICO_632_map1,benzenethiol,PICO,632,3,-0.4937831984486206,0.3554372564824398
+A,minmax,E3,same substrate / other analyte,A_BT_PICO_632_map1,benzenethiol,PICO,632,2,0.2394499345224476,0.3651137334664568
+A,minmax,E3,additive,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,10,0.5974987644492272,0.12759019460076365
+A,minmax,E3,same analyte / other substrate,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,3,0.21804338926444256,0.4139373875072736
+A,minmax,E3,same substrate / other analyte,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,2,0.9795407346344954,0.023957980052801035
+A,minmax,E3,additive,A_Py_Ag_632_map1,pyridine,Ag,632,10,0.9801492615743846,0.07801759348313053
+A,minmax,E3,same analyte / other substrate,A_Py_Ag_632_map1,pyridine,Ag,632,3,0.9594689977546877,0.30455861154928243
+A,minmax,E3,same substrate / other analyte,A_Py_Ag_632_map1,pyridine,Ag,632,2,0.9821810336290376,0.09260519528573827
+A,minmax,E3,additive,A_Py_Au_632_map1,pyridine,Au,632,10,0.9268066084218669,0.25593475104876207
+A,minmax,E3,same analyte / other substrate,A_Py_Au_632_map1,pyridine,Au,632,3,0.854205222698312,0.3319152981664465
+A,minmax,E3,same substrate / other analyte,A_Py_Au_632_map1,pyridine,Au,632,1,0.8403773126004447,0.22718176279661376
+A,minmax,E3,additive,A_Py_PICO_632_map1,pyridine,PICO,632,10,0.7271429453155224,0.2079029830982339
+A,minmax,E3,same analyte / other substrate,A_Py_PICO_632_map1,pyridine,PICO,632,3,0.4085580038963157,0.2568078393455512
+A,minmax,E3,same substrate / other analyte,A_Py_PICO_632_map1,pyridine,PICO,632,2,0.6368650484912348,0.15529477305341938
+A,minmax,E3,additive,A_Py_pSERS_632_map1,pyridine,pSERS,632,10,0.893752357956789,0.09309643454242104
+A,minmax,E3,same analyte / other substrate,A_Py_pSERS_632_map1,pyridine,pSERS,632,3,0.36109841017881017,0.41897786978336055
+A,minmax,E3,same substrate / other analyte,A_Py_pSERS_632_map1,pyridine,pSERS,632,2,0.9896605578502479,0.01640396494727443
+A,arpls,E3,additive,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,10,0.5960533178027204,0.11640163150217611
+A,arpls,E3,same analyte / other substrate,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,2,0.3085470980985669,0.16159359432994724
+A,arpls,E3,same substrate / other analyte,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,2,0.7028114844786431,0.06907975151926857
+A,arpls,E3,additive,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,10,0.10484704475400934,0.21050564300989127
+A,arpls,E3,same analyte / other substrate,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,2,0.06462360491535712,0.17507427855090482
+A,arpls,E3,same substrate / other analyte,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,2,-0.04302312397879099,0.21887403944713582
+A,arpls,E3,additive,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,10,0.6748917209328202,0.11608390775952647
+A,arpls,E3,same analyte / other substrate,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,2,0.11603546771893712,0.1713546094708766
+A,arpls,E3,same substrate / other analyte,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,2,0.9910790494582264,0.014997283616216868
+A,arpls,E3,additive,A_BT_Ag_632_map1,benzenethiol,Ag,632,10,0.668355864718672,0.15033121115873002
+A,arpls,E3,same analyte / other substrate,A_BT_Ag_632_map1,benzenethiol,Ag,632,3,0.5854948466405421,0.07459105804101397
+A,arpls,E3,same substrate / other analyte,A_BT_Ag_632_map1,benzenethiol,Ag,632,2,0.5799257990403461,0.08294717294792854
+A,arpls,E3,additive,A_BT_Au_632_map1,benzenethiol,Au,632,10,0.7606421710746282,0.11993844073127775
+A,arpls,E3,same analyte / other substrate,A_BT_Au_632_map1,benzenethiol,Au,632,3,0.5396572728838689,0.11912881712510617
+A,arpls,E3,same substrate / other analyte,A_BT_Au_632_map1,benzenethiol,Au,632,1,0.45603239163319015,0.10012249107961675
+A,arpls,E3,additive,A_BT_PICO_632_map1,benzenethiol,PICO,632,10,0.23183896881504903,0.3070604345549311
+A,arpls,E3,same analyte / other substrate,A_BT_PICO_632_map1,benzenethiol,PICO,632,3,0.45571966759620214,0.27248046554023625
+A,arpls,E3,same substrate / other analyte,A_BT_PICO_632_map1,benzenethiol,PICO,632,2,0.127045762775455,0.3038684482381561
+A,arpls,E3,additive,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,10,0.8845313907246196,0.10793181855728178
+A,arpls,E3,same analyte / other substrate,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,3,0.30882749977143176,0.21085914667237984
+A,arpls,E3,same substrate / other analyte,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,2,0.9745080195158683,0.02644633980026084
+A,arpls,E3,additive,A_Py_Ag_632_map1,pyridine,Ag,632,10,0.6904380168030291,0.09919595822348991
+A,arpls,E3,same analyte / other substrate,A_Py_Ag_632_map1,pyridine,Ag,632,3,0.8409390009639134,0.12691492117113876
+A,arpls,E3,same substrate / other analyte,A_Py_Ag_632_map1,pyridine,Ag,632,2,0.5103592679020292,0.09967894679399937
+A,arpls,E3,additive,A_Py_Au_632_map1,pyridine,Au,632,10,0.7090742469224501,0.11993844073127764
+A,arpls,E3,same analyte / other substrate,A_Py_Au_632_map1,pyridine,Au,632,3,0.5735443133000022,0.07668390740226462
+A,arpls,E3,same substrate / other analyte,A_Py_Au_632_map1,pyridine,Au,632,1,0.45603239163319015,0.10012249107961675
+A,arpls,E3,additive,A_Py_PICO_632_map1,pyridine,PICO,632,10,0.5133411799149106,0.18974759456815582
+A,arpls,E3,same analyte / other substrate,A_Py_PICO_632_map1,pyridine,PICO,632,3,0.6507271797596537,0.07534814213687638
+A,arpls,E3,same substrate / other analyte,A_Py_PICO_632_map1,pyridine,PICO,632,2,0.21359527600500378,0.18174277723225932
+A,arpls,E3,additive,A_Py_pSERS_632_map1,pyridine,pSERS,632,10,0.9138498872594608,0.08347419379501175
+A,arpls,E3,same analyte / other substrate,A_Py_pSERS_632_map1,pyridine,pSERS,632,3,0.5681077487741137,0.13051962359698455
+A,arpls,E3,same substrate / other analyte,A_Py_pSERS_632_map1,pyridine,pSERS,632,2,0.9884884787501995,0.01726680525888391
+B,minmax,E3,additive,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,11,0.9415382024154415,0.04220918827942746
+B,minmax,E3,same analyte / other substrate,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,1,0.9753753191228841,0.033351255149017066
+B,minmax,E3,same substrate / other analyte,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,2,0.9095558153841461,0.19458182884745004
+B,minmax,E3,additive,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,11,0.9233818687693068,0.054848082622629066
+B,minmax,E3,same analyte / other substrate,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,1,0.9313974723067852,0.05612596679684853
+B,minmax,E3,same substrate / other analyte,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,2,0.8207515717977082,0.1678280207177069
+B,minmax,E3,additive,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,11,0.9470340971746353,0.04465570473115812
+B,minmax,E3,same analyte / other substrate,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,1,0.9753753191228841,0.033351255149017066
+B,minmax,E3,same substrate / other analyte,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,2,0.9027109357132252,0.19381504796019047
+B,minmax,E3,additive,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,11,0.9325524238437052,0.052556130999115123
+B,minmax,E3,same analyte / other substrate,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,1,0.9313974723067852,0.05612596679684853
+B,minmax,E3,same substrate / other analyte,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,2,0.7562618205565752,0.24030350102457984
+B,minmax,E3,additive,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,11,0.9843307395525578,0.052877864177335095
+B,minmax,E3,same analyte / other substrate,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,1,0.9382547007551827,0.08713058638757186
+B,minmax,E3,same substrate / other analyte,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,2,0.8981842681783985,0.2568278564628915
+B,minmax,E3,additive,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,11,0.9675502610783283,0.11947035784712051
+B,minmax,E3,same analyte / other substrate,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,1,0.9407098965101297,0.15899065653143774
+B,minmax,E3,same substrate / other analyte,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,2,0.7962113617313838,0.2249649849368469
+B,minmax,E3,additive,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,11,0.9490261912140409,0.08241739048068682
+B,minmax,E3,same analyte / other substrate,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,1,0.9382547007551827,0.08713058638757186
+B,minmax,E3,same substrate / other analyte,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,2,0.8911290295803849,0.3139756712363407
+B,minmax,E3,additive,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,11,0.9618078078193086,0.15161764737533326
+B,minmax,E3,same analyte / other substrate,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,1,0.9407098965101297,0.15899065653143774
+B,minmax,E3,same substrate / other analyte,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,2,0.7582426784932267,0.39416493996689966
+B,minmax,E3,additive,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,11,0.9651535711345653,0.06404609754354708
+B,minmax,E3,same analyte / other substrate,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,1,0.9486878519775269,0.07482594761337341
+B,minmax,E3,same substrate / other analyte,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,2,0.9616648088552492,0.07189566571577387
+B,minmax,E3,additive,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,11,0.9781916612210992,0.0458993286427613
+B,minmax,E3,same analyte / other substrate,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,1,0.9553242695431049,0.06732617027401747
+B,minmax,E3,same substrate / other analyte,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,2,0.9356080884239129,0.07090273381334362
+B,minmax,E3,additive,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,11,0.9849915385428161,0.0492783088080677
+B,minmax,E3,same analyte / other substrate,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,1,0.948687851977527,0.07482594761337341
+B,minmax,E3,same substrate / other analyte,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,2,0.9486376371133225,0.12643170663191775
+B,minmax,E3,additive,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,11,0.9665307153348652,0.06033552275486918
+B,minmax,E3,same analyte / other substrate,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,1,0.9553242695431049,0.06732617027401747
+B,minmax,E3,same substrate / other analyte,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,2,0.9070516625645964,0.1588253469905192
+B,arpls,E3,additive,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,11,0.9030198908568988,0.03901064887374871
+B,arpls,E3,same analyte / other substrate,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,1,0.9374584002041049,0.032925946111958385
+B,arpls,E3,same substrate / other analyte,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,2,0.7119088917182677,0.08560673957546774
+B,arpls,E3,additive,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,11,0.8826163617303542,0.054111351541440825
+B,arpls,E3,same analyte / other substrate,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,1,0.8826154592847982,0.05037133140714216
+B,arpls,E3,same substrate / other analyte,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,2,0.7045123614230234,0.08139941108047634
+B,arpls,E3,additive,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,11,0.9211149130860479,0.0452844579659052
+B,arpls,E3,same analyte / other substrate,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,1,0.9374584002041048,0.032925946111958385
+B,arpls,E3,same substrate / other analyte,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,2,0.7755636503926849,0.09247580899882858
+B,arpls,E3,additive,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,11,0.9092371349826747,0.0493132288813771
+B,arpls,E3,same analyte / other substrate,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,1,0.8826154592847982,0.05037133140714216
+B,arpls,E3,same substrate / other analyte,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,2,0.7952178396903297,0.08918684148657918
+B,arpls,E3,additive,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,11,0.7264654831186628,0.07579954691181234
+B,arpls,E3,same analyte / other substrate,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,1,0.4500403310298219,0.11609108891285774
+B,arpls,E3,same substrate / other analyte,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,2,0.28918020039955394,0.143890297895266
+B,arpls,E3,additive,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,11,0.6831175981902515,0.10215401317718176
+B,arpls,E3,same analyte / other substrate,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,1,0.3945727693716044,0.14506491105828134
+B,arpls,E3,same substrate / other analyte,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,2,0.25486091030394975,0.1323339209515131
+B,arpls,E3,additive,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,11,0.7906160966775619,0.07588660292251004
+B,arpls,E3,same analyte / other substrate,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,1,0.4500403310298219,0.11609108891285774
+B,arpls,E3,same substrate / other analyte,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,2,0.6029053888997562,0.14702829025161007
+B,arpls,E3,additive,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,11,0.7792247024291558,0.09046720118054624
+B,arpls,E3,same analyte / other substrate,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,1,0.3945727693716044,0.14506491105828134
+B,arpls,E3,same substrate / other analyte,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,2,0.6351920875828434,0.15732180260398324
+B,arpls,E3,additive,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,11,0.9176355930233437,0.03950974203358632
+B,arpls,E3,same analyte / other substrate,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,1,0.9045135612592793,0.04364439445931831
+B,arpls,E3,same substrate / other analyte,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,2,0.7142118011075443,0.0766997371748531
+B,arpls,E3,additive,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,11,0.9162929418611105,0.051204111980404005
+B,arpls,E3,same analyte / other substrate,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,1,0.8841090124535714,0.053777967974011895
+B,arpls,E3,same substrate / other analyte,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,2,0.7357488107671478,0.07383508709169406
+B,arpls,E3,additive,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,11,0.9366418475722889,0.04015733708279549
+B,arpls,E3,same analyte / other substrate,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,1,0.9045135612592793,0.04364439445931831
+B,arpls,E3,same substrate / other analyte,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,2,0.8026106063865928,0.07540713765923285
+B,arpls,E3,additive,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,11,0.9156079707455279,0.05863649948455643
+B,arpls,E3,same analyte / other substrate,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,1,0.8841090124535713,0.053777967974011895
+B,arpls,E3,same substrate / other analyte,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,2,0.8321727729095929,0.08235955301982761

@@ -1,0 +1,54 @@
+{
+  "seed": 0,
+  "k_grid": {
+    "A": [
+      6,
+      7,
+      8
+    ],
+    "B": [
+      4,
+      5,
+      6
+    ]
+  },
+  "k_nominal": {
+    "A": 7,
+    "B": 5
+  },
+  "supp_k": {
+    "A": [],
+    "B": [
+      7
+    ]
+  },
+  "versions": [
+    "minmax",
+    "arpls"
+  ],
+  "nmf": {
+    "init": "nndsvda",
+    "max_iter": 2000,
+    "tol": 0.0001
+  },
+  "mcr_als": {
+    "max_iter": 50,
+    "tol": 1e-06,
+    "init": "NMF"
+  },
+  "despike": {
+    "window": 5,
+    "threshold": 10.0
+  },
+  "arpls": {
+    "lam": 100000,
+    "iterations": 12,
+    "relative_tolerance": 0.001,
+    "logistic_clip": 60.0
+  },
+  "pca_lda_components": 20,
+  "rf_et_trees": 500,
+  "e1_reference_rule": "Block A: laser given per analyte (BT/Py unknown); Block B: both 632 and 785 references evaluated.",
+  "e1_reference_preprocessing": "same per-spectrum preprocessing as the SERS data",
+  "e3_donor_rule": "Block B donor means matched the held-out laser."
+}
