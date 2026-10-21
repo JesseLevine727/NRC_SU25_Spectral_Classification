@@ -275,17 +275,19 @@ Background mechanism (slide 8) & Why correction helps some instruments and not o
 
 \begin{columns}[T,onlytextwidth]
 \column{0.50\textwidth}
-\textbf{Approach and test}
-\begin{itemize}\small
-  \item Physics-structured VAE: spectrum $\approx$ instrument response $\times$ (analyte + substrate) + background.
-  \item Recover each analyte's reference spectrum from its SERS spectra.
-  \item Predict chemical $\times$ substrate $\times$ instrument combinations deliberately left out of training.
+\textbf{What the model separates}
+\begin{enumerate}\footnotesize
+  \item Instrument response --- removed.
+  \item Substrate background --- removed.
+  \item The analyte's shared SERS signature --- \textbf{the real signal}.
+  \item A substrate-specific change to the analyte (chemistry $\times$ substrate) --- measured.
+\end{enumerate}
+\textbf{How it is tested}
+\begin{itemize}\footnotesize
+  \item Recover each signature; compare with pure Raman to see how much SERS alters it.
+  \item Predict combinations deliberately left out of training.
   \item Compare against the Paper~1 methods.
 \end{itemize}
-\textbf{Why Paper 1 comes first}\par\small
-Paper 1 shows the instrument effect dominates, and why separating it requires a crossed design.
-
-
 \column{0.48\textwidth}
 \textbf{Closest prior work}\par
 \scriptsize
@@ -301,7 +303,7 @@ Paper 1 shows the instrument effect dominates, and why separating it requires a 
 
 
 \end{columns}
-\src{Literature checked 20 October 2026 against Crossref and publisher/proceedings pages; repeat in Scopus before submission. Full list in backup.}
+\src{Paper 1 comes first: it shows acquisition effects dominate and why separating them needs a crossed design. Literature checked 20 October 2026; repeat in Scopus before submission.}
 \end{frame}
 
 % -------------------------------------------------------------------------- 12
@@ -312,7 +314,7 @@ Paper 1 shows the instrument effect dominates, and why separating it requires a 
 \toprule
 Experiment & Question & How we measure it & Compared with\\
 \midrule
-\textbf{E1} Recover the pure chemical spectrum & Does the model's chemical part look like the analyte's reference spectrum? & How closely it matches (correlation, peak positions) & Standard unmixing (MCR-ALS, NMF)\\
+\textbf{E1} Recover each analyte's SERS signature & Does the chemical part capture what the analyte shares across substrates, and how much does each substrate alter it? & Match to the shared signature; comparison with pure Raman shows how much SERS alters it & Standard unmixing (MCR-ALS, NMF)\\
 \textbf{E2} Separate chemical from substrate & Does the chemical part hold only chemistry? & Chemical readable from the chemical part, not from the substrate part & The model ladder below\\
 \textbf{E3} Predict unmeasured combinations & Can it predict a chemical on a substrate it never saw together? & Match to the real spectrum & Simple additive model\\
 \textbf{E4} Identify on a new substrate & Can it identify chemicals on a substrate left out of training? & Balanced accuracy & Paper 1 methods\\
