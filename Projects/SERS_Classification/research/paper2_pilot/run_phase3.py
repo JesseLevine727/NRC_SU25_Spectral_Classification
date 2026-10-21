@@ -59,6 +59,22 @@ FIG = os.path.join(HERE, "figures")
 os.makedirs(OUT, exist_ok=True)
 os.makedirs(FIG, exist_ok=True)
 
+# Output tag and reconstruction-loss variant.  Phase 3 used mean squared error
+# and the "phase3" tag; phase 3b uses "sum" and the "phase3b" tag, so phase 3
+# outputs are never overwritten.
+TAG = "phase3"
+RECON = "mean"
+
+
+def opath(name: str) -> str:
+    """Path of a tagged output file under outputs/."""
+    return os.path.join(OUT, f"{TAG}_{name}")
+
+
+def fpath(name: str) -> str:
+    """Path of a tagged figure under figures/."""
+    return os.path.join(FIG, f"{TAG}_{name}")
+
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 if DEVICE.type == "cuda":
     torch.backends.cudnn.deterministic = True
@@ -369,6 +385,19 @@ def build_model(data: BlockData, model_name: str, prep: str,
     raise ValueError(model_name)
 
 
+def _active_unit_summary(diag, kind):
+    """Active latent units (posterior-mean variance > 0.01) from diagnostics."""
+    if kind == "vae" and isinstance(diag, dict) and "full" in diag:
+        a = int(diag["full"]["active_units"])
+        return a, int(diag["full"]["n_dims"]), {"full": a}
+    if kind == "cvae" and isinstance(diag, dict) and "error" not in diag:
+        by = {name: int(v["active_units"]) for name, v in diag.items()
+              if isinstance(v, dict) and "active_units" in v}
+        return sum(by.values()), int(sum(diag[n]["n_dims"] for n in by)), by
+    # Physics-structured VAE has no Gaussian latents (p/q are categorical).
+    return np.nan, 0, {}
+
+
 def fit_model(data: BlockData, prep: str, model_name: str, train_maps,
               seed: int, experiment: str, tag: str = ""):
     """Fit one model on the given training maps; returns (model, fit info)."""
@@ -380,7 +409,7 @@ def fit_model(data: BlockData, prep: str, model_name: str, train_maps,
     ya = torch.tensor(data.ya, dtype=torch.long, device=DEVICE)
     ys = torch.tensor(data.ys, dtype=torch.long, device=DEVICE)
     yl = torch.tensor(data.yl, dtype=torch.long, device=DEVICE)
-    cfg = TrainConfig(seed=seed)
+    cfg = TrainConfig(seed=seed, recon=RECON)
     try:
         res = train_model(model, X_t, ya, ys, yl,
                           torch.tensor(fit_idx, dtype=torch.long, device=DEVICE),
@@ -424,11 +453,14 @@ def fit_model(data: BlockData, prep: str, model_name: str, train_maps,
         if diag.get("n_p_classes", 99) <= 1 or diag.get("n_q_classes", 99) <= 1:
             collapsed = True
     info["collapsed"] = bool(collapsed)
+    au, nd, au_by = _active_unit_summary(diag, model.kind)
     DIAGNOSTICS.append(dict(
         experiment=experiment, block=data.block, preprocessing=prep,
         model=model_name, seed=seed, tag=tag,
         best_epoch=info.get("best_epoch"), epochs_run=info.get("epochs_run"),
         best_val=info.get("best_val"), collapsed=bool(collapsed),
+        active_units=au, n_latent_dims=nd,
+        active_units_by_block=json.dumps(au_by, default=str),
         diagnostics=json.dumps(diag, default=str)))
     return model, info
 
@@ -558,7 +590,7 @@ def run_e1(data: dict, ref_X, ref_axis, ref_meta, e1_p2):
                         peak_fraction=r0["peak_fraction"],
                         note="phase 2 value, same reference rule"))
     e1 = pd.DataFrame(rows)
-    e1.to_csv(os.path.join(OUT, "phase3_e1.csv"), index=False)
+    e1.to_csv(opath("e1.csv"), index=False)
     return e1
 
 
@@ -899,13 +931,13 @@ def run_e2(data: dict):
                 model="PCA20+LR (raw, phase-2-style)", seed=-1,
                 block_name=block_name, target=target, **vals))
 
-    pd.DataFrame(probe_rows).to_csv(os.path.join(OUT, "phase3_e2_probes.csv"),
+    pd.DataFrame(probe_rows).to_csv(opath("e2_probes.csv"),
                                     index=False)
-    pd.DataFrame(summary_rows).to_csv(os.path.join(OUT, "phase3_e2_summary.csv"),
+    pd.DataFrame(summary_rows).to_csv(opath("e2_summary.csv"),
                                       index=False)
-    pd.DataFrame(mig_rows).to_csv(os.path.join(OUT, "phase3_e2_mig.csv"), index=False)
+    pd.DataFrame(mig_rows).to_csv(opath("e2_mig.csv"), index=False)
     swap = pd.DataFrame(swap_rows)
-    swap.to_csv(os.path.join(OUT, "phase3_e2_swap.csv"), index=False)
+    swap.to_csv(opath("e2_swap.csv"), index=False)
     if SWAP_EXAMPLES:
         arrays = {}
         for (block, model_name), ex in SWAP_EXAMPLES.items():
@@ -916,7 +948,7 @@ def run_e2(data: dict):
                     arrays[f"{block}_{model_name}_{k}"] = np.array(v)
                 else:
                     arrays[f"{block}_{model_name}_{k}"] = v
-        np.savez_compressed(os.path.join(OUT, "phase3_swap_example.npz"), **arrays)
+        np.savez_compressed(opath("swap_example.npz"), **arrays)
     return (pd.DataFrame(summary_rows), pd.DataFrame(mig_rows), swap)
 
 
@@ -1023,7 +1055,7 @@ def run_e3(data: dict, e3_p2):
                     n_train_maps=np.nan, n_test_spots=np.nan,
                     corr=r0["corr"], rmse=r0["rmse"], note="phase 2 value"))
     e3 = pd.DataFrame(rows)
-    e3.to_csv(os.path.join(OUT, "phase3_e3.csv"), index=False)
+    e3.to_csv(opath("e3.csv"), index=False)
     return e3
 
 
@@ -1112,7 +1144,7 @@ def run_e4(data: dict, e4_p2):
                                 ba_spectrum=r0["ba_spectrum"],
                                 ba_map=r0["ba_map"], note="phase 2 value"))
     e4 = pd.DataFrame(rows)
-    e4.to_csv(os.path.join(OUT, "phase3_e4.csv"), index=False)
+    e4.to_csv(opath("e4.csv"), index=False)
     return e4
 
 
@@ -1130,8 +1162,35 @@ def write_parameter_table(data: dict):
             rows.append(dict(block=block, model=model_name, in_len=d.X["minmax"].shape[1],
                              **c))
     p = pd.DataFrame(rows)
-    p.to_csv(os.path.join(OUT, "phase3_params.csv"), index=False)
+    p.to_csv(opath("params.csv"), index=False)
     return p
+
+
+def write_active_unit_table():
+    """Per-fit active-unit counts aggregated per experiment/block/prep/model."""
+    rows = []
+    if DIAGNOSTICS:
+        df = pd.DataFrame(DIAGNOSTICS)
+        for keys, g in df.groupby(["experiment", "block", "preprocessing", "model"],
+                                  sort=True):
+            experiment, block, prep, model_name = keys
+            au = pd.to_numeric(g["active_units"], errors="coerce")
+            rows.append(dict(
+                experiment=experiment, block=block, preprocessing=prep,
+                model=model_name, n_fits=len(g),
+                active_units_mean=float(au.mean()) if au.notna().any() else np.nan,
+                active_units_min=float(au.min()) if au.notna().any() else np.nan,
+                active_units_max=float(au.max()) if au.notna().any() else np.nan,
+                n_latent_dims=int(pd.to_numeric(g["n_latent_dims"],
+                                                errors="coerce").max() or 0),
+                n_collapsed=int(g["collapsed"].sum()),
+                note=("no Gaussian latents (p/q categorical)"
+                      if model_name == "PhysicsVAE" else "")))
+    pd.DataFrame(rows, columns=[
+        "experiment", "block", "preprocessing", "model", "n_fits",
+        "active_units_mean", "active_units_min", "active_units_max",
+        "n_latent_dims", "n_collapsed", "note"]).to_csv(
+        opath("active_units.csv"), index=False)
 
 
 def plot_e1_physics(data: dict, ref_X, ref_axis, ref_meta, e1: pd.DataFrame):
@@ -1167,12 +1226,12 @@ def plot_e1_physics(data: dict, ref_X, ref_axis, ref_meta, e1: pd.DataFrame):
     fig.suptitle("Model 4 learned analyte spectra A_a vs neat reference and phase-2 SERS signature",
                  fontsize=12)
     fig.tight_layout(rect=(0, 0, 1, 0.95))
-    fig.savefig(os.path.join(FIG, "phase3_e1_physics_spectra.png"), dpi=200)
+    fig.savefig(fpath("e1_physics_spectra.png"), dpi=200)
     plt.close(fig)
 
 
 def plot_swap_example():
-    path = os.path.join(OUT, "phase3_swap_example.npz")
+    path = opath("swap_example.npz")
     if not os.path.exists(path):
         return
     d = np.load(path, allow_pickle=False)
@@ -1196,7 +1255,7 @@ def plot_swap_example():
         ax.set_ylabel("min–max (display)")
         ax.legend(fontsize=6, frameon=False)
     fig.tight_layout()
-    fig.savefig(os.path.join(FIG, "phase3_e2_swap_example.png"), dpi=200)
+    fig.savefig(fpath("e2_swap_example.png"), dpi=200)
     plt.close(fig)
 
 
@@ -1230,7 +1289,7 @@ def plot_e4(e4: pd.DataFrame):
             ax.set_ylabel("balanced accuracy per map (mean ± sd over folds/seeds)")
         ax.grid(axis="y", alpha=0.25)
     fig.tight_layout()
-    fig.savefig(os.path.join(FIG, "phase3_e4_comparison.png"), dpi=200)
+    fig.savefig(fpath("e4_comparison.png"), dpi=200)
     plt.close(fig)
 
 
@@ -1238,14 +1297,24 @@ def plot_e4(e4: pd.DataFrame):
 # Main
 # --------------------------------------------------------------------------- #
 def main():
+    global TAG, RECON
     parser = argparse.ArgumentParser()
     parser.add_argument("--stages", default="all",
                         help="comma-separated: e1,e2,e3,e4,figures or all")
+    parser.add_argument("--recon", choices=["mean", "sum"], default="mean",
+                        help="mean = phase 3 MSE; sum = phase 3b summed squared error")
+    parser.add_argument("--tag", default="phase3",
+                        help="output file prefix (default: phase3)")
     args = parser.parse_args()
+    if args.recon != "mean" and args.tag == "phase3":
+        parser.error("--recon sum needs a non-phase3 --tag (e.g. phase3b) "
+                     "so phase 3 outputs are not overwritten")
+    TAG, RECON = args.tag, args.recon
     stages = (["e1", "e2", "e3", "e4", "figures"]
               if args.stages == "all" else [s.strip() for s in args.stages.split(",")])
     t_start = time.time()
     print(f"Device: {DEVICE} ({torch.cuda.get_device_name(0) if DEVICE.type == 'cuda' else 'CPU'})")
+    print(f"Tag: {TAG}; reconstruction loss: {RECON}")
     print("Loading blocks and preprocessing ...")
     data = {b: load_block(b) for b in BLOCKS}
     for b in BLOCKS:
@@ -1276,39 +1345,40 @@ def main():
     if "figures" in stages:
         print("Figures ...")
         # E1 reads the chemical-part cache written by a previous E1 run if needed.
-        chem_path = os.path.join(OUT, "phase3_chemical_parts.npz")
+        chem_path = opath("chemical_parts.npz")
         if os.path.exists(chem_path) and not CHEM_PARTS:
             z = np.load(chem_path, allow_pickle=False)
             for k in z.files:
                 block, model_name, seed, analyte = k.split("|")
                 CHEM_PARTS[(block, model_name, int(seed), analyte)] = z[k]
-        e1 = pd.read_csv(os.path.join(OUT, "phase3_e1.csv")) \
-            if os.path.exists(os.path.join(OUT, "phase3_e1.csv")) else pd.DataFrame()
+        e1 = pd.read_csv(opath("e1.csv")) \
+            if os.path.exists(opath("e1.csv")) else pd.DataFrame()
         if CHEM_PARTS:
             plot_e1_physics(data, ref_X, ref_axis, ref_meta, e1)
         plot_swap_example()
-        e4 = pd.read_csv(os.path.join(OUT, "phase3_e4.csv")) \
-            if os.path.exists(os.path.join(OUT, "phase3_e4.csv")) else pd.DataFrame()
+        e4 = pd.read_csv(opath("e4.csv")) \
+            if os.path.exists(opath("e4.csv")) else pd.DataFrame()
         if len(e4):
             plot_e4(e4)
 
     # Save chemical parts for the figure / reproducibility.
     if CHEM_PARTS:
         arrays = {f"{b}|{m}|{s}|{a}": v for (b, m, s, a), v in CHEM_PARTS.items()}
-        np.savez_compressed(os.path.join(OUT, "phase3_chemical_parts.npz"), **arrays)
+        np.savez_compressed(opath("chemical_parts.npz"), **arrays)
 
-    pd.DataFrame(FIT_TIMES).to_csv(os.path.join(OUT, "phase3_runtime.csv"), index=False)
+    pd.DataFrame(FIT_TIMES).to_csv(opath("runtime.csv"), index=False)
     fail_cols = ["experiment", "block", "preprocessing", "model", "seed",
                  "stage", "reason", "tag"]
     pd.DataFrame(FAILURES, columns=fail_cols).to_csv(
-        os.path.join(OUT, "phase3_failures.csv"), index=False)
-    pd.DataFrame(DIAGNOSTICS).to_csv(os.path.join(OUT, "phase3_diagnostics.csv"),
-                                     index=False)
+        opath("failures.csv"), index=False)
+    pd.DataFrame(DIAGNOSTICS).to_csv(opath("diagnostics.csv"), index=False)
+    write_active_unit_table()
     total = time.time() - t_start
     summary = dict(device=str(DEVICE), seeds=SEEDS, total_seconds=total,
                    total_minutes=total / 60.0, n_failures=len(FAILURES),
-                   n_fits=len(FIT_TIMES), parameter_table=params.to_dict(orient="records"))
-    with open(os.path.join(OUT, "phase3_run.json"), "w") as fh:
+                   n_fits=len(FIT_TIMES), recon=RECON, tag=TAG,
+                   parameter_table=params.to_dict(orient="records"))
+    with open(opath("run.json"), "w") as fh:
         json.dump(summary, fh, indent=2, default=str)
     print(f"Done in {total / 60:.1f} min; {len(FIT_TIMES)} fits; "
           f"{len(FAILURES)} failures.")

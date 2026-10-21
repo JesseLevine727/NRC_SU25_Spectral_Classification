@@ -1,0 +1,9 @@
+block,model,in_len,trainable_total,trainable_excl_physics_templates,physics_templates
+A,VAE,2269,31865,31865,0
+A,beta-VAE,2269,31865,31865,0
+A,CVAE,2269,31900,31900,0
+A,PhysicsVAE,2269,42992,27109,15883
+B,VAE,2088,31865,31865,0
+B,beta-VAE,2088,31865,31865,0
+B,CVAE,2088,32412,32412,0
+B,PhysicsVAE,2088,37429,26989,10440

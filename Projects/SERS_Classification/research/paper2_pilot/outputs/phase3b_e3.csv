@@ -1,0 +1,208 @@
+block,preprocessing,model,seed,held_out,analyte,substrate,laser,n_train_maps,n_test_spots,corr,rmse,note
+A,minmax,CVAE,0,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,10.0,25.0,0.9350549949835706,0.08554846048355103,early stop epoch 294
+A,minmax,CVAE,0,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,10.0,25.0,0.0031493132432075617,0.6700330376625061,early stop epoch 97
+A,minmax,CVAE,0,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,10.0,25.0,0.4431845679569532,0.2149999588727951,early stop epoch 300
+A,minmax,CVAE,0,A_BT_Ag_632_map1,benzenethiol,Ag,632,10.0,25.0,0.7558157260237203,0.15366511046886444,early stop epoch 295
+A,minmax,CVAE,0,A_BT_Au_632_map1,benzenethiol,Au,632,10.0,25.0,0.753638984787669,0.14571179449558258,early stop epoch 284
+A,minmax,CVAE,0,A_BT_PICO_632_map1,benzenethiol,PICO,632,10.0,25.0,0.5387144345570728,0.4679890275001526,early stop epoch 281
+A,minmax,CVAE,0,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,10.0,25.0,0.43386576003353167,0.13384875655174255,early stop epoch 298
+A,minmax,CVAE,0,A_Py_Ag_632_map1,pyridine,Ag,632,10.0,25.0,0.7066712848959301,0.24328495562076569,early stop epoch 295
+A,minmax,CVAE,0,A_Py_Au_632_map1,pyridine,Au,632,10.0,25.0,0.896147649606083,0.1854586899280548,early stop epoch 283
+A,minmax,CVAE,0,A_Py_PICO_632_map1,pyridine,PICO,632,10.0,25.0,-0.3596241293059828,0.26146796345710754,early stop epoch 139
+A,minmax,CVAE,0,A_Py_pSERS_632_map1,pyridine,pSERS,632,10.0,25.0,0.33505194820449613,0.2082366943359375,early stop epoch 65
+A,minmax,CVAE,1,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,10.0,25.0,0.6361890086907301,0.32878753542900085,early stop epoch 77
+A,minmax,CVAE,1,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,10.0,25.0,0.44038111019361914,0.17398113012313843,early stop epoch 111
+A,minmax,CVAE,1,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,10.0,25.0,0.7419329875639264,0.13713115453720093,early stop epoch 105
+A,minmax,CVAE,1,A_BT_Ag_632_map1,benzenethiol,Ag,632,10.0,25.0,0.8551748896201152,0.11757323890924454,early stop epoch 67
+A,minmax,CVAE,1,A_BT_Au_632_map1,benzenethiol,Au,632,10.0,25.0,0.7544836954413485,0.21530933678150177,early stop epoch 69
+A,minmax,CVAE,1,A_BT_PICO_632_map1,benzenethiol,PICO,632,10.0,25.0,0.6716898550491244,0.3750709891319275,early stop epoch 76
+A,minmax,CVAE,1,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,10.0,25.0,-0.11835546039451281,0.34396448731422424,early stop epoch 79
+A,minmax,CVAE,1,A_Py_Ag_632_map1,pyridine,Ag,632,10.0,25.0,0.9651848435092801,0.06686590611934662,early stop epoch 66
+A,minmax,CVAE,1,A_Py_Au_632_map1,pyridine,Au,632,10.0,25.0,0.9069530329551313,0.12712536752223969,early stop epoch 98
+A,minmax,CVAE,1,A_Py_PICO_632_map1,pyridine,PICO,632,10.0,25.0,-0.16837925127258588,0.2961179316043854,early stop epoch 94
+A,minmax,CVAE,1,A_Py_pSERS_632_map1,pyridine,pSERS,632,10.0,25.0,0.46645578161223655,0.15440934896469116,early stop epoch 93
+A,minmax,CVAE,2,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,10.0,25.0,0.07908466177125321,0.4547486901283264,early stop epoch 101
+A,minmax,CVAE,2,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,10.0,25.0,0.07333860948808098,0.29205968976020813,early stop epoch 101
+A,minmax,CVAE,2,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,10.0,25.0,0.340283580629615,0.1126108318567276,early stop epoch 293
+A,minmax,CVAE,2,A_BT_Ag_632_map1,benzenethiol,Ag,632,10.0,25.0,0.8211836106958101,0.12857463955879211,early stop epoch 279
+A,minmax,CVAE,2,A_BT_Au_632_map1,benzenethiol,Au,632,10.0,25.0,0.6997618016994323,0.147568941116333,early stop epoch 99
+A,minmax,CVAE,2,A_BT_PICO_632_map1,benzenethiol,PICO,632,10.0,25.0,0.6586279877031296,0.42156025767326355,early stop epoch 117
+A,minmax,CVAE,2,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,10.0,25.0,-0.12721666871519213,0.20117823779582977,early stop epoch 234
+A,minmax,CVAE,2,A_Py_Ag_632_map1,pyridine,Ag,632,10.0,25.0,0.7890229109777017,0.28834450244903564,early stop epoch 199
+A,minmax,CVAE,2,A_Py_Au_632_map1,pyridine,Au,632,10.0,25.0,0.9473995454970645,0.08722002804279327,early stop epoch 99
+A,minmax,CVAE,2,A_Py_PICO_632_map1,pyridine,PICO,632,10.0,25.0,-0.09395028989172062,0.20169061422348022,early stop epoch 84
+A,minmax,CVAE,2,A_Py_pSERS_632_map1,pyridine,pSERS,632,10.0,25.0,0.6693845792159588,0.1278841495513916,early stop epoch 113
+A,minmax,PhysicsVAE,0,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,10.0,25.0,0.9685591365147311,0.2244887351989746,early stop epoch 58
+A,minmax,PhysicsVAE,0,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,10.0,25.0,0.7095192775613314,0.19159568846225739,early stop epoch 46
+A,minmax,PhysicsVAE,0,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,10.0,25.0,0.7791255916329408,0.08724433183670044,early stop epoch 37
+A,minmax,PhysicsVAE,0,A_BT_Ag_632_map1,benzenethiol,Ag,632,10.0,25.0,0.9230743337974103,0.10583121329545975,early stop epoch 45
+A,minmax,PhysicsVAE,0,A_BT_Au_632_map1,benzenethiol,Au,632,10.0,25.0,0.9028422347055342,0.17799317836761475,early stop epoch 37
+A,minmax,PhysicsVAE,0,A_BT_PICO_632_map1,benzenethiol,PICO,632,10.0,25.0,-0.0936748297783039,0.36365100741386414,early stop epoch 37
+A,minmax,PhysicsVAE,0,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,10.0,25.0,0.836898360958146,0.162513867020607,early stop epoch 49
+A,minmax,PhysicsVAE,0,A_Py_Ag_632_map1,pyridine,Ag,632,10.0,25.0,0.9891911442559512,0.16500277817249298,early stop epoch 44
+A,minmax,PhysicsVAE,0,A_Py_Au_632_map1,pyridine,Au,632,10.0,25.0,0.8983556932679678,0.2565480172634125,early stop epoch 48
+A,minmax,PhysicsVAE,0,A_Py_PICO_632_map1,pyridine,PICO,632,10.0,25.0,0.8884918263855214,0.20516689121723175,early stop epoch 50
+A,minmax,PhysicsVAE,0,A_Py_pSERS_632_map1,pyridine,pSERS,632,10.0,25.0,0.7809799621692506,0.19123539328575134,early stop epoch 29
+A,minmax,PhysicsVAE,1,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,10.0,25.0,0.9705510754107256,0.16119112074375153,early stop epoch 28
+A,minmax,PhysicsVAE,1,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,10.0,25.0,0.6985907390082189,0.16772180795669556,early stop epoch 26
+A,minmax,PhysicsVAE,1,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,10.0,25.0,0.7601641589528471,0.10760228335857391,early stop epoch 60
+A,minmax,PhysicsVAE,1,A_BT_Ag_632_map1,benzenethiol,Ag,632,10.0,25.0,0.9202753666949047,0.10353221744298935,early stop epoch 53
+A,minmax,PhysicsVAE,1,A_BT_Au_632_map1,benzenethiol,Au,632,10.0,25.0,0.9192618975850785,0.11964268982410431,early stop epoch 63
+A,minmax,PhysicsVAE,1,A_BT_PICO_632_map1,benzenethiol,PICO,632,10.0,25.0,-0.08712826932671501,0.3380972445011139,early stop epoch 22
+A,minmax,PhysicsVAE,1,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,10.0,25.0,0.8392434058197991,0.21591681241989136,early stop epoch 21
+A,minmax,PhysicsVAE,1,A_Py_Ag_632_map1,pyridine,Ag,632,10.0,25.0,0.9881365961559329,0.18069355189800262,early stop epoch 19
+A,minmax,PhysicsVAE,1,A_Py_Au_632_map1,pyridine,Au,632,10.0,25.0,0.8839417209007054,0.2559790015220642,early stop epoch 24
+A,minmax,PhysicsVAE,1,A_Py_PICO_632_map1,pyridine,PICO,632,10.0,25.0,0.87291862659822,0.19816060364246368,early stop epoch 20
+A,minmax,PhysicsVAE,1,A_Py_pSERS_632_map1,pyridine,pSERS,632,10.0,25.0,0.7866779331516733,0.18584713339805603,early stop epoch 21
+A,minmax,PhysicsVAE,2,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,10.0,25.0,0.9712257489429679,0.2702549993991852,early stop epoch 36
+A,minmax,PhysicsVAE,2,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,10.0,25.0,0.7097976880284906,0.1766831874847412,early stop epoch 77
+A,minmax,PhysicsVAE,2,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,10.0,25.0,0.7779929052056628,0.08076953142881393,early stop epoch 38
+A,minmax,PhysicsVAE,2,A_BT_Ag_632_map1,benzenethiol,Ag,632,10.0,25.0,0.9189843800747364,0.12936389446258545,early stop epoch 66
+A,minmax,PhysicsVAE,2,A_BT_Au_632_map1,benzenethiol,Au,632,10.0,25.0,0.9116444937945825,0.13681842386722565,early stop epoch 70
+A,minmax,PhysicsVAE,2,A_BT_PICO_632_map1,benzenethiol,PICO,632,10.0,25.0,-0.09818390224446417,0.3567640483379364,early stop epoch 55
+A,minmax,PhysicsVAE,2,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,10.0,25.0,0.8318221745826949,0.21838073432445526,early stop epoch 82
+A,minmax,PhysicsVAE,2,A_Py_Ag_632_map1,pyridine,Ag,632,10.0,25.0,0.9909773518391646,0.16489437222480774,early stop epoch 33
+A,minmax,PhysicsVAE,2,A_Py_Au_632_map1,pyridine,Au,632,10.0,25.0,0.9114070916153234,0.2504676878452301,early stop epoch 53
+A,minmax,PhysicsVAE,2,A_Py_PICO_632_map1,pyridine,PICO,632,10.0,25.0,0.8885320950537008,0.18018001317977905,early stop epoch 61
+A,minmax,PhysicsVAE,2,A_Py_pSERS_632_map1,pyridine,pSERS,632,10.0,25.0,0.7717475168757704,0.1878517121076584,early stop epoch 61
+A,minmax,phase2: additive,-1,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,,,0.9459670831160196,0.1180040988824733,phase 2 value
+A,minmax,phase2: additive,-1,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,,,0.4853768398640655,0.2385253996704998,phase 2 value
+A,minmax,phase2: additive,-1,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,,,0.8422776450873823,0.1495153847656143,phase 2 value
+A,minmax,phase2: additive,-1,A_BT_Ag_632_map1,benzenethiol,Ag,632,,,0.8283736587256754,0.1548989426249244,phase 2 value
+A,minmax,phase2: additive,-1,A_BT_Au_632_map1,benzenethiol,Au,632,,,0.8691348744817323,0.2559347510487627,phase 2 value
+A,minmax,phase2: additive,-1,A_BT_PICO_632_map1,benzenethiol,PICO,632,,,0.4421118958878129,0.3882887841717041,phase 2 value
+A,minmax,phase2: additive,-1,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,,,0.5974987644492272,0.1275901946007636,phase 2 value
+A,minmax,phase2: additive,-1,A_Py_Ag_632_map1,pyridine,Ag,632,,,0.9801492615743846,0.0780175934831305,phase 2 value
+A,minmax,phase2: additive,-1,A_Py_Au_632_map1,pyridine,Au,632,,,0.9268066084218668,0.255934751048762,phase 2 value
+A,minmax,phase2: additive,-1,A_Py_PICO_632_map1,pyridine,PICO,632,,,0.7271429453155224,0.2079029830982339,phase 2 value
+A,minmax,phase2: additive,-1,A_Py_pSERS_632_map1,pyridine,pSERS,632,,,0.893752357956789,0.093096434542421,phase 2 value
+A,minmax,phase2: other substrate,-1,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,,,0.676777599019186,0.398185949691677,phase 2 value
+A,minmax,phase2: other substrate,-1,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,,,0.481778738081238,0.2034210672889767,phase 2 value
+A,minmax,phase2: other substrate,-1,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,,,0.2939262339053033,0.3033316705639821,phase 2 value
+A,minmax,phase2: other substrate,-1,A_BT_Ag_632_map1,benzenethiol,Ag,632,,,0.2781432147966561,0.2842739381806342,phase 2 value
+A,minmax,phase2: other substrate,-1,A_BT_Au_632_map1,benzenethiol,Au,632,,,0.7548828867364842,0.1596160725631097,phase 2 value
+A,minmax,phase2: other substrate,-1,A_BT_PICO_632_map1,benzenethiol,PICO,632,,,-0.4937831984486206,0.3554372564824398,phase 2 value
+A,minmax,phase2: other substrate,-1,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,,,0.2180433892644425,0.4139373875072736,phase 2 value
+A,minmax,phase2: other substrate,-1,A_Py_Ag_632_map1,pyridine,Ag,632,,,0.9594689977546876,0.3045586115492824,phase 2 value
+A,minmax,phase2: other substrate,-1,A_Py_Au_632_map1,pyridine,Au,632,,,0.854205222698312,0.3319152981664465,phase 2 value
+A,minmax,phase2: other substrate,-1,A_Py_PICO_632_map1,pyridine,PICO,632,,,0.4085580038963157,0.2568078393455512,phase 2 value
+A,minmax,phase2: other substrate,-1,A_Py_pSERS_632_map1,pyridine,pSERS,632,,,0.3610984101788101,0.4189778697833605,phase 2 value
+A,minmax,phase2: other analyte,-1,A_4NP_Ag_632_map1,4-nitrophenol,Ag,632,,,0.9590029145765516,0.0867632685928815,phase 2 value
+A,minmax,phase2: other analyte,-1,A_4NP_PICO_632_map1,4-nitrophenol,PICO,632,,,0.4299831453464147,0.2556323106754408,phase 2 value
+A,minmax,phase2: other analyte,-1,A_4NP_pSERS_632_map1,4-nitrophenol,pSERS,632,,,0.9896821635941346,0.0162852568100289,phase 2 value
+A,minmax,phase2: other analyte,-1,A_BT_Ag_632_map1,benzenethiol,Ag,632,,,0.9772417730588172,0.0550747692942544,phase 2 value
+A,minmax,phase2: other analyte,-1,A_BT_Au_632_map1,benzenethiol,Au,632,,,0.8403773126004446,0.2271817627966137,phase 2 value
+A,minmax,phase2: other analyte,-1,A_BT_PICO_632_map1,benzenethiol,PICO,632,,,0.2394499345224476,0.3651137334664568,phase 2 value
+A,minmax,phase2: other analyte,-1,A_BT_pSERS_632_map1,benzenethiol,pSERS,632,,,0.9795407346344954,0.023957980052801,phase 2 value
+A,minmax,phase2: other analyte,-1,A_Py_Ag_632_map1,pyridine,Ag,632,,,0.9821810336290376,0.0926051952857382,phase 2 value
+A,minmax,phase2: other analyte,-1,A_Py_Au_632_map1,pyridine,Au,632,,,0.8403773126004447,0.2271817627966137,phase 2 value
+A,minmax,phase2: other analyte,-1,A_Py_PICO_632_map1,pyridine,PICO,632,,,0.6368650484912348,0.1552947730534193,phase 2 value
+A,minmax,phase2: other analyte,-1,A_Py_pSERS_632_map1,pyridine,pSERS,632,,,0.989660557850248,0.0164039649472744,phase 2 value
+B,minmax,CVAE,0,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,11.0,49.0,0.966951269640492,0.0327099934220314,early stop epoch 241
+B,minmax,CVAE,0,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,11.0,81.0,0.9228538432533283,0.052892327308654785,early stop epoch 145
+B,minmax,CVAE,0,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,11.0,49.0,0.75769377418661,0.14131641387939453,early stop epoch 128
+B,minmax,CVAE,0,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,11.0,81.0,0.9381299957794753,0.06079104170203209,early stop epoch 272
+B,minmax,CVAE,0,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,11.0,49.0,0.9881873463896924,0.028504105284810066,early stop epoch 255
+B,minmax,CVAE,0,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,11.0,81.0,0.9745954961096966,0.046690985560417175,early stop epoch 259
+B,minmax,CVAE,0,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,11.0,49.0,0.8975103509421989,0.07111672312021255,early stop epoch 30
+B,minmax,CVAE,0,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,11.0,81.0,0.9768997559623205,0.05511605367064476,early stop epoch 180
+B,minmax,CVAE,0,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,11.0,49.0,0.9708111580666637,0.05597250536084175,early stop epoch 240
+B,minmax,CVAE,0,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,11.0,81.0,0.9709694087276064,0.07306819409132004,early stop epoch 190
+B,minmax,CVAE,0,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,11.0,49.0,0.9719989393130902,0.06625016033649445,early stop epoch 297
+B,minmax,CVAE,0,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,11.0,81.0,0.9505371223446417,0.2237756848335266,early stop epoch 133
+B,minmax,CVAE,1,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,11.0,49.0,0.8328807983872134,0.06972520053386688,early stop epoch 37
+B,minmax,CVAE,1,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,11.0,81.0,0.9651825726327732,0.0386434867978096,early stop epoch 288
+B,minmax,CVAE,1,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,11.0,49.0,0.9318437696332418,0.05361168831586838,early stop epoch 82
+B,minmax,CVAE,1,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,11.0,81.0,0.9102667729154816,0.08460420370101929,early stop epoch 298
+B,minmax,CVAE,1,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,11.0,49.0,0.9949638377973506,0.015841025859117508,early stop epoch 298
+B,minmax,CVAE,1,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,11.0,81.0,0.9879111345406113,0.03627600520849228,early stop epoch 261
+B,minmax,CVAE,1,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,11.0,49.0,0.9844551933695722,0.026357218623161316,early stop epoch 226
+B,minmax,CVAE,1,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,11.0,81.0,0.8862831196754356,0.08990411460399628,early stop epoch 36
+B,minmax,CVAE,1,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,11.0,49.0,0.9559930041973999,0.08483462780714035,early stop epoch 232
+B,minmax,CVAE,1,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,11.0,81.0,0.9696097551820508,0.10056070983409882,early stop epoch 245
+B,minmax,CVAE,1,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,11.0,49.0,0.9677795486980294,0.07197834551334381,early stop epoch 254
+B,minmax,CVAE,1,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,11.0,81.0,0.9536350380279798,0.2411162257194519,early stop epoch 32
+B,minmax,CVAE,2,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,11.0,49.0,0.9779974266406866,0.029511980712413788,early stop epoch 242
+B,minmax,CVAE,2,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,11.0,81.0,0.979282094598985,0.037290509790182114,early stop epoch 284
+B,minmax,CVAE,2,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,11.0,49.0,0.9726884954278879,0.03419794514775276,early stop epoch 242
+B,minmax,CVAE,2,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,11.0,81.0,0.9014237830625428,0.09842757880687714,early stop epoch 290
+B,minmax,CVAE,2,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,11.0,49.0,0.9851070638079898,0.038626886904239655,early stop epoch 205
+B,minmax,CVAE,2,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,11.0,81.0,0.9798678212850742,0.03935110196471214,early stop epoch 178
+B,minmax,CVAE,2,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,11.0,49.0,0.9806774885376376,0.028149819001555443,early stop epoch 279
+B,minmax,CVAE,2,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,11.0,81.0,0.9633139094157679,0.07350122928619385,early stop epoch 156
+B,minmax,CVAE,2,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,11.0,49.0,0.9574663129678775,0.11999771744012833,early stop epoch 256
+B,minmax,CVAE,2,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,11.0,81.0,0.9683469861123032,0.07132778316736221,early stop epoch 217
+B,minmax,CVAE,2,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,11.0,49.0,0.9675777931549685,0.07581449300050735,early stop epoch 296
+B,minmax,CVAE,2,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,11.0,81.0,0.9571174236244322,0.2254779040813446,early stop epoch 247
+B,minmax,PhysicsVAE,0,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,11.0,49.0,0.951601538786276,0.11188710480928421,early stop epoch 17
+B,minmax,PhysicsVAE,0,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,11.0,81.0,0.8864566004513439,0.06946080923080444,early stop epoch 8
+B,minmax,PhysicsVAE,0,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,11.0,49.0,0.9420488035576811,0.08408552408218384,early stop epoch 16
+B,minmax,PhysicsVAE,0,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,11.0,81.0,0.7847453783506394,0.11739370226860046,early stop epoch 30
+B,minmax,PhysicsVAE,0,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,11.0,49.0,0.9731408906179259,0.15449556708335876,early stop epoch 11
+B,minmax,PhysicsVAE,0,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,11.0,81.0,0.9348340773154713,0.07878051698207855,early stop epoch 23
+B,minmax,PhysicsVAE,0,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,11.0,49.0,0.9340203438224084,0.08351488411426544,early stop epoch 58
+B,minmax,PhysicsVAE,0,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,11.0,81.0,0.8959087805238135,0.1349608600139618,early stop epoch 15
+B,minmax,PhysicsVAE,0,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,11.0,49.0,0.9781211167509366,0.10868296027183533,early stop epoch 17
+B,minmax,PhysicsVAE,0,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,11.0,81.0,0.9435696543869422,0.18614262342453003,early stop epoch 18
+B,minmax,PhysicsVAE,0,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,11.0,49.0,0.9305475484994695,0.15024200081825256,early stop epoch 9
+B,minmax,PhysicsVAE,0,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,11.0,81.0,0.9493183654486551,0.11353974789381027,early stop epoch 16
+B,minmax,PhysicsVAE,1,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,11.0,49.0,0.950942094220163,0.09001144021749496,early stop epoch 15
+B,minmax,PhysicsVAE,1,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,11.0,81.0,0.877017539642732,0.06807021796703339,early stop epoch 13
+B,minmax,PhysicsVAE,1,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,11.0,49.0,0.9235889643690142,0.0726892277598381,early stop epoch 79
+B,minmax,PhysicsVAE,1,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,11.0,81.0,0.7710152247340583,0.1287793070077896,early stop epoch 39
+B,minmax,PhysicsVAE,1,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,11.0,49.0,0.9699312314839396,0.12760259211063385,early stop epoch 8
+B,minmax,PhysicsVAE,1,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,11.0,81.0,0.933254526017512,0.05756548047065735,early stop epoch 25
+B,minmax,PhysicsVAE,1,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,11.0,49.0,0.9315542749349146,0.09252678602933884,early stop epoch 18
+B,minmax,PhysicsVAE,1,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,11.0,81.0,0.8955662629801299,0.14627081155776978,early stop epoch 19
+B,minmax,PhysicsVAE,1,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,11.0,49.0,0.9704941182166915,0.10574706643819809,early stop epoch 6
+B,minmax,PhysicsVAE,1,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,11.0,81.0,0.9421862788094121,0.1852836161851883,early stop epoch 19
+B,minmax,PhysicsVAE,1,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,11.0,49.0,0.9209559778732282,0.12839773297309875,early stop epoch 6
+B,minmax,PhysicsVAE,1,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,11.0,81.0,0.9542788717530768,0.11400526016950607,early stop epoch 30
+B,minmax,PhysicsVAE,2,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,11.0,49.0,0.9537583713273868,0.10853434354066849,early stop epoch 13
+B,minmax,PhysicsVAE,2,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,11.0,81.0,0.8882102374380825,0.06597570329904556,early stop epoch 6
+B,minmax,PhysicsVAE,2,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,11.0,49.0,0.9333666486517802,0.10178235173225403,early stop epoch 37
+B,minmax,PhysicsVAE,2,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,11.0,81.0,0.7998733312973965,0.08913522958755493,early stop epoch 21
+B,minmax,PhysicsVAE,2,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,11.0,49.0,0.9701564054540288,0.13753528892993927,early stop epoch 9
+B,minmax,PhysicsVAE,2,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,11.0,81.0,0.9424814274651075,0.06392019242048264,early stop epoch 10
+B,minmax,PhysicsVAE,2,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,11.0,49.0,0.9300676794240222,0.0636783167719841,early stop epoch 8
+B,minmax,PhysicsVAE,2,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,11.0,81.0,0.8946465814131417,0.1498149037361145,early stop epoch 13
+B,minmax,PhysicsVAE,2,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,11.0,49.0,0.9823732878122503,0.12269613891839981,early stop epoch 49
+B,minmax,PhysicsVAE,2,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,11.0,81.0,0.9425046030428965,0.17446796596050262,early stop epoch 46
+B,minmax,PhysicsVAE,2,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,11.0,49.0,0.931406807514827,0.14785288274288177,early stop epoch 12
+B,minmax,PhysicsVAE,2,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,11.0,81.0,0.9331439588052857,0.13259629905223846,early stop epoch 12
+B,minmax,phase2: additive,-1,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,,,0.9415382024154416,0.0422091882794274,phase 2 value
+B,minmax,phase2: additive,-1,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,,,0.9233818687693068,0.054848082622629,phase 2 value
+B,minmax,phase2: additive,-1,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,,,0.9470340971746352,0.0446557047311581,phase 2 value
+B,minmax,phase2: additive,-1,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,,,0.9325524238437052,0.0525561309991151,phase 2 value
+B,minmax,phase2: additive,-1,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,,,0.9843307395525578,0.052877864177335,phase 2 value
+B,minmax,phase2: additive,-1,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,,,0.9675502610783284,0.1194703578471205,phase 2 value
+B,minmax,phase2: additive,-1,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,,,0.9490261912140407,0.0824173904806868,phase 2 value
+B,minmax,phase2: additive,-1,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,,,0.9618078078193086,0.1516176473753332,phase 2 value
+B,minmax,phase2: additive,-1,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,,,0.9651535711345652,0.064046097543547,phase 2 value
+B,minmax,phase2: additive,-1,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,,,0.9781916612210992,0.0458993286427613,phase 2 value
+B,minmax,phase2: additive,-1,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,,,0.984991538542816,0.0492783088080677,phase 2 value
+B,minmax,phase2: additive,-1,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,,,0.9665307153348652,0.0603355227548691,phase 2 value
+B,minmax,phase2: other substrate,-1,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,,,0.975375319122884,0.033351255149017,phase 2 value
+B,minmax,phase2: other substrate,-1,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,,,0.9313974723067852,0.0561259667968485,phase 2 value
+B,minmax,phase2: other substrate,-1,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,,,0.975375319122884,0.033351255149017,phase 2 value
+B,minmax,phase2: other substrate,-1,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,,,0.9313974723067852,0.0561259667968485,phase 2 value
+B,minmax,phase2: other substrate,-1,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,,,0.9382547007551828,0.0871305863875718,phase 2 value
+B,minmax,phase2: other substrate,-1,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,,,0.9407098965101296,0.1589906565314377,phase 2 value
+B,minmax,phase2: other substrate,-1,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,,,0.9382547007551828,0.0871305863875718,phase 2 value
+B,minmax,phase2: other substrate,-1,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,,,0.9407098965101296,0.1589906565314377,phase 2 value
+B,minmax,phase2: other substrate,-1,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,,,0.9486878519775268,0.0748259476133734,phase 2 value
+B,minmax,phase2: other substrate,-1,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,,,0.9553242695431048,0.0673261702740174,phase 2 value
+B,minmax,phase2: other substrate,-1,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,,,0.948687851977527,0.0748259476133734,phase 2 value
+B,minmax,phase2: other substrate,-1,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,,,0.9553242695431048,0.0673261702740174,phase 2 value
+B,minmax,phase2: other analyte,-1,B_MBA_Ag_632_map1,4-mercaptobenzoic acid,Ag,632,,,0.909555815384146,0.19458182884745,phase 2 value
+B,minmax,phase2: other analyte,-1,B_MBA_Ag_785_map1,4-mercaptobenzoic acid,Ag,785,,,0.8207515717977082,0.1678280207177069,phase 2 value
+B,minmax,phase2: other analyte,-1,B_MBA_Au_632_map1,4-mercaptobenzoic acid,Au,632,,,0.9027109357132252,0.1938150479601904,phase 2 value
+B,minmax,phase2: other analyte,-1,B_MBA_Au_785_map1,4-mercaptobenzoic acid,Au,785,,,0.7562618205565752,0.2403035010245798,phase 2 value
+B,minmax,phase2: other analyte,-1,B_PDCA_Ag_632_map1,"2,6-pyridinecarboxylic acid",Ag,632,,,0.8981842681783985,0.2568278564628915,phase 2 value
+B,minmax,phase2: other analyte,-1,B_PDCA_Ag_785_map1,"2,6-pyridinecarboxylic acid",Ag,785,,,0.7962113617313838,0.2249649849368469,phase 2 value
+B,minmax,phase2: other analyte,-1,B_PDCA_Au_632_map1,"2,6-pyridinecarboxylic acid",Au,632,,,0.8911290295803849,0.3139756712363407,phase 2 value
+B,minmax,phase2: other analyte,-1,B_PDCA_Au_785_map1,"2,6-pyridinecarboxylic acid",Au,785,,,0.7582426784932267,0.3941649399668996,phase 2 value
+B,minmax,phase2: other analyte,-1,B_MBN_Ag_632_map1,4-mercaptobenzonitrile,Ag,632,,,0.9616648088552492,0.0718956657157738,phase 2 value
+B,minmax,phase2: other analyte,-1,B_MBN_Ag_785_map1,4-mercaptobenzonitrile,Ag,785,,,0.9356080884239129,0.0709027338133436,phase 2 value
+B,minmax,phase2: other analyte,-1,B_MBN_Au_632_map1,4-mercaptobenzonitrile,Au,632,,,0.9486376371133224,0.1264317066319177,phase 2 value
+B,minmax,phase2: other analyte,-1,B_MBN_Au_785_map1,4-mercaptobenzonitrile,Au,785,,,0.9070516625645964,0.1588253469905192,phase 2 value

@@ -1,0 +1,80 @@
+{
+  "device": "cuda",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "total_seconds": 904.4703271389008,
+  "total_minutes": 15.074505452315012,
+  "n_failures": 0,
+  "n_fits": 474,
+  "recon": "sum",
+  "tag": "phase3b",
+  "parameter_table": [
+    {
+      "block": "A",
+      "model": "VAE",
+      "in_len": 2269,
+      "trainable_total": 31865,
+      "trainable_excl_physics_templates": 31865,
+      "physics_templates": 0
+    },
+    {
+      "block": "A",
+      "model": "beta-VAE",
+      "in_len": 2269,
+      "trainable_total": 31865,
+      "trainable_excl_physics_templates": 31865,
+      "physics_templates": 0
+    },
+    {
+      "block": "A",
+      "model": "CVAE",
+      "in_len": 2269,
+      "trainable_total": 31900,
+      "trainable_excl_physics_templates": 31900,
+      "physics_templates": 0
+    },
+    {
+      "block": "A",
+      "model": "PhysicsVAE",
+      "in_len": 2269,
+      "trainable_total": 42992,
+      "trainable_excl_physics_templates": 27109,
+      "physics_templates": 15883
+    },
+    {
+      "block": "B",
+      "model": "VAE",
+      "in_len": 2088,
+      "trainable_total": 31865,
+      "trainable_excl_physics_templates": 31865,
+      "physics_templates": 0
+    },
+    {
+      "block": "B",
+      "model": "beta-VAE",
+      "in_len": 2088,
+      "trainable_total": 31865,
+      "trainable_excl_physics_templates": 31865,
+      "physics_templates": 0
+    },
+    {
+      "block": "B",
+      "model": "CVAE",
+      "in_len": 2088,
+      "trainable_total": 32412,
+      "trainable_excl_physics_templates": 32412,
+      "physics_templates": 0
+    },
+    {
+      "block": "B",
+      "model": "PhysicsVAE",
+      "in_len": 2088,
+      "trainable_total": 37429,
+      "trainable_excl_physics_templates": 26989,
+      "physics_templates": 10440
+    }
+  ]
+}

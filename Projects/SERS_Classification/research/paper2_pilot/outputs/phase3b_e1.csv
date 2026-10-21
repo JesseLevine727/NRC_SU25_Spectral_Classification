@@ -1,0 +1,259 @@
+block,preprocessing,model,seed,analyte,target,ref_laser,corr,abs_corr,peaks_matched,peaks_total,peak_fraction,note
+A,minmax,NMF (phase 2),-1,4-nitrophenol,SERS signature,,0.8418335899516209,0.8418335899516209,,,,best of k=7 NMF components vs signature
+A,minmax,analyte mean (phase 2),-1,4-nitrophenol,SERS signature,,0.7591805364661756,0.7591805364661756,,,,analyte mean spectrum vs signature
+A,minmax,NMF (phase 2),-1,benzenethiol,SERS signature,,0.9154364343054254,0.9154364343054254,,,,best of k=7 NMF components vs signature
+A,minmax,analyte mean (phase 2),-1,benzenethiol,SERS signature,,-0.37127837695773314,0.37127837695773314,,,,analyte mean spectrum vs signature
+A,minmax,NMF (phase 2),-1,pyridine,SERS signature,,0.8753894140263788,0.8753894140263788,,,,best of k=7 NMF components vs signature
+A,minmax,analyte mean (phase 2),-1,pyridine,SERS signature,,0.6494047186718689,0.6494047186718689,,,,analyte mean spectrum vs signature
+A,minmax,CVAE,0,4-nitrophenol,Raman reference,632,0.44847129879873165,0.44847129879873165,5.0,8.0,0.625,early stop epoch 289
+A,minmax,CVAE,0,4-nitrophenol,SERS signature,,0.8119322827432036,0.8119322827432036,,,,early stop epoch 289
+A,minmax,CVAE,0,benzenethiol,Raman reference,unknown,0.24117152323769794,0.24117152323769794,4.0,8.0,0.5,early stop epoch 289
+A,minmax,CVAE,0,benzenethiol,SERS signature,,0.43833815145363875,0.43833815145363875,,,,early stop epoch 289
+A,minmax,CVAE,0,pyridine,Raman reference,unknown,0.19899030025428766,0.19899030025428766,4.0,8.0,0.5,early stop epoch 289
+A,minmax,CVAE,0,pyridine,SERS signature,,0.7020396615939849,0.7020396615939849,,,,early stop epoch 289
+A,minmax,CVAE,1,4-nitrophenol,Raman reference,632,0.47185125299282993,0.47185125299282993,7.0,8.0,0.875,early stop epoch 90
+A,minmax,CVAE,1,4-nitrophenol,SERS signature,,0.8222367880491243,0.8222367880491243,,,,early stop epoch 90
+A,minmax,CVAE,1,benzenethiol,Raman reference,unknown,0.3622542186305001,0.3622542186305001,8.0,8.0,1.0,early stop epoch 90
+A,minmax,CVAE,1,benzenethiol,SERS signature,,0.8527902513526943,0.8527902513526943,,,,early stop epoch 90
+A,minmax,CVAE,1,pyridine,Raman reference,unknown,0.14477086184857338,0.14477086184857338,8.0,8.0,1.0,early stop epoch 90
+A,minmax,CVAE,1,pyridine,SERS signature,,0.5141491941744523,0.5141491941744523,,,,early stop epoch 90
+A,minmax,CVAE,2,4-nitrophenol,Raman reference,632,0.4541098199498708,0.4541098199498708,8.0,8.0,1.0,early stop epoch 90
+A,minmax,CVAE,2,4-nitrophenol,SERS signature,,0.7873591752092125,0.7873591752092125,,,,early stop epoch 90
+A,minmax,CVAE,2,benzenethiol,Raman reference,unknown,0.05582336629244471,0.05582336629244471,8.0,8.0,1.0,early stop epoch 90
+A,minmax,CVAE,2,benzenethiol,SERS signature,,-0.27259687849364145,0.27259687849364145,,,,early stop epoch 90
+A,minmax,CVAE,2,pyridine,Raman reference,unknown,0.18432464562488837,0.18432464562488837,8.0,8.0,1.0,early stop epoch 90
+A,minmax,CVAE,2,pyridine,SERS signature,,0.6494059304091246,0.6494059304091246,,,,early stop epoch 90
+A,minmax,PhysicsVAE,0,4-nitrophenol,Raman reference,632,0.4170002835489281,0.4170002835489281,4.0,8.0,0.5,early stop epoch 30
+A,minmax,PhysicsVAE,0,4-nitrophenol,SERS signature,,0.7520913977241437,0.7520913977241437,,,,early stop epoch 30
+A,minmax,PhysicsVAE,0,benzenethiol,Raman reference,unknown,-0.0058537083147355,0.0058537083147355,7.0,8.0,0.875,early stop epoch 30
+A,minmax,PhysicsVAE,0,benzenethiol,SERS signature,,-0.402776829234851,0.402776829234851,,,,early stop epoch 30
+A,minmax,PhysicsVAE,0,pyridine,Raman reference,unknown,0.15447546669145498,0.15447546669145498,2.0,8.0,0.25,early stop epoch 30
+A,minmax,PhysicsVAE,0,pyridine,SERS signature,,0.6578431137039088,0.6578431137039088,,,,early stop epoch 30
+A,minmax,PhysicsVAE,1,4-nitrophenol,Raman reference,632,0.42180474757680125,0.42180474757680125,4.0,8.0,0.5,early stop epoch 21
+A,minmax,PhysicsVAE,1,4-nitrophenol,SERS signature,,0.7471194376657401,0.7471194376657401,,,,early stop epoch 21
+A,minmax,PhysicsVAE,1,benzenethiol,Raman reference,unknown,-0.008385279580703975,0.008385279580703975,7.0,8.0,0.875,early stop epoch 21
+A,minmax,PhysicsVAE,1,benzenethiol,SERS signature,,-0.41435792733333193,0.41435792733333193,,,,early stop epoch 21
+A,minmax,PhysicsVAE,1,pyridine,Raman reference,unknown,0.15450239329002494,0.15450239329002494,2.0,8.0,0.25,early stop epoch 21
+A,minmax,PhysicsVAE,1,pyridine,SERS signature,,0.661396030317119,0.661396030317119,,,,early stop epoch 21
+A,minmax,PhysicsVAE,2,4-nitrophenol,Raman reference,632,0.4131859928072316,0.4131859928072316,4.0,8.0,0.5,early stop epoch 49
+A,minmax,PhysicsVAE,2,4-nitrophenol,SERS signature,,0.7484284008403731,0.7484284008403731,,,,early stop epoch 49
+A,minmax,PhysicsVAE,2,benzenethiol,Raman reference,unknown,-0.012410433991927478,0.012410433991927478,7.0,8.0,0.875,early stop epoch 49
+A,minmax,PhysicsVAE,2,benzenethiol,SERS signature,,-0.41508127253544574,0.41508127253544574,,,,early stop epoch 49
+A,minmax,PhysicsVAE,2,pyridine,Raman reference,unknown,0.15543804200243022,0.15543804200243022,2.0,8.0,0.25,early stop epoch 49
+A,minmax,PhysicsVAE,2,pyridine,SERS signature,,0.6445247191462514,0.6445247191462514,,,,early stop epoch 49
+A,minmax,do-nothing (phase 2),-1,4-nitrophenol,Raman reference,632,0.4313118115688366,0.4313118115688366,0.0,8.0,,"phase 2 value, same reference rule"
+A,minmax,do-nothing (phase 2),-1,benzenethiol,Raman reference,unknown,0.01186969026375,0.01186969026375,0.0,8.0,,"phase 2 value, same reference rule"
+A,minmax,do-nothing (phase 2),-1,pyridine,Raman reference,unknown,0.1620187920297042,0.1620187920297042,0.0,8.0,,"phase 2 value, same reference rule"
+A,minmax,NMF (phase 2),-1,4-nitrophenol,Raman reference,632,0.6068687397877375,0.6068687397877375,4.0,8.0,0.5,"phase 2 value, same reference rule"
+A,minmax,NMF (phase 2),-1,benzenethiol,Raman reference,unknown,0.2896585659353395,0.2896585659353395,7.0,8.0,0.875,"phase 2 value, same reference rule"
+A,minmax,NMF (phase 2),-1,pyridine,Raman reference,unknown,0.2122096524185642,0.2122096524185642,4.0,8.0,0.5,"phase 2 value, same reference rule"
+A,minmax,MCR-ALS (phase 2),-1,4-nitrophenol,Raman reference,632,0.6067041955506655,0.6067041955506655,4.0,8.0,0.5,"phase 2 value, same reference rule"
+A,minmax,MCR-ALS (phase 2),-1,benzenethiol,Raman reference,unknown,0.286629053445411,0.286629053445411,7.0,8.0,0.875,"phase 2 value, same reference rule"
+A,minmax,MCR-ALS (phase 2),-1,pyridine,Raman reference,unknown,0.2129827943579305,0.2129827943579305,3.0,8.0,0.375,"phase 2 value, same reference rule"
+A,arpls,NMF (phase 2),-1,4-nitrophenol,SERS signature,,0.8392103512220384,0.8392103512220384,,,,best of k=7 NMF components vs signature
+A,arpls,analyte mean (phase 2),-1,4-nitrophenol,SERS signature,,0.5533009375072008,0.5533009375072008,,,,analyte mean spectrum vs signature
+A,arpls,NMF (phase 2),-1,benzenethiol,SERS signature,,0.7223512683694655,0.7223512683694655,,,,best of k=7 NMF components vs signature
+A,arpls,analyte mean (phase 2),-1,benzenethiol,SERS signature,,0.4973858193146967,0.4973858193146967,,,,analyte mean spectrum vs signature
+A,arpls,NMF (phase 2),-1,pyridine,SERS signature,,0.676384085863808,0.676384085863808,,,,best of k=7 NMF components vs signature
+A,arpls,analyte mean (phase 2),-1,pyridine,SERS signature,,0.5598235170155871,0.5598235170155871,,,,analyte mean spectrum vs signature
+A,arpls,CVAE,0,4-nitrophenol,Raman reference,632,0.5612104030764438,0.5612104030764438,6.0,8.0,0.75,early stop epoch 285
+A,arpls,CVAE,0,4-nitrophenol,SERS signature,,0.7943610959316284,0.7943610959316284,,,,early stop epoch 285
+A,arpls,CVAE,0,benzenethiol,Raman reference,unknown,0.42717321988248774,0.42717321988248774,8.0,8.0,1.0,early stop epoch 285
+A,arpls,CVAE,0,benzenethiol,SERS signature,,0.5332876652116129,0.5332876652116129,,,,early stop epoch 285
+A,arpls,CVAE,0,pyridine,Raman reference,unknown,0.21527558856769374,0.21527558856769374,5.0,8.0,0.625,early stop epoch 285
+A,arpls,CVAE,0,pyridine,SERS signature,,0.6335179442069372,0.6335179442069372,,,,early stop epoch 285
+A,arpls,CVAE,1,4-nitrophenol,Raman reference,632,0.5283214296122539,0.5283214296122539,4.0,8.0,0.5,early stop epoch 244
+A,arpls,CVAE,1,4-nitrophenol,SERS signature,,0.7721622373436344,0.7721622373436344,,,,early stop epoch 244
+A,arpls,CVAE,1,benzenethiol,Raman reference,unknown,0.4033939800451493,0.4033939800451493,6.0,8.0,0.75,early stop epoch 244
+A,arpls,CVAE,1,benzenethiol,SERS signature,,0.5692661069740881,0.5692661069740881,,,,early stop epoch 244
+A,arpls,CVAE,1,pyridine,Raman reference,unknown,0.16205106141451234,0.16205106141451234,2.0,8.0,0.25,early stop epoch 244
+A,arpls,CVAE,1,pyridine,SERS signature,,0.7318725136379511,0.7318725136379511,,,,early stop epoch 244
+A,arpls,CVAE,2,4-nitrophenol,Raman reference,632,0.6088641419390676,0.6088641419390676,6.0,8.0,0.75,early stop epoch 294
+A,arpls,CVAE,2,4-nitrophenol,SERS signature,,0.8054144714418582,0.8054144714418582,,,,early stop epoch 294
+A,arpls,CVAE,2,benzenethiol,Raman reference,unknown,0.4221921921877008,0.4221921921877008,7.0,8.0,0.875,early stop epoch 294
+A,arpls,CVAE,2,benzenethiol,SERS signature,,0.5715678227349191,0.5715678227349191,,,,early stop epoch 294
+A,arpls,CVAE,2,pyridine,Raman reference,unknown,0.19510089393964547,0.19510089393964547,4.0,8.0,0.5,early stop epoch 294
+A,arpls,CVAE,2,pyridine,SERS signature,,0.7259042965986304,0.7259042965986304,,,,early stop epoch 294
+A,arpls,PhysicsVAE,0,4-nitrophenol,Raman reference,632,0.5767670012880068,0.5767670012880068,6.0,8.0,0.75,early stop epoch 27
+A,arpls,PhysicsVAE,0,4-nitrophenol,SERS signature,,0.590357031921457,0.590357031921457,,,,early stop epoch 27
+A,arpls,PhysicsVAE,0,benzenethiol,Raman reference,unknown,0.3929824848520793,0.3929824848520793,7.0,8.0,0.875,early stop epoch 27
+A,arpls,PhysicsVAE,0,benzenethiol,SERS signature,,0.49639049267917285,0.49639049267917285,,,,early stop epoch 27
+A,arpls,PhysicsVAE,0,pyridine,Raman reference,unknown,0.1889672579212102,0.1889672579212102,2.0,8.0,0.25,early stop epoch 27
+A,arpls,PhysicsVAE,0,pyridine,SERS signature,,0.5415781598700242,0.5415781598700242,,,,early stop epoch 27
+A,arpls,PhysicsVAE,1,4-nitrophenol,Raman reference,632,0.5809594037326916,0.5809594037326916,4.0,8.0,0.5,early stop epoch 7
+A,arpls,PhysicsVAE,1,4-nitrophenol,SERS signature,,0.5414148504082119,0.5414148504082119,,,,early stop epoch 7
+A,arpls,PhysicsVAE,1,benzenethiol,Raman reference,unknown,0.39260959307565735,0.39260959307565735,7.0,8.0,0.875,early stop epoch 7
+A,arpls,PhysicsVAE,1,benzenethiol,SERS signature,,0.4938454846141996,0.4938454846141996,,,,early stop epoch 7
+A,arpls,PhysicsVAE,1,pyridine,Raman reference,unknown,0.1770439543632581,0.1770439543632581,2.0,8.0,0.25,early stop epoch 7
+A,arpls,PhysicsVAE,1,pyridine,SERS signature,,0.546863960616474,0.546863960616474,,,,early stop epoch 7
+A,arpls,PhysicsVAE,2,4-nitrophenol,Raman reference,632,0.5716904643538946,0.5716904643538946,4.0,8.0,0.5,early stop epoch 35
+A,arpls,PhysicsVAE,2,4-nitrophenol,SERS signature,,0.5753745366725049,0.5753745366725049,,,,early stop epoch 35
+A,arpls,PhysicsVAE,2,benzenethiol,Raman reference,unknown,0.38723711741435735,0.38723711741435735,7.0,8.0,0.875,early stop epoch 35
+A,arpls,PhysicsVAE,2,benzenethiol,SERS signature,,0.5139662695826654,0.5139662695826654,,,,early stop epoch 35
+A,arpls,PhysicsVAE,2,pyridine,Raman reference,unknown,0.18852028443256086,0.18852028443256086,2.0,8.0,0.25,early stop epoch 35
+A,arpls,PhysicsVAE,2,pyridine,SERS signature,,0.5447612552825954,0.5447612552825954,,,,early stop epoch 35
+A,arpls,do-nothing (phase 2),-1,4-nitrophenol,Raman reference,632,0.5696271478804079,0.5696271478804079,0.0,8.0,,"phase 2 value, same reference rule"
+A,arpls,do-nothing (phase 2),-1,benzenethiol,Raman reference,unknown,0.3896797971006543,0.3896797971006543,0.0,8.0,,"phase 2 value, same reference rule"
+A,arpls,do-nothing (phase 2),-1,pyridine,Raman reference,unknown,0.1773467679248751,0.1773467679248751,0.0,8.0,,"phase 2 value, same reference rule"
+A,arpls,NMF (phase 2),-1,4-nitrophenol,Raman reference,632,0.5901401940285614,0.5901401940285614,4.0,8.0,0.5,"phase 2 value, same reference rule"
+A,arpls,NMF (phase 2),-1,benzenethiol,Raman reference,unknown,0.4355685047629782,0.4355685047629782,7.0,8.0,0.875,"phase 2 value, same reference rule"
+A,arpls,NMF (phase 2),-1,pyridine,Raman reference,unknown,0.2509989000255516,0.2509989000255516,6.0,8.0,0.75,"phase 2 value, same reference rule"
+A,arpls,MCR-ALS (phase 2),-1,4-nitrophenol,Raman reference,632,0.5901367192880381,0.5901367192880381,4.0,8.0,0.5,"phase 2 value, same reference rule"
+A,arpls,MCR-ALS (phase 2),-1,benzenethiol,Raman reference,unknown,0.4357133843396606,0.4357133843396606,7.0,8.0,0.875,"phase 2 value, same reference rule"
+A,arpls,MCR-ALS (phase 2),-1,pyridine,Raman reference,unknown,0.2510006336721384,0.2510006336721384,6.0,8.0,0.75,"phase 2 value, same reference rule"
+B,minmax,NMF (phase 2),-1,"2,6-pyridinecarboxylic acid",SERS signature,,0.8597515402231191,0.8597515402231191,,,,best of k=5 NMF components vs signature
+B,minmax,analyte mean (phase 2),-1,"2,6-pyridinecarboxylic acid",SERS signature,,0.9056077009603556,0.9056077009603556,,,,analyte mean spectrum vs signature
+B,minmax,NMF (phase 2),-1,4-mercaptobenzoic acid,SERS signature,,0.0009194133276487626,0.0009194133276487626,,,,best of k=5 NMF components vs signature
+B,minmax,analyte mean (phase 2),-1,4-mercaptobenzoic acid,SERS signature,,-0.4029267738440915,0.4029267738440915,,,,analyte mean spectrum vs signature
+B,minmax,NMF (phase 2),-1,4-mercaptobenzonitrile,SERS signature,,0.23947271371507106,0.23947271371507106,,,,best of k=5 NMF components vs signature
+B,minmax,analyte mean (phase 2),-1,4-mercaptobenzonitrile,SERS signature,,-0.4279556676629841,0.4279556676629841,,,,analyte mean spectrum vs signature
+B,minmax,CVAE,0,"2,6-pyridinecarboxylic acid",Raman reference,632,0.026342106751548043,0.026342106751548043,5.0,8.0,0.625,early stop epoch 164
+B,minmax,CVAE,0,"2,6-pyridinecarboxylic acid",Raman reference,785,0.3424895925827097,0.3424895925827097,6.0,8.0,0.75,early stop epoch 164
+B,minmax,CVAE,0,"2,6-pyridinecarboxylic acid",SERS signature,,0.9086205069085582,0.9086205069085582,,,,early stop epoch 164
+B,minmax,CVAE,0,4-mercaptobenzoic acid,Raman reference,632,0.68882060967401,0.68882060967401,6.0,8.0,0.75,early stop epoch 164
+B,minmax,CVAE,0,4-mercaptobenzoic acid,Raman reference,785,0.6373105096403243,0.6373105096403243,2.0,8.0,0.25,early stop epoch 164
+B,minmax,CVAE,0,4-mercaptobenzoic acid,SERS signature,,-0.33163744055891187,0.33163744055891187,,,,early stop epoch 164
+B,minmax,CVAE,0,4-mercaptobenzonitrile,Raman reference,632,0.7385249051563815,0.7385249051563815,5.0,8.0,0.625,early stop epoch 164
+B,minmax,CVAE,0,4-mercaptobenzonitrile,Raman reference,785,0.5999152637750941,0.5999152637750941,4.0,8.0,0.5,early stop epoch 164
+B,minmax,CVAE,0,4-mercaptobenzonitrile,SERS signature,,-0.4194162212361131,0.4194162212361131,,,,early stop epoch 164
+B,minmax,CVAE,1,"2,6-pyridinecarboxylic acid",Raman reference,632,-0.014963463384524764,0.014963463384524764,5.0,8.0,0.625,early stop epoch 35
+B,minmax,CVAE,1,"2,6-pyridinecarboxylic acid",Raman reference,785,0.3306563782587169,0.3306563782587169,6.0,8.0,0.75,early stop epoch 35
+B,minmax,CVAE,1,"2,6-pyridinecarboxylic acid",SERS signature,,0.9035783106292276,0.9035783106292276,,,,early stop epoch 35
+B,minmax,CVAE,1,4-mercaptobenzoic acid,Raman reference,632,0.7550448021845229,0.7550448021845229,4.0,8.0,0.5,early stop epoch 35
+B,minmax,CVAE,1,4-mercaptobenzoic acid,Raman reference,785,0.7066107139837118,0.7066107139837118,4.0,8.0,0.5,early stop epoch 35
+B,minmax,CVAE,1,4-mercaptobenzoic acid,SERS signature,,-0.5210859823194439,0.5210859823194439,,,,early stop epoch 35
+B,minmax,CVAE,1,4-mercaptobenzonitrile,Raman reference,632,0.7749390972107395,0.7749390972107395,8.0,8.0,1.0,early stop epoch 35
+B,minmax,CVAE,1,4-mercaptobenzonitrile,Raman reference,785,0.5229861308421233,0.5229861308421233,7.0,8.0,0.875,early stop epoch 35
+B,minmax,CVAE,1,4-mercaptobenzonitrile,SERS signature,,-0.5698757317820182,0.5698757317820182,,,,early stop epoch 35
+B,minmax,CVAE,2,"2,6-pyridinecarboxylic acid",Raman reference,632,0.031665207893249635,0.031665207893249635,3.0,8.0,0.375,early stop epoch 258
+B,minmax,CVAE,2,"2,6-pyridinecarboxylic acid",Raman reference,785,0.3454248918175472,0.3454248918175472,2.0,8.0,0.25,early stop epoch 258
+B,minmax,CVAE,2,"2,6-pyridinecarboxylic acid",SERS signature,,0.9066489359180318,0.9066489359180318,,,,early stop epoch 258
+B,minmax,CVAE,2,4-mercaptobenzoic acid,Raman reference,632,0.7183169968998455,0.7183169968998455,4.0,8.0,0.5,early stop epoch 258
+B,minmax,CVAE,2,4-mercaptobenzoic acid,Raman reference,785,0.6967839889115546,0.6967839889115546,3.0,8.0,0.375,early stop epoch 258
+B,minmax,CVAE,2,4-mercaptobenzoic acid,SERS signature,,-0.41075631615106367,0.41075631615106367,,,,early stop epoch 258
+B,minmax,CVAE,2,4-mercaptobenzonitrile,Raman reference,632,0.7533509858798718,0.7533509858798718,5.0,8.0,0.625,early stop epoch 258
+B,minmax,CVAE,2,4-mercaptobenzonitrile,Raman reference,785,0.6140538070554794,0.6140538070554794,3.0,8.0,0.375,early stop epoch 258
+B,minmax,CVAE,2,4-mercaptobenzonitrile,SERS signature,,-0.4090777450213404,0.4090777450213404,,,,early stop epoch 258
+B,minmax,PhysicsVAE,0,"2,6-pyridinecarboxylic acid",Raman reference,632,0.04232220219582376,0.04232220219582376,3.0,8.0,0.375,early stop epoch 34
+B,minmax,PhysicsVAE,0,"2,6-pyridinecarboxylic acid",Raman reference,785,0.3484468205630187,0.3484468205630187,1.0,8.0,0.125,early stop epoch 34
+B,minmax,PhysicsVAE,0,"2,6-pyridinecarboxylic acid",SERS signature,,0.9202757285020213,0.9202757285020213,,,,early stop epoch 34
+B,minmax,PhysicsVAE,0,4-mercaptobenzoic acid,Raman reference,632,0.7989476901399675,0.7989476901399675,5.0,8.0,0.625,early stop epoch 34
+B,minmax,PhysicsVAE,0,4-mercaptobenzoic acid,Raman reference,785,0.7462343929837244,0.7462343929837244,3.0,8.0,0.375,early stop epoch 34
+B,minmax,PhysicsVAE,0,4-mercaptobenzoic acid,SERS signature,,-0.5123264541495046,0.5123264541495046,,,,early stop epoch 34
+B,minmax,PhysicsVAE,0,4-mercaptobenzonitrile,Raman reference,632,0.7978126156392247,0.7978126156392247,5.0,8.0,0.625,early stop epoch 34
+B,minmax,PhysicsVAE,0,4-mercaptobenzonitrile,Raman reference,785,0.5566314844032528,0.5566314844032528,4.0,8.0,0.5,early stop epoch 34
+B,minmax,PhysicsVAE,0,4-mercaptobenzonitrile,SERS signature,,-0.520749024140243,0.520749024140243,,,,early stop epoch 34
+B,minmax,PhysicsVAE,1,"2,6-pyridinecarboxylic acid",Raman reference,632,0.03411203322483469,0.03411203322483469,4.0,8.0,0.5,early stop epoch 13
+B,minmax,PhysicsVAE,1,"2,6-pyridinecarboxylic acid",Raman reference,785,0.34838330681905627,0.34838330681905627,2.0,8.0,0.25,early stop epoch 13
+B,minmax,PhysicsVAE,1,"2,6-pyridinecarboxylic acid",SERS signature,,0.9181306612734551,0.9181306612734551,,,,early stop epoch 13
+B,minmax,PhysicsVAE,1,4-mercaptobenzoic acid,Raman reference,632,0.7583050545350031,0.7583050545350031,4.0,8.0,0.5,early stop epoch 13
+B,minmax,PhysicsVAE,1,4-mercaptobenzoic acid,Raman reference,785,0.7072984981361772,0.7072984981361772,1.0,8.0,0.125,early stop epoch 13
+B,minmax,PhysicsVAE,1,4-mercaptobenzoic acid,SERS signature,,-0.4506775931509752,0.4506775931509752,,,,early stop epoch 13
+B,minmax,PhysicsVAE,1,4-mercaptobenzonitrile,Raman reference,632,0.7852942510899255,0.7852942510899255,5.0,8.0,0.625,early stop epoch 13
+B,minmax,PhysicsVAE,1,4-mercaptobenzonitrile,Raman reference,785,0.5833451788783868,0.5833451788783868,4.0,8.0,0.5,early stop epoch 13
+B,minmax,PhysicsVAE,1,4-mercaptobenzonitrile,SERS signature,,-0.4742890061149779,0.4742890061149779,,,,early stop epoch 13
+B,minmax,PhysicsVAE,2,"2,6-pyridinecarboxylic acid",Raman reference,632,0.03284735140988298,0.03284735140988298,4.0,8.0,0.5,early stop epoch 12
+B,minmax,PhysicsVAE,2,"2,6-pyridinecarboxylic acid",Raman reference,785,0.34789620222209955,0.34789620222209955,2.0,8.0,0.25,early stop epoch 12
+B,minmax,PhysicsVAE,2,"2,6-pyridinecarboxylic acid",SERS signature,,0.9156296470507084,0.9156296470507084,,,,early stop epoch 12
+B,minmax,PhysicsVAE,2,4-mercaptobenzoic acid,Raman reference,632,0.7569376952915641,0.7569376952915641,4.0,8.0,0.5,early stop epoch 12
+B,minmax,PhysicsVAE,2,4-mercaptobenzoic acid,Raman reference,785,0.7076381476907874,0.7076381476907874,1.0,8.0,0.125,early stop epoch 12
+B,minmax,PhysicsVAE,2,4-mercaptobenzoic acid,SERS signature,,-0.45102161306511623,0.45102161306511623,,,,early stop epoch 12
+B,minmax,PhysicsVAE,2,4-mercaptobenzonitrile,Raman reference,632,0.7875970784760797,0.7875970784760797,5.0,8.0,0.625,early stop epoch 12
+B,minmax,PhysicsVAE,2,4-mercaptobenzonitrile,Raman reference,785,0.5836474801953815,0.5836474801953815,4.0,8.0,0.5,early stop epoch 12
+B,minmax,PhysicsVAE,2,4-mercaptobenzonitrile,SERS signature,,-0.4727125545481271,0.4727125545481271,,,,early stop epoch 12
+B,minmax,do-nothing (phase 2),-1,4-mercaptobenzoic acid,Raman reference,632,0.7256314730642999,0.7256314730642999,0.0,8.0,,"phase 2 value, same reference rule"
+B,minmax,do-nothing (phase 2),-1,4-mercaptobenzoic acid,Raman reference,785,0.6737953021728433,0.6737953021728433,0.0,8.0,,"phase 2 value, same reference rule"
+B,minmax,do-nothing (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,632,0.0310206561670732,0.0310206561670732,0.0,8.0,,"phase 2 value, same reference rule"
+B,minmax,do-nothing (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,785,0.3470560259455796,0.3470560259455796,0.0,8.0,,"phase 2 value, same reference rule"
+B,minmax,do-nothing (phase 2),-1,4-mercaptobenzonitrile,Raman reference,632,0.7687860534282679,0.7687860534282679,0.0,8.0,,"phase 2 value, same reference rule"
+B,minmax,do-nothing (phase 2),-1,4-mercaptobenzonitrile,Raman reference,785,0.607378468324268,0.607378468324268,0.0,8.0,,"phase 2 value, same reference rule"
+B,minmax,NMF (phase 2),-1,4-mercaptobenzoic acid,Raman reference,632,0.7198465652814071,0.7198465652814071,5.0,8.0,0.625,"phase 2 value, same reference rule"
+B,minmax,NMF (phase 2),-1,4-mercaptobenzoic acid,Raman reference,785,0.9405964090478944,0.9405964090478944,5.0,8.0,0.625,"phase 2 value, same reference rule"
+B,minmax,NMF (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,632,0.1925237179564779,0.1925237179564779,3.0,8.0,0.375,"phase 2 value, same reference rule"
+B,minmax,NMF (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,785,0.3060691949131348,0.3060691949131348,3.0,8.0,0.375,"phase 2 value, same reference rule"
+B,minmax,NMF (phase 2),-1,4-mercaptobenzonitrile,Raman reference,632,0.6619935595420049,0.6619935595420049,0.0,8.0,0.0,"phase 2 value, same reference rule"
+B,minmax,NMF (phase 2),-1,4-mercaptobenzonitrile,Raman reference,785,0.7197542673557169,0.7197542673557169,4.0,8.0,0.5,"phase 2 value, same reference rule"
+B,minmax,MCR-ALS (phase 2),-1,4-mercaptobenzoic acid,Raman reference,632,0.7181258263522764,0.7181258263522764,5.0,8.0,0.625,"phase 2 value, same reference rule"
+B,minmax,MCR-ALS (phase 2),-1,4-mercaptobenzoic acid,Raman reference,785,0.9406336693917666,0.9406336693917666,6.0,8.0,0.75,"phase 2 value, same reference rule"
+B,minmax,MCR-ALS (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,632,0.1920902061711786,0.1920902061711786,3.0,8.0,0.375,"phase 2 value, same reference rule"
+B,minmax,MCR-ALS (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,785,0.305520578041193,0.305520578041193,3.0,8.0,0.375,"phase 2 value, same reference rule"
+B,minmax,MCR-ALS (phase 2),-1,4-mercaptobenzonitrile,Raman reference,632,0.6631147663206204,0.6631147663206204,0.0,8.0,0.0,"phase 2 value, same reference rule"
+B,minmax,MCR-ALS (phase 2),-1,4-mercaptobenzonitrile,Raman reference,785,0.7198085149935721,0.7198085149935721,4.0,8.0,0.5,"phase 2 value, same reference rule"
+B,arpls,NMF (phase 2),-1,"2,6-pyridinecarboxylic acid",SERS signature,,0.5910522244551235,0.5910522244551235,,,,best of k=5 NMF components vs signature
+B,arpls,analyte mean (phase 2),-1,"2,6-pyridinecarboxylic acid",SERS signature,,0.46876493620654164,0.46876493620654164,,,,analyte mean spectrum vs signature
+B,arpls,NMF (phase 2),-1,4-mercaptobenzoic acid,SERS signature,,0.46575229843524507,0.46575229843524507,,,,best of k=5 NMF components vs signature
+B,arpls,analyte mean (phase 2),-1,4-mercaptobenzoic acid,SERS signature,,0.46717428570579256,0.46717428570579256,,,,analyte mean spectrum vs signature
+B,arpls,NMF (phase 2),-1,4-mercaptobenzonitrile,SERS signature,,0.59389545398706,0.59389545398706,,,,best of k=5 NMF components vs signature
+B,arpls,analyte mean (phase 2),-1,4-mercaptobenzonitrile,SERS signature,,0.5397869972500691,0.5397869972500691,,,,analyte mean spectrum vs signature
+B,arpls,CVAE,0,"2,6-pyridinecarboxylic acid",Raman reference,632,0.26703520269975106,0.26703520269975106,5.0,8.0,0.625,early stop epoch 214
+B,arpls,CVAE,0,"2,6-pyridinecarboxylic acid",Raman reference,785,0.2292437970686707,0.2292437970686707,4.0,8.0,0.5,early stop epoch 214
+B,arpls,CVAE,0,"2,6-pyridinecarboxylic acid",SERS signature,,0.5009984013039491,0.5009984013039491,,,,early stop epoch 214
+B,arpls,CVAE,0,4-mercaptobenzoic acid,Raman reference,632,0.35022373294386544,0.35022373294386544,4.0,8.0,0.5,early stop epoch 214
+B,arpls,CVAE,0,4-mercaptobenzoic acid,Raman reference,785,0.412593186234237,0.412593186234237,5.0,8.0,0.625,early stop epoch 214
+B,arpls,CVAE,0,4-mercaptobenzoic acid,SERS signature,,0.48660134207412226,0.48660134207412226,,,,early stop epoch 214
+B,arpls,CVAE,0,4-mercaptobenzonitrile,Raman reference,632,0.6107291827056927,0.6107291827056927,5.0,8.0,0.625,early stop epoch 214
+B,arpls,CVAE,0,4-mercaptobenzonitrile,Raman reference,785,0.7456946167307161,0.7456946167307161,5.0,8.0,0.625,early stop epoch 214
+B,arpls,CVAE,0,4-mercaptobenzonitrile,SERS signature,,0.5325265749508675,0.5325265749508675,,,,early stop epoch 214
+B,arpls,CVAE,1,"2,6-pyridinecarboxylic acid",Raman reference,632,0.3034194414695747,0.3034194414695747,5.0,8.0,0.625,early stop epoch 249
+B,arpls,CVAE,1,"2,6-pyridinecarboxylic acid",Raman reference,785,0.24771757813116452,0.24771757813116452,5.0,8.0,0.625,early stop epoch 249
+B,arpls,CVAE,1,"2,6-pyridinecarboxylic acid",SERS signature,,0.49230150156801444,0.49230150156801444,,,,early stop epoch 249
+B,arpls,CVAE,1,4-mercaptobenzoic acid,Raman reference,632,0.31444614342774857,0.31444614342774857,5.0,8.0,0.625,early stop epoch 249
+B,arpls,CVAE,1,4-mercaptobenzoic acid,Raman reference,785,0.375350847400674,0.375350847400674,5.0,8.0,0.625,early stop epoch 249
+B,arpls,CVAE,1,4-mercaptobenzoic acid,SERS signature,,0.49945453431815323,0.49945453431815323,,,,early stop epoch 249
+B,arpls,CVAE,1,4-mercaptobenzonitrile,Raman reference,632,0.5877285864590717,0.5877285864590717,6.0,8.0,0.75,early stop epoch 249
+B,arpls,CVAE,1,4-mercaptobenzonitrile,Raman reference,785,0.7340468950509016,0.7340468950509016,5.0,8.0,0.625,early stop epoch 249
+B,arpls,CVAE,1,4-mercaptobenzonitrile,SERS signature,,0.5637678623555955,0.5637678623555955,,,,early stop epoch 249
+B,arpls,CVAE,2,"2,6-pyridinecarboxylic acid",Raman reference,632,0.306531283704679,0.306531283704679,5.0,8.0,0.625,early stop epoch 241
+B,arpls,CVAE,2,"2,6-pyridinecarboxylic acid",Raman reference,785,0.24430068019674858,0.24430068019674858,5.0,8.0,0.625,early stop epoch 241
+B,arpls,CVAE,2,"2,6-pyridinecarboxylic acid",SERS signature,,0.4613847846964491,0.4613847846964491,,,,early stop epoch 241
+B,arpls,CVAE,2,4-mercaptobenzoic acid,Raman reference,632,0.32660958840366233,0.32660958840366233,4.0,8.0,0.5,early stop epoch 241
+B,arpls,CVAE,2,4-mercaptobenzoic acid,Raman reference,785,0.3898923368520045,0.3898923368520045,4.0,8.0,0.5,early stop epoch 241
+B,arpls,CVAE,2,4-mercaptobenzoic acid,SERS signature,,0.48167495376849623,0.48167495376849623,,,,early stop epoch 241
+B,arpls,CVAE,2,4-mercaptobenzonitrile,Raman reference,632,0.5889484289331482,0.5889484289331482,6.0,8.0,0.75,early stop epoch 241
+B,arpls,CVAE,2,4-mercaptobenzonitrile,Raman reference,785,0.7381594680810913,0.7381594680810913,5.0,8.0,0.625,early stop epoch 241
+B,arpls,CVAE,2,4-mercaptobenzonitrile,SERS signature,,0.5558437861397252,0.5558437861397252,,,,early stop epoch 241
+B,arpls,PhysicsVAE,0,"2,6-pyridinecarboxylic acid",Raman reference,632,0.26939650694067324,0.26939650694067324,5.0,8.0,0.625,early stop epoch 9
+B,arpls,PhysicsVAE,0,"2,6-pyridinecarboxylic acid",Raman reference,785,0.2163855161274092,0.2163855161274092,4.0,8.0,0.5,early stop epoch 9
+B,arpls,PhysicsVAE,0,"2,6-pyridinecarboxylic acid",SERS signature,,0.4750514708650552,0.4750514708650552,,,,early stop epoch 9
+B,arpls,PhysicsVAE,0,4-mercaptobenzoic acid,Raman reference,632,0.3334779288250878,0.3334779288250878,5.0,8.0,0.625,early stop epoch 9
+B,arpls,PhysicsVAE,0,4-mercaptobenzoic acid,Raman reference,785,0.4018443170461552,0.4018443170461552,5.0,8.0,0.625,early stop epoch 9
+B,arpls,PhysicsVAE,0,4-mercaptobenzoic acid,SERS signature,,0.4553938309710319,0.4553938309710319,,,,early stop epoch 9
+B,arpls,PhysicsVAE,0,4-mercaptobenzonitrile,Raman reference,632,0.6165519252965737,0.6165519252965737,6.0,8.0,0.75,early stop epoch 9
+B,arpls,PhysicsVAE,0,4-mercaptobenzonitrile,Raman reference,785,0.7369916304391498,0.7369916304391498,5.0,8.0,0.625,early stop epoch 9
+B,arpls,PhysicsVAE,0,4-mercaptobenzonitrile,SERS signature,,0.5375067691086396,0.5375067691086396,,,,early stop epoch 9
+B,arpls,PhysicsVAE,1,"2,6-pyridinecarboxylic acid",Raman reference,632,0.2707380146540118,0.2707380146540118,5.0,8.0,0.625,early stop epoch 8
+B,arpls,PhysicsVAE,1,"2,6-pyridinecarboxylic acid",Raman reference,785,0.21728552092963857,0.21728552092963857,4.0,8.0,0.5,early stop epoch 8
+B,arpls,PhysicsVAE,1,"2,6-pyridinecarboxylic acid",SERS signature,,0.4739488300193609,0.4739488300193609,,,,early stop epoch 8
+B,arpls,PhysicsVAE,1,4-mercaptobenzoic acid,Raman reference,632,0.3395780177576869,0.3395780177576869,5.0,8.0,0.625,early stop epoch 8
+B,arpls,PhysicsVAE,1,4-mercaptobenzoic acid,Raman reference,785,0.40780530569288964,0.40780530569288964,5.0,8.0,0.625,early stop epoch 8
+B,arpls,PhysicsVAE,1,4-mercaptobenzoic acid,SERS signature,,0.45661197477440013,0.45661197477440013,,,,early stop epoch 8
+B,arpls,PhysicsVAE,1,4-mercaptobenzonitrile,Raman reference,632,0.6142071307708477,0.6142071307708477,6.0,8.0,0.75,early stop epoch 8
+B,arpls,PhysicsVAE,1,4-mercaptobenzonitrile,Raman reference,785,0.7365956754057819,0.7365956754057819,6.0,8.0,0.75,early stop epoch 8
+B,arpls,PhysicsVAE,1,4-mercaptobenzonitrile,SERS signature,,0.5417987945860728,0.5417987945860728,,,,early stop epoch 8
+B,arpls,PhysicsVAE,2,"2,6-pyridinecarboxylic acid",Raman reference,632,0.26405561811627454,0.26405561811627454,5.0,8.0,0.625,early stop epoch 21
+B,arpls,PhysicsVAE,2,"2,6-pyridinecarboxylic acid",Raman reference,785,0.21779150858048224,0.21779150858048224,4.0,8.0,0.5,early stop epoch 21
+B,arpls,PhysicsVAE,2,"2,6-pyridinecarboxylic acid",SERS signature,,0.48502409960604626,0.48502409960604626,,,,early stop epoch 21
+B,arpls,PhysicsVAE,2,4-mercaptobenzoic acid,Raman reference,632,0.34751209948604755,0.34751209948604755,5.0,8.0,0.625,early stop epoch 21
+B,arpls,PhysicsVAE,2,4-mercaptobenzoic acid,Raman reference,785,0.4176153160213408,0.4176153160213408,5.0,8.0,0.625,early stop epoch 21
+B,arpls,PhysicsVAE,2,4-mercaptobenzoic acid,SERS signature,,0.44305245343935723,0.44305245343935723,,,,early stop epoch 21
+B,arpls,PhysicsVAE,2,4-mercaptobenzonitrile,Raman reference,632,0.629617661466736,0.629617661466736,6.0,8.0,0.75,early stop epoch 21
+B,arpls,PhysicsVAE,2,4-mercaptobenzonitrile,Raman reference,785,0.7421208874083581,0.7421208874083581,6.0,8.0,0.75,early stop epoch 21
+B,arpls,PhysicsVAE,2,4-mercaptobenzonitrile,SERS signature,,0.5349592997592171,0.5349592997592171,,,,early stop epoch 21
+B,arpls,do-nothing (phase 2),-1,4-mercaptobenzoic acid,Raman reference,632,0.3288006052149829,0.3288006052149829,0.0,8.0,,"phase 2 value, same reference rule"
+B,arpls,do-nothing (phase 2),-1,4-mercaptobenzoic acid,Raman reference,785,0.3950669031877193,0.3950669031877193,0.0,8.0,,"phase 2 value, same reference rule"
+B,arpls,do-nothing (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,632,0.2760366008993864,0.2760366008993864,0.0,8.0,,"phase 2 value, same reference rule"
+B,arpls,do-nothing (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,785,0.2179547897669934,0.2179547897669934,0.0,8.0,,"phase 2 value, same reference rule"
+B,arpls,do-nothing (phase 2),-1,4-mercaptobenzonitrile,Raman reference,632,0.6072949955262795,0.6072949955262795,0.0,8.0,,"phase 2 value, same reference rule"
+B,arpls,do-nothing (phase 2),-1,4-mercaptobenzonitrile,Raman reference,785,0.7306495186318517,0.7306495186318517,0.0,8.0,,"phase 2 value, same reference rule"
+B,arpls,NMF (phase 2),-1,4-mercaptobenzoic acid,Raman reference,632,0.4421551384101441,0.4421551384101441,1.0,8.0,0.125,"phase 2 value, same reference rule"
+B,arpls,NMF (phase 2),-1,4-mercaptobenzoic acid,Raman reference,785,0.4301855124180819,0.4301855124180819,5.0,8.0,0.625,"phase 2 value, same reference rule"
+B,arpls,NMF (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,632,0.3146853253128618,0.3146853253128618,4.0,8.0,0.5,"phase 2 value, same reference rule"
+B,arpls,NMF (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,785,0.3348219950233478,0.3348219950233478,4.0,8.0,0.5,"phase 2 value, same reference rule"
+B,arpls,NMF (phase 2),-1,4-mercaptobenzonitrile,Raman reference,632,0.6399489998891538,0.6399489998891538,4.0,8.0,0.5,"phase 2 value, same reference rule"
+B,arpls,NMF (phase 2),-1,4-mercaptobenzonitrile,Raman reference,785,0.6626066065024973,0.6626066065024973,6.0,8.0,0.75,"phase 2 value, same reference rule"
+B,arpls,MCR-ALS (phase 2),-1,4-mercaptobenzoic acid,Raman reference,632,0.4420507415284948,0.4420507415284948,1.0,8.0,0.125,"phase 2 value, same reference rule"
+B,arpls,MCR-ALS (phase 2),-1,4-mercaptobenzoic acid,Raman reference,785,0.4304493034391972,0.4304493034391972,5.0,8.0,0.625,"phase 2 value, same reference rule"
+B,arpls,MCR-ALS (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,632,0.3147151125676695,0.3147151125676695,4.0,8.0,0.5,"phase 2 value, same reference rule"
+B,arpls,MCR-ALS (phase 2),-1,"2,6-pyridinecarboxylic acid",Raman reference,785,0.3348570087979399,0.3348570087979399,4.0,8.0,0.5,"phase 2 value, same reference rule"
+B,arpls,MCR-ALS (phase 2),-1,4-mercaptobenzonitrile,Raman reference,632,0.6400724431568253,0.6400724431568253,4.0,8.0,0.5,"phase 2 value, same reference rule"
+B,arpls,MCR-ALS (phase 2),-1,4-mercaptobenzonitrile,Raman reference,785,0.6629020534946125,0.6629020534946125,6.0,8.0,0.75,"phase 2 value, same reference rule"

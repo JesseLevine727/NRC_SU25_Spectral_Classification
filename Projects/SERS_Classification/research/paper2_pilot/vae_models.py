@@ -111,6 +111,9 @@ class TrainConfig:
     grad_clip: float = 5.0
     val_fraction: float = 0.10
     seed: int = 0
+    # "mean" = phase 3 (squared error averaged over spectral points);
+    # "sum"  = phase 3b (squared error summed over spectral points).
+    recon: str = "mean"
 
 
 @dataclass
@@ -407,6 +410,19 @@ def train_model(model: nn.Module,
     bad = 0
     history = {"train_loss": [], "val_recon": []}
     failure = None
+    n_points = int(X.shape[1])
+    # Phase 3b: sum of squared errors + beta*KL + n_points*CE.  The CE weight
+    # keeps the supervised heads at their phase-3 weight relative to the
+    # reconstruction term (phase 3 used MSE, so multiplying by n_points
+    # restores the same ratio).  For "mean" both factors stay at 1.
+    sum_recon = (cfg.recon == "sum")
+    w_ce = float(n_points) if sum_recon else 1.0
+
+    def recon_term(out, xb):
+        if sum_recon:
+            # Sum over spectral points, then mean over the batch.
+            return F.mse_loss(out["recon"], xb, reduction="sum") / xb.shape[0]
+        return F.mse_loss(out["recon"], xb)
 
     for epoch in range(1, cfg.max_epochs + 1):
         model.train()
@@ -421,14 +437,14 @@ def train_model(model: nn.Module,
             opt.zero_grad(set_to_none=True)
             if model.kind == "physics":
                 out = model(xb, y_laser[idx], y_chem=y_chem[idx], y_sub=y_sub[idx])
-                loss = F.mse_loss(out["recon"], xb) + out["ce"]
+                loss = recon_term(out, xb) + w_ce * out["ce"]
             elif model.kind == "cvae":
                 out = model(xb, y_chem=y_chem[idx], y_sub=y_sub[idx],
                             y_laser=y_laser[idx] if model.use_laser else None)
-                loss = F.mse_loss(out["recon"], xb) + beta_eff * out["kl"] + out["ce"]
+                loss = recon_term(out, xb) + beta_eff * out["kl"] + w_ce * out["ce"]
             else:
                 out = model(xb)
-                loss = F.mse_loss(out["recon"], xb) + beta_eff * out["kl"]
+                loss = recon_term(out, xb) + beta_eff * out["kl"]
             if not torch.isfinite(loss):
                 failure = f"non-finite training loss at epoch {epoch}"
                 break
