@@ -1,0 +1,121 @@
+{
+  "registry_version": "sers-open-world-neural-controls-v1",
+  "status_before_execution": "predeclared_before_neural_true_unknown_outcomes",
+  "created_date": "2026-07-30",
+  "purpose": "Re-evaluate previously sealed neural controls under the frozen leave-one-chemical-out open-world protocol. Configurations are inherited from earlier grouped-development studies and are not selected using open-world baseline outcomes.",
+  "partition_protocol": "sers-open-world-shift-v1",
+  "calibration": {
+    "strategy": "four-fold cross-fitted known-development neural predictions",
+    "calibration_seed": 1729,
+    "temperature_bounds": [
+      0.05,
+      20.0
+    ],
+    "known_retained_coverages": [
+      0.95,
+      0.9,
+      0.8,
+      0.7,
+      0.5
+    ],
+    "true_unknown_used": false,
+    "stress_used": false
+  },
+  "final_seeds": [
+    1729,
+    2718,
+    3141
+  ],
+  "embedding_density": {
+    "standard_scaler": true,
+    "pca_components": 16,
+    "pca_whiten": false,
+    "pooled_covariance": "LedoitWolf on class-centered residuals",
+    "class_density_covariance": "class-specific LedoitWolf",
+    "larger_score_means": "more_unknown"
+  },
+  "controls": [
+    {
+      "method": "siamese_triplet",
+      "source": "configs/sers_supervised_contrastive_v1.json objectives.siamese_triplet_control",
+      "representation": "derivative_1",
+      "epochs": 100,
+      "architecture": "legacy ConvEncoder channels 16/32, z64, L2-normalized",
+      "training": "triplet margin 0.2; cross-instrument positive preferred; same-instrument negative preferred; edge-filled shift and Gaussian-noise augmentation",
+      "prediction": "training-row class prototypes",
+      "applicable_scores": [
+        "minimum_prototype_squared_distance",
+        "minimum_class_mahalanobis_distance",
+        "one_minus_calibrated_max_probability",
+        "predictive_entropy"
+      ],
+      "primary_score": "minimum_prototype_squared_distance",
+      "primary_score_rationale": "The historical Siamese model is a metric learner; nearest-prototype distance is its native novelty score."
+    },
+    {
+      "method": "supervised_contrastive",
+      "source": "Workspace/sers_supervised_contrastive/contrastive_v1/stage2_selection.csv global selection",
+      "representation": "derivative_1",
+      "epochs": 58,
+      "epoch_rule": "rounded median of 20 development-only global winner best epochs (57.5)",
+      "architecture": "legacy ConvEncoder channels 16/32, z64, L2-normalized",
+      "training": "cross-entropy 1.0 + supervised contrastive 0.5 + triplet margin 0.25; domain-aware positives, hard negatives, domain-balanced batches",
+      "applicable_scores": [
+        "one_minus_calibrated_max_probability",
+        "predictive_entropy",
+        "energy",
+        "minimum_class_mahalanobis_distance"
+      ],
+      "primary_score": "one_minus_calibrated_max_probability",
+      "primary_score_rationale": "The earlier development-only rejection study selected calibrated maximum probability in all five outer folds."
+    },
+    {
+      "method": "standard_vae",
+      "source": "Workspace/sers_standard_vae/standard_vae_v1/selected_configuration.json",
+      "representation": "arpls_minmax",
+      "epochs": 97,
+      "epoch_rule": "rounded development-only median selected epoch",
+      "architecture": "channels 8/16, z64 diagonal Gaussian, cyclical_4 beta=1, spectral-composite reconstruction",
+      "prediction": "balanced standardized logistic probe on posterior mean",
+      "applicable_scores": [
+        "spectral_composite_reconstruction_error",
+        "negative_log_class_latent_density",
+        "minimum_class_mahalanobis_distance",
+        "one_minus_calibrated_max_probability",
+        "predictive_entropy"
+      ],
+      "primary_score": "spectral_composite_reconstruction_error",
+      "primary_score_rationale": "Reconstruction error is the native prespecified unsupervised novelty mechanism; all other scores remain reported."
+    },
+    {
+      "method": "structured_vae",
+      "source": "Workspace/sers_structured_vae/structured_vae_v1/inner_selection_closure.json",
+      "representation": "arpls_minmax",
+      "epochs": 500,
+      "architecture": "z48 chemical + z16 nuisance, beta=0.25, dependence weight 0.001, no semantic supervision/adversary/pair loss",
+      "prediction_heads": [
+        "chemical",
+        "union"
+      ],
+      "primary_head": "chemical",
+      "prediction": "balanced standardized logistic probe on the named posterior-mean head",
+      "applicable_scores": [
+        "spectral_composite_reconstruction_error",
+        "negative_log_class_latent_density",
+        "minimum_class_mahalanobis_distance",
+        "one_minus_calibrated_max_probability",
+        "predictive_entropy"
+      ],
+      "primary_score": "negative_log_class_latent_density",
+      "primary_score_rationale": "The mechanistic claim concerns whether the named chemical partition places unseen chemistry outside known chemical latent support; reconstruction is shared by both partitions and is secondary."
+    }
+  ],
+  "interpretation_limits": {
+    "controls_are_not_retuned_on_surrogate_unknowns": true,
+    "reason": "These are frozen historical comparators. Their native primary score is fixed before their true-held-chemical outcomes; every applicable alternative is retained descriptively.",
+    "structured_vae_was_previously_unsuccessful": true,
+    "structured_vae_role": "negative mechanistic comparator, not a rescue attempt",
+    "denoising_claim": false,
+    "semantic_disentanglement_claim": false
+  }
+}
