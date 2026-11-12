@@ -65,7 +65,10 @@ def outer_partition(
     result = np.full(len(manifest), "", dtype=object)
     result[quality & held] = "unknown_quality"
     result[stress & held] = "unknown_stress"
-    result[stress & ~held] = "known_stress"
+    result[stress & ~held & (folds == outer_fold)] = "known_stress"
+    result[stress & ~held & (folds != outer_fold)] = (
+        "excluded_known_stress_development_masters"
+    )
     result[quality & ~held & (folds == outer_fold)] = "known_quality_test"
     result[quality & ~held & (folds != outer_fold)] = (
         "known_development_quality"

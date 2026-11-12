@@ -1,0 +1,15 @@
+{
+  "protocol_version": "nato-sers-cnn-fresh-v1",
+  "input_workspace": "Workspace/nato_sers_raw_reexploration_v1",
+  "preprocessing_workspace": "Workspace/nato_sers_raw_reexploration_v1/preprocessing",
+  "output_workspace": "Workspace/nato_sers_raw_reexploration_v1/benchmarks/cnn",
+  "random_seed": 20260805,
+  "folds": 5,
+  "range_cm1": [400, 1800],
+  "preprocessing": "despike_savgol_minmax",
+  "batch_size": 64,
+  "max_epochs": 100,
+  "patience": 12,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001
+}

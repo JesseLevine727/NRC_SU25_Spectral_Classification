@@ -39,8 +39,12 @@ For held chemical \(H\) and known outer fold \(O\):
 - known development: quality-pass, analyte not \(H\), fold not \(O\);
 - known test: quality-pass, analyte not \(H\), fold \(O\);
 - unknown quality: quality-pass, analyte \(H\);
-- known stress: field stress, analyte not \(H\);
+- known stress: field stress, analyte not \(H\), fold \(O\);
 - unknown stress: field stress, analyte \(H\).
+
+Known-chemical stress rows from folds other than \(O\) are explicitly excluded
+for that outer model. This prevents a field-stress observation from a
+development master becoming a test row.
 
 The held chemical is never a training, calibration, threshold, preprocessing,
 augmentation, score-selection, or model-selection example. Reusing the held
@@ -72,7 +76,10 @@ chemical \(S\), distinct from \(H\), as a surrogate unknown:
 Blank cannot be a surrogate unknown. Candidates are ranked by master-aware
 surrogate OSCR-AUC, then known balanced accuracy, then unknown AUROC, and
 finally declared candidate order. The entire true-held-\(H\) population remains
-locked throughout.
+locked throughout. The identity temperature \(T=1\) is fixed for surrogate
+selection: the known validation fold is outcome-bearing and therefore cannot
+also estimate its own calibration parameter. Final outer evaluation instead
+uses temperatures fit only to cross-fitted known-development predictions.
 
 ## Score directions
 
@@ -98,6 +105,13 @@ Quality failure and chemical novelty are evaluated separately and jointly:
 - unknown quality;
 - known stress;
 - unknown stress.
+
+Row-level results are averaged within physical master and evaluation condition.
+This distinction matters because a master can contribute both quality-pass and
+field-stress spectra. Field-quality detection therefore treats the two
+condition-specific aggregates as paired observations from the same physical
+master; uncertainty analyses cluster or resample by physical master so that
+the pair is never mistaken for two independent specimens.
 
 This four-cell design determines whether a score detects unseen chemistry,
 acquisition failure, or only their mixture. Stress spectra remain locked from

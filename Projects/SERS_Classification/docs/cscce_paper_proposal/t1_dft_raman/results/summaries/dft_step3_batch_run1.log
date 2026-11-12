@@ -1,0 +1,173 @@
+=== vc00 C[N+](=O)[O-] 2026-11-08 20:37:08
+SMILES C[N+](=O)[O-] natoms 7
+  optimised (63 s)
+  hessian (165 s), max |grad| 3.61e-06 Ha/Bohr
+  polarizability derivatives, finite field (26 s)
+vc00.npz: lowest frequency 5.1 cm^-1
+=== vc01 CCC(=O)C 2026-11-08 20:40:20
+SMILES CCC(=O)C natoms 13
+  optimised (310 s)
+  hessian (561 s), max |grad| 3.87e-06 Ha/Bohr
+  polarizability derivatives, finite field (95 s)
+vc01.npz: lowest frequency 31.6 cm^-1
+=== vc02 CC(C)[N+](=O)[O-] 2026-11-08 20:51:17
+SMILES CC(C)[N+](=O)[O-] natoms 13
+  optimised (273 s)
+  hessian (720 s), max |grad| 3.92e-06 Ha/Bohr
+  polarizability derivatives, finite field (144 s)
+vc02.npz: lowest frequency 38.7 cm^-1
+=== vc03 C1CC=COC1 2026-11-08 21:05:42
+SMILES C1CC=COC1 natoms 14
+  optimised (195 s)
+  hessian (520 s), max |grad| 3.27e-06 Ha/Bohr
+  polarizability derivatives, finite field (210 s)
+vc03.npz: lowest frequency 180.5 cm^-1
+=== vc04 CCCC(=O)C 2026-11-08 21:17:52
+SMILES CCCC(=O)C natoms 16
+  optimised (781 s)
+  hessian (1313 s), max |grad| 1.92e-06 Ha/Bohr
+  polarizability derivatives, finite field (210 s)
+vc04.npz: lowest frequency 45.9 cm^-1
+=== vc05 CC(=C)OC(=O)C 2026-11-08 21:43:16
+SMILES CC(=C)OC(=O)C natoms 15
+  optimised (644 s)
+  hessian (1415 s), max |grad| 2.16e-06 Ha/Bohr
+  polarizability derivatives, finite field (222 s)
+vc05.npz: lowest frequency 51.2 cm^-1
+=== vc06 CCOC(=O)C=C 2026-11-08 22:10:33
+SMILES CCOC(=O)C=C natoms 15
+  optimised (566 s)
+  hessian (1423 s), max |grad| 6.71e-06 Ha/Bohr
+  polarizability derivatives, finite field (202 s)
+vc06.npz: lowest frequency 58.4 cm^-1
+=== vc07 CC(=C(C)C)C 2026-11-08 22:37:38
+SMILES CC(=C(C)C)C natoms 18
+  optimised (540 s)
+  hessian (1033 s), max |grad| 6.77e-06 Ha/Bohr
+  polarizability derivatives, finite field (208 s)
+vc07.npz: lowest frequency 18.1 cm^-1
+=== vc08 CCCCC=C 2026-11-08 22:58:21
+SMILES CCCCC=C natoms 18
+  optimised (256 s)
+  hessian (849 s), max |grad| 1.08e-06 Ha/Bohr
+  polarizability derivatives, finite field (211 s)
+vc08.npz: lowest frequency 75.1 cm^-1
+=== vc09 CC(=CC(=O)C)C 2026-11-08 23:16:01
+SMILES CC(=CC(=O)C)C natoms 17
+  optimised (728 s)
+  hessian (1354 s), max |grad| 1.06e-06 Ha/Bohr
+  polarizability derivatives, finite field (236 s)
+vc09.npz: lowest frequency 22.8 cm^-1
+=== vc10 CN1CCOCC1 2026-11-08 23:42:32
+SMILES CN1CCOCC1 natoms 18
+  optimised (376 s)
+  hessian (930 s), max |grad| 7.11e-06 Ha/Bohr
+  polarizability derivatives, finite field (251 s)
+vc10.npz: lowest frequency 63.8 cm^-1
+=== vc11 CC1=CC(=CC=C1)C#N 2026-11-09 00:02:14
+SMILES CC1=CC(=CC=C1)C#N natoms 16
+  optimised (522 s)
+  hessian (1326 s), max |grad| 1.26e-06 Ha/Bohr
+  polarizability derivatives, finite field (307 s)
+vc11.npz: lowest frequency 26.6 cm^-1
+=== vc12 CCC(=O)OC(=O)CC 2026-11-09 00:29:27
+SMILES CCC(=O)OC(=O)CC natoms 19
+  optimised (993 s)
+  hessian (2286 s), max |grad| 7.98e-06 Ha/Bohr
+Traceback (most recent call last):
+    assert mf.converged
+AssertionError
+FAILED vc12
+=== vc13 CCCCC(=O)CC 2026-11-09 01:09:04
+SMILES CCCCC(=O)CC natoms 22
+  optimised (1295 s)
+  hessian (2584 s), max |grad| 7.28e-06 Ha/Bohr
+Traceback (most recent call last):
+    assert mf.converged
+AssertionError
+FAILED vc13
+=== vc14 CC1=CC(=CC=C1)CC#N 2026-11-09 01:53:26
+SMILES CC1=CC(=CC=C1)CC#N natoms 19
+  optimised (1803 s)
+  hessian (2837 s), max |grad| 6.31e-07 Ha/Bohr
+  polarizability derivatives, finite field (368 s)
+vc14.npz: lowest frequency 14.9 cm^-1
+=== vc15 CC1=CC=C(C=C1)CC#N 2026-11-09 02:46:52
+SMILES CC1=CC=C(C=C1)CC#N natoms 19
+  optimised (432 s)
+  hessian (1682 s), max |grad| 6.85e-06 Ha/Bohr
+  polarizability derivatives, finite field (362 s)
+vc15.npz: lowest frequency 10.9 cm^-1
+=== vc16 C1OC2=C(O1)C=C(C=C2)C=O 2026-11-09 03:20:56
+SMILES C1OC2=C(O1)C=C(C=C2)C=O natoms 17
+  optimised (413 s)
+  hessian (1529 s), max |grad| 6.88e-06 Ha/Bohr
+multiprocessing.pool.RemoteTraceback: 
+Traceback (most recent call last):
+    assert mf.converged
+AssertionError
+Traceback (most recent call last):
+AssertionError
+FAILED vc16
+=== vc17 CC(=C)CC(C)(C)C 2026-11-09 03:52:56
+SMILES CC(=C)CC(C)(C)C natoms 24
+  optimised (627 s)
+  hessian (1933 s), max |grad| 1.67e-06 Ha/Bohr
+Traceback (most recent call last):
+    assert mf.converged
+AssertionError
+FAILED vc17
+=== vc18 CCCCC(=C)CC 2026-11-09 04:26:39
+SMILES CCCCC(=C)CC natoms 24
+  optimised (793 s)
+  hessian (2116 s), max |grad| 2.33e-06 Ha/Bohr
+Traceback (most recent call last):
+    assert mf.converged
+AssertionError
+FAILED vc18
+=== vc19 CCCCCC=CC 2026-11-09 05:03:22
+SMILES CCCCCC=CC natoms 24
+  optimised (590 s)
+  hessian (1933 s), max |grad| 2.83e-06 Ha/Bohr
+multiprocessing.pool.RemoteTraceback: 
+Traceback (most recent call last):
+    assert mf.converged
+AssertionError
+Traceback (most recent call last):
+AssertionError
+FAILED vc19
+=== vc20 CC(=CCCC(=O)C)C 2026-11-09 05:43:10
+SMILES CC(=CCCC(=O)C)C natoms 23
+  optimised (1116 s)
+  hessian (2526 s), max |grad| 4.69e-06 Ha/Bohr
+multiprocessing.pool.RemoteTraceback: 
+Traceback (most recent call last):
+    assert mf.converged
+AssertionError
+Traceback (most recent call last):
+AssertionError
+FAILED vc20
+=== vc21 CN1C(=O)CC(=O)N(C1=O)C 2026-11-09 06:33:06
+SMILES CN1C(=O)CC(=O)N(C1=O)C natoms 19
+  optimised (1089 s)
+  hessian (2486 s), max |grad| 3.49e-06 Ha/Bohr
+multiprocessing.pool.RemoteTraceback: 
+Traceback (most recent call last):
+    assert mf.converged
+AssertionError
+Traceback (most recent call last):
+AssertionError
+FAILED vc21
+=== vc22 CCCCCC(=O)CC 2026-11-09 07:22:28
+SMILES CCCCCC(=O)CC natoms 25
+  optimised (1308 s)
+  hessian (2890 s), max |grad| 6.69e-06 Ha/Bohr
+multiprocessing.pool.RemoteTraceback: 
+Traceback (most recent call last):
+    assert mf.converged
+AssertionError
+Traceback (most recent call last):
+AssertionError
+FAILED vc22
+=== vc23 C1CC1C(=O)C2=CC=CC=C2 2026-11-09 08:19:34
+SMILES C1CC1C(=O)C2=CC=CC=C2 natoms 21

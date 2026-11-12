@@ -1,0 +1,214 @@
+== build 2026-11-11 06:53:08
+ tag                                              smiles status  natoms  lowest_cm  bands  minutes route
+vc00                                       C[N+](=O)[O-]     ok       7        5.1     11      3.2 field
+vc01                                            CCC(=O)C     ok      13       31.6     21     10.9 field
+vc02                                   CC(C)[N+](=O)[O-]     ok      13       38.7     20     14.4 field
+vc03                                           C1CC=COC1     ok      14      180.5     26     12.2 field
+vc04                                           CCCC(=O)C     ok      16       45.9     27     25.4 field
+vc05                                       CC(=C)OC(=O)C     ok      15       51.2     25     27.3 field
+vc06                                         CCOC(=O)C=C     ok      15       58.4     25     27.1 field
+vc07                                         CC(=C(C)C)C     ok      18       18.1     29     20.7 field
+vc08                                             CCCCC=C     ok      18       75.1     31     17.7 field
+vc09                                       CC(=CC(=O)C)C     ok      17       22.8     28     26.5 field
+vc10                                           CN1CCOCC1     ok      18       63.8     33     19.7 field
+vc11                                   CC1=CC(=CC=C1)C#N     ok      16       26.6     29     27.2 field
+vc12                                     CCC(=O)OC(=O)CC     ok      19       33.1     32    102.6 field
+vc13                                         CCCCC(=O)CC     ok      22       35.9     36    114.2 field
+vc14                                  CC1=CC(=CC=C1)CC#N     ok      19       14.9     35     53.4 field
+vc15                                  CC1=CC=C(C=C1)CC#N     ok      19       10.9     35     34.1 field
+vc16                             C1OC2=C(O1)C=C(C=C2)C=O     ok      17       87.1     33     58.0 field
+vc17                                     CC(=C)CC(C)(C)C     ok      24       50.6     40     65.6 field
+vc18                                         CCCCC(=C)CC     ok      24       30.1     41     67.4 field
+vc19                                           CCCCCC=CC     ok      24       50.8     40     61.6 field
+vc20                                     CC(=CCCC(=O)C)C     ok      23       22.4     39     74.5 field
+vc21                              CN1C(=O)CC(=O)N(C1=O)C     ok      19       36.9     35     88.4 field
+vc22                                        CCCCCC(=O)CC     ok      25       30.7     42     77.1 field
+vc23                               C1CC1C(=O)C2=CC=CC=C2     ok      21       29.7     40     83.9 field
+vc24                               C1CCC2C(C1)C(=O)OC2=O     ok      21       22.2     40     77.5 field
+vc25                                   CC(C)CC1=CC=CC=C1     ok      24       41.0     45     82.0 field
+vc26                                 CC1=CC(=C(C=C1C)C)C     ok      24      109.8     41     66.3 field
+vc27                                    CC(CC(C)(C)C)C=C     ok      27       42.2     46     84.1 field
+vc28                                          CCCCC=CCCC     ok      27       38.4     45     84.8 field
+vc29                                 CCC(=O)CC1=CC=CC=C1     ok      23       18.1     42    121.2 field
+vc30                                       CCCCCC(=O)OCC     ok      26       10.7     45     96.6 field
+vc31                                       CCCCOC(=O)CCC     ok      26       22.4     44     88.5 field
+vc32                                        CCOC(OCC)OCC     ok      26       28.9     43     82.1 field
+vc33                             CC(=O)CC(=O)C1=CC=CC=C1     ok      22       25.7     42    101.9 field
+vc34                                     CCCCCC#CC(=O)OC     ok      25       12.7     42    103.7 field
+vc35                                       CCCCC(=O)CCCC     ok      28       26.0     48    115.0 field
+vc36                                CCC(=O)OCC1=CC=CC=C1     ok      24       17.4     44     85.1 field
+vc37 C1=C(C=C(C=C1[N+](=O)[O-])[N+](=O)[O-])[N+](=O)[O-]     ok      18       33.5     35     85.9 field
+vc38                                     CCCCCC(=O)OCC=C     ok      27       14.4     47    115.8 field
+vc39                                    CC(C)(C)C1CCCCC1     ok      30       35.1     55    122.3 field
+vc40                                        CCCCC1CCCCC1     ok      30       45.7     54    128.6 field
+vc41                                         CCCCCCCCC=C     ok      30       27.8     52    121.0 field
+vc42                           CC(=C)C1=CC(=CC=C1)C(=C)C     ok      26       36.6     49    103.1 field
+vc43                                CCCCC(=O)C1=CC=CC=C1     ok      26       30.8     48    113.0 field
+vc44                                      CCCCCCC(=O)OCC     ok      29       10.1     50    215.0 field
+vc45                                   CCOC(C(=O)OCC)OCC     ok      28       27.1     47    125.9 field
+vc46                         CC1=CC(=O)OC2=C1C=CC(=C2)OC     ok      24       66.1     45    102.6 field
+vc47                             CC(=O)CCC1=CC=C(C=C1)OC     ok      27       24.1     49    146.7 field
+vc48                               CCC(=O)OCCC1=CC=CC=C1     ok      27       20.4     50    105.8 field
+vc49                               CCCCOC(=O)C1=CC=CC=C1     ok      27       30.0     50    120.9 field
+vc50                    C1=CC=C2C(=C1)C(=O)C3=CC=CC=C3O2     ok      23       59.4     48    109.7 field
+vc51                         CC1(C(=C)N(C2=CC=CC=C21)C)C     ok      28       22.8     51    158.1 field
+vc52                          CCOC(=O)C1=C(OC(=O)C=C1C)C     ok      26       32.9     45    185.9 field
+vc53                          C1=CC=C(C=C1)CCC2=CC=CC=C2     ok      28       20.2     56    124.4 field
+vc54                          CC(C)(C)OC(=O)OC1=CC=CC=C1     ok      28       23.7     52    165.2 field
+vc55                           CC(C)OC(=O)C=CC1=CC=CC=C1     ok      28       21.9     52    144.0 field
+vc56                          C1CCC(CC1)C(=O)C2=CC=CC=C2     ok      30       28.3     59    178.4 field
+vc57                       CCOC(=O)C1C(O1)(C)C2=CC=CC=C2     ok      29       22.5     54    207.1 field
+vc58               C1=CC=C2C(=C1)C3=CC=CC=C3C4=CC=CC=C24     ok      30       39.8     64    221.3 field
+library 129884 (+59), band width 81 -> 81; test compounds 59, test spectra 59, queries 186
+test classes {'aromatic': 26, 'ester': 10, 'alkene': 8, 'ketone': 7, 'nitro': 2, 'ether': 2, 'alkane': 2, 'amine': 1, 'amide': 1}
+== fixed and calibration 2026-11-11 06:53:09
+fixed_sqrt_cos_fwhm10 full top1 0.199 top5 0.274 top20 0.366
+fixed_sqrt_cos_fwhm16 full top1 0.231 top5 0.328 top20 0.425
+fitted physics, leave-one-transfer-out, full: top1 0.356 top5 0.497
+fitted physics, leave-one-transfer-out, P3: top1 0.523 top5 0.624
+fitted physics, leave-one-transfer-out, P2: top1 0.765 top5 0.906
+  example fitted params: d [ 0.0114 -0.0056  0.    ] a [-0.408  0.522  0.348  0.39 ]
+fitted physics, leave-one-transfer-out, full: top1 0.407 top5 0.508
+fitted physics, leave-one-transfer-out, P3: top1 0.525 top5 0.661
+fitted physics, leave-one-transfer-out, P2: top1 0.831 top5 0.949
+  example fitted params: d [ 0.0145 -0.0068  0.    ] a [-0.387  0.704  0.62  -0.272]
+per-instrument fitted, leave-one-transfer-out: top1 0.373 top5 0.475
+== Siamese 2026-11-11 06:53:49
+transfer seed 0 shuffle 0: test top1 0.508 top5 0.559
+transfer seed 1 shuffle 0: test top1 0.508 top5 0.593
+transfer seed 2 shuffle 0: test top1 0.525 top5 0.559
+transfer seed 1 shuffle 1: test top1 0.136 top5 0.186
+transfer seed 2 shuffle 1: test top1 0.068 top5 0.136
+transfer seed 3 shuffle 1: test top1 0.136 top5 0.203
+== analysis 2026-11-11 06:54:19
+PRIMARY (predeclared): 59 fresh compounds without O-H/N-H, 59 spectra, library 129884
+  excluded (technical DFT failures): []
+  Siamese top-1 0.514 (mean of 3 seeds)   calibration (fit on our 37) top-1 0.373
+  Delta +0.141, paired bootstrap 95% CI +0.023 to +0.260  ->  SIAMESE WINS
+  control: fixed 0.305; shuffle [0.136 0.068 0.136]
+
+fresh test set, all methods
+              method  compounds  top1      ci95  top5  top20  median_rank
+        fixed_fwhm16         59 0.305 0.19-0.42 0.441  0.525         16.0
+        fixed_fwhm10         59 0.288 0.17-0.41 0.390  0.492         21.0
+            calib_37         59 0.373 0.25-0.49 0.559  0.661          4.0
+        calib_all127         59 0.407 0.29-0.53 0.508  0.610          5.0
+calib_per_instrument         59 0.373 0.25-0.49 0.475  0.559          9.0
+           siamese_0         59 0.508 0.39-0.64 0.559  0.661          1.0
+           siamese_1         59 0.508 0.39-0.63 0.593  0.695          1.0
+           siamese_2         59 0.525 0.41-0.64 0.559  0.678          1.0
+            zeroshot         59 0.390 0.27-0.51 0.508  0.593          4.0
+           shuffle_1         59 0.136 0.05-0.24 0.186  0.254       2069.0
+           shuffle_2         59 0.068 0.02-0.14 0.136  0.220        606.0
+           shuffle_3         59 0.136 0.05-0.22 0.203  0.288       1178.0
+
+size tier <=20 atoms
+              method  compounds  top1      ci95  top5  top20  median_rank
+        fixed_fwhm16         18 0.278 0.11-0.50 0.333  0.444        102.0
+        fixed_fwhm10         18 0.222 0.06-0.44 0.278  0.333        220.0
+            calib_37         18 0.278 0.11-0.50 0.444  0.611          7.0
+        calib_all127         18 0.333 0.11-0.56 0.444  0.500         14.5
+calib_per_instrument         18 0.278 0.11-0.50 0.389  0.556         14.5
+           siamese_0         18 0.611 0.39-0.83 0.667  0.778          1.0
+           siamese_1         18 0.611 0.39-0.83 0.722  0.778          1.0
+           siamese_2         18 0.667 0.44-0.89 0.667  0.778          1.0
+            zeroshot         18 0.444 0.22-0.67 0.611  0.667          2.5
+
+size tier 21-25 atoms
+              method  compounds  top1      ci95  top5  top20  median_rank
+        fixed_fwhm16         16 0.250 0.06-0.50 0.438  0.438        113.5
+        fixed_fwhm10         16 0.250 0.06-0.50 0.438  0.438        145.5
+            calib_37         16 0.312 0.12-0.56 0.562  0.562          4.0
+        calib_all127         16 0.375 0.19-0.62 0.438  0.562         15.5
+calib_per_instrument         16 0.375 0.19-0.62 0.438  0.438         23.0
+           siamese_0         16 0.375 0.19-0.62 0.438  0.625         10.5
+           siamese_1         16 0.375 0.19-0.62 0.438  0.625          8.5
+           siamese_2         16 0.375 0.19-0.62 0.438  0.625         13.0
+            zeroshot         16 0.250 0.06-0.50 0.312  0.375         68.0
+
+size tier 26-30 atoms
+              method  compounds  top1      ci95  top5  top20  median_rank
+        fixed_fwhm16         25  0.36 0.20-0.56  0.52   0.64          4.0
+        fixed_fwhm10         25  0.36 0.20-0.56  0.44   0.64         10.0
+            calib_37         25  0.48 0.28-0.68  0.64   0.76          2.0
+        calib_all127         25  0.48 0.28-0.68  0.60   0.72          2.0
+calib_per_instrument         25  0.44 0.24-0.64  0.56   0.64          2.0
+           siamese_0         25  0.52 0.32-0.72  0.56   0.60          1.0
+           siamese_1         25  0.52 0.32-0.72  0.60   0.68          1.0
+           siamese_2         25  0.52 0.32-0.72  0.56   0.64          1.0
+            zeroshot         25  0.44 0.24-0.64  0.56   0.68          3.0
+
+top-1 by class
+          fixed_fwhm16  calib_37  siamese_0  siamese_1  siamese_2   n
+class                                                                
+alkane            0.00      0.00       0.00       0.00       0.00   2
+alkene            0.00      0.12       0.38       0.38       0.38   8
+amide             0.00      0.00       0.00       0.00       0.00   1
+amine             0.00      0.00       0.00       0.00       0.00   1
+aromatic          0.62      0.65       0.81       0.81       0.81  26
+ester             0.00      0.20       0.10       0.10       0.20  10
+ether             0.00      0.50       0.50       0.50       0.50   2
+ketone            0.14      0.14       0.29       0.29       0.29   7
+nitro             0.50      0.00       1.00       1.00       1.00   2
+
+per-compound ranks
+                                       name  atoms    class  fixed_fwhm16  calib_37  calib_all127  siamese_0  siamese_1  siamese_2
+                               Nitromethane      7    nitro             8         7            26          1          1          1
+                             2-Nitropropane     13    nitro             1         2             5          1          1          1
+                                 2-Butanone     13   ketone          1592       136            65         14          4          9
+                       3,4-Dihydro-2H-pyran     14    ether            22         1             1          1          1          1
+                             Ethyl acrylate     15    ester           292         7             1          2          2          1
+                        Isopropenyl acetate     15    ester             4         1             1          1          1          1
+                              M-Tolunitrile     16 aromatic             1         1             1          1          1          1
+                                2-Pentanone     16   ketone          6801      2251          1053         96        130        126
+                              Mesityl oxide     17   ketone             1         1             1          1          1          1
+                                Heliotropin     17 aromatic          3077      2208          4122        140        157        153
+                      1,3,5-Trinitrobenzene     18 aromatic            14        22            21          1          1          1
+                         4-Methylmorpholine     18    amine         13992      1290          1165       2629       2393       2319
+                                   Hexene-1     18   alkene           182        10            27          1          1          1
+                      2,3-Dimethyl-2-butene     18   alkene           217         2             2          1          1          1
+                     3-Methylbenzyl cyanide     19 aromatic             1         1             1          1          1          1
+                        Propionic anhydride     19    ester           315       280           125        316        203        273
+                     4-Methylbenzyl cyanide     19 aromatic             1         3             8          1          1          1
+                1,3-Dimethylbarbituric acid     19    amide          5706      5786          4185          6          7          8
+                  Cyclopropyl phenyl ketone     21 aromatic             1         1             1          1          1          1
+      1,2-Cyclohexanedicarboxylic anhydride     21    ester         79922     99257        110491       4223       4860       3803
+                                3-Heptanone     22   ketone           537        51           112          1          1          1
+                   1-Phenyl-1,3-butanedione     22 aromatic          1420       698           536       8506       9593       9083
+                                   Xanthone     23 aromatic             1         1             1          1          1          1
+                        1-Phenyl-2-butanone     23 aromatic             3         2             2          5          5          5
+                    6-Methyl-5-hepten-2-one     23   ketone           942       142            58         13         12         15
+                            2-Ethylhexene-1     24   alkene            76         2             1          8          6         11
+                 7-Methoxy-4-methylcoumarin     24 aromatic        114633    108647        106048     109386     110686     112368
+                                   Octene-2     24   alkene          4224       235           446        897        980       1000
+                            Isobutylbenzene     24 aromatic             1         1             1          1          1          1
+                  2,4,4-Trimethyl-1-pentene     24   alkene          1041        84            63         17         11         16
+                 1,2,4,5-Tetramethylbenzene     24 aromatic             1         1             1          1          1          1
+                          Benzyl propionate     24 aromatic             2         1             1          1          1          1
+                         Methyl 2-octynoate     25    ester             3         4            17        119         84        105
+                                 3-Octanone     25   ketone           151         4            14       4283       4095       4117
+                              Valerophenone     26 aromatic             4         1             1          1          1          1
+                    Ethyl Isodehydroacetate     26 aromatic            16       116            53          2          1          1
+                   1,3-Diisopropenylbenzene     26 aromatic             3         2             2          1          1          1
+                      Triethyl orthoformate     26    ether           165        68            81          6          3          6
+                            Butyl butanoate     26    ester            17         7            18         30         20         18
+                             Ethyl caproate     26    ester            28         1             1        223        135        179
+                             Butyl benzoate     27 aromatic             1         1             1          1          2          2
+                       Phenethyl propionate     27 aromatic             1         4             2          1          1          1
+              Raspberry ketone methyl ether     27 aromatic             1         1             1          1          1          1
+                   3,5,5-Trimethyl-1-hexene     27   alkene          5251      1073          4208        504        446        624
+                                   4-Nonene     27   alkene          2267       177           355          1          1          1
+                            Allyl hexanoate     27    ester            44         6            19         60         81         85
+        2-Methylene-1,3,3-trimethylindoline     28 aromatic             1         1             1          1          1          1
+                tert-Butyl phenyl carbonate     28 aromatic             1         1             1          1          1          1
+                                   Bibenzyl     28 aromatic             1         1             1          1          1          1
+                      Ethyl diethoxyacetate     28    ester            11         2             1       4891       4156       4133
+                                 5-Nonanone     28   ketone             2         4             8         35         16         33
+                        Isopropyl cinnamate     28 aromatic             1         1             1          1          1          1
+                           Ethyl heptanoate     29    ester           248        12            75       3952       2668       3260
+Ethyl 2,3-epoxy-3-methyl-3-phenylpropionate     29 aromatic             1         1             1          1          1          1
+                   Cyclohexyl phenyl ketone     30 aromatic             4         1             1          1          1          1
+                               Triphenylene     30 aromatic             1         1             1          1          1          1
+                      Tert-Butylcyclohexane     30   alkane         34067     30277         41398        146        124        152
+                         N-Butylcyclohexane     30   alkane          3117       643          2504        310        315        353
+                                   Decene-1     30   alkene            56         1             5         96        104        115

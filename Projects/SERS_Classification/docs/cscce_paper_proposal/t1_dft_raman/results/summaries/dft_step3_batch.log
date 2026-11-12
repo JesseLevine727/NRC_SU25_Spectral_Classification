@@ -1,0 +1,19 @@
+=== vc00 C[N+](=O)[O-] 2026-11-08 20:37:08
+SMILES C[N+](=O)[O-] natoms 7
+  optimised (63 s)
+  hessian (165 s), max |grad| 3.61e-06 Ha/Bohr
+  polarizability derivatives, finite field (26 s)
+vc00.npz: lowest frequency 5.1 cm^-1
+=== vc01 CCC(=O)C 2026-11-08 20:40:20
+SMILES CCC(=O)C natoms 13
+  optimised (310 s)
+  hessian (561 s), max |grad| 3.87e-06 Ha/Bohr
+  polarizability derivatives, finite field (95 s)
+vc01.npz: lowest frequency 31.6 cm^-1
+=== vc02 CC(C)[N+](=O)[O-] 2026-11-08 20:51:17
+SMILES CC(C)[N+](=O)[O-] natoms 13
+  optimised (273 s)
+  hessian (720 s), max |grad| 3.92e-06 Ha/Bohr
+  polarizability derivatives, finite field (144 s)
+vc02.npz: lowest frequency 38.7 cm^-1
+=== vc03 C1CC=COC1 2026-11-08 21:05:42

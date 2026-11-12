@@ -1,0 +1,28 @@
+{
+  "protocol_version": "nato-sers-raw-reexploration-v1",
+  "source_root": "/home/elfo/Documents/NRC/2026July21/NATO SERS Data",
+  "mirror_root": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/2026July21/NATO SERS Data",
+  "output_dir": "Workspace/nato_sers_raw_reexploration_v1",
+  "random_seed": 20260805,
+  "common_grid_step_cm1": 1.0,
+  "kmeans_k_values": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "umap": {
+    "n_neighbors": 15,
+    "min_dist": 0.1,
+    "metric": "cosine"
+  },
+  "tsne": {
+    "perplexity": 30.0,
+    "init": "pca",
+    "learning_rate": "auto"
+  },
+  "hdbscan": {
+    "min_cluster_size": 12,
+    "min_samples": 5,
+    "metric": "euclidean"
+  },
+  "html": {
+    "standalone_plotly_js": true,
+    "max_raw_example_spectra_per_instrument": 8
+  }
+}

@@ -477,12 +477,35 @@ def classification_metrics(
     }
     if not np.any(supported):
         return result
-    result["balanced_accuracy"] = float(
-        balanced_accuracy_score(supported_labels, supported_predictions)
-    )
-    result["macro_f1"] = float(
-        f1_score(supported_labels, supported_predictions, average="macro")
-    )
+    with warnings.catch_warnings():
+        # Held-domain prediction can legitimately contain a training class
+        # absent from this particular test domain. sklearn warns even though
+        # balanced accuracy remains well-defined over observed true classes.
+        warnings.filterwarnings(
+            "ignore",
+            message="y_pred contains classes not in y_true",
+            category=UserWarning,
+        )
+        result["balanced_accuracy"] = float(
+            balanced_accuracy_score(
+                supported_labels, supported_predictions
+            )
+        )
+    with warnings.catch_warnings():
+        # A supported held-domain cell can contain one observed true label;
+        # macro-F1 is still defined for that cell.
+        warnings.filterwarnings(
+            "ignore",
+            message="A single label was found in 'y_true' and 'y_pred'.*",
+            category=UserWarning,
+        )
+        result["macro_f1"] = float(
+            f1_score(
+                supported_labels,
+                supported_predictions,
+                average="macro",
+            )
+        )
     result["accuracy"] = float(
         accuracy_score(supported_labels, supported_predictions)
     )

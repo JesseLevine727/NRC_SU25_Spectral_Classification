@@ -1,0 +1,49 @@
+37 queries, 29 compounds; full library 129825 entries
+                method  top1      ci95  top5  top20  median  old28_top1  new9_top1  new9_top5
+                 fixed 0.189 0.05-0.35 0.432  0.676     6.0       0.250      0.000      0.000
+       fitted_compound 0.459 0.26-0.66 0.649  0.811     2.0       0.536      0.222      0.333
+          fitted_class 0.432 0.25-0.62 0.676  0.811     2.0       0.500      0.222      0.444
+siamese_compound_seed0 0.541 0.35-0.72 0.784  0.811     1.0       0.643      0.222      0.333
+siamese_compound_seed1 0.541 0.35-0.71 0.784  0.811     1.0       0.643      0.222      0.333
+siamese_compound_seed2 0.541 0.36-0.71 0.784  0.811     1.0       0.643      0.222      0.333
+   siamese_class_seed0 0.486 0.30-0.66 0.649  0.730     2.0       0.571      0.222      0.333
+   siamese_class_seed1 0.378 0.19-0.56 0.676  0.703     2.0       0.464      0.111      0.333
+   siamese_class_seed2 0.432 0.24-0.62 0.649  0.703     2.0       0.536      0.111      0.333
+    shuffle_compound_1 0.189 0.05-0.35 0.351  0.405    35.0       0.250      0.000      0.111
+       shuffle_class_1 0.189 0.05-0.35 0.324  0.324    95.0       0.250      0.000      0.000
+    shuffle_compound_2 0.162 0.03-0.33 0.351  0.459    25.0       0.214      0.000      0.000
+    shuffle_compound_3 0.162 0.03-0.29 0.216  0.378    59.0       0.214      0.000      0.000
+
+learning curve, leave-one-compound-out (held-out top-1 / top-5, full library)
+ntrain
+5     0.279 / 0.486
+10    0.387 / 0.595
+15    0.405 / 0.721
+20    0.459 / 0.685
+28    0.541 / 0.784
+
+per class top-1, leave-one-class-out
+          fixed  fitted_class  siamese_class_seed0  siamese_class_seed1  siamese_class_seed2  n
+class                                                                                          
+acid       0.00          0.00                 0.00                 0.00                 0.00  2
+alcohol    0.00          0.12                 0.50                 0.50                 0.50  8
+alkane     0.00          0.25                 0.00                 0.00                 0.00  4
+amide      0.00          1.00                 1.00                 0.67                 0.67  3
+amine      0.00          0.00                 0.33                 0.00                 0.00  3
+aromatic   0.67          0.50                 0.83                 0.83                 0.83  6
+ester      0.33          0.33                 0.33                 0.33                 0.33  3
+ether      0.00          1.00                 0.33                 0.33                 0.33  3
+ketone     0.67          0.67                 1.00                 0.33                 1.00  3
+nitrile    0.00          1.00                 0.00                 0.00                 0.00  2
+
+new compounds, full-library rank
+                name  fixed  fitted_compound  fitted_class  siamese_compound_seed0  siamese_compound_seed1  siamese_compound_seed2  siamese_class_seed0  siamese_class_seed1  siamese_class_seed2
+         formic acid  70046            89223         91938                    8013                    9089                    9434                 9504                 9328                 8702
+         acetic acid 115080            91745         95100                    1292                    1782                    1699                 1688                 1588                 1413
+             acetone    139                5             4                       1                       1                       1                    1                    1                    1
+     ethylene glycol  27504             6490         17706                      76                      93                      73                  119                  116                  116
+     tetrahydrofuran     12                1             1                      28                      32                      24                   36                   26                   23
+        diethylamine      6               11             4                       1                       1                       1                    1                    2                    2
+        diethylamine  24606            30534         16901                   84527                   85484                   82717                85652                82490                88440
+       isobutylamine  15249            18835         12693                    1214                    1302                    1302                  974                 1256                 1311
+2,2-dimethoxypropane     22                1             1                       2                       2                       2                    2                    2                    2

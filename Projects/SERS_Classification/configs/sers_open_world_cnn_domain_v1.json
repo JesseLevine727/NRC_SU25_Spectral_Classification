@@ -1,0 +1,107 @@
+{
+  "registry_version": "sers-open-world-cnn-domain-v1",
+  "status_before_execution": "predeclared_after_surrogate_execution_started_before_surrogate_metrics_or_any_cnn_locked_outcome_were_inspected",
+  "created_date": "2026-07-30",
+  "scientific_question": "Do any of the predeclared compact CNN objectives improve source-only transfer to a held field instrument or sensor family relative to derivative ERM?",
+  "relationship_to_primary_registry": "configs/sers_open_world_cnn_v1.json",
+  "selection_firewall": {
+    "all_seven_predeclared_variants_are_evaluated": true,
+    "held_domain_used_for_variant_selection": false,
+    "held_domain_used_for_epoch_selection": false,
+    "held_domain_used_for_temperature_calibration": false,
+    "target_domain_rows_used_during_training": false,
+    "target_domain_rows_used_for_early_stopping": false,
+    "surrogate_metrics_inspected_before_freeze": false,
+    "cnn_locked_outcomes_inspected_before_freeze": false
+  },
+  "epoch_policy": {
+    "source": "development-only surrogate-unknown runs from the primary CNN registry",
+    "rule": "For each variant, deduplicate the five score rows for each fitted surrogate model, take the median best epoch across all 600 surrogate scenarios, and round half upward.",
+    "held_domain_outcomes_used": false
+  },
+  "evaluation": {
+    "subsets": [
+      "strict_core",
+      "quality_pass"
+    ],
+    "domain_protocols": [
+      "domain_only",
+      "domain_and_sample"
+    ],
+    "domain_types": [
+      "instrument",
+      "sensor_family"
+    ],
+    "final_seeds": [
+      1729,
+      2718,
+      3141
+    ],
+    "temperature": 1.0,
+    "calibration_status": "identity_temperature_no_target_domain_calibration",
+    "unsupported_test_policy": "retain in row-level predictions and exclude only from supported-class metrics",
+    "selective_coverages": [
+      1.0,
+      0.95,
+      0.9,
+      0.8,
+      0.7,
+      0.5
+    ]
+  },
+  "registered_contrasts": [
+    {
+      "candidate": "conditional_coral",
+      "reference": "erm_derivative"
+    },
+    {
+      "candidate": "conditional_mmd",
+      "reference": "erm_derivative"
+    },
+    {
+      "candidate": "group_dro",
+      "reference": "erm_derivative"
+    },
+    {
+      "candidate": "supervised_contrastive_joint",
+      "reference": "erm_derivative"
+    },
+    {
+      "candidate": "synthetic_objectosphere",
+      "reference": "erm_derivative"
+    },
+    {
+      "candidate": "erm_arpls",
+      "reference": "erm_derivative"
+    }
+  ],
+  "primary_domain_endpoint": {
+    "subset": "quality_pass",
+    "protocol": "domain_and_sample",
+    "domain_type": "instrument",
+    "metric": "supported_class_balanced_accuracy",
+    "summary": [
+      "mean_across_held_instruments",
+      "worst_held_instrument",
+      "paired_candidate_minus_erm_derivative_by_held_instrument"
+    ],
+    "independent_unit": "heldout_domain",
+    "seed_handling": "average technical seeds before held-domain summaries"
+  },
+  "secondary_endpoints": [
+    "macro_f1",
+    "accuracy",
+    "per_class_recall",
+    "negative_log_likelihood_at_identity_temperature",
+    "brier_multiclass_at_identity_temperature",
+    "expected_calibration_error_10_at_identity_temperature",
+    "supported_and_unsupported_test_rows",
+    "same_master_cross_instrument_prediction_agreement_where_pairs_exist"
+  ],
+  "interpretation_limits": {
+    "no_unsupervised_domain_adaptation": true,
+    "no_external_instrument_generalization_claim": true,
+    "no_target_tuned_model_selection": true,
+    "no_calibration_superiority_claim_from_identity_temperature": true
+  }
+}

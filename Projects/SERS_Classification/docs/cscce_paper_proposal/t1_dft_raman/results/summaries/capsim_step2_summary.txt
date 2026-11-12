@@ -1,0 +1,60 @@
+CaPSim settings chosen on our 37 training spectra (split 0):
+  selected: npeak=10 h=5 feat=height norm=minmax sim=pearson fwhm=16.0 ksm=3 base=airpls variant=both train top-1 0.207
+  best 'ref': npeak=20 h=5 feat=prom norm=linf sim=mean fwhm=16.0 ksm=3 base=airpls variant=ref train top-1 0.000
+  best 'both': npeak=10 h=5 feat=height norm=minmax sim=pearson fwhm=16.0 ksm=3 base=airpls variant=both train top-1 0.207
+  paper 2023 settings: npeak=10 h=8 feat=height norm=minmax sim=sum fwhm=16.0 ksm=3 base=airpls variant=ref train top-1 0.000
+  oracle (best on the test set itself, optimistic): npeak=5 h=4 feat=prom norm=minmax sim=pearson fwhm=10.0 ksm=1 base=none variant=both
+  across all 3840 settings, test top-1: median 0.000, 90th pct 0.025, max 0.062; train-test rank correlation 0.81
+
+step 2 test set (81 VibraCLIP compounds)
+                 method  compounds  top1      ci95  top5  top20  median_rank
+           fixed_fwhm16         81 0.173 0.10-0.26 0.198  0.259        196.0
+         calibration_37         81 0.358 0.26-0.46 0.469  0.605          6.0
+              siamese_0         81 0.321 0.22-0.42 0.469  0.556         10.0
+              siamese_1         81 0.346 0.25-0.46 0.481  0.568         10.0
+              siamese_2         81 0.358 0.26-0.47 0.481  0.556          8.0
+        capsim_selected         81 0.037 0.00-0.09 0.086  0.123       1581.0
+       capsim_paper2023         81 0.000 0.00-0.00 0.000  0.000      22479.0
+        capsim_best_ref         81 0.000 0.00-0.00 0.000  0.025       6347.0
+       capsim_best_both         81 0.037 0.00-0.09 0.086  0.123       1581.0
+capsim_oracle(post hoc)         81 0.062 0.01-0.12 0.062  0.099       4371.0
+
+no O-H/N-H donor (post hoc split)
+                 method  compounds  top1      ci95  top5  top20  median_rank
+           fixed_fwhm16         45 0.244 0.13-0.38 0.267  0.356         78.0
+         calibration_37         45 0.511 0.36-0.64 0.644  0.756          1.0
+              siamese_0         45 0.578 0.44-0.71 0.711  0.756          1.0
+              siamese_1         45 0.600 0.47-0.73 0.711  0.778          1.0
+              siamese_2         45 0.600 0.47-0.73 0.711  0.778          1.0
+        capsim_selected         45 0.067 0.00-0.16 0.111  0.156       1581.0
+       capsim_paper2023         45 0.000 0.00-0.00 0.000  0.000      15313.0
+        capsim_best_ref         45 0.000 0.00-0.00 0.000  0.000       5521.0
+       capsim_best_both         45 0.067 0.00-0.16 0.111  0.156       1581.0
+capsim_oracle(post hoc)         45 0.111 0.02-0.20 0.111  0.133       3872.0
+
+with O-H/N-H donor (post hoc split)
+                 method  compounds  top1      ci95  top5  top20  median_rank
+           fixed_fwhm16         36 0.083 0.00-0.19 0.111  0.139        783.0
+         calibration_37         36 0.167 0.06-0.28 0.250  0.417        131.5
+              siamese_0         36 0.000 0.00-0.00 0.167  0.306        125.0
+              siamese_1         36 0.028 0.00-0.08 0.194  0.306        104.0
+              siamese_2         36 0.056 0.00-0.14 0.194  0.278         93.5
+        capsim_selected         36 0.000 0.00-0.00 0.056  0.083       1825.0
+       capsim_paper2023         36 0.000 0.00-0.00 0.000  0.000      27616.0
+        capsim_best_ref         36 0.000 0.00-0.00 0.000  0.056      10640.0
+       capsim_best_both         36 0.000 0.00-0.00 0.056  0.083       1825.0
+capsim_oracle(post hoc)         36 0.000 0.00-0.00 0.000  0.056       5134.0
+calibration_37 minus CaPSim(selected): +0.321  (paired bootstrap 95% CI +0.222 to +0.420)
+siamese (mean of 3) minus CaPSim(selected): +0.305  (paired bootstrap 95% CI +0.210 to +0.407)
+fixed_fwhm16 minus CaPSim(selected): +0.136  (paired bootstrap 95% CI +0.062 to +0.210)
+
+main effects across the grid (mean test top-1 by option):
+  variant: both=0.010, ref=0.000
+  sim: mean=0.002, pearson=0.013, sum=0.000
+  norm: linf=0.006, minmax=0.005
+  feat: height=0.005, prom=0.005
+  npeak: 5=0.005, 10=0.005, 15=0.005, 20=0.006
+  h: 3=0.007, 4=0.007, 5=0.006, 8=0.003, 10=0.003
+  fwhm: 10.0=0.005, 16.0=0.005
+  base: airpls=0.005, none=0.005
+  ksm: 1=0.005, 3=0.005

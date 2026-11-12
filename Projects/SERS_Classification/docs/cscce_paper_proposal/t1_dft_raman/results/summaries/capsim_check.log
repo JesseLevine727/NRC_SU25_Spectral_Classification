@@ -1,0 +1,9 @@
+  CaPE on library, FWHM 16, K 3: 5 s
+  CaPE on library, FWHM 10, K 1: 5 s
+literal vs vectorised: 0 mismatches over 3618 pairs
+CaPE on synthetic reference, peaks (cm^-1) by height: [700.0, 1300.0, 1000.0, 1600.0] (expect 700, 1300, 1000, 1600)
+  identical: 1.556; x7 scale: 1.556; +0.2 offset (minmax): 1.556
+  raw pooled query at the reference CPs (h = 10 cm^-1): unshifted [np.float64(1.0), np.float64(0.8), np.float64(0.6), np.float64(0.4)], +6 cm^-1 [np.float64(1.0), np.float64(0.8), np.float64(0.6), np.float64(0.4)], +40 cm^-1 [np.float64(0.018), np.float64(0.014), np.float64(0.011), np.float64(0.007)]
+  noise-free: +6 cm^-1 1.556; +40 cm^-1 1.566  (min-max rescales the tails back up)
+  with 3% noise: unshifted 1.559; +6 cm^-1 1.541; +40 cm^-1 1.545
+  extra query peak away from reference CPs (ignored): 1.556

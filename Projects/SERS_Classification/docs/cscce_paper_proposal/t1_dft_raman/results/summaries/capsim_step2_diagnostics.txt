@@ -1,0 +1,15 @@
+1. sqrt-cosine via capsim pipeline: test top-1 0.173; step 2 fixed baseline 0.173; ranks identical for 98% of queries
+  CaPE on library, FWHM 16, K 3: 5 s
+2. paper settings: library entries by number of CPs found (<=10): 1:0%, 2:0%, 3:0%, 4:0%, 5:0%, 6:0%, 7:0%, 8:0%, 9:0%, 10:99%
+   2-Pyrrolidinone              true: score 0.99, CPs 10, rank  54016 | top-200: score 3.13-4.21, CPs median 10
+   3-Fluorobenzaldehyde         true: score 1.56, CPs 10, rank   8420 | top-200: score 2.57-3.57, CPs median 10
+   Cyclooctanone                true: score 2.04, CPs 10, rank   7577 | top-200: score 3.13-4.40, CPs median 10
+   Phenylacetylene              true: score 1.65, CPs  9, rank   2690 | top-200: score 2.33-3.60, CPs median 10
+   Cyclopropyl cyanide          true: score 1.35, CPs 10, rank  42179 | top-200: score 3.37-4.85, CPs median 10
+   1,1,1-Tris(hydroxymethyl)eth true: score 1.02, CPs 10, rank  56574 | top-200: score 3.27-4.65, CPs median 10
+3. candidate pool = the 110 query compounds only:
+   paper 2023 settings      test top-1 0.049, top-5 0.136
+   selected (train-tuned)   test top-1 0.235, top-5 0.494
+   sqrt-cosine              test top-1 0.580, top-5 0.840
+   random pools of 16 query compounds (true + 15), paper settings: CaPSim top-1 0.177, sqrt-cosine 0.800
+   random pools of 50 query compounds (true + 49), paper settings: CaPSim top-1 0.081, sqrt-cosine 0.680

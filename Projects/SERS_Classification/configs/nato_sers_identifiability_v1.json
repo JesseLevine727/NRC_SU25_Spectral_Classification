@@ -1,0 +1,13 @@
+{
+  "protocol_version": "nato-sers-identifiability-v1",
+  "input_workspace": "Workspace/nato_sers_raw_reexploration_v1",
+  "preprocessing_workspace": "Workspace/nato_sers_raw_reexploration_v1/preprocessing",
+  "output_workspace": "Workspace/nato_sers_raw_reexploration_v1/identifiability",
+  "random_seed": 20260805,
+  "repeats": 3,
+  "folds": 4,
+  "range_cm1": [400, 1800],
+  "preprocessing": ["minimal_minmax", "despike_savgol_minmax"],
+  "models": ["nearest_centroid", "pca_lda", "rbf_svm", "random_forest", "extra_trees"],
+  "trees": 400
+}

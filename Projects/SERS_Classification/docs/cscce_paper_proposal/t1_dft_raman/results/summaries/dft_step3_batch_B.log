@@ -1,0 +1,140 @@
+=== vc13 CCCCC(=O)CC 2026-11-09 08:49:48
+SMILES CCCCC(=O)CC natoms 22
+  optimised (1868 s)
+  hessian (6266 s), max |grad| 7.28e-06 Ha/Bohr
+  polarizability derivatives, finite field (588 s)
+vc13.npz: lowest frequency 35.9 cm^-1
+=== vc17 CC(=C)CC(C)(C)C 2026-11-09 10:44:04
+SMILES CC(=C)CC(C)(C)C natoms 24
+  optimised (949 s)
+  hessian (3176 s), max |grad| 1.67e-06 Ha/Bohr
+  polarizability derivatives, finite field (760 s)
+vc17.npz: lowest frequency 50.6 cm^-1
+=== vc18 CCCCC(=C)CC 2026-11-09 11:49:42
+SMILES CCCCC(=C)CC natoms 24
+  optimised (1283 s)
+  hessian (3317 s), max |grad| 2.33e-06 Ha/Bohr
+  polarizability derivatives, finite field (725 s)
+vc18.npz: lowest frequency 30.1 cm^-1
+=== vc20 CC(=CCCC(=O)C)C 2026-11-09 12:57:05
+SMILES CC(=CCCC(=O)C)C natoms 23
+  optimised (1611 s)
+  hessian (3715 s), max |grad| 4.69e-06 Ha/Bohr
+  polarizability derivatives, finite field (755 s)
+vc20.npz: lowest frequency 22.4 cm^-1
+=== vc22 CCCCCC(=O)CC 2026-11-09 14:11:35
+SMILES CCCCCC(=O)CC natoms 25
+  optimised (1349 s)
+  hessian (3721 s), max |grad| 6.68e-06 Ha/Bohr
+  polarizability derivatives, finite field (906 s)
+vc22.npz: lowest frequency 30.7 cm^-1
+=== vc23 C1CC1C(=O)C2=CC=CC=C2 2026-11-09 15:28:45
+SMILES C1CC1C(=O)C2=CC=CC=C2 natoms 21
+  optimised (1932 s)
+  hessian (4121 s), max |grad| 1.62e-06 Ha/Bohr
+  polarizability derivatives, finite field (915 s)
+vc23.npz: lowest frequency 29.7 cm^-1
+=== vc25 CC(C)CC1=CC=CC=C1 2026-11-09 16:52:43
+SMILES CC(C)CC1=CC=CC=C1 natoms 24
+  optimised (1613 s)
+  hessian (3879 s), max |grad| 3.64e-06 Ha/Bohr
+  polarizability derivatives, finite field (1041 s)
+vc25.npz: lowest frequency 41.0 cm^-1
+=== vc27 CC(CC(C)(C)C)C=C 2026-11-09 18:14:43
+SMILES CC(CC(C)(C)C)C=C natoms 27
+  optimised (1204 s)
+  hessian (4026 s), max |grad| 9.16e-06 Ha/Bohr
+  polarizability derivatives, finite field (1019 s)
+vc27.npz: lowest frequency 42.2 cm^-1
+=== vc29 CCC(=O)CC1=CC=CC=C1 2026-11-09 19:38:49
+SMILES CCC(=O)CC1=CC=CC=C1 natoms 23
+  optimised (868 s)
+  hessian (3000 s), max |grad| 2.29e-06 Ha/Bohr
+  polarizability derivatives, finite field (924 s)
+vc29.npz: imaginary [-29.9] cm^-1, displacing (round 1)
+vc29.npz: lowest frequency 18.1 cm^-1
+=== vc32 CCOC(OCC)OCC 2026-11-09 22:45:28
+SMILES CCOC(OCC)OCC natoms 26
+  optimised (1289 s)
+  hessian (3982 s), max |grad| 3.16e-06 Ha/Bohr
+  polarizability derivatives, finite field (946 s)
+vc32.npz: lowest frequency 28.9 cm^-1
+=== vc34 CCCCCC#CC(=O)OC 2026-11-10 00:07:37
+SMILES CCCCCC#CC(=O)OC natoms 25
+  optimised (2236 s)
+  hessian (5277 s), max |grad| 1.03e-05 Ha/Bohr
+  polarizability derivatives, finite field (948 s)
+vc34.npz: lowest frequency 12.7 cm^-1
+=== vc36 CCC(=O)OCC1=CC=CC=C1 2026-11-10 01:51:22
+SMILES CCC(=O)OCC1=CC=CC=C1 natoms 24
+  optimised (1165 s)
+  hessian (4050 s), max |grad| 2.64e-06 Ha/Bohr
+  polarizability derivatives, finite field (1058 s)
+vc36.npz: lowest frequency 17.4 cm^-1
+=== vc38 CCCCCC(=O)OCC=C 2026-11-10 03:16:32
+SMILES CCCCCC(=O)OCC=C natoms 27
+  optimised (2680 s)
+  hessian (5848 s), max |grad| 2.79e-06 Ha/Bohr
+  polarizability derivatives, finite field (1102 s)
+vc38.npz: lowest frequency 14.4 cm^-1
+=== vc40 CCCCC1CCCCC1 2026-11-10 05:12:22
+SMILES CCCCC1CCCCC1 natoms 30
+  optimised (2359 s)
+  hessian (6351 s), max |grad| 3.21e-06 Ha/Bohr
+  polarizability derivatives, finite field (1367 s)
+vc40.npz: lowest frequency 45.7 cm^-1
+=== vc42 CC(=C)C1=CC(=CC=C1)C(=C)C 2026-11-10 07:21:00
+SMILES CC(=C)C1=CC(=CC=C1)C(=C)C natoms 26
+  optimised (1617 s)
+  hessian (4804 s), max |grad| 5.13e-06 Ha/Bohr
+  polarizability derivatives, finite field (1380 s)
+vc42.npz: lowest frequency 36.6 cm^-1
+=== vc44 CCCCCCC(=O)OCC 2026-11-10 09:04:05
+SMILES CCCCCCC(=O)OCC natoms 29
+  optimised (7413 s)
+  hessian (11728 s), max |grad| 4.24e-06 Ha/Bohr
+  polarizability derivatives, finite field (1174 s)
+vc44.npz: lowest frequency 10.1 cm^-1
+=== vc47 CC(=O)CCC1=CC=C(C=C1)OC 2026-11-10 12:39:09
+SMILES CC(=O)CCC1=CC=C(C=C1)OC natoms 27
+  optimised (3571 s)
+  hessian (7434 s), max |grad| 5.58e-06 Ha/Bohr
+  polarizability derivatives, finite field (1370 s)
+vc47.npz: lowest frequency 24.1 cm^-1
+=== vc49 CCCCOC(=O)C1=CC=CC=C1 2026-11-10 15:05:54
+SMILES CCCCOC(=O)C1=CC=CC=C1 natoms 27
+  optimised (1853 s)
+  hessian (5817 s), max |grad| 9.32e-06 Ha/Bohr
+  polarizability derivatives, finite field (1434 s)
+vc49.npz: lowest frequency 30.0 cm^-1
+=== vc51 CC1(C(=C)N(C2=CC=CC=C21)C)C 2026-11-10 17:06:46
+SMILES CC1(C(=C)N(C2=CC=CC=C21)C)C natoms 28
+  optimised (3175 s)
+  hessian (7606 s), max |grad| 2.19e-06 Ha/Bohr
+  polarizability derivatives, finite field (1881 s)
+vc51.npz: lowest frequency 22.8 cm^-1
+=== vc53 C1=CC=C(C=C1)CCC2=CC=CC=C2 2026-11-10 19:44:54
+SMILES C1=CC=C(C=C1)CCC2=CC=CC=C2 natoms 28
+  optimised (1354 s)
+  hessian (5816 s), max |grad| 9.12e-06 Ha/Bohr
+  polarizability derivatives, finite field (1646 s)
+vc53.npz: lowest frequency 20.2 cm^-1
+=== vc55 CC(C)OC(=O)C=CC1=CC=CC=C1 2026-11-10 21:49:17
+SMILES CC(C)OC(=O)C=CC1=CC=CC=C1 natoms 28
+  optimised (2202 s)
+  hessian (7068 s), max |grad| 5.46e-06 Ha/Bohr
+  polarizability derivatives, finite field (1570 s)
+vc55.npz: lowest frequency 21.9 cm^-1
+=== vc56 C1CCC(CC1)C(=O)C2=CC=CC=C2 2026-11-11 00:13:16
+SMILES C1CCC(CC1)C(=O)C2=CC=CC=C2 natoms 30
+  optimised (3049 s)
+  hessian (8518 s), max |grad| 3.12e-06 Ha/Bohr
+  polarizability derivatives, finite field (2185 s)
+vc56.npz: lowest frequency 28.3 cm^-1
+=== vc58 C1=CC=C2C(=C1)C3=CC=CC=C3C4=CC=CC=C24 2026-11-11 03:11:40
+SMILES C1=CC=C2C(=C1)C3=CC=CC=C3C4=CC=CC=C24 natoms 30
+  optimised (3143 s)
+  hessian (9190 s), max |grad| 1.09e-05 Ha/Bohr
+  polarizability derivatives, finite field (4085 s)
+vc58.npz: lowest frequency 39.8 cm^-1
+=== stream done 2026-11-11 06:52:56

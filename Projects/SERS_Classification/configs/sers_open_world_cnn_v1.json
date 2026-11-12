@@ -1,0 +1,178 @@
+{
+  "registry_version": "sers-open-world-cnn-v1",
+  "status_before_execution": "predeclared_after_controls_before_cnn_outcomes",
+  "created_date": "2026-07-30",
+  "scientific_question": "Can a compact residual 1-D CNN jointly preserve known-chemical classification, reject unseen chemicals, detect field-quality shift, and improve selective prediction across field instruments without claiming denoising or semantic disentanglement?",
+  "partition_protocol": "sers-open-world-shift-v1",
+  "control_snapshot": {
+    "selected_classical_quality_open_master_auroc": 0.658,
+    "siamese_quality_open_master_auroc": 0.635,
+    "supervised_contrastive_quality_open_master_auroc": 0.658,
+    "standard_vae_quality_open_master_auroc": 0.663,
+    "structured_chemical_quality_open_master_auroc": 0.679,
+    "best_primary_stress_open_master_auroc": 0.595,
+    "standard_vae_field_quality_master_auroc": 0.974,
+    "interpretation": "No frozen comparator solves chemical novelty under field stress. Standard-VAE reconstruction strongly detects field-quality shift but does not distinguish known from unknown chemistry once both are stressed."
+  },
+  "architecture": {
+    "input_points": 1401,
+    "stem": "Conv1d kernel 11 stride 2 + GroupNorm + GELU",
+    "residual_stages": [
+      {
+        "channels": 24,
+        "blocks": 1,
+        "first_stride": 1
+      },
+      {
+        "channels": 48,
+        "blocks": 1,
+        "first_stride": 2
+      },
+      {
+        "channels": 96,
+        "blocks": 1,
+        "first_stride": 2
+      }
+    ],
+    "residual_kernel": 7,
+    "pooling": "adaptive average",
+    "embedding_dimension": 64,
+    "dropout": 0.2,
+    "normalization": "GroupNorm independent of batch/domain composition"
+  },
+  "representations": {
+    "primary": "derivative_1",
+    "bounded_erm_sensitivity": "arpls_minmax",
+    "reason": "Derivative_1 dominated development-only classical open-set selection; arPLS is retained as the single baseline-preserving sensitivity."
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 96,
+    "maximum_epochs": 75,
+    "minimum_epochs": 25,
+    "early_stopping_patience": 10,
+    "gradient_clip_norm": 5.0,
+    "augmentation": {
+      "gaussian_noise_standard_deviation": 0.01,
+      "edge_filled_shift_maximum_cm1": 2,
+      "scale_range": [
+        0.95,
+        1.05
+      ]
+    },
+    "selection_seed": 1729,
+    "calibration_seed": 1729,
+    "final_seeds": [
+      1729,
+      2718,
+      3141
+    ]
+  },
+  "candidate_variants": [
+    {
+      "variant": "erm_derivative",
+      "representation": "derivative_1",
+      "objective": "cross_entropy"
+    },
+    {
+      "variant": "erm_arpls",
+      "representation": "arpls_minmax",
+      "objective": "cross_entropy"
+    },
+    {
+      "variant": "supervised_contrastive_joint",
+      "representation": "derivative_1",
+      "objective": "cross_entropy + 0.2 supervised_contrastive"
+    },
+    {
+      "variant": "synthetic_objectosphere",
+      "representation": "derivative_1",
+      "objective": "cross_entropy + 0.1 uniform-outlier-exposure + 0.05 objectosphere",
+      "outliers": "deterministic composite baseline/noise/spike corruption and between-class mixtures only; no held chemical or stress spectrum"
+    },
+    {
+      "variant": "conditional_coral",
+      "representation": "derivative_1",
+      "objective": "cross_entropy + 0.1 target-conditional cross-domain mean/covariance alignment"
+    },
+    {
+      "variant": "conditional_mmd",
+      "representation": "derivative_1",
+      "objective": "cross_entropy + 0.1 target-conditional multi-kernel MMD across instrument groups"
+    },
+    {
+      "variant": "group_dro",
+      "representation": "derivative_1",
+      "objective": "instrument-by-sensor group DRO with eta 0.05"
+    }
+  ],
+  "score_registry": [
+    "one_minus_calibrated_max_probability",
+    "predictive_entropy",
+    "energy",
+    "minimum_class_mahalanobis_distance",
+    "mc_dropout_mutual_information"
+  ],
+  "mc_dropout_passes": 20,
+  "selection": {
+    "data": "600 development-only surrogate-unknown scenarios",
+    "true_held_unknown_used": false,
+    "stress_used": false,
+    "primary_metric": "master_oscr_auc",
+    "secondary_metric": "master_known_balanced_accuracy",
+    "tertiary_metric": "master_unknown_auroc",
+    "required_scenarios_per_held_unknown_outer_fold": 20,
+    "tie_break": [
+      "variant order",
+      "score order"
+    ],
+    "final_epoch": "rounded median best epoch for the selected variant over its 20 development-only scenarios"
+  },
+  "calibration": {
+    "source": "four-fold cross-fitted known-development predictions",
+    "temperature_bounds": [
+      0.05,
+      20.0
+    ],
+    "known_retained_coverages": [
+      0.95,
+      0.9,
+      0.8,
+      0.7,
+      0.5
+    ],
+    "true_unknown_used": false,
+    "stress_used": false
+  },
+  "promotion_gates": {
+    "quality_known_balanced_accuracy_drop_vs_selected_classical_maximum": 0.05,
+    "quality_open_master_auroc_improvement_vs_best_frozen_primary_minimum": 0.03,
+    "quality_open_improves_in_at_least_chemicals": 4,
+    "stress_open_master_auroc_minimum": 0.6,
+    "field_quality_master_auroc_minimum": 0.9,
+    "stress_known_balanced_accuracy_improvement_vs_supervised_contrastive_minimum": 0.0,
+    "all_required": true
+  },
+  "negative_controls": [
+    "master-level analyte-label permutation",
+    "score-direction inversion",
+    "known-only threshold coverage",
+    "MC-dropout pass-count sensitivity 10/20/50",
+    "seed-specific outcomes",
+    "chemical and master clustered uncertainty"
+  ],
+  "claim_limits": {
+    "denoising": false,
+    "chemical_only_recovery": false,
+    "causal_nuisance_removal": false,
+    "semantic_disentanglement": false,
+    "external_instrument_generalization": false
+  },
+  "pre_execution_feasibility_amendment": {
+    "status": "declared after one excluded ERM runtime smoke and before any registered CNN selection or locked outcome",
+    "change": "batch size 48 to 96; maximum epochs 100 to 75; minimum epochs 30 to 25; patience 15 to 10",
+    "reason": "Bound the 4200-fit surrogate search while retaining the development-selected epoch mechanism. No architecture, objective, score, split, outcome, or promotion gate changed."
+  }
+}

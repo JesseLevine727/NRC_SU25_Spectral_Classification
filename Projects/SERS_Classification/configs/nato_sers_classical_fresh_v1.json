@@ -1,0 +1,15 @@
+{
+  "protocol_version": "nato-sers-classical-fresh-v1",
+  "input_workspace": "Workspace/nato_sers_raw_reexploration_v1",
+  "preprocessing_workspace": "Workspace/nato_sers_raw_reexploration_v1/preprocessing",
+  "output_workspace": "Workspace/nato_sers_raw_reexploration_v1/benchmarks",
+  "random_seed": 20260805,
+  "repeats": 3,
+  "folds": 5,
+  "range_cm1": [400, 1800],
+  "preprocessing_candidates": ["minimal_minmax", "despike_savgol_minmax", "arpls_savgol_minmax"],
+  "models": ["dummy_prior", "nearest_centroid", "pca_lda", "ridge", "rbf_svm", "random_forest", "extra_trees"],
+  "shift_models": ["rbf_svm", "random_forest"],
+  "shift_preprocessing": ["minimal_minmax", "despike_savgol_minmax"],
+  "trees": 400
+}

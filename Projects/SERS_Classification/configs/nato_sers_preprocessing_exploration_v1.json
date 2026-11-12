@@ -1,0 +1,15 @@
+{
+  "protocol_version": "nato-sers-preprocessing-exploration-v1",
+  "input_workspace": "Workspace/nato_sers_raw_reexploration_v1",
+  "output_workspace": "Workspace/nato_sers_raw_reexploration_v1/preprocessing",
+  "random_seed": 20260805,
+  "diagnostic_folds": 5,
+  "savgol_window": 11,
+  "savgol_polynomial": 3,
+  "baseline_lambda": 100000.0,
+  "baseline_asymmetry": 0.01,
+  "baseline_iterations": 12,
+  "despike_window": 5,
+  "despike_mad_threshold": 10.0,
+  "ranges_cm1": [[400, 1849], [400, 1800], [450, 1800], [500, 1800]]
+}

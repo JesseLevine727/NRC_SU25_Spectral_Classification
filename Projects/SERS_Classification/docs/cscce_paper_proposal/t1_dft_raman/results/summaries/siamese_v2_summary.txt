@@ -1,0 +1,107 @@
+PRIMARY (predeclared): 81 unseen VibraCLIP compounds, full library 129825
+  Siamese top-1 0.342 (mean of 3 seeds)   fitted top-1 0.358
+  Delta -0.016, paired bootstrap 95% CI -0.107 to +0.078  ->  TIE
+  control: fixed 0.173; shuffle [0.16  0.21  0.173]
+
+primary test set, all methods
+      method  compounds  top1      ci95  top5  top20  median_rank
+fixed_fwhm16         81 0.173 0.10-0.26 0.198  0.259        196.0
+fixed_fwhm10         81 0.136 0.06-0.21 0.185  0.235        555.0
+      fitted         81 0.358 0.26-0.46 0.469  0.605          6.0
+   siamese_0         81 0.321 0.22-0.42 0.469  0.556         10.0
+   siamese_1         81 0.346 0.25-0.46 0.481  0.568         10.0
+   siamese_2         81 0.358 0.26-0.47 0.481  0.556          8.0
+    zeroshot         81 0.198 0.11-0.28 0.296  0.370        149.0
+   shuffle_1         81 0.160 0.09-0.25 0.284  0.333        226.0
+   shuffle_2         81 0.210 0.14-0.30 0.309  0.358        160.0
+   shuffle_3         81 0.173 0.10-0.26 0.309  0.383         99.0
+
+test compounds WITH an O-H/N-H donor
+      method  compounds  top1      ci95  top5  top20  median_rank
+fixed_fwhm16         36 0.083 0.00-0.19 0.111  0.139        783.0
+fixed_fwhm10         36 0.056 0.00-0.14 0.111  0.139       2202.5
+      fitted         36 0.167 0.06-0.28 0.250  0.417        131.5
+   siamese_0         36 0.000 0.00-0.00 0.167  0.306        125.0
+   siamese_1         36 0.028 0.00-0.08 0.194  0.306        104.0
+   siamese_2         36 0.056 0.00-0.14 0.194  0.278         93.5
+    zeroshot         36 0.000 0.00-0.00 0.056  0.111       1257.5
+   shuffle_1         36 0.028 0.00-0.08 0.083  0.111       2675.0
+   shuffle_2         36 0.028 0.00-0.08 0.056  0.083        705.0
+   shuffle_3         36 0.028 0.00-0.08 0.111  0.167        532.0
+
+test compounds WITHOUT an O-H/N-H donor
+      method  compounds  top1      ci95  top5  top20  median_rank
+fixed_fwhm16         45 0.244 0.13-0.38 0.267  0.356         78.0
+fixed_fwhm10         45 0.200 0.09-0.31 0.244  0.311        235.0
+      fitted         45 0.511 0.36-0.64 0.644  0.756          1.0
+   siamese_0         45 0.578 0.44-0.71 0.711  0.756          1.0
+   siamese_1         45 0.600 0.47-0.73 0.711  0.778          1.0
+   siamese_2         45 0.600 0.47-0.73 0.711  0.778          1.0
+    zeroshot         45 0.356 0.22-0.49 0.489  0.578         10.0
+   shuffle_1         45 0.267 0.16-0.40 0.444  0.511         18.0
+   shuffle_2         45 0.356 0.22-0.51 0.511  0.578          5.0
+   shuffle_3         45 0.289 0.18-0.42 0.467  0.556          8.0
+
+VibraCLIP spectra of our training compounds (same compound, new instrument)
+      method  compounds  top1      ci95  top5  top20  median_rank
+fixed_fwhm16          9 0.222 0.00-0.56 0.222  0.222       4133.0
+fixed_fwhm10          9 0.222 0.00-0.56 0.222  0.222       7769.0
+      fitted          9 0.222 0.00-0.56 0.333  0.556         17.0
+   siamese_0          9 0.667 0.33-1.00 0.889  0.889          1.0
+   siamese_1          9 0.667 0.33-1.00 0.889  1.000          1.0
+   siamese_2          9 0.667 0.33-1.00 1.000  1.000          1.0
+    zeroshot          9 0.111 0.00-0.33 0.222  0.333         93.0
+
+primary test, top-1 by class
+          fixed_fwhm16  fitted  siamese_0  siamese_1  siamese_2   n
+class                                                              
+alcohol           0.04    0.16       0.00       0.04       0.04  25
+alkane            0.00    0.55       0.64       0.64       0.64  11
+alkene            0.00    1.00       1.00       1.00       1.00   2
+amide             0.00    0.33       0.33       0.33       0.33   3
+aromatic          0.71    0.50       0.57       0.57       0.57  14
+ester             0.00    0.38       0.38       0.38       0.50   8
+ether             0.50    1.00       0.50       1.00       1.00   2
+ketone            0.00    0.25       0.17       0.17       0.17  12
+nitrile           0.67    0.33       0.67       0.67       0.67   3
+other             0.00    0.00       0.00       0.00       0.00   1
+
+sensitivity: no 1064 nm correction
+      method  compounds  top1      ci95  top5  top20  median_rank
+fixed_fwhm16         81 0.173 0.10-0.26 0.210  0.284        215.0
+fixed_fwhm10         81 0.136 0.06-0.21 0.185  0.235        615.0
+      fitted         81 0.358 0.26-0.46 0.494  0.617          6.0
+   siamese_0         81 0.321 0.22-0.42 0.457  0.556          8.0
+   siamese_1         81 0.333 0.23-0.44 0.481  0.543         10.0
+   siamese_2         81 0.333 0.23-0.44 0.481  0.543          7.0
+
+pooled: 110 compounds, 127 spectra
+          method  compounds  top1      ci95  top5  top20  median_rank
+    fixed_fwhm16        110 0.182 0.11-0.25 0.276  0.378         91.0
+ fitted_compound        110 0.294 0.21-0.38 0.488  0.630          7.0
+    fitted_class        110 0.271 0.19-0.36 0.449  0.591          8.0
+siamese_compound        110 0.477 0.38-0.57 0.693  0.780          1.0
+ siamese_class_0        110 0.409 0.32-0.50 0.598  0.709          3.0
+ siamese_class_1        110 0.405 0.31-0.49 0.591  0.709          2.0
+ siamese_class_2        110 0.409 0.32-0.49 0.598  0.701          2.0
+shuffle_compound        110 0.088 0.04-0.14 0.134  0.220        365.0
+
+pooled, VibraCLIP compounds only
+          method  compounds  top1      ci95  top5  top20  median_rank
+    fixed_fwhm16         81 0.173 0.10-0.26 0.198  0.259        196.0
+ fitted_compound         81 0.259 0.17-0.36 0.481  0.593          8.0
+    fitted_class         81 0.247 0.16-0.35 0.420  0.543         15.0
+siamese_compound         81 0.444 0.35-0.54 0.617  0.728          2.0
+ siamese_class_0         81 0.383 0.28-0.49 0.506  0.642          5.0
+ siamese_class_1         81 0.383 0.28-0.49 0.506  0.654          4.0
+ siamese_class_2         81 0.383 0.28-0.49 0.506  0.642          5.0
+shuffle_compound         81 0.086 0.04-0.15 0.111  0.185        490.0
+
+pooled learning curve, leave-one-compound-out (top-1 / top-5, per spectrum)
+ntrain
+5      0.260 / 0.436
+10     0.294 / 0.483
+20     0.349 / 0.591
+40     0.423 / 0.635
+80     0.504 / 0.698
+109    0.512 / 0.693

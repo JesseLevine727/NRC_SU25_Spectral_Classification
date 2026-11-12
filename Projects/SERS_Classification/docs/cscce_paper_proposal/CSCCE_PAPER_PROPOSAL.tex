@@ -1,0 +1,49 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0pt,topsep=1pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=1pt}
+\pagestyle{empty}
+\begin{document}
+\color{black}
+
+{\Large\bfseries Turning the CSCCE 2026 poster into a short paper\par}
+\vspace{1pt}
+Li-Lin \quad$\cdot$\quad Jesse Levine \quad$\cdot$\quad 2 November 2026
+\vspace{2pt}\hrule\vspace{2pt}
+
+\textbf{Paper.} A \textbf{Technical Note} (about 5--6 pages) in \textbf{\emph{Analytical Methods}} (Royal Society of Chemistry; free to publish, open access optional). It asks whether a SERS reference library built on some substrate types can identify the same chemical on a substrate type absent from the library. Each substrate type is left out in turn and used only for testing.
+
+\textbf{Working title:} \emph{Identifying SERS spectra on substrate types absent from the reference library.}
+
+In the poster data, comparing first-derivative spectra still identifies the chemical in most cases when its substrate type is left out (preliminary). The derivative removes the broad background that each substrate adds and keeps the analyte bands. The poster's Siamese network is included as a comparison. Where identification fails, the substrate changes the spectrum itself: 4-NP does not bind gold and appears to react on our silver paper, so it is reported as a boundary case rather than in the main test.
+
+\textbf{Why not the one-shot Siamese framing.} Siamese and one-shot identification of Raman and SERS spectra are already published (Liu \emph{et al.}, \emph{Chemom.\ Intell.\ Lab.\ Syst.}, 2019, \textbf{184}, 175--181; Skvortsova \emph{et al.}, \emph{Anal.\ Chim.\ Acta}, 2022, \textbf{1192}, 339373).
+
+\textbf{Our contribution.} Substrate-to-substrate variability has raised the question of whether SERS libraries must be built separately for each substrate (Ju \emph{et al.}, \emph{ACS Nano}, 2023, \textbf{17}, 21251--21261). Ju \emph{et al.} answer it by matching SERS spectra to a normal Raman library; Pozzi \emph{et al.} showed SERS library search on dyes that holds across colloids and instruments (\emph{Anal.\ Methods}, 2013, \textbf{5}, 4205). We add:
+\begin{enumerate}
+\item a direct test in which each substrate type, printed in-house or commercial, is absent from the SERS library, scored per sensor, on two sets of chemicals and two instruments;
+\item evidence that first-derivative matching, with no trained model, identifies the chemical on a substrate type the library has never seen. By comparison, matching the same SERS maps against a normal Raman library, including Ju \emph{et al.}'s method, identifies at most 13 of 23 maps, so a SERS library is still needed, just not one per substrate;
+\item the limit: when the substrate changes how the analyte binds or reacts (4-NP), that substrate must be in the library.
+\end{enumerate}
+
+\textbf{Data: no new measurements needed.} The method is settled on the poster maps, then tested once on two sets we already have: 4-mercaptobenzoic acid, 4-mercaptobenzonitrile and 2,6-pyridinedicarboxylic acid on Ag and Au paper, measured on 30 June 2025 on the LabRAM (632.8~nm) and on the XploRA (785~nm). These check the result on other chemicals, another day and another instrument.
+
+\textbf{Questions}
+\begin{enumerate}
+\item PICO: who makes it, and what is it made of?
+\item What analyte concentrations and solvents were used for the poster maps (11 July 2025) and the 30 June 2025 maps?
+\item What is the laser power at the sample on the LabRAM (632.8~nm, 100\% filter)?
+\item Which in-house Ag and Au batches (number of print passes) were used?
+\item Authors: Hal Bowen-Smith, Greg Wardle, you and me. Should anyone be added?
+\item Can NRC release the spectra? The journal requires the data to be public at submission.
+\end{enumerate}
+
+\end{document}

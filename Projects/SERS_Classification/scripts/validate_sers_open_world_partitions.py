@@ -156,6 +156,7 @@ def main() -> None:
         "unknown_quality",
         "known_stress",
         "unknown_stress",
+        "excluded_known_stress_development_masters",
     }
     threshold_expected = {
         "train_known",
@@ -193,6 +194,7 @@ def main() -> None:
             [
                 ("known_development_quality", "known_quality_test"),
                 ("known_development_quality", "unknown_quality"),
+                ("known_development_quality", "known_stress"),
             ],
         ),
         (
