@@ -1,0 +1,62 @@
+{
+  "checks": {
+    "all_registry_ids_are_unique_and_nonempty": true,
+    "all_required_scientific_concepts_are_explicit": true,
+    "authoritative_input_hashes_match": true,
+    "completed_figures_pass_native_tikz_html_and_vector_parity": true,
+    "completed_restart_validation_is_pass": true,
+    "contract_core_counts_and_endpoint_are_locked": true,
+    "experiment_phase_references_are_valid": true,
+    "figure_contract_prohibits_raster_wrappers_and_cdns": true,
+    "figure_registry_is_complete_and_paired": true,
+    "figure_style_contract_is_detailed": true,
+    "master_plan_is_extremely_detailed": true,
+    "plan_index_is_standalone_and_links_core_artifacts": true,
+    "plan_workspace_contains_no_raster_figure_files": true,
+    "registry_counts_are_locked": true,
+    "result_schema_preserves_prediction_provenance": true,
+    "scope_labels_are_valid": true,
+    "split_contract_is_exact_and_separates_regimes": true
+  },
+  "counts": {
+    "decision_gates": 8,
+    "experiments": 39,
+    "figures_complete_now": 2,
+    "figures_registered": 35,
+    "master_plan_lines": 1088,
+    "metrics": 25,
+    "phases": 13,
+    "tasks": 12
+  },
+  "diagnostics": {
+    "completed_figure_audit": {
+      "F00": {
+        "compile_tail_if_failed": "",
+        "data_sha256": "66730a1359751fd5b869713ce902fb5822268eae11fd24f136062ee1c2867006",
+        "fresh_compile_pass": true,
+        "fresh_pdf_has_raster": false,
+        "hash_in_tikz_and_html": true,
+        "native_tikz_no_includegraphics": true,
+        "paths_exist": true,
+        "standalone_html": true,
+        "stored_pdf_has_raster": false
+      },
+      "F01": {
+        "compile_tail_if_failed": "",
+        "data_sha256": "f70fdf2d66bf01357b8e4a17d93e2383529dd487aca97d09bfd845fa619dc290",
+        "fresh_compile_pass": true,
+        "fresh_pdf_has_raster": false,
+        "hash_in_tikz_and_html": true,
+        "native_tikz_no_includegraphics": true,
+        "paths_exist": true,
+        "standalone_html": true,
+        "stored_pdf_has_raster": false
+      }
+    },
+    "input_hash_failures": [],
+    "raster_files": []
+  },
+  "hashed_artifacts": 29,
+  "status": "pass",
+  "workspace": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_research_master_plan_v1"
+}

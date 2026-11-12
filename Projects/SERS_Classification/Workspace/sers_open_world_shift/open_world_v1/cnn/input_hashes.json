@@ -1,0 +1,18 @@
+{
+  "cnn_registry": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/sers_open_world_cnn_v1.json",
+    "sha256": "0060473af0a90e5f99709f704500599544b83f4349be59522d4a733fb718b19d"
+  },
+  "partition_validation": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_open_world_shift/open_world_v1/validation_report.json",
+    "sha256": "7936b353e8c41be751ae50db37a1803420e5310204490db69c932f278e50f75d"
+  },
+  "preprocessing_bundle_hash_catalog": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/artifact_hashes.json",
+    "sha256": "2f7f03b7caf7a08cda0ee70a06ea7ba66fdd59a4ccc8751c1ffe4d46b109db24"
+  },
+  "protocol": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/sers_open_world_shift_v1.json",
+    "sha256": "ec759e5bb4b546a1ef038b28e3ae12075cc2ccacba39b24e4b8a1a8cbd42fd3c"
+  }
+}

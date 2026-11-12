@@ -1,0 +1,10 @@
+{
+  "device": "cuda",
+  "architecture_parameters": 276963,
+  "preprocessing": "minimal_minmax",
+  "range_cm1": [
+    400,
+    1800
+  ],
+  "outer_folds": 4
+}

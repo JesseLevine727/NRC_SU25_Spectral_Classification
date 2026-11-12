@@ -1,0 +1,32 @@
+[
+  {
+    "file": "01_within_station_spectrum.html",
+    "title": "Within-station spectrum classification",
+    "description": "Chemistry is compared only within a station, preventing station identity from solving the task."
+  },
+  {
+    "file": "02_within_station_master.html",
+    "title": "Within-station master classification",
+    "description": "Chemistry is compared only within a station, preventing station identity from solving the task."
+  },
+  {
+    "file": "03_cross_station_binary.html",
+    "title": "Cross-station binary transfer",
+    "description": "Only the two chemicals measured at both pills and surfaces are included."
+  },
+  {
+    "file": "04_cwa_instrument_shift.html",
+    "title": "cwa acquisition shift",
+    "description": "Only held instruments containing at least two target classes are reported."
+  },
+  {
+    "file": "05_pills_instrument_shift.html",
+    "title": "pills acquisition shift",
+    "description": "Only held instruments containing at least two target classes are reported."
+  },
+  {
+    "file": "06_surfaces_instrument_shift.html",
+    "title": "surfaces acquisition shift",
+    "description": "Only held instruments containing at least two target classes are reported."
+  }
+]

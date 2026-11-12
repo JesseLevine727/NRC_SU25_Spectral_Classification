@@ -1,0 +1,29 @@
+{
+  "checked_artifacts": 107,
+  "checks": {
+    "all_html_are_standalone_documents": true,
+    "all_html_exist": true,
+    "all_selected_source_qc_pass": true,
+    "html_registry_unique": true,
+    "index_exists": true,
+    "inventory_bytes_match_summary": true,
+    "inventory_count_matches_summary": true,
+    "master_count": true,
+    "master_counts_sum_to_spectra": true,
+    "matrix_finite": true,
+    "matrix_shape": true,
+    "matrix_uid_order": true,
+    "no_common_grid_extrapolation": true,
+    "one_selected_row_per_source": true,
+    "recording_count_matches_summary": true,
+    "source_rows_have_load_result": true,
+    "strict_axis": true,
+    "tier_all_parseable_sers_count": true,
+    "tier_attributable_sers_count": true,
+    "tier_notes_clear_sers_count": true,
+    "tier_unique_attributable_sers_count": true,
+    "tiers_are_nested": true
+  },
+  "html_plots": 35,
+  "status": "pass"
+}

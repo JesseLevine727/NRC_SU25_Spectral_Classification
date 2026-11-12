@@ -1,0 +1,63 @@
+Began with dataset creation and then analyzed that dataset to see which research questions it is conducive to answering.
+
+Raw dataset had 1172 recordings:
+For a recording to be included in the real dataset:
+-had to be SERS, no pure Raman
+-no duplicates
+-each SERS had to have a chemical target, master sample, assigned station and instrument.
+
+This results in the master dataset of 598 spectra.
+
+Also have two 'supplementary' datasets:
+-500 spectra: excludes SERS spectra with low quality or low-signal
+-575 spectra: excluding Mira-1 examples because in the metadata there is listed a 'failed system-suitability state' in each one of the Mira-1 examples included.
+
+SO these two extra reduced datasets will act as stress/sensitivity cases.
+So the full 598 spectra dataset will be the baseline for all the questions (I'll go through).
+
+the 500 spectra dataset will answer if results are being distorted by poor quality data.
+
+and the 575 mira-1 excluded dataset will answer if results are distorted by a potentially distorted instrument.
+
+Essentially performance vs data-quality and performance vs instrument quality.
+
+What is the dataset scientifically conducive to?
+-Primary question: similar to what we presented in Toronto:
+	-Chemical classification under acquisition shift: remove an instrument from model training
+
+This is because the same samples were measured across multiple systems and therefore:
+we can distinguish chemical information that should remain consistent
+and instrument or sensor effects that change between measurements.
+
+So I have 5 questions I think the dataset lends itself too:
+#1 unseen-Instrument classification
+#2 Preprocessing: Which preprocessing best reduces acquisition background and noise wihtout damaging chemical information
+Alternative preprocessing to be examined:
+-SG smoothing
+-arPLS bseline correction
+-vector norm
+-first deriv
+#3 Unviversal versus adaptive preprocessing
+Should every instrument receive the same preprocessing or should the method adapt based on instrument family or quality characteristics of the current spectrum
+#4 Classical ML vs Deep Learning
+does deep learning improve unseen-instrument chemical identification over classical ML
+Classical methods will include: Random Forests classifier, SVMs, logistic regression
+the deep methods must be compact, small number of parameters given the dataset size:
+Deep methods will include: 
+-ordinary 1-D CNN 
+-Acquisition-aware CNN: similar to siamese network concept: contrastive learning
+
+I had initially wanted to look into autoencoders and variational autoencoders and disentangled VAEs, but they arent appropriate.
+I initially wanted to see if I could train a neural network to cleanly seperate chemical from substrate but the dataset doesnt independently cross the same chemicals over enough substrates and instruments to distinguish chemical variations from acquisiton effects.
+
+#5 Calibration data
+IF a completely unseen instrument performs poorly, how much improvement comes from one, two, three or five calibration samples from that instrument?
+
+#6 Can the model recognize when a spectrum is unreliable or unlike the chemicals used during training?
+
+?
+
+#7 Can or which instruments work or are sufficicent at identify the chemical or get good signal form the required chemical or which substrate? substrates should be instrument independent!!! 
+
+the point of the field trial was meant to show that the substrates were instrument independent! can we show this with ML or DL?? 
+

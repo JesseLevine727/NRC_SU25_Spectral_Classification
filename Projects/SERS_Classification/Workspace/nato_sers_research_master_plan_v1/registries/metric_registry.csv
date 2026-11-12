@@ -1,0 +1,26 @@
+metric_id,scope,name,direction,level,independent_unit,aggregation,uncertainty,interpretation
+M01,P,Balanced accuracy,higher,spectrum within domain,domain,"unweighted class recall then unweighted mean across 13 domains",paired hierarchical master/domain bootstrap,Primary chemical-transfer endpoint
+M02,P,Paired balanced-accuracy difference,higher,domain,domain,"acquisition-aware minus selected classical per domain",paired hierarchical bootstrap and leave-one-domain-out,Primary effect size
+M03,S,Macro F1,higher,spectrum,master,"fold predictions pooled then class-unweighted F1",master bootstrap,Secondary discrimination
+M04,S,Per-class recall,higher,class within domain,master,"correct class predictions divided by class support",stratified master bootstrap,Class-specific failure
+M05,S,Worst-domain balanced accuracy,higher,domain,domain,minimum over eligible domains,bootstrap descriptive,Worst-case robustness
+M06,S,Instrument-balanced master BA,higher,master,master,"average within instrument then equally across instruments",master bootstrap,Multi-view operational result
+M07,S,Negative log likelihood,lower,spectrum,master,mean true-class negative log probability,master bootstrap,Probabilistic accuracy
+M08,S,Multiclass Brier score,lower,spectrum,master,mean squared probability error,master bootstrap,Calibration and discrimination
+M09,S,Expected calibration error,lower,spectrum,master,equal-mass 10-bin weighted calibration gap,master bootstrap,Calibration diagnostic
+M10,S,Selective risk,lower,accepted master,master,error among accepted predictions by retained coverage,master bootstrap,Risk-coverage evaluation
+M11,S,Unknown AUROC,higher,master,held station-chemical task,known versus held-unknown score ranking,task and master bootstrap,Narrow novelty detection
+M12,S,Unknown AUPR,higher,master,held station-chemical task,unknown-positive precision recall area,task and master bootstrap,Prevalence-sensitive novelty detection
+M13,S,OSCR-AUC,higher,master,held station-chemical task,correct-known versus accepted-unknown operating area,task and master bootstrap,Joint classification/rejection
+M14,S,FPR at 95 percent known recall,lower,master,held station-chemical task,false unknown acceptance at fixed known recall,task and master bootstrap,Safety-oriented rejection
+M15,S,Target-adjusted instrument probe increment,lower,embedding,domain,"spectral probe cell-BA minus chemistry-null cell-BA",master bootstrap,Residual domain information
+M16,S,Target-adjusted sensor probe increment,lower,embedding,domain,"spectral probe cell-BA minus chemistry-null cell-BA",master bootstrap,Residual sensor information
+M17,S,Cross-instrument same-master cosine distance,lower,pair,master,mean pair distance after equal master weighting,master bootstrap,Representation consistency
+M18,S,Correctness-conditioned prediction agreement,higher,pair,master,agreement separated by correct/wrong status,master bootstrap,Paired prediction consistency
+M19,S,Robustness degradation AUC,lower,perturbation curve,domain,area of BA loss versus perturbation magnitude,domain/master bootstrap,Perturbation sensitivity
+M20,E,K-means metadata NMI,context-dependent,cluster,master,normalized mutual information with target instrument sensor,master subsampling,Exploratory structure only
+M21,E,HDBSCAN noise fraction,context-dependent,spectrum,master,fraction assigned noise,master subsampling,Exploratory density structure
+M22,E,Embedding silhouette,context-dependent,embedding,master,silhouette for declared grouping,master subsampling,Exploratory geometry only
+M23,S,Training time,lower,run,run,wall-clock seconds,seed distribution,Compute efficiency
+M24,S,Inference latency,lower,spectrum,run,median and p95 milliseconds,run distribution,Deployment efficiency
+M25,S,Serialized model size,lower,model,run,bytes on disk,none,Complexity

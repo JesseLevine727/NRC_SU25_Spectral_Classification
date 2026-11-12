@@ -1,0 +1,10 @@
+candidate_order,candidate_id,model_family,representation,parameters_json
+0,pca_logistic__arpls_minmax__sealed_quality,pca_logistic,arpls_minmax,"{""C"": 1.0, ""class_weight"": ""balanced"", ""maximum_iterations"": 5000, ""pca_components"": 32, ""pca_whiten"": true}"
+1,pca_logistic__minimal_minmax__sealed_quality,pca_logistic,minimal_minmax,"{""C"": 1.0, ""class_weight"": ""balanced"", ""maximum_iterations"": 5000, ""pca_components"": 32, ""pca_whiten"": true}"
+2,pca_logistic__derivative_1__sealed_quality,pca_logistic,derivative_1,"{""C"": 0.1, ""class_weight"": ""balanced"", ""maximum_iterations"": 5000, ""pca_components"": 32, ""pca_whiten"": true}"
+3,rbf_svm__arpls_minmax__sealed_quality,rbf_svm,arpls_minmax,"{""C"": 30.0, ""class_weight"": ""balanced"", ""gamma"": ""scale""}"
+4,rbf_svm__minimal_minmax__sealed_quality,rbf_svm,minimal_minmax,"{""C"": 30.0, ""class_weight"": ""balanced"", ""gamma"": 0.0001}"
+5,rbf_svm__derivative_1__sealed_quality,rbf_svm,derivative_1,"{""C"": 3.0, ""class_weight"": ""balanced"", ""gamma"": 0.0001}"
+6,random_forest__arpls_minmax__sealed_quality,random_forest,arpls_minmax,"{""bootstrap"": true, ""class_weight"": ""balanced_subsample"", ""criterion"": ""gini"", ""estimator_jobs"": 1, ""master_weighting"": ""uniform_rows"", ""max_depth"": null, ""max_features"": ""sqrt"", ""min_samples_leaf"": 4, ""n_estimators"": 300}"
+7,random_forest__minimal_minmax__sealed_quality,random_forest,minimal_minmax,"{""bootstrap"": true, ""class_weight"": ""balanced_subsample"", ""criterion"": ""gini"", ""estimator_jobs"": 1, ""master_weighting"": ""uniform_rows"", ""max_depth"": null, ""max_features"": ""sqrt"", ""min_samples_leaf"": 4, ""n_estimators"": 300}"
+8,random_forest__derivative_1__sealed_quality,random_forest,derivative_1,"{""bootstrap"": true, ""class_weight"": ""balanced_subsample"", ""criterion"": ""gini"", ""estimator_jobs"": 1, ""master_weighting"": ""uniform_rows"", ""max_depth"": null, ""max_features"": ""sqrt"", ""min_samples_leaf"": 4, ""n_estimators"": 300}"

@@ -1,0 +1,57 @@
+{
+  "checks": {
+    "all_117_registered_plots_are_standalone_html": true,
+    "all_indexes_and_cnn_history_are_standalone_html": true,
+    "all_nato_sers_scripts_compile_and_configs_parse": true,
+    "all_preprocessing_matrices_finite_and_aligned": true,
+    "all_prespecified_preprocessing_candidates_exist": true,
+    "authoritative_source_matches_inventory_hashes": true,
+    "classical_neural_and_shift_models_present": true,
+    "common_axis_never_extrapolates": true,
+    "literature_and_project_decision_are_documented": true,
+    "manifest_tier_counts_match": true,
+    "master_grouped_and_unseen_instrument_splits_are_feasible_and_disjoint": true,
+    "metadata_and_workbooks_audited": true,
+    "metric_tables_are_nonempty_and_finite": true,
+    "preprocessing_metrics_are_complete": true,
+    "prior_raw_validation_passes": true,
+    "project_mirror_is_byte_identical": true,
+    "raw_inventory_counts_and_bytes": true,
+    "raw_matrix_integrity": true,
+    "reported_count_flow_is_locked": true,
+    "selection_is_unique_attributable_and_qc_pass": true,
+    "source_numeric_inventory_is_complete": true
+  },
+  "diagnostics": {
+    "mirror_hash_failures_first20": [],
+    "source_hash_failures_first20": [],
+    "split_audit": {
+      "aggregate": {
+        "folds": 5,
+        "master_disjoint": true
+      },
+      "leave_instrument_out": {
+        "adequately_supported_primary_domains": 13,
+        "held_instrument_absent_from_training": true,
+        "reported_domains": 17
+      },
+      "station_cwa": {
+        "folds": 4,
+        "master_disjoint": true
+      },
+      "station_pills": {
+        "folds": 4,
+        "master_disjoint": true
+      },
+      "station_surfaces": {
+        "folds": 4,
+        "master_disjoint": true
+      }
+    }
+  },
+  "hashed_artifacts": 228,
+  "registered_standalone_html_plots": 117,
+  "source_files_rehashed_per_tree": 7148,
+  "status": "pass",
+  "workspace": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_raw_reexploration_v1"
+}

@@ -1,0 +1,109 @@
+{
+  "fingerprint": "c01023c30fcdd9df9d3934f7b22119b9b3ad1ddd3f6e2da76d8c148da5f37e2a",
+  "state_sha256": "effc6459d9fd8028f6069b951d97b256298de4768daa1273844a9a7baae2c92f",
+  "parameter_count": 142431,
+  "best_epoch": 25,
+  "epochs_run": 25,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.102128179739584
+    },
+    {
+      "epoch": 2,
+      "train_loss": 2.0962824094653403
+    },
+    {
+      "epoch": 3,
+      "train_loss": 2.094456760767701
+    },
+    {
+      "epoch": 4,
+      "train_loss": 2.0949715224479695
+    },
+    {
+      "epoch": 5,
+      "train_loss": 2.093073536562314
+    },
+    {
+      "epoch": 6,
+      "train_loss": 2.0851394458400736
+    },
+    {
+      "epoch": 7,
+      "train_loss": 2.0895848588084514
+    },
+    {
+      "epoch": 8,
+      "train_loss": 2.071270415193765
+    },
+    {
+      "epoch": 9,
+      "train_loss": 2.0739854802710904
+    },
+    {
+      "epoch": 10,
+      "train_loss": 2.0744828737360224
+    },
+    {
+      "epoch": 11,
+      "train_loss": 2.0506124507472365
+    },
+    {
+      "epoch": 12,
+      "train_loss": 2.0495848132611423
+    },
+    {
+      "epoch": 13,
+      "train_loss": 2.0333630559626132
+    },
+    {
+      "epoch": 14,
+      "train_loss": 2.0192674726041306
+    },
+    {
+      "epoch": 15,
+      "train_loss": 2.014396845881438
+    },
+    {
+      "epoch": 16,
+      "train_loss": 2.0000782291002692
+    },
+    {
+      "epoch": 17,
+      "train_loss": 1.994655276005593
+    },
+    {
+      "epoch": 18,
+      "train_loss": 1.9826973533520247
+    },
+    {
+      "epoch": 19,
+      "train_loss": 1.96856787573658
+    },
+    {
+      "epoch": 20,
+      "train_loss": 1.9619470991658834
+    },
+    {
+      "epoch": 21,
+      "train_loss": 1.959611483589331
+    },
+    {
+      "epoch": 22,
+      "train_loss": 1.9658213206857236
+    },
+    {
+      "epoch": 23,
+      "train_loss": 1.9581706752402679
+    },
+    {
+      "epoch": 24,
+      "train_loss": 1.949147835614775
+    },
+    {
+      "epoch": 25,
+      "train_loss": 1.943505621121607
+    }
+  ]
+}

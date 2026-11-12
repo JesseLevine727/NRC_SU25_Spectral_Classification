@@ -1,0 +1,41 @@
+{
+  "fingerprint": "d2c1a92e5827b113ecdbc27b96af9dda3b0727fd54cd0b1abbf5119377169967",
+  "metric": {
+    "accuracy": 0.2696629213483146,
+    "balanced_accuracy": 0.23095325726904672,
+    "brier_multiclass": 0.8805987777516835,
+    "declared_seed": 2718,
+    "development_masters": 51,
+    "expected_calibration_error_10": 0.1051734499380622,
+    "held_unknown": "ethyl_paraoxon",
+    "macro_f1": 0.1924797969678755,
+    "master_label_unchanged_fraction": 0.2549019607843137,
+    "n_supported": 89,
+    "n_test": 89,
+    "n_unsupported": 0,
+    "negative_log_likelihood": 1.9712289025042833,
+    "outer_fold": 3,
+    "representation": "derivative_1",
+    "row_label_unchanged_fraction": 0.2887700534759358,
+    "run_seed": 1308522402,
+    "selected_epoch": 43,
+    "variant": "synthetic_objectosphere"
+  },
+  "run": {
+    "declared_seed": 2718,
+    "development_masters": 51,
+    "epochs_run": 43,
+    "held_unknown": "ethyl_paraoxon",
+    "master_label_unchanged_fraction": 0.2549019607843137,
+    "n_development": 374,
+    "n_test": 89,
+    "outer_fold": 3,
+    "parameter_count": 142366,
+    "representation": "derivative_1",
+    "row_label_unchanged_fraction": 0.2887700534759358,
+    "run_seed": 1308522402,
+    "selected_epoch": 43,
+    "state_sha256": "75e600e182ec775b028bea84dc4126e8e52d7f09dcef8f048905e67cd9ca8372",
+    "variant": "synthetic_objectosphere"
+  }
+}

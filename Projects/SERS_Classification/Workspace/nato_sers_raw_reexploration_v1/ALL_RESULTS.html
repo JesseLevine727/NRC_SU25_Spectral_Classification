@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NATO SERS exploration results</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:1050px;margin:0 auto;padding:2.5rem;background:#f5f7fa;color:#17212b;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}.card{display:block;background:white;border:1px solid #d5dde7;border-radius:12px;padding:1.2rem;text-decoration:none;color:inherit;box-shadow:0 2px 8px #0000000d}.card:hover{border-color:#0072b2}.card h2{margin:.1rem 0 .6rem;font-size:1.2rem}.card p{color:#4f6170}code{color:#00689d}
+</style></head><body>
+<h1>NATO SERS raw-data restart</h1>
+<p>Unified entry point for the fresh, provenance-first exploration. Every plot page is a standalone interactive HTML document.</p>
+<p><a href="FINAL_REPORT.md">Read the final report</a> · <a href="../../docs/NATO_SERS_ACQUISITION_SHIFT_PROTOCOL_V1.md">Read the locked research protocol</a></p>
+<div class="grid">
+<a class="card" href="index.html"><h2>Raw structure and clustering</h2><p>Inventory, factor support, raw spectra, PCA, UMAP, t-SNE, K-means, HDBSCAN, and physical-master views.</p><code>35 plots</code></a>
+<a class="card" href="preprocessing/index.html"><h2>Preprocessing exploration</h2><p>Candidate scorecard, range sensitivity, overlays for every instrument, and instrument-stratified preservation metrics.</p><code>17 plots</code></a>
+<a class="card" href="benchmarks/index.html"><h2>Classical and shift baselines</h2><p>Master-grouped closed set, metadata-only confounding, unseen-instrument, and unseen-sensor tests.</p><code>5 plots</code></a>
+<a class="card" href="benchmarks/cnn/training_history.html"><h2>Bounded 1D-CNN</h2><p>Inner-master early-stopping curves for a location-preserving 277,479-parameter CNN.</p><code>5 folds</code></a>
+<a class="card" href="deep_audit/index.html"><h2>Deep metadata and quality audit</h2><p>Every selected spectrum, acquisition metadata, quality distributions, replicate similarity, peak-lag evidence, cluster stability, and candidate embeddings.</p><code>54 plots</code></a>
+<a class="card" href="identifiability/index.html"><h2>Chemistry-identifiable tasks</h2><p>Within-station three-class problems, clean cross-station binary transfer, and unseen-instrument plus unseen-master tests.</p><code>6 plots</code></a>
+</div>
+</body></html>

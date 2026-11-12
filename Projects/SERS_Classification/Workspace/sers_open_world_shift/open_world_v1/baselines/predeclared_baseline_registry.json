@@ -1,0 +1,168 @@
+{
+  "registry_version": "sers-open-world-baselines-v1",
+  "status_before_execution": "predeclared_before_true_unknown_outcomes",
+  "created_date": "2026-07-30",
+  "source_of_fixed_hyperparameters": "Previously sealed quality-pass classical and random-forest inner results; no open-set, held-chemical, field-stress, or held-domain outcome.",
+  "selection_seed": 1729,
+  "final_seeds": [
+    1729,
+    2718,
+    3141
+  ],
+  "candidate_registry": [
+    {
+      "candidate_id": "pca_logistic__arpls_minmax__sealed_quality",
+      "model_family": "pca_logistic",
+      "representation": "arpls_minmax",
+      "parameters": {
+        "pca_components": 32,
+        "pca_whiten": true,
+        "C": 1.0,
+        "class_weight": "balanced",
+        "maximum_iterations": 5000
+      }
+    },
+    {
+      "candidate_id": "pca_logistic__minimal_minmax__sealed_quality",
+      "model_family": "pca_logistic",
+      "representation": "minimal_minmax",
+      "parameters": {
+        "pca_components": 32,
+        "pca_whiten": true,
+        "C": 1.0,
+        "class_weight": "balanced",
+        "maximum_iterations": 5000
+      }
+    },
+    {
+      "candidate_id": "pca_logistic__derivative_1__sealed_quality",
+      "model_family": "pca_logistic",
+      "representation": "derivative_1",
+      "parameters": {
+        "pca_components": 32,
+        "pca_whiten": true,
+        "C": 0.1,
+        "class_weight": "balanced",
+        "maximum_iterations": 5000
+      }
+    },
+    {
+      "candidate_id": "rbf_svm__arpls_minmax__sealed_quality",
+      "model_family": "rbf_svm",
+      "representation": "arpls_minmax",
+      "parameters": {
+        "C": 30.0,
+        "gamma": "scale",
+        "class_weight": "balanced"
+      }
+    },
+    {
+      "candidate_id": "rbf_svm__minimal_minmax__sealed_quality",
+      "model_family": "rbf_svm",
+      "representation": "minimal_minmax",
+      "parameters": {
+        "C": 30.0,
+        "gamma": 0.0001,
+        "class_weight": "balanced"
+      }
+    },
+    {
+      "candidate_id": "rbf_svm__derivative_1__sealed_quality",
+      "model_family": "rbf_svm",
+      "representation": "derivative_1",
+      "parameters": {
+        "C": 3.0,
+        "gamma": 0.0001,
+        "class_weight": "balanced"
+      }
+    },
+    {
+      "candidate_id": "random_forest__arpls_minmax__sealed_quality",
+      "model_family": "random_forest",
+      "representation": "arpls_minmax",
+      "parameters": {
+        "n_estimators": 300,
+        "max_features": "sqrt",
+        "max_depth": null,
+        "min_samples_leaf": 4,
+        "criterion": "gini",
+        "bootstrap": true,
+        "class_weight": "balanced_subsample",
+        "master_weighting": "uniform_rows",
+        "estimator_jobs": 1
+      }
+    },
+    {
+      "candidate_id": "random_forest__minimal_minmax__sealed_quality",
+      "model_family": "random_forest",
+      "representation": "minimal_minmax",
+      "parameters": {
+        "n_estimators": 300,
+        "max_features": "sqrt",
+        "max_depth": null,
+        "min_samples_leaf": 4,
+        "criterion": "gini",
+        "bootstrap": true,
+        "class_weight": "balanced_subsample",
+        "master_weighting": "uniform_rows",
+        "estimator_jobs": 1
+      }
+    },
+    {
+      "candidate_id": "random_forest__derivative_1__sealed_quality",
+      "model_family": "random_forest",
+      "representation": "derivative_1",
+      "parameters": {
+        "n_estimators": 300,
+        "max_features": "sqrt",
+        "max_depth": null,
+        "min_samples_leaf": 4,
+        "criterion": "gini",
+        "bootstrap": true,
+        "class_weight": "balanced_subsample",
+        "master_weighting": "uniform_rows",
+        "estimator_jobs": 1
+      }
+    }
+  ],
+  "applicable_scores": [
+    "one_minus_calibrated_max_probability",
+    "predictive_entropy",
+    "minimum_class_mahalanobis_distance"
+  ],
+  "mahalanobis": {
+    "standard_scaler": true,
+    "pca_components": 32,
+    "pca_whiten": false,
+    "covariance": "ledoit_wolf_on_class_centered_residuals",
+    "distance": "minimum_squared_class_conditional_distance"
+  },
+  "surrogate_selection": {
+    "primary_metric": "master_oscr_auc",
+    "secondary_metric": "master_known_balanced_accuracy",
+    "tertiary_metric": "master_unknown_auroc",
+    "fixed_temperature": 1.0,
+    "temperature_rationale": "The validation-known fold is an outcome-bearing selection fold and therefore cannot fit its own calibration parameter. Identity temperature is fixed before outcomes; outer evaluation uses development-only cross-fitted temperature.",
+    "minimum_completed_scenarios": 20,
+    "tie_break": [
+      "candidate_order",
+      "score_order"
+    ]
+  },
+  "calibration": {
+    "temperature_bounds": [
+      0.05,
+      20.0
+    ],
+    "source": "four-fold cross-fitted known outer-development predictions",
+    "true_unknown_used": false,
+    "stress_used": false
+  },
+  "locked_reporting": {
+    "all_applicable_scores_reported": true,
+    "primary_score": "surrogate-selected only",
+    "nonselected_scores": "descriptive",
+    "random_forest_uses_three_final_seeds": true,
+    "deterministic_classical_models_use_one_final_seed": true
+  }
+}

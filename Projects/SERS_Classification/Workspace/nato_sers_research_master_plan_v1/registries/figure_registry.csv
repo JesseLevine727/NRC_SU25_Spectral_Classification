@@ -1,0 +1,36 @@
+figure_id,scope,phase,title,aggregation_unit,data_source,tikz_path,html_path,manuscript_role,status
+F00,P,P00,Research workflow and phase dependencies,phase,phase_registry.csv,figures/tikz/F00_research_workflow.tex,figures/html/F00_research_workflow.html,Plan overview,complete
+F01,P,P11,Decision gates and publication routes,gate,decision_gate_registry.csv,figures/tikz/F01_decision_gates.tex,figures/html/F01_decision_gates.html,Plan overview,complete
+F02,P,P01,Archive observation and SERS tier flow,observation,primary and tier manifests,figures/tikz/F02_observation_flow.tex,figures/html/F02_observation_flow.html,Main data figure,planned
+F03,P,P01,Target by station by instrument support,master,frozen primary manifest,figures/tikz/F03_factor_support.tex,figures/html/F03_factor_support.html,Main design figure,planned
+F04,S,P01,Native and effective axis coverage by instrument,spectrum,native source registry,figures/tikz/F04_native_axis_coverage.tex,figures/html/F04_native_axis_coverage.html,Methods figure,planned
+F05,S,P01,All spectra and robust instrument summaries,spectrum,primary arrays and manifest,figures/tikz/F05_instrument_spectra.tex,figures/html/F05_instrument_spectra.html,Supplementary QC,planned
+F06,S,P01,Preprocessing preservation by instrument,spectrum pair,representation registry,figures/tikz/F06_preprocessing_preservation.tex,figures/html/F06_preprocessing_preservation.html,Methods evidence,planned
+F07,E,P01,PCA structure before and after row scaling,master and spectrum,representation arrays,figures/tikz/F07_pca_structure.tex,figures/html/F07_pca_structure.html,Exploratory structure,planned
+F08,E,P01,UMAP and t-SNE target-domain views,master,embedding tables,figures/tikz/F08_nonlinear_embeddings.tex,figures/html/F08_nonlinear_embeddings.html,Exploratory supplement,planned
+F09,E,P01,Clustering stability and metadata association,master,cluster stability tables,figures/tikz/F09_cluster_association.tex,figures/html/F09_cluster_association.html,Exploratory supplement,planned
+F10,P,P02,Master and instrument exclusion split schematic,partition,split contract,figures/tikz/F10_split_design.tex,figures/html/F10_split_design.html,Main methods figure,planned
+F11,S,P02,Primary and low-support domain registry,domain,domain support audit,figures/tikz/F11_domain_support.tex,figures/html/F11_domain_support.html,Methods support,planned
+F12,S,P03,Classical inner-selection frequency and stability,outer run,classical selection registry,figures/tikz/F12_classical_selection.tex,figures/html/F12_classical_selection.html,Supplementary model selection,planned
+F13,S,P03,Within-station classical performance,station fold,classical T1 metrics,figures/tikz/F13_classical_t1.tex,figures/html/F13_classical_t1.html,Main baseline result,planned
+F14,P,P06,Unseen-instrument performance heatmap,domain,primary T3 metrics,figures/tikz/F14_t3_domain_heatmap.tex,figures/html/F14_t3_domain_heatmap.html,Main result,planned
+F15,P,P11,Paired acquisition-aware versus classical domain differences,domain,primary paired contrasts,figures/tikz/F15_primary_difference_forest.tex,figures/html/F15_primary_difference_forest.html,Primary effect figure,planned
+F16,S,P06,Domain and class confusion matrices,spectrum,primary predictions,figures/tikz/F16_confusion_matrices.tex,figures/html/F16_confusion_matrices.html,Failure analysis,planned
+F17,S,P06,Calibration reliability by method and regime,master,calibration tables,figures/tikz/F17_calibration.tex,figures/html/F17_calibration.html,Uncertainty figure,planned
+F18,S,P06,Risk versus retained coverage,master,selective prediction tables,figures/tikz/F18_risk_coverage.tex,figures/html/F18_risk_coverage.html,Operational uncertainty,planned
+F19,S,P04,Compact encoder architecture,component,architecture contract,figures/tikz/F19_deep_architecture.tex,figures/html/F19_deep_architecture.html,Methods schematic,planned
+F20,S,P04,Deep learning curves and selected epochs,run,training histories,figures/tikz/F20_learning_curves.tex,figures/html/F20_learning_curves.html,Training validity,planned
+F21,S,P05,Loss component and source-development ablations,pseudo-domain,development candidate metrics,figures/tikz/F21_loss_ablation.tex,figures/html/F21_loss_ablation.html,Method development,planned
+F22,S,P10,Embedding target-domain trade-off,domain probe,embedding and probe tables,figures/tikz/F22_embedding_tradeoff.tex,figures/html/F22_embedding_tradeoff.html,Representation evidence,planned
+F23,S,P10,Same-master consistency and retrieval,master pair,pair diagnostic tables,figures/tikz/F23_pair_consistency.tex,figures/html/F23_pair_consistency.html,Mechanistic evidence,planned
+F24,S,P08,Robustness degradation curves,domain and perturbation,robustness tables,figures/tikz/F24_robustness_curves.tex,figures/html/F24_robustness_curves.html,Robustness evidence,planned
+F25,S,P08,Preprocessing sensitivity paired differences,domain,preprocessing sensitivity metrics,figures/tikz/F25_preprocessing_sensitivity.tex,figures/html/F25_preprocessing_sensitivity.html,Sensitivity result,planned
+F26,S,P08,Quality-tier sensitivity paired differences,domain,quality sensitivity metrics,figures/tikz/F26_quality_sensitivity.tex,figures/html/F26_quality_sensitivity.html,Sensitivity result,planned
+F27,S,P06,Cross-station bidirectional transfer,direction,T2 metrics,figures/tikz/F27_cross_station.tex,figures/html/F27_cross_station.html,Secondary transfer result,planned
+F28,S,P07,Target adaptation and few-shot learning curves,domain and calibration size,adaptation metrics,figures/tikz/F28_adaptation_curves.tex,figures/html/F28_adaptation_curves.html,Secondary operational result,planned
+F29,S,P09,Open-set ROC and precision-recall curves,held task,open-set row and master scores,figures/tikz/F29_open_roc_pr.tex,figures/html/F29_open_roc_pr.html,Secondary open-set result,planned
+F30,S,P09,OSCR and known-coverage operating curves,held task,open-set thresholds,figures/tikz/F30_oscr_coverage.tex,figures/html/F30_oscr_coverage.html,Secondary open-set result,planned
+F31,S,P09,Held-chemical open-set effect forest,held station-chemical task,open-set metrics,figures/tikz/F31_open_task_forest.tex,figures/html/F31_open_task_forest.html,Open-set heterogeneity,planned
+F32,E,P10,Attribution and native-spectrum correspondence,spectrum and window,attribution tables plus native sources,figures/tikz/F32_attribution.tex,figures/html/F32_attribution.html,Explainability supplement,planned
+F33,S,P10,Structured error taxonomy,domain and failure category,error audit,figures/tikz/F33_error_taxonomy.tex,figures/html/F33_error_taxonomy.html,Failure analysis,planned
+F34,P,P11,Promotion-gate evidence dashboard,gate,decision gate evidence,figures/tikz/F34_promotion_dashboard.tex,figures/html/F34_promotion_dashboard.html,Final evidence map,planned

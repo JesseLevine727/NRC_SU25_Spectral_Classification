@@ -1,0 +1,13 @@
+{
+  "selected_spectra": 598,
+  "physical_masters": 69,
+  "metadata_fields_audited": 44,
+  "within_master_pairs": 3063,
+  "cross_instrument_pairs": 2473,
+  "html_plots": 54,
+  "overall_alignment": {
+    "median_abs_lag_cm1": 2.0,
+    "q90_abs_lag_cm1": 7.0,
+    "fraction_abs_lag_le_1": 0.4585523655479175
+  }
+}

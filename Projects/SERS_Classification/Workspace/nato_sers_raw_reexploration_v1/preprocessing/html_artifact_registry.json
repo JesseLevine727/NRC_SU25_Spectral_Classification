@@ -1,0 +1,87 @@
+[
+  {
+    "file": "01_preprocessing_scorecard.html",
+    "title": "Preprocessing scorecard",
+    "description": "Color is better-to-worse per diagnostic; values are raw and no scalar winner is imposed."
+  },
+  {
+    "file": "02_chemistry_vs_instrument.html",
+    "title": "Chemistry vs instrument signal",
+    "description": "Both diagnostics use physical-master-grouped folds; this is exploratory, not a final test estimate."
+  },
+  {
+    "file": "03_range_sensitivity.html",
+    "title": "Spectral-range sensitivity",
+    "description": "Compares only intervals measured by all instruments; no extrapolated 100\u2013399 cm\u207b\u00b9 values are introduced."
+  },
+  {
+    "file": "04_Agilent-1_candidate_overlay.html",
+    "title": "Agilent-1 preprocessing overlay",
+    "description": "Representative benzyl_fentanyl spectrum; every candidate is display-scaled identically."
+  },
+  {
+    "file": "05_Agilent-3_candidate_overlay.html",
+    "title": "Agilent-3 preprocessing overlay",
+    "description": "Representative benzyl_fentanyl spectrum; every candidate is display-scaled identically."
+  },
+  {
+    "file": "06_Mira-1_candidate_overlay.html",
+    "title": "Mira-1 preprocessing overlay",
+    "description": "Representative 4_ANPP spectrum; every candidate is display-scaled identically."
+  },
+  {
+    "file": "07_Mira-2_candidate_overlay.html",
+    "title": "Mira-2 preprocessing overlay",
+    "description": "Representative ethanol spectrum; every candidate is display-scaled identically."
+  },
+  {
+    "file": "08_Mira-3_candidate_overlay.html",
+    "title": "Mira-3 preprocessing overlay",
+    "description": "Representative blank spectrum; every candidate is display-scaled identically."
+  },
+  {
+    "file": "09_Pendar-1_candidate_overlay.html",
+    "title": "Pendar-1 preprocessing overlay",
+    "description": "Representative benzyl_fentanyl spectrum; every candidate is display-scaled identically."
+  },
+  {
+    "file": "10_Pendar-2_candidate_overlay.html",
+    "title": "Pendar-2 preprocessing overlay",
+    "description": "Representative 4_ANPP spectrum; every candidate is display-scaled identically."
+  },
+  {
+    "file": "11_Pendar-3_candidate_overlay.html",
+    "title": "Pendar-3 preprocessing overlay",
+    "description": "Representative 4_ANPP spectrum; every candidate is display-scaled identically."
+  },
+  {
+    "file": "12_RMX-1_candidate_overlay.html",
+    "title": "RMX-1 preprocessing overlay",
+    "description": "Representative ethyl_paraoxon spectrum; every candidate is display-scaled identically."
+  },
+  {
+    "file": "13_RMX-2_candidate_overlay.html",
+    "title": "RMX-2 preprocessing overlay",
+    "description": "Representative benzyl_fentanyl spectrum; every candidate is display-scaled identically."
+  },
+  {
+    "file": "instrument_metric_median_raw_shape_correlation.html",
+    "title": "Median raw-shape correlation by instrument",
+    "description": "Stratified preservation/damage diagnostic; compare candidates within each instrument."
+  },
+  {
+    "file": "instrument_metric_top_peak_location_recall_pm5cm1.html",
+    "title": "Prominent-peak recall within \u00b15 cm\u207b\u00b9 by instrument",
+    "description": "Stratified preservation/damage diagnostic; compare candidates within each instrument."
+  },
+  {
+    "file": "instrument_metric_median_baseline_span.html",
+    "title": "Residual baseline-span proxy by instrument",
+    "description": "Stratified preservation/damage diagnostic; compare candidates within each instrument."
+  },
+  {
+    "file": "instrument_metric_median_first_difference_roughness.html",
+    "title": "First-difference roughness proxy by instrument",
+    "description": "Stratified preservation/damage diagnostic; compare candidates within each instrument."
+  }
+]

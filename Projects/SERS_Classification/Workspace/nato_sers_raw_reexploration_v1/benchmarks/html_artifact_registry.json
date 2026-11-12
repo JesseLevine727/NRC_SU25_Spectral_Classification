@@ -1,0 +1,27 @@
+[
+  {
+    "file": "01_spectrum_closed_set.html",
+    "title": "Spectrum-level closed set",
+    "description": "Mean \u00b1 SD across 15 master-grouped folds; folds, not rows, are the repeated units."
+  },
+  {
+    "file": "02_master_closed_set.html",
+    "title": "Master-level closed set",
+    "description": "Mean \u00b1 SD across 15 master-grouped folds; folds, not rows, are the repeated units."
+  },
+  {
+    "file": "03_metadata_only.html",
+    "title": "Metadata-only confounding baseline",
+    "description": "No spectral intensities are used; high performance reveals design confounding."
+  },
+  {
+    "file": "04_leave_instrument_out.html",
+    "title": "Leave-instrument-out transfer",
+    "description": "The held domain is absent from training and test physical masters are also absent from training."
+  },
+  {
+    "file": "05_leave_sensor_family_out.html",
+    "title": "Leave-sensor_family-out transfer",
+    "description": "The held domain is absent from training and test physical masters are also absent from training."
+  }
+]

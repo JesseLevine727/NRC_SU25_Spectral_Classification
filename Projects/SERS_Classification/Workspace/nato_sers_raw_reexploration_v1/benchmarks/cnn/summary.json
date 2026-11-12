@@ -1,0 +1,29 @@
+{
+  "spectrum_balanced_accuracy": {
+    "mean": 0.6117276137469011,
+    "std": 0.10442197165584362
+  },
+  "spectrum_macro_f1": {
+    "mean": 0.5986626499038193,
+    "std": 0.09999381674247373
+  },
+  "master_balanced_accuracy": {
+    "mean": 0.7309523809523809,
+    "std": 0.16785292125728157
+  },
+  "master_macro_f1": {
+    "mean": 0.698548752834467,
+    "std": 0.18535855336694607
+  },
+  "best_epoch": {
+    "mean": 24.4,
+    "std": 13.685759021698432
+  },
+  "device": "cuda",
+  "architecture_parameters": 277479,
+  "preprocessing": "despike_savgol_minmax",
+  "range_cm1": [
+    400,
+    1800
+  ]
+}

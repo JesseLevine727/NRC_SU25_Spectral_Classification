@@ -1,0 +1,41 @@
+{
+  "fingerprint": "7ee0e509b058e55a45a5a6a13bc8d36a16540b8f35ac3078c1d81aebed7cbafe",
+  "metric": {
+    "accuracy": 0.16666666666666666,
+    "balanced_accuracy": 0.12628249367379804,
+    "brier_multiclass": 0.8468578748372318,
+    "declared_seed": 1729,
+    "development_masters": 48,
+    "expected_calibration_error_10": 0.1126236826853233,
+    "held_unknown": "4_nitrophenol",
+    "macro_f1": 0.11574623788909504,
+    "master_label_unchanged_fraction": 0.14583333333333334,
+    "n_supported": 84,
+    "n_test": 84,
+    "n_unsupported": 0,
+    "negative_log_likelihood": 1.8547973329516598,
+    "outer_fold": 2,
+    "representation": "arpls_minmax",
+    "row_label_unchanged_fraction": 0.09649122807017543,
+    "run_seed": 1908192246,
+    "selected_epoch": 35,
+    "variant": "erm_arpls"
+  },
+  "run": {
+    "declared_seed": 1729,
+    "development_masters": 48,
+    "epochs_run": 35,
+    "held_unknown": "4_nitrophenol",
+    "master_label_unchanged_fraction": 0.14583333333333334,
+    "n_development": 342,
+    "n_test": 84,
+    "outer_fold": 2,
+    "parameter_count": 142366,
+    "representation": "arpls_minmax",
+    "row_label_unchanged_fraction": 0.09649122807017543,
+    "run_seed": 1908192246,
+    "selected_epoch": 35,
+    "state_sha256": "e20dff9cacb470e6f68737040caa71d1b938db62e8a60c0a15cc00706344975c",
+    "variant": "erm_arpls"
+  }
+}

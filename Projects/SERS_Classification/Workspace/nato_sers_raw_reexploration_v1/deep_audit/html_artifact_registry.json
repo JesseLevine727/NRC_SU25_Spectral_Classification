@@ -1,0 +1,272 @@
+[
+  {
+    "file": "01_Agilent-1_raw_all.html",
+    "title": "Agilent-1: all raw spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "02_Agilent-1_smoothed_minmax_all.html",
+    "title": "Agilent-1: all smoothed_minmax spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "03_Agilent-3_raw_all.html",
+    "title": "Agilent-3: all raw spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "04_Agilent-3_smoothed_minmax_all.html",
+    "title": "Agilent-3: all smoothed_minmax spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "05_Mira-1_raw_all.html",
+    "title": "Mira-1: all raw spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "06_Mira-1_smoothed_minmax_all.html",
+    "title": "Mira-1: all smoothed_minmax spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "07_Mira-2_raw_all.html",
+    "title": "Mira-2: all raw spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "08_Mira-2_smoothed_minmax_all.html",
+    "title": "Mira-2: all smoothed_minmax spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "09_Mira-3_raw_all.html",
+    "title": "Mira-3: all raw spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "10_Mira-3_smoothed_minmax_all.html",
+    "title": "Mira-3: all smoothed_minmax spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "11_Pendar-1_raw_all.html",
+    "title": "Pendar-1: all raw spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "12_Pendar-1_smoothed_minmax_all.html",
+    "title": "Pendar-1: all smoothed_minmax spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "13_Pendar-2_raw_all.html",
+    "title": "Pendar-2: all raw spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "14_Pendar-2_smoothed_minmax_all.html",
+    "title": "Pendar-2: all smoothed_minmax spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "15_Pendar-3_raw_all.html",
+    "title": "Pendar-3: all raw spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "16_Pendar-3_smoothed_minmax_all.html",
+    "title": "Pendar-3: all smoothed_minmax spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "17_RMX-1_raw_all.html",
+    "title": "RMX-1: all raw spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "18_RMX-1_smoothed_minmax_all.html",
+    "title": "RMX-1: all smoothed_minmax spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "19_RMX-2_raw_all.html",
+    "title": "RMX-2: all raw spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "20_RMX-2_smoothed_minmax_all.html",
+    "title": "RMX-2: all smoothed_minmax spectra",
+    "description": "All unique attributable spectra; opacity reveals density and outliers."
+  },
+  {
+    "file": "21_quality_intensity_range.html",
+    "title": "Native intensity dynamic range",
+    "description": "Instrument-stratified native-spectrum diagnostic; inspect outliers before any resampling."
+  },
+  {
+    "file": "22_quality_baseline_energy_fraction_proxy.html",
+    "title": "Baseline-energy fraction proxy",
+    "description": "Instrument-stratified native-spectrum diagnostic; inspect outliers before any resampling."
+  },
+  {
+    "file": "23_quality_baseline_span_fraction_proxy.html",
+    "title": "Baseline-span fraction proxy",
+    "description": "Instrument-stratified native-spectrum diagnostic; inspect outliers before any resampling."
+  },
+  {
+    "file": "24_quality_relative_noise.html",
+    "title": "First-difference noise relative to intensity range",
+    "description": "Instrument-stratified native-spectrum diagnostic; inspect outliers before any resampling."
+  },
+  {
+    "file": "25_quality_spike_fraction_proxy.html",
+    "title": "Impulse/spike fraction proxy",
+    "description": "Instrument-stratified native-spectrum diagnostic; inspect outliers before any resampling."
+  },
+  {
+    "file": "26_quality_negative_fraction.html",
+    "title": "Negative-intensity fraction",
+    "description": "Instrument-stratified native-spectrum diagnostic; inspect outliers before any resampling."
+  },
+  {
+    "file": "27_quality_repeated_max_fraction.html",
+    "title": "Repeated-maximum/saturation proxy",
+    "description": "Instrument-stratified native-spectrum diagnostic; inspect outliers before any resampling."
+  },
+  {
+    "file": "28_pair_similarity.html",
+    "title": "Pair similarity hierarchy",
+    "description": "Contrasts repeated views, independent masters of the same target, and different targets."
+  },
+  {
+    "file": "29_median_cosine_heatmap.html",
+    "title": "Cross-instrument replicate cosine similarity",
+    "description": "Computed only where the same physical masters were measured by both instruments."
+  },
+  {
+    "file": "30_median_abs_lag_cm1_heatmap.html",
+    "title": "Estimated cross-instrument peak lag (absolute cm\u207b\u00b9)",
+    "description": "Computed only where the same physical masters were measured by both instruments."
+  },
+  {
+    "file": "31_despike_savgol_minmax_pca_target_analyte.html",
+    "title": "despike_savgol_minmax PCA by target_analyte",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "32_despike_savgol_minmax_pca_instrument.html",
+    "title": "despike_savgol_minmax PCA by instrument",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "33_despike_savgol_minmax_pca_sensor_family.html",
+    "title": "despike_savgol_minmax PCA by sensor_family",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "34_despike_savgol_minmax_pca_station.html",
+    "title": "despike_savgol_minmax PCA by station",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "35_despike_savgol_minmax_umap_target_analyte.html",
+    "title": "despike_savgol_minmax UMAP by target_analyte",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "36_despike_savgol_minmax_umap_instrument.html",
+    "title": "despike_savgol_minmax UMAP by instrument",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "37_despike_savgol_minmax_umap_sensor_family.html",
+    "title": "despike_savgol_minmax UMAP by sensor_family",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "38_despike_savgol_minmax_umap_station.html",
+    "title": "despike_savgol_minmax UMAP by station",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "39_despike_savgol_minmax_tsne_target_analyte.html",
+    "title": "despike_savgol_minmax TSNE by target_analyte",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "40_despike_savgol_minmax_tsne_instrument.html",
+    "title": "despike_savgol_minmax TSNE by instrument",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "41_despike_savgol_minmax_tsne_sensor_family.html",
+    "title": "despike_savgol_minmax TSNE by sensor_family",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "42_despike_savgol_minmax_tsne_station.html",
+    "title": "despike_savgol_minmax TSNE by station",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "43_arpls_savgol_minmax_pca_target_analyte.html",
+    "title": "arpls_savgol_minmax PCA by target_analyte",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "44_arpls_savgol_minmax_pca_instrument.html",
+    "title": "arpls_savgol_minmax PCA by instrument",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "45_arpls_savgol_minmax_pca_sensor_family.html",
+    "title": "arpls_savgol_minmax PCA by sensor_family",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "46_arpls_savgol_minmax_pca_station.html",
+    "title": "arpls_savgol_minmax PCA by station",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "47_arpls_savgol_minmax_umap_target_analyte.html",
+    "title": "arpls_savgol_minmax UMAP by target_analyte",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "48_arpls_savgol_minmax_umap_instrument.html",
+    "title": "arpls_savgol_minmax UMAP by instrument",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "49_arpls_savgol_minmax_umap_sensor_family.html",
+    "title": "arpls_savgol_minmax UMAP by sensor_family",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "50_arpls_savgol_minmax_umap_station.html",
+    "title": "arpls_savgol_minmax UMAP by station",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "51_minimal_area_pca_target_analyte.html",
+    "title": "minimal_area PCA by target_analyte",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "52_minimal_area_pca_instrument.html",
+    "title": "minimal_area PCA by instrument",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "53_minimal_area_pca_sensor_family.html",
+    "title": "minimal_area PCA by sensor_family",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  },
+  {
+    "file": "54_minimal_area_pca_station.html",
+    "title": "minimal_area PCA by station",
+    "description": "Candidate-preprocessed embedding; geometry is exploratory and hover preserves provenance."
+  }
+]

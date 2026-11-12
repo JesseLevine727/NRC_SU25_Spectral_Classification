@@ -1,0 +1,41 @@
+{
+  "fingerprint": "e6b762dad69775b624309d91b97fba3195e0295bfa1827375ce039f9550850c3",
+  "metric": {
+    "accuracy": 0.26506024096385544,
+    "balanced_accuracy": 0.26570048309178745,
+    "brier_multiclass": 0.8205276798927584,
+    "declared_seed": 3141,
+    "development_masters": 47,
+    "expected_calibration_error_10": 0.05222976355060447,
+    "held_unknown": "4_nitrophenol",
+    "macro_f1": 0.16341984046736321,
+    "master_label_unchanged_fraction": 0.23404255319148937,
+    "n_supported": 83,
+    "n_test": 83,
+    "n_unsupported": 0,
+    "negative_log_likelihood": 1.7549014727515089,
+    "outer_fold": 4,
+    "representation": "derivative_1",
+    "row_label_unchanged_fraction": 0.19825072886297376,
+    "run_seed": 1189237870,
+    "selected_epoch": 35,
+    "variant": "supervised_contrastive_joint"
+  },
+  "run": {
+    "declared_seed": 3141,
+    "development_masters": 47,
+    "epochs_run": 35,
+    "held_unknown": "4_nitrophenol",
+    "master_label_unchanged_fraction": 0.23404255319148937,
+    "n_development": 343,
+    "n_test": 83,
+    "outer_fold": 4,
+    "parameter_count": 142366,
+    "representation": "derivative_1",
+    "row_label_unchanged_fraction": 0.19825072886297376,
+    "run_seed": 1189237870,
+    "selected_epoch": 35,
+    "state_sha256": "f3a95e689b00bc5efa0dbd3ff9b97c064985f0da4db7723d6ae918b1e2dfdc2a",
+    "variant": "supervised_contrastive_joint"
+  }
+}

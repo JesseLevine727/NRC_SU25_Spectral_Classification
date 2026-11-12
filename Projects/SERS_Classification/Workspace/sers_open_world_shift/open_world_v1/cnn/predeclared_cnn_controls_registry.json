@@ -1,0 +1,68 @@
+{
+  "registry_version": "sers-open-world-cnn-controls-v1",
+  "status_before_execution": "predeclared_after_surrogate_execution_started_before_surrogate_metrics_or_any_cnn_locked_outcome_were_inspected",
+  "created_date": "2026-07-30",
+  "relationship_to_primary_registry": "configs/sers_open_world_cnn_v1.json",
+  "master_label_permutation": {
+    "model": "the development-selected variant and epoch for each held-chemical outer task",
+    "permutation_unit": "master_sample_id",
+    "permutation_scope": "known development masters only",
+    "test_labels_permuted": false,
+    "temperature": 1.0,
+    "endpoint": "supported known-quality-test balanced accuracy",
+    "expectation": "approximately the six-known-class chance level after averaging held-chemical tasks"
+  },
+  "fixed_erm_sensitivities": [
+    {
+      "control": "erm_derivative_augmented",
+      "representation": "derivative_1",
+      "augmentation": true,
+      "epoch_source_variant": "erm_derivative"
+    },
+    {
+      "control": "erm_derivative_no_augmentation",
+      "representation": "derivative_1",
+      "augmentation": false,
+      "epoch_source_variant": "erm_derivative"
+    },
+    {
+      "control": "erm_arpls_augmented",
+      "representation": "arpls_minmax",
+      "augmentation": true,
+      "epoch_source_variant": "erm_arpls"
+    },
+    {
+      "control": "erm_minimal_augmented",
+      "representation": "minimal_minmax",
+      "augmentation": true,
+      "epoch_source_variant": "erm_derivative"
+    }
+  ],
+  "sensitivity_epoch_policy": "Use the rounded median best epoch of the named ERM variant over its 600 development-only surrogate fitted models; minimal_minmax inherits derivative ERM epochs because it was not a CNN selection candidate.",
+  "sensitivity_temperature": 1.0,
+  "sensitivity_scores": [
+    "one_minus_calibrated_max_probability",
+    "predictive_entropy",
+    "energy",
+    "minimum_class_mahalanobis_distance",
+    "mc_dropout_mutual_information"
+  ],
+  "sensitivity_score_policy": "Report all scores descriptively; do not select a score using a true held chemical or stress spectrum.",
+  "final_seeds": [
+    1729,
+    2718,
+    3141
+  ],
+  "locked_partitions": [
+    "known_quality_test",
+    "unknown_quality",
+    "known_stress",
+    "unknown_stress"
+  ],
+  "interpretation_limits": {
+    "ablation_not_model_selection": true,
+    "no_target_tuned_epoch": true,
+    "no_target_tuned_score": true,
+    "no_denoising_claim": true
+  }
+}

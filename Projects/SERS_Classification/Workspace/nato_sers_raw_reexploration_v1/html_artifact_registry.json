@@ -1,0 +1,177 @@
+[
+  {
+    "description": "Counts native files, readable exports, reports, workbooks, and converted duplicates.",
+    "file": "01_file_inventory.html",
+    "title": "Raw file inventory"
+  },
+  {
+    "description": "Separates named SERS, ambiguous rows, ordinary Raman, and source-match outcomes.",
+    "file": "02_recording_flow.html",
+    "title": "Recording flow"
+  },
+  {
+    "description": "Exposes missing cells and acquisition/chemistry confounding before modeling.",
+    "file": "03_chemical_instrument_support.html",
+    "title": "Chemical \u00d7 instrument support"
+  },
+  {
+    "description": "Shows whether sensor and chemistry factors are sufficiently crossed.",
+    "file": "04_chemical_sensor_support.html",
+    "title": "Chemical \u00d7 sensor support"
+  },
+  {
+    "description": "Lines show nominal file axes; markers show the effective lower boundary after leading-flat detection.",
+    "file": "05_native_axis_coverage.html",
+    "title": "Native axis coverage"
+  },
+  {
+    "description": "Unnormalized intensities on the empirically shared measured interval; zoom and hover are enabled.",
+    "file": "06_raw_spectra_examples.html",
+    "title": "Raw spectral examples"
+  },
+  {
+    "description": "Instrument medians with 10th\u201390th percentile envelopes; diagnostic only, not a selected protocol.",
+    "file": "07_minmax_instrument_summaries.html",
+    "title": "Min\u2013max instrument summaries"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "08_raw_pca_target_analyte.html",
+    "title": "Raw channel-standardized PCA: target_analyte"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "09_raw_pca_instrument.html",
+    "title": "Raw channel-standardized PCA: instrument"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "10_raw_pca_sensor_family.html",
+    "title": "Raw channel-standardized PCA: sensor_family"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "11_raw_pca_station.html",
+    "title": "Raw channel-standardized PCA: station"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "12_minmax_pca_target_analyte.html",
+    "title": "Per-spectrum min\u2013max PCA: target_analyte"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "13_minmax_pca_instrument.html",
+    "title": "Per-spectrum min\u2013max PCA: instrument"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "14_minmax_pca_sensor_family.html",
+    "title": "Per-spectrum min\u2013max PCA: sensor_family"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "15_minmax_pca_station.html",
+    "title": "Per-spectrum min\u2013max PCA: station"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "16_minmax_umap_target_analyte.html",
+    "title": "Per-spectrum min\u2013max UMAP: target_analyte"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "17_minmax_umap_instrument.html",
+    "title": "Per-spectrum min\u2013max UMAP: instrument"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "18_minmax_umap_sensor_family.html",
+    "title": "Per-spectrum min\u2013max UMAP: sensor_family"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "19_minmax_umap_station.html",
+    "title": "Per-spectrum min\u2013max UMAP: station"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "20_minmax_tsne_target_analyte.html",
+    "title": "Per-spectrum min\u2013max t-SNE: target_analyte"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "21_minmax_tsne_instrument.html",
+    "title": "Per-spectrum min\u2013max t-SNE: instrument"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "22_minmax_tsne_sensor_family.html",
+    "title": "Per-spectrum min\u2013max t-SNE: sensor_family"
+  },
+  {
+    "description": "Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.",
+    "file": "23_minmax_tsne_station.html",
+    "title": "Per-spectrum min\u2013max t-SNE: station"
+  },
+  {
+    "description": "Silhouette is exploratory and does not establish chemical validity.",
+    "file": "24_kmeans_k_search.html",
+    "title": "K-means k search"
+  },
+  {
+    "description": "Cluster labels are overlaid on UMAP for inspection; clustering itself used PCA95 features.",
+    "file": "25_kmeans_cluster.html",
+    "title": "K-means assignments on min\u2013max PCA"
+  },
+  {
+    "description": "Cluster labels are overlaid on UMAP for inspection; clustering itself used PCA95 features.",
+    "file": "26_hdbscan_cluster.html",
+    "title": "HDBSCAN assignments on min\u2013max PCA"
+  },
+  {
+    "description": "One point per physical master; each spectrum is min\u2013max scaled before within-master averaging.",
+    "file": "27_master_pca_target_analyte.html",
+    "title": "Physical-master mean-spectrum PCA: target_analyte"
+  },
+  {
+    "description": "One point per physical master; each spectrum is min\u2013max scaled before within-master averaging.",
+    "file": "28_master_pca_station.html",
+    "title": "Physical-master mean-spectrum PCA: station"
+  },
+  {
+    "description": "One point per physical master; each spectrum is min\u2013max scaled before within-master averaging.",
+    "file": "29_master_umap_target_analyte.html",
+    "title": "Physical-master mean-spectrum UMAP: target_analyte"
+  },
+  {
+    "description": "One point per physical master; each spectrum is min\u2013max scaled before within-master averaging.",
+    "file": "30_master_umap_station.html",
+    "title": "Physical-master mean-spectrum UMAP: station"
+  },
+  {
+    "description": "One point per physical master; each spectrum is min\u2013max scaled before within-master averaging.",
+    "file": "31_master_tsne_target_analyte.html",
+    "title": "Physical-master mean-spectrum t-SNE: target_analyte"
+  },
+  {
+    "description": "One point per physical master; each spectrum is min\u2013max scaled before within-master averaging.",
+    "file": "32_master_tsne_station.html",
+    "title": "Physical-master mean-spectrum t-SNE: station"
+  },
+  {
+    "description": "One independent point per physical master, avoiding repeated-row pseudo-replication.",
+    "file": "33_master_kmeans_k_search.html",
+    "title": "Master-level K-means k search"
+  },
+  {
+    "description": "Assignments use master-mean PCA95 features and are shown on the master UMAP.",
+    "file": "34_master_kmeans_cluster.html",
+    "title": "Master-level K-means assignments"
+  },
+  {
+    "description": "Assignments use master-mean PCA95 features and are shown on the master UMAP.",
+    "file": "35_master_hdbscan_cluster.html",
+    "title": "Master-level HDBSCAN assignments"
+  }
+]

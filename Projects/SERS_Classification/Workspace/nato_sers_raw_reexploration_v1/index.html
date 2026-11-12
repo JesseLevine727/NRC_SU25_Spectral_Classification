@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NATO SERS raw re-exploration</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:1280px;margin:0 auto;padding:2rem;background:#f6f8fb;color:#17212b}
+h1{margin-bottom:.3rem} .lede{font-size:1.1rem;color:#425466;max-width:900px}
+.summary{display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0} .pill{background:white;border:1px solid #d9e1ea;border-radius:10px;padding:.8rem 1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1rem}
+.card{display:block;background:white;border:1px solid #d9e1ea;border-radius:12px;padding:1rem;text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.card:hover{border-color:#0072B2;transform:translateY(-1px)} .card h2{font-size:1.05rem;margin:.1rem 0 .5rem} .card p{color:#526372;min-height:3.2rem} code{color:#00689d}
+</style></head><body>
+<h1>NATO SERS raw-data re-exploration</h1>
+<p class="lede">Fresh provenance-first exploration. Previous filtering and preprocessing decisions are not treated as inputs. Open any card for a standalone interactive Plotly view; zoom, pan, hover, and SVG export are enabled.</p>
+<div class="summary">
+<div class="pill"><b>7148</b><br>raw archive files</div>
+<div class="pill"><b>1172</b><br>expanded log observations</div>
+<div class="pill"><b>721</b><br>named-SERS log observations</div>
+<div class="pill"><b>598</b><br>unique attributable spectra</div>
+<div class="pill"><b>69</b><br>physical masters</div>
+<div class="pill"><b>400–1849</b><br>shared measured cm⁻¹</div>
+</div>
+<div class="grid"><a class="card" href="html/01_file_inventory.html">
+<h2>Raw file inventory</h2>
+<p>Counts native files, readable exports, reports, workbooks, and converted duplicates.</p>
+<code>01_file_inventory.html</code>
+</a>
+<a class="card" href="html/02_recording_flow.html">
+<h2>Recording flow</h2>
+<p>Separates named SERS, ambiguous rows, ordinary Raman, and source-match outcomes.</p>
+<code>02_recording_flow.html</code>
+</a>
+<a class="card" href="html/03_chemical_instrument_support.html">
+<h2>Chemical × instrument support</h2>
+<p>Exposes missing cells and acquisition/chemistry confounding before modeling.</p>
+<code>03_chemical_instrument_support.html</code>
+</a>
+<a class="card" href="html/04_chemical_sensor_support.html">
+<h2>Chemical × sensor support</h2>
+<p>Shows whether sensor and chemistry factors are sufficiently crossed.</p>
+<code>04_chemical_sensor_support.html</code>
+</a>
+<a class="card" href="html/05_native_axis_coverage.html">
+<h2>Native axis coverage</h2>
+<p>Lines show nominal file axes; markers show the effective lower boundary after leading-flat detection.</p>
+<code>05_native_axis_coverage.html</code>
+</a>
+<a class="card" href="html/06_raw_spectra_examples.html">
+<h2>Raw spectral examples</h2>
+<p>Unnormalized intensities on the empirically shared measured interval; zoom and hover are enabled.</p>
+<code>06_raw_spectra_examples.html</code>
+</a>
+<a class="card" href="html/07_minmax_instrument_summaries.html">
+<h2>Min–max instrument summaries</h2>
+<p>Instrument medians with 10th–90th percentile envelopes; diagnostic only, not a selected protocol.</p>
+<code>07_minmax_instrument_summaries.html</code>
+</a>
+<a class="card" href="html/08_raw_pca_target_analyte.html">
+<h2>Raw channel-standardized PCA: target_analyte</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>08_raw_pca_target_analyte.html</code>
+</a>
+<a class="card" href="html/09_raw_pca_instrument.html">
+<h2>Raw channel-standardized PCA: instrument</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>09_raw_pca_instrument.html</code>
+</a>
+<a class="card" href="html/10_raw_pca_sensor_family.html">
+<h2>Raw channel-standardized PCA: sensor_family</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>10_raw_pca_sensor_family.html</code>
+</a>
+<a class="card" href="html/11_raw_pca_station.html">
+<h2>Raw channel-standardized PCA: station</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>11_raw_pca_station.html</code>
+</a>
+<a class="card" href="html/12_minmax_pca_target_analyte.html">
+<h2>Per-spectrum min–max PCA: target_analyte</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>12_minmax_pca_target_analyte.html</code>
+</a>
+<a class="card" href="html/13_minmax_pca_instrument.html">
+<h2>Per-spectrum min–max PCA: instrument</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>13_minmax_pca_instrument.html</code>
+</a>
+<a class="card" href="html/14_minmax_pca_sensor_family.html">
+<h2>Per-spectrum min–max PCA: sensor_family</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>14_minmax_pca_sensor_family.html</code>
+</a>
+<a class="card" href="html/15_minmax_pca_station.html">
+<h2>Per-spectrum min–max PCA: station</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>15_minmax_pca_station.html</code>
+</a>
+<a class="card" href="html/16_minmax_umap_target_analyte.html">
+<h2>Per-spectrum min–max UMAP: target_analyte</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>16_minmax_umap_target_analyte.html</code>
+</a>
+<a class="card" href="html/17_minmax_umap_instrument.html">
+<h2>Per-spectrum min–max UMAP: instrument</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>17_minmax_umap_instrument.html</code>
+</a>
+<a class="card" href="html/18_minmax_umap_sensor_family.html">
+<h2>Per-spectrum min–max UMAP: sensor_family</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>18_minmax_umap_sensor_family.html</code>
+</a>
+<a class="card" href="html/19_minmax_umap_station.html">
+<h2>Per-spectrum min–max UMAP: station</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>19_minmax_umap_station.html</code>
+</a>
+<a class="card" href="html/20_minmax_tsne_target_analyte.html">
+<h2>Per-spectrum min–max t-SNE: target_analyte</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>20_minmax_tsne_target_analyte.html</code>
+</a>
+<a class="card" href="html/21_minmax_tsne_instrument.html">
+<h2>Per-spectrum min–max t-SNE: instrument</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>21_minmax_tsne_instrument.html</code>
+</a>
+<a class="card" href="html/22_minmax_tsne_sensor_family.html">
+<h2>Per-spectrum min–max t-SNE: sensor_family</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>22_minmax_tsne_sensor_family.html</code>
+</a>
+<a class="card" href="html/23_minmax_tsne_station.html">
+<h2>Per-spectrum min–max t-SNE: station</h2>
+<p>Hover identifies the recording, physical master, chemistry, instrument, sensor, and station.</p>
+<code>23_minmax_tsne_station.html</code>
+</a>
+<a class="card" href="html/24_kmeans_k_search.html">
+<h2>K-means k search</h2>
+<p>Silhouette is exploratory and does not establish chemical validity.</p>
+<code>24_kmeans_k_search.html</code>
+</a>
+<a class="card" href="html/25_kmeans_cluster.html">
+<h2>K-means assignments on min–max PCA</h2>
+<p>Cluster labels are overlaid on UMAP for inspection; clustering itself used PCA95 features.</p>
+<code>25_kmeans_cluster.html</code>
+</a>
+<a class="card" href="html/26_hdbscan_cluster.html">
+<h2>HDBSCAN assignments on min–max PCA</h2>
+<p>Cluster labels are overlaid on UMAP for inspection; clustering itself used PCA95 features.</p>
+<code>26_hdbscan_cluster.html</code>
+</a>
+<a class="card" href="html/27_master_pca_target_analyte.html">
+<h2>Physical-master mean-spectrum PCA: target_analyte</h2>
+<p>One point per physical master; each spectrum is min–max scaled before within-master averaging.</p>
+<code>27_master_pca_target_analyte.html</code>
+</a>
+<a class="card" href="html/28_master_pca_station.html">
+<h2>Physical-master mean-spectrum PCA: station</h2>
+<p>One point per physical master; each spectrum is min–max scaled before within-master averaging.</p>
+<code>28_master_pca_station.html</code>
+</a>
+<a class="card" href="html/29_master_umap_target_analyte.html">
+<h2>Physical-master mean-spectrum UMAP: target_analyte</h2>
+<p>One point per physical master; each spectrum is min–max scaled before within-master averaging.</p>
+<code>29_master_umap_target_analyte.html</code>
+</a>
+<a class="card" href="html/30_master_umap_station.html">
+<h2>Physical-master mean-spectrum UMAP: station</h2>
+<p>One point per physical master; each spectrum is min–max scaled before within-master averaging.</p>
+<code>30_master_umap_station.html</code>
+</a>
+<a class="card" href="html/31_master_tsne_target_analyte.html">
+<h2>Physical-master mean-spectrum t-SNE: target_analyte</h2>
+<p>One point per physical master; each spectrum is min–max scaled before within-master averaging.</p>
+<code>31_master_tsne_target_analyte.html</code>
+</a>
+<a class="card" href="html/32_master_tsne_station.html">
+<h2>Physical-master mean-spectrum t-SNE: station</h2>
+<p>One point per physical master; each spectrum is min–max scaled before within-master averaging.</p>
+<code>32_master_tsne_station.html</code>
+</a>
+<a class="card" href="html/33_master_kmeans_k_search.html">
+<h2>Master-level K-means k search</h2>
+<p>One independent point per physical master, avoiding repeated-row pseudo-replication.</p>
+<code>33_master_kmeans_k_search.html</code>
+</a>
+<a class="card" href="html/34_master_kmeans_cluster.html">
+<h2>Master-level K-means assignments</h2>
+<p>Assignments use master-mean PCA95 features and are shown on the master UMAP.</p>
+<code>34_master_kmeans_cluster.html</code>
+</a>
+<a class="card" href="html/35_master_hdbscan_cluster.html">
+<h2>Master-level HDBSCAN assignments</h2>
+<p>Assignments use master-mean PCA95 features and are shown on the master UMAP.</p>
+<code>35_master_hdbscan_cluster.html</code>
+</a></div>
+</body></html>

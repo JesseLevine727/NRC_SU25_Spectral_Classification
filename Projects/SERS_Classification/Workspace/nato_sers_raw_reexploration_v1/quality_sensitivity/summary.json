@@ -1,0 +1,20 @@
+{
+  "tiers": {
+    "unique_attributable": {
+      "spectra": 598,
+      "masters": 69
+    },
+    "notes_clear": {
+      "spectra": 500,
+      "masters": 69
+    },
+    "exclude_mira1_failed_suitability": {
+      "spectra": 575,
+      "masters": 69
+    },
+    "notes_clear_and_exclude_mira1": {
+      "spectra": 479,
+      "masters": 69
+    }
+  }
+}

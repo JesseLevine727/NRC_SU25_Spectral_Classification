@@ -1,0 +1,20 @@
+{
+  "protocol_version": "nato-sers-preprocessing-exploration-v1",
+  "config_sha256": "d9ba47b811d0191305ac5791af4481a794d8a1cdfc95fd5dc757ad57a87be5ce",
+  "input_raw_bundle_sha256": "25c765231d15d75c7e0d274de3dd8108224966310ee9b974ae6673dbe8e893b9",
+  "candidates": [
+    "minimal_minmax",
+    "minimal_snv",
+    "minimal_vector",
+    "minimal_area",
+    "despike_minmax",
+    "despike_savgol_minmax",
+    "rubberband_minmax",
+    "asls_minmax",
+    "arpls_minmax",
+    "arpls_savgol_minmax",
+    "arpls_savgol_snv",
+    "savgol_derivative1_snv"
+  ],
+  "html_plots": 13
+}
