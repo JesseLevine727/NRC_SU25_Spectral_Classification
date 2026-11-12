@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "canonical": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_open_world_shift/open_world_v1",
+  "rebuild": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/sers_open_world_shift/open_world_v1_clean_rebuild_20260730",
+  "validated_bundles": true,
+  "artifacts_compared": 2987,
+  "semantic_exact": 2987,
+  "byte_identical": 2978,
+  "csv_pass": true,
+  "domain_npz_array_pass": true,
+  "cache_json_pass": true,
+  "surrogate_cache_pass": true,
+  "report_and_png_pass": true,
+  "expected_byte_variance": "Compressed NPZ container metadata and normalized provenance path fields may differ; every stored array and normalized table must remain exactly equal."
+}

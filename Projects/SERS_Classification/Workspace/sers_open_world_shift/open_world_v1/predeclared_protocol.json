@@ -58,7 +58,8 @@
       "known_quality_test",
       "unknown_quality",
       "known_stress",
-      "unknown_stress"
+      "unknown_stress",
+      "excluded_known_stress_development_masters"
     ],
     "threshold_crossfit_partitions": [
       "train_known",

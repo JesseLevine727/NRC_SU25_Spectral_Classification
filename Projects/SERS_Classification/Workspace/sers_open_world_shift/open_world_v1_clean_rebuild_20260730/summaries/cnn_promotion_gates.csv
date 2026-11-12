@@ -1,0 +1,7 @@
+gate,value,criterion,pass
+quality_known_ba_drop,-0.19099727819947743,difference >= -0.05,False
+quality_open_auroc_improvement,-0.224710964960965,difference >= 0.03,False
+quality_open_chemical_count,0.0,chemicals improved >= 4 of 6,False
+stress_open_auroc,0.5992881288317796,AUROC >= 0.60,False
+field_quality_auroc,0.5553087714754381,AUROC >= 0.90,False
+stress_known_ba_vs_supcon,-0.20801851851851855,difference >= 0.00,False

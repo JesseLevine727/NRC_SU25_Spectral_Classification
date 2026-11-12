@@ -1,0 +1,18 @@
+{
+  "dataset_hash_catalog": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/artifact_hashes.json",
+    "sha256": "2f7f03b7caf7a08cda0ee70a06ea7ba66fdd59a4ccc8751c1ffe4d46b109db24"
+  },
+  "dataset_version": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/dataset_version.json",
+    "sha256": "cde5347049fb593741dabfed0f36e3c01b9cf170d6cecc4d05278bf2aeaf4213"
+  },
+  "protocol": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/sers_open_world_shift_v1.json",
+    "sha256": "bff39f8537e74f9089282dd34bb5636a9e27de1d637b8012a797bc2b3000d510"
+  },
+  "script": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/freeze_sers_open_world_partitions.py",
+    "sha256": "63f5c1a3c6162fdcf840e18509e3462f3b6a7ae023e8e7af95e0c2e8ce7bac79"
+  }
+}

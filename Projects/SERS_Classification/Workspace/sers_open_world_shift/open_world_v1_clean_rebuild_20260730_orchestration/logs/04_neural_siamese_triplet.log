@@ -1,0 +1,330 @@
+START siamese_triplet calibration
+CALIBRATION siamese_triplet H=4_ANPP O=0 I=1
+CALIBRATION siamese_triplet H=4_ANPP O=0 I=2
+CALIBRATION siamese_triplet H=4_ANPP O=0 I=3
+CALIBRATION siamese_triplet H=4_ANPP O=0 I=4
+CALIBRATION siamese_triplet H=4_ANPP O=1 I=0
+CALIBRATION siamese_triplet H=4_ANPP O=1 I=2
+CALIBRATION siamese_triplet H=4_ANPP O=1 I=3
+CALIBRATION siamese_triplet H=4_ANPP O=1 I=4
+CALIBRATION siamese_triplet H=4_ANPP O=2 I=0
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/decomposition/_pca.py:646: RuntimeWarning: invalid value encountered in divide
+  explained_variance_ratio_ = explained_variance_ / total_var
+CALIBRATION siamese_triplet H=4_ANPP O=2 I=1
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/decomposition/_pca.py:646: RuntimeWarning: invalid value encountered in divide
+  explained_variance_ratio_ = explained_variance_ / total_var
+CALIBRATION siamese_triplet H=4_ANPP O=2 I=3
+CALIBRATION siamese_triplet H=4_ANPP O=2 I=4
+CALIBRATION siamese_triplet H=4_ANPP O=3 I=0
+CALIBRATION siamese_triplet H=4_ANPP O=3 I=1
+CALIBRATION siamese_triplet H=4_ANPP O=3 I=2
+CALIBRATION siamese_triplet H=4_ANPP O=3 I=4
+CALIBRATION siamese_triplet H=4_ANPP O=4 I=0
+CALIBRATION siamese_triplet H=4_ANPP O=4 I=1
+CALIBRATION siamese_triplet H=4_ANPP O=4 I=2
+CALIBRATION siamese_triplet H=4_ANPP O=4 I=3
+CALIBRATION siamese_triplet H=4_nitrophenol O=0 I=1
+CALIBRATION siamese_triplet H=4_nitrophenol O=0 I=2
+CALIBRATION siamese_triplet H=4_nitrophenol O=0 I=3
+CALIBRATION siamese_triplet H=4_nitrophenol O=0 I=4
+CALIBRATION siamese_triplet H=4_nitrophenol O=1 I=0
+CALIBRATION siamese_triplet H=4_nitrophenol O=1 I=2
+CALIBRATION siamese_triplet H=4_nitrophenol O=1 I=3
+CALIBRATION siamese_triplet H=4_nitrophenol O=1 I=4
+CALIBRATION siamese_triplet H=4_nitrophenol O=2 I=0
+CALIBRATION siamese_triplet H=4_nitrophenol O=2 I=1
+CALIBRATION siamese_triplet H=4_nitrophenol O=2 I=3
+CALIBRATION siamese_triplet H=4_nitrophenol O=2 I=4
+CALIBRATION siamese_triplet H=4_nitrophenol O=3 I=0
+CALIBRATION siamese_triplet H=4_nitrophenol O=3 I=1
+CALIBRATION siamese_triplet H=4_nitrophenol O=3 I=2
+CALIBRATION siamese_triplet H=4_nitrophenol O=3 I=4
+CALIBRATION siamese_triplet H=4_nitrophenol O=4 I=0
+CALIBRATION siamese_triplet H=4_nitrophenol O=4 I=1
+CALIBRATION siamese_triplet H=4_nitrophenol O=4 I=2
+CALIBRATION siamese_triplet H=4_nitrophenol O=4 I=3
+CALIBRATION siamese_triplet H=acetaminophen O=0 I=1
+CALIBRATION siamese_triplet H=acetaminophen O=0 I=2
+CALIBRATION siamese_triplet H=acetaminophen O=0 I=3
+CALIBRATION siamese_triplet H=acetaminophen O=0 I=4
+CALIBRATION siamese_triplet H=acetaminophen O=1 I=0
+CALIBRATION siamese_triplet H=acetaminophen O=1 I=2
+CALIBRATION siamese_triplet H=acetaminophen O=1 I=3
+CALIBRATION siamese_triplet H=acetaminophen O=1 I=4
+CALIBRATION siamese_triplet H=acetaminophen O=2 I=0
+CALIBRATION siamese_triplet H=acetaminophen O=2 I=1
+CALIBRATION siamese_triplet H=acetaminophen O=2 I=3
+CALIBRATION siamese_triplet H=acetaminophen O=2 I=4
+CALIBRATION siamese_triplet H=acetaminophen O=3 I=0
+CALIBRATION siamese_triplet H=acetaminophen O=3 I=1
+CALIBRATION siamese_triplet H=acetaminophen O=3 I=2
+CALIBRATION siamese_triplet H=acetaminophen O=3 I=4
+CALIBRATION siamese_triplet H=acetaminophen O=4 I=0
+CALIBRATION siamese_triplet H=acetaminophen O=4 I=1
+CALIBRATION siamese_triplet H=acetaminophen O=4 I=2
+CALIBRATION siamese_triplet H=acetaminophen O=4 I=3
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=0 I=1
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=0 I=2
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=0 I=3
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=0 I=4
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=1 I=0
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=1 I=2
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=1 I=3
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=1 I=4
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=2 I=0
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=2 I=1
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=2 I=3
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=2 I=4
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=3 I=0
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=3 I=1
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=3 I=2
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=3 I=4
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=4 I=0
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=4 I=1
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=4 I=2
+CALIBRATION siamese_triplet H=benzyl_fentanyl O=4 I=3
+CALIBRATION siamese_triplet H=ethanol O=0 I=1
+CALIBRATION siamese_triplet H=ethanol O=0 I=2
+CALIBRATION siamese_triplet H=ethanol O=0 I=3
+CALIBRATION siamese_triplet H=ethanol O=0 I=4
+CALIBRATION siamese_triplet H=ethanol O=1 I=0
+CALIBRATION siamese_triplet H=ethanol O=1 I=2
+CALIBRATION siamese_triplet H=ethanol O=1 I=3
+CALIBRATION siamese_triplet H=ethanol O=1 I=4
+CALIBRATION siamese_triplet H=ethanol O=2 I=0
+CALIBRATION siamese_triplet H=ethanol O=2 I=1
+CALIBRATION siamese_triplet H=ethanol O=2 I=3
+CALIBRATION siamese_triplet H=ethanol O=2 I=4
+CALIBRATION siamese_triplet H=ethanol O=3 I=0
+CALIBRATION siamese_triplet H=ethanol O=3 I=1
+CALIBRATION siamese_triplet H=ethanol O=3 I=2
+CALIBRATION siamese_triplet H=ethanol O=3 I=4
+CALIBRATION siamese_triplet H=ethanol O=4 I=0
+CALIBRATION siamese_triplet H=ethanol O=4 I=1
+CALIBRATION siamese_triplet H=ethanol O=4 I=2
+CALIBRATION siamese_triplet H=ethanol O=4 I=3
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=0 I=1
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=0 I=2
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=0 I=3
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=0 I=4
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=1 I=0
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=1 I=2
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=1 I=3
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=1 I=4
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=2 I=0
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=2 I=1
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=2 I=3
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=2 I=4
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=3 I=0
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=3 I=1
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=3 I=2
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=3 I=4
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=4 I=0
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=4 I=1
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=4 I=2
+CALIBRATION siamese_triplet H=ethyl_paraoxon O=4 I=3
+DONE siamese_triplet calibration
+START siamese_triplet final
+FINAL siamese_triplet H=4_ANPP O=0 seed=1729
+FINAL siamese_triplet H=4_ANPP O=0 seed=2718
+FINAL siamese_triplet H=4_ANPP O=0 seed=3141
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=4_ANPP O=1 seed=1729
+FINAL siamese_triplet H=4_ANPP O=1 seed=2718
+FINAL siamese_triplet H=4_ANPP O=1 seed=3141
+FINAL siamese_triplet H=4_ANPP O=2 seed=1729
+FINAL siamese_triplet H=4_ANPP O=2 seed=2718
+FINAL siamese_triplet H=4_ANPP O=2 seed=3141
+FINAL siamese_triplet H=4_ANPP O=3 seed=1729
+FINAL siamese_triplet H=4_ANPP O=3 seed=2718
+FINAL siamese_triplet H=4_ANPP O=3 seed=3141
+FINAL siamese_triplet H=4_ANPP O=4 seed=1729
+FINAL siamese_triplet H=4_ANPP O=4 seed=2718
+FINAL siamese_triplet H=4_ANPP O=4 seed=3141
+FINAL siamese_triplet H=4_nitrophenol O=0 seed=1729
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=4_nitrophenol O=0 seed=2718
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=4_nitrophenol O=0 seed=3141
+FINAL siamese_triplet H=4_nitrophenol O=1 seed=1729
+FINAL siamese_triplet H=4_nitrophenol O=1 seed=2718
+FINAL siamese_triplet H=4_nitrophenol O=1 seed=3141
+FINAL siamese_triplet H=4_nitrophenol O=2 seed=1729
+FINAL siamese_triplet H=4_nitrophenol O=2 seed=2718
+FINAL siamese_triplet H=4_nitrophenol O=2 seed=3141
+FINAL siamese_triplet H=4_nitrophenol O=3 seed=1729
+FINAL siamese_triplet H=4_nitrophenol O=3 seed=2718
+FINAL siamese_triplet H=4_nitrophenol O=3 seed=3141
+FINAL siamese_triplet H=4_nitrophenol O=4 seed=1729
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=4_nitrophenol O=4 seed=2718
+FINAL siamese_triplet H=4_nitrophenol O=4 seed=3141
+FINAL siamese_triplet H=acetaminophen O=0 seed=1729
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=acetaminophen O=0 seed=2718
+FINAL siamese_triplet H=acetaminophen O=0 seed=3141
+FINAL siamese_triplet H=acetaminophen O=1 seed=1729
+FINAL siamese_triplet H=acetaminophen O=1 seed=2718
+FINAL siamese_triplet H=acetaminophen O=1 seed=3141
+FINAL siamese_triplet H=acetaminophen O=2 seed=1729
+FINAL siamese_triplet H=acetaminophen O=2 seed=2718
+FINAL siamese_triplet H=acetaminophen O=2 seed=3141
+FINAL siamese_triplet H=acetaminophen O=3 seed=1729
+FINAL siamese_triplet H=acetaminophen O=3 seed=2718
+FINAL siamese_triplet H=acetaminophen O=3 seed=3141
+FINAL siamese_triplet H=acetaminophen O=4 seed=1729
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=acetaminophen O=4 seed=2718
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=acetaminophen O=4 seed=3141
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=benzyl_fentanyl O=0 seed=1729
+FINAL siamese_triplet H=benzyl_fentanyl O=0 seed=2718
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=benzyl_fentanyl O=0 seed=3141
+FINAL siamese_triplet H=benzyl_fentanyl O=1 seed=1729
+FINAL siamese_triplet H=benzyl_fentanyl O=1 seed=2718
+FINAL siamese_triplet H=benzyl_fentanyl O=1 seed=3141
+FINAL siamese_triplet H=benzyl_fentanyl O=2 seed=1729
+FINAL siamese_triplet H=benzyl_fentanyl O=2 seed=2718
+FINAL siamese_triplet H=benzyl_fentanyl O=2 seed=3141
+FINAL siamese_triplet H=benzyl_fentanyl O=3 seed=1729
+FINAL siamese_triplet H=benzyl_fentanyl O=3 seed=2718
+FINAL siamese_triplet H=benzyl_fentanyl O=3 seed=3141
+FINAL siamese_triplet H=benzyl_fentanyl O=4 seed=1729
+FINAL siamese_triplet H=benzyl_fentanyl O=4 seed=2718
+FINAL siamese_triplet H=benzyl_fentanyl O=4 seed=3141
+FINAL siamese_triplet H=ethanol O=0 seed=1729
+FINAL siamese_triplet H=ethanol O=0 seed=2718
+FINAL siamese_triplet H=ethanol O=0 seed=3141
+FINAL siamese_triplet H=ethanol O=1 seed=1729
+FINAL siamese_triplet H=ethanol O=1 seed=2718
+FINAL siamese_triplet H=ethanol O=1 seed=3141
+FINAL siamese_triplet H=ethanol O=2 seed=1729
+FINAL siamese_triplet H=ethanol O=2 seed=2718
+FINAL siamese_triplet H=ethanol O=2 seed=3141
+FINAL siamese_triplet H=ethanol O=3 seed=1729
+FINAL siamese_triplet H=ethanol O=3 seed=2718
+FINAL siamese_triplet H=ethanol O=3 seed=3141
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=ethanol O=4 seed=1729
+FINAL siamese_triplet H=ethanol O=4 seed=2718
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=ethanol O=4 seed=3141
+FINAL siamese_triplet H=ethyl_paraoxon O=0 seed=1729
+FINAL siamese_triplet H=ethyl_paraoxon O=0 seed=2718
+FINAL siamese_triplet H=ethyl_paraoxon O=0 seed=3141
+FINAL siamese_triplet H=ethyl_paraoxon O=1 seed=1729
+FINAL siamese_triplet H=ethyl_paraoxon O=1 seed=2718
+FINAL siamese_triplet H=ethyl_paraoxon O=1 seed=3141
+FINAL siamese_triplet H=ethyl_paraoxon O=2 seed=1729
+FINAL siamese_triplet H=ethyl_paraoxon O=2 seed=2718
+FINAL siamese_triplet H=ethyl_paraoxon O=2 seed=3141
+FINAL siamese_triplet H=ethyl_paraoxon O=3 seed=1729
+FINAL siamese_triplet H=ethyl_paraoxon O=3 seed=2718
+FINAL siamese_triplet H=ethyl_paraoxon O=3 seed=3141
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=ethyl_paraoxon O=4 seed=1729
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=ethyl_paraoxon O=4 seed=2718
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+FINAL siamese_triplet H=ethyl_paraoxon O=4 seed=3141
+DONE siamese_triplet final

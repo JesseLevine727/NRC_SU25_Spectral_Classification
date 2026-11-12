@@ -1,0 +1,14 @@
+{
+  "domain_evaluation_partitions_core.csv": {
+    "copied_sha256": "1ada524029c68302df9e4b30e4923f15500fc465fadddaecb42af84404e4348a",
+    "rows": 16744,
+    "source": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/domain_evaluation_partitions_core.csv",
+    "source_sha256": "1ada524029c68302df9e4b30e4923f15500fc465fadddaecb42af84404e4348a"
+  },
+  "domain_evaluation_partitions_quality.csv": {
+    "copied_sha256": "f3e56c14967206258759ae850d89a2089c0c1ceea0f1462387993f41e3ddf2b5",
+    "rows": 14000,
+    "source": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/Workspace/nato_sers_field_trial/preprocessing_v2/domain_evaluation_partitions_quality.csv",
+    "source_sha256": "f3e56c14967206258759ae850d89a2089c0c1ceea0f1462387993f41e3ddf2b5"
+  }
+}

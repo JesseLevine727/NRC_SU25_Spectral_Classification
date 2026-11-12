@@ -1,0 +1,16 @@
+START CNN DOMAIN domain
+DOMAIN CNN shard=4/6 20/196
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:620: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+  warnings.warn(
+DOMAIN CNN shard=4/6 40/196
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:620: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+  warnings.warn(
+DOMAIN CNN shard=4/6 60/196
+DOMAIN CNN shard=4/6 80/196
+DOMAIN CNN shard=4/6 100/196
+DOMAIN CNN shard=4/6 120/196
+DOMAIN CNN shard=4/6 140/196
+DOMAIN CNN shard=4/6 160/196
+DOMAIN CNN shard=4/6 180/196
+DOMAIN CNN shard=4/6 196/196
+DONE CNN DOMAIN domain

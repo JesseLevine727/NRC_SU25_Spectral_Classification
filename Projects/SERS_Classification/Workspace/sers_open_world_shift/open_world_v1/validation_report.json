@@ -56,7 +56,7 @@
       "pass": true
     },
     {
-      "detail": "['known_development_quality', 'known_quality_test', 'known_stress', 'unknown_quality', 'unknown_stress']",
+      "detail": "['excluded_known_stress_development_masters', 'known_development_quality', 'known_quality_test', 'known_stress', 'unknown_quality', 'unknown_stress']",
       "name": "outer_partition_vocabulary",
       "pass": true
     },
@@ -78,6 +78,11 @@
     {
       "detail": "overlapping_masters=0",
       "name": "outer_known_development_quality_vs_unknown_quality_master_disjoint",
+      "pass": true
+    },
+    {
+      "detail": "overlapping_masters=0",
+      "name": "outer_known_development_quality_vs_known_stress_master_disjoint",
       "pass": true
     },
     {

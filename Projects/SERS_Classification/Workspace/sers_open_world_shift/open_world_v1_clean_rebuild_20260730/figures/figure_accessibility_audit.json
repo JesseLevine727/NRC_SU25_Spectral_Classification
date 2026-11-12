@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "formats": [
+    "pdf",
+    "svg",
+    "png"
+  ],
+  "png_dpi": 300,
+  "width_inches": 7.2,
+  "palette": "Okabe-Ito",
+  "redundant_encoding": [
+    "color",
+    "marker",
+    "line_style",
+    "direct_label"
+  ],
+  "continuous_colormap": "viridis",
+  "minimum_font_points": 7,
+  "individual_independent_units_shown": true,
+  "technical_seeds_averaged_before_uncertainty": true,
+  "uncertainty_definition": "95% held-chemical bootstrap intervals, 69-master jackknife intervals, or SD across explicitly labelled independent units",
+  "significance_annotations": "not used; decisions follow preregistered effect-size gates rather than seed-level null-hypothesis tests"
+}

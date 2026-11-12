@@ -1,0 +1,22 @@
+{
+  "baseline_registry": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/sers_open_world_baselines_v1.json",
+    "sha256": "80fd40e6443a47f5eeaa408bdbd6c0e832fef3d9d4de25f3cd2f8c428d8b88f7"
+  },
+  "dataset_hash_catalog": "2f7f03b7caf7a08cda0ee70a06ea7ba66fdd59a4ccc8751c1ffe4d46b109db24",
+  "partition_artifacts": {
+    "artifact_hashes.json": "373f0464a6728e3ed4dfbd40bfb8bd29ca285c33fad0f4dcf27ace31e04f9642",
+    "known_threshold_crossfit_partitions.csv": "739f0fd572fb92a9d864dd1f2cd17a9ef8b623189581e2e11fd7b9ca56931be7",
+    "open_set_outer_partitions.csv": "a3e74eb1edcc9616f9bfd868d39ca68b6fb9e668e181154708e58aac23dfab9a",
+    "surrogate_unknown_inner_partitions.csv": "a5c2478a0479f5de715d4ce44a0fbcd8b4416eaa82713a5ce75e658aae1180dd",
+    "validation_report.json": "7936b353e8c41be751ae50db37a1803420e5310204490db69c932f278e50f75d"
+  },
+  "protocol": {
+    "path": "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/configs/sers_open_world_shift_v1.json",
+    "sha256": "ec759e5bb4b546a1ef038b28e3ae12075cc2ccacba39b24e4b8a1a8cbd42fd3c"
+  },
+  "scripts": {
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/run_sers_open_world_baselines.py": "6a46a02020ad241ab8494a34a1f93cb001bf86ecebc3a6a6a2884b6356e5415d",
+    "/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/scripts/sers_open_world_common.py": "5ca324a3874e2f7f494a3094bd9bdb717447b2a14a64df273a31640b097c38ee"
+  }
+}

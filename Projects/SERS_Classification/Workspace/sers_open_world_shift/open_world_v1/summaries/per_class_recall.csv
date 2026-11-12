@@ -1,0 +1,99 @@
+method,evaluation_partition,target_analyte,technical_prediction_rows,recall,masters
+Selected classical,known_quality_test,4_ANPP,526,0.8003802281368821,11
+Selected classical,known_quality_test,4_nitrophenol,488,0.7561475409836066,8
+Selected classical,known_quality_test,acetaminophen,436,0.6995412844036697,11
+Selected classical,known_quality_test,benzyl_fentanyl,761,0.8212877792378449,15
+Selected classical,known_quality_test,blank,546,0.826007326007326,8
+Selected classical,known_quality_test,ethanol,237,0.6751054852320675,9
+Selected classical,known_quality_test,ethyl_paraoxon,235,0.548936170212766,7
+Selected classical,known_stress,4_ANPP,24,0.3333333333333333,3
+Selected classical,known_stress,4_nitrophenol,120,0.44166666666666665,6
+Selected classical,known_stress,acetaminophen,99,0.797979797979798,6
+Selected classical,known_stress,benzyl_fentanyl,31,0.3870967741935484,4
+Selected classical,known_stress,blank,124,0.3790322580645161,8
+Selected classical,known_stress,ethanol,147,0.09523809523809523,9
+Selected classical,known_stress,ethyl_paraoxon,111,0.10810810810810811,7
+Selected residual CNN,known_quality_test,4_ANPP,1470,0.7081632653061225,11
+Selected residual CNN,known_quality_test,4_nitrophenol,1110,0.8612612612612612,8
+Selected residual CNN,known_quality_test,acetaminophen,990,0.4858585858585859,11
+Selected residual CNN,known_quality_test,benzyl_fentanyl,1725,0.7020289855072464,15
+Selected residual CNN,known_quality_test,blank,1278,0.5211267605633803,8
+Selected residual CNN,known_quality_test,ethanol,585,0.41025641025641024,9
+Selected residual CNN,known_quality_test,ethyl_paraoxon,555,0.2702702702702703,7
+Selected residual CNN,known_stress,4_ANPP,60,0.06666666666666667,3
+Selected residual CNN,known_stress,4_nitrophenol,270,0.1925925925925926,6
+Selected residual CNN,known_stress,acetaminophen,225,0.7511111111111111,6
+Selected residual CNN,known_stress,benzyl_fentanyl,75,0.36,4
+Selected residual CNN,known_stress,blank,288,0.3020833333333333,8
+Selected residual CNN,known_stress,ethanol,345,0.0463768115942029,9
+Selected residual CNN,known_stress,ethyl_paraoxon,255,0.03529411764705882,7
+Siamese triplet,known_quality_test,4_ANPP,1470,0.810204081632653,11
+Siamese triplet,known_quality_test,4_nitrophenol,1110,0.772972972972973,8
+Siamese triplet,known_quality_test,acetaminophen,990,0.5686868686868687,11
+Siamese triplet,known_quality_test,benzyl_fentanyl,1725,0.864927536231884,15
+Siamese triplet,known_quality_test,blank,1278,0.5555555555555556,8
+Siamese triplet,known_quality_test,ethanol,585,0.6239316239316239,9
+Siamese triplet,known_quality_test,ethyl_paraoxon,555,0.5693693693693693,7
+Siamese triplet,known_stress,4_ANPP,60,0.35,3
+Siamese triplet,known_stress,4_nitrophenol,270,0.3,6
+Siamese triplet,known_stress,acetaminophen,225,0.5466666666666666,6
+Siamese triplet,known_stress,benzyl_fentanyl,75,0.56,4
+Siamese triplet,known_stress,blank,288,0.3993055555555556,8
+Siamese triplet,known_stress,ethanol,345,0.40869565217391307,9
+Siamese triplet,known_stress,ethyl_paraoxon,255,0.2980392156862745,7
+Standard VAE,known_quality_test,4_ANPP,1470,0.8142857142857143,11
+Standard VAE,known_quality_test,4_nitrophenol,1110,0.7441441441441441,8
+Standard VAE,known_quality_test,acetaminophen,990,0.6797979797979798,11
+Standard VAE,known_quality_test,benzyl_fentanyl,1725,0.8255072463768116,15
+Standard VAE,known_quality_test,blank,1278,0.7323943661971831,8
+Standard VAE,known_quality_test,ethanol,585,0.6085470085470085,9
+Standard VAE,known_quality_test,ethyl_paraoxon,555,0.5153153153153153,7
+Standard VAE,known_stress,4_ANPP,60,0.26666666666666666,3
+Standard VAE,known_stress,4_nitrophenol,270,0.4888888888888889,6
+Standard VAE,known_stress,acetaminophen,225,0.9511111111111111,6
+Standard VAE,known_stress,benzyl_fentanyl,75,0.4,4
+Standard VAE,known_stress,blank,288,0.2604166666666667,8
+Standard VAE,known_stress,ethanol,345,0.2811594202898551,9
+Standard VAE,known_stress,ethyl_paraoxon,255,0.1411764705882353,7
+Structured VAE—chemical,known_quality_test,4_ANPP,1470,0.7795918367346939,11
+Structured VAE—chemical,known_quality_test,4_nitrophenol,1110,0.7549549549549549,8
+Structured VAE—chemical,known_quality_test,acetaminophen,990,0.7454545454545455,11
+Structured VAE—chemical,known_quality_test,benzyl_fentanyl,1725,0.8098550724637681,15
+Structured VAE—chemical,known_quality_test,blank,1278,0.7621283255086072,8
+Structured VAE—chemical,known_quality_test,ethanol,585,0.67008547008547,9
+Structured VAE—chemical,known_quality_test,ethyl_paraoxon,555,0.5459459459459459,7
+Structured VAE—chemical,known_stress,4_ANPP,60,0.31666666666666665,3
+Structured VAE—chemical,known_stress,4_nitrophenol,270,0.42962962962962964,6
+Structured VAE—chemical,known_stress,acetaminophen,225,0.88,6
+Structured VAE—chemical,known_stress,benzyl_fentanyl,75,0.48,4
+Structured VAE—chemical,known_stress,blank,288,0.3611111111111111,8
+Structured VAE—chemical,known_stress,ethanol,345,0.17971014492753623,9
+Structured VAE—chemical,known_stress,ethyl_paraoxon,255,0.1568627450980392,7
+Structured VAE—union,known_quality_test,4_ANPP,1470,0.8027210884353742,11
+Structured VAE—union,known_quality_test,4_nitrophenol,1110,0.7648648648648648,8
+Structured VAE—union,known_quality_test,acetaminophen,990,0.7787878787878788,11
+Structured VAE—union,known_quality_test,benzyl_fentanyl,1725,0.8440579710144928,15
+Structured VAE—union,known_quality_test,blank,1278,0.8004694835680751,8
+Structured VAE—union,known_quality_test,ethanol,585,0.6888888888888889,9
+Structured VAE—union,known_quality_test,ethyl_paraoxon,555,0.581981981981982,7
+Structured VAE—union,known_stress,4_ANPP,60,0.26666666666666666,3
+Structured VAE—union,known_stress,4_nitrophenol,270,0.4888888888888889,6
+Structured VAE—union,known_stress,acetaminophen,225,0.92,6
+Structured VAE—union,known_stress,benzyl_fentanyl,75,0.41333333333333333,4
+Structured VAE—union,known_stress,blank,288,0.3993055555555556,8
+Structured VAE—union,known_stress,ethanol,345,0.17101449275362318,9
+Structured VAE—union,known_stress,ethyl_paraoxon,255,0.13333333333333333,7
+Supervised contrastive,known_quality_test,4_ANPP,1470,0.8414965986394558,11
+Supervised contrastive,known_quality_test,4_nitrophenol,1110,0.7621621621621621,8
+Supervised contrastive,known_quality_test,acetaminophen,990,0.7373737373737373,11
+Supervised contrastive,known_quality_test,benzyl_fentanyl,1725,0.8979710144927536,15
+Supervised contrastive,known_quality_test,blank,1278,0.7183098591549296,8
+Supervised contrastive,known_quality_test,ethanol,585,0.6991452991452991,9
+Supervised contrastive,known_quality_test,ethyl_paraoxon,555,0.5243243243243243,7
+Supervised contrastive,known_stress,4_ANPP,60,0.4666666666666667,3
+Supervised contrastive,known_stress,4_nitrophenol,270,0.4666666666666667,6
+Supervised contrastive,known_stress,acetaminophen,225,0.7688888888888888,6
+Supervised contrastive,known_stress,benzyl_fentanyl,75,0.72,4
+Supervised contrastive,known_stress,blank,288,0.4097222222222222,8
+Supervised contrastive,known_stress,ethanol,345,0.24057971014492754,9
+Supervised contrastive,known_stress,ethyl_paraoxon,255,0.26666666666666666,7

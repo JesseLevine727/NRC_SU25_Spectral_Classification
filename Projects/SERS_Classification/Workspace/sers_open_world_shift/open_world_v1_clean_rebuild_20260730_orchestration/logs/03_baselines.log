@@ -1,0 +1,36 @@
+START surrogate
+[Parallel(n_jobs=16)]: Using backend LokyBackend with 16 concurrent workers.
+[Parallel(n_jobs=16)]: Done  40 tasks      | elapsed:    2.1s
+[Parallel(n_jobs=16)]: Done 130 tasks      | elapsed:    3.1s
+[Parallel(n_jobs=16)]: Done 288 tasks      | elapsed:    5.0s
+[Parallel(n_jobs=16)]: Done 612 tasks      | elapsed:    8.6s
+[Parallel(n_jobs=16)]: Done 1008 tasks      | elapsed:   13.2s
+[Parallel(n_jobs=16)]: Done 1476 tasks      | elapsed:   18.8s
+[Parallel(n_jobs=16)]: Done 2016 tasks      | elapsed:   25.3s
+[Parallel(n_jobs=16)]: Done 2628 tasks      | elapsed:   32.8s
+[Parallel(n_jobs=16)]: Done 3312 tasks      | elapsed:   40.4s
+[Parallel(n_jobs=16)]: Done 4068 tasks      | elapsed:   49.6s
+[Parallel(n_jobs=16)]: Done 4896 tasks      | elapsed:  1.0min
+[Parallel(n_jobs=16)]: Done 5400 out of 5400 | elapsed:  1.1min finished
+DONE surrogate
+START outer
+[Parallel(n_jobs=16)]: Using backend LokyBackend with 16 concurrent workers.
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+/home/elfo/Documents/NRC/NRC_SU25_Spectral_Classification/Projects/SERS_Classification/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:2924: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")
+[Parallel(n_jobs=16)]: Done 15 out of 38 | elapsed:    0.5s remaining:    0.7s
+[Parallel(n_jobs=16)]: Done 23 out of 38 | elapsed:    0.8s remaining:    0.5s
+[Parallel(n_jobs=16)]: Done 31 out of 38 | elapsed:    2.9s remaining:    0.7s
+[Parallel(n_jobs=16)]: Done 38 out of 38 | elapsed:    3.8s finished
+DONE outer
+START negative
+[Parallel(n_jobs=16)]: Using backend LokyBackend with 16 concurrent workers.
+[Parallel(n_jobs=16)]: Done  6 out of 30 | elapsed:    0.1s remaining:    0.3s
+[Parallel(n_jobs=16)]: Done 13 out of 30 | elapsed:    0.1s remaining:    0.1s
+[Parallel(n_jobs=16)]: Done 20 out of 30 | elapsed:    0.1s remaining:    0.1s
+[Parallel(n_jobs=16)]: Done 27 out of 30 | elapsed:    0.8s remaining:    0.1s
+[Parallel(n_jobs=16)]: Done 30 out of 30 | elapsed:    1.0s finished
+DONE negative
