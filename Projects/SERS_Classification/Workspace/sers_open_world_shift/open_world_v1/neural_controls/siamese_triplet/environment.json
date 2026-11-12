@@ -1,0 +1,30 @@
+{
+  "control": {
+    "applicable_scores": [
+      "minimum_prototype_squared_distance",
+      "minimum_class_mahalanobis_distance",
+      "one_minus_calibrated_max_probability",
+      "predictive_entropy"
+    ],
+    "architecture": "legacy ConvEncoder channels 16/32, z64, L2-normalized",
+    "epochs": 100,
+    "method": "siamese_triplet",
+    "prediction": "training-row class prototypes",
+    "primary_score": "minimum_prototype_squared_distance",
+    "primary_score_rationale": "The historical Siamese model is a metric learner; nearest-prototype distance is its native novelty score.",
+    "representation": "derivative_1",
+    "source": "configs/sers_supervised_contrastive_v1.json objectives.siamese_triplet_control",
+    "training": "triplet margin 0.2; cross-instrument positive preferred; same-instrument negative preferred; edge-filled shift and Gaussian-noise augmentation"
+  },
+  "cuda_available": true,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "method": "siamese_triplet",
+  "numpy": "2.4.4",
+  "pandas": "3.0.2",
+  "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "scikit_learn": "1.8.0",
+  "scipy": "1.17.1",
+  "torch": "2.11.0+cu130"
+}
