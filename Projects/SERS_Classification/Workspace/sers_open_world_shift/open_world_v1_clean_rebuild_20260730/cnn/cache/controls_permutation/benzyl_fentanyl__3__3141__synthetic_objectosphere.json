@@ -1,0 +1,41 @@
+{
+  "fingerprint": "d559674f83d34fcc0c21867daf5d90a3a4b6c297a2f0df53ddb9d47ba0ed7dbf",
+  "metric": {
+    "accuracy": 0.20253164556962025,
+    "balanced_accuracy": 0.17034038086669667,
+    "brier_multiclass": 0.784513701020043,
+    "declared_seed": 3141,
+    "development_masters": 44,
+    "expected_calibration_error_10": 0.1612425481198234,
+    "held_unknown": "benzyl_fentanyl",
+    "macro_f1": 0.13170026566651039,
+    "master_label_unchanged_fraction": 0.22727272727272727,
+    "n_supported": 79,
+    "n_test": 79,
+    "n_unsupported": 0,
+    "negative_log_likelihood": 1.6225529839300896,
+    "outer_fold": 3,
+    "representation": "derivative_1",
+    "row_label_unchanged_fraction": 0.24509803921568626,
+    "run_seed": 837616758,
+    "selected_epoch": 55,
+    "variant": "synthetic_objectosphere"
+  },
+  "run": {
+    "declared_seed": 3141,
+    "development_masters": 44,
+    "epochs_run": 55,
+    "held_unknown": "benzyl_fentanyl",
+    "master_label_unchanged_fraction": 0.22727272727272727,
+    "n_development": 306,
+    "n_test": 79,
+    "outer_fold": 3,
+    "parameter_count": 142366,
+    "representation": "derivative_1",
+    "row_label_unchanged_fraction": 0.24509803921568626,
+    "run_seed": 837616758,
+    "selected_epoch": 55,
+    "state_sha256": "fc1770cff4d0c1c8acbd48ae0a6f821ce051eaf66466e1832dd7cdcc0a752d0c",
+    "variant": "synthetic_objectosphere"
+  }
+}

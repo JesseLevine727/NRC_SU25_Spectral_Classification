@@ -1,0 +1,41 @@
+{
+  "fingerprint": "ec024b9a5b117f78f7038711006c08b1bb3eb4252bba9bd176458fa22f9a719f",
+  "metric": {
+    "accuracy": 0.3258426966292135,
+    "balanced_accuracy": 0.3416666666666666,
+    "brier_multiclass": 0.8216057257196945,
+    "declared_seed": 3141,
+    "development_masters": 46,
+    "expected_calibration_error_10": 0.040356981516762085,
+    "held_unknown": "acetaminophen",
+    "macro_f1": 0.28693959297407573,
+    "master_label_unchanged_fraction": 0.1956521739130435,
+    "n_supported": 89,
+    "n_test": 89,
+    "n_unsupported": 0,
+    "negative_log_likelihood": 1.7938143046183415,
+    "outer_fold": 0,
+    "representation": "arpls_minmax",
+    "row_label_unchanged_fraction": 0.23768115942028986,
+    "run_seed": 368789484,
+    "selected_epoch": 40,
+    "variant": "erm_arpls"
+  },
+  "run": {
+    "declared_seed": 3141,
+    "development_masters": 46,
+    "epochs_run": 40,
+    "held_unknown": "acetaminophen",
+    "master_label_unchanged_fraction": 0.1956521739130435,
+    "n_development": 345,
+    "n_test": 89,
+    "outer_fold": 0,
+    "parameter_count": 142366,
+    "representation": "arpls_minmax",
+    "row_label_unchanged_fraction": 0.23768115942028986,
+    "run_seed": 368789484,
+    "selected_epoch": 40,
+    "state_sha256": "ca804125b7bd80f41354f74d33c90b8fcc898a5a5be6f9a2606955f717ae19be",
+    "variant": "erm_arpls"
+  }
+}

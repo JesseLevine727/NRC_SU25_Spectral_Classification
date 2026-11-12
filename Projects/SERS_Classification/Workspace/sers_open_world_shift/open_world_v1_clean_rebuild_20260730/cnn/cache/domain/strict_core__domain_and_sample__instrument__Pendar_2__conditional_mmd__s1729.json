@@ -1,0 +1,109 @@
+{
+  "fingerprint": "5e17c3e15dbbbde78813ca68df4c5560b4bc29b313e34e5c1b0094eadf3e2c03",
+  "state_sha256": "4a660c080660379a0baa28a41a2861dddd045e5d41d0729bec65ef4b60b8674d",
+  "parameter_count": 142171,
+  "best_epoch": 25,
+  "epochs_run": 25,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.232059493849549
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.1953079459033435
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.219959720780578
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.2120398132106927
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.2198371479782877
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.2197776610338236
+    },
+    {
+      "epoch": 7,
+      "train_loss": 1.2260837358764456
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.2261644873438002
+    },
+    {
+      "epoch": 9,
+      "train_loss": 1.228999904439419
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.239895704426343
+    },
+    {
+      "epoch": 11,
+      "train_loss": 1.2276672321029856
+    },
+    {
+      "epoch": 12,
+      "train_loss": 1.2340653863134263
+    },
+    {
+      "epoch": 13,
+      "train_loss": 1.231161884114712
+    },
+    {
+      "epoch": 14,
+      "train_loss": 1.221873701373233
+    },
+    {
+      "epoch": 15,
+      "train_loss": 1.2148651608937904
+    },
+    {
+      "epoch": 16,
+      "train_loss": 1.2275762210918377
+    },
+    {
+      "epoch": 17,
+      "train_loss": 1.2423208363448517
+    },
+    {
+      "epoch": 18,
+      "train_loss": 1.2240026510214503
+    },
+    {
+      "epoch": 19,
+      "train_loss": 1.2255236966700493
+    },
+    {
+      "epoch": 20,
+      "train_loss": 1.2227641570417187
+    },
+    {
+      "epoch": 21,
+      "train_loss": 1.2243332259262665
+    },
+    {
+      "epoch": 22,
+      "train_loss": 1.2187235898609403
+    },
+    {
+      "epoch": 23,
+      "train_loss": 1.218451807770548
+    },
+    {
+      "epoch": 24,
+      "train_loss": 1.2123851972290232
+    },
+    {
+      "epoch": 25,
+      "train_loss": 1.2164911635314362
+    }
+  ]
+}
